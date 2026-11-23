@@ -1,0 +1,35 @@
+[
+  {
+    "screen": "finance",
+    "route": "/finance",
+    "viewport": "390",
+    "heading": "المالية",
+    "apiErrors": [
+      "401 /api/v1/auth/me",
+      "401 /api/v1/auth/me"
+    ],
+    "screenshot": "D:\\system karas\\system end\\docs\\ux-inventory\\screenshots\\system-mock\\fresh\\finance_390.png"
+  },
+  {
+    "screen": "order-create",
+    "route": "/orders/new",
+    "viewport": "1280",
+    "heading": "إنشاء طلب مبيعات جديد",
+    "apiErrors": [
+      "401 /api/v1/auth/me",
+      "401 /api/v1/auth/me"
+    ],
+    "screenshot": "D:\\system karas\\system end\\docs\\ux-inventory\\screenshots\\system-mock\\fresh\\order-create_1280.png"
+  },
+  {
+    "screen": "invoice-print",
+    "route": "/invoices/701/print",
+    "viewport": "1280",
+    "heading": "معاينة الطباعة",
+    "apiErrors": [
+      "401 /api/v1/auth/me",
+      "401 /api/v1/auth/me"
+    ],
+    "screenshot": "D:\\system karas\\system end\\docs\\ux-inventory\\screenshots\\system-mock\\fresh\\invoice-print_1280.png"
+  }
+]
