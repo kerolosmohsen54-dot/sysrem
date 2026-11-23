@@ -1,0 +1,657 @@
+{
+  "environment": "Read-only reference HTML, isolated saved fixture, user-facing navigation click attempted; no forms submitted or state writes",
+  "results": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "clickedFinanceButton": false,
+      "before": {
+        "financeNav": [
+          {
+            "text": "الفواتير",
+            "onclick": "toggleSub('sales-sub')",
+            "cls": "nav-group-btn"
+          },
+          {
+            "text": "العملاء",
+            "onclick": "toggleSub('cust-sub')",
+            "cls": "nav-group-btn"
+          },
+          {
+            "text": "المخزون",
+            "onclick": "toggleSub('inv-sub')",
+            "cls": "nav-group-btn"
+          },
+          {
+            "text": "الحاويات",
+            "onclick": "toggleSub('cont-sub')",
+            "cls": "nav-group-btn"
+          },
+          {
+            "text": "التقارير",
+            "onclick": "toggleSub('rep-sub')",
+            "cls": "nav-group-btn"
+          }
+        ],
+        "financeSub": null,
+        "panels": [
+          {
+            "id": "cust-file",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "inv-detail",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "fin-overview",
+            "present": true,
+            "cls": "section-content",
+            "content": "نظرة عامة ماليةالعميل ← الطلب ← الفاتورة ← الدفع ← رصيد العميل ← التقارير — والمصروف ← الخزينة ← التقارير+ تسجيل دفعة + تسجيل مصروفإجمالي المبيعات (بعد المرتجع)"
+          },
+          {
+            "id": "f-receipts",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-otherinc",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-payments",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-expenses",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-transfers",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-treasury",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-custbal",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-supbal",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-finret",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-coa",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-journal",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-ledger",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-trial",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-reports",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-stmt",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "move-detail",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "fin2",
+            "present": true,
+            "cls": "section-content",
+            "content": "الماليةالجنيه المصري فقط"
+          },
+          {
+            "id": "liq",
+            "present": false,
+            "cls": null,
+            "content": null
+          },
+          {
+            "id": "x-priv",
+            "present": true,
+            "cls": "section-content",
+            "content": "ملاحظاتيسجل خاص"
+          },
+          {
+            "id": "transfers",
+            "present": true,
+            "cls": "section-content",
+            "content": "نقل الحاويات بين المواقعمن الحاوية إلى الرئيسي ثم الفرعي ثم السيارة — كل نقل يخصم من المصدر ويضيف إلى المستلم ويُسجَّل برقم مرجعيالصنفمن (الموقع المصدر)إلى (الم"
+          }
+        ],
+        "role": "كراس",
+        "title": "Precision Slate ERP"
+      },
+      "after": {
+        "financeSubClass": null,
+        "financeItems": [],
+        "active": [
+          "sec-invoice-create"
+        ],
+        "panelStates": [
+          {
+            "id": "cust-file",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "inv-detail",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "fin-overview",
+            "present": true,
+            "active": false,
+            "html": "<div class=\"page-hd\"><div class=\"page-hd-left\"><h1>نظرة عامة مالية</h1><p>العميل ← الطلب ← الفاتورة ← الدفع ← رصيد العمي"
+          },
+          {
+            "id": "f-receipts",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-otherinc",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-payments",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-expenses",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-transfers",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-treasury",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-custbal",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-supbal",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-finret",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-coa",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-journal",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-ledger",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-trial",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-reports",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-stmt",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "move-detail",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "fin2",
+            "present": true,
+            "active": false,
+            "html": "<div class=\"page-hd\"><div class=\"page-hd-left\"><h1>المالية</h1><p>الجنيه المصري فقط</p></div></div><div class=\"fn-tabs\" "
+          },
+          {
+            "id": "liq",
+            "present": false,
+            "active": false,
+            "html": null
+          },
+          {
+            "id": "x-priv",
+            "present": true,
+            "active": false,
+            "html": "<div class=\"page-hd\"><div class=\"page-hd-left\"><h1>ملاحظاتي</h1><p>سجل خاص</p></div></div><div id=\"b-x-priv\"></div>"
+          },
+          {
+            "id": "transfers",
+            "present": true,
+            "active": false,
+            "html": "<div class=\"page-hd\"><div class=\"page-hd-left\"><h1>نقل الحاويات بين المواقع</h1><p>من الحاوية إلى الرئيسي ثم الفرعي ثم ا"
+          }
+        ]
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "clickedFinanceButton": false,
+      "before": {
+        "financeNav": [
+          {
+            "text": "الفواتير",
+            "onclick": "toggleSub('sales-sub')",
+            "cls": "nav-group-btn"
+          },
+          {
+            "text": "العملاء",
+            "onclick": "toggleSub('cust-sub')",
+            "cls": "nav-group-btn"
+          },
+          {
+            "text": "المخزون",
+            "onclick": "toggleSub('inv-sub')",
+            "cls": "nav-group-btn"
+          },
+          {
+            "text": "الحاويات",
+            "onclick": "toggleSub('cont-sub')",
+            "cls": "nav-group-btn"
+          },
+          {
+            "text": "التقارير",
+            "onclick": "toggleSub('rep-sub')",
+            "cls": "nav-group-btn"
+          }
+        ],
+        "financeSub": null,
+        "panels": [
+          {
+            "id": "cust-file",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "inv-detail",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "fin-overview",
+            "present": true,
+            "cls": "section-content",
+            "content": "نظرة عامة ماليةالعميل ← الطلب ← الفاتورة ← الدفع ← رصيد العميل ← التقارير — والمصروف ← الخزينة ← التقارير+ تسجيل دفعة + تسجيل مصروفإجمالي المبيعات (بعد المرتجع)"
+          },
+          {
+            "id": "f-receipts",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-otherinc",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-payments",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-expenses",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-transfers",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-treasury",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-custbal",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-supbal",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-finret",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-coa",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-journal",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-ledger",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-trial",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-reports",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "f-stmt",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "move-detail",
+            "present": true,
+            "cls": "section-content",
+            "content": ""
+          },
+          {
+            "id": "fin2",
+            "present": true,
+            "cls": "section-content",
+            "content": "الماليةالجنيه المصري فقط"
+          },
+          {
+            "id": "liq",
+            "present": false,
+            "cls": null,
+            "content": null
+          },
+          {
+            "id": "x-priv",
+            "present": true,
+            "cls": "section-content",
+            "content": "ملاحظاتيسجل خاص"
+          },
+          {
+            "id": "transfers",
+            "present": true,
+            "cls": "section-content",
+            "content": "نقل الحاويات بين المواقعمن الحاوية إلى الرئيسي ثم الفرعي ثم السيارة — كل نقل يخصم من المصدر ويضيف إلى المستلم ويُسجَّل برقم مرجعيالصنفمن (الموقع المصدر)إلى (الم"
+          }
+        ],
+        "role": "كراس",
+        "title": "Precision Slate ERP"
+      },
+      "after": {
+        "financeSubClass": null,
+        "financeItems": [],
+        "active": [
+          "sec-invoice-create"
+        ],
+        "panelStates": [
+          {
+            "id": "cust-file",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "inv-detail",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "fin-overview",
+            "present": true,
+            "active": false,
+            "html": "<div class=\"page-hd\"><div class=\"page-hd-left\"><h1>نظرة عامة مالية</h1><p>العميل ← الطلب ← الفاتورة ← الدفع ← رصيد العمي"
+          },
+          {
+            "id": "f-receipts",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-otherinc",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-payments",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-expenses",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-transfers",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-treasury",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-custbal",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-supbal",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-finret",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-coa",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-journal",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-ledger",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-trial",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-reports",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "f-stmt",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "move-detail",
+            "present": true,
+            "active": false,
+            "html": ""
+          },
+          {
+            "id": "fin2",
+            "present": true,
+            "active": false,
+            "html": "<div class=\"page-hd\"><div class=\"page-hd-left\"><h1>المالية</h1><p>الجنيه المصري فقط</p></div></div><div class=\"fn-tabs\" "
+          },
+          {
+            "id": "liq",
+            "present": false,
+            "active": false,
+            "html": null
+          },
+          {
+            "id": "x-priv",
+            "present": true,
+            "active": false,
+            "html": "<div class=\"page-hd\"><div class=\"page-hd-left\"><h1>ملاحظاتي</h1><p>سجل خاص</p></div></div><div id=\"b-x-priv\"></div>"
+          },
+          {
+            "id": "transfers",
+            "present": true,
+            "active": false,
+            "html": "<div class=\"page-hd\"><div class=\"page-hd-left\"><h1>نقل الحاويات بين المواقع</h1><p>من الحاوية إلى الرئيسي ثم الفرعي ثم ا"
+          }
+        ]
+      }
+    }
+  ]
+}

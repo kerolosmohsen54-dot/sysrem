@@ -1,0 +1,63 @@
+{
+  "environment": "isolated reference file:// demo fixture and React Vite/MSW; no database/API writes",
+  "results": [
+    {
+      "viewport": "768",
+      "route": "reference sec-invoice-create / React /invoices/new",
+      "reference": {
+        "navigation": "invoice-create was already the active reference panel after local prototype login",
+        "searchVisible": true,
+        "searchOpened": true,
+        "searchScreenshot": "docs/ux-inventory/screenshots/reference/states/interaction-global-search-invoice-create-768.png",
+        "searchClosedAfterEscape": false,
+        "notificationsVisible": true,
+        "notificationsOpened": true,
+        "notificationsScreenshot": "docs/ux-inventory/screenshots/reference/states/interaction-notifications-invoice-create-768.png",
+        "activePanel": null
+      },
+      "system": {
+        "navigation": "invoice-create activated by visible quick-action click",
+        "actualPath": "/invoices/new",
+        "targetScreenRendered": true,
+        "heading": "إنشاء فاتورة مبيعات جديدة",
+        "searchControl": "mobile bottom navigation",
+        "searchVisible": true,
+        "searchOpened": true,
+        "searchScreenshot": "docs/ux-inventory/screenshots/system-mock/react/states/interaction-global-search-invoice-create-768.png",
+        "searchClosedAfterEscape": true,
+        "notificationsVisible": true,
+        "notificationsOpened": true,
+        "notificationsScreenshot": "docs/ux-inventory/screenshots/system-mock/react/states/interaction-notifications-invoice-create-768.png"
+      }
+    },
+    {
+      "viewport": "390",
+      "route": "reference sec-invoice-create / React /invoices/new",
+      "reference": {
+        "navigation": "invoice-create was already the active reference panel after local prototype login",
+        "searchVisible": true,
+        "searchOpened": true,
+        "searchScreenshot": "docs/ux-inventory/screenshots/reference/states/interaction-global-search-invoice-create-390.png",
+        "searchClosedAfterEscape": false,
+        "notificationsVisible": true,
+        "notificationsOpened": true,
+        "notificationsScreenshot": "docs/ux-inventory/screenshots/reference/states/interaction-notifications-invoice-create-390.png",
+        "activePanel": null
+      },
+      "system": {
+        "navigation": "invoice-create activated by visible quick-action click",
+        "actualPath": "/invoices/new",
+        "targetScreenRendered": true,
+        "heading": "إنشاء فاتورة مبيعات جديدة",
+        "searchControl": "mobile bottom navigation",
+        "searchVisible": true,
+        "searchOpened": true,
+        "searchScreenshot": "docs/ux-inventory/screenshots/system-mock/react/states/interaction-global-search-invoice-create-390.png",
+        "searchClosedAfterEscape": true,
+        "notificationsVisible": true,
+        "notificationsOpened": true,
+        "notificationsScreenshot": "docs/ux-inventory/screenshots/system-mock/react/states/interaction-notifications-invoice-create-390.png"
+      }
+    }
+  ]
+}

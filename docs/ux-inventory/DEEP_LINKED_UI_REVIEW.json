@@ -1,0 +1,137 @@
+{
+  "environment": "isolated React Vite/MSW; synthetic demo; visible UI clicks only; no API/database writes",
+  "results": [
+    {
+      "viewport": "1280",
+      "products": {
+        "routeClicked": true,
+        "path": "/products",
+        "heading": "المنتجات",
+        "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/products-1280.png",
+        "costHistoryLinkCount": 3,
+        "barcodeControls": []
+      },
+      "costHistory": {
+        "visibleLinkClicked": true,
+        "path": "/products/201/cost-history",
+        "heading": "سجل تكلفة المنتج",
+        "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/product-cost-history-1280.png"
+      },
+      "containerDetail": {
+        "containerRouteClicked": true,
+        "visibleOpenButtonCount": 1,
+        "buttonClicked": true,
+        "path": "/containers/16016",
+        "heading": "رقم الحاوية: CONT-2026-016",
+        "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/container-detail-1280.png",
+        "listScreenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/container-tracking-candidate-1280.png"
+      },
+      "salesReturnsCandidate": {
+        "routeClicked": true,
+        "path": "/returns",
+        "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/sales-returns-candidate-1280.png"
+      },
+      "financeOverview": {
+        "routeClicked": true,
+        "path": "/finance",
+        "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/finance-overview-1280.png",
+        "fullPageScreenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/finance-overview-full-1280.png"
+      },
+      "containerFundsSelected": {
+        "routeClicked": true,
+        "selectCount": 1,
+        "optionCount": 2,
+        "selected": true,
+        "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/container-funds-selected-1280.png"
+      }
+    },
+    {
+      "viewport": "768",
+      "products": {
+        "routeClicked": true,
+        "path": "/products",
+        "heading": "المنتجات",
+        "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/products-768.png",
+        "costHistoryLinkCount": 3,
+        "barcodeControls": []
+      },
+      "costHistory": {
+        "visibleLinkClicked": true,
+        "path": "/products/201/cost-history",
+        "heading": "سجل تكلفة المنتج",
+        "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/product-cost-history-768.png"
+      },
+      "containerDetail": {
+        "containerRouteClicked": true,
+        "visibleOpenButtonCount": 1,
+        "buttonClicked": true,
+        "path": "/containers/16016",
+        "heading": "رقم الحاوية: CONT-2026-016",
+        "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/container-detail-768.png",
+        "listScreenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/container-tracking-candidate-768.png"
+      },
+      "salesReturnsCandidate": {
+        "routeClicked": true,
+        "path": "/returns",
+        "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/sales-returns-candidate-768.png"
+      },
+      "financeOverview": {
+        "routeClicked": true,
+        "path": "/finance",
+        "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/finance-overview-768.png",
+        "fullPageScreenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/finance-overview-full-768.png"
+      },
+      "containerFundsSelected": {
+        "routeClicked": true,
+        "selectCount": 1,
+        "optionCount": 2,
+        "selected": true,
+        "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/container-funds-selected-768.png"
+      }
+    },
+    {
+      "viewport": "390",
+      "products": {
+        "routeClicked": true,
+        "path": "/products",
+        "heading": "المنتجات",
+        "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/products-390.png",
+        "costHistoryLinkCount": 3,
+        "barcodeControls": []
+      },
+      "costHistory": {
+        "visibleLinkClicked": true,
+        "path": "/products/201/cost-history",
+        "heading": "سجل تكلفة المنتج",
+        "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/product-cost-history-390.png"
+      },
+      "containerDetail": {
+        "containerRouteClicked": true,
+        "visibleOpenButtonCount": 1,
+        "buttonClicked": true,
+        "path": "/containers/16016",
+        "heading": "رقم الحاوية: CONT-2026-016",
+        "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/container-detail-390.png",
+        "listScreenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/container-tracking-candidate-390.png"
+      },
+      "salesReturnsCandidate": {
+        "routeClicked": true,
+        "path": "/returns",
+        "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/sales-returns-candidate-390.png"
+      },
+      "financeOverview": {
+        "routeClicked": true,
+        "path": "/finance",
+        "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/finance-overview-390.png",
+        "fullPageScreenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/finance-overview-full-390.png"
+      },
+      "containerFundsSelected": {
+        "routeClicked": true,
+        "selectCount": 1,
+        "optionCount": 2,
+        "selected": true,
+        "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round5/container-funds-selected-390.png"
+      }
+    }
+  ]
+}

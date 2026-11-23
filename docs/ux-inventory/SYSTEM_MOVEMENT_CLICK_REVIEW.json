@@ -1,0 +1,97 @@
+{
+  "environment": "isolated Vite/MSW synthetic owner-demo session; route reached through visible global-search link; list-row interaction only; no forms or writes",
+  "results": [
+    {
+      "viewport": "1280",
+      "actualPath": "/inventory/movements",
+      "observedTitle": "حركات المخزون",
+      "firstRows": [
+        {
+          "text": "١٠‏/١٠‏/٢٠٢٦\tبيع\tفلتر زيت تويوتا\tالمستودع الرئيسي\t12\tINV-2026-1041\t—\t—",
+          "interactive": 0,
+          "html": "<tr><td data-label=\"التاريخ\">١٠‏/١٠‏/٢٠٢٦</td><td data-label=\"نوع الحركة\">بيع</td><td data-label=\"المنتج\">فلتر زيت تويوتا</td><td data-label=\"المخزن\">المستودع الرئيسي</td><td data-label=\"الكمية\">12</td><td data-label=\"المرجع\">INV-2026-1041</td><td data-label=\"المستخدم\">—</td><td data-label=\"تكلفة الوحدة (ج.م)\">—</td></tr>"
+        },
+        {
+          "text": "٠٨‏/١٠‏/٢٠٢٦\tبيع\tبطارية 70 أمبير\tالمستودع الرئيسي\t4\tINV-2026-1040\t—\t—",
+          "interactive": 0,
+          "html": "<tr><td data-label=\"التاريخ\">٠٨‏/١٠‏/٢٠٢٦</td><td data-label=\"نوع الحركة\">بيع</td><td data-label=\"المنتج\">بطارية 70 أمبير</td><td data-label=\"المخزن\">المستودع الرئيسي</td><td data-label=\"الكمية\">4</td><td data-label=\"المرجع\">INV-2026-1040</td><td data-label=\"المستخدم\">—</td><td data-label=\"تكلفة الوحدة (ج.م)\">—</td></tr>"
+        },
+        {
+          "text": "٠٥‏/١٠‏/٢٠٢٦\tاستلام حاوية مسجلة\tزيت محرك 5W-30\tالمستودع الرئيسي\t40\tCONT-2026-016\t—\t—",
+          "interactive": 0,
+          "html": "<tr><td data-label=\"التاريخ\">٠٥‏/١٠‏/٢٠٢٦</td><td data-label=\"نوع الحركة\">استلام حاوية مسجلة</td><td data-label=\"المنتج\">زيت محرك 5W-30</td><td data-label=\"المخزن\">المستودع الرئيسي</td><td data-label=\"الكمية\">40</td><td data-label=\"المرجع\">CONT-2026-016</td><td data-label=\"المستخدم\">—</td><td data-label=\"تكلفة الوحدة (ج.م)\">—</td></tr>"
+        }
+      ],
+      "tableInteractiveCount": 0,
+      "clicked": true,
+      "clickedTargetType": "first table row (no link/button/role=button present)",
+      "clickError": null,
+      "after": {
+        "path": "/inventory/movements",
+        "activeDialogs": [],
+        "title": "حركات المخزون",
+        "text": "حركات المخزون\n\nسجل حركات المنتجات من بيانات الخادم.\n\nبحث\nتصفية حسب المخزن\nالكل\nالمستودع الرئيسي — WH-MAIN\nمخزن قطع الغيار — WH-SUB\nتصفية حسب المنتج\nالكل\nفلتر زيت تويوتا\nبطارية 70 أمبير\nزيت محرك 5W-30\nتصفية حسب نوع الحركة\nالكل\nرصيد افتتاحي\nاستلام\nبيع\nمرتجع\nتحويل\nتسوية\nتالف\nاستلام حاوية مسجلة\nعكس حركة\nمن تاريخ\nإلى تاريخ\nترتيب حسب\nالترتيب الافتراضي\nالتاريخ\nالمنتج\nاتجاه الترتيب\nتصاعدي\nتنازلي\nالتاريخ\tنوع الحركة\tالمنتج\tالمخزن\tالكمية\tالمرجع\tالمستخدم\tتكلفة الوحدة (ج.م)\n١٠‏/١٠‏/٢٠٢٦\tبيع\tفلتر زيت تويوتا\tالمستودع الرئيسي\t12\tINV-2026-1041\t—\t—\n٠٨‏/١٠‏/٢٠٢٦\tبيع\tبطارية 70 أمبير\tالمستودع الرئيسي\t4\tINV-2026-1040\t—\t—\n٠٥‏/١٠‏/٢٠٢٦\tاستلام حاوية مسجلة\tزيت محرك 5W-30\tالمستودع الرئيسي\t40\tCONT-2026-016\t—\t—\nالسابق\nالصفحة 1 من 1\nالتالي"
+      },
+      "navigation": "Visible global-search result clicked; route transition observed.",
+      "listScreenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round7/movement-list-click-review-1280.png"
+    },
+    {
+      "viewport": "768",
+      "actualPath": "/inventory/movements",
+      "observedTitle": "حركات المخزون",
+      "firstRows": [
+        {
+          "text": "١٠‏/١٠‏/٢٠٢٦بيعفلتر زيت تويوتاالمستودع الرئيسي12INV-2026-1041——",
+          "interactive": 0,
+          "html": "<tr><td data-label=\"التاريخ\">١٠‏/١٠‏/٢٠٢٦</td><td data-label=\"نوع الحركة\">بيع</td><td data-label=\"المنتج\">فلتر زيت تويوتا</td><td data-label=\"المخزن\">المستودع الرئيسي</td><td data-label=\"الكمية\">12</td><td data-label=\"المرجع\">INV-2026-1041</td><td data-label=\"المستخدم\">—</td><td data-label=\"تكلفة الوحدة (ج.م)\">—</td></tr>"
+        },
+        {
+          "text": "٠٨‏/١٠‏/٢٠٢٦بيعبطارية 70 أمبيرالمستودع الرئيسي4INV-2026-1040——",
+          "interactive": 0,
+          "html": "<tr><td data-label=\"التاريخ\">٠٨‏/١٠‏/٢٠٢٦</td><td data-label=\"نوع الحركة\">بيع</td><td data-label=\"المنتج\">بطارية 70 أمبير</td><td data-label=\"المخزن\">المستودع الرئيسي</td><td data-label=\"الكمية\">4</td><td data-label=\"المرجع\">INV-2026-1040</td><td data-label=\"المستخدم\">—</td><td data-label=\"تكلفة الوحدة (ج.م)\">—</td></tr>"
+        },
+        {
+          "text": "٠٥‏/١٠‏/٢٠٢٦استلام حاوية مسجلةزيت محرك 5W-30المستودع الرئيسي40CONT-2026-016——",
+          "interactive": 0,
+          "html": "<tr><td data-label=\"التاريخ\">٠٥‏/١٠‏/٢٠٢٦</td><td data-label=\"نوع الحركة\">استلام حاوية مسجلة</td><td data-label=\"المنتج\">زيت محرك 5W-30</td><td data-label=\"المخزن\">المستودع الرئيسي</td><td data-label=\"الكمية\">40</td><td data-label=\"المرجع\">CONT-2026-016</td><td data-label=\"المستخدم\">—</td><td data-label=\"تكلفة الوحدة (ج.م)\">—</td></tr>"
+        }
+      ],
+      "tableInteractiveCount": 0,
+      "clicked": false,
+      "clickedTargetType": null,
+      "clickError": "TimeoutError: locator.click: Timeout 4000ms exceeded.",
+      "after": null,
+      "navigation": "Visible global-search result clicked; route transition observed.",
+      "listScreenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round7/movement-list-click-review-768.png"
+    },
+    {
+      "viewport": "390",
+      "actualPath": "/inventory/movements",
+      "observedTitle": "حركات المخزون",
+      "firstRows": [
+        {
+          "text": "١٠‏/١٠‏/٢٠٢٦بيعفلتر زيت تويوتاالمستودع الرئيسي12INV-2026-1041——",
+          "interactive": 0,
+          "html": "<tr><td data-label=\"التاريخ\">١٠‏/١٠‏/٢٠٢٦</td><td data-label=\"نوع الحركة\">بيع</td><td data-label=\"المنتج\">فلتر زيت تويوتا</td><td data-label=\"المخزن\">المستودع الرئيسي</td><td data-label=\"الكمية\">12</td><td data-label=\"المرجع\">INV-2026-1041</td><td data-label=\"المستخدم\">—</td><td data-label=\"تكلفة الوحدة (ج.م)\">—</td></tr>"
+        },
+        {
+          "text": "٠٨‏/١٠‏/٢٠٢٦بيعبطارية 70 أمبيرالمستودع الرئيسي4INV-2026-1040——",
+          "interactive": 0,
+          "html": "<tr><td data-label=\"التاريخ\">٠٨‏/١٠‏/٢٠٢٦</td><td data-label=\"نوع الحركة\">بيع</td><td data-label=\"المنتج\">بطارية 70 أمبير</td><td data-label=\"المخزن\">المستودع الرئيسي</td><td data-label=\"الكمية\">4</td><td data-label=\"المرجع\">INV-2026-1040</td><td data-label=\"المستخدم\">—</td><td data-label=\"تكلفة الوحدة (ج.م)\">—</td></tr>"
+        },
+        {
+          "text": "٠٥‏/١٠‏/٢٠٢٦استلام حاوية مسجلةزيت محرك 5W-30المستودع الرئيسي40CONT-2026-016——",
+          "interactive": 0,
+          "html": "<tr><td data-label=\"التاريخ\">٠٥‏/١٠‏/٢٠٢٦</td><td data-label=\"نوع الحركة\">استلام حاوية مسجلة</td><td data-label=\"المنتج\">زيت محرك 5W-30</td><td data-label=\"المخزن\">المستودع الرئيسي</td><td data-label=\"الكمية\">40</td><td data-label=\"المرجع\">CONT-2026-016</td><td data-label=\"المستخدم\">—</td><td data-label=\"تكلفة الوحدة (ج.م)\">—</td></tr>"
+        }
+      ],
+      "tableInteractiveCount": 0,
+      "clicked": false,
+      "clickedTargetType": null,
+      "clickError": "TimeoutError: locator.click: Timeout 4000ms exceeded.",
+      "after": null,
+      "navigation": "Visible global-search result clicked; route transition observed.",
+      "listScreenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round7/movement-list-click-review-390.png"
+    }
+  ]
+}

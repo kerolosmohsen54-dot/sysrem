@@ -1,0 +1,88 @@
+{
+  "environment": "isolated Vite test mode; MSW enabled; synthetic owner-demo session; read-only list-row navigation",
+  "results": [
+    {
+      "screenId": "SCR-030",
+      "viewport": "1280",
+      "clickTarget": "شركة النور",
+      "targetVisible": true,
+      "actualPath": "/customers/101",
+      "clicked": true,
+      "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round7/customer-detail-1280.png",
+      "listScreenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round7/customers-list-1280.png",
+      "observedTitle": "شركة النور لاستيراد السيارات",
+      "listText": "شركة النور لاستيراد السيارات\n\nتفاصيل العميل والأرصدة المحسوبة من بيانات الخادم.\n\nعرض الكشفتصفية العميلرجوع\nرقم الهاتف\n01012345678\nالبريد الإلكتروني\nغير متاح من الخادم\nالعنوان\nغير متاح من الخادم\nمندوب المبيعات\nغير متاح من الخادم\nالرقم الضريبي\nغير متاح من الخادم\nشروط السداد\nغير متاح من الخادم\nالمحافظة\nالقاهرة\nآخر فاتورة\nغير متاح من الخادم\nتاريخ آخر فاتورة\nغير متاح من الخادم\nحد الائتمان (ج.م)\n50,000.00 ج.م\nالرصيد\n4,800.00 ج.م",
+      "note": "Isolated Vite/MSW; clicked an existing customer row only if the record appeared; no form submitted."
+    },
+    {
+      "screenId": "SCR-031",
+      "viewport": "1280",
+      "clickTarget": "INV-2026-1041",
+      "targetVisible": true,
+      "actualPath": "/invoices/701",
+      "clicked": true,
+      "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round7/invoice-detail-1280.png",
+      "listScreenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round7/invoices-list-1280.png",
+      "observedTitle": "التفاصيل: INV-2026-1041",
+      "listText": "التفاصيل: INV-2026-1041\n\nشركة النور لاستيراد السيارات\n\n← رجوعتعديل الفاتورةمعاينة / طباعةإلغاء الفاتورة\nبيانات الفاتورة\nرقم الفاتورة\nINV-2026-1041\nالتاريخ\n١٠ أكتوبر ٢٠٢٦\nالعميل\nشركة النور لاستيراد السيارات\nالحالة\nصادرة\nالمُصدر\nمالك النظام\nتاريخ الاستحقاق\n٩ نوفمبر ٢٠٢٦\nالإجمالي\n7,800.00 ج.م\nالمدفوع\n3,000.00 ج.م\nالمتبقي\n4,800.00 ج.م\n\nتفاصيل الأصناف غير متاحة في بيانات الخادم الحالية.\n\nسجل التعديلات\n\nيعرض السجل التغييرات المسجلة لدى الخادم.\n\nبحث في سجل التعديلات\n\nلا توجد تعديلات مسجلة لهذه الفاتورة",
+      "note": "Isolated Vite/MSW; clicked an existing invoice row only if the record appeared; no print or write action triggered."
+    },
+    {
+      "screenId": "SCR-030",
+      "viewport": "768",
+      "clickTarget": "شركة النور",
+      "targetVisible": true,
+      "actualPath": "/customers/101",
+      "clicked": true,
+      "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round7/customer-detail-768.png",
+      "listScreenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round7/customers-list-768.png",
+      "observedTitle": "شركة النور لاستيراد السيارات",
+      "listText": "شركة النور لاستيراد السيارات\n\nتفاصيل العميل والأرصدة المحسوبة من بيانات الخادم.\n\nعرض الكشفتصفية العميلرجوع\nرقم الهاتف\n01012345678\nالبريد الإلكتروني\nغير متاح من الخادم\nالعنوان\nغير متاح من الخادم\nمندوب المبيعات\nغير متاح من الخادم\nالرقم الضريبي\nغير متاح من الخادم\nشروط السداد\nغير متاح من الخادم\nالمحافظة\nالقاهرة\nآخر فاتورة\nغير متاح من الخادم\nتاريخ آخر فاتورة\nغير متاح من الخادم\nحد الائتمان (ج.م)\n50,000.00 ج.م\nالرصيد\n4,800.00 ج.م",
+      "note": "Isolated Vite/MSW; clicked an existing customer row only if the record appeared; no form submitted."
+    },
+    {
+      "screenId": "SCR-031",
+      "viewport": "768",
+      "clickTarget": "INV-2026-1041",
+      "targetVisible": true,
+      "actualPath": "/invoices/701",
+      "clicked": true,
+      "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round7/invoice-detail-768.png",
+      "listScreenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round7/invoices-list-768.png",
+      "observedTitle": "التفاصيل: INV-2026-1041",
+      "listText": "التفاصيل: INV-2026-1041\n\nشركة النور لاستيراد السيارات\n\n← رجوعتعديل الفاتورةمعاينة / طباعةإلغاء الفاتورة\nبيانات الفاتورة\nرقم الفاتورة\nINV-2026-1041\nالتاريخ\n١٠ أكتوبر ٢٠٢٦\nالعميل\nشركة النور لاستيراد السيارات\nالحالة\nصادرة\nالمُصدر\nمالك النظام\nتاريخ الاستحقاق\n٩ نوفمبر ٢٠٢٦\nالإجمالي\n7,800.00 ج.م\nالمدفوع\n3,000.00 ج.م\nالمتبقي\n4,800.00 ج.م\n\nتفاصيل الأصناف غير متاحة في بيانات الخادم الحالية.\n\nسجل التعديلات\n\nيعرض السجل التغييرات المسجلة لدى الخادم.\n\nبحث في سجل التعديلات\n\nلا توجد تعديلات مسجلة لهذه الفاتورة",
+      "note": "Isolated Vite/MSW; clicked an existing invoice row only if the record appeared; no print or write action triggered."
+    },
+    {
+      "screenId": "SCR-030",
+      "viewport": "390",
+      "clickTarget": "شركة النور",
+      "targetVisible": true,
+      "actualPath": "/customers/101",
+      "clicked": true,
+      "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round7/customer-detail-390.png",
+      "listScreenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round7/customers-list-390.png",
+      "observedTitle": "شركة النور لاستيراد السيارات",
+      "listText": "شركة النور لاستيراد السيارات\n\nتفاصيل العميل والأرصدة المحسوبة من بيانات الخادم.\n\nعرض الكشفتصفية العميلرجوع\nرقم الهاتف\n01012345678\nالبريد الإلكتروني\nغير متاح من الخادم\nالعنوان\nغير متاح من الخادم\nمندوب المبيعات\nغير متاح من الخادم\nالرقم الضريبي\nغير متاح من الخادم\nشروط السداد\nغير متاح من الخادم\nالمحافظة\nالقاهرة\nآخر فاتورة\nغير متاح من الخادم\nتاريخ آخر فاتورة\nغير متاح من الخادم\nحد الائتمان (ج.م)\n50,000.00 ج.م\nالرصيد\n4,800.00 ج.م",
+      "note": "Isolated Vite/MSW; clicked an existing customer row only if the record appeared; no form submitted."
+    },
+    {
+      "screenId": "SCR-031",
+      "viewport": "390",
+      "clickTarget": "INV-2026-1041",
+      "targetVisible": true,
+      "actualPath": "/invoices/701",
+      "clicked": true,
+      "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round7/invoice-detail-390.png",
+      "listScreenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round7/invoices-list-390.png",
+      "observedTitle": "التفاصيل: INV-2026-1041",
+      "listText": "التفاصيل: INV-2026-1041\n\nشركة النور لاستيراد السيارات\n\n← رجوعتعديل الفاتورةمعاينة / طباعةإلغاء الفاتورة\nبيانات الفاتورة\nرقم الفاتورة\nINV-2026-1041\nالتاريخ\n١٠ أكتوبر ٢٠٢٦\nالعميل\nشركة النور لاستيراد السيارات\nالحالة\nصادرة\nالمُصدر\nمالك النظام\nتاريخ الاستحقاق\n٩ نوفمبر ٢٠٢٦\nالإجمالي\n7,800.00 ج.م\nالمدفوع\n3,000.00 ج.م\nالمتبقي\n4,800.00 ج.م\n\nتفاصيل الأصناف غير متاحة في بيانات الخادم الحالية.\n\nسجل التعديلات\n\nيعرض السجل التغييرات المسجلة لدى الخادم.\n\nبحث في سجل التعديلات\n\nلا توجد تعديلات مسجلة لهذه الفاتورة",
+      "note": "Isolated Vite/MSW; clicked an existing invoice row only if the record appeared; no print or write action triggered."
+    }
+  ],
+  "summary": {
+    "attempts": 6,
+    "clickedAndCaptured": 6,
+    "failedOrUnavailable": 0
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "viewport": "1280",
+  "environment": "isolated static reference + saved local fixture; opening and canceling dialogs only; no submit/save/delete/print",
+  "paymentModal": {
+    "title": "تسجيل دفعة",
+    "text": "تسجيل دفعة\n✕\nالعميل *\n— اختر العميل —\nشركة النور لاستيراد السيارات\nمؤسسة الأمل للتجارة\nمعرض السلام للسيارات\n＋ عميل\nالرصيد المستحق: 18,500 — يُسدَّد على: INV-2026-1041\nطريقة الدفع\nنقدي\nتحويل بنكي\nشيك\nالخزينة\nالخزينة الرئيسية\nالبنك الأهلي\nبنك الراجحي\nالمبلغ *\nالتاريخ (تلقائي)\nإلغاء\nتأكيد الدفعة",
+    "fields": [
+      {
+        "id": "pay-cust",
+        "type": "select-one",
+        "value": "c101",
+        "label": "",
+        "required": false,
+        "disabled": false
+      },
+      {
+        "id": "pay-method",
+        "type": "select-one",
+        "value": "نقدي",
+        "label": "",
+        "required": false,
+        "disabled": false
+      },
+      {
+        "id": "pay-cashier",
+        "type": "select-one",
+        "value": "main",
+        "label": "",
+        "required": false,
+        "disabled": false
+      },
+      {
+        "id": "pay-amount",
+        "type": "number",
+        "value": "18500",
+        "label": "",
+        "required": false,
+        "disabled": false
+      },
+      {
+        "id": "pay-date",
+        "type": "text",
+        "value": "29/10/2026 23:31",
+        "label": "",
+        "required": false,
+        "disabled": true
+      }
+    ],
+    "buttons": [
+      {
+        "label": "✕",
+        "onclick": "closeModal('modal-payment')"
+      },
+      {
+        "label": "＋ عميل",
+        "onclick": "openNewCustomer(id=>{preparePayment();byId('pay-cust').value=id;payCustChanged()})"
+      },
+      {
+        "label": "إلغاء",
+        "onclick": "closeModal('modal-payment')"
+      },
+      {
+        "label": "تأكيد الدفعة",
+        "onclick": "savePayment()"
+      }
+    ],
+    "screenshot": "docs/ux-inventory/screenshots/reference/row-click-details/payment-modal-1280.png",
+    "cancelClicked": true,
+    "closed": true
+  },
+  "returnModal": {
+    "title": "تسجيل مرتجع من INV-2026-1041",
+    "text": "تسجيل مرتجع من INV-2026-1041\nالمنتج\nفلتر زيت تويوتا — المتاح للإرجاع 12\nالكمية\nإلى أي مخزن تريد إرجاع المنتج؟\nالمستودع الرئيسي - الرياض\nمستودع جدة\nمستودع الدمام\nالمخزن الفرعي\nالسيارة\nنوع الإصلاح\nبدون إصلاح\nإصلاح على الشركة\nإصلاح على العميل\nسبب الإصلاح / المرتجع\nتأكيد المرتجع إلغاء",
+    "fields": [
+      {
+        "id": "rt-p",
+        "type": "select-one",
+        "value": "فلتر زيت تويوتا",
+        "label": "",
+        "required": false,
+        "disabled": false
+      },
+      {
+        "id": "rt-q",
+        "type": "number",
+        "value": "1",
+        "label": "",
+        "required": false,
+        "disabled": false
+      },
+      {
+        "id": "rt-w",
+        "type": "select-one",
+        "value": "المستودع الرئيسي - الرياض",
+        "label": "",
+        "required": false,
+        "disabled": false
+      },
+      {
+        "id": "rt-m",
+        "type": "select-one",
+        "value": "",
+        "label": "",
+        "required": false,
+        "disabled": false
+      },
+      {
+        "id": "rt-r",
+        "type": "text",
+        "value": "",
+        "label": "",
+        "required": false,
+        "disabled": false
+      },
+      {
+        "id": "rt-cost",
+        "type": "number",
+        "value": "",
+        "label": "",
+        "required": false,
+        "disabled": false
+      },
+      {
+        "id": "rt-paid",
+        "type": "number",
+        "value": "",
+        "label": "",
+        "required": false,
+        "disabled": false
+      }
+    ],
+    "buttons": [
+      {
+        "label": "تأكيد المرتجع",
+        "id": "rt-ok",
+        "onclick": null
+      },
+      {
+        "label": "إلغاء",
+        "id": "rt-no",
+        "onclick": null
+      }
+    ],
+    "screenshot": "docs/ux-inventory/screenshots/reference/row-click-details/return-modal-1280.png",
+    "cancelClicked": true,
+    "closed": true
+  }
+}

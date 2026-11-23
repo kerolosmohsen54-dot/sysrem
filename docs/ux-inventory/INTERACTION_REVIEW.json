@@ -1,0 +1,480 @@
+{
+  "origin": "isolated Vite test mode; MSW enabled; proxy fallback set to closed port 1",
+  "tested": 68,
+  "passed": 68,
+  "failed": 0,
+  "results": [
+    {
+      "label": "login-empty-submit-validation",
+      "actual": [
+        {
+          "valid": false,
+          "message": "Please fill out this field."
+        },
+        {
+          "valid": false,
+          "message": "Please fill out this field."
+        }
+      ],
+      "pass": true
+    },
+    {
+      "label": "login-mock-1280",
+      "actualPath": "/dashboard",
+      "heading": "لوحة التحكم",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:لوحة التحكم",
+      "actualPath": "/dashboard",
+      "heading": "لوحة التحكم",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:الطلبات",
+      "actualPath": "/orders",
+      "heading": "لوحة التحكم",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:أذونات التسليم",
+      "actualPath": "/deliveries",
+      "heading": "الطلبات",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:فواتير البيع",
+      "actualPath": "/invoices",
+      "heading": "أذونات التسليم",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:التحصيلات",
+      "actualPath": "/collections",
+      "heading": "فواتير البيع",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:مرتجعات المبيعات",
+      "actualPath": "/returns",
+      "heading": "التحصيلات",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:↗إنشاء فاتورة بيع",
+      "actualPath": "/invoices/new",
+      "heading": "مرتجعات المبيعات",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:↗إنشاء مرتجع",
+      "actualPath": "/returns/new",
+      "heading": "إنشاء فاتورة مرتجع",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:العملاء",
+      "actualPath": "/customers",
+      "heading": "إنشاء فاتورة مرتجع",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:↗إضافة عميل",
+      "actualPath": "/customers",
+      "heading": "العملاء",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:↗حساب العميل",
+      "actualPath": "/reports/customer-balances",
+      "heading": "العملاء",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:المنتجات",
+      "actualPath": "/products",
+      "heading": "أرصدة العملاء",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:التصنيفات",
+      "actualPath": "/categories",
+      "heading": "المنتجات",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:المخازن",
+      "actualPath": "/warehouses",
+      "heading": "التصنيفات",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:المخزون والمخازن",
+      "actualPath": "/inventory",
+      "heading": "المخازن",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:حركات المخزون",
+      "actualPath": "/inventory/movements",
+      "heading": "المخزون والمخازن",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:تسويات المخزون",
+      "actualPath": "/inventory/adjustments",
+      "heading": "حركات المخزون",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:الرصيد الافتتاحي",
+      "actualPath": "/inventory/opening-stock",
+      "heading": "تسويات المخزون",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:تحويلات المخزون",
+      "actualPath": "/inventory/transfers",
+      "heading": "الرصيد الافتتاحي",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:الحد الأدنى للمخزون",
+      "actualPath": "/inventory/minimum-stock",
+      "heading": "تحويلات المخزون",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:الجرد الدوري",
+      "actualPath": "/inventory/counts",
+      "heading": "الحد الأدنى للمخزون",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:المخزون التالف",
+      "actualPath": "/inventory/damaged",
+      "heading": "الجرد الدوري",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:مرتجعات المخازن",
+      "actualPath": "/warehouse-returns",
+      "heading": "المخزون التالف المعتمد",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:↗إضافة إلى المخزون",
+      "actualPath": "/inventory/opening-stock",
+      "heading": "الرصيد الافتتاحي",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:↗سجل تكلفة المنتج",
+      "actualPath": "/products",
+      "heading": "الرصيد الافتتاحي",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:الحاويات",
+      "actualPath": "/containers",
+      "heading": "المنتجات",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:نقل الحاويات بين المواقع",
+      "actualPath": "/container-transfers",
+      "heading": "الحاويات",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:↗استلام حاوية مسجلة",
+      "actualPath": "/containers",
+      "heading": "الحاويات",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:↗إنشاء حاوية واستلام أصنافها",
+      "actualPath": "/containers?create=1",
+      "heading": "الحاويات",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:↗التكلفة الفعلية",
+      "firstAttempt": "TimeoutError: locator.click: Timeout 3500ms exceeded.",
+      "recovery": "Escape dismissed an obstructing layer; retry navigated.",
+      "actualPath": "/containers",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:↗تتبع الحاويات",
+      "actualPath": "/containers",
+      "heading": "الحاويات",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:المالية",
+      "actualPath": "/finance",
+      "heading": "الحاويات",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:الصندوق الوارد",
+      "actualPath": "/finance/inbox",
+      "heading": "المالية",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:الوارد من تطبيق الهاتف",
+      "actualPath": "/finance/mobile-inbox",
+      "heading": "الصندوق الوارد",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:سحوبات الخزينة",
+      "actualPath": "/finance/withdrawals",
+      "heading": "السحب",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:حركات الخزينة",
+      "actualPath": "/finance/movements",
+      "heading": "الحركات",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:قنوات الدفع عبر الهاتف",
+      "actualPath": "/finance/mobile-channels",
+      "heading": "الحركات",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:الشركاء",
+      "actualPath": "/partners",
+      "heading": "الوصول إلى خدمات الهاتف",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:دفعات الشركاء",
+      "actualPath": "/partner-payments",
+      "heading": "الشركاء",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:فواتير الشراء",
+      "actualPath": "/purchase-invoices",
+      "heading": "دفعات الشركاء",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:أموال الحاويات",
+      "actualPath": "/container-funds",
+      "heading": "أموال الحاويات",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:التقارير",
+      "actualPath": "/reports",
+      "heading": "أموال الحاويات",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:↗تقرير المبيعات",
+      "actualPath": "/reports/sales",
+      "heading": "التقارير",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:↗ربحية الفواتير",
+      "actualPath": "/reports/invoice-profit",
+      "heading": "تقرير المبيعات",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:↗توزيع الأرباح والمطابقة",
+      "actualPath": "/reports/profit-distribution",
+      "heading": "ربحية الفواتير",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:↗تقرير المخزون",
+      "actualPath": "/reports/stock",
+      "heading": "تقرير المخزون",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:↗التقرير المالي",
+      "actualPath": "/reports/financial",
+      "heading": "تقرير المخزون",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:المحافظات",
+      "actualPath": "/admin/governorates",
+      "heading": "المحافظات",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:سائقو الشحن",
+      "actualPath": "/admin/drivers",
+      "heading": "المحافظات",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:سلة المحذوفات",
+      "actualPath": "/admin/trash",
+      "heading": "سائقو شركة الشحن",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:تثبيت كتطبيق",
+      "actualPath": "/admin/install",
+      "heading": "سلة المحذوفات",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:المستخدمون والصلاحيات",
+      "actualPath": "/admin/users",
+      "heading": "تثبيت التطبيق",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:سجل العمليات",
+      "actualPath": "/admin/audit",
+      "heading": "المستخدمون والصلاحيات",
+      "pass": true
+    },
+    {
+      "label": "sidebar-click:الإعدادات",
+      "actualPath": "/admin/settings",
+      "heading": "سجل العمليات",
+      "pass": true
+    },
+    {
+      "label": "global-search-open",
+      "actual": {
+        "visibleSearchSurface": true
+      },
+      "pass": true
+    },
+    {
+      "label": "global-search-escape-close",
+      "actual": {
+        "visibleSearchSurface": false
+      },
+      "pass": true
+    },
+    {
+      "label": "notifications-open",
+      "actual": {
+        "expanded": "true",
+        "visible": true
+      },
+      "pass": true
+    },
+    {
+      "label": "notifications-close",
+      "actual": {
+        "expanded": "false"
+      },
+      "pass": true
+    },
+    {
+      "label": "theme-toggle-round-trip",
+      "actual": {
+        "before": "dark (default)",
+        "changed": "light",
+        "restored": "dark"
+      },
+      "pass": true
+    },
+    {
+      "label": "order-create-empty-submit-validation-via-clicks",
+      "actual": {
+        "path": "/orders/new",
+        "submitCount": 2,
+        "ariaInvalidFields": 0,
+        "valid": false,
+        "fields": [
+          {
+            "required": true,
+            "valid": false,
+            "message": "Please select an item in the list."
+          },
+          {
+            "required": true,
+            "valid": true,
+            "message": ""
+          },
+          {
+            "required": false,
+            "valid": true,
+            "message": ""
+          },
+          {
+            "required": false,
+            "valid": true,
+            "message": ""
+          },
+          {
+            "required": true,
+            "valid": false,
+            "message": "Please select an item in the list."
+          },
+          {
+            "required": true,
+            "valid": false,
+            "message": "Please fill out this field."
+          },
+          {
+            "required": true,
+            "valid": false,
+            "message": "Please fill out this field."
+          },
+          {
+            "required": false,
+            "valid": true,
+            "message": ""
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "label": "login-mock-768",
+      "actualPath": "/dashboard",
+      "heading": "لوحة التحكم",
+      "pass": true
+    },
+    {
+      "label": "login-mock-390",
+      "actualPath": "/dashboard",
+      "heading": "لوحة التحكم",
+      "pass": true
+    },
+    {
+      "label": "mobile-search-open",
+      "actual": {
+        "visible": true
+      },
+      "pass": true
+    },
+    {
+      "label": "mobile-menu-open",
+      "actual": {
+        "expanded": "true",
+        "dashboardLinkVisible": true
+      },
+      "pass": true
+    },
+    {
+      "label": "mobile-menu-dashboard-click",
+      "actualPath": "/dashboard",
+      "pass": true
+    },
+    {
+      "label": "mobile-quick-action-create-order",
+      "actualPath": "/orders/new",
+      "pass": true
+    }
+  ]
+}

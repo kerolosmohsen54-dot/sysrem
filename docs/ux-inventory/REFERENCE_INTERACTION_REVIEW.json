@@ -1,0 +1,1902 @@
+{
+  "environment": "local reference HTML; isolated browser context; fixture localStorage only; external HTTP blocked",
+  "panels": [
+    {
+      "screen": "dashboard",
+      "label": "لوحة التحكم",
+      "result": "CLICK_DID_NOT_VERIFY",
+      "before": "sec-invoice-create",
+      "active": "sec-invoice-create",
+      "note": "TimeoutError: locator.click: Timeout 2500ms exceeded."
+    },
+    {
+      "screen": "customers",
+      "label": "كل العملاء",
+      "result": "CLICK_DID_NOT_VERIFY",
+      "before": "sec-invoice-create",
+      "active": "sec-invoice-create",
+      "note": "TimeoutError: page.waitForFunction: Timeout 2000ms exceeded."
+    },
+    {
+      "screen": "orders",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-invoice-create"
+    },
+    {
+      "screen": "order-create",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-invoice-create"
+    },
+    {
+      "screen": "order-detail",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-invoice-create"
+    },
+    {
+      "screen": "invoices",
+      "label": "كل الفواتير 5",
+      "result": "CLICK_NAVIGATED",
+      "before": "sec-invoice-create",
+      "active": "sec-invoices"
+    },
+    {
+      "screen": "invoice-create",
+      "label": "إنشاء فاتورة",
+      "result": "CLICK_NAVIGATED",
+      "before": "sec-invoices",
+      "active": "sec-invoice-create"
+    },
+    {
+      "screen": "invoice-print",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-invoices"
+    },
+    {
+      "screen": "collections",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-invoices"
+    },
+    {
+      "screen": "deliveries",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-invoices"
+    },
+    {
+      "screen": "delivery-create",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-invoices"
+    },
+    {
+      "screen": "returns",
+      "label": "المرتجعات",
+      "result": "CLICK_NAVIGATED",
+      "before": "sec-invoices",
+      "active": "sec-returns"
+    },
+    {
+      "screen": "return-create",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-returns"
+    },
+    {
+      "screen": "products",
+      "label": "المنتجات",
+      "result": "CLICK_NAVIGATED",
+      "before": "sec-returns",
+      "active": "sec-products"
+    },
+    {
+      "screen": "inventory-summary",
+      "label": "ملخص المخزون",
+      "result": "CLICK_NAVIGATED",
+      "before": "sec-products",
+      "active": "sec-inventory-summary"
+    },
+    {
+      "screen": "movements",
+      "label": "حركة المخزون",
+      "result": "CLICK_NAVIGATED",
+      "before": "sec-inventory-summary",
+      "active": "sec-movements"
+    },
+    {
+      "screen": "finance",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-movements"
+    },
+    {
+      "screen": "containers",
+      "label": "كل الحاويات",
+      "result": "CLICK_NAVIGATED",
+      "before": "sec-movements",
+      "active": "sec-containers"
+    },
+    {
+      "screen": "reports",
+      "label": "مركز التقارير",
+      "result": "CLICK_DID_NOT_VERIFY",
+      "before": "sec-containers",
+      "active": "sec-containers",
+      "note": "TimeoutError: locator.click: Timeout 2500ms exceeded."
+    },
+    {
+      "screen": "reports-sales",
+      "label": "تقارير المبيعات",
+      "result": "CLICK_DID_NOT_VERIFY",
+      "before": "sec-containers",
+      "active": "sec-containers",
+      "note": "TimeoutError: locator.click: Timeout 2500ms exceeded."
+    },
+    {
+      "screen": "reports-profit",
+      "label": "تقارير الأرباح",
+      "result": "CLICK_DID_NOT_VERIFY",
+      "before": "sec-containers",
+      "active": "sec-containers",
+      "note": "TimeoutError: locator.click: Timeout 2500ms exceeded."
+    },
+    {
+      "screen": "users",
+      "label": "المستخدمون والصلاحيات",
+      "result": "CLICK_DID_NOT_VERIFY",
+      "before": "sec-containers",
+      "active": "sec-containers",
+      "note": "TimeoutError: locator.click: Timeout 2500ms exceeded."
+    },
+    {
+      "screen": "warehouses",
+      "label": "المخازن",
+      "result": "CLICK_NAVIGATED",
+      "before": "sec-containers",
+      "active": "sec-warehouses"
+    },
+    {
+      "screen": "reports-inventory",
+      "label": "تقارير المخزون",
+      "result": "CLICK_DID_NOT_VERIFY",
+      "before": "sec-warehouses",
+      "active": "sec-warehouses",
+      "note": "TimeoutError: locator.click: Timeout 2500ms exceeded."
+    },
+    {
+      "screen": "reports-financial",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-warehouses"
+    },
+    {
+      "screen": "govs",
+      "label": "المحافظات",
+      "result": "CLICK_NAVIGATED",
+      "before": "sec-warehouses",
+      "active": "sec-govs"
+    },
+    {
+      "screen": "stock-add",
+      "label": "إضافة إلى المخزون",
+      "result": "CLICK_NAVIGATED",
+      "before": "sec-govs",
+      "active": "sec-stock-add"
+    },
+    {
+      "screen": "stock-ret",
+      "label": "المخزون المرتجع",
+      "result": "CLICK_NAVIGATED",
+      "before": "sec-stock-add",
+      "active": "sec-stock-ret"
+    },
+    {
+      "screen": "trash",
+      "label": "سلة المحذوفات",
+      "result": "CLICK_DID_NOT_VERIFY",
+      "before": "sec-stock-ret",
+      "active": "sec-stock-ret",
+      "note": "TimeoutError: locator.click: Timeout 2500ms exceeded."
+    },
+    {
+      "screen": "cust-file",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-stock-ret"
+    },
+    {
+      "screen": "inv-detail",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-stock-ret"
+    },
+    {
+      "screen": "drivers",
+      "label": "سائق شركة الشحن",
+      "result": "CLICK_DID_NOT_VERIFY",
+      "before": "sec-stock-ret",
+      "active": "sec-stock-ret",
+      "note": "TimeoutError: locator.click: Timeout 2500ms exceeded."
+    },
+    {
+      "screen": "log",
+      "label": "سجل العمليات",
+      "result": "CLICK_DID_NOT_VERIFY",
+      "before": "sec-stock-ret",
+      "active": "sec-stock-ret",
+      "note": "TimeoutError: locator.click: Timeout 2500ms exceeded."
+    },
+    {
+      "screen": "fin-overview",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-stock-ret"
+    },
+    {
+      "screen": "f-receipts",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-stock-ret"
+    },
+    {
+      "screen": "f-otherinc",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-stock-ret"
+    },
+    {
+      "screen": "f-payments",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-stock-ret"
+    },
+    {
+      "screen": "f-expenses",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-stock-ret"
+    },
+    {
+      "screen": "f-transfers",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-stock-ret"
+    },
+    {
+      "screen": "f-treasury",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-stock-ret"
+    },
+    {
+      "screen": "f-custbal",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-stock-ret"
+    },
+    {
+      "screen": "f-supbal",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-stock-ret"
+    },
+    {
+      "screen": "f-finret",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-stock-ret"
+    },
+    {
+      "screen": "f-coa",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-stock-ret"
+    },
+    {
+      "screen": "f-journal",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-stock-ret"
+    },
+    {
+      "screen": "f-ledger",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-stock-ret"
+    },
+    {
+      "screen": "f-trial",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-stock-ret"
+    },
+    {
+      "screen": "f-reports",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-stock-ret"
+    },
+    {
+      "screen": "f-stmt",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-stock-ret"
+    },
+    {
+      "screen": "transfers",
+      "label": "نقل الحاويات بين المواقع",
+      "result": "CLICK_DID_NOT_VERIFY",
+      "before": "sec-stock-ret",
+      "active": null,
+      "note": "TimeoutError: page.waitForFunction: Timeout 2000ms exceeded."
+    },
+    {
+      "screen": "wh-returns",
+      "label": "مرتجع المخازن",
+      "result": "CLICK_NAVIGATED",
+      "before": null,
+      "active": "sec-wh-returns"
+    },
+    {
+      "screen": "cont-money",
+      "label": "أموال الحاويات",
+      "result": "CLICK_NAVIGATED",
+      "before": "sec-wh-returns",
+      "active": "sec-cont-money"
+    },
+    {
+      "screen": "move-detail",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-cont-money"
+    },
+    {
+      "screen": "fin2",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-cont-money"
+    },
+    {
+      "screen": "x-budget",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-cont-money"
+    },
+    {
+      "screen": "x-recur",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-cont-money"
+    },
+    {
+      "screen": "x-compare",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-cont-money"
+    },
+    {
+      "screen": "x-cash",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-cont-money"
+    },
+    {
+      "screen": "x-track",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-cont-money"
+    },
+    {
+      "screen": "x-low",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-cont-money"
+    },
+    {
+      "screen": "x-count",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-cont-money"
+    },
+    {
+      "screen": "x-bar",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-cont-money"
+    },
+    {
+      "screen": "x-price",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-cont-money"
+    },
+    {
+      "screen": "x-import",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-cont-money"
+    },
+    {
+      "screen": "x-daily",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-cont-money"
+    },
+    {
+      "screen": "x-app",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-cont-money"
+    },
+    {
+      "screen": "x-priv",
+      "result": "NO_VISIBLE_NAV_CONTROL",
+      "active": "sec-cont-money"
+    }
+  ],
+  "actions": [
+    {
+      "screen": "invoice-create",
+      "index": 1,
+      "tag": "button",
+      "text": "إلغاء",
+      "onclick": "showSection('invoices')",
+      "displayed": true,
+      "disabled": false,
+      "result": "CLICKED_IN_ISOLATED_REFERENCE",
+      "before": "sec-invoice-create",
+      "after": {
+        "active": "sec-invoices",
+        "openModals": []
+      }
+    },
+    {
+      "screen": "invoice-create",
+      "index": 19,
+      "tag": "button",
+      "text": "كل المرتجعات",
+      "onclick": "showSection('returns')",
+      "displayed": true,
+      "disabled": false,
+      "result": "CLICK_FAILED",
+      "note": "TimeoutError: locator.click: Timeout 1500ms exceeded."
+    },
+    {
+      "screen": "products",
+      "index": 1,
+      "tag": "button",
+      "text": "+ إضافة منتج",
+      "onclick": "openModal('modal-add-product')",
+      "displayed": true,
+      "disabled": false,
+      "result": "CLICKED_IN_ISOLATED_REFERENCE",
+      "before": "sec-products",
+      "after": {
+        "active": "sec-products",
+        "openModals": [
+          ""
+        ]
+      }
+    },
+    {
+      "screen": "products",
+      "element": "+ إضافة منتج",
+      "action": "Escape dismissal",
+      "result": "DISMISSED"
+    },
+    {
+      "screen": "warehouses",
+      "index": 0,
+      "tag": "button",
+      "text": "+ إضافة مستودع",
+      "onclick": "openModal('modal-add-warehouse')",
+      "displayed": true,
+      "disabled": false,
+      "result": "CLICKED_IN_ISOLATED_REFERENCE",
+      "before": "sec-warehouses",
+      "after": {
+        "active": "sec-warehouses",
+        "openModals": [
+          ""
+        ]
+      }
+    },
+    {
+      "screen": "warehouses",
+      "element": "+ إضافة مستودع",
+      "action": "Escape dismissal",
+      "result": "DISMISSED"
+    },
+    {
+      "screen": "global shell",
+      "element": "global search",
+      "result": "CLICK_OPENED"
+    },
+    {
+      "screen": "global shell",
+      "element": "global search",
+      "action": "Escape dismissal",
+      "result": "NOT_DISMISSED"
+    },
+    {
+      "screen": "global shell",
+      "element": "notifications",
+      "result": "CLICK_OPENED"
+    }
+  ],
+  "skipped": [
+    {
+      "screen": "invoices",
+      "index": 0,
+      "tag": "button",
+      "text": "معاينة طباعة",
+      "onclick": "printLast()",
+      "displayed": true,
+      "disabled": false,
+      "reason": "could mutate local fixture or trigger an external side effect"
+    },
+    {
+      "screen": "invoices",
+      "index": 1,
+      "tag": "button",
+      "text": "تصدير",
+      "onclick": "printLast()",
+      "displayed": true,
+      "disabled": false,
+      "reason": "could mutate local fixture or trigger an external side effect"
+    },
+    {
+      "screen": "invoices",
+      "index": 2,
+      "tag": "button",
+      "text": "+ إنشاء فاتورة",
+      "onclick": "showSection('invoice-create')",
+      "displayed": true,
+      "disabled": false,
+      "reason": "could mutate local fixture or trigger an external side effect"
+    },
+    {
+      "screen": "invoices",
+      "index": 3,
+      "tag": "button",
+      "text": "🖨️ طباعة",
+      "onclick": "bulkAction('print')",
+      "displayed": false,
+      "disabled": false,
+      "reason": "not visible"
+    },
+    {
+      "screen": "invoices",
+      "index": 4,
+      "tag": "button",
+      "text": "PDF",
+      "onclick": "bulkAction('pdf')",
+      "displayed": false,
+      "disabled": false,
+      "reason": "not visible"
+    },
+    {
+      "screen": "invoices",
+      "index": 5,
+      "tag": "button",
+      "text": "📱 إرسال واتساب",
+      "onclick": "bulkAction('whatsapp')",
+      "displayed": false,
+      "disabled": false,
+      "reason": "not visible"
+    },
+    {
+      "screen": "invoices",
+      "index": 6,
+      "tag": "button",
+      "text": "🖨",
+      "onclick": "printInvoice('RET-2026-001')",
+      "displayed": true,
+      "disabled": false,
+      "reason": "could mutate local fixture or trigger an external side effect"
+    },
+    {
+      "screen": "invoices",
+      "index": 7,
+      "tag": "button",
+      "text": "🖨",
+      "onclick": "printInvoice('INV-2026-1042')",
+      "displayed": true,
+      "disabled": false,
+      "reason": "could mutate local fixture or trigger an external side effect"
+    },
+    {
+      "screen": "invoices",
+      "index": 8,
+      "tag": "button",
+      "text": "🖨",
+      "onclick": "printInvoice('INV-2026-1041')",
+      "displayed": true,
+      "disabled": false,
+      "reason": "could mutate local fixture or trigger an external side effect"
+    },
+    {
+      "screen": "invoices",
+      "index": 9,
+      "tag": "button",
+      "text": "🖨",
+      "onclick": "printInvoice('INV-2026-1040')",
+      "displayed": true,
+      "disabled": false,
+      "reason": "could mutate local fixture or trigger an external side effect"
+    },
+    {
+      "screen": "invoices",
+      "index": 10,
+      "tag": "button",
+      "text": "🖨",
+      "onclick": "printInvoice('INV-2026-1039')",
+      "displayed": true,
+      "disabled": false,
+      "reason": "could mutate local fixture or trigger an external side effect"
+    },
+    {
+      "screen": "invoice-create",
+      "index": 0,
+      "tag": "button",
+      "text": "↩ إنشاء مرتجع",
+      "onclick": "xRet()",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "invoice-create",
+      "index": 2,
+      "tag": "button",
+      "text": "👁 معاينة الفاتورة",
+      "onclick": "previewDraft()",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "invoice-create",
+      "index": 3,
+      "tag": "button",
+      "text": "حفظ كمسودة",
+      "onclick": "showToast('success','تم حفظ الفاتورة كمسودة')",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "invoice-create",
+      "index": 4,
+      "tag": "button",
+      "text": "إصدار الفاتورة Ctrl+↵",
+      "onclick": "confirmNewInvoice()",
+      "displayed": true,
+      "disabled": false,
+      "reason": "could mutate local fixture or trigger an external side effect"
+    },
+    {
+      "screen": "invoice-create",
+      "index": 5,
+      "tag": "button",
+      "text": "↩️ مرتجعات",
+      "onclick": "newReturn()",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "invoice-create",
+      "index": 6,
+      "tag": "button",
+      "text": "واتساب",
+      "onclick": "var w=byId('inv-wa-who').value;w?waOpen(w):showToast('error','اختر الشخص أولًا')",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "invoice-create",
+      "index": 7,
+      "tag": "button",
+      "text": "＋ عميل جديد (بيانات كاملة: بريد، ميلاد، عنوان...)",
+      "onclick": "openNewCustomer(function(id){refreshCustomerSelects();quickPickCustomer(id,CUSTOMER_LOOKUP[id].name)})",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "invoice-create",
+      "index": 8,
+      "tag": "button",
+      "text": "+ عميل جديد",
+      "onclick": "var b=byId('inv-newcust');b.style.display=b.style.display==='none'?'':'none';if(b.style.display===''){byId('qc-gov').innerHTML='<option value=\"\">— المحافظة —</option>'+__T.GOVS.filter(function(x){return __T.GOVOFF.indexOf(x)<0}).map(function(x){return'<option>'+esc(x)+'</option>'}).join('')}",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "invoice-create",
+      "index": 9,
+      "tag": "button",
+      "text": "شركة النور لاستيراد السيارات",
+      "onclick": "quickPickCustomer('c101',this.textContent)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "invoice-create",
+      "index": 10,
+      "tag": "button",
+      "text": "مؤسسة الأمل للتجارة",
+      "onclick": "quickPickCustomer('c102',this.textContent)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "invoice-create",
+      "index": 11,
+      "tag": "button",
+      "text": "معرض السلام للسيارات",
+      "onclick": "quickPickCustomer('c103',this.textContent)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "invoice-create",
+      "index": 12,
+      "tag": "button",
+      "text": "＋ إضافة عميل",
+      "onclick": "openNewCustomer(id=>{refreshCustomerSelects();quickPickCustomer(id,CUSTOMER_LOOKUP[id].name)})",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "invoice-create",
+      "index": 13,
+      "tag": "button",
+      "text": "حفظ العميل",
+      "onclick": "quickAddCust()",
+      "displayed": false,
+      "disabled": false,
+      "reason": "not visible"
+    },
+    {
+      "screen": "invoice-create",
+      "index": 14,
+      "tag": "button",
+      "text": "📋 نسخ من فاتورة سابقة لنفس العميل",
+      "onclick": "copyFromPreviousInvoice()",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "invoice-create",
+      "index": 15,
+      "tag": "button",
+      "text": "+ إضافة صنف",
+      "onclick": "addInvoiceRow()",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "invoice-create",
+      "index": 16,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "this.closest('tr').remove();recalcInvoice()",
+      "displayed": true,
+      "disabled": false,
+      "reason": "could mutate local fixture or trigger an external side effect"
+    },
+    {
+      "screen": "invoice-create",
+      "index": 17,
+      "tag": "button",
+      "text": "حفظ الفاتورة وتسجيل التحصيل",
+      "onclick": "confirmNewInvoice()",
+      "displayed": true,
+      "disabled": false,
+      "reason": "could mutate local fixture or trigger an external side effect"
+    },
+    {
+      "screen": "invoice-create",
+      "index": 18,
+      "tag": "button",
+      "text": "بحث",
+      "onclick": "xRetFind()",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "returns",
+      "index": 0,
+      "tag": "button",
+      "text": "+ مرتجع جديد",
+      "onclick": "newReturn()",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "products",
+      "index": 0,
+      "tag": "button",
+      "text": "تصدير",
+      "onclick": "exportTableCSV(this)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "could mutate local fixture or trigger an external side effect"
+    },
+    {
+      "screen": "products",
+      "index": 2,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "delProduct(this.dataset.n)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "products",
+      "index": 3,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "delProduct(this.dataset.n)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "products",
+      "index": 4,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "delProduct(this.dataset.n)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "inventory-summary",
+      "index": 0,
+      "tag": "button",
+      "text": "تصدير",
+      "onclick": "exportTableCSV(this)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "could mutate local fixture or trigger an external side effect"
+    },
+    {
+      "screen": "inventory-summary",
+      "index": 1,
+      "tag": "button",
+      "text": "+ تسوية مخزون",
+      "onclick": "openModal('modal-confirm')",
+      "displayed": true,
+      "disabled": false,
+      "reason": "could mutate local fixture or trigger an external side effect"
+    },
+    {
+      "screen": "movements",
+      "index": 0,
+      "tag": "button",
+      "text": "تصدير",
+      "onclick": "exportTableCSV(this)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "could mutate local fixture or trigger an external side effect"
+    },
+    {
+      "screen": "movements",
+      "index": 1,
+      "tag": "a",
+      "text": "#RET-2026-001 ← INV-2026-1042",
+      "onclick": "openMoveRef(this.dataset.ref);return false",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "movements",
+      "index": 2,
+      "tag": "a",
+      "text": "#INV-2026-1042",
+      "onclick": "openMoveRef(this.dataset.ref);return false",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "movements",
+      "index": 3,
+      "tag": "a",
+      "text": "#INV-2026-1042",
+      "onclick": "openMoveRef(this.dataset.ref);return false",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "movements",
+      "index": 4,
+      "tag": "a",
+      "text": "#TRF-0002 ← من المخزن الفرعي",
+      "onclick": "openMoveRef(this.dataset.ref);return false",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "movements",
+      "index": 5,
+      "tag": "a",
+      "text": "#TRF-0002 ← إلى السيارة",
+      "onclick": "openMoveRef(this.dataset.ref);return false",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "movements",
+      "index": 6,
+      "tag": "a",
+      "text": "#TRF-0001 ← من المستودع الرئيسي - الرياض",
+      "onclick": "openMoveRef(this.dataset.ref);return false",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "movements",
+      "index": 7,
+      "tag": "a",
+      "text": "#TRF-0001 ← إلى المخزن الفرعي",
+      "onclick": "openMoveRef(this.dataset.ref);return false",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "movements",
+      "index": 8,
+      "tag": "a",
+      "text": "#INV-2026-1041",
+      "onclick": "openMoveRef(this.dataset.ref);return false",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "movements",
+      "index": 9,
+      "tag": "a",
+      "text": "#INV-2026-1040",
+      "onclick": "openMoveRef(this.dataset.ref);return false",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "movements",
+      "index": 10,
+      "tag": "a",
+      "text": "#CONT-2026-016",
+      "onclick": "openMoveRef(this.dataset.ref);return false",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "containers",
+      "index": 0,
+      "tag": "button",
+      "text": "+ إضافة حاوية",
+      "onclick": "ctNew()",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "containers",
+      "index": 1,
+      "tag": "button",
+      "text": "فتح",
+      "onclick": "ctOpen(this.dataset.no)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 0,
+      "tag": "button",
+      "text": "إضافة",
+      "onclick": "govAdd()",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 1,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(0)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 2,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(0)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 3,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(0)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 4,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(1)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 5,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(1)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 6,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(1)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 7,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(2)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 8,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(2)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 9,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(2)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 10,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(3)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 11,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(3)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 12,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(3)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 13,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(4)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 14,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(4)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 15,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(4)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 16,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(5)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 17,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(5)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 18,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(5)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 19,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(6)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 20,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(6)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 21,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(6)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 22,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(7)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 23,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(7)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 24,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(7)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 25,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(8)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 26,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(8)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 27,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(8)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 28,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(9)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 29,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(9)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 30,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(9)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 31,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(10)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 32,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(10)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 33,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(10)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 34,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(11)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 35,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(11)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 36,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(11)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 37,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(12)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 38,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(12)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 39,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(12)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 40,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(13)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 41,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(13)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 42,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(13)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 43,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(14)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 44,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(14)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 45,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(14)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 46,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(15)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 47,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(15)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 48,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(15)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 49,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(16)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 50,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(16)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 51,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(16)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 52,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(17)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 53,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(17)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 54,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(17)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 55,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(18)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 56,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(18)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 57,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(18)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 58,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(19)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 59,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(19)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 60,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(19)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 61,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(20)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 62,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(20)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 63,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(20)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 64,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(21)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 65,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(21)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 66,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(21)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 67,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(22)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 68,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(22)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 69,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(22)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 70,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(23)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 71,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(23)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 72,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(23)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 73,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(24)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 74,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(24)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 75,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(24)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 76,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(25)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 77,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(25)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 78,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(25)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 79,
+      "tag": "button",
+      "text": "✏️",
+      "onclick": "govEdit(26)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 80,
+      "tag": "button",
+      "text": "⏯",
+      "onclick": "govTog(26)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "govs",
+      "index": 81,
+      "tag": "button",
+      "text": "🗑",
+      "onclick": "govDel(26)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "stock-add",
+      "index": 0,
+      "tag": "button",
+      "text": "إضافة",
+      "onclick": "stockAdd()",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "wh-returns",
+      "index": 0,
+      "tag": "button",
+      "text": "اعتماد",
+      "onclick": "wrDo(0,this)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "wh-returns",
+      "index": 1,
+      "tag": "button",
+      "text": "اعتماد",
+      "onclick": "wrDo(1,this)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "wh-returns",
+      "index": 2,
+      "tag": "button",
+      "text": "اعتماد",
+      "onclick": "wrDo(2,this)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "wh-returns",
+      "index": 3,
+      "tag": "button",
+      "text": "اعتماد",
+      "onclick": "wrDo(3,this)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "wh-returns",
+      "index": 4,
+      "tag": "button",
+      "text": "اعتماد",
+      "onclick": "wrDo(4,this)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "wh-returns",
+      "index": 5,
+      "tag": "button",
+      "text": "اعتماد",
+      "onclick": "wrDo(5,this)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "wh-returns",
+      "index": 6,
+      "tag": "button",
+      "text": "اعتماد",
+      "onclick": "wrDo(6,this)",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    },
+    {
+      "screen": "cont-money",
+      "index": 0,
+      "tag": "button",
+      "text": "تسجيل الحركة",
+      "onclick": "cmAdd()",
+      "displayed": true,
+      "disabled": false,
+      "reason": "handler not verified safe for activation"
+    }
+  ],
+  "panelSummary": {
+    "discovered": 67,
+    "clickedAndActivated": 13,
+    "noNavigationControl": 43,
+    "clickUnverified": 11
+  },
+  "actionSummary": {
+    "clicked": 3,
+    "escapeChecks": 3,
+    "skipped": 140
+  }
+}

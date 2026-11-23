@@ -1,0 +1,65 @@
+{
+  "environment": "isolated React Vite/MSW; synthetic owner demo; actual mobile menu and navigation clicks; placeholder dialogs only; Escape closed dialogs; no API/database writes",
+  "results": [
+    {
+      "viewport": "1280",
+      "slug": "excel-import",
+      "label": "استيراد جدول بيانات",
+      "clicked": true,
+      "status": "LOCKED_PLACEHOLDER_DIALOG_OPENED",
+      "dialogText": "استيراد جدول بيانات\n×\nواجهة تجريبية محلية\nالخدمة قيد التجهيز — البيانات المعروضة تجريبية ولا يوجد اتصال بالخادم.\nالحالةجاهز للعرض\nمصدر البياناتبيانات تجريبية محلية\nالسجلات0\nالبند\tالحالة\tملاحظات\nلا توجد بيانات محلية لهذا البند حالياً",
+      "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round6/locked-excel-import-1280.png",
+      "dismissedByEscape": true
+    },
+    {
+      "viewport": "1280",
+      "slug": "daily-summary",
+      "label": "الملخص اليومي",
+      "clicked": true,
+      "status": "LOCKED_PLACEHOLDER_DIALOG_OPENED",
+      "dialogText": "الملخص اليومي\n×\nواجهة تجريبية محلية\nالخدمة قيد التجهيز — البيانات المعروضة تجريبية ولا يوجد اتصال بالخادم.\nالحالةجاهز للعرض\nمصدر البياناتبيانات تجريبية محلية\nالسجلات0\nالبند\tالحالة\tملاحظات\nلا توجد بيانات محلية لهذا البند حالياً",
+      "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round6/locked-daily-summary-1280.png",
+      "dismissedByEscape": true
+    },
+    {
+      "viewport": "768",
+      "slug": "excel-import",
+      "label": "استيراد جدول بيانات",
+      "clicked": true,
+      "status": "LOCKED_PLACEHOLDER_DIALOG_OPENED",
+      "dialogText": "استيراد جدول بيانات\n×\nواجهة تجريبية محلية\nالخدمة قيد التجهيز — البيانات المعروضة تجريبية ولا يوجد اتصال بالخادم.\nالحالةجاهز للعرض\nمصدر البياناتبيانات تجريبية محلية\nالسجلات0\nالبند\tالحالة\tملاحظات\nلا توجد بيانات محلية لهذا البند حالياً",
+      "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round6/locked-excel-import-768.png",
+      "dismissedByEscape": true
+    },
+    {
+      "viewport": "768",
+      "slug": "daily-summary",
+      "label": "الملخص اليومي",
+      "clicked": true,
+      "status": "LOCKED_PLACEHOLDER_DIALOG_OPENED",
+      "dialogText": "الملخص اليومي\n×\nواجهة تجريبية محلية\nالخدمة قيد التجهيز — البيانات المعروضة تجريبية ولا يوجد اتصال بالخادم.\nالحالةجاهز للعرض\nمصدر البياناتبيانات تجريبية محلية\nالسجلات0\nالبند\tالحالة\tملاحظات\nلا توجد بيانات محلية لهذا البند حالياً",
+      "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round6/locked-daily-summary-768.png",
+      "dismissedByEscape": true
+    },
+    {
+      "viewport": "390",
+      "slug": "excel-import",
+      "label": "استيراد جدول بيانات",
+      "clicked": true,
+      "status": "LOCKED_PLACEHOLDER_DIALOG_OPENED",
+      "dialogText": "استيراد جدول بيانات\n×\nواجهة تجريبية محلية\nالخدمة قيد التجهيز — البيانات المعروضة تجريبية ولا يوجد اتصال بالخادم.\nالحالةجاهز للعرض\nمصدر البياناتبيانات تجريبية محلية\nالسجلات0\nالبند\tالحالة\tملاحظات\nلا توجد بيانات محلية لهذا البند حالياً",
+      "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round6/locked-excel-import-390.png",
+      "dismissedByEscape": true
+    },
+    {
+      "viewport": "390",
+      "slug": "daily-summary",
+      "label": "الملخص اليومي",
+      "clicked": true,
+      "status": "LOCKED_PLACEHOLDER_DIALOG_OPENED",
+      "dialogText": "الملخص اليومي\n×\nواجهة تجريبية محلية\nالخدمة قيد التجهيز — البيانات المعروضة تجريبية ولا يوجد اتصال بالخادم.\nالحالةجاهز للعرض\nمصدر البياناتبيانات تجريبية محلية\nالسجلات0\nالبند\tالحالة\tملاحظات\nلا توجد بيانات محلية لهذا البند حالياً",
+      "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round6/locked-daily-summary-390.png",
+      "dismissedByEscape": true
+    }
+  ]
+}

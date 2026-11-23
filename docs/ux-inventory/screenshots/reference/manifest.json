@@ -1,0 +1,1807 @@
+{
+  "reference": "reference\\precision-slate-erp-v43__3_ (1).html",
+  "mode": "fixture-loaded render capture; login screen hidden without submitting credentials",
+  "demoData": "Seeded with reference\\reference-fixture.json before reference scripts execute.",
+  "capturedAt": "2026-10-29T16:39:17.192Z",
+  "viewports": [
+    {
+      "name": "1280",
+      "width": 1280,
+      "height": 900
+    },
+    {
+      "name": "768",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "name": "390",
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "screens": [
+    {
+      "id": "dashboard",
+      "title": "لوحة التحكم",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\dashboard-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "customers",
+      "title": "العملاء",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\customers-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "orders",
+      "title": "الطلبات",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\orders-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "order-create",
+      "title": "إنشاء طلب مبيعات جديد",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\order-create-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "order-detail",
+      "title": "طلب مؤكد ومعتمد #ORD-2024-001",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\order-detail-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "invoices",
+      "title": "الفواتير",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\invoices-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "invoice-create",
+      "title": "إنشاء فاتورة مبيعات جديدة",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\invoice-create-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "invoice-print",
+      "title": "معاينة الطباعة",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\invoice-print-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "collections",
+      "title": "لوحة التحصيل",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\collections-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "deliveries",
+      "title": "أذونات صرف المواد والتسليم",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\deliveries-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "delivery-create",
+      "title": "إنشاء إذن صرف وتوصيل جديد",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\delivery-create-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "returns",
+      "title": "المرتجعات",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\returns-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "return-create",
+      "title": "إنشاء مرتجع مبيعات جديد",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\return-create-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "products",
+      "title": "المنتجات والأصناف",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\products-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "inventory-summary",
+      "title": "ملخص المخزون",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\inventory-summary-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "movements",
+      "title": "حركات المخزون",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\movements-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "finance",
+      "title": "المالية",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\finance-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "containers",
+      "title": "الحاويات",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\containers-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports",
+      "title": "مركز التقارير والذكاء التجاري",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\reports-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-sales",
+      "title": "تقرير المبيعات",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\reports-sales-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-profit",
+      "title": "تقرير الأرباح والخسائر",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\reports-profit-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "users",
+      "title": "المستخدم والصلاحيات",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\users-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "warehouses",
+      "title": "المخازن",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\warehouses-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-inventory",
+      "title": "تقرير المخزون",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\reports-inventory-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-financial",
+      "title": "التقارير المالية",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\reports-financial-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "govs",
+      "title": "المحافظات",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\govs-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "stock-add",
+      "title": "إضافة إلى المخزون",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\stock-add-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "stock-ret",
+      "title": "المخزون المرتجع",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\stock-ret-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "trash",
+      "title": "سلة المحذوفات",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\trash-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "cust-file",
+      "title": "sec-cust-file",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\cust-file-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "inv-detail",
+      "title": "sec-inv-detail",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\inv-detail-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "drivers",
+      "title": "سائق شركة الشحن",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\drivers-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "log",
+      "title": "سجل العمليات",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\log-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "fin-overview",
+      "title": "نظرة عامة مالية",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\fin-overview-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-receipts",
+      "title": "sec-f-receipts",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-receipts-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-otherinc",
+      "title": "sec-f-otherinc",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-otherinc-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-payments",
+      "title": "sec-f-payments",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-payments-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-expenses",
+      "title": "sec-f-expenses",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-expenses-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-transfers",
+      "title": "sec-f-transfers",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-transfers-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-treasury",
+      "title": "sec-f-treasury",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-treasury-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-custbal",
+      "title": "sec-f-custbal",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-custbal-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-supbal",
+      "title": "sec-f-supbal",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-supbal-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-finret",
+      "title": "sec-f-finret",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-finret-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-coa",
+      "title": "sec-f-coa",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-coa-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-journal",
+      "title": "sec-f-journal",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-journal-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-ledger",
+      "title": "sec-f-ledger",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-ledger-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-trial",
+      "title": "sec-f-trial",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-trial-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-reports",
+      "title": "sec-f-reports",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-reports-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-stmt",
+      "title": "sec-f-stmt",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-stmt-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "transfers",
+      "title": "نقل الحاويات بين المواقع",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\transfers-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "wh-returns",
+      "title": "مرتجع المخازن",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\wh-returns-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "cont-money",
+      "title": "أموال الحاويات",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\cont-money-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "move-detail",
+      "title": "sec-move-detail",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\move-detail-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "fin2",
+      "title": "المالية",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\fin2-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-budget",
+      "title": "ميزانية المصروفات",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-budget-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-recur",
+      "title": "مصروفات متكررة",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-recur-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-compare",
+      "title": "مقارنة شهر بشهر",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-compare-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-cash",
+      "title": "توقع السيولة",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-cash-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-track",
+      "title": "تتبع الحاويات",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-track-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-low",
+      "title": "حد أدنى للمخزون",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-low-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-count",
+      "title": "الجرد الدوري",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-count-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-bar",
+      "title": "باركود الأصناف",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-bar-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-price",
+      "title": "سجل أسعار الشراء",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-price-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-import",
+      "title": "استيراد من إكسل",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-import-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-daily",
+      "title": "الملخص اليومي",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-daily-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-app",
+      "title": "تثبيت كتطبيق",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-app-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-priv",
+      "title": "ملاحظاتي",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-priv-1280.png",
+      "sectionFound": true
+    },
+    {
+      "id": "dashboard",
+      "title": "لوحة التحكم",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\dashboard-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "customers",
+      "title": "العملاء",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\customers-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "orders",
+      "title": "الطلبات",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\orders-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "order-create",
+      "title": "إنشاء طلب مبيعات جديد",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\order-create-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "order-detail",
+      "title": "طلب مؤكد ومعتمد #ORD-2024-001",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\order-detail-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "invoices",
+      "title": "الفواتير",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\invoices-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "invoice-create",
+      "title": "إنشاء فاتورة مبيعات جديدة",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\invoice-create-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "invoice-print",
+      "title": "معاينة الطباعة",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\invoice-print-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "collections",
+      "title": "لوحة التحصيل",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\collections-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "deliveries",
+      "title": "أذونات صرف المواد والتسليم",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\deliveries-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "delivery-create",
+      "title": "إنشاء إذن صرف وتوصيل جديد",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\delivery-create-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "returns",
+      "title": "المرتجعات",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\returns-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "return-create",
+      "title": "إنشاء مرتجع مبيعات جديد",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\return-create-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "products",
+      "title": "المنتجات والأصناف",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\products-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "inventory-summary",
+      "title": "ملخص المخزون",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\inventory-summary-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "movements",
+      "title": "حركات المخزون",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\movements-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "finance",
+      "title": "المالية",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\finance-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "containers",
+      "title": "الحاويات",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\containers-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports",
+      "title": "مركز التقارير والذكاء التجاري",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\reports-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-sales",
+      "title": "تقرير المبيعات",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\reports-sales-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-profit",
+      "title": "تقرير الأرباح والخسائر",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\reports-profit-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "users",
+      "title": "المستخدم والصلاحيات",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\users-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "warehouses",
+      "title": "المخازن",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\warehouses-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-inventory",
+      "title": "تقرير المخزون",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\reports-inventory-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-financial",
+      "title": "التقارير المالية",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\reports-financial-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "govs",
+      "title": "المحافظات",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\govs-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "stock-add",
+      "title": "إضافة إلى المخزون",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\stock-add-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "stock-ret",
+      "title": "المخزون المرتجع",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\stock-ret-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "trash",
+      "title": "سلة المحذوفات",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\trash-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "cust-file",
+      "title": "sec-cust-file",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\cust-file-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "inv-detail",
+      "title": "sec-inv-detail",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\inv-detail-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "drivers",
+      "title": "سائق شركة الشحن",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\drivers-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "log",
+      "title": "سجل العمليات",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\log-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "fin-overview",
+      "title": "نظرة عامة مالية",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\fin-overview-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-receipts",
+      "title": "sec-f-receipts",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-receipts-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-otherinc",
+      "title": "sec-f-otherinc",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-otherinc-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-payments",
+      "title": "sec-f-payments",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-payments-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-expenses",
+      "title": "sec-f-expenses",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-expenses-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-transfers",
+      "title": "sec-f-transfers",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-transfers-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-treasury",
+      "title": "sec-f-treasury",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-treasury-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-custbal",
+      "title": "sec-f-custbal",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-custbal-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-supbal",
+      "title": "sec-f-supbal",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-supbal-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-finret",
+      "title": "sec-f-finret",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-finret-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-coa",
+      "title": "sec-f-coa",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-coa-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-journal",
+      "title": "sec-f-journal",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-journal-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-ledger",
+      "title": "sec-f-ledger",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-ledger-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-trial",
+      "title": "sec-f-trial",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-trial-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-reports",
+      "title": "sec-f-reports",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-reports-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-stmt",
+      "title": "sec-f-stmt",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-stmt-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "transfers",
+      "title": "نقل الحاويات بين المواقع",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\transfers-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "wh-returns",
+      "title": "مرتجع المخازن",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\wh-returns-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "cont-money",
+      "title": "أموال الحاويات",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\cont-money-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "move-detail",
+      "title": "sec-move-detail",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\move-detail-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "fin2",
+      "title": "المالية",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\fin2-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-budget",
+      "title": "ميزانية المصروفات",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-budget-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-recur",
+      "title": "مصروفات متكررة",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-recur-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-compare",
+      "title": "مقارنة شهر بشهر",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-compare-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-cash",
+      "title": "توقع السيولة",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-cash-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-track",
+      "title": "تتبع الحاويات",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-track-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-low",
+      "title": "حد أدنى للمخزون",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-low-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-count",
+      "title": "الجرد الدوري",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-count-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-bar",
+      "title": "باركود الأصناف",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-bar-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-price",
+      "title": "سجل أسعار الشراء",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-price-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-import",
+      "title": "استيراد من إكسل",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-import-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-daily",
+      "title": "الملخص اليومي",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-daily-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-app",
+      "title": "تثبيت كتطبيق",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-app-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-priv",
+      "title": "ملاحظاتي",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-priv-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "dashboard",
+      "title": "لوحة التحكم",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\dashboard-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "customers",
+      "title": "العملاء",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\customers-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "orders",
+      "title": "الطلبات",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\orders-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "order-create",
+      "title": "إنشاء طلب مبيعات جديد",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\order-create-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "order-detail",
+      "title": "طلب مؤكد ومعتمد #ORD-2024-001",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\order-detail-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "invoices",
+      "title": "الفواتير",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\invoices-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "invoice-create",
+      "title": "إنشاء فاتورة مبيعات جديدة",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\invoice-create-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "invoice-print",
+      "title": "معاينة الطباعة",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\invoice-print-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "collections",
+      "title": "لوحة التحصيل",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\collections-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "deliveries",
+      "title": "أذونات صرف المواد والتسليم",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\deliveries-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "delivery-create",
+      "title": "إنشاء إذن صرف وتوصيل جديد",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\delivery-create-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "returns",
+      "title": "المرتجعات",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\returns-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "return-create",
+      "title": "إنشاء مرتجع مبيعات جديد",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\return-create-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "products",
+      "title": "المنتجات والأصناف",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\products-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "inventory-summary",
+      "title": "ملخص المخزون",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\inventory-summary-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "movements",
+      "title": "حركات المخزون",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\movements-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "finance",
+      "title": "المالية",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\finance-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "containers",
+      "title": "الحاويات",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\containers-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports",
+      "title": "مركز التقارير والذكاء التجاري",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\reports-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-sales",
+      "title": "تقرير المبيعات",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\reports-sales-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-profit",
+      "title": "تقرير الأرباح والخسائر",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\reports-profit-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "users",
+      "title": "المستخدم والصلاحيات",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\users-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "warehouses",
+      "title": "المخازن",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\warehouses-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-inventory",
+      "title": "تقرير المخزون",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\reports-inventory-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-financial",
+      "title": "التقارير المالية",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\reports-financial-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "govs",
+      "title": "المحافظات",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\govs-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "stock-add",
+      "title": "إضافة إلى المخزون",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\stock-add-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "stock-ret",
+      "title": "المخزون المرتجع",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\stock-ret-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "trash",
+      "title": "سلة المحذوفات",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\trash-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "cust-file",
+      "title": "sec-cust-file",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\cust-file-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "inv-detail",
+      "title": "sec-inv-detail",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\inv-detail-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "drivers",
+      "title": "سائق شركة الشحن",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\drivers-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "log",
+      "title": "سجل العمليات",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\log-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "fin-overview",
+      "title": "نظرة عامة مالية",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\fin-overview-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-receipts",
+      "title": "sec-f-receipts",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-receipts-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-otherinc",
+      "title": "sec-f-otherinc",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-otherinc-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-payments",
+      "title": "sec-f-payments",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-payments-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-expenses",
+      "title": "sec-f-expenses",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-expenses-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-transfers",
+      "title": "sec-f-transfers",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-transfers-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-treasury",
+      "title": "sec-f-treasury",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-treasury-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-custbal",
+      "title": "sec-f-custbal",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-custbal-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-supbal",
+      "title": "sec-f-supbal",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-supbal-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-finret",
+      "title": "sec-f-finret",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-finret-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-coa",
+      "title": "sec-f-coa",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-coa-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-journal",
+      "title": "sec-f-journal",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-journal-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-ledger",
+      "title": "sec-f-ledger",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-ledger-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-trial",
+      "title": "sec-f-trial",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-trial-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-reports",
+      "title": "sec-f-reports",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-reports-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "f-stmt",
+      "title": "sec-f-stmt",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\f-stmt-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "transfers",
+      "title": "نقل الحاويات بين المواقع",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\transfers-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "wh-returns",
+      "title": "مرتجع المخازن",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\wh-returns-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "cont-money",
+      "title": "أموال الحاويات",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\cont-money-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "move-detail",
+      "title": "sec-move-detail",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\move-detail-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "fin2",
+      "title": "المالية",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\fin2-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-budget",
+      "title": "ميزانية المصروفات",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-budget-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-recur",
+      "title": "مصروفات متكررة",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-recur-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-compare",
+      "title": "مقارنة شهر بشهر",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-compare-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-cash",
+      "title": "توقع السيولة",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-cash-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-track",
+      "title": "تتبع الحاويات",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-track-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-low",
+      "title": "حد أدنى للمخزون",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-low-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-count",
+      "title": "الجرد الدوري",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-count-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-bar",
+      "title": "باركود الأصناف",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-bar-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-price",
+      "title": "سجل أسعار الشراء",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-price-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-import",
+      "title": "استيراد من إكسل",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-import-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-daily",
+      "title": "الملخص اليومي",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-daily-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-app",
+      "title": "تثبيت كتطبيق",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-app-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "x-priv",
+      "title": "ملاحظاتي",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\screens\\x-priv-390.png",
+      "sectionFound": true
+    }
+  ],
+  "states": [
+    {
+      "screen": "customers",
+      "name": "customer-modal",
+      "modal": "modal-add-customer",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\customers-customer-modal-1280.png",
+      "result": "captured"
+    },
+    {
+      "screen": "customers",
+      "name": "customer-financial-tab",
+      "tab": "البيانات المالية",
+      "tabRoot": "#cust-modal-tabs",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\customers-customer-financial-tab-1280.png",
+      "result": "captured"
+    },
+    {
+      "screen": "customers",
+      "name": "customer-attachments-tab",
+      "tab": "المرفقات",
+      "tabRoot": "#cust-modal-tabs",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\customers-customer-attachments-tab-1280.png",
+      "result": "captured"
+    },
+    {
+      "screen": "collections",
+      "name": "collection-modal",
+      "modal": "modal-payment",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\collections-collection-modal-1280.png",
+      "result": "captured"
+    },
+    {
+      "screen": "finance",
+      "name": "expense-modal",
+      "modal": "modal-expense",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\finance-expense-modal-1280.png",
+      "result": "captured"
+    },
+    {
+      "screen": "products",
+      "name": "product-modal",
+      "modal": "modal-add-product",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\products-product-modal-1280.png",
+      "result": "captured"
+    },
+    {
+      "screen": "users",
+      "name": "security-tab",
+      "tab": "إعدادات الأمان",
+      "tabRoot": "#users-tabs",
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\users-security-tab-1280.png",
+      "result": "captured"
+    },
+    {
+      "screen": "settings",
+      "name": "billing-tab",
+      "tab": "الفوترة والترقيم",
+      "tabRoot": "#settings-tabs",
+      "viewport": "1280",
+      "file": null,
+      "result": "screen-missing",
+      "status": "NO BASELINE"
+    },
+    {
+      "screen": "order-create",
+      "name": "order-filled-form",
+      "fill": true,
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\order-create-order-filled-form-1280.png",
+      "result": "captured"
+    },
+    {
+      "screen": "invoice-create",
+      "name": "invoice-filled-form",
+      "fill": true,
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\invoice-create-invoice-filled-form-1280.png",
+      "result": "captured"
+    },
+    {
+      "screen": "delivery-create",
+      "name": "delivery-filled-form",
+      "fill": true,
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\delivery-create-delivery-filled-form-1280.png",
+      "result": "captured"
+    },
+    {
+      "screen": "return-create",
+      "name": "return-filled-form",
+      "fill": true,
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\return-create-return-filled-form-1280.png",
+      "result": "captured"
+    },
+    {
+      "screen": "adjustments",
+      "name": "adjustment-filled-form",
+      "fill": true,
+      "viewport": "1280",
+      "file": null,
+      "result": "screen-missing",
+      "status": "NO BASELINE"
+    },
+    {
+      "screen": "dashboard",
+      "name": "global-search",
+      "search": true,
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\dashboard-global-search-1280.png",
+      "result": "captured"
+    },
+    {
+      "screen": "customers",
+      "name": "customer-modal",
+      "modal": "modal-add-customer",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\customers-customer-modal-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "customers",
+      "name": "customer-financial-tab",
+      "tab": "البيانات المالية",
+      "tabRoot": "#cust-modal-tabs",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\customers-customer-financial-tab-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "customers",
+      "name": "customer-attachments-tab",
+      "tab": "المرفقات",
+      "tabRoot": "#cust-modal-tabs",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\customers-customer-attachments-tab-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "collections",
+      "name": "collection-modal",
+      "modal": "modal-payment",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\collections-collection-modal-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "finance",
+      "name": "expense-modal",
+      "modal": "modal-expense",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\finance-expense-modal-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "products",
+      "name": "product-modal",
+      "modal": "modal-add-product",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\products-product-modal-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "users",
+      "name": "security-tab",
+      "tab": "إعدادات الأمان",
+      "tabRoot": "#users-tabs",
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\users-security-tab-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "settings",
+      "name": "billing-tab",
+      "tab": "الفوترة والترقيم",
+      "tabRoot": "#settings-tabs",
+      "viewport": "768",
+      "file": null,
+      "result": "screen-missing",
+      "status": "NO BASELINE"
+    },
+    {
+      "screen": "order-create",
+      "name": "order-filled-form",
+      "fill": true,
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\order-create-order-filled-form-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "invoice-create",
+      "name": "invoice-filled-form",
+      "fill": true,
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\invoice-create-invoice-filled-form-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "delivery-create",
+      "name": "delivery-filled-form",
+      "fill": true,
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\delivery-create-delivery-filled-form-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "return-create",
+      "name": "return-filled-form",
+      "fill": true,
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\return-create-return-filled-form-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "adjustments",
+      "name": "adjustment-filled-form",
+      "fill": true,
+      "viewport": "768",
+      "file": null,
+      "result": "screen-missing",
+      "status": "NO BASELINE"
+    },
+    {
+      "screen": "dashboard",
+      "name": "global-search",
+      "search": true,
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\dashboard-global-search-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "customers",
+      "name": "customer-modal",
+      "modal": "modal-add-customer",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\customers-customer-modal-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "customers",
+      "name": "customer-financial-tab",
+      "tab": "البيانات المالية",
+      "tabRoot": "#cust-modal-tabs",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\customers-customer-financial-tab-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "customers",
+      "name": "customer-attachments-tab",
+      "tab": "المرفقات",
+      "tabRoot": "#cust-modal-tabs",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\customers-customer-attachments-tab-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "collections",
+      "name": "collection-modal",
+      "modal": "modal-payment",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\collections-collection-modal-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "finance",
+      "name": "expense-modal",
+      "modal": "modal-expense",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\finance-expense-modal-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "products",
+      "name": "product-modal",
+      "modal": "modal-add-product",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\products-product-modal-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "users",
+      "name": "security-tab",
+      "tab": "إعدادات الأمان",
+      "tabRoot": "#users-tabs",
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\users-security-tab-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "settings",
+      "name": "billing-tab",
+      "tab": "الفوترة والترقيم",
+      "tabRoot": "#settings-tabs",
+      "viewport": "390",
+      "file": null,
+      "result": "screen-missing",
+      "status": "NO BASELINE"
+    },
+    {
+      "screen": "order-create",
+      "name": "order-filled-form",
+      "fill": true,
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\order-create-order-filled-form-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "invoice-create",
+      "name": "invoice-filled-form",
+      "fill": true,
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\invoice-create-invoice-filled-form-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "delivery-create",
+      "name": "delivery-filled-form",
+      "fill": true,
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\delivery-create-delivery-filled-form-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "return-create",
+      "name": "return-filled-form",
+      "fill": true,
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\return-create-return-filled-form-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "adjustments",
+      "name": "adjustment-filled-form",
+      "fill": true,
+      "viewport": "390",
+      "file": null,
+      "result": "screen-missing",
+      "status": "NO BASELINE"
+    },
+    {
+      "screen": "dashboard",
+      "name": "global-search",
+      "search": true,
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\dashboard-global-search-390.png",
+      "result": "captured"
+    }
+  ],
+  "loginShots": [
+    {
+      "viewport": "1280",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\login-1280.png"
+    },
+    {
+      "viewport": "768",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\login-768.png"
+    },
+    {
+      "viewport": "390",
+      "file": "..\\docs\\ux-inventory\\screenshots\\reference\\states\\login-390.png"
+    }
+  ],
+  "captureNotes": [
+    "DOM section/state visibility was changed programmatically; no reference controls were clicked.",
+    "Chromium rendered 67 panels versus 68 in the source inventory; sec-liq was absent.",
+    "Initial reference page logged one JavaScript map error and SVG NaN path warnings."
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "environment": "isolated React Vite/MSW; synthetic owner demo; finance route clicked; scroll only; no API/database writes",
+  "results": [
+    {
+      "viewport": "1280",
+      "clicked": true,
+      "path": "/finance",
+      "scrollInfo": {
+        "height": 2184,
+        "clientHeight": 799,
+        "overflow": "auto"
+      },
+      "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round6/finance-overview-bottom-1280.png"
+    },
+    {
+      "viewport": "768",
+      "clicked": true,
+      "path": "/finance",
+      "scrollInfo": {
+        "height": 2558,
+        "clientHeight": 966,
+        "overflow": "auto"
+      },
+      "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round6/finance-overview-bottom-768.png"
+    },
+    {
+      "viewport": "390",
+      "clicked": true,
+      "path": "/finance",
+      "scrollInfo": {
+        "height": 4045,
+        "clientHeight": 786,
+        "overflow": "auto"
+      },
+      "screenshot": "docs/ux-inventory/screenshots/system-mock/react/visual-round6/finance-overview-bottom-390.png"
+    }
+  ]
+}

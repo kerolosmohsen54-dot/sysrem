@@ -1,0 +1,710 @@
+{
+  "environment": "Reference HTML, saved local fixture, actual visible navigation and row clicks only; no form submission or data-changing operation",
+  "results": [
+    {
+      "viewport": "1280",
+      "customerRowCount": 3,
+      "customerState": {
+        "active": [
+          "sec-cust-file"
+        ],
+        "visibleDetails": [
+          {
+            "id": "sec-cust-file",
+            "cls": "section-content active",
+            "text": "شركة النور لاستيراد السيارات\n+ تسجيل دفعة ← رجوع كلمة مرور القسم\nنظرة عامة\nالفواتير\nالدفعات\nسجل العميل\nالهاتف\n01012345678\nالمحافظة\nالقاهرة\nإجمالي الفواتير\n7,800\nإجمالي المدفوع\n3,000\nالرصيد المتبقي\n18,500"
+          }
+        ],
+        "heading": "لوحة التحكم"
+      },
+      "dialogs": [
+        {
+          "type": "prompt",
+          "message": "قسم العملاء محمي — أدخل كلمة المرور"
+        }
+      ],
+      "customerControls": [
+        {
+          "index": 0,
+          "tag": "BUTTON",
+          "label": "+ تسجيل دفعة",
+          "role": null,
+          "class": "btn btn-primary btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "collectFor('c101')"
+        },
+        {
+          "index": 1,
+          "tag": "BUTTON",
+          "label": "← رجوع",
+          "role": null,
+          "class": "btn btn-ghost btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "showSection('customers')"
+        },
+        {
+          "index": 2,
+          "tag": "BUTTON",
+          "label": "كلمة مرور القسم",
+          "role": null,
+          "class": "btn btn-ghost btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "changeCustPw()"
+        },
+        {
+          "index": 3,
+          "tag": "DIV",
+          "label": "نظرة عامة",
+          "role": null,
+          "class": "tab-item active",
+          "disabled": false,
+          "href": null,
+          "onclick": "custTab('ov')"
+        },
+        {
+          "index": 4,
+          "tag": "DIV",
+          "label": "الفواتير",
+          "role": null,
+          "class": "tab-item",
+          "disabled": false,
+          "href": null,
+          "onclick": "custTab('inv')"
+        },
+        {
+          "index": 5,
+          "tag": "DIV",
+          "label": "الدفعات",
+          "role": null,
+          "class": "tab-item",
+          "disabled": false,
+          "href": null,
+          "onclick": "custTab('pay')"
+        },
+        {
+          "index": 6,
+          "tag": "DIV",
+          "label": "سجل العميل",
+          "role": null,
+          "class": "tab-item",
+          "disabled": false,
+          "href": null,
+          "onclick": "custTab('log')"
+        },
+        {
+          "index": 7,
+          "tag": "BUTTON",
+          "label": "🗑",
+          "role": null,
+          "class": "tbl-btn",
+          "disabled": false,
+          "href": null,
+          "onclick": "delPay('COL-2026-021')"
+        }
+      ],
+      "customerTabResults": [
+        {
+          "label": "نظرة عامة",
+          "clicked": true,
+          "panelVisible": true,
+          "panelText": "الهاتف\n01012345678\nالمحافظة\nالقاهرة\nإجمالي الفواتير\n7,800\nإجمالي المدفوع\n3,000\nالرصيد المتبقي\n18,500",
+          "screenshot": "docs/ux-inventory/screenshots/reference/row-click-details/customer-tabs/customer-ov-1280.png"
+        },
+        {
+          "label": "الفواتير",
+          "clicked": true,
+          "panelVisible": true,
+          "panelText": "الفاتورة\tالتاريخ\tالحالة\tالقيمة\tالمدفوع\tالمتبقي\nINV-2026-1041\t10/10/2026\tمدفوعة جزئيًا\t7,800\t3,000\t4,800",
+          "screenshot": "docs/ux-inventory/screenshots/reference/row-click-details/customer-tabs/customer-inv-1280.png"
+        },
+        {
+          "label": "الدفعات",
+          "clicked": true,
+          "panelVisible": true,
+          "panelText": "التاريخ\tالقيمة\tالفاتورة المرتبطة\tالوسيلة\t\n10/10/2026\t3,000\tINV-2026-1041\t\t\n🗑\n\nإجمالي المدفوع: 3,000 — الرصيد المتبقي: 18,500",
+          "screenshot": "docs/ux-inventory/screenshots/reference/row-click-details/customer-tabs/customer-pay-1280.png"
+        },
+        {
+          "label": "سجل العميل",
+          "clicked": true,
+          "panelVisible": true,
+          "panelText": "التاريخ\tالعملية\tالمرجع\tالمبلغ\n10/10/2026\tدفعة\tCOL-2026-021 ← INV-2026-1041\t3,000\n10/10/2026\tفاتورة\tINV-2026-1041\t7,800",
+          "screenshot": "docs/ux-inventory/screenshots/reference/row-click-details/customer-tabs/customer-log-1280.png"
+        }
+      ],
+      "customerScreenshot": "docs/ux-inventory/screenshots/reference/row-click-details/customer-detail-1280.png",
+      "invoiceRowCount": 1,
+      "invoiceState": {
+        "active": [
+          "sec-inv-detail"
+        ],
+        "visibleDetails": [
+          {
+            "id": "sec-inv-detail",
+            "cls": "section-content active",
+            "text": "فاتورة INV-2026-1041\n↩ تسجيل مرتجع ✏️ تعديل ← رجوع معاينة / طباعة 🗑 حذف\nرقم الفاتورة\nINV-2026-1041\nالتاريخ\n10/10/2026 10:15\nالعميل\nشركة النور لاستيراد السيارات\nالمحافظة\nالقاهرة\nالحالة\nمدفوعة جزئيًا\nالملاحظات\nتسليم إلى مخزن العميل\nرقم الهاتف\n01012345678\nالمنتج"
+          }
+        ],
+        "heading": "لوحة التحكم"
+      },
+      "invoiceScreenshot": "docs/ux-inventory/screenshots/reference/row-click-details/invoice-detail-1280.png",
+      "invoiceControls": [
+        {
+          "index": 0,
+          "tag": "BUTTON",
+          "label": "↩ تسجيل مرتجع",
+          "role": null,
+          "class": "btn btn-secondary btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "retDialog('INV-2026-1041')"
+        },
+        {
+          "index": 1,
+          "tag": "BUTTON",
+          "label": "✏️ تعديل",
+          "role": null,
+          "class": "btn btn-secondary btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "editInv('INV-2026-1041')"
+        },
+        {
+          "index": 2,
+          "tag": "BUTTON",
+          "label": "← رجوع",
+          "role": null,
+          "class": "btn btn-ghost btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "showSection('cust-file')"
+        },
+        {
+          "index": 3,
+          "tag": "BUTTON",
+          "label": "معاينة / طباعة",
+          "role": null,
+          "class": "btn btn-primary btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "printInvoice('INV-2026-1041')"
+        },
+        {
+          "index": 4,
+          "tag": "BUTTON",
+          "label": "🗑 حذف",
+          "role": null,
+          "class": "btn btn-ghost btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "delInvoice('INV-2026-1041')"
+        }
+      ],
+      "invoiceBackNavigation": {
+        "clicked": true,
+        "active": [
+          "sec-cust-file"
+        ]
+      },
+      "movementRefCount": 10,
+      "movementState": {
+        "active": [
+          "sec-move-detail"
+        ],
+        "text": "تفاصيل الحركة: RET-2026-001 ← INV-2026-1042\n\n1 حركة مرتبطة بهذا المرجع — العميل: مؤسسة الأمل للتجارة\n\nرجوع لحركة المخزون\nالتاريخ\tالنوع\tالصنف\tالمخزن\tالكمية\tالمستخدم\n29/10/2026 23:28\tمرتجع\tزيت محرك 5W-30\tالسيارة\t1\t—"
+      },
+      "movementScreenshot": "docs/ux-inventory/screenshots/reference/row-click-details/movement-detail-1280.png",
+      "movementControls": [
+        {
+          "index": 0,
+          "tag": "BUTTON",
+          "label": "رجوع لحركة المخزون",
+          "role": null,
+          "class": "btn btn-ghost btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "showSection('movements')"
+        }
+      ],
+      "movementBackNavigation": {
+        "clicked": true,
+        "active": [
+          "sec-movements"
+        ]
+      }
+    },
+    {
+      "viewport": "768",
+      "customerRowCount": 3,
+      "customerState": {
+        "active": [
+          "sec-cust-file"
+        ],
+        "visibleDetails": [
+          {
+            "id": "sec-cust-file",
+            "cls": "section-content active",
+            "text": "شركة النور لاستيراد السيارات\n+ تسجيل دفعة ← رجوع كلمة مرور القسم\nنظرة عامة\nالفواتير\nالدفعات\nسجل العميل\nالهاتف\n01012345678\nالمحافظة\nالقاهرة\nإجمالي الفواتير\n7,800\nإجمالي المدفوع\n3,000\nالرصيد المتبقي\n18,500"
+          }
+        ],
+        "heading": "لوحة التحكم"
+      },
+      "dialogs": [
+        {
+          "type": "prompt",
+          "message": "قسم العملاء محمي — أدخل كلمة المرور"
+        }
+      ],
+      "customerControls": [
+        {
+          "index": 0,
+          "tag": "BUTTON",
+          "label": "+ تسجيل دفعة",
+          "role": null,
+          "class": "btn btn-primary btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "collectFor('c101')"
+        },
+        {
+          "index": 1,
+          "tag": "BUTTON",
+          "label": "← رجوع",
+          "role": null,
+          "class": "btn btn-ghost btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "showSection('customers')"
+        },
+        {
+          "index": 2,
+          "tag": "BUTTON",
+          "label": "كلمة مرور القسم",
+          "role": null,
+          "class": "btn btn-ghost btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "changeCustPw()"
+        },
+        {
+          "index": 3,
+          "tag": "DIV",
+          "label": "نظرة عامة",
+          "role": null,
+          "class": "tab-item active",
+          "disabled": false,
+          "href": null,
+          "onclick": "custTab('ov')"
+        },
+        {
+          "index": 4,
+          "tag": "DIV",
+          "label": "الفواتير",
+          "role": null,
+          "class": "tab-item",
+          "disabled": false,
+          "href": null,
+          "onclick": "custTab('inv')"
+        },
+        {
+          "index": 5,
+          "tag": "DIV",
+          "label": "الدفعات",
+          "role": null,
+          "class": "tab-item",
+          "disabled": false,
+          "href": null,
+          "onclick": "custTab('pay')"
+        },
+        {
+          "index": 6,
+          "tag": "DIV",
+          "label": "سجل العميل",
+          "role": null,
+          "class": "tab-item",
+          "disabled": false,
+          "href": null,
+          "onclick": "custTab('log')"
+        },
+        {
+          "index": 7,
+          "tag": "BUTTON",
+          "label": "🗑",
+          "role": null,
+          "class": "tbl-btn",
+          "disabled": false,
+          "href": null,
+          "onclick": "delPay('COL-2026-021')"
+        }
+      ],
+      "customerTabResults": [
+        {
+          "label": "نظرة عامة",
+          "clicked": true,
+          "panelVisible": true,
+          "panelText": "الهاتف\n01012345678\nالمحافظة\nالقاهرة\nإجمالي الفواتير\n7,800\nإجمالي المدفوع\n3,000\nالرصيد المتبقي\n18,500",
+          "screenshot": "docs/ux-inventory/screenshots/reference/row-click-details/customer-tabs/customer-ov-768.png"
+        },
+        {
+          "label": "الفواتير",
+          "clicked": true,
+          "panelVisible": true,
+          "panelText": "الفاتورة\tالتاريخ\tالحالة\tالقيمة\tالمدفوع\tالمتبقي\nINV-2026-1041\t10/10/2026\tمدفوعة جزئيًا\t7,800\t3,000\t4,800",
+          "screenshot": "docs/ux-inventory/screenshots/reference/row-click-details/customer-tabs/customer-inv-768.png"
+        },
+        {
+          "label": "الدفعات",
+          "clicked": true,
+          "panelVisible": true,
+          "panelText": "التاريخ\tالقيمة\tالفاتورة المرتبطة\tالوسيلة\t\n10/10/2026\t3,000\tINV-2026-1041\t\t\n🗑\n\nإجمالي المدفوع: 3,000 — الرصيد المتبقي: 18,500",
+          "screenshot": "docs/ux-inventory/screenshots/reference/row-click-details/customer-tabs/customer-pay-768.png"
+        },
+        {
+          "label": "سجل العميل",
+          "clicked": true,
+          "panelVisible": true,
+          "panelText": "التاريخ\tالعملية\tالمرجع\tالمبلغ\n10/10/2026\tدفعة\tCOL-2026-021 ← INV-2026-1041\t3,000\n10/10/2026\tفاتورة\tINV-2026-1041\t7,800",
+          "screenshot": "docs/ux-inventory/screenshots/reference/row-click-details/customer-tabs/customer-log-768.png"
+        }
+      ],
+      "customerScreenshot": "docs/ux-inventory/screenshots/reference/row-click-details/customer-detail-768.png",
+      "invoiceRowCount": 1,
+      "invoiceState": {
+        "active": [
+          "sec-inv-detail"
+        ],
+        "visibleDetails": [
+          {
+            "id": "sec-inv-detail",
+            "cls": "section-content active",
+            "text": "فاتورة INV-2026-1041\n↩ تسجيل مرتجع ✏️ تعديل ← رجوع معاينة / طباعة 🗑 حذف\nرقم الفاتورة\nINV-2026-1041\nالتاريخ\n10/10/2026 10:15\nالعميل\nشركة النور لاستيراد السيارات\nالمحافظة\nالقاهرة\nالحالة\nمدفوعة جزئيًا\nالملاحظات\nتسليم إلى مخزن العميل\nرقم الهاتف\n01012345678\nالمنتج"
+          }
+        ],
+        "heading": "لوحة التحكم"
+      },
+      "invoiceScreenshot": "docs/ux-inventory/screenshots/reference/row-click-details/invoice-detail-768.png",
+      "invoiceControls": [
+        {
+          "index": 0,
+          "tag": "BUTTON",
+          "label": "↩ تسجيل مرتجع",
+          "role": null,
+          "class": "btn btn-secondary btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "retDialog('INV-2026-1041')"
+        },
+        {
+          "index": 1,
+          "tag": "BUTTON",
+          "label": "✏️ تعديل",
+          "role": null,
+          "class": "btn btn-secondary btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "editInv('INV-2026-1041')"
+        },
+        {
+          "index": 2,
+          "tag": "BUTTON",
+          "label": "← رجوع",
+          "role": null,
+          "class": "btn btn-ghost btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "showSection('cust-file')"
+        },
+        {
+          "index": 3,
+          "tag": "BUTTON",
+          "label": "معاينة / طباعة",
+          "role": null,
+          "class": "btn btn-primary btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "printInvoice('INV-2026-1041')"
+        },
+        {
+          "index": 4,
+          "tag": "BUTTON",
+          "label": "🗑 حذف",
+          "role": null,
+          "class": "btn btn-ghost btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "delInvoice('INV-2026-1041')"
+        }
+      ],
+      "invoiceBackNavigation": {
+        "clicked": true,
+        "active": [
+          "sec-cust-file"
+        ]
+      },
+      "movementRefCount": 10,
+      "movementState": {
+        "active": [
+          "sec-move-detail"
+        ],
+        "text": "تفاصيل الحركة: RET-2026-001 ← INV-2026-1042\n\n1 حركة مرتبطة بهذا المرجع — العميل: مؤسسة الأمل للتجارة\n\nرجوع لحركة المخزون\nالتاريخ\tالنوع\tالصنف\tالمخزن\tالكمية\tالمستخدم\n29/10/2026 23:28\tمرتجع\tزيت محرك 5W-30\tالسيارة\t1\t—"
+      },
+      "movementScreenshot": "docs/ux-inventory/screenshots/reference/row-click-details/movement-detail-768.png",
+      "movementControls": [
+        {
+          "index": 0,
+          "tag": "BUTTON",
+          "label": "رجوع لحركة المخزون",
+          "role": null,
+          "class": "btn btn-ghost btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "showSection('movements')"
+        }
+      ],
+      "movementBackNavigation": {
+        "clicked": true,
+        "active": [
+          "sec-movements"
+        ]
+      }
+    },
+    {
+      "viewport": "390",
+      "customerRowCount": 3,
+      "customerState": {
+        "active": [
+          "sec-cust-file"
+        ],
+        "visibleDetails": [
+          {
+            "id": "sec-cust-file",
+            "cls": "section-content active",
+            "text": "شركة النور لاستيراد السيارات\n+ تسجيل دفعة ← رجوع كلمة مرور القسم\nنظرة عامة\nالفواتير\nالدفعات\nسجل العميل\nالهاتف\n01012345678\nالمحافظة\nالقاهرة\nإجمالي الفواتير\n7,800\nإجمالي المدفوع\n3,000\nالرصيد المتبقي\n18,500"
+          }
+        ],
+        "heading": "لوحة التحكم"
+      },
+      "dialogs": [
+        {
+          "type": "prompt",
+          "message": "قسم العملاء محمي — أدخل كلمة المرور"
+        }
+      ],
+      "customerControls": [
+        {
+          "index": 0,
+          "tag": "BUTTON",
+          "label": "+ تسجيل دفعة",
+          "role": null,
+          "class": "btn btn-primary btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "collectFor('c101')"
+        },
+        {
+          "index": 1,
+          "tag": "BUTTON",
+          "label": "← رجوع",
+          "role": null,
+          "class": "btn btn-ghost btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "showSection('customers')"
+        },
+        {
+          "index": 2,
+          "tag": "BUTTON",
+          "label": "كلمة مرور القسم",
+          "role": null,
+          "class": "btn btn-ghost btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "changeCustPw()"
+        },
+        {
+          "index": 3,
+          "tag": "DIV",
+          "label": "نظرة عامة",
+          "role": null,
+          "class": "tab-item active",
+          "disabled": false,
+          "href": null,
+          "onclick": "custTab('ov')"
+        },
+        {
+          "index": 4,
+          "tag": "DIV",
+          "label": "الفواتير",
+          "role": null,
+          "class": "tab-item",
+          "disabled": false,
+          "href": null,
+          "onclick": "custTab('inv')"
+        },
+        {
+          "index": 5,
+          "tag": "DIV",
+          "label": "الدفعات",
+          "role": null,
+          "class": "tab-item",
+          "disabled": false,
+          "href": null,
+          "onclick": "custTab('pay')"
+        },
+        {
+          "index": 6,
+          "tag": "DIV",
+          "label": "سجل العميل",
+          "role": null,
+          "class": "tab-item",
+          "disabled": false,
+          "href": null,
+          "onclick": "custTab('log')"
+        },
+        {
+          "index": 7,
+          "tag": "BUTTON",
+          "label": "🗑",
+          "role": null,
+          "class": "tbl-btn",
+          "disabled": false,
+          "href": null,
+          "onclick": "delPay('COL-2026-021')"
+        }
+      ],
+      "customerTabResults": [
+        {
+          "label": "نظرة عامة",
+          "clicked": true,
+          "panelVisible": true,
+          "panelText": "الهاتف\n01012345678\nالمحافظة\nالقاهرة\nإجمالي الفواتير\n7,800\nإجمالي المدفوع\n3,000\nالرصيد المتبقي\n18,500",
+          "screenshot": "docs/ux-inventory/screenshots/reference/row-click-details/customer-tabs/customer-ov-390.png"
+        },
+        {
+          "label": "الفواتير",
+          "clicked": true,
+          "panelVisible": true,
+          "panelText": "الفاتورة\tالتاريخ\tالحالة\tالقيمة\tالمدفوع\tالمتبقي\nINV-2026-1041\t10/10/2026\tمدفوعة جزئيًا\t7,800\t3,000\t4,800",
+          "screenshot": "docs/ux-inventory/screenshots/reference/row-click-details/customer-tabs/customer-inv-390.png"
+        },
+        {
+          "label": "الدفعات",
+          "clicked": true,
+          "panelVisible": true,
+          "panelText": "التاريخ\tالقيمة\tالفاتورة المرتبطة\tالوسيلة\t\n10/10/2026\t3,000\tINV-2026-1041\t\t\n🗑\n\nإجمالي المدفوع: 3,000 — الرصيد المتبقي: 18,500",
+          "screenshot": "docs/ux-inventory/screenshots/reference/row-click-details/customer-tabs/customer-pay-390.png"
+        },
+        {
+          "label": "سجل العميل",
+          "clicked": true,
+          "panelVisible": true,
+          "panelText": "التاريخ\tالعملية\tالمرجع\tالمبلغ\n10/10/2026\tدفعة\tCOL-2026-021 ← INV-2026-1041\t3,000\n10/10/2026\tفاتورة\tINV-2026-1041\t7,800",
+          "screenshot": "docs/ux-inventory/screenshots/reference/row-click-details/customer-tabs/customer-log-390.png"
+        }
+      ],
+      "customerScreenshot": "docs/ux-inventory/screenshots/reference/row-click-details/customer-detail-390.png",
+      "invoiceRowCount": 1,
+      "invoiceState": {
+        "active": [
+          "sec-inv-detail"
+        ],
+        "visibleDetails": [
+          {
+            "id": "sec-inv-detail",
+            "cls": "section-content active",
+            "text": "فاتورة INV-2026-1041\n↩ تسجيل مرتجع ✏️ تعديل ← رجوع معاينة / طباعة 🗑 حذف\nرقم الفاتورة\nINV-2026-1041\nالتاريخ\n10/10/2026 10:15\nالعميل\nشركة النور لاستيراد السيارات\nالمحافظة\nالقاهرة\nالحالة\nمدفوعة جزئيًا\nالملاحظات\nتسليم إلى مخزن العميل\nرقم الهاتف\n01012345678\nالمنتج"
+          }
+        ],
+        "heading": "لوحة التحكم"
+      },
+      "invoiceScreenshot": "docs/ux-inventory/screenshots/reference/row-click-details/invoice-detail-390.png",
+      "invoiceControls": [
+        {
+          "index": 0,
+          "tag": "BUTTON",
+          "label": "↩ تسجيل مرتجع",
+          "role": null,
+          "class": "btn btn-secondary btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "retDialog('INV-2026-1041')"
+        },
+        {
+          "index": 1,
+          "tag": "BUTTON",
+          "label": "✏️ تعديل",
+          "role": null,
+          "class": "btn btn-secondary btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "editInv('INV-2026-1041')"
+        },
+        {
+          "index": 2,
+          "tag": "BUTTON",
+          "label": "← رجوع",
+          "role": null,
+          "class": "btn btn-ghost btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "showSection('cust-file')"
+        },
+        {
+          "index": 3,
+          "tag": "BUTTON",
+          "label": "معاينة / طباعة",
+          "role": null,
+          "class": "btn btn-primary btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "printInvoice('INV-2026-1041')"
+        },
+        {
+          "index": 4,
+          "tag": "BUTTON",
+          "label": "🗑 حذف",
+          "role": null,
+          "class": "btn btn-ghost btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "delInvoice('INV-2026-1041')"
+        }
+      ],
+      "invoiceBackNavigation": {
+        "clicked": true,
+        "active": [
+          "sec-cust-file"
+        ]
+      },
+      "movementRefCount": 10,
+      "movementState": {
+        "active": [
+          "sec-move-detail"
+        ],
+        "text": "تفاصيل الحركة: RET-2026-001 ← INV-2026-1042\n\n1 حركة مرتبطة بهذا المرجع — العميل: مؤسسة الأمل للتجارة\n\nرجوع لحركة المخزون\nالتاريخ\tالنوع\tالصنف\tالمخزن\tالكمية\tالمستخدم\n29/10/2026 23:28\tمرتجع\tزيت محرك 5W-30\tالسيارة\t1\t—"
+      },
+      "movementScreenshot": "docs/ux-inventory/screenshots/reference/row-click-details/movement-detail-390.png",
+      "movementControls": [
+        {
+          "index": 0,
+          "tag": "BUTTON",
+          "label": "رجوع لحركة المخزون",
+          "role": null,
+          "class": "btn btn-ghost btn-sm",
+          "disabled": false,
+          "href": null,
+          "onclick": "showSection('movements')"
+        }
+      ],
+      "movementBackNavigation": {
+        "clicked": true,
+        "active": [
+          "sec-movements"
+        ]
+      }
+    }
+  ]
+}

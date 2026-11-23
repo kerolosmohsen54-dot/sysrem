@@ -1,0 +1,1382 @@
+{
+  "environment": "local reference HTML; isolated fixture; external HTTP blocked; only navigation/control clicks; no data-changing form actions",
+  "results": [
+    {
+      "viewport": "1280",
+      "slug": "governorates",
+      "panelId": "govs",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/governorates-1280.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-026",
+      "screenTitle": "المحافظات"
+    },
+    {
+      "viewport": "1280",
+      "slug": "opening-stock",
+      "panelId": "stock-add",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/opening-stock-1280.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-027",
+      "screenTitle": "إضافة إلى المخزون"
+    },
+    {
+      "viewport": "1280",
+      "slug": "stock-returns",
+      "panelId": "stock-ret",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/stock-returns-1280.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-028",
+      "screenTitle": "المخزون المرتجع"
+    },
+    {
+      "viewport": "1280",
+      "slug": "trash",
+      "panelId": "trash",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/trash-1280.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-029",
+      "screenTitle": "سلة المحذوفات"
+    },
+    {
+      "viewport": "1280",
+      "slug": "drivers",
+      "panelId": "drivers",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/drivers-1280.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-032",
+      "screenTitle": "سائقو الشحن"
+    },
+    {
+      "viewport": "1280",
+      "slug": "audit",
+      "panelId": "log",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/audit-1280.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-033",
+      "screenTitle": "سجل العمليات"
+    },
+    {
+      "viewport": "1280",
+      "slug": "finance-inbox",
+      "panelId": "f-receipts",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-035",
+      "screenTitle": "الصندوق الوارد"
+    },
+    {
+      "viewport": "1280",
+      "slug": "finance-other-income",
+      "panelId": "f-otherinc",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-036",
+      "screenTitle": "إيرادات أخرى"
+    },
+    {
+      "viewport": "1280",
+      "slug": "finance-payments",
+      "panelId": "f-payments",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-037",
+      "screenTitle": "المدفوعات"
+    },
+    {
+      "viewport": "1280",
+      "slug": "finance-expenses",
+      "panelId": "f-expenses",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-038",
+      "screenTitle": "المصروفات"
+    },
+    {
+      "viewport": "1280",
+      "slug": "finance-transfers",
+      "panelId": "f-transfers",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-039",
+      "screenTitle": "التحويلات المالية"
+    },
+    {
+      "viewport": "1280",
+      "slug": "finance-treasury",
+      "panelId": "f-treasury",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-040",
+      "screenTitle": "الخزينة"
+    },
+    {
+      "viewport": "1280",
+      "slug": "finance-supplier-balances",
+      "panelId": "f-supbal",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-042",
+      "screenTitle": "أرصدة الموردين"
+    },
+    {
+      "viewport": "1280",
+      "slug": "finance-returns",
+      "panelId": "f-finret",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-043",
+      "screenTitle": "مرتجعات مالية"
+    },
+    {
+      "viewport": "1280",
+      "slug": "finance-chart-of-accounts",
+      "panelId": "f-coa",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-044",
+      "screenTitle": "دليل الحسابات"
+    },
+    {
+      "viewport": "1280",
+      "slug": "finance-journal",
+      "panelId": "f-journal",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-045",
+      "screenTitle": "قيود اليومية"
+    },
+    {
+      "viewport": "1280",
+      "slug": "finance-ledger",
+      "panelId": "f-ledger",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-046",
+      "screenTitle": "دفتر الأستاذ"
+    },
+    {
+      "viewport": "1280",
+      "slug": "finance-trial-balance",
+      "panelId": "f-trial",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-047",
+      "screenTitle": "ميزان المراجعة"
+    },
+    {
+      "viewport": "1280",
+      "slug": "finance-statements",
+      "panelId": "f-reports",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-049",
+      "screenTitle": "القوائم المالية"
+    },
+    {
+      "viewport": "1280",
+      "slug": "warehouse-returns",
+      "panelId": "wh-returns",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/warehouse-returns-1280.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-051",
+      "screenTitle": "مرتجع المخازن"
+    },
+    {
+      "viewport": "1280",
+      "slug": "container-funds",
+      "panelId": "cont-money",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/container-funds-1280.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-052",
+      "screenTitle": "أموال الحاويات"
+    },
+    {
+      "viewport": "1280",
+      "slug": "container-transfers",
+      "panelId": "transfers",
+      "navigation": {
+        "ok": false,
+        "reason": "TimeoutError: page.waitForFunction: Timeout 2500ms exceeded."
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-050",
+      "screenTitle": "نقل الحاويات بين المواقع"
+    },
+    {
+      "viewport": "1280",
+      "slug": "minimum-stock",
+      "panelId": "x-low",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/minimum-stock-1280.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-061",
+      "screenTitle": "الحد الأدنى للمخزون"
+    },
+    {
+      "viewport": "1280",
+      "slug": "inventory-counts",
+      "panelId": "x-count",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/inventory-counts-1280.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-062",
+      "screenTitle": "الجرد الدوري"
+    },
+    {
+      "viewport": "1280",
+      "slug": "container-tracking",
+      "panelId": "x-track",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/container-tracking-1280.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-060",
+      "screenTitle": "تتبع الحاويات"
+    },
+    {
+      "viewport": "1280",
+      "slug": "product-cost-history",
+      "panelId": "x-price",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/product-cost-history-1280.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-064",
+      "screenTitle": "سجل أسعار الشراء"
+    },
+    {
+      "viewport": "1280",
+      "slug": "barcode-labels",
+      "panelId": "x-bar",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/barcode-labels-1280.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-063",
+      "screenTitle": "باركود الأصناف"
+    },
+    {
+      "viewport": "1280",
+      "slug": "expense-budget",
+      "panelId": "x-budget",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/expense-budget-1280.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-056",
+      "screenTitle": "ميزانية المصروفات"
+    },
+    {
+      "viewport": "1280",
+      "slug": "recurring-expenses",
+      "panelId": "x-recur",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/recurring-expenses-1280.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-057",
+      "screenTitle": "مصروفات متكررة"
+    },
+    {
+      "viewport": "1280",
+      "slug": "monthly-comparison",
+      "panelId": "x-compare",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/monthly-comparison-1280.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-058",
+      "screenTitle": "مقارنة شهر بشهر"
+    },
+    {
+      "viewport": "1280",
+      "slug": "cash-forecast",
+      "panelId": "x-cash",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/cash-forecast-1280.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-059",
+      "screenTitle": "توقع السيولة"
+    },
+    {
+      "viewport": "1280",
+      "slug": "excel-import",
+      "panelId": "x-import",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/excel-import-1280.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-065",
+      "screenTitle": "استيراد من إكسل"
+    },
+    {
+      "viewport": "1280",
+      "slug": "daily-summary",
+      "panelId": "x-daily",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/daily-summary-1280.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-066",
+      "screenTitle": "الملخص اليومي"
+    },
+    {
+      "viewport": "1280",
+      "slug": "install-app",
+      "panelId": "x-app",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/install-app-1280.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-067",
+      "screenTitle": "تثبيت كتطبيق"
+    },
+    {
+      "viewport": "1280",
+      "slug": "user-notes",
+      "panelId": "x-priv",
+      "navigation": {
+        "ok": false,
+        "reason": "No visible navigation control for this panel in the reference."
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-068",
+      "screenTitle": "ملاحظاتي"
+    },
+    {
+      "viewport": "768",
+      "slug": "governorates",
+      "panelId": "govs",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/governorates-768.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-026",
+      "screenTitle": "المحافظات"
+    },
+    {
+      "viewport": "768",
+      "slug": "opening-stock",
+      "panelId": "stock-add",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/opening-stock-768.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-027",
+      "screenTitle": "إضافة إلى المخزون"
+    },
+    {
+      "viewport": "768",
+      "slug": "stock-returns",
+      "panelId": "stock-ret",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/stock-returns-768.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-028",
+      "screenTitle": "المخزون المرتجع"
+    },
+    {
+      "viewport": "768",
+      "slug": "trash",
+      "panelId": "trash",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/trash-768.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-029",
+      "screenTitle": "سلة المحذوفات"
+    },
+    {
+      "viewport": "768",
+      "slug": "drivers",
+      "panelId": "drivers",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/drivers-768.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-032",
+      "screenTitle": "سائقو الشحن"
+    },
+    {
+      "viewport": "768",
+      "slug": "audit",
+      "panelId": "log",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/audit-768.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-033",
+      "screenTitle": "سجل العمليات"
+    },
+    {
+      "viewport": "768",
+      "slug": "finance-inbox",
+      "panelId": "f-receipts",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-035",
+      "screenTitle": "الصندوق الوارد"
+    },
+    {
+      "viewport": "768",
+      "slug": "finance-other-income",
+      "panelId": "f-otherinc",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-036",
+      "screenTitle": "إيرادات أخرى"
+    },
+    {
+      "viewport": "768",
+      "slug": "finance-payments",
+      "panelId": "f-payments",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-037",
+      "screenTitle": "المدفوعات"
+    },
+    {
+      "viewport": "768",
+      "slug": "finance-expenses",
+      "panelId": "f-expenses",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-038",
+      "screenTitle": "المصروفات"
+    },
+    {
+      "viewport": "768",
+      "slug": "finance-transfers",
+      "panelId": "f-transfers",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-039",
+      "screenTitle": "التحويلات المالية"
+    },
+    {
+      "viewport": "768",
+      "slug": "finance-treasury",
+      "panelId": "f-treasury",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-040",
+      "screenTitle": "الخزينة"
+    },
+    {
+      "viewport": "768",
+      "slug": "finance-supplier-balances",
+      "panelId": "f-supbal",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-042",
+      "screenTitle": "أرصدة الموردين"
+    },
+    {
+      "viewport": "768",
+      "slug": "finance-returns",
+      "panelId": "f-finret",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-043",
+      "screenTitle": "مرتجعات مالية"
+    },
+    {
+      "viewport": "768",
+      "slug": "finance-chart-of-accounts",
+      "panelId": "f-coa",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-044",
+      "screenTitle": "دليل الحسابات"
+    },
+    {
+      "viewport": "768",
+      "slug": "finance-journal",
+      "panelId": "f-journal",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-045",
+      "screenTitle": "قيود اليومية"
+    },
+    {
+      "viewport": "768",
+      "slug": "finance-ledger",
+      "panelId": "f-ledger",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-046",
+      "screenTitle": "دفتر الأستاذ"
+    },
+    {
+      "viewport": "768",
+      "slug": "finance-trial-balance",
+      "panelId": "f-trial",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-047",
+      "screenTitle": "ميزان المراجعة"
+    },
+    {
+      "viewport": "768",
+      "slug": "finance-statements",
+      "panelId": "f-reports",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-049",
+      "screenTitle": "القوائم المالية"
+    },
+    {
+      "viewport": "768",
+      "slug": "warehouse-returns",
+      "panelId": "wh-returns",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/warehouse-returns-768.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-051",
+      "screenTitle": "مرتجع المخازن"
+    },
+    {
+      "viewport": "768",
+      "slug": "container-funds",
+      "panelId": "cont-money",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/container-funds-768.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-052",
+      "screenTitle": "أموال الحاويات"
+    },
+    {
+      "viewport": "768",
+      "slug": "container-transfers",
+      "panelId": "transfers",
+      "navigation": {
+        "ok": false,
+        "reason": "TimeoutError: page.waitForFunction: Timeout 2500ms exceeded."
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-050",
+      "screenTitle": "نقل الحاويات بين المواقع"
+    },
+    {
+      "viewport": "768",
+      "slug": "minimum-stock",
+      "panelId": "x-low",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/minimum-stock-768.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-061",
+      "screenTitle": "الحد الأدنى للمخزون"
+    },
+    {
+      "viewport": "768",
+      "slug": "inventory-counts",
+      "panelId": "x-count",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/inventory-counts-768.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-062",
+      "screenTitle": "الجرد الدوري"
+    },
+    {
+      "viewport": "768",
+      "slug": "container-tracking",
+      "panelId": "x-track",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/container-tracking-768.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-060",
+      "screenTitle": "تتبع الحاويات"
+    },
+    {
+      "viewport": "768",
+      "slug": "product-cost-history",
+      "panelId": "x-price",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/product-cost-history-768.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-064",
+      "screenTitle": "سجل أسعار الشراء"
+    },
+    {
+      "viewport": "768",
+      "slug": "barcode-labels",
+      "panelId": "x-bar",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/barcode-labels-768.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-063",
+      "screenTitle": "باركود الأصناف"
+    },
+    {
+      "viewport": "768",
+      "slug": "expense-budget",
+      "panelId": "x-budget",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/expense-budget-768.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-056",
+      "screenTitle": "ميزانية المصروفات"
+    },
+    {
+      "viewport": "768",
+      "slug": "recurring-expenses",
+      "panelId": "x-recur",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/recurring-expenses-768.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-057",
+      "screenTitle": "مصروفات متكررة"
+    },
+    {
+      "viewport": "768",
+      "slug": "monthly-comparison",
+      "panelId": "x-compare",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/monthly-comparison-768.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-058",
+      "screenTitle": "مقارنة شهر بشهر"
+    },
+    {
+      "viewport": "768",
+      "slug": "cash-forecast",
+      "panelId": "x-cash",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/cash-forecast-768.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-059",
+      "screenTitle": "توقع السيولة"
+    },
+    {
+      "viewport": "768",
+      "slug": "excel-import",
+      "panelId": "x-import",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/excel-import-768.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-065",
+      "screenTitle": "استيراد من إكسل"
+    },
+    {
+      "viewport": "768",
+      "slug": "daily-summary",
+      "panelId": "x-daily",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/daily-summary-768.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-066",
+      "screenTitle": "الملخص اليومي"
+    },
+    {
+      "viewport": "768",
+      "slug": "install-app",
+      "panelId": "x-app",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/install-app-768.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-067",
+      "screenTitle": "تثبيت كتطبيق"
+    },
+    {
+      "viewport": "768",
+      "slug": "user-notes",
+      "panelId": "x-priv",
+      "navigation": {
+        "ok": false,
+        "reason": "No visible navigation control for this panel in the reference."
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-068",
+      "screenTitle": "ملاحظاتي"
+    },
+    {
+      "viewport": "390",
+      "slug": "governorates",
+      "panelId": "govs",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/governorates-390.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-026",
+      "screenTitle": "المحافظات"
+    },
+    {
+      "viewport": "390",
+      "slug": "opening-stock",
+      "panelId": "stock-add",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/opening-stock-390.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-027",
+      "screenTitle": "إضافة إلى المخزون"
+    },
+    {
+      "viewport": "390",
+      "slug": "stock-returns",
+      "panelId": "stock-ret",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/stock-returns-390.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-028",
+      "screenTitle": "المخزون المرتجع"
+    },
+    {
+      "viewport": "390",
+      "slug": "trash",
+      "panelId": "trash",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/trash-390.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-029",
+      "screenTitle": "سلة المحذوفات"
+    },
+    {
+      "viewport": "390",
+      "slug": "drivers",
+      "panelId": "drivers",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/drivers-390.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-032",
+      "screenTitle": "سائقو الشحن"
+    },
+    {
+      "viewport": "390",
+      "slug": "audit",
+      "panelId": "log",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/audit-390.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-033",
+      "screenTitle": "سجل العمليات"
+    },
+    {
+      "viewport": "390",
+      "slug": "finance-inbox",
+      "panelId": "f-receipts",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-035",
+      "screenTitle": "الصندوق الوارد"
+    },
+    {
+      "viewport": "390",
+      "slug": "finance-other-income",
+      "panelId": "f-otherinc",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-036",
+      "screenTitle": "إيرادات أخرى"
+    },
+    {
+      "viewport": "390",
+      "slug": "finance-payments",
+      "panelId": "f-payments",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-037",
+      "screenTitle": "المدفوعات"
+    },
+    {
+      "viewport": "390",
+      "slug": "finance-expenses",
+      "panelId": "f-expenses",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-038",
+      "screenTitle": "المصروفات"
+    },
+    {
+      "viewport": "390",
+      "slug": "finance-transfers",
+      "panelId": "f-transfers",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-039",
+      "screenTitle": "التحويلات المالية"
+    },
+    {
+      "viewport": "390",
+      "slug": "finance-treasury",
+      "panelId": "f-treasury",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-040",
+      "screenTitle": "الخزينة"
+    },
+    {
+      "viewport": "390",
+      "slug": "finance-supplier-balances",
+      "panelId": "f-supbal",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-042",
+      "screenTitle": "أرصدة الموردين"
+    },
+    {
+      "viewport": "390",
+      "slug": "finance-returns",
+      "panelId": "f-finret",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-043",
+      "screenTitle": "مرتجعات مالية"
+    },
+    {
+      "viewport": "390",
+      "slug": "finance-chart-of-accounts",
+      "panelId": "f-coa",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-044",
+      "screenTitle": "دليل الحسابات"
+    },
+    {
+      "viewport": "390",
+      "slug": "finance-journal",
+      "panelId": "f-journal",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-045",
+      "screenTitle": "قيود اليومية"
+    },
+    {
+      "viewport": "390",
+      "slug": "finance-ledger",
+      "panelId": "f-ledger",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-046",
+      "screenTitle": "دفتر الأستاذ"
+    },
+    {
+      "viewport": "390",
+      "slug": "finance-trial-balance",
+      "panelId": "f-trial",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-047",
+      "screenTitle": "ميزان المراجعة"
+    },
+    {
+      "viewport": "390",
+      "slug": "finance-statements",
+      "panelId": "f-reports",
+      "navigation": {
+        "ok": false,
+        "reason": ""
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-049",
+      "screenTitle": "القوائم المالية"
+    },
+    {
+      "viewport": "390",
+      "slug": "warehouse-returns",
+      "panelId": "wh-returns",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/warehouse-returns-390.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-051",
+      "screenTitle": "مرتجع المخازن"
+    },
+    {
+      "viewport": "390",
+      "slug": "container-funds",
+      "panelId": "cont-money",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/container-funds-390.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-052",
+      "screenTitle": "أموال الحاويات"
+    },
+    {
+      "viewport": "390",
+      "slug": "container-transfers",
+      "panelId": "transfers",
+      "navigation": {
+        "ok": false,
+        "reason": "TimeoutError: page.waitForFunction: Timeout 2500ms exceeded."
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-050",
+      "screenTitle": "نقل الحاويات بين المواقع"
+    },
+    {
+      "viewport": "390",
+      "slug": "minimum-stock",
+      "panelId": "x-low",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/minimum-stock-390.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-061",
+      "screenTitle": "الحد الأدنى للمخزون"
+    },
+    {
+      "viewport": "390",
+      "slug": "inventory-counts",
+      "panelId": "x-count",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/inventory-counts-390.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-062",
+      "screenTitle": "الجرد الدوري"
+    },
+    {
+      "viewport": "390",
+      "slug": "container-tracking",
+      "panelId": "x-track",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/container-tracking-390.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-060",
+      "screenTitle": "تتبع الحاويات"
+    },
+    {
+      "viewport": "390",
+      "slug": "product-cost-history",
+      "panelId": "x-price",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/product-cost-history-390.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-064",
+      "screenTitle": "سجل أسعار الشراء"
+    },
+    {
+      "viewport": "390",
+      "slug": "barcode-labels",
+      "panelId": "x-bar",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/barcode-labels-390.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-063",
+      "screenTitle": "باركود الأصناف"
+    },
+    {
+      "viewport": "390",
+      "slug": "expense-budget",
+      "panelId": "x-budget",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/expense-budget-390.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-056",
+      "screenTitle": "ميزانية المصروفات"
+    },
+    {
+      "viewport": "390",
+      "slug": "recurring-expenses",
+      "panelId": "x-recur",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/recurring-expenses-390.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-057",
+      "screenTitle": "مصروفات متكررة"
+    },
+    {
+      "viewport": "390",
+      "slug": "monthly-comparison",
+      "panelId": "x-compare",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/monthly-comparison-390.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-058",
+      "screenTitle": "مقارنة شهر بشهر"
+    },
+    {
+      "viewport": "390",
+      "slug": "cash-forecast",
+      "panelId": "x-cash",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/cash-forecast-390.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-059",
+      "screenTitle": "توقع السيولة"
+    },
+    {
+      "viewport": "390",
+      "slug": "excel-import",
+      "panelId": "x-import",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/excel-import-390.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-065",
+      "screenTitle": "استيراد من إكسل"
+    },
+    {
+      "viewport": "390",
+      "slug": "daily-summary",
+      "panelId": "x-daily",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/daily-summary-390.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-066",
+      "screenTitle": "الملخص اليومي"
+    },
+    {
+      "viewport": "390",
+      "slug": "install-app",
+      "panelId": "x-app",
+      "navigation": {
+        "ok": true,
+        "reason": "Clicked visible reference navigation control; target panel became active."
+      },
+      "screenshot": "docs/ux-inventory/screenshots/reference/activated/install-app-390.png",
+      "status": "CLICK_ACTIVATED_CAPTURED",
+      "screenId": "SCR-067",
+      "screenTitle": "تثبيت كتطبيق"
+    },
+    {
+      "viewport": "390",
+      "slug": "user-notes",
+      "panelId": "x-priv",
+      "navigation": {
+        "ok": false,
+        "reason": "No visible navigation control for this panel in the reference."
+      },
+      "screenshot": null,
+      "status": "NOT_VERIFIED_CLICK_BLOCKED",
+      "screenId": "SCR-068",
+      "screenTitle": "ملاحظاتي"
+    }
+  ],
+  "summary": {
+    "viewports": [
+      "1280",
+      "768",
+      "390"
+    ],
+    "uniqueTargets": 35,
+    "clickActivatedPanels": 20,
+    "blockedTargets": 15,
+    "clickActivatedScreenshots": 60,
+    "blockedAttempts": 45
+  }
+}
