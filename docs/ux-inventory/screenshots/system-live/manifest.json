@@ -1,0 +1,87 @@
+{
+  "mode": "development, loopback API",
+  "capturedAt": "2026-10-29T17:04:42.519Z",
+  "results": [
+    {
+      "viewport": "1280",
+      "route": "/login",
+      "headings": [
+        "تسجيل الدخول"
+      ],
+      "inputs": [
+        {
+          "type": "text",
+          "placeholder": "",
+          "ariaLabel": null
+        },
+        {
+          "type": "password",
+          "placeholder": "",
+          "ariaLabel": null
+        }
+      ],
+      "api": [
+        {
+          "status": 401,
+          "method": "GET",
+          "path": "/api/v1/auth/me"
+        }
+      ],
+      "screenshot": "D:\\system karas\\system end\\docs\\ux-inventory\\screenshots\\system-live\\login_1280.png"
+    },
+    {
+      "viewport": "768",
+      "route": "/login",
+      "headings": [
+        "تسجيل الدخول"
+      ],
+      "inputs": [
+        {
+          "type": "text",
+          "placeholder": "",
+          "ariaLabel": null
+        },
+        {
+          "type": "password",
+          "placeholder": "",
+          "ariaLabel": null
+        }
+      ],
+      "api": [
+        {
+          "status": 401,
+          "method": "GET",
+          "path": "/api/v1/auth/me"
+        }
+      ],
+      "screenshot": "D:\\system karas\\system end\\docs\\ux-inventory\\screenshots\\system-live\\login_768.png"
+    },
+    {
+      "viewport": "390",
+      "route": "/login",
+      "headings": [
+        "تسجيل الدخول"
+      ],
+      "inputs": [
+        {
+          "type": "text",
+          "placeholder": "",
+          "ariaLabel": null
+        },
+        {
+          "type": "password",
+          "placeholder": "",
+          "ariaLabel": null
+        }
+      ],
+      "api": [
+        {
+          "status": 401,
+          "method": "GET",
+          "path": "/api/v1/auth/me"
+        }
+      ],
+      "screenshot": "D:\\system karas\\system end\\docs\\ux-inventory\\screenshots\\system-live\\login_390.png"
+    }
+  ]
+}
