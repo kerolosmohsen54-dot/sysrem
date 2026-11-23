@@ -1,0 +1,4 @@
+﻿<?php
+require 'D:/system karas/system end/backend/vendor/autoload.php'; $app=require 'D:/system karas/system end/backend/bootstrap/app.php'; $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap(); use Illuminate\Support\Facades\DB;
+foreach(DB::table('sales_documents')->where('document_number','like','INV-2026-%')->orderBy('id')->get(['id','document_number','status','customer_id','issuer_type','total_amount','paid_amount_snapshot','cogs_egp_snapshot','partner_profit_egp_snapshot','company_profit_egp_snapshot']) as $d) echo implode('|',[(int)$d->id,$d->document_number,$d->status,$d->customer_id,$d->issuer_type,$d->total_amount,$d->paid_amount_snapshot,$d->cogs_egp_snapshot,$d->partner_profit_egp_snapshot,$d->company_profit_egp_snapshot]),PHP_EOL;
+echo 'customer1=',DB::table('sales_documents')->where('customer_id',1)->where('status','posted')->sum(DB::raw('total_amount-paid_amount_snapshot')),PHP_EOL;
