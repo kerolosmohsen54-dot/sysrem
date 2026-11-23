@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Precision Slate ERP — Full Structure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#111415;--surface-low:#191c1d;--surface:#1d2021;--surface-high:#272a2b;--surface-highest:#323536;
+  --border:#414752;--border-strong:#5c6370;--text:#e1e3e4;--text-secondary:rgba(255,255,255,.60);--text-dim:rgba(255,255,255,.38);
+  --accent:#4a9eff;--accent-dim:rgba(74,158,255,.15);--success:#3ecf8e;--success-dim:rgba(62,207,142,.15);
+  --warning:#f5a623;--warning-dim:rgba(245,166,35,.15);--danger:#e05252;--danger-dim:rgba(224,82,82,.15);
+  --info:#9b8ef7;--info-dim:rgba(155,142,247,.15);--pink:#ff7bb0;--pink-dim:rgba(255,123,176,.15);
+  --radius:6px;--radius-lg:10px;
+}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){--bg:#f5f6f7;--surface-low:#fff;--surface:#fff;--surface-high:#eef0f1;--surface-highest:#e4e6e8;--border:#dcdfe3;--border-strong:#c3c8cd;--text:#1a1d1e;--text-secondary:rgba(0,0,0,.6);--text-dim:rgba(0,0,0,.4);}}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);}
+body{font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100%;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);font-size:14px;line-height:1.6;}
+
+.header{background:var(--surface-low);border-bottom:1px solid var(--border);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;gap:12px;flex-wrap:wrap;}
+.brand{display:flex;align-items:center;gap:10px;}
+.logo{width:34px;height:34px;background:var(--accent);border-radius:var(--radius);display:grid;place-items:center;font-size:12px;font-weight:700;color:#fff;}
+.brand-text h1{font-size:15px;font-weight:700;}
+.brand-text p{font-size:11px;color:var(--text-secondary);}
+.stack{display:flex;gap:6px;flex-wrap:wrap;}
+.pill{padding:3px 10px;border-radius:20px;font-size:10.5px;font-weight:700;border:1px solid;}
+.pill-r{color:#61dafb;border-color:#61dafb44;background:#61dafb14;}
+.pill-n{color:var(--success);border-color:var(--success);background:var(--success-dim);}
+.pill-e{color:var(--warning);border-color:var(--warning);background:var(--warning-dim);}
+.pill-p{color:var(--info);border-color:var(--info);background:var(--info-dim);}
+
+.container{display:flex;min-height:calc(100vh - 65px);}
+.sidebar{width:220px;min-width:220px;background:var(--surface-low);border-left:1px solid var(--border);padding:14px 0;position:sticky;top:65px;height:calc(100vh - 65px);overflow-y:auto;}
+.side-label{font-size:10px;font-weight:700;color:var(--text-dim);text-transform:uppercase;letter-spacing:.07em;padding:10px 16px 4px;}
+.side-item{display:flex;align-items:center;gap:8px;padding:7px 16px;cursor:pointer;color:var(--text-secondary);font-size:12.5px;border-right:2px solid transparent;transition:.15s;}
+.side-item:hover{background:var(--surface-high);color:var(--text);}
+.side-item.active{background:var(--accent-dim);color:var(--accent);border-right-color:var(--accent);font-weight:600;}
+
+.main{flex:1;padding:22px;overflow-x:auto;max-width:1180px;}
+.mod{display:none;}
+.mod.active{display:block;}
+.mod-title{font-size:19px;font-weight:700;margin-bottom:4px;}
+.mod-sub{color:var(--text-secondary);font-size:12.5px;margin-bottom:20px;}
+
+/* NAV MAP — matches real sidebar exactly */
+.navmap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:14px;}
+.navmap-head{padding:10px 16px;background:var(--surface-high);border-bottom:1px solid var(--border);font-size:12px;font-weight:700;color:var(--accent);}
+.navgroup{padding:10px 16px;border-bottom:1px solid var(--border);}
+.navgroup:last-child{border-bottom:none;}
+.navgroup-label{font-size:10px;font-weight:700;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+.navsections{display:flex;flex-wrap:wrap;gap:8px;}
+.navsec{background:var(--surface-low);border:1px solid var(--border);border-radius:var(--radius);padding:8px 10px;min-width:150px;flex:1;}
+.navsec-title{font-size:11.5px;font-weight:700;color:var(--text);margin-bottom:5px;display:flex;align-items:center;gap:5px;}
+.navsec-pages{display:flex;flex-direction:column;gap:3px;}
+.navsec-page{font-size:10.5px;color:var(--text-secondary);display:flex;align-items:center;gap:5px;}
+.navsec-page::before{content:'—';color:var(--text-dim);}
+.navsec-page.create::after{content:'+ create/detail';font-size:9px;color:var(--info);margin-right:4px;}
+
+/* TREE */
+.tree-container{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+.tree-header{padding:10px 14px;background:var(--surface-high);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--text-secondary);font-weight:600;}
+.tree-dot{width:9px;height:9px;border-radius:50%;}
+.tree-dot.r{background:#ff5f57;}.tree-dot.y{background:#febc2e;}.tree-dot.g{background:#28c840;}
+.tree-body{padding:14px 18px;font-family:Consolas,Monaco,monospace;font-size:12.5px;line-height:1.95;}
+.tree-line{display:flex;align-items:center;white-space:nowrap;}
+.tree-guide{color:var(--border-strong);user-select:none;}
+.tree-folder{color:var(--accent);cursor:pointer;display:flex;align-items:center;gap:6px;}
+.tree-folder:hover{color:#79c0ff;}
+.tree-folder.collapsed>.tree-arrow{transform:rotate(-90deg);}
+.tree-arrow{display:inline-block;transition:transform .2s;font-size:9px;}
+.tree-file{color:var(--text-secondary);display:flex;align-items:center;gap:6px;}
+.tree-comment{color:var(--text-dim);font-size:10.5px;margin-right:8px;}
+.tree-children{overflow:hidden;transition:max-height .3s ease;}
+.tree-children.hidden{max-height:0 !important;}
+
+/* API */
+.endpoint-group{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:10px;}
+.endpoint-group-title{padding:9px 14px;background:var(--surface-high);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-secondary);border-bottom:1px solid var(--border);}
+.endpoint-row{display:flex;align-items:center;gap:12px;padding:7px 14px;border-bottom:1px solid var(--border);font-family:Consolas,Monaco,monospace;font-size:11.5px;}
+.endpoint-row:last-child{border-bottom:none;}
+.endpoint-row:hover{background:var(--surface-high);}
+.method{font-weight:700;font-size:10px;padding:2px 7px;border-radius:4px;min-width:44px;text-align:center;}
+.get{color:var(--success);background:var(--success-dim);}
+.post{color:var(--warning);background:var(--warning-dim);}
+.put{color:var(--accent);background:var(--accent-dim);}
+.patch{color:var(--info);background:var(--info-dim);}
+.delete{color:var(--danger);background:var(--danger-dim);}
+.ep-path{color:var(--text);flex:1;}
+.ep-desc{color:var(--text-dim);font-size:10.5px;font-family:'IBM Plex Sans Arabic',sans-serif;}
+
+/* PHASES */
+.phases{display:flex;flex-direction:column;gap:10px;}
+.phase{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:14px 16px;position:relative;overflow:hidden;}
+.phase::before{content:'';position:absolute;top:0;right:0;width:4px;height:100%;}
+.phase.p0::before{background:var(--text-dim);}
+.phase.p1::before{background:var(--accent);}
+.phase.p2::before{background:var(--success);}
+.phase.p3::before{background:var(--warning);}
+.phase.p4::before{background:var(--info);}
+.phase-num{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-dim);margin-bottom:3px;}
+.phase-title{font-size:13.5px;font-weight:700;margin-bottom:8px;}
+.phase-items{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:4px 14px;}
+.phase-item{font-size:11.5px;color:var(--text-secondary);display:flex;align-items:center;gap:6px;}
+.phase-item::before{content:'▸';color:var(--text-dim);font-size:9px;flex-shrink:0;}
+
+.note{background:var(--info-dim);border-right:3px solid var(--info);border-radius:var(--radius);padding:10px 14px;font-size:12px;color:var(--text-secondary);margin-bottom:16px;}
+.note b{color:var(--info);}
+
+@media(max-width:700px){.sidebar{width:170px;min-width:170px;}.navsections{flex-direction:column;}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="brand">
+    <div class="logo">PS</div>
+    <div class="brand-text"><h1>Full Project Structure</h1><p>Precision Slate ERP — مبني بالظبط على التصميم الجديد (43 صفحة)</p></div>
+  </div>
+  <div class="stack">
+    <span class="pill pill-r">React 18</span>
+    <span class="pill pill-n">Node.js</span>
+    <span class="pill pill-e">Express</span>
+    <span class="pill pill-p">PostgreSQL</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="sidebar" id="sidebar"></div>
+  <div class="main" id="main"></div>
+</div>
+
+<script>
+const SECTIONS = {
+'navmap': { label:'🗺️ خريطة الصفحات (من التصميم)', render: renderNavmap },
+'client': { label:'⚛️ Client — React Tree', render: renderClientTree },
+'server': { label:'🖥️ Server — Express Tree', render: renderServerTree },
+'api': { label:'🌐 API Endpoints', render: renderApi },
+'phases': { label:'🗓️ خطة التنفيذ', render: renderPhases },
+};
+
+const sidebar = document.getElementById('sidebar');
+const main = document.getElementById('main');
+let first = true;
+for (const key in SECTIONS) {
+  const s = SECTIONS[key];
+  const item = document.createElement('div');
+  item.className = 'side-item' + (first?' active':'');
+  item.textContent = s.label;
+  item.onclick = () => switchSec(key, item);
+  sidebar.appendChild(item);
+
+  const mod = document.createElement('div');
+  mod.className = 'mod' + (first?' active':'');
+  mod.id = 'mod-' + key;
+  main.appendChild(mod);
+  s.render(mod);
+  first = false;
+}
+function switchSec(key, el) {
+  document.querySelectorAll('.mod').forEach(m=>m.classList.remove('active'));
+  document.querySelectorAll('.side-item').forEach(s=>s.classList.remove('active'));
+  document.getElementById('mod-'+key).classList.add('active');
+  el.classList.add('active');
+}
+
+/* ============ 1. NAV MAP — مطابق بالظبط للـ sidebar الحقيقي في التصميم ============ */
+function renderNavmap(mod) {
+  mod.innerHTML = `<div class="mod-title">🗺️ خريطة الصفحات</div>
+    <div class="mod-sub">نفس تجميع الـ sidebar بتاع التصميم بالظبط — 3 مجموعات رئيسية، 43 صفحة</div>
+    <div class="note">كل صفحة "list" ليها صفحات create/detail مرتبطة بيها (زي order-create, order-detail, invoice-print) — دي متضافة كـ routes منفصلة في React Router مش modals.</div>`;
+
+  const navData = [
+    { group:'الرئيسية', color:'var(--accent)', sections:[
+      { title:'لوحة التحكم', pages:['dashboard'] },
+    ]},
+    { group:'التشغيل — المبيعات', color:'var(--success)', sections:[
+      { title:'العملاء', pages:['customers','customer-detail (+)'] },
+      { title:'الطلبات', pages:['orders','order-create (+)','order-detail (+)'] },
+      { title:'حجوزات المخزون', pages:['reservations'] },
+      { title:'التسليمات', pages:['deliveries','delivery-create (+)'] },
+      { title:'الفواتير', pages:['invoices','invoice-create (+)','invoice-print (+)'] },
+      { title:'المرتجعات', pages:['returns','return-create (+)'] },
+      { title:'التحصيل', pages:['collections'] },
+    ]},
+    { group:'التشغيل — المخزون', color:'var(--warning)', sections:[
+      { title:'المنتجات', pages:['products','product-detail (+)'] },
+      { title:'المخازن', pages:['warehouses'] },
+      { title:'ملخص المخزون', pages:['inventory-summary'] },
+      { title:'الحركات', pages:['movements'] },
+      { title:'التسويات', pages:['adjustments'] },
+    ]},
+    { group:'التشغيل — الحاويات', color:'var(--info)', sections:[
+      { title:'لوحة الحاويات', pages:['containers'] },
+      { title:'استلام حاوية', pages:['container-receive (+)'] },
+      { title:'التكلفة الفعلية', pages:['landed-cost'] },
+    ]},
+    { group:'التشغيل — المشتريات', color:'var(--pink)', sections:[
+      { title:'الموردون', pages:['suppliers','supplier-detail (+)'] },
+      { title:'أوامر الشراء', pages:['purchase-orders','purchase-order-create (+)'] },
+      { title:'المشتريات', pages:['purchases','purchase-create (+)'] },
+      { title:'مرتجعات الشراء', pages:['purchase-returns','purchase-return-create (+)'] },
+    ]},
+    { group:'المالية — المالية', color:'var(--success)', sections:[
+      { title:'دليل الحسابات', pages:['coa'] },
+      { title:'الخزائن', pages:['cashiers'] },
+      { title:'التحويلات', pages:['transfers'] },
+      { title:'المصروفات', pages:['expenses'] },
+      { title:'حسابات العملاء', pages:['customer-accounts'] },
+      { title:'حسابات الموردين', pages:['supplier-accounts'] },
+      { title:'التعديلات المالية', pages:['financial-adjustments'] },
+      { title:'العملات', pages:['currencies'] },
+    ]},
+    { group:'المالية — التقارير', color:'var(--accent)', sections:[
+      { title:'مركز التقارير', pages:['reports'] },
+      { title:'تقارير المبيعات', pages:['reports-sales'] },
+      { title:'تقارير الأرباح', pages:['reports-profit'] },
+      { title:'تقارير المخزون', pages:['reports-inventory'] },
+      { title:'التقارير المالية', pages:['reports-financial'] },
+    ]},
+    { group:'الإدارة', color:'var(--danger)', sections:[
+      { title:'المستخدم والصلاحيات', pages:['users'] },
+      { title:'الإعدادات العامة', pages:['settings'] },
+    ]},
+  ];
+
+  navData.forEach(g => {
+    const box = document.createElement('div');
+    box.className = 'navmap';
+    box.innerHTML = `<div class="navmap-head" style="color:${g.color}">${g.group}</div>
+      <div class="navgroup"><div class="navsections">
+        ${g.sections.map(s => `
+          <div class="navsec">
+            <div class="navsec-title">📄 ${s.title}</div>
+            <div class="navsec-pages">
+              ${s.pages.map(p => `<div class="navsec-page">${p}</div>`).join('')}
+            </div>
+          </div>`).join('')}
+      </div></div>`;
+    mod.appendChild(box);
+  });
+}
+
+/* ============ TREE BUILDER ============ */
+function buildTree(items, container) {
+  items.forEach(item => {
+    const line = document.createElement('div');
+    line.className = 'tree-line';
+    const indent = '&nbsp;'.repeat(item.indent * 4);
+    if (item.type === 'folder') {
+      const guide = item.indent > 0 ? (item.last ? '└─ ' : '├─ ') : '';
+      line.innerHTML = `<span class="tree-guide">${indent}${guide}</span>
+        <span class="tree-folder" onclick="toggleFolder(this)"><span class="tree-arrow">▾</span><span>📁</span> <b>${item.name}/</b></span>
+        ${item.comment?`<span class="tree-comment">← ${item.comment}</span>`:''}`;
+      container.appendChild(line);
+      if (item.children) {
+        const ch = document.createElement('div');
+        ch.className = 'tree-children';
+        ch.style.maxHeight = '3000px';
+        buildTree(item.children, ch);
+        container.appendChild(ch);
+      }
+    } else {
+      const guide = item.indent > 0 ? (item.last ? '└─ ' : '├─ ') : '';
+      const ext = item.name.split('.').pop();
+      const icons = {jsx:'⚛️',js:'🟨',sql:'🗄️',json:'📋',css:'🎨',md:'📝'};
+      line.innerHTML = `<span class="tree-guide">${indent}${guide}</span>
+        <span class="tree-file">${icons[ext]||'📄'} ${item.name}</span>
+        ${item.comment?`<span class="tree-comment">← ${item.comment}</span>`:''}`;
+      container.appendChild(line);
+    }
+  });
+}
+function toggleFolder(el) {
+  el.classList.toggle('collapsed');
+  const next = el.closest('.tree-line').nextElementSibling;
+  if (next && next.classList.contains('tree-children')) {
+    if (next.classList.contains('hidden')) { next.classList.remove('hidden'); next.style.maxHeight='3000px'; }
+    else { next.style.maxHeight='0'; next.classList.add('hidden'); }
+  }
+}
+
+/* ============ 2. CLIENT TREE ============ */
+function renderClientTree(mod) {
+  mod.innerHTML = `<div class="mod-title">⚛️ Client — React Structure</div>
+    <div class="mod-sub">مطابق لصفحات ومكونات التصميم الفعلي: Sidebar بـ nav-groups قابلة للطي، Topbar بحث + إشعارات، Toast system، Modals</div>`;
+  const box = document.createElement('div');
+  box.className = 'tree-container';
+  box.innerHTML = `<div class="tree-header"><div class="tree-dot r"></div><div class="tree-dot y"></div><div class="tree-dot g"></div>&nbsp; client/src/</div>
+    <div class="tree-body" id="client-tb"></div>`;
+  mod.appendChild(box);
+
+  const tree = [
+    { type:'folder', name:'layouts', indent:0, children:[
+      { type:'file', name:'DashboardLayout.jsx', indent:1, comment:'Sidebar + Topbar + <Outlet/>' },
+      { type:'file', name:'AuthLayout.jsx', indent:1, comment:'شاشة تسجيل الدخول' },
+    ]},
+    { type:'folder', name:'components', indent:0, children:[
+      { type:'folder', name:'layout', indent:1, comment:'من التصميم مباشرة', children:[
+        { type:'file', name:'Sidebar.jsx', indent:2, comment:'nav-groups قابلة للطي (toggleSub)' },
+        { type:'file', name:'SidebarNavGroup.jsx', indent:2, comment:'زر + قائمة فرعية' },
+        { type:'file', name:'Topbar.jsx', indent:2, comment:'Breadcrumb + Search + Notif + Avatar' },
+        { type:'file', name:'Breadcrumb.jsx', indent:2 },
+        { type:'file', name:'GlobalSearch.jsx', indent:2, comment:'Ctrl+K — بحث بكل الوحدات مع نتائج مجمّعة' },
+        { type:'file', name:'NotificationPanel.jsx', indent:2, comment:'notif-item unread/read + notif-action' },
+      ]},
+      { type:'folder', name:'common', indent:1, children:[
+        { type:'file', name:'DataTable.jsx', indent:2, comment:'فرز + فلترة + pagination + checkbox' },
+        { type:'file', name:'StatusBadge.jsx', indent:2, comment:'badge-accent/success/warning/danger' },
+        { type:'file', name:'StatCard.jsx', indent:2, comment:'كارد المؤشرات في الداشبورد' },
+        { type:'file', name:'Modal.jsx', indent:2, comment:'openModal(id) من التصميم' },
+        { type:'file', name:'ConfirmDialog.jsx', indent:2 },
+        { type:'file', name:'Toast.jsx', indent:2, comment:'showToast(type,title,desc)' },
+        { type:'file', name:'RowActionMenu.jsx', indent:2, comment:'openRowMenu — قائمة إجراءات الصف' },
+        { type:'file', name:'Pagination.jsx', indent:2 },
+        { type:'file', name:'FilterBar.jsx', indent:2 },
+        { type:'file', name:'ProgressBar.jsx', indent:2, comment:'نسبة الحجز/التسليم' },
+        { type:'file', name:'Stepper.jsx', indent:2, comment:'خطوات استلام الحاوية (مسلمة→استلام→تخليص→ميناء→طريق)' },
+        { type:'file', name:'ExportButton.jsx', indent:2, comment:'exportTableCSV' },
+      ]},
+      { type:'folder', name:'charts', indent:1, children:[
+        { type:'file', name:'AreaChart.jsx', indent:2, comment:'مسار المبيعات والأرباح المتراكمة' },
+        { type:'file', name:'LiquidityDonut.jsx', indent:2, comment:'هيكل السيولة والمحررون' },
+      ]},
+      { type:'folder', name:'forms', indent:1, children:[
+        { type:'file', name:'LineItemsTable.jsx', indent:2, comment:'جدول بنود قابل لإعادة الاستخدام (فاتورة/طلب/أمر شراء)' },
+        { type:'file', name:'CurrencyInput.jsx', indent:2 },
+        { type:'file', name:'SelectField.jsx', indent:2 },
+        { type:'file', name:'DatePicker.jsx', indent:2 },
+      ]},
+    ]},
+    { type:'folder', name:'pages', indent:0, children:[
+      { type:'file', name:'DashboardPage.jsx', indent:1 },
+      { type:'folder', name:'sales', indent:1, children:[
+        { type:'file', name:'CustomersPage.jsx', indent:2 },
+        { type:'file', name:'CustomerDetailPage.jsx', indent:2 },
+        { type:'file', name:'OrdersPage.jsx', indent:2 },
+        { type:'file', name:'OrderCreatePage.jsx', indent:2 },
+        { type:'file', name:'OrderDetailPage.jsx', indent:2, comment:'تبويبات: بيانات/أصناف/حجوزات/تسليمات/فواتير' },
+        { type:'file', name:'ReservationsPage.jsx', indent:2 },
+        { type:'file', name:'DeliveriesPage.jsx', indent:2 },
+        { type:'file', name:'DeliveryCreatePage.jsx', indent:2 },
+        { type:'file', name:'InvoicesPage.jsx', indent:2 },
+        { type:'file', name:'InvoiceCreatePage.jsx', indent:2 },
+        { type:'file', name:'InvoicePrintPage.jsx', indent:2, comment:'@media print — مطابق للتصميم' },
+        { type:'file', name:'ReturnsPage.jsx', indent:2 },
+        { type:'file', name:'ReturnCreatePage.jsx', indent:2 },
+        { type:'file', name:'CollectionsPage.jsx', indent:2 },
+      ]},
+      { type:'folder', name:'inventory', indent:1, children:[
+        { type:'file', name:'ProductsPage.jsx', indent:2 },
+        { type:'file', name:'WarehousesPage.jsx', indent:2 },
+        { type:'file', name:'InventorySummaryPage.jsx', indent:2 },
+        { type:'file', name:'MovementsPage.jsx', indent:2 },
+        { type:'file', name:'AdjustmentsPage.jsx', indent:2 },
+      ]},
+      { type:'folder', name:'containers', indent:1, children:[
+        { type:'file', name:'ContainersPage.jsx', indent:2 },
+        { type:'file', name:'ContainerReceivePage.jsx', indent:2, comment:'Stepper 4 خطوات + مقارنة محتويات' },
+        { type:'file', name:'LandedCostPage.jsx', indent:2, comment:'توزيع مصروفات الحاوية على المنتجات' },
+      ]},
+      { type:'folder', name:'purchases', indent:1, children:[
+        { type:'file', name:'SuppliersPage.jsx', indent:2 },
+        { type:'file', name:'PurchaseOrdersPage.jsx', indent:2 },
+        { type:'file', name:'PurchaseOrderCreatePage.jsx', indent:2 },
+        { type:'file', name:'PurchasesPage.jsx', indent:2 },
+        { type:'file', name:'PurchaseCreatePage.jsx', indent:2 },
+        { type:'file', name:'PurchaseReturnsPage.jsx', indent:2 },
+        { type:'file', name:'PurchaseReturnCreatePage.jsx', indent:2 },
+      ]},
+      { type:'folder', name:'finance', indent:1, children:[
+        { type:'file', name:'ChartOfAccountsPage.jsx', indent:2 },
+        { type:'file', name:'CashiersPage.jsx', indent:2 },
+        { type:'file', name:'TransfersPage.jsx', indent:2 },
+        { type:'file', name:'ExpensesPage.jsx', indent:2 },
+        { type:'file', name:'CustomerAccountsPage.jsx', indent:2 },
+        { type:'file', name:'SupplierAccountsPage.jsx', indent:2 },
+        { type:'file', name:'FinancialAdjustmentsPage.jsx', indent:2 },
+        { type:'file', name:'CurrenciesPage.jsx', indent:2 },
+      ]},
+      { type:'folder', name:'reports', indent:1, children:[
+        { type:'file', name:'ReportsHubPage.jsx', indent:2, comment:'28 نموذج تقرير في 6 فئات' },
+        { type:'file', name:'SalesReportPage.jsx', indent:2 },
+        { type:'file', name:'ProfitLossReportPage.jsx', indent:2 },
+        { type:'file', name:'InventoryReportPage.jsx', indent:2 },
+        { type:'file', name:'FinancialReportsPage.jsx', indent:2 },
+      ]},
+      { type:'folder', name:'admin', indent:1, children:[
+        { type:'file', name:'UsersPermissionsPage.jsx', indent:2 },
+        { type:'file', name:'SettingsPage.jsx', indent:2 },
+      ]},
+    ]},
+    { type:'folder', name:'services', indent:0, comment:'Axios — واحد لكل Entity',
+      children:[
+        { type:'file', name:'api.js', indent:1, comment:'instance + interceptors (401→logout)' },
+        { type:'file', name:'customers.service.js', indent:1 },
+        { type:'file', name:'orders.service.js', indent:1 },
+        { type:'file', name:'invoices.service.js', indent:1 },
+        { type:'file', name:'inventory.service.js', indent:1 },
+        { type:'file', name:'containers.service.js', indent:1 },
+        { type:'file', name:'purchases.service.js', indent:1 },
+        { type:'file', name:'finance.service.js', indent:1 },
+        { type:'file', name:'reports.service.js', indent:1 },
+        { type:'file', name:'search.service.js', indent:1, comment:'global search endpoint' },
+      ]},
+    { type:'folder', name:'hooks', indent:0, children:[
+      { type:'file', name:'useToast.js', indent:1 },
+      { type:'file', name:'useModal.js', indent:1 },
+      { type:'file', name:'useDebounce.js', indent:1, comment:'للبحث الشامل' },
+      { type:'file', name:'usePagination.js', indent:1 },
+      { type:'file', name:'useKeyboardShortcut.js', indent:1, comment:'Ctrl+K' },
+    ]},
+    { type:'folder', name:'context', indent:0, children:[
+      { type:'file', name:'AuthContext.jsx', indent:1 },
+      { type:'file', name:'ToastContext.jsx', indent:1 },
+    ]},
+  ];
+  buildTree(tree, document.getElementById('client-tb'));
+}
+
+/* ============ 3. SERVER TREE ============ */
+function renderServerTree(mod) {
+  mod.innerHTML = `<div class="mod-title">🖥️ Server — Express Structure</div>
+    <div class="mod-sub">مقسّم حسب نفس الـ 3 مجموعات: Sales / Inventory-Containers-Purchases / Finance-Reports</div>`;
+  const box = document.createElement('div');
+  box.className = 'tree-container';
+  box.innerHTML = `<div class="tree-header"><div class="tree-dot r"></div><div class="tree-dot y"></div><div class="tree-dot g"></div>&nbsp; server/src/</div>
+    <div class="tree-body" id="server-tb"></div>`;
+  mod.appendChild(box);
+
+  const tree = [
+    { type:'file', name:'app.js', indent:0, comment:'Express + helmet + cors + morgan' },
+    { type:'file', name:'index.js', indent:0, comment:'app.listen' },
+    { type:'folder', name:'config', indent:0, children:[
+      { type:'file', name:'db.js', indent:1, comment:'PostgreSQL Pool' },
+      { type:'file', name:'env.js', indent:1 },
+    ]},
+    { type:'folder', name:'middleware', indent:0, children:[
+      { type:'file', name:'auth.middleware.js', indent:1, comment:'JWT verify' },
+      { type:'file', name:'permission.middleware.js', indent:1, comment:'requirePermission(action, module)' },
+      { type:'file', name:'validate.middleware.js', indent:1 },
+      { type:'file', name:'audit.middleware.js', indent:1, comment:'يسجل كل create/update/delete/approve' },
+      { type:'file', name:'error.middleware.js', indent:1 },
+    ]},
+    { type:'folder', name:'modules', indent:0, comment:'كل Module = routes+controller+service+model سوا',
+      children:[
+        { type:'folder', name:'sales', indent:1, children:[
+          { type:'file', name:'customers/', indent:2, comment:'routes.js + controller.js + service.js + model.js' },
+          { type:'file', name:'orders/', indent:2 },
+          { type:'file', name:'reservations/', indent:2 },
+          { type:'file', name:'deliveries/', indent:2 },
+          { type:'file', name:'invoices/', indent:2 },
+          { type:'file', name:'returns/', indent:2 },
+          { type:'file', name:'collections/', indent:2 },
+        ]},
+        { type:'folder', name:'inventory', indent:1, children:[
+          { type:'file', name:'products/', indent:2 },
+          { type:'file', name:'warehouses/', indent:2 },
+          { type:'file', name:'movements/', indent:2, comment:'Single Source of Truth للمخزون' },
+          { type:'file', name:'adjustments/', indent:2 },
+        ]},
+        { type:'folder', name:'containers', indent:1, children:[
+          { type:'file', name:'containers/', indent:2 },
+          { type:'file', name:'landedCost/', indent:2, comment:'توزيع مصروفات على تكلفة المنتجات' },
+        ]},
+        { type:'folder', name:'purchases', indent:1, children:[
+          { type:'file', name:'suppliers/', indent:2 },
+          { type:'file', name:'purchaseOrders/', indent:2 },
+          { type:'file', name:'purchases/', indent:2 },
+          { type:'file', name:'purchaseReturns/', indent:2 },
+        ]},
+        { type:'folder', name:'finance', indent:1, children:[
+          { type:'file', name:'chartOfAccounts/', indent:2 },
+          { type:'file', name:'cashiers/', indent:2 },
+          { type:'file', name:'transfers/', indent:2 },
+          { type:'file', name:'expenses/', indent:2 },
+          { type:'file', name:'customerAccounts/', indent:2 },
+          { type:'file', name:'supplierAccounts/', indent:2 },
+          { type:'file', name:'financialAdjustments/', indent:2 },
+          { type:'file', name:'currencies/', indent:2 },
+        ]},
+        { type:'folder', name:'reports', indent:1, comment:'Read-only queries فقط',
+          children:[
+            { type:'file', name:'salesReports/', indent:2 },
+            { type:'file', name:'profitLoss/', indent:2 },
+            { type:'file', name:'inventoryReports/', indent:2 },
+            { type:'file', name:'financialReports/', indent:2 },
+          ]},
+        { type:'folder', name:'admin', indent:1, children:[
+          { type:'file', name:'users/', indent:2 },
+          { type:'file', name:'roles/', indent:2 },
+          { type:'file', name:'auditLogs/', indent:2 },
+          { type:'file', name:'settings/', indent:2 },
+        ]},
+        { type:'file', name:'search/', indent:1, comment:'global search عبر كل الجداول' },
+        { type:'file', name:'auth/', indent:1 },
+      ]},
+    { type:'folder', name:'shared', indent:0, comment:'مشترك بين كل الـ modules',
+      children:[
+        { type:'file', name:'generateSequence.js', indent:1, comment:'ORD-2024-XXX / INV-2024-XXX — غير قابل للتعديل اليدوي' },
+        { type:'file', name:'calculateInvoiceTotals.js', indent:1, comment:'خصم صنف + خصم فاتورة + ضريبة + شحن' },
+        { type:'file', name:'stockAvailability.js', indent:1, comment:'المتاح = إجمالي − محجوز − تالف' },
+        { type:'file', name:'costingEngine.js', indent:1, comment:'[DECISION] FIFO أو متوسط مرجح' },
+        { type:'file', name:'transactionWrapper.js', indent:1, comment:'DB Transaction للعمليات المالية/المخزون' },
+        { type:'file', name:'response.js', indent:1 },
+      ]},
+  ];
+  buildTree(tree, document.getElementById('server-tb'));
+}
+
+/* ============ 4. API ============ */
+function renderApi(mod) {
+  mod.innerHTML = `<div class="mod-title">🌐 API Endpoints</div>
+    <div class="mod-sub">BASE: <code style="color:var(--accent);background:var(--surface-high);padding:2px 8px;border-radius:4px;">/api/v1</code> — مقسّمة بنفس ترتيب المجموعات في الـ sidebar</div>`;
+  const groups = [
+    { t:'👥 SALES — CUSTOMERS', c:'var(--success)', eps:[
+      ['GET','/customers','قائمة + فلترة'],['POST','/customers','إضافة'],
+      ['GET','/customers/:id','ملف كامل + تبويبات'],['PUT','/customers/:id','تعديل'],
+      ['GET','/customers/:id/statement','كشف حساب'],
+    ]},
+    { t:'📋 SALES — ORDERS', c:'var(--success)', eps:[
+      ['GET','/orders','قائمة'],['POST','/orders','إنشاء'],
+      ['GET','/orders/:id','تفاصيل + بنود + حجوزات + تسليمات'],
+      ['PATCH','/orders/:id/status','تغيير حالة'],
+      ['POST','/orders/:id/reserve','حجز المخزون'],
+    ]},
+    { t:'📦 SALES — RESERVATIONS / DELIVERIES', c:'var(--success)', eps:[
+      ['GET','/reservations','قائمة الحجوزات'],['PATCH','/reservations/:id/release','تحرير حجز'],
+      ['GET','/deliveries','قائمة'],['POST','/deliveries','إنشاء إذن تسليم'],['PATCH','/deliveries/:id/status','تحديث حالة'],
+    ]},
+    { t:'🧾 SALES — INVOICES / RETURNS / COLLECTIONS', c:'var(--success)', eps:[
+      ['GET','/invoices','قائمة'],['POST','/invoices','إنشاء'],['GET','/invoices/:id/print','نسخة الطباعة'],
+      ['PATCH','/invoices/:id/status','تغيير حالة'],['POST','/invoices/:id/payment','تسجيل دفعة'],
+      ['GET','/returns','مرتجعات المبيعات'],['POST','/returns','إنشاء مرتجع'],
+      ['GET','/collections','لوحة التحصيل + Aging'],
+    ]},
+    { t:'📦 INVENTORY', c:'var(--warning)', eps:[
+      ['GET','/products','قائمة'],['GET','/products/:id/stock','الأرصدة'],
+      ['GET','/warehouses','المخازن'],['GET','/inventory/summary','ملخص المخزون'],
+      ['GET','/inventory/movements','حركات المخزون'],['POST','/inventory/adjustments','تسوية جديدة'],
+    ]},
+    { t:'🚢 CONTAINERS', c:'var(--info)', eps:[
+      ['GET','/containers','لوحة الحاويات'],['POST','/containers','إضافة حاوية'],
+      ['POST','/containers/:id/receive','استلام + مقارنة محتويات'],
+      ['GET','/containers/:id/landed-cost','التكلفة الفعلية'],
+      ['POST','/containers/:id/expenses','مصروفات الحاوية'],
+    ]},
+    { t:'🏭 PURCHASES', c:'var(--pink)', eps:[
+      ['GET','/suppliers','الموردون'],['GET','/purchase-orders','أوامر الشراء'],
+      ['POST','/purchase-orders','إنشاء أمر'],['PATCH','/purchase-orders/:id/send','إرسال للمورد'],
+      ['GET','/purchases','فواتير المشتريات'],['POST','/purchases','تسجيل شراء'],
+      ['GET','/purchase-returns','مرتجعات الشراء'],
+    ]},
+    { t:'💰 FINANCE', c:'var(--accent)', eps:[
+      ['GET','/finance/chart-of-accounts','دليل الحسابات'],
+      ['GET','/finance/cashiers','الخزائن'],['POST','/finance/cashiers/transfer','تحويل بين خزائن'],
+      ['GET','/finance/expenses','المصروفات'],['POST','/finance/expenses','تسجيل مصروف'],
+      ['GET','/finance/customer-accounts','حسابات العملاء'],['GET','/finance/supplier-accounts','حسابات الموردين'],
+      ['POST','/finance/adjustments','تعديل مالي'],['GET','/finance/currencies','العملات'],
+    ]},
+    { t:'📈 REPORTS', c:'var(--accent)', eps:[
+      ['GET','/reports','مركز التقارير — 28 نموذج'],
+      ['GET','/reports/sales','تقرير المبيعات'],['GET','/reports/profit-loss','P&L'],
+      ['GET','/reports/inventory','تقرير المخزون'],['GET','/reports/financial','التقارير المالية'],
+    ]},
+    { t:'⚙️ ADMIN / SEARCH', c:'var(--danger)', eps:[
+      ['GET','/users','المستخدمون'],['GET','/roles','الأدوار والصلاحيات'],
+      ['GET','/audit-logs','سجل العمليات'],['GET','/settings','الإعدادات العامة'],
+      ['GET','/search?q=','البحث الشامل Ctrl+K — يرجع نتائج مجمّعة'],
+    ]},
+  ];
+  const mc = {GET:'get',POST:'post',PUT:'put',PATCH:'patch',DELETE:'delete'};
+  groups.forEach(g => {
+    const div = document.createElement('div');
+    div.className = 'endpoint-group';
+    div.innerHTML = `<div class="endpoint-group-title"><span style="color:${g.c}">${g.t}</span></div>
+      ${g.eps.map(e=>`<div class="endpoint-row"><span class="method ${mc[e[0]]}">${e[0]}</span><span class="ep-path">${e[1]}</span><span class="ep-desc">${e[2]}</span></div>`).join('')}`;
+    mod.appendChild(div);
+  });
+}
+
+/* ============ 5. PHASES ============ */
+function renderPhases(mod) {
+  mod.innerHTML = `<div class="mod-title">🗓️ خطة التنفيذ</div>
+    <div class="mod-sub">7 مراحل — امشي بالترتيب</div>`;
+  const phases = [
+    { n:'Phase 1', c:'p1', t:'🔑 الأساس', items:['Vite + Express + PostgreSQL setup','Migrations للجداول الأساسية','Auth (Login فقط — مستخدم واحد أدمن حسب التصميم)','DashboardLayout: Sidebar قابل للطي + Topbar','لوحة التحكم + المؤشرات'] },
+    { n:'Phase 2', c:'p2', t:'🛒 المبيعات كاملة', items:['العملاء (قائمة + تفاصيل)','الطلبات (قائمة + إنشاء + تفاصيل بتبويبات)','حجوزات المخزون','التسليمات','الفواتير + الطباعة','المرتجعات','التحصيل'] },
+    { n:'Phase 3', c:'p3', t:'📦 المخزون والحاويات', items:['المنتجات + المخازن','ملخص المخزون + الحركات','التسويات','لوحة الحاويات + استلام (Stepper)','التكلفة الفعلية Landed Cost'] },
+    { n:'Phase 4', c:'p4', t:'🏭 المشتريات', items:['الموردون','أوامر الشراء','المشتريات (فواتير)','مرتجعات الشراء'] },
+    { n:'Phase 5', c:'p0', t:'💰 المالية', items:['دليل الحسابات','الخزائن + التحويلات','المصروفات','حسابات العملاء والموردين','التعديلات المالية + العملات'] },
+    { n:'Phase 6', c:'p1', t:'📈 التقارير', items:['مركز التقارير (28 نموذج)','تقارير المبيعات والأرباح','تقارير المخزون والمالية'] },
+    { n:'Phase 7', c:'p2', t:'⚙️ الإدارة والتلميع', items:['المستخدم والصلاحيات','الإعدادات العامة','البحث الشامل Ctrl+K','الإشعارات + سجل العمليات'] },
+  ];
+  const box = document.createElement('div');
+  box.className = 'phases';
+  phases.forEach(p => {
+    const d = document.createElement('div');
+    d.className = 'phase ' + p.c;
+    d.innerHTML = `<div class="phase-num">${p.n}</div><div class="phase-title">${p.t}</div>
+      <div class="phase-items">${p.items.map(i=>`<div class="phase-item">${i}</div>`).join('')}</div>`;
+    box.appendChild(d);
+  });
+  mod.appendChild(box);
+}
+</script>
+</body>
+</html>

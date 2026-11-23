@@ -1,0 +1,2463 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precision Slate ERP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #111415;
+  --surface-low: #191c1d;
+  --surface: #1d2021;
+  --surface-high: #272a2b;
+  --surface-highest: #323536;
+  --surface-bright: #3a3d3e;
+  --border: #414752;
+  --border-strong: #5c6370;
+  --text: #e1e3e4;
+  --text-secondary: rgba(255,255,255,0.60);
+  --text-dim: rgba(255,255,255,0.38);
+  --accent: #4a9eff;
+  --accent-dim: rgba(74,158,255,0.15);
+  --success: #3ecf8e;
+  --success-dim: rgba(62,207,142,0.15);
+  --warning: #f5a623;
+  --warning-dim: rgba(245,166,35,0.15);
+  --danger: #e05252;
+  --danger-dim: rgba(224,82,82,0.15);
+  --info: #9b8ef7;
+  --info-dim: rgba(155,142,247,0.15);
+  --sidebar-w: 240px;
+  --topbar-h: 52px;
+  --radius: 4px;
+  --radius-lg: 8px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 13px; direction: rtl; }
+body {
+  font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── SIDEBAR ───────────────────────────────── */
+.sidebar {
+  width: var(--sidebar-w);
+  height: 100vh;
+  background: var(--surface-low);
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+.sidebar-logo {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.logo-icon {
+  width: 28px; height: 28px;
+  background: var(--accent);
+  border-radius: var(--radius);
+  display: grid; place-items: center;
+  font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0;
+}
+.logo-text { font-size: 13px; font-weight: 600; line-height: 1.2; }
+.logo-sub { font-size: 10px; color: var(--text-secondary); }
+.sidebar-nav { flex: 1; overflow-y: auto; padding: 8px 0; }
+.sidebar-nav::-webkit-scrollbar { width: 3px; }
+.sidebar-nav::-webkit-scrollbar-track { background: transparent; }
+.sidebar-nav::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+.nav-group { margin-bottom: 4px; }
+.nav-section-label {
+  font-size: 10px; font-weight: 600; color: var(--text-dim);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  padding: 8px 16px 4px;
+}
+.nav-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 16px; cursor: pointer;
+  color: var(--text-secondary); font-size: 12.5px;
+  transition: background 0.12s, color 0.12s;
+  position: relative; user-select: none;
+}
+.nav-item:hover { background: var(--surface); color: var(--text); }
+.nav-item.active {
+  background: var(--accent-dim); color: var(--accent);
+  border-left: 2px solid var(--accent);
+}
+.nav-icon { width: 16px; height: 16px; flex-shrink: 0; opacity: 0.7; }
+.nav-item.active .nav-icon { opacity: 1; }
+.nav-badge {
+  margin-right: auto; background: var(--danger); color: #fff;
+  font-size: 10px; font-weight: 700; border-radius: 99px;
+  padding: 1px 6px; min-width: 18px; text-align: center;
+}
+.nav-chevron { margin-right: auto; width: 14px; height: 14px; opacity: 0.5; transition: transform 0.2s; }
+.nav-sub { display: none; }
+.nav-sub.open { display: block; }
+.nav-sub-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 16px 5px 32px; cursor: pointer;
+  color: var(--text-dim); font-size: 12px;
+  transition: color 0.1s, background 0.1s;
+}
+.nav-sub-item:hover { color: var(--text); background: var(--surface); }
+.nav-sub-item.active { color: var(--accent); }
+.nav-sub-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: currentColor; flex-shrink: 0; margin-left: 4px;
+}
+.sidebar-footer {
+  padding: 10px 16px; border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.sidebar-user {
+  display: flex; align-items: center; gap: 8px; cursor: pointer;
+  padding: 6px; border-radius: var(--radius); transition: background 0.1s;
+}
+.sidebar-user:hover { background: var(--surface); }
+.avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--info));
+  display: grid; place-items: center; font-size: 11px; font-weight: 700;
+  color: #fff; flex-shrink: 0;
+}
+.user-info { flex: 1; min-width: 0; }
+.user-name { font-size: 12px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.user-role { font-size: 10px; color: var(--text-dim); }
+.conn-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--success); flex-shrink: 0; }
+
+/* ─── MAIN LAYOUT ───────────────────────────── */
+.main {
+  flex: 1; display: flex; flex-direction: column;
+  overflow: hidden; min-width: 0;
+}
+.topbar {
+  height: var(--topbar-h);
+  background: var(--surface-low);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; padding: 0 20px; gap: 12px;
+  flex-shrink: 0; position: relative; z-index: 5;
+}
+.breadcrumb {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 12px; color: var(--text-secondary); flex: 1;
+}
+.breadcrumb-sep { color: var(--text-dim); }
+.breadcrumb-current { color: var(--text); font-weight: 500; }
+.search-wrap {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--surface-high); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 0 10px; height: 32px;
+  width: 240px; cursor: text; transition: border-color 0.15s;
+}
+.search-wrap:hover { border-color: var(--border-strong); }
+.search-wrap svg { color: var(--text-dim); flex-shrink: 0; }
+.search-wrap span { font-size: 12px; color: var(--text-dim); }
+.kbd { font-size: 10px; color: var(--text-dim); background: var(--surface); border: 1px solid var(--border); border-radius: 2px; padding: 1px 4px; margin-right: auto; }
+.topbar-actions { display: flex; align-items: center; gap: 6px; }
+.icon-btn {
+  width: 32px; height: 32px; border-radius: var(--radius);
+  background: transparent; border: none; cursor: pointer;
+  display: grid; place-items: center; color: var(--text-secondary);
+  transition: background 0.1s, color 0.1s; position: relative;
+}
+.icon-btn:hover { background: var(--surface); color: var(--text); }
+.notif-badge {
+  position: absolute; top: 4px; right: 4px; width: 7px; height: 7px;
+  background: var(--danger); border-radius: 50%; border: 1px solid var(--surface-low);
+}
+.page { flex: 1; overflow-y: auto; padding: 24px; }
+.page::-webkit-scrollbar { width: 4px; }
+.page::-webkit-scrollbar-track { background: transparent; }
+.page::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+/* ─── PAGE HEADER ───────────────────────────── */
+.page-hd {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 20px; gap: 16px;
+}
+.page-hd-left h1 { font-size: 18px; font-weight: 600; line-height: 1.3; }
+.page-hd-left p { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+.page-hd-actions { display: flex; gap: 8px; flex-shrink: 0; }
+
+/* ─── BUTTONS ───────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 0 14px; height: 32px; border-radius: var(--radius);
+  font-size: 12.5px; font-weight: 500; cursor: pointer;
+  border: none; transition: all 0.12s; white-space: nowrap; font-family: inherit;
+}
+.btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: #3a8ee8; }
+.btn-secondary { background: var(--surface-high); color: var(--text); border: 1px solid var(--border); }
+.btn-secondary:hover { background: var(--surface-bright); }
+.btn-ghost { background: transparent; color: var(--text-secondary); border: 1px solid transparent; }
+.btn-ghost:hover { background: var(--surface); color: var(--text); border-color: var(--border); }
+.btn-danger { background: transparent; color: var(--danger); border: 1px solid var(--danger); }
+.btn-danger:hover { background: var(--danger-dim); }
+.btn-sm { height: 26px; padding: 0 10px; font-size: 11.5px; }
+.btn-lg { height: 38px; padding: 0 20px; font-size: 13.5px; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ─── STAT CARDS ────────────────────────────── */
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+.stat-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 16px; cursor: pointer;
+  transition: border-color 0.15s;
+}
+.stat-card:hover { border-color: var(--border-strong); }
+.stat-hd { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.stat-label { font-size: 11.5px; color: var(--text-secondary); font-weight: 500; }
+.stat-icon {
+  width: 28px; height: 28px; border-radius: var(--radius);
+  display: grid; place-items: center; flex-shrink: 0;
+}
+.stat-value { font-size: 22px; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+.stat-trend { font-size: 11px; display: flex; align-items: center; gap: 4px; }
+.trend-up { color: var(--success); }
+.trend-dn { color: var(--danger); }
+
+/* ─── TABLE ─────────────────────────────────── */
+.table-wrap {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+}
+.table-toolbar {
+  padding: 12px 16px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.table-title { font-size: 13px; font-weight: 600; }
+.table-toolbar-right { display: flex; gap: 8px; margin-right: auto; }
+.search-field {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--surface-high); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 0 10px; height: 28px;
+  width: 200px;
+}
+.search-field input {
+  background: transparent; border: none; outline: none; color: var(--text);
+  font-size: 12px; width: 100%; font-family: inherit;
+}
+.search-field input::placeholder { color: var(--text-dim); }
+table { width: 100%; border-collapse: collapse; }
+thead { background: var(--surface-high); position: sticky; top: 0; z-index: 1; }
+th {
+  padding: 8px 12px; text-align: right; font-size: 11px; font-weight: 600;
+  color: var(--text-secondary); white-space: nowrap; border-bottom: 1px solid var(--border);
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+td {
+  padding: 10px 12px; font-size: 12.5px; border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(255,255,255,0.02); }
+.td-link { color: var(--accent); cursor: pointer; font-weight: 500; }
+.td-link:hover { text-decoration: underline; }
+.td-num { text-align: left; font-variant-numeric: tabular-nums; }
+.td-secondary { color: var(--text-secondary); }
+.td-actions { display: flex; gap: 4px; justify-content: flex-end; }
+.tbl-btn {
+  width: 26px; height: 26px; border-radius: var(--radius); background: transparent;
+  border: none; cursor: pointer; display: grid; place-items: center;
+  color: var(--text-secondary); transition: background 0.1s, color 0.1s;
+}
+.tbl-btn:hover { background: var(--surface-high); color: var(--text); }
+.table-foot {
+  padding: 10px 16px; border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.table-count { font-size: 11px; color: var(--text-secondary); }
+.pagination { display: flex; gap: 4px; }
+.pg-btn {
+  width: 26px; height: 26px; border-radius: var(--radius);
+  background: var(--surface-high); border: 1px solid var(--border);
+  cursor: pointer; display: grid; place-items: center; font-size: 11.5px; color: var(--text);
+}
+.pg-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* ─── BADGE ─────────────────────────────────── */
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 2px 8px; border-radius: var(--radius); font-size: 10.5px; font-weight: 600;
+  white-space: nowrap;
+}
+.badge-success { background: var(--success-dim); color: var(--success); border: 1px solid rgba(62,207,142,0.3); }
+.badge-warning { background: var(--warning-dim); color: var(--warning); border: 1px solid rgba(245,166,35,0.3); }
+.badge-danger  { background: var(--danger-dim);  color: var(--danger);  border: 1px solid rgba(224,82,82,0.3); }
+.badge-info    { background: var(--info-dim);    color: var(--info);    border: 1px solid rgba(155,142,247,0.3); }
+.badge-accent  { background: var(--accent-dim);  color: var(--accent);  border: 1px solid rgba(74,158,255,0.3); }
+.badge-neutral { background: var(--surface-high); color: var(--text-secondary); border: 1px solid var(--border); }
+
+/* ─── CARDS / PANELS ────────────────────────── */
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 16px;
+}
+.card-hd { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.card-title { font-size: 13px; font-weight: 600; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.flex-row { display: flex; gap: 12px; }
+
+/* ─── TABS ──────────────────────────────────── */
+.tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+.tab-item {
+  padding: 8px 14px; font-size: 12.5px; font-weight: 500;
+  cursor: pointer; color: var(--text-secondary); border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s; white-space: nowrap;
+  margin-bottom: -1px;
+}
+.tab-item:hover { color: var(--text); }
+.tab-item.active { color: var(--accent); border-bottom-color: var(--accent); }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* ─── FORM ──────────────────────────────────── */
+.form-section { margin-bottom: 24px; }
+.form-section-title {
+  font-size: 12px; font-weight: 600; color: var(--text-secondary);
+  text-transform: uppercase; letter-spacing: 0.06em;
+  margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border);
+}
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.form-full { grid-column: 1 / -1; }
+.field { display: flex; flex-direction: column; gap: 5px; }
+.field label { font-size: 11.5px; font-weight: 500; color: var(--text-secondary); }
+.field label .req { color: var(--danger); margin-right: 2px; }
+.input {
+  height: 32px; background: var(--surface-high); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 0 10px; color: var(--text); font-size: 12.5px;
+  font-family: inherit; outline: none; transition: border-color 0.15s;
+}
+.input:focus { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(74,158,255,0.15); }
+.input::placeholder { color: var(--text-dim); }
+.input.error { border-color: var(--danger); }
+.textarea {
+  background: var(--surface-high); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 8px 10px; color: var(--text); font-size: 12.5px;
+  font-family: inherit; outline: none; resize: vertical; min-height: 72px;
+  transition: border-color 0.15s;
+}
+.textarea:focus { border-color: var(--accent); }
+.select {
+  height: 32px; background: var(--surface-high); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 0 10px; color: var(--text); font-size: 12.5px;
+  font-family: inherit; outline: none; cursor: pointer; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: left 8px center;
+}
+.field-error { font-size: 11px; color: var(--danger); display: flex; align-items: center; gap: 3px; }
+.form-footer { display: flex; gap: 8px; justify-content: flex-end; padding-top: 16px; border-top: 1px solid var(--border); margin-top: 20px; }
+
+/* ─── MODAL ─────────────────────────────────── */
+.overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+  display: grid; place-items: center; z-index: 100;
+  backdrop-filter: blur(2px); display: none;
+}
+.overlay.open { display: grid; }
+.modal {
+  background: var(--surface-low); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); width: 540px; max-width: 90vw;
+  max-height: 85vh; display: flex; flex-direction: column; overflow: hidden;
+}
+.modal-lg { width: 720px; }
+.modal-hd {
+  padding: 16px 20px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
+}
+.modal-title { font-size: 14px; font-weight: 600; }
+.modal-close {
+  width: 28px; height: 28px; border-radius: var(--radius); background: transparent;
+  border: none; cursor: pointer; color: var(--text-secondary); display: grid; place-items: center;
+  transition: background 0.1s;
+}
+.modal-close:hover { background: var(--surface); color: var(--text); }
+.modal-body { padding: 20px; overflow-y: auto; flex: 1; }
+.modal-footer { padding: 14px 20px; border-top: 1px solid var(--border); display: flex; gap: 8px; justify-content: flex-end; flex-shrink: 0; }
+
+/* ─── NOTIFICATION PANEL ────────────────────── */
+.notif-panel {
+  position: absolute; top: calc(var(--topbar-h) + 4px); left: 60px;
+  width: 360px; background: var(--surface-low); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  z-index: 50; display: none; overflow: hidden;
+}
+.notif-panel.open { display: block; }
+.notif-panel-hd {
+  padding: 12px 16px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.notif-panel-title { font-size: 13px; font-weight: 600; }
+.notif-item {
+  padding: 12px 16px; border-bottom: 1px solid var(--border);
+  cursor: pointer; transition: background 0.1s; display: flex; gap: 10px;
+}
+.notif-item:last-child { border-bottom: none; }
+.notif-item:hover { background: var(--surface); }
+.notif-item.unread { background: rgba(74,158,255,0.04); }
+.notif-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+.notif-content { flex: 1; }
+.notif-title { font-size: 12.5px; font-weight: 500; margin-bottom: 2px; }
+.notif-desc { font-size: 11.5px; color: var(--text-secondary); line-height: 1.4; }
+.notif-time { font-size: 10.5px; color: var(--text-dim); margin-top: 4px; }
+.notif-action { font-size: 11px; color: var(--accent); margin-top: 6px; cursor: pointer; display: inline-block; }
+
+/* ─── SEARCH TYPEAHEAD ──────────────────────── */
+.search-dropdown {
+  position: absolute; top: calc(var(--topbar-h) + 4px); right: 50%;
+  transform: translateX(50%); width: 380px;
+  background: var(--surface-low); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  z-index: 50; display: none; overflow: hidden;
+}
+.search-dropdown.open { display: block; }
+.search-group-label {
+  padding: 8px 14px 4px; font-size: 10px; font-weight: 700;
+  color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.08em;
+}
+.search-result {
+  padding: 8px 14px; cursor: pointer; display: flex; align-items: center; gap: 8px;
+  transition: background 0.1s;
+}
+.search-result:hover { background: var(--surface); }
+.sr-icon { width: 26px; height: 26px; border-radius: var(--radius); background: var(--surface-high); display: grid; place-items: center; flex-shrink: 0; }
+.sr-main { flex: 1; }
+.sr-name { font-size: 12.5px; font-weight: 500; }
+.sr-sub { font-size: 11px; color: var(--text-secondary); }
+
+/* ─── FILTER BAR ────────────────────────────── */
+.filter-bar {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 16px; flex-wrap: wrap;
+}
+.filter-chip {
+  display: inline-flex; align-items: center; gap: 5px; padding: 0 10px;
+  height: 28px; background: var(--surface-high); border: 1px solid var(--border);
+  border-radius: var(--radius); font-size: 11.5px; cursor: pointer; color: var(--text-secondary);
+  transition: all 0.1s;
+}
+.filter-chip:hover { border-color: var(--border-strong); color: var(--text); }
+.filter-chip.active { background: var(--accent-dim); border-color: rgba(74,158,255,0.4); color: var(--accent); }
+.filter-sep { height: 20px; width: 1px; background: var(--border); }
+
+/* ─── ACCOUNT TREE (COA) ────────────────────── */
+.tree-item {
+  display: flex; align-items: center; gap: 6px; padding: 6px 12px;
+  cursor: pointer; border-radius: var(--radius); transition: background 0.1s;
+  font-size: 12.5px;
+}
+.tree-item:hover { background: var(--surface); }
+.tree-item.selected { background: var(--accent-dim); color: var(--accent); }
+.tree-indent { display: flex; flex-direction: column; }
+.tree-toggle { width: 16px; height: 16px; flex-shrink: 0; }
+.tree-balance { margin-right: auto; font-variant-numeric: tabular-nums; font-size: 12px; color: var(--text-secondary); }
+
+/* ─── PROGRESS BAR ──────────────────────────── */
+.progress-bar { height: 4px; background: var(--surface-high); border-radius: 99px; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 99px; transition: width 0.3s; }
+
+/* ─── TIMELINE / AUDIT LOG ──────────────────── */
+.timeline { display: flex; flex-direction: column; gap: 0; }
+.timeline-item { display: flex; gap: 12px; padding-bottom: 16px; position: relative; }
+.timeline-item::before { content:''; position: absolute; top: 24px; right: 11px; bottom: 0; width: 1px; background: var(--border); }
+.timeline-item:last-child::before { display: none; }
+.timeline-dot {
+  width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0;
+  display: grid; place-items: center; margin-top: 1px; z-index: 1;
+}
+.timeline-body { flex: 1; }
+.timeline-title { font-size: 12.5px; font-weight: 500; }
+.timeline-meta { font-size: 11px; color: var(--text-secondary); margin-top: 2px; }
+.timeline-change { margin-top: 6px; font-size: 11.5px; background: var(--surface-high); border-radius: var(--radius); padding: 6px 10px; }
+.change-old { color: var(--danger); text-decoration: line-through; }
+.change-new { color: var(--success); }
+
+/* ─── SKELETON ──────────────────────────────── */
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--surface-high) 25%, var(--surface-bright) 50%, var(--surface-high) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius);
+}
+.skel-row { height: 14px; margin-bottom: 6px; }
+.skel-stat { height: 60px; border-radius: var(--radius-lg); }
+
+/* ─── SPLIT PANEL ───────────────────────────── */
+.split-panel { display: grid; grid-template-columns: 1fr 380px; gap: 16px; }
+.detail-panel {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column;
+}
+.detail-panel-hd {
+  padding: 14px 16px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
+}
+.detail-panel-name { font-size: 14px; font-weight: 600; }
+.detail-panel-body { padding: 16px; flex: 1; overflow-y: auto; }
+.kv-list { display: flex; flex-direction: column; gap: 10px; }
+.kv-item { display: flex; align-items: baseline; }
+.kv-key { font-size: 11.5px; color: var(--text-secondary); min-width: 100px; flex-shrink: 0; }
+.kv-val { font-size: 12.5px; }
+.kv-divider { border: none; border-top: 1px solid var(--border); margin: 12px 0; }
+
+/* ─── REPORT HEADER ─────────────────────────── */
+.report-hd {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 14px; margin-bottom: 16px;
+}
+.date-range { display: flex; align-items: center; gap: 6px; }
+
+/* ─── EMPTY STATE ───────────────────────────── */
+.empty-state {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; padding: 60px 20px; text-align: center;
+}
+.empty-icon { font-size: 40px; margin-bottom: 14px; opacity: 0.4; }
+.empty-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+.empty-desc { font-size: 12px; color: var(--text-secondary); max-width: 300px; margin-bottom: 16px; }
+
+/* ─── ALERT BANNER ──────────────────────────── */
+.alert {
+  display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px;
+  border-radius: var(--radius); margin-bottom: 16px; font-size: 12.5px; border: 1px solid;
+}
+.alert-warning { background: var(--warning-dim); border-color: rgba(245,166,35,0.3); color: var(--warning); }
+.alert-danger { background: var(--danger-dim); border-color: rgba(224,82,82,0.3); color: var(--danger); }
+.alert-info { background: var(--info-dim); border-color: rgba(155,142,247,0.3); color: var(--info); }
+.alert-icon { flex-shrink: 0; margin-top: 1px; }
+.alert-body { flex: 1; color: var(--text); }
+.alert-body strong { color: inherit; }
+
+/* ─── CHARTS (CSS) ──────────────────────────── */
+.chart-wrap {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 16px;
+}
+.mini-bars { display: flex; align-items: flex-end; gap: 4px; height: 48px; }
+.mini-bar { flex: 1; border-radius: 2px; background: var(--accent-dim); min-width: 6px; transition: background 0.1s; }
+.mini-bar:hover { background: var(--accent); }
+.bar-chart { display: flex; align-items: flex-end; gap: 8px; height: 140px; margin-top: 16px; }
+.bar-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.bar-fill { width: 100%; border-radius: 2px 2px 0 0; transition: height 0.3s; }
+.bar-lbl { font-size: 10px; color: var(--text-dim); }
+
+/* ─── TRANSFER VISUAL ───────────────────────── */
+.transfer-visual {
+  display: flex; align-items: center; gap: 16px;
+  background: var(--surface-high); border-radius: var(--radius-lg);
+  padding: 16px; margin: 16px 0;
+}
+.transfer-box {
+  flex: 1; background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 12px; text-align: center;
+}
+.transfer-box-name { font-size: 12.5px; font-weight: 600; margin-bottom: 4px; }
+.transfer-box-balance { font-size: 18px; font-weight: 700; }
+.transfer-arrow { font-size: 20px; color: var(--accent); flex-shrink: 0; }
+
+/* ─── PERMISSION MATRIX ─────────────────────── */
+.perm-table th:first-child { position: sticky; right: 0; background: var(--surface-high); z-index: 2; }
+.perm-table td:first-child { position: sticky; right: 0; background: var(--surface); }
+.perm-check { width: 16px; height: 16px; cursor: pointer; accent-color: var(--accent); }
+
+/* ─── TOPBAR SEARCH ACTIVE ──────────────────── */
+.search-wrap.active { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-dim); width: 320px; }
+
+/* ─── TOAST ─────────────────────────────────── */
+.toast-area { position: fixed; top: 16px; left: 20px; z-index: 200; display: flex; flex-direction: column; gap: 8px; }
+.toast {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 12px 14px; border-radius: var(--radius-lg);
+  border: 1px solid; min-width: 280px; max-width: 360px;
+  background: var(--surface-low); box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  animation: slideIn 0.2s ease; font-size: 12.5px;
+}
+@keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+.toast-success { border-color: rgba(62,207,142,0.4); }
+.toast-success .toast-icon { color: var(--success); }
+.toast-error { border-color: rgba(224,82,82,0.4); }
+.toast-error .toast-icon { color: var(--danger); }
+.toast-body { flex: 1; }
+.toast-title { font-weight: 600; margin-bottom: 2px; }
+.toast-desc { color: var(--text-secondary); font-size: 11.5px; }
+
+/* ─── STATUS TIMELINE ───────────────────────── */
+.status-steps { display: flex; align-items: center; gap: 0; margin: 16px 0; }
+.status-step { display: flex; flex-direction: column; align-items: center; flex: 1; position: relative; }
+.status-step::before {
+  content: ''; position: absolute; top: 10px; right: 50%; width: 100%; height: 2px;
+  background: var(--border);
+}
+.status-step:first-child::before { display: none; }
+.status-step.done::before { background: var(--success); }
+.status-step.active::before { background: var(--accent); }
+.step-dot {
+  width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--border);
+  background: var(--surface); z-index: 1; display: grid; place-items: center; font-size: 9px;
+}
+.status-step.done .step-dot { background: var(--success); border-color: var(--success); color: #fff; }
+.status-step.active .step-dot { background: var(--accent); border-color: var(--accent); color: #fff; }
+.step-label { font-size: 10.5px; color: var(--text-dim); margin-top: 5px; text-align: center; }
+.status-step.active .step-label { color: var(--accent); font-weight: 600; }
+.status-step.done .step-label { color: var(--success); }
+
+/* ─── CONTENT SECTIONS ──────────────────────── */
+.section-content { display: none; }
+.section-content.active { display: block; }
+
+/* ─── CREDIT METER ──────────────────────────── */
+.credit-meter { background: var(--surface-high); border-radius: var(--radius-lg); padding: 14px; }
+.credit-row { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px; }
+.credit-bar { height: 6px; background: var(--surface-bright); border-radius: 99px; overflow: hidden; margin-bottom: 8px; }
+.credit-fill { height: 100%; border-radius: 99px; }
+
+/* ─── INVOICE PRINT PREVIEW ─────────────────── */
+.invoice-preview {
+  background: #fff; color: #000; padding: 40px; font-family: 'IBM Plex Sans Arabic', sans-serif;
+  border-radius: var(--radius-lg); direction: rtl;
+}
+.inv-preview-hd { display: flex; justify-content: space-between; margin-bottom: 32px; border-bottom: 2px solid #333; padding-bottom: 16px; }
+.inv-preview-co { font-size: 20px; font-weight: 700; }
+.inv-preview-label { font-size: 24px; font-weight: 700; color: #1a1a1a; text-align: left; }
+.inv-preview-num { font-size: 13px; color: #555; text-align: left; }
+.inv-preview-parties { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+.inv-party-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #777; margin-bottom: 4px; font-weight: 600; }
+.inv-party-name { font-size: 14px; font-weight: 600; }
+.inv-party-detail { font-size: 12px; color: #555; line-height: 1.6; }
+.inv-preview table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+.inv-preview th { background: #f5f5f5; padding: 8px 10px; font-size: 11px; text-align: right; border-bottom: 1px solid #ddd; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+.inv-preview td { padding: 8px 10px; border-bottom: 1px solid #eee; font-size: 12.5px; }
+.inv-preview .inv-totals { margin-left: auto; width: 280px; }
+.inv-totals-row { display: flex; justify-content: space-between; padding: 5px 0; font-size: 12.5px; border-bottom: 1px solid #eee; }
+.inv-totals-total { font-size: 15px; font-weight: 700; border-top: 2px solid #333; padding-top: 8px; border-bottom: none; }
+.inv-preview-footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid #ddd; display: flex; justify-content: space-between; align-items: flex-end; }
+.inv-sig { text-align: center; }
+.inv-sig-line { width: 120px; border-top: 1px solid #333; margin-bottom: 4px; }
+.inv-sig-label { font-size: 11px; color: #555; }
+
+/* ─── COA TREE ──────────────────────────────── */
+.coa-item {
+  display: flex; align-items: center; cursor: pointer;
+  padding: 6px 12px; border-radius: var(--radius);
+  transition: background 0.1s;
+}
+.coa-item:hover { background: var(--surface-high); }
+.coa-toggle { width: 16px; flex-shrink: 0; color: var(--text-dim); }
+.coa-name { flex: 1; font-size: 12.5px; }
+.coa-code { font-size: 11px; color: var(--text-dim); margin-left: 6px; font-variant-numeric: tabular-nums; }
+.coa-bal { font-size: 12.5px; font-variant-numeric: tabular-nums; margin-right: auto; }
+.coa-children { padding-right: 16px; }
+
+/* NAV HELPERS */
+.nav-group-btn { background:none; border:none; width:100%; cursor:pointer; text-align: right; }
+</style>
+</head>
+<body>
+
+<!-- ████████ SIDEBAR ████████ -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-icon">PS</div>
+    <div>
+      <div class="logo-text">Precision Slate</div>
+      <div class="logo-sub">ERP v2.1.0</div>
+    </div>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-group">
+      <div class="nav-section-label">الرئيسية</div>
+      <div class="nav-item active" onclick="showSection('dashboard')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        لوحة التحكم
+      </div>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-section-label">التشغيل</div>
+      <button class="nav-group-btn" onclick="toggleSub('sales-sub')">
+        <div class="nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          المبيعات
+          <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+        </div>
+      </button>
+      <div class="nav-sub open" id="sales-sub">
+        <div class="nav-sub-item" onclick="showSection('customers')"><span class="nav-sub-dot"></span>العملاء</div>
+        <div class="nav-sub-item" onclick="showSection('orders')"><span class="nav-sub-dot"></span>الطلبات</div>
+        <div class="nav-sub-item" onclick="showSection('reservations')"><span class="nav-sub-dot"></span>حجوزات المخزون</div>
+        <div class="nav-sub-item" onclick="showSection('deliveries')"><span class="nav-sub-dot"></span>التسليمات</div>
+        <div class="nav-sub-item" onclick="showSection('invoices')"><span class="nav-sub-dot"></span>الفواتير <span class="nav-badge">3</span></div>
+        <div class="nav-sub-item" onclick="showSection('returns')"><span class="nav-sub-dot"></span>المرتجعات</div>
+        <div class="nav-sub-item" onclick="showSection('collections')"><span class="nav-sub-dot"></span>التحصيل</div>
+      </div>
+
+      <button class="nav-group-btn" onclick="toggleSub('inv-sub')">
+        <div class="nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+          المخزون
+          <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+        </div>
+      </button>
+      <div class="nav-sub" id="inv-sub">
+        <div class="nav-sub-item" onclick="showSection('products')"><span class="nav-sub-dot"></span>المنتجات</div>
+        <div class="nav-sub-item"><span class="nav-sub-dot"></span>التصنيفات</div>
+        <div class="nav-sub-item"><span class="nav-sub-dot"></span>المخازن</div>
+        <div class="nav-sub-item" onclick="showSection('inventory-summary')"><span class="nav-sub-dot"></span>ملخص المخزون</div>
+        <div class="nav-sub-item" onclick="showSection('movements')"><span class="nav-sub-dot"></span>الحركات</div>
+        <div class="nav-sub-item" onclick="showSection('adjustments')"><span class="nav-sub-dot"></span>التسويات</div>
+      </div>
+
+      <button class="nav-group-btn" onclick="toggleSub('cont-sub')">
+        <div class="nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+          الحاويات
+          <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+        </div>
+      </button>
+      <div class="nav-sub" id="cont-sub">
+        <div class="nav-sub-item" onclick="showSection('containers')"><span class="nav-sub-dot"></span>لوحة الحاويات</div>
+        <div class="nav-sub-item" onclick="showSection('container-receive')"><span class="nav-sub-dot"></span>استلام حاوية</div>
+        <div class="nav-sub-item" onclick="showSection('landed-cost')"><span class="nav-sub-dot"></span>التكلفة الفعلية</div>
+      </div>
+
+      <button class="nav-group-btn" onclick="toggleSub('pur-sub')">
+        <div class="nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 1h4l2.68 13.39a2 2 0 001.95 1.61h9.72a2 2 0 001.95-1.61L23 6H6"/></svg>
+          المشتريات
+          <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+        </div>
+      </button>
+      <div class="nav-sub" id="pur-sub">
+        <div class="nav-sub-item"><span class="nav-sub-dot"></span>الموردون</div>
+        <div class="nav-sub-item"><span class="nav-sub-dot"></span>أوامر الشراء</div>
+        <div class="nav-sub-item"><span class="nav-sub-dot"></span>المشتريات</div>
+        <div class="nav-sub-item"><span class="nav-sub-dot"></span>مرتجعات الشراء</div>
+      </div>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-section-label">المالية</div>
+      <button class="nav-group-btn" onclick="toggleSub('fin-sub')">
+        <div class="nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          المالية
+          <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+        </div>
+      </button>
+      <div class="nav-sub open" id="fin-sub">
+        <div class="nav-sub-item" onclick="showSection('coa')"><span class="nav-sub-dot"></span>دليل الحسابات</div>
+        <div class="nav-sub-item" onclick="showSection('cashiers')"><span class="nav-sub-dot"></span>الخزائن</div>
+        <div class="nav-sub-item" onclick="showSection('transfers')"><span class="nav-sub-dot"></span>التحويلات</div>
+        <div class="nav-sub-item" onclick="showSection('expenses')"><span class="nav-sub-dot"></span>المصروفات</div>
+        <div class="nav-sub-item" onclick="showSection('customer-accounts')"><span class="nav-sub-dot"></span>حسابات العملاء</div>
+        <div class="nav-sub-item"><span class="nav-sub-dot"></span>حسابات الموردين</div>
+        <div class="nav-sub-item"><span class="nav-sub-dot"></span>العملات</div>
+      </div>
+
+      <button class="nav-group-btn" onclick="toggleSub('rep-sub')">
+        <div class="nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          التقارير
+          <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+        </div>
+      </button>
+      <div class="nav-sub" id="rep-sub">
+        <div class="nav-sub-item" onclick="showSection('reports')"><span class="nav-sub-dot"></span>مركز التقارير</div>
+        <div class="nav-sub-item" onclick="showSection('reports-sales')"><span class="nav-sub-dot"></span>تقارير المبيعات</div>
+        <div class="nav-sub-item" onclick="showSection('reports-profit')"><span class="nav-sub-dot"></span>تقارير الأرباح</div>
+        <div class="nav-sub-item"><span class="nav-sub-dot"></span>تقارير المخزون</div>
+        <div class="nav-sub-item"><span class="nav-sub-dot"></span>التقارير المالية</div>
+      </div>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-section-label">الإدارة</div>
+      <div class="nav-item" onclick="showSection('users')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        المستخدمون والأدوار
+      </div>
+      <div class="nav-item" onclick="showSection('audit-log')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        سجل العمليات
+      </div>
+      <div class="nav-item">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 000 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+        الإعدادات العامة
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="sidebar-user">
+      <div class="avatar">أح</div>
+      <div class="user-info">
+        <div class="user-name">أحمد الشريف</div>
+        <div class="user-role">مدير عام</div>
+      </div>
+      <div class="conn-dot" title="متصل"></div>
+    </div>
+  </div>
+</nav>
+
+<!-- ████████ MAIN ████████ -->
+<div class="main">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="breadcrumb" id="breadcrumb">
+      <span>الرئيسية</span>
+    </div>
+
+    <div class="search-wrap" onclick="toggleSearch()" id="search-wrap">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span>بحث شامل...</span>
+      <span class="kbd">Ctrl+K</span>
+    </div>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" onclick="toggleNotif()" title="الإشعارات">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+        <span class="notif-badge"></span>
+      </button>
+      <button class="icon-btn" title="إعدادات">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 000 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+      </button>
+      <div class="avatar" style="cursor:pointer" title="الملف الشخصي">أح</div>
+    </div>
+
+    <!-- Notification Panel -->
+    <div class="notif-panel" id="notif-panel">
+      <div class="notif-panel-hd">
+        <span class="notif-panel-title">الإشعارات</span>
+        <button class="btn btn-ghost btn-sm">تعليم الكل مقروء</button>
+      </div>
+      <div class="notif-item unread">
+        <div class="notif-dot" style="background:var(--danger)"></div>
+        <div class="notif-content">
+          <div class="notif-title">فاتورة متأخرة — شركة الأمل</div>
+          <div class="notif-desc">الفاتورة #INV-2024-089 متأخرة 35 يومًا بقيمة SAR 12,500</div>
+          <div class="notif-time">منذ ساعتين</div>
+          <span class="notif-action" onclick="showSection('invoices')">عرض الفاتورة ←</span>
+        </div>
+      </div>
+      <div class="notif-item unread">
+        <div class="notif-dot" style="background:var(--warning)"></div>
+        <div class="notif-content">
+          <div class="notif-title">مخزون منخفض — برشام A200</div>
+          <div class="notif-desc">الكمية المتاحة: 8 وحدات فقط (الحد الأدنى: 50)</div>
+          <div class="notif-time">منذ 5 ساعات</div>
+          <span class="notif-action">عرض المنتج ←</span>
+        </div>
+      </div>
+      <div class="notif-item">
+        <div class="notif-dot" style="background:var(--info)"></div>
+        <div class="notif-content">
+          <div class="notif-title">حاوية CONT-2024-012 وصلت الميناء</div>
+          <div class="notif-desc">الحاوية جاهزة للتخليص الجمركي</div>
+          <div class="notif-time">أمس الساعة 3:40 م</div>
+          <span class="notif-action" onclick="showSection('containers')">متابعة ←</span>
+        </div>
+      </div>
+      <div class="notif-item">
+        <div class="notif-dot" style="background:var(--success)"></div>
+        <div class="notif-content">
+          <div class="notif-title">تم استلام دفعة من عميل</div>
+          <div class="notif-desc">تم تسجيل دفعة SAR 8,000 من محمد أحمد</div>
+          <div class="notif-time">أمس الساعة 11:15 ص</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search Dropdown -->
+    <div class="search-dropdown" id="search-dropdown">
+      <div style="padding:10px 14px 4px">
+        <div class="search-field" style="width:100%">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input placeholder="ابحث في العملاء، الفواتير، المنتجات..." autofocus>
+        </div>
+      </div>
+      <div class="search-group-label">عملاء</div>
+      <div class="search-result"><div class="sr-icon" style="background:var(--accent-dim);color:var(--accent)">ع</div><div class="sr-main"><div class="sr-name">محمد أحمد العلي</div><div class="sr-sub">#C001 · SAR · نشط</div></div></div>
+      <div class="search-result"><div class="sr-icon" style="background:var(--accent-dim);color:var(--accent)">ش</div><div class="sr-main"><div class="sr-name">شركة الأمل للتجارة</div><div class="sr-sub">#C045 · USD · نشط</div></div></div>
+      <div class="search-group-label">فواتير</div>
+      <div class="search-result"><div class="sr-icon" style="background:var(--warning-dim);color:var(--warning)">ف</div><div class="sr-main"><div class="sr-name">INV-2024-089</div><div class="sr-sub">شركة الأمل · SAR 12,500 · متأخرة</div></div></div>
+      <div class="search-group-label">طلبات</div>
+      <div class="search-result"><div class="sr-icon" style="background:var(--success-dim);color:var(--success)">ط</div><div class="sr-main"><div class="sr-name">ORD-2024-034</div><div class="sr-sub">محمد أحمد · SAR 8,200 · مؤكد</div></div></div>
+      <div style="padding:8px 14px; text-align:center;"><span style="font-size:11px;color:var(--text-dim)">اضغط Enter لعرض كل النتائج</span></div>
+    </div>
+  </div>
+
+  <!-- ████ PAGE CONTENT ████ -->
+  <div class="page" id="page">
+
+    <!-- ══════════════ DASHBOARD ══════════════ -->
+    <div class="section-content active" id="sec-dashboard">
+      <div class="page-hd">
+        <div class="page-hd-left">
+          <h1>لوحة التحكم</h1>
+          <p>آخر تحديث: اليوم الساعة 11:42 ص</p>
+        </div>
+        <div class="page-hd-actions">
+          <div class="filter-bar" style="margin-bottom:0">
+            <div class="filter-chip active">الشهر</div>
+            <div class="filter-chip">الأسبوع</div>
+            <div class="filter-chip">السنة</div>
+          </div>
+          <button class="btn btn-ghost btn-sm">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            تصدير
+          </button>
+        </div>
+      </div>
+
+      <!-- KPI CARDS -->
+      <div class="stats-grid">
+        <div class="stat-card" onclick="showSection('reports-sales')">
+          <div class="stat-hd">
+            <span class="stat-label">إجمالي المبيعات</span>
+            <div class="stat-icon" style="background:var(--accent-dim);color:var(--accent)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+          </div>
+          <div class="stat-value">428,600</div>
+          <div class="stat-trend trend-up">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+            +12.5% مقارنة بالشهر السابق
+          </div>
+          <div style="margin-top:8px">
+            <div class="mini-bars">
+              <div class="mini-bar" style="height:40%"></div>
+              <div class="mini-bar" style="height:55%"></div>
+              <div class="mini-bar" style="height:70%"></div>
+              <div class="mini-bar" style="height:60%"></div>
+              <div class="mini-bar" style="height:85%"></div>
+              <div class="mini-bar" style="height:65%"></div>
+              <div class="mini-bar" style="height:100%;background:var(--accent)"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card" onclick="showSection('collections')">
+          <div class="stat-hd">
+            <span class="stat-label">إجمالي التحصيلات</span>
+            <div class="stat-icon" style="background:var(--success-dim);color:var(--success)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </div>
+          </div>
+          <div class="stat-value" style="color:var(--success)">312,400</div>
+          <div class="stat-trend trend-up">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+            +8.2% مقارنة بالشهر السابق
+          </div>
+          <div style="margin-top:8px">
+            <div class="mini-bars">
+              <div class="mini-bar" style="height:30%;background:var(--success-dim)"></div>
+              <div class="mini-bar" style="height:50%;background:var(--success-dim)"></div>
+              <div class="mini-bar" style="height:65%;background:var(--success-dim)"></div>
+              <div class="mini-bar" style="height:55%;background:var(--success-dim)"></div>
+              <div class="mini-bar" style="height:75%;background:var(--success-dim)"></div>
+              <div class="mini-bar" style="height:60%;background:var(--success-dim)"></div>
+              <div class="mini-bar" style="height:90%;background:var(--success)"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card" onclick="showSection('expenses')">
+          <div class="stat-hd">
+            <span class="stat-label">إجمالي المصروفات</span>
+            <div class="stat-icon" style="background:var(--warning-dim);color:var(--warning)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+          </div>
+          <div class="stat-value" style="color:var(--warning)">98,250</div>
+          <div class="stat-trend trend-dn">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/></svg>
+            -3.1% مقارنة بالشهر السابق
+          </div>
+          <div style="margin-top:8px">
+            <div class="mini-bars">
+              <div class="mini-bar" style="height:50%;background:var(--warning-dim)"></div>
+              <div class="mini-bar" style="height:65%;background:var(--warning-dim)"></div>
+              <div class="mini-bar" style="height:80%;background:var(--warning-dim)"></div>
+              <div class="mini-bar" style="height:60%;background:var(--warning-dim)"></div>
+              <div class="mini-bar" style="height:55%;background:var(--warning-dim)"></div>
+              <div class="mini-bar" style="height:50%;background:var(--warning-dim)"></div>
+              <div class="mini-bar" style="height:45%;background:var(--warning)"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card" onclick="showSection('reports-profit')">
+          <div class="stat-hd">
+            <span class="stat-label">صافي الربح</span>
+            <div class="stat-icon" style="background:var(--success-dim);color:var(--success)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            </div>
+          </div>
+          <div class="stat-value" style="color:var(--success)">214,750</div>
+          <div class="stat-trend trend-up">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+            +18.4% مقارنة بالشهر السابق
+          </div>
+          <div style="margin-top:8px">
+            <div class="mini-bars">
+              <div class="mini-bar" style="height:35%;background:var(--success-dim)"></div>
+              <div class="mini-bar" style="height:45%;background:var(--success-dim)"></div>
+              <div class="mini-bar" style="height:60%;background:var(--success-dim)"></div>
+              <div class="mini-bar" style="height:70%;background:var(--success-dim)"></div>
+              <div class="mini-bar" style="height:80%;background:var(--success-dim)"></div>
+              <div class="mini-bar" style="height:75%;background:var(--success-dim)"></div>
+              <div class="mini-bar" style="height:100%;background:var(--success)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROW 2: secondary cards -->
+      <div class="grid-3" style="margin-bottom:20px">
+        <div class="stat-card" onclick="showSection('orders')" style="display:flex;align-items:center;gap:12px;padding:14px">
+          <div class="stat-icon" style="background:var(--warning-dim);color:var(--warning);width:36px;height:36px;border-radius:var(--radius-lg)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div>
+            <div style="font-size:22px;font-weight:700;color:var(--warning)">14</div>
+            <div style="font-size:11.5px;color:var(--text-secondary)">طلبات معلقة</div>
+          </div>
+        </div>
+        <div class="stat-card" onclick="showSection('products')" style="display:flex;align-items:center;gap:12px;padding:14px">
+          <div class="stat-icon" style="background:var(--danger-dim);color:var(--danger);width:36px;height:36px;border-radius:var(--radius-lg)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+          </div>
+          <div>
+            <div style="font-size:22px;font-weight:700;color:var(--danger)">7</div>
+            <div style="font-size:11.5px;color:var(--text-secondary)">منتجات مخزون منخفض</div>
+          </div>
+        </div>
+        <div class="stat-card" onclick="showSection('cashiers')" style="display:flex;align-items:center;gap:12px;padding:14px">
+          <div class="stat-icon" style="background:var(--info-dim);color:var(--info);width:36px;height:36px;border-radius:var(--radius-lg)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          </div>
+          <div>
+            <div style="font-size:22px;font-weight:700;color:var(--info)">SAR 95K</div>
+            <div style="font-size:11.5px;color:var(--text-secondary)">رصيد الخزائن</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALERTS -->
+      <div class="alert alert-danger" style="margin-bottom:12px">
+        <span class="alert-icon">🔴</span>
+        <div class="alert-body">
+          <strong>3 فواتير متأخرة</strong> — مجموع المبالغ المتأخرة: SAR 38,200. أقدمها متأخرة 45 يومًا.
+          <span class="td-link" onclick="showSection('invoices')" style="margin-right:8px;font-size:12px">عرض الفواتير ←</span>
+        </div>
+      </div>
+      <div class="alert alert-warning" style="margin-bottom:20px">
+        <span class="alert-icon">⚠️</span>
+        <div class="alert-body">
+          <strong>حاوية CONT-2024-012</strong> وصلت الميناء وتنتظر التخليص الجمركي.
+          <span class="td-link" onclick="showSection('containers')" style="margin-right:8px;font-size:12px">متابعة ←</span>
+        </div>
+      </div>
+
+      <!-- CHARTS ROW -->
+      <div style="display:grid;grid-template-columns:1fr 1.6fr;gap:16px;margin-bottom:20px">
+
+        <!-- هيكل السيولة والمخزون -->
+        <div class="card" style="padding:18px">
+          <div class="card-hd" style="margin-bottom:16px">
+            <span class="card-title">هيكل السيولة والمخزون</span>
+            <button class="btn btn-ghost btn-sm" onclick="showSection('cashiers')" style="font-size:11px">إعداد الحسابات ←</button>
+          </div>
+
+          <!-- Donut SVG -->
+          <div style="display:flex;align-items:center;gap:20px">
+            <div style="position:relative;flex-shrink:0">
+              <svg width="120" height="120" viewBox="0 0 120 120" style="transform:rotate(-90deg)">
+                <circle cx="60" cy="60" r="46" fill="none" stroke="var(--surface-high)" stroke-width="16"/>
+                <!-- النقد بالصندوق والخزينة - أخضر 48% -->
+                <circle cx="60" cy="60" r="46" fill="none" stroke="var(--success)" stroke-width="16"
+                  stroke-dasharray="138.8 150.0" stroke-dashoffset="0" stroke-linecap="butt"/>
+                <!-- المخزون المقدّر - أزرق 32% -->
+                <circle cx="60" cy="60" r="46" fill="none" stroke="var(--accent)" stroke-width="16"
+                  stroke-dasharray="92.5 196.3" stroke-dashoffset="-138.8" stroke-linecap="butt"/>
+                <!-- ذمم العملاء - برتقالي 20% -->
+                <circle cx="60" cy="60" r="46" fill="none" stroke="var(--warning)" stroke-width="16"
+                  stroke-dasharray="57.9 231.0" stroke-dashoffset="-231.3" stroke-linecap="butt"/>
+              </svg>
+              <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center">
+                <div style="font-size:18px;font-weight:700">95K</div>
+                <div style="font-size:10px;color:var(--text-dim)">تغطية الأصول</div>
+              </div>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;gap:10px">
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px">
+                  <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:var(--success);display:inline-block"></span>النقد بالصندوق والخزينة</span>
+                  <strong>SAR 45,800</strong>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" style="width:48%;background:var(--success)"></div></div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px">
+                  <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block"></span>المخزون المقدّر</span>
+                  <strong>SAR 30,600</strong>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" style="width:32%;background:var(--accent)"></div></div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px">
+                  <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:var(--warning);display:inline-block"></span>ذمم العملاء المتوقعة</span>
+                  <strong>SAR 18,600</strong>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" style="width:20%;background:var(--warning)"></div></div>
+              </div>
+              <div style="padding-top:8px;border-top:1px solid var(--border);font-size:11.5px;color:var(--text-secondary);display:flex;justify-content:space-between">
+                <span>توزيع الرصيد الإجمالي</span>
+                <span style="display:flex;align-items:center;gap:4px">
+                  <span style="width:6px;height:6px;border-radius:50%;background:var(--success)"></span>
+                  <a onclick="showSection('cashiers')" style="color:var(--accent);cursor:pointer;font-size:11px">إعداد الحسابات المالية العامة</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- مسار المبيعات والأرباح التراكمية -->
+        <div class="card" style="padding:18px">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px">
+            <div>
+              <div class="card-title">مسار المبيعات وصافي الأرباح التراكمية</div>
+              <div style="font-size:11px;color:var(--text-secondary);margin-top:2px">مقارن للسيولة النقدية والمبيعات خلال الفترة المحددة</div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;font-size:11px">
+              <span style="display:flex;align-items:center;gap:4px"><span style="width:20px;height:2px;background:var(--accent);display:inline-block;border-radius:1px"></span>المبيعات</span>
+              <span style="display:flex;align-items:center;gap:4px"><span style="width:20px;height:2px;background:var(--success);display:inline-block;border-radius:1px;border-top:2px dashed var(--success)"></span>صافي الأرباح</span>
+            </div>
+          </div>
+
+          <!-- إذا كانت البيانات فارغة - Empty State -->
+          <div id="chart-empty-state" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 0;gap:10px">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--text-dim)" stroke-width="1.5" opacity="0.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <div style="text-align:center">
+              <div style="font-size:13px;font-weight:600;color:var(--text-secondary);margin-bottom:4px">لا توجد بيانات كافية لعرض المخطط</div>
+              <div style="font-size:11.5px;color:var(--text-dim);max-width:300px;line-height:1.5">ستظهر المخططات البيانية ونسب النمو والمبيعات خلال الفترة المحددة بعد تسجيل أول فاتورة بيع أو إصدار أمر قبض معتمد.</div>
+            </div>
+            <button class="btn btn-ghost btn-sm" onclick="showSection('invoices')" style="margin-top:4px">← تسجيل أول فاتورة تجريبية</button>
+          </div>
+
+          <!-- Chart (مخفي - يظهر عند وجود بيانات) -->
+          <div id="chart-with-data" style="display:none">
+            <svg width="100%" height="120" viewBox="0 0 500 120" preserveAspectRatio="none" style="overflow:visible">
+              <defs>
+                <linearGradient id="salesGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.25"/>
+                  <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="profitGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="var(--success)" stop-opacity="0.2"/>
+                  <stop offset="100%" stop-color="var(--success)" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <!-- Sales area -->
+              <path d="M0,100 C40,85 80,60 130,50 C180,40 220,55 270,35 C320,15 370,25 420,10 C450,3 480,8 500,5 L500,120 L0,120Z" fill="url(#salesGrad)"/>
+              <path d="M0,100 C40,85 80,60 130,50 C180,40 220,55 270,35 C320,15 370,25 420,10 C450,3 480,8 500,5" fill="none" stroke="var(--accent)" stroke-width="2"/>
+              <!-- Profit area -->
+              <path d="M0,115 C40,108 80,95 130,88 C180,80 220,85 270,72 C320,58 370,62 420,50 C450,44 480,46 500,42 L500,120 L0,120Z" fill="url(#profitGrad)"/>
+              <path d="M0,115 C40,108 80,95 130,88 C180,80 220,85 270,72 C320,58 370,62 420,50 C450,44 480,46 500,42" fill="none" stroke="var(--success)" stroke-width="2" stroke-dasharray="5,3"/>
+              <!-- X axis labels -->
+              <text x="0" y="135" font-size="9" fill="rgba(255,255,255,0.35)" font-family="'IBM Plex Sans Arabic'">اليوم 01</text>
+              <text x="70" y="135" font-size="9" fill="rgba(255,255,255,0.35)" font-family="'IBM Plex Sans Arabic'">اليوم 05</text>
+              <text x="155" y="135" font-size="9" fill="rgba(255,255,255,0.35)" font-family="'IBM Plex Sans Arabic'">اليوم 10</text>
+              <text x="235" y="135" font-size="9" fill="rgba(255,255,255,0.35)" font-family="'IBM Plex Sans Arabic'">اليوم 15</text>
+              <text x="318" y="135" font-size="9" fill="rgba(255,255,255,0.35)" font-family="'IBM Plex Sans Arabic'">اليوم 20</text>
+              <text x="398" y="135" font-size="9" fill="rgba(255,255,255,0.35)" font-family="'IBM Plex Sans Arabic'">اليوم 25</text>
+              <text x="470" y="135" font-size="9" fill="rgba(255,255,255,0.35)" font-family="'IBM Plex Sans Arabic'">اليوم 30</text>
+            </svg>
+          </div>
+
+          <!-- Toggle for demo -->
+          <div style="display:flex;justify-content:flex-end;margin-top:8px">
+            <button class="btn btn-ghost btn-sm" onclick="toggleChart()" style="font-size:10.5px;color:var(--text-dim)">
+              معاينة مع بيانات (تجريبي)
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /charts row -->
+
+      <!-- RECENT TRANSACTIONS -->
+      <div class="table-wrap">
+        <div class="table-toolbar">
+          <span class="table-title">آخر المعاملات</span>
+          <div class="table-toolbar-right"><button class="btn btn-ghost btn-sm">عرض الكل</button></div>
+        </div>
+        <table>
+          <thead>
+            <tr><th>النوع</th><th>المرجع</th><th>الطرف</th><th>المبلغ</th><th>الوقت</th><th>الحالة</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span style="font-size:12px;color:var(--accent)">📄 فاتورة</span></td>
+              <td><span class="td-link">#INV-2024-091</span></td>
+              <td>محمد أحمد</td>
+              <td class="td-num">SAR 4,200</td>
+              <td class="td-secondary">منذ 20 دقيقة</td>
+              <td><span class="badge badge-warning">غير مدفوعة</span></td>
+            </tr>
+            <tr>
+              <td><span style="font-size:12px;color:var(--success)">💰 دفعة</span></td>
+              <td><span class="td-link">#PAY-2024-055</span></td>
+              <td>شركة الفجر</td>
+              <td class="td-num">SAR 8,000</td>
+              <td class="td-secondary">منذ ساعتين</td>
+              <td><span class="badge badge-success">مكتمل</span></td>
+            </tr>
+            <tr>
+              <td><span style="font-size:12px;color:var(--info)">📦 طلب</span></td>
+              <td><span class="td-link">#ORD-2024-036</span></td>
+              <td>عبدالله سالم</td>
+              <td class="td-num">SAR 15,600</td>
+              <td class="td-secondary">منذ 3 ساعات</td>
+              <td><span class="badge badge-accent">مؤكد</span></td>
+            </tr>
+            <tr>
+              <td><span style="font-size:12px;color:var(--warning)">🔄 مرتجع</span></td>
+              <td><span class="td-link">#RET-2024-008</span></td>
+              <td>سعد التميمي</td>
+              <td class="td-num">SAR 1,800</td>
+              <td class="td-secondary">أمس 3:20 م</td>
+              <td><span class="badge badge-info">قيد المعالجة</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div><!-- /dashboard -->
+
+    <!-- ══════════════ CUSTOMERS ══════════════ -->
+    <div class="section-content" id="sec-customers">
+      <div class="page-hd">
+        <div class="page-hd-left">
+          <h1>العملاء</h1>
+          <p>إجمالي 142 عميل — 128 نشط</p>
+        </div>
+        <div class="page-hd-actions">
+          <button class="btn btn-ghost btn-sm">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            تصدير
+          </button>
+          <button class="btn btn-primary btn-sm" onclick="openModal('modal-add-customer')">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            إضافة عميل
+          </button>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <div class="search-field" style="width:220px">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input placeholder="بحث بالاسم أو الهاتف...">
+        </div>
+        <div class="filter-sep"></div>
+        <div class="filter-chip active">الكل</div>
+        <div class="filter-chip">نشط</div>
+        <div class="filter-chip">موقوف</div>
+        <div class="filter-chip">محظور</div>
+        <div class="filter-sep"></div>
+        <select class="select" style="width:120px;height:28px;font-size:11.5px">
+          <option>كل العملات</option>
+          <option>SAR</option>
+          <option>USD</option>
+        </select>
+      </div>
+
+      <div class="split-panel">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:32px"><input type="checkbox" class="perm-check"></th>
+                <th>الاسم</th><th>الهاتف</th><th>العملة</th><th>حد الائتمان</th><th>الرصيد</th><th>الحالة</th><th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:rgba(74,158,255,0.06)">
+                <td><input type="checkbox" class="perm-check" checked></td>
+                <td><span class="td-link" onclick="showCustomerDetail()">محمد أحمد العلي</span><div style="font-size:11px;color:var(--text-dim)">#C001</div></td>
+                <td>+966 50 123 4567</td>
+                <td><span class="badge badge-neutral">SAR</span></td>
+                <td class="td-num">50,000</td>
+                <td class="td-num" style="color:var(--success)">12,500</td>
+                <td><span class="badge badge-success">نشط</span></td>
+                <td><div class="td-actions"><button class="tbl-btn" title="عرض" onclick="showCustomerDetail()">👁</button><button class="tbl-btn" title="تعديل">✏️</button><button class="tbl-btn" title="المزيد">⋮</button></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="perm-check"></td>
+                <td><span class="td-link">شركة الأمل للتجارة</span><div style="font-size:11px;color:var(--text-dim)">#C045</div></td>
+                <td>+966 11 456 7890</td>
+                <td><span class="badge badge-neutral">USD</span></td>
+                <td class="td-num">100,000</td>
+                <td class="td-num" style="color:var(--danger)">-8,200</td>
+                <td><span class="badge badge-danger">متأخر</span></td>
+                <td><div class="td-actions"><button class="tbl-btn">👁</button><button class="tbl-btn">✏️</button><button class="tbl-btn">⋮</button></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="perm-check"></td>
+                <td><span class="td-link">عبدالله سالم الغامدي</span><div style="font-size:11px;color:var(--text-dim)">#C089</div></td>
+                <td>+966 55 789 0123</td>
+                <td><span class="badge badge-neutral">SAR</span></td>
+                <td class="td-num">30,000</td>
+                <td class="td-num">5,400</td>
+                <td><span class="badge badge-success">نشط</span></td>
+                <td><div class="td-actions"><button class="tbl-btn">👁</button><button class="tbl-btn">✏️</button><button class="tbl-btn">⋮</button></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="perm-check"></td>
+                <td><span class="td-link">سعد بن عمر التميمي</span><div style="font-size:11px;color:var(--text-dim)">#C112</div></td>
+                <td>+966 56 234 5678</td>
+                <td><span class="badge badge-neutral">SAR</span></td>
+                <td class="td-num">20,000</td>
+                <td class="td-num">0</td>
+                <td><span class="badge badge-neutral">موقوف</span></td>
+                <td><div class="td-actions"><button class="tbl-btn">👁</button><button class="tbl-btn">✏️</button><button class="tbl-btn">⋮</button></div></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="table-foot">
+            <span class="table-count">1-4 من 142 سجل</span>
+            <div class="pagination">
+              <button class="pg-btn">‹</button>
+              <button class="pg-btn active">1</button>
+              <button class="pg-btn">2</button>
+              <button class="pg-btn">3</button>
+              <button class="pg-btn">›</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CUSTOMER DETAIL PANEL (visible when row selected) -->
+        <div class="detail-panel" id="customer-detail-panel" style="display:none">
+          <div class="detail-panel-hd">
+            <div>
+              <div class="detail-panel-name">محمد أحمد العلي</div>
+              <span class="badge badge-success" style="margin-top:4px">نشط</span>
+            </div>
+            <button class="tbl-btn" onclick="closeCustomerDetail()">✕</button>
+          </div>
+          <div class="tabs" style="padding:0 16px;margin-bottom:0">
+            <div class="tab-item active" onclick="switchCustTab('overview',this)">نظرة عامة</div>
+            <div class="tab-item" onclick="switchCustTab('orders-tab',this)">الطلبات</div>
+            <div class="tab-item" onclick="switchCustTab('invoices-tab',this)">الفواتير</div>
+            <div class="tab-item" onclick="switchCustTab('payments-tab',this)">الدفعات</div>
+            <div class="tab-item" onclick="switchCustTab('statement-tab',this)">كشف الحساب</div>
+            <div class="tab-item" onclick="switchCustTab('activity-tab',this)">سجل النشاط</div>
+          </div>
+          <div class="detail-panel-body">
+            <div id="cust-overview" class="tab-content active">
+              <div class="credit-meter" style="margin-bottom:14px">
+                <div class="credit-row"><span>حد الائتمان</span><strong>SAR 50,000</strong></div>
+                <div class="credit-row"><span>الرصيد الحالي</span><strong style="color:var(--success)">SAR 12,500</strong></div>
+                <div class="credit-bar"><div class="credit-fill" style="width:25%;background:var(--success)"></div></div>
+                <div style="font-size:11px;color:var(--text-secondary)">25% من الحد الائتماني مستخدم</div>
+              </div>
+              <div class="kv-list">
+                <div class="kv-item"><span class="kv-key">الكود</span><span class="kv-val">#C001</span></div>
+                <div class="kv-item"><span class="kv-key">الهاتف</span><span class="kv-val">+966 50 123 4567</span></div>
+                <div class="kv-item"><span class="kv-key">البريد</span><span class="kv-val td-secondary">m.ahmed@example.com</span></div>
+                <div class="kv-item"><span class="kv-key">العملة</span><span class="kv-val">SAR</span></div>
+                <div class="kv-item"><span class="kv-key">شروط الدفع</span><span class="kv-val">30 يوم</span></div>
+                <hr class="kv-divider">
+                <div class="kv-item"><span class="kv-key">آخر طلب</span><span class="kv-val td-secondary">منذ 3 أيام</span></div>
+                <div class="kv-item"><span class="kv-key">آخر دفعة</span><span class="kv-val td-secondary">منذ أسبوع</span></div>
+                <div class="kv-item"><span class="kv-key">إجمالي الطلبات</span><span class="kv-val">34 طلب</span></div>
+              </div>
+              <div style="display:flex;gap:6px;margin-top:14px;flex-wrap:wrap">
+                <button class="btn btn-primary btn-sm">إنشاء طلب</button>
+                <button class="btn btn-secondary btn-sm">إنشاء فاتورة</button>
+                <button class="btn btn-ghost btn-sm" onclick="openModal('modal-payment')">تسجيل دفعة</button>
+              </div>
+            </div>
+            <div id="cust-orders-tab" class="tab-content">
+              <table style="font-size:12px"><thead><tr><th>رقم الطلب</th><th>التاريخ</th><th>المبلغ</th><th>الحالة</th></tr></thead>
+              <tbody>
+                <tr><td><span class="td-link">#ORD-034</span></td><td>12/12/2024</td><td class="td-num">8,200</td><td><span class="badge badge-accent">مؤكد</span></td></tr>
+                <tr><td><span class="td-link">#ORD-029</span></td><td>05/12/2024</td><td class="td-num">4,500</td><td><span class="badge badge-success">مكتمل</span></td></tr>
+                <tr><td><span class="td-link">#ORD-021</span></td><td>28/11/2024</td><td class="td-num">12,800</td><td><span class="badge badge-success">مكتمل</span></td></tr>
+              </tbody></table>
+            </div>
+            <div id="cust-invoices-tab" class="tab-content">
+              <table style="font-size:12px"><thead><tr><th>رقم الفاتورة</th><th>الإجمالي</th><th>المتبقي</th><th>الحالة</th></tr></thead>
+              <tbody>
+                <tr><td><span class="td-link">#INV-091</span></td><td class="td-num">4,200</td><td class="td-num">4,200</td><td><span class="badge badge-warning">غير مدفوعة</span></td></tr>
+                <tr><td><span class="td-link">#INV-087</span></td><td class="td-num">8,300</td><td class="td-num">0</td><td><span class="badge badge-success">مدفوعة</span></td></tr>
+              </tbody></table>
+            </div>
+            <div id="cust-payments-tab" class="tab-content">
+              <table style="font-size:12px"><thead><tr><th>التاريخ</th><th>المبلغ</th><th>الطريقة</th><th>المرجع</th></tr></thead>
+              <tbody>
+                <tr><td>10/12/2024</td><td class="td-num">8,000</td><td>تحويل</td><td class="td-secondary">TRF-0923</td></tr>
+                <tr><td>05/12/2024</td><td class="td-num">4,500</td><td>نقدي</td><td class="td-secondary">—</td></tr>
+              </tbody></table>
+            </div>
+            <div id="cust-statement-tab" class="tab-content">
+              <table style="font-size:11.5px"><thead><tr><th>التاريخ</th><th>البيان</th><th>مدين</th><th>دائن</th><th>الرصيد</th></tr></thead>
+              <tbody>
+                <tr><td>12/12</td><td>فاتورة #091</td><td class="td-num">4,200</td><td>—</td><td class="td-num" style="color:var(--warning)">4,200</td></tr>
+                <tr><td>10/12</td><td>دفعة TRF-0923</td><td>—</td><td class="td-num">8,000</td><td class="td-num" style="color:var(--success)">0</td></tr>
+                <tr><td>05/12</td><td>فاتورة #087</td><td class="td-num">8,300</td><td>—</td><td class="td-num" style="color:var(--warning)">8,300</td></tr>
+              </tbody></table>
+            </div>
+            <div id="cust-activity-tab" class="tab-content">
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-dot" style="background:var(--accent-dim);color:var(--accent)">✎</div>
+                  <div class="timeline-body">
+                    <div class="timeline-title">تعديل حد الائتمان</div>
+                    <div class="timeline-meta">أحمد الشريف · 10/12/2024 11:30 ص</div>
+                    <div class="timeline-change"><span class="change-old">30,000</span> → <span class="change-new">50,000</span></div>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-dot" style="background:var(--success-dim);color:var(--success)">✓</div>
+                  <div class="timeline-body">
+                    <div class="timeline-title">إنشاء العميل</div>
+                    <div class="timeline-meta">سارة محمد · 15/11/2024 09:00 ص</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /customers -->
+
+    <!-- ══════════════ ORDERS ══════════════ -->
+    <div class="section-content" id="sec-orders">
+      <div class="page-hd">
+        <div class="page-hd-left"><h1>الطلبات</h1><p>إدارة طلبات البيع</p></div>
+        <div class="page-hd-actions">
+          <button class="btn btn-ghost btn-sm">تصدير</button>
+          <button class="btn btn-primary btn-sm" onclick="openModal('modal-create-order')">+ إنشاء طلب</button>
+        </div>
+      </div>
+      <div class="filter-bar">
+        <div class="search-field" style="width:220px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input placeholder="بحث بالرقم أو العميل..."></div>
+        <div class="filter-sep"></div>
+        <div class="filter-chip active">الكل</div>
+        <div class="filter-chip">مسودة</div>
+        <div class="filter-chip">مؤكد</div>
+        <div class="filter-chip">قيد التجهيز</div>
+        <div class="filter-chip">مكتمل</div>
+        <div class="filter-chip">ملغي</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th style="width:32px"><input type="checkbox" class="perm-check"></th><th>رقم الطلب</th><th>العميل</th><th>التاريخ</th><th>الإجمالي</th><th>الحجز</th><th>الحالة</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><input type="checkbox" class="perm-check"></td><td><span class="td-link">#ORD-2024-036</span></td><td>عبدالله سالم</td><td>12/12/2024</td><td class="td-num">SAR 15,600</td><td><div class="progress-bar" style="width:80px"><div class="progress-fill" style="width:100%;background:var(--success)"></div></div></td><td><span class="badge badge-accent">مؤكد</span></td><td><div class="td-actions"><button class="tbl-btn">👁</button><button class="tbl-btn">✏️</button><button class="tbl-btn">⋮</button></div></td></tr>
+            <tr><td><input type="checkbox" class="perm-check"></td><td><span class="td-link">#ORD-2024-034</span></td><td>محمد أحمد</td><td>12/12/2024</td><td class="td-num">SAR 8,200</td><td><div class="progress-bar" style="width:80px"><div class="progress-fill" style="width:60%;background:var(--warning)"></div></div></td><td><span class="badge badge-warning">قيد التجهيز</span></td><td><div class="td-actions"><button class="tbl-btn">👁</button><button class="tbl-btn">✏️</button><button class="tbl-btn">⋮</button></div></td></tr>
+            <tr><td><input type="checkbox" class="perm-check"></td><td><span class="td-link">#ORD-2024-033</span></td><td>شركة الفجر</td><td>11/12/2024</td><td class="td-num">SAR 22,400</td><td><div class="progress-bar" style="width:80px"><div class="progress-fill" style="width:0%;background:var(--accent)"></div></div></td><td><span class="badge badge-info">مسودة</span></td><td><div class="td-actions"><button class="tbl-btn">👁</button><button class="tbl-btn">✏️</button><button class="tbl-btn">⋮</button></div></td></tr>
+          </tbody>
+        </table>
+        <div class="table-foot"><span class="table-count">1-3 من 89 سجل</span><div class="pagination"><button class="pg-btn">‹</button><button class="pg-btn active">1</button><button class="pg-btn">2</button><button class="pg-btn">›</button></div></div>
+      </div>
+    </div>
+
+    <!-- ══════════════ INVOICES ══════════════ -->
+    <div class="section-content" id="sec-invoices">
+      <div class="page-hd">
+        <div class="page-hd-left"><h1>الفواتير</h1><p>إجمالي مستحقات: SAR 116,900</p></div>
+        <div class="page-hd-actions">
+          <button class="btn btn-ghost btn-sm" onclick="showSection('invoice-print')">معاينة طباعة</button>
+          <button class="btn btn-ghost btn-sm">تصدير</button>
+          <button class="btn btn-primary btn-sm">+ إنشاء فاتورة</button>
+        </div>
+      </div>
+      <div class="alert alert-danger"><span class="alert-icon">🔴</span><div class="alert-body"><strong>3 فواتير متأخرة</strong> — أكبرها متأخرة 45 يومًا. مجموع: SAR 38,200</div></div>
+      <div class="filter-bar">
+        <div class="search-field" style="width:220px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input placeholder="بحث برقم الفاتورة أو العميل..."></div>
+        <div class="filter-sep"></div>
+        <div class="filter-chip active">الكل</div>
+        <div class="filter-chip">مسودة</div>
+        <div class="filter-chip">صادرة</div>
+        <div class="filter-chip">غير مدفوعة</div>
+        <div class="filter-chip" style="color:var(--danger);border-color:rgba(224,82,82,0.3);background:var(--danger-dim)">متأخرة 🔴</div>
+        <div class="filter-chip">مدفوعة</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th style="width:32px"><input type="checkbox" class="perm-check"></th><th>رقم الفاتورة</th><th>العميل</th><th>التاريخ</th><th>الاستحقاق</th><th>الإجمالي</th><th>المدفوع</th><th>المتبقي</th><th>الحالة</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><input type="checkbox" class="perm-check"></td><td><span class="td-link">#INV-2024-091</span></td><td>محمد أحمد</td><td>12/12/24</td><td>11/01/25</td><td class="td-num">4,200</td><td class="td-num">0</td><td class="td-num" style="color:var(--warning)">4,200</td><td><span class="badge badge-warning">غير مدفوعة</span></td><td><div class="td-actions"><button class="tbl-btn">👁</button><button class="tbl-btn" onclick="openModal('modal-payment')">💰</button><button class="tbl-btn">⋮</button></div></td></tr>
+            <tr style="background:rgba(224,82,82,0.03)"><td><input type="checkbox" class="perm-check"></td><td><span class="td-link">#INV-2024-089</span></td><td>شركة الأمل</td><td>15/11/24</td><td style="color:var(--danger);font-weight:600">20/12/24 🔴</td><td class="td-num">12,500</td><td class="td-num">0</td><td class="td-num" style="color:var(--danger)">12,500</td><td><span class="badge badge-danger">متأخرة</span></td><td><div class="td-actions"><button class="tbl-btn">👁</button><button class="tbl-btn" onclick="openModal('modal-payment')">💰</button><button class="tbl-btn">⋮</button></div></td></tr>
+            <tr><td><input type="checkbox" class="perm-check"></td><td><span class="td-link">#INV-2024-087</span></td><td>محمد أحمد</td><td>05/12/24</td><td>04/01/25</td><td class="td-num">8,300</td><td class="td-num">8,300</td><td class="td-num">0</td><td><span class="badge badge-success">مدفوعة</span></td><td><div class="td-actions"><button class="tbl-btn">👁</button><button class="tbl-btn" onclick="showSection('invoice-print')">🖨️</button><button class="tbl-btn">⋮</button></div></td></tr>
+          </tbody>
+        </table>
+        <div class="table-foot"><span class="table-count">1-3 من 156 سجل</span><div class="pagination"><button class="pg-btn">‹</button><button class="pg-btn active">1</button><button class="pg-btn">2</button><button class="pg-btn">›</button></div></div>
+      </div>
+    </div>
+
+    <!-- ══════════════ INVOICE PRINT PREVIEW ══════════════ -->
+    <div class="section-content" id="sec-invoice-print">
+      <div class="page-hd">
+        <div class="page-hd-left"><h1>معاينة الطباعة</h1><p>فاتورة #INV-2024-091</p></div>
+        <div class="page-hd-actions">
+          <button class="btn btn-ghost btn-sm" onclick="showSection('invoices')">← رجوع</button>
+          <button class="btn btn-ghost btn-sm">تحميل PDF</button>
+          <button class="btn btn-primary btn-sm">طباعة</button>
+        </div>
+      </div>
+      <div class="invoice-preview">
+        <div class="inv-preview-hd">
+          <div>
+            <div class="inv-preview-co">مؤسسة الإتقان التجارية</div>
+            <div style="font-size:12px;color:#555;margin-top:4px">الرياض، المملكة العربية السعودية</div>
+            <div style="font-size:12px;color:#555">الرقم الضريبي: 300123456700003</div>
+          </div>
+          <div>
+            <div class="inv-preview-label">فـاتـورة مبيعات</div>
+            <div class="inv-preview-num" style="text-align:left">#INV-2024-091</div>
+            <div class="inv-preview-num" style="text-align:left">التاريخ: 12/12/2024</div>
+            <div class="inv-preview-num" style="text-align:left">الاستحقاق: 11/01/2025</div>
+          </div>
+        </div>
+        <div class="inv-preview-parties">
+          <div>
+            <div class="inv-party-label">إلى العميل</div>
+            <div class="inv-party-name">محمد أحمد العلي</div>
+            <div class="inv-party-detail">+966 50 123 4567<br>م.ahmed@example.com<br>الرياض، المملكة العربية السعودية</div>
+          </div>
+          <div style="text-align:left">
+            <div class="inv-party-label" style="text-align:left">العملة</div>
+            <div class="inv-party-name">SAR — ريال سعودي</div>
+            <div class="inv-party-detail">شروط الدفع: 30 يوم<br>موظف المبيعات: أحمد الشريف</div>
+          </div>
+        </div>
+        <table>
+          <thead><tr><th>#</th><th>الصنف</th><th>الكود</th><th>الكمية</th><th>سعر الوحدة</th><th>الخصم</th><th style="text-align:left">الإجمالي</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>برشام A200 — عبوة 100 حبة</td><td>SKU-001</td><td>20</td><td>150.00</td><td>0%</td><td style="text-align:left">3,000.00</td></tr>
+            <tr><td>2</td><td>محلول تنظيف صناعي 5L</td><td>SKU-045</td><td>8</td><td>75.00</td><td>0%</td><td style="text-align:left">600.00</td></tr>
+            <tr><td>3</td><td>قفازات حماية — صندوق 50</td><td>SKU-089</td><td>4</td><td>120.00</td><td>5%</td><td style="text-align:left">456.00</td></tr>
+          </tbody>
+        </table>
+        <div style="display:flex;justify-content:flex-end">
+          <div class="inv-totals">
+            <div class="inv-totals-row"><span>المجموع الفرعي</span><span>4,056.00</span></div>
+            <div class="inv-totals-row"><span>الخصم</span><span>(24.00)</span></div>
+            <div class="inv-totals-row"><span>قبل الضريبة</span><span>4,032.00</span></div>
+            <div class="inv-totals-row"><span>ضريبة القيمة المضافة (15%)</span><span>604.80</span></div>
+            <div class="inv-totals-row"><span>الشحن</span><span>—</span></div>
+            <div class="inv-totals-row inv-totals-total"><span>الإجمالي النهائي</span><span style="color:#2563eb">SAR 4,636.80</span></div>
+            <div class="inv-totals-row" style="color:#555"><span>المدفوع</span><span>0.00</span></div>
+            <div class="inv-totals-row" style="color:#dc2626;font-weight:700"><span>المتبقي</span><span>SAR 4,636.80</span></div>
+          </div>
+        </div>
+        <div class="inv-preview-footer">
+          <div>
+            <div style="font-size:11px;color:#555;margin-bottom:4px">ملاحظات:</div>
+            <div style="font-size:12px;color:#333">يرجى التحويل لحساب البنك الأهلي رقم 1234567890</div>
+          </div>
+          <div style="display:flex;gap:40px">
+            <div class="inv-sig"><div class="inv-sig-line"></div><div class="inv-sig-label">توقيع البائع</div></div>
+            <div class="inv-sig"><div class="inv-sig-line"></div><div class="inv-sig-label">توقيع العميل</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════ COLLECTIONS ══════════════ -->
+    <div class="section-content" id="sec-collections">
+      <div class="page-hd">
+        <div class="page-hd-left"><h1>لوحة التحصيل</h1><p>متابعة المستحقات والدفعات</p></div>
+        <div class="page-hd-actions"><button class="btn btn-primary btn-sm" onclick="openModal('modal-payment')">+ تسجيل دفعة</button></div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-hd"><span class="stat-label">إجمالي المستحقات</span></div><div class="stat-value" style="color:var(--warning)">116,900</div><div class="stat-trend">SAR · 28 فاتورة</div></div>
+        <div class="stat-card"><div class="stat-hd"><span class="stat-label">مستحق اليوم</span></div><div class="stat-value">22,400</div><div class="stat-trend">5 فواتير تستحق اليوم</div></div>
+        <div class="stat-card"><div class="stat-hd"><span class="stat-label">متأخر السداد</span></div><div class="stat-value" style="color:var(--danger)">38,200</div><div class="stat-trend trend-dn">3 فواتير متأخرة</div></div>
+        <div class="stat-card"><div class="stat-hd"><span class="stat-label">محصّل هذا الشهر</span></div><div class="stat-value" style="color:var(--success)">312,400</div><div class="stat-trend trend-up">+8.2%</div></div>
+      </div>
+      <div class="table-wrap">
+        <div class="table-toolbar"><span class="table-title">الفواتير المستحقة</span></div>
+        <table>
+          <thead><tr><th>رقم الفاتورة</th><th>العميل</th><th>الاستحقاق</th><th>التأخير</th><th>المتبقي</th><th>الحالة</th><th></th></tr></thead>
+          <tbody>
+            <tr style="background:rgba(224,82,82,0.04)"><td><span class="td-link">#INV-089</span></td><td>شركة الأمل</td><td style="color:var(--danger)">20/10/24</td><td style="color:var(--danger);font-weight:600">+53 يوم</td><td class="td-num" style="color:var(--danger)">SAR 12,500</td><td><span class="badge badge-danger">متأخرة</span></td><td><button class="btn btn-sm btn-primary" onclick="openModal('modal-payment')">تسجيل دفعة</button></td></tr>
+            <tr><td><span class="td-link">#INV-091</span></td><td>محمد أحمد</td><td>11/01/25</td><td class="td-secondary">—</td><td class="td-num">SAR 4,200</td><td><span class="badge badge-warning">غير مدفوعة</span></td><td><button class="btn btn-sm btn-secondary" onclick="openModal('modal-payment')">تسجيل دفعة</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══════════════ RESERVATIONS ══════════════ -->
+    <div class="section-content" id="sec-reservations">
+      <div class="page-hd"><div class="page-hd-left"><h1>حجوزات المخزون</h1><p>متابعة الكميات المحجوزة لطلبات العملاء</p></div></div>
+      <div class="alert alert-info"><span class="alert-icon">ℹ️</span><div class="alert-body">المعادلة: <strong>إجمالي المخزون − المحجوز − التالف = المتاح فعليًا</strong></div></div>
+      <div class="table-wrap">
+        <div class="table-toolbar"><span class="table-title">الحجوزات النشطة</span></div>
+        <table>
+          <thead><tr><th>رقم الطلب</th><th>العميل</th><th>المنتج</th><th>إجمالي</th><th>محجوز</th><th>تالف</th><th>متاح</th><th>حالة الحجز</th></tr></thead>
+          <tbody>
+            <tr><td><span class="td-link">#ORD-036</span></td><td>عبدالله سالم</td><td>برشام A200</td><td class="td-num">500</td><td class="td-num" style="color:var(--accent)">200</td><td class="td-num" style="color:var(--danger)">8</td><td class="td-num" style="color:var(--success)">292</td><td><span class="badge badge-success">محجوز بالكامل</span></td></tr>
+            <tr><td><span class="td-link">#ORD-034</span></td><td>محمد أحمد</td><td>محلول تنظيف</td><td class="td-num">150</td><td class="td-num" style="color:var(--accent)">60</td><td class="td-num" style="color:var(--danger)">0</td><td class="td-num" style="color:var(--warning)">90</td><td><span class="badge badge-warning">محجوز جزئيًا</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══════════════ DELIVERIES ══════════════ -->
+    <div class="section-content" id="sec-deliveries">
+      <div class="page-hd"><div class="page-hd-left"><h1>التسليمات</h1><p>أذونات الصرف والتسليم</p></div><div class="page-hd-actions"><button class="btn btn-primary btn-sm">+ إنشاء تسليم</button></div></div>
+      <div class="table-wrap"><div class="table-toolbar"><span class="table-title">التسليمات النشطة</span></div>
+        <table><thead><tr><th>رقم التسليم</th><th>العميل</th><th>المخزن</th><th>الأصناف</th><th>الحالة</th><th></th></tr></thead>
+        <tbody>
+          <tr><td><span class="td-link">#DEL-2024-021</span></td><td>عبدالله سالم</td><td>مستودع الرياض</td><td>3 أصناف</td><td><span class="badge badge-warning">جاري التجهيز</span></td><td><div class="td-actions"><button class="tbl-btn">👁</button><button class="tbl-btn">✏️</button></div></td></tr>
+        </tbody></table>
+      </div>
+    </div>
+
+    <!-- ══════════════ RETURNS ══════════════ -->
+    <div class="section-content" id="sec-returns">
+      <div class="page-hd"><div class="page-hd-left"><h1>المرتجعات</h1></div><div class="page-hd-actions"><button class="btn btn-primary btn-sm">+ إنشاء مرتجع</button></div></div>
+      <div class="table-wrap"><div class="table-toolbar"><span class="table-title">المرتجعات</span></div>
+        <table><thead><tr><th>رقم المرتجع</th><th>الفاتورة</th><th>العميل</th><th>السبب</th><th>المبلغ</th><th>الحالة</th></tr></thead>
+        <tbody>
+          <tr><td><span class="td-link">#RET-2024-008</span></td><td>#INV-087</td><td>سعد التميمي</td><td>منتج تالف</td><td class="td-num">SAR 1,800</td><td><span class="badge badge-info">قيد المعالجة</span></td></tr>
+        </tbody></table>
+      </div>
+    </div>
+
+    <!-- ══════════════ PRODUCTS ══════════════ -->
+    <div class="section-content" id="sec-products">
+      <div class="page-hd"><div class="page-hd-left"><h1>المنتجات والأصناف</h1><p>228 منتج — 7 مخزون منخفض</p></div><div class="page-hd-actions"><button class="btn btn-ghost btn-sm">تصدير</button><button class="btn btn-primary btn-sm">+ إضافة منتج</button></div></div>
+      <div class="alert alert-danger"><span class="alert-icon">⚠️</span><div class="alert-body">7 منتجات وصلت الحد الأدنى للمخزون <span class="td-link" onclick="showSection('inventory-summary')" style="margin-right:6px;font-size:12px">عرضها ←</span></div></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>الكود</th><th>اسم المنتج</th><th>الفئة</th><th>الإجمالي</th><th>محجوز</th><th>متاح</th><th>سعر البيع</th><th>الحالة</th><th></th></tr></thead>
+          <tbody>
+            <tr><td class="td-secondary">SKU-001</td><td><span class="td-link">برشام A200 — 100 حبة</span></td><td>مستلزمات صناعية</td><td class="td-num">500</td><td class="td-num" style="color:var(--accent)">200</td><td class="td-num" style="color:var(--success)">292</td><td class="td-num">SAR 150</td><td><span class="badge badge-success">نشط</span></td><td><div class="td-actions"><button class="tbl-btn">👁</button><button class="tbl-btn">✏️</button></div></td></tr>
+            <tr><td class="td-secondary">SKU-045</td><td><span class="td-link">محلول تنظيف صناعي 5L</span></td><td>مواد كيميائية</td><td class="td-num">150</td><td class="td-num" style="color:var(--accent)">60</td><td class="td-num" style="color:var(--success)">90</td><td class="td-num">SAR 75</td><td><span class="badge badge-success">نشط</span></td><td><div class="td-actions"><button class="tbl-btn">👁</button><button class="tbl-btn">✏️</button></div></td></tr>
+            <tr style="background:rgba(224,82,82,0.03)"><td class="td-secondary">SKU-089</td><td><span class="td-link">قفازات حماية — 50 زوج</span></td><td>معدات السلامة</td><td class="td-num" style="color:var(--danger)">8</td><td class="td-num">0</td><td class="td-num" style="color:var(--danger)">8</td><td class="td-num">SAR 120</td><td><span class="badge badge-danger">مخزون منخفض</span></td><td><div class="td-actions"><button class="tbl-btn">👁</button><button class="tbl-btn">✏️</button></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══════════════ INVENTORY SUMMARY ══════════════ -->
+    <div class="section-content" id="sec-inventory-summary">
+      <div class="page-hd"><div class="page-hd-left"><h1>ملخص المخزون</h1><p>الأرصدة حسب المستودعات</p></div><div class="page-hd-actions"><button class="btn btn-ghost btn-sm">تصدير</button><button class="btn btn-primary btn-sm" onclick="openModal('modal-confirm')">+ تسوية مخزون</button></div></div>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-hd"><span class="stat-label">إجمالي الأصناف</span></div><div class="stat-value">228</div></div>
+        <div class="stat-card"><div class="stat-hd"><span class="stat-label">القيمة الإجمالية</span></div><div class="stat-value">SAR 1.2M</div></div>
+        <div class="stat-card"><div class="stat-hd"><span class="stat-label">مخزون منخفض</span></div><div class="stat-value" style="color:var(--danger)">7</div></div>
+        <div class="stat-card"><div class="stat-hd"><span class="stat-label">المستودعات</span></div><div class="stat-value">3</div></div>
+      </div>
+      <div class="grid-3">
+        <div class="card"><div class="card-hd"><span class="card-title">مستودع الرياض</span><span class="badge badge-success">نشط</span></div><div class="kv-list"><div class="kv-item"><span class="kv-key">الأصناف</span><span class="kv-val">142</span></div><div class="kv-item"><span class="kv-key">القيمة</span><span class="kv-val">SAR 780K</span></div></div><div style="margin-top:10px"><div class="progress-bar"><div class="progress-fill" style="width:72%;background:var(--accent)"></div></div><div style="font-size:11px;color:var(--text-dim);margin-top:4px">72% مشغول</div></div></div>
+        <div class="card"><div class="card-hd"><span class="card-title">مستودع جدة</span><span class="badge badge-success">نشط</span></div><div class="kv-list"><div class="kv-item"><span class="kv-key">الأصناف</span><span class="kv-val">56</span></div><div class="kv-item"><span class="kv-key">القيمة</span><span class="kv-val">SAR 280K</span></div></div><div style="margin-top:10px"><div class="progress-bar"><div class="progress-fill" style="width:45%;background:var(--success)"></div></div><div style="font-size:11px;color:var(--text-dim);margin-top:4px">45% مشغول</div></div></div>
+        <div class="card"><div class="card-hd"><span class="card-title">مستودع الدمام</span><span class="badge badge-warning">تحت الصيانة</span></div><div class="kv-list"><div class="kv-item"><span class="kv-key">الأصناف</span><span class="kv-val">30</span></div><div class="kv-item"><span class="kv-key">القيمة</span><span class="kv-val">SAR 140K</span></div></div><div style="margin-top:10px"><div class="progress-bar"><div class="progress-fill" style="width:30%;background:var(--warning)"></div></div><div style="font-size:11px;color:var(--text-dim);margin-top:4px">30% مشغول</div></div></div>
+      </div>
+    </div>
+
+    <!-- ══════════════ MOVEMENTS ══════════════ -->
+    <div class="section-content" id="sec-movements">
+      <div class="page-hd"><div class="page-hd-left"><h1>حركات المخزون</h1><p>سجل جميع الحركات الوارد والصادر</p></div><div class="page-hd-actions"><button class="btn btn-ghost btn-sm">تصدير</button></div></div>
+      <div class="filter-bar">
+        <div class="filter-chip active">الكل</div>
+        <div class="filter-chip">وارد</div>
+        <div class="filter-chip">صادر</div>
+        <div class="filter-chip">تسوية</div>
+        <div class="filter-chip">تحويل</div>
+        <div class="filter-chip">مرتجع</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>التاريخ</th><th>نوع الحركة</th><th>المنتج</th><th>المستودع</th><th>الكمية</th><th>المرجع</th><th>المستخدم</th></tr></thead>
+          <tbody>
+            <tr><td>12/12/2024</td><td><span class="badge badge-danger">صادر</span></td><td>برشام A200</td><td>مستودع الرياض</td><td class="td-num" style="color:var(--danger)">-200</td><td><span class="td-link">#DEL-021</span></td><td class="td-secondary">أحمد الشريف</td></tr>
+            <tr><td>11/12/2024</td><td><span class="badge badge-success">وارد</span></td><td>محلول تنظيف</td><td>مستودع الرياض</td><td class="td-num" style="color:var(--success)">+500</td><td><span class="td-link">#CONT-012</span></td><td class="td-secondary">فهد العتيبي</td></tr>
+            <tr><td>10/12/2024</td><td><span class="badge badge-info">تسوية</span></td><td>قفازات حماية</td><td>مستودع الرياض</td><td class="td-num" style="color:var(--warning)">-12</td><td><span class="td-link">#ADJ-004</span></td><td class="td-secondary">فهد العتيبي</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══════════════ ADJUSTMENTS ══════════════ -->
+    <div class="section-content" id="sec-adjustments">
+      <div class="page-hd"><div class="page-hd-left"><h1>تسويات المخزون</h1><p>تسجيل الفروقات بعد الجرد الفعلي</p></div><div class="page-hd-actions"><button class="btn btn-primary btn-sm">+ تسوية جديدة</button></div></div>
+      <div class="card" style="margin-bottom:16px">
+        <div class="card-hd"><span class="card-title">إنشاء تسوية مخزون</span></div>
+        <div class="form-grid" style="margin-bottom:16px">
+          <div class="field"><label>المستودع <span class="req">*</span></label><select class="select"><option>اختر مستودعًا</option><option>مستودع الرياض</option><option>مستودع جدة</option></select></div>
+          <div class="field"><label>تاريخ الجرد <span class="req">*</span></label><input type="date" class="input" value="2024-12-12"></div>
+          <div class="field form-full"><label>سبب التسوية <span class="req">*</span></label><select class="select"><option>اختر السبب</option><option>جرد دوري</option><option>منتج تالف</option><option>خطأ إدخال</option><option>أخرى</option></select></div>
+        </div>
+        <div class="table-wrap" style="margin-bottom:16px">
+          <table>
+            <thead><tr><th>المنتج</th><th>الكمية في النظام</th><th>الكمية الفعلية</th><th>الفرق</th></tr></thead>
+            <tbody>
+              <tr><td>قفازات حماية</td><td class="td-num">20</td><td><input type="number" class="input" value="8" style="width:80px;text-align:left"></td><td class="td-num" style="color:var(--danger)">-12</td></tr>
+              <tr><td>برشام A200</td><td class="td-num">500</td><td><input type="number" class="input" value="498" style="width:80px;text-align:left"></td><td class="td-num" style="color:var(--danger)">-2</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="alert alert-warning"><span>⚠️</span><div class="alert-body">الفرق -12 يتجاوز 5% من الإجمالي — <strong>[QUERY BUSINESS]: هل يتطلب اعتمادًا ثانيًا؟</strong></div></div>
+        <div class="form-footer"><button class="btn btn-ghost">إلغاء</button><button class="btn btn-primary" onclick="openModal('modal-confirm')">اعتماد التسوية</button></div>
+      </div>
+    </div>
+
+    <!-- ══════════════ CONTAINERS ══════════════ -->
+    <div class="section-content" id="sec-containers">
+      <div class="page-hd"><div class="page-hd-left"><h1>متابعة الحاويات</h1><p>4 حاويات نشطة</p></div><div class="page-hd-actions"><button class="btn btn-primary btn-sm">+ إضافة حاوية</button></div></div>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-hd"><span class="stat-label">في الطريق</span></div><div class="stat-value" style="color:var(--accent)">2</div></div>
+        <div class="stat-card"><div class="stat-hd"><span class="stat-label">في الميناء</span></div><div class="stat-value" style="color:var(--warning)">1</div></div>
+        <div class="stat-card"><div class="stat-hd"><span class="stat-label">تحت التخليص</span></div><div class="stat-value" style="color:var(--info)">1</div></div>
+        <div class="stat-card"><div class="stat-hd"><span class="stat-label">مستلمة (الشهر)</span></div><div class="stat-value" style="color:var(--success)">8</div></div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>رقم الحاوية</th><th>المورد</th><th>المنشأ</th><th>المتوقع</th><th>المصروفات</th><th>الحالة</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><span class="td-link">#CONT-2024-014</span></td><td>مصنع الشرق الأوسط</td><td>الصين</td><td>20/12/2024</td><td class="td-num">SAR 8,200</td><td><span class="badge badge-accent">في الطريق</span></td><td><div class="td-actions"><button class="tbl-btn">👁</button><button class="tbl-btn">✏️</button></div></td></tr>
+            <tr style="background:rgba(245,166,35,0.04)"><td><span class="td-link">#CONT-2024-012</span></td><td>مورد التوريد العالمي</td><td>تركيا</td><td>وصلت الميناء</td><td class="td-num">SAR 12,500</td><td><span class="badge badge-warning">في الميناء ⚠️</span></td><td><div class="td-actions"><button class="tbl-btn" onclick="showSection('container-receive')">📥 استلام</button><button class="tbl-btn">👁</button></div></td></tr>
+            <tr><td><span class="td-link">#CONT-2024-010</span></td><td>شركة الاستيراد المتحدة</td><td>الإمارات</td><td>في التخليص</td><td class="td-num">SAR 4,800</td><td><span class="badge badge-info">تخليص جمركي</span></td><td><div class="td-actions"><button class="tbl-btn">👁</button><button class="tbl-btn">✏️</button></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══════════════ CONTAINER RECEIVE ══════════════ -->
+    <div class="section-content" id="sec-container-receive">
+      <div class="page-hd"><div class="page-hd-left"><h1>استلام حاوية</h1><p>#CONT-2024-012 — مورد التوريد العالمي</p></div><div class="page-hd-actions"><button class="btn btn-ghost btn-sm" onclick="showSection('containers')">← رجوع</button></div></div>
+      <div class="status-steps">
+        <div class="status-step done"><div class="step-dot">✓</div><div class="step-label">في الطريق</div></div>
+        <div class="status-step active"><div class="step-dot">2</div><div class="step-label">في الميناء</div></div>
+        <div class="status-step"><div class="step-dot">3</div><div class="step-label">التخليص</div></div>
+        <div class="status-step"><div class="step-dot">4</div><div class="step-label">الاستلام</div></div>
+        <div class="status-step"><div class="step-dot">5</div><div class="step-label">مستلمة</div></div>
+      </div>
+      <div class="alert alert-warning"><span>⚠️</span><div class="alert-body">سجّل الفروقات بين الكميات المتوقعة والفعلية. أي فرق يتطلب سببًا إلزاميًا.</div></div>
+      <div class="table-wrap" style="margin-bottom:16px">
+        <div class="table-toolbar"><span class="table-title">مقارنة المحتويات</span></div>
+        <table>
+          <thead><tr><th>المنتج</th><th>المتوقع</th><th>الفعلي</th><th>الفرق</th><th>سبب الفرق</th></tr></thead>
+          <tbody>
+            <tr><td>محلول تنظيف 5L</td><td class="td-num">500</td><td><input type="number" class="input" value="500" style="width:80px;text-align:left"></td><td class="td-num" style="color:var(--success)">0</td><td class="td-secondary">—</td></tr>
+            <tr><td>قفازات حماية</td><td class="td-num">200</td><td><input type="number" class="input" value="188" style="width:80px;text-align:left"></td><td class="td-num" style="color:var(--danger)">-12</td><td><select class="select" style="width:160px"><option>اختر السبب</option><option>تلف أثناء الشحن</option><option>عجز في التعبئة</option><option>أخرى</option></select></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <div class="card-hd"><span class="card-title">مصروفات الحاوية</span><button class="btn btn-ghost btn-sm" onclick="showSection('landed-cost')">حساب التكلفة الفعلية ←</button></div>
+        <table style="font-size:12px">
+          <thead><tr><th>البند</th><th>المبلغ</th></tr></thead>
+          <tbody>
+            <tr><td>تكلفة الشراء</td><td class="td-num">SAR 45,000</td></tr>
+            <tr><td>رسوم الشحن البحري</td><td class="td-num">SAR 6,200</td></tr>
+            <tr><td>رسوم الجمارك</td><td class="td-num">SAR 4,500</td></tr>
+            <tr><td>التخليص الجمركي</td><td class="td-num">SAR 1,800</td></tr>
+            <tr style="font-weight:600"><td>التكلفة الفعلية الإجمالية</td><td class="td-num" style="color:var(--accent)">SAR 57,500</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="form-footer"><button class="btn btn-ghost">إلغاء</button><button class="btn btn-primary" onclick="openModal('modal-confirm')">تأكيد الاستلام وتحديث المخزون</button></div>
+    </div>
+
+    <!-- ══════════════ LANDED COST ══════════════ -->
+    <div class="section-content" id="sec-landed-cost">
+      <div class="page-hd"><div class="page-hd-left"><h1>التكلفة الفعلية — Landed Cost</h1><p>#CONT-2024-012</p></div><div class="page-hd-actions"><button class="btn btn-ghost btn-sm" onclick="showSection('container-receive')">← رجوع</button></div></div>
+      <div class="alert alert-info"><span>ℹ️</span><div class="alert-body"><strong>[QUERY BUSINESS]:</strong> آلية توزيع مصروفات الحاوية — هل تُوزَّع نسبيًا حسب الوزن أم القيمة أم عدد الوحدات؟</div></div>
+      <div class="grid-2" style="margin-bottom:20px">
+        <div class="card">
+          <div class="card-hd"><span class="card-title">تفصيل المصروفات</span></div>
+          <div class="kv-list">
+            <div class="kv-item"><span class="kv-key">تكلفة الشراء</span><span class="kv-val">SAR 45,000</span></div>
+            <div class="kv-item"><span class="kv-key">الشحن البحري</span><span class="kv-val">SAR 6,200</span></div>
+            <div class="kv-item"><span class="kv-key">رسوم الجمارك</span><span class="kv-val">SAR 4,500</span></div>
+            <div class="kv-item"><span class="kv-key">التخليص</span><span class="kv-val">SAR 1,800</span></div>
+            <hr class="kv-divider">
+            <div class="kv-item" style="font-weight:700"><span class="kv-key">الإجمالي</span><span class="kv-val" style="color:var(--accent)">SAR 57,500</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-hd"><span class="card-title">التوزيع على المنتجات</span><span class="badge badge-info">نسبي بالقيمة</span></div>
+          <table style="font-size:12px">
+            <thead><tr><th>المنتج</th><th>الكمية</th><th>القيمة%</th><th>التكلفة الفعلية/وحدة</th></tr></thead>
+            <tbody>
+              <tr><td>محلول تنظيف</td><td class="td-num">500</td><td class="td-num">62%</td><td class="td-num" style="color:var(--success)">SAR 71.35</td></tr>
+              <tr><td>قفازات حماية</td><td class="td-num">188</td><td class="td-num">38%</td><td class="td-num" style="color:var(--success)">SAR 116.22</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="form-footer"><button class="btn btn-primary">اعتماد التوزيع وتحديث التكاليف</button></div>
+    </div>
+
+    <!-- ══════════════ COA ══════════════ -->
+    <div class="section-content" id="sec-coa">
+      <div class="page-hd"><div class="page-hd-left"><h1>دليل الحسابات</h1><p>Chart of Accounts — شجرة المحاسبة</p></div><div class="page-hd-actions"><button class="btn btn-ghost btn-sm">+ حساب رئيسي</button></div></div>
+      <div class="grid-2">
+        <div class="table-wrap">
+          <div class="table-toolbar"><span class="table-title">شجرة الحسابات</span></div>
+          <div style="padding:8px 0">
+            <div class="coa-item" onclick="toggleCOA(this)"><span class="coa-toggle">▼</span><span class="coa-name" style="font-weight:700">الأصول</span><span class="coa-code">1000</span><span class="coa-bal" style="color:var(--success)">SAR 1,450,000</span></div>
+            <div style="padding-right:16px">
+              <div class="coa-item" style="color:var(--text-secondary)" onclick="toggleCOA(this)"><span class="coa-toggle">▼</span><span class="coa-name">الأصول المتداولة</span><span class="coa-code">1100</span><span class="coa-bal">SAR 980,000</span></div>
+              <div style="padding-right:16px">
+                <div class="coa-item" style="font-size:12px"><span class="coa-toggle"></span><span class="coa-name">النقدية والخزائن</span><span class="coa-code">1110</span><span class="coa-bal">SAR 95,000</span></div>
+                <div class="coa-item" style="font-size:12px"><span class="coa-toggle"></span><span class="coa-name">الحسابات المدينة</span><span class="coa-code">1120</span><span class="coa-bal">SAR 116,900</span></div>
+                <div class="coa-item" style="font-size:12px"><span class="coa-toggle"></span><span class="coa-name">المخزون</span><span class="coa-code">1130</span><span class="coa-bal">SAR 1,200,000</span></div>
+              </div>
+            </div>
+            <div class="coa-item" onclick="toggleCOA(this)"><span class="coa-toggle">▼</span><span class="coa-name" style="font-weight:700">الخصوم</span><span class="coa-code">2000</span><span class="coa-bal" style="color:var(--danger)">SAR 580,000</span></div>
+            <div style="padding-right:16px">
+              <div class="coa-item" style="color:var(--text-secondary)"><span class="coa-toggle">►</span><span class="coa-name">الالتزامات قصيرة الأجل</span><span class="coa-code">2100</span><span class="coa-bal">SAR 380,000</span></div>
+              <div class="coa-item" style="color:var(--text-secondary)"><span class="coa-toggle">►</span><span class="coa-name">القروض والديون</span><span class="coa-code">2200</span><span class="coa-bal">SAR 200,000</span></div>
+            </div>
+            <div class="coa-item" onclick="toggleCOA(this)"><span class="coa-toggle">►</span><span class="coa-name" style="font-weight:700">حقوق الملكية</span><span class="coa-code">3000</span><span class="coa-bal">SAR 870,000</span></div>
+            <div class="coa-item" onclick="toggleCOA(this)"><span class="coa-toggle">▼</span><span class="coa-name" style="font-weight:700">الإيرادات</span><span class="coa-code">4000</span><span class="coa-bal" style="color:var(--success)">SAR 428,600</span></div>
+            <div class="coa-item" onclick="toggleCOA(this)"><span class="coa-toggle">►</span><span class="coa-name" style="font-weight:700">المصروفات</span><span class="coa-code">5000</span><span class="coa-bal" style="color:var(--danger)">SAR 213,850</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-hd"><span class="card-title">إضافة / تعديل حساب</span></div>
+          <div class="form-section">
+            <div class="form-grid">
+              <div class="field"><label>كود الحساب <span class="req">*</span></label><input class="input" placeholder="مثال: 1110"></div>
+              <div class="field"><label>النوع <span class="req">*</span></label><select class="select"><option>أصول</option><option>خصوم</option><option>إيرادات</option><option>مصروفات</option><option>حقوق ملكية</option></select></div>
+              <div class="field form-full"><label>اسم الحساب <span class="req">*</span></label><input class="input" placeholder="اسم الحساب بالعربية"></div>
+              <div class="field form-full"><label>الحساب الأب</label><select class="select"><option>بدون (حساب رئيسي)</option><option>1000 — الأصول</option><option>1100 — الأصول المتداولة</option></select></div>
+              <div class="field form-full"><label>ملاحظات</label><textarea class="textarea" placeholder="وصف الحساب..."></textarea></div>
+            </div>
+          </div>
+          <div class="form-footer"><button class="btn btn-ghost">إلغاء</button><button class="btn btn-primary">حفظ الحساب</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════ CASHIERS ══════════════ -->
+    <div class="section-content" id="sec-cashiers">
+      <div class="page-hd"><div class="page-hd-left"><h1>الخزائن</h1><p>رصيد إجمالي: SAR 95,200</p></div><div class="page-hd-actions"><button class="btn btn-primary btn-sm" onclick="openModal('modal-payment')">+ تسجيل معاملة</button></div></div>
+      <div class="grid-3" style="margin-bottom:20px">
+        <div class="stat-card" style="border-color:var(--success)"><div class="stat-hd"><span class="stat-label">الخزينة الرئيسية</span><span class="badge badge-success">نقدي</span></div><div class="stat-value" style="color:var(--success)">45,800</div><div class="stat-trend">SAR</div></div>
+        <div class="stat-card" style="border-color:var(--accent)"><div class="stat-hd"><span class="stat-label">البنك الأهلي</span><span class="badge badge-accent">بنكي</span></div><div class="stat-value" style="color:var(--accent)">38,600</div><div class="stat-trend">SAR</div></div>
+        <div class="stat-card" style="border-color:var(--info)"><div class="stat-hd"><span class="stat-label">بنك الراجحي</span><span class="badge badge-info">بنكي</span></div><div class="stat-value" style="color:var(--info)">10,800</div><div class="stat-trend">SAR</div></div>
+      </div>
+      <div class="table-wrap">
+        <div class="table-toolbar"><span class="table-title">حركة الخزينة الرئيسية</span></div>
+        <table>
+          <thead><tr><th>التاريخ</th><th>البيان</th><th>المرجع</th><th>وارد</th><th>صادر</th><th>الرصيد</th></tr></thead>
+          <tbody>
+            <tr><td>12/12</td><td>تحصيل دفعة — محمد أحمد</td><td>#PAY-055</td><td class="td-num" style="color:var(--success)">8,000</td><td>—</td><td class="td-num" style="color:var(--success)">45,800</td></tr>
+            <tr><td>11/12</td><td>مصروف — رسوم شحن</td><td>#EXP-012</td><td>—</td><td class="td-num" style="color:var(--danger)">1,200</td><td class="td-num">37,800</td></tr>
+            <tr><td>10/12</td><td>تحويل إلى البنك الأهلي</td><td>#TRF-009</td><td>—</td><td class="td-num" style="color:var(--danger)">10,000</td><td class="td-num">39,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══════════════ TRANSFERS ══════════════ -->
+    <div class="section-content" id="sec-transfers">
+      <div class="page-hd"><div class="page-hd-left"><h1>التحويلات بين الخزائن</h1></div><div class="page-hd-actions"><button class="btn btn-primary btn-sm">+ تحويل جديد</button></div></div>
+      <div class="card" style="margin-bottom:16px">
+        <div class="card-hd"><span class="card-title">تحويل جديد</span></div>
+        <div class="transfer-visual">
+          <div class="transfer-box"><div class="transfer-box-name">الخزينة الرئيسية</div><div class="transfer-box-balance" style="color:var(--success)">SAR 45,800</div><div style="font-size:11px;color:var(--text-secondary);margin-top:4px">رصيد بعد التحويل: <strong style="color:var(--warning)">SAR 35,800</strong></div></div>
+          <div class="transfer-arrow">←</div>
+          <div class="transfer-box"><div class="transfer-box-name">البنك الأهلي</div><div class="transfer-box-balance" style="color:var(--accent)">SAR 38,600</div><div style="font-size:11px;color:var(--text-secondary);margin-top:4px">رصيد بعد التحويل: <strong style="color:var(--success)">SAR 48,600</strong></div></div>
+        </div>
+        <div class="form-grid">
+          <div class="field"><label>من خزينة <span class="req">*</span></label><select class="select"><option>الخزينة الرئيسية (SAR 45,800)</option><option>البنك الأهلي</option><option>بنك الراجحي</option></select></div>
+          <div class="field"><label>إلى خزينة <span class="req">*</span></label><select class="select"><option>البنك الأهلي (SAR 38,600)</option><option>الخزينة الرئيسية</option><option>بنك الراجحي</option></select></div>
+          <div class="field"><label>المبلغ <span class="req">*</span></label><input class="input" type="number" placeholder="0.00"></div>
+          <div class="field"><label>تاريخ التحويل <span class="req">*</span></label><input class="input" type="date"></div>
+          <div class="field form-full"><label>ملاحظات</label><input class="input" placeholder="وصف التحويل..."></div>
+        </div>
+        <div class="form-footer"><button class="btn btn-ghost">إلغاء</button><button class="btn btn-primary" onclick="openModal('modal-confirm')">تأكيد التحويل</button></div>
+      </div>
+      <div class="table-wrap">
+        <div class="table-toolbar"><span class="table-title">سجل التحويلات</span></div>
+        <table><thead><tr><th>التاريخ</th><th>من</th><th>إلى</th><th>المبلغ</th><th>المستخدم</th></tr></thead>
+        <tbody>
+          <tr><td>10/12/2024</td><td>الخزينة الرئيسية</td><td>البنك الأهلي</td><td class="td-num">SAR 10,000</td><td class="td-secondary">أحمد الشريف</td></tr>
+          <tr><td>05/12/2024</td><td>بنك الراجحي</td><td>الخزينة الرئيسية</td><td class="td-num">SAR 5,000</td><td class="td-secondary">سارة محمد</td></tr>
+        </tbody></table>
+      </div>
+    </div>
+
+    <!-- ══════════════ EXPENSES ══════════════ -->
+    <div class="section-content" id="sec-expenses">
+      <div class="page-hd"><div class="page-hd-left"><h1>المصروفات</h1><p>إجمالي هذا الشهر: SAR 98,250</p></div><div class="page-hd-actions"><button class="btn btn-primary btn-sm" onclick="openModal('modal-expense')">+ تسجيل مصروف</button></div></div>
+      <div class="filter-bar">
+        <div class="filter-chip active">الكل</div>
+        <div class="filter-chip">شحن ولوجستيات</div>
+        <div class="filter-chip">إيجارات</div>
+        <div class="filter-chip">رواتب</div>
+        <div class="filter-chip">مصاريف إدارية</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>التاريخ</th><th>البند</th><th>المبلغ</th><th>الخزينة</th><th>المرفق</th><th>المستخدم</th></tr></thead>
+          <tbody>
+            <tr><td>12/12/2024</td><td>رسوم شحن محلي</td><td class="td-num">SAR 1,200</td><td>الخزينة الرئيسية</td><td><span class="td-link">فاتورة.pdf</span></td><td class="td-secondary">فهد العتيبي</td></tr>
+            <tr><td>10/12/2024</td><td>إيجار المستودع — ديسمبر</td><td class="td-num">SAR 8,500</td><td>البنك الأهلي</td><td class="td-secondary">—</td><td class="td-secondary">سارة محمد</td></tr>
+            <tr><td>08/12/2024</td><td>رواتب موظفي المستودع</td><td class="td-num">SAR 22,000</td><td>البنك الأهلي</td><td class="td-secondary">—</td><td class="td-secondary">أحمد الشريف</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══════════════ CUSTOMER ACCOUNTS ══════════════ -->
+    <div class="section-content" id="sec-customer-accounts">
+      <div class="page-hd"><div class="page-hd-left"><h1>حسابات العملاء</h1><p>كشف الحساب الإجمالي</p></div><div class="page-hd-actions"><button class="btn btn-ghost btn-sm">تصدير</button></div></div>
+      <div class="filter-bar">
+        <div class="search-field" style="width:200px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input placeholder="بحث بالعميل..."></div>
+        <select class="select" style="width:140px;height:28px;font-size:11.5px"><option>ديسمبر 2024</option><option>نوفمبر 2024</option></select>
+        <div class="filter-chip active">الكل</div>
+        <div class="filter-chip" style="color:var(--danger)">لهم رصيد 🔴</div>
+        <div class="filter-chip" style="color:var(--success)">لنا رصيد</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>العميل</th><th>إجمالي الفواتير</th><th>إجمالي الدفعات</th><th>الرصيد</th><th>الحالة</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><span class="td-link" onclick="showSection('customers')">شركة الأمل</span></td><td class="td-num">SAR 85,000</td><td class="td-num">SAR 72,500</td><td class="td-num" style="color:var(--danger)">SAR -12,500</td><td><span class="badge badge-danger">مدين</span></td><td><button class="btn btn-sm btn-primary" onclick="openModal('modal-payment')">تحصيل</button></td></tr>
+            <tr><td><span class="td-link">محمد أحمد</span></td><td class="td-num">SAR 42,000</td><td class="td-num">SAR 37,800</td><td class="td-num" style="color:var(--warning)">SAR -4,200</td><td><span class="badge badge-warning">مدين</span></td><td><button class="btn btn-sm btn-secondary" onclick="openModal('modal-payment')">تحصيل</button></td></tr>
+            <tr><td><span class="td-link">عبدالله سالم</span></td><td class="td-num">SAR 28,000</td><td class="td-num">SAR 28,000</td><td class="td-num" style="color:var(--success)">SAR 0</td><td><span class="badge badge-success">مسوّى</span></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══════════════ REPORTS CENTER ══════════════ -->
+    <div class="section-content" id="sec-reports">
+      <div class="page-hd"><div class="page-hd-left"><h1>مركز التقارير والذكاء التجاري</h1><p>28 نموذج تقرير جاهز في 6 فئات</p></div></div>
+      <div class="grid-3">
+        <div class="stat-card" onclick="showSection('reports-sales')" style="cursor:pointer;padding:20px">
+          <div style="font-size:28px;margin-bottom:10px">📊</div>
+          <div style="font-size:14px;font-weight:700;margin-bottom:4px">تقارير المبيعات</div>
+          <div style="font-size:12px;color:var(--text-secondary)">6 تقارير — إيرادات، أداء، عملاء</div>
+          <div style="margin-top:10px"><span class="badge badge-accent">مفضّل</span></div>
+        </div>
+        <div class="stat-card" style="cursor:pointer;padding:20px">
+          <div style="font-size:28px;margin-bottom:10px">🛒</div>
+          <div style="font-size:14px;font-weight:700;margin-bottom:4px">تقارير المشتريات</div>
+          <div style="font-size:12px;color:var(--text-secondary)">4 تقارير — موردون، أوامر الشراء</div>
+        </div>
+        <div class="stat-card" onclick="showSection('reports-profit')" style="cursor:pointer;padding:20px">
+          <div style="font-size:28px;margin-bottom:10px">💹</div>
+          <div style="font-size:14px;font-weight:700;margin-bottom:4px">تقارير الأرباح</div>
+          <div style="font-size:12px;color:var(--text-secondary)">5 تقارير — ربحية، هوامش، P&L</div>
+        </div>
+        <div class="stat-card" style="cursor:pointer;padding:20px">
+          <div style="font-size:28px;margin-bottom:10px">📦</div>
+          <div style="font-size:14px;font-weight:700;margin-bottom:4px">تقارير المخزون</div>
+          <div style="font-size:12px;color:var(--text-secondary)">5 تقارير — حركات، تقييم، تحليل</div>
+        </div>
+        <div class="stat-card" style="cursor:pointer;padding:20px">
+          <div style="font-size:28px;margin-bottom:10px">👥</div>
+          <div style="font-size:14px;font-weight:700;margin-bottom:4px">العملاء والموردون</div>
+          <div style="font-size:12px;color:var(--text-secondary)">4 تقارير — ذمم، كشوف، تحليل</div>
+        </div>
+        <div class="stat-card" style="cursor:pointer;padding:20px">
+          <div style="font-size:28px;margin-bottom:10px">💰</div>
+          <div style="font-size:14px;font-weight:700;margin-bottom:4px">التقارير المالية</div>
+          <div style="font-size:12px;color:var(--text-secondary)">4 تقارير — قوائم مالية، تدفقات</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════ SALES REPORT ══════════════ -->
+    <div class="section-content" id="sec-reports-sales">
+      <div class="page-hd"><div class="page-hd-left"><h1>تقرير المبيعات</h1><p>تحليل تفصيلي لأداء المبيعات</p></div><div class="page-hd-actions"><button class="btn btn-ghost btn-sm">📄 Excel</button><button class="btn btn-ghost btn-sm">📋 CSV</button><button class="btn btn-ghost btn-sm">🖨️ طباعة</button></div></div>
+      <div class="report-hd">
+        <div class="date-range">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <input type="date" class="input" value="2024-12-01" style="width:140px">
+          <span style="color:var(--text-dim)">إلى</span>
+          <input type="date" class="input" value="2024-12-31" style="width:140px">
+        </div>
+        <select class="select" style="width:140px"><option>كل الموظفين</option><option>أحمد الشريف</option><option>سارة محمد</option></select>
+        <select class="select" style="width:120px"><option>Group By: شهر</option><option>Group By: أسبوع</option><option>Group By: موظف</option></select>
+        <button class="btn btn-ghost btn-sm">إعادة تعيين</button>
+        <button class="btn btn-primary btn-sm">تطبيق</button>
+      </div>
+      <div class="stats-grid" style="margin-bottom:20px">
+        <div class="stat-card"><div class="stat-hd"><span class="stat-label">إجمالي المبيعات</span></div><div class="stat-value" style="color:var(--accent)">428,600</div><div class="stat-trend">SAR</div></div>
+        <div class="stat-card"><div class="stat-hd"><span class="stat-label">عدد الطلبات</span></div><div class="stat-value">89</div></div>
+        <div class="stat-card"><div class="stat-hd"><span class="stat-label">متوسط قيمة الطلب</span></div><div class="stat-value">4,815</div><div class="stat-trend">SAR</div></div>
+        <div class="stat-card"><div class="stat-hd"><span class="stat-label">أعلى موظف</span></div><div class="stat-value" style="font-size:14px">أحمد الشريف</div><div class="stat-trend">SAR 185,200</div></div>
+      </div>
+      <div class="chart-wrap" style="margin-bottom:16px">
+        <div class="card-hd"><span class="card-title">المبيعات الشهرية</span></div>
+        <div class="bar-chart">
+          <div class="bar-item"><div class="bar-fill" style="height:45%;background:var(--accent-dim)"></div><div class="bar-lbl">يوليو</div></div>
+          <div class="bar-item"><div class="bar-fill" style="height:55%;background:var(--accent-dim)"></div><div class="bar-lbl">أغسطس</div></div>
+          <div class="bar-item"><div class="bar-fill" style="height:70%;background:var(--accent-dim)"></div><div class="bar-lbl">سبتمبر</div></div>
+          <div class="bar-item"><div class="bar-fill" style="height:60%;background:var(--accent-dim)"></div><div class="bar-lbl">أكتوبر</div></div>
+          <div class="bar-item"><div class="bar-fill" style="height:80%;background:var(--accent-dim)"></div><div class="bar-lbl">نوفمبر</div></div>
+          <div class="bar-item"><div class="bar-fill" style="height:100%;background:var(--accent)"></div><div class="bar-lbl">ديسمبر</div></div>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <div class="table-toolbar"><span class="table-title">تفصيل المبيعات حسب الموظف</span></div>
+        <table><thead><tr><th>الموظف</th><th>عدد الطلبات</th><th>المبيعات</th><th>الخصومات</th><th>الصافي</th><th>الحصة%</th></tr></thead>
+        <tbody>
+          <tr><td>أحمد الشريف</td><td>42</td><td class="td-num">SAR 195,400</td><td class="td-num">SAR 10,200</td><td class="td-num" style="color:var(--success)">SAR 185,200</td><td><div class="progress-bar" style="width:120px;display:inline-block"><div class="progress-fill" style="width:43%;background:var(--accent)"></div></div> 43%</td></tr>
+          <tr><td>سارة محمد</td><td>29</td><td class="td-num">SAR 142,800</td><td class="td-num">SAR 7,600</td><td class="td-num" style="color:var(--success)">SAR 135,200</td><td><div class="progress-bar" style="width:120px;display:inline-block"><div class="progress-fill" style="width:32%;background:var(--info)"></div></div> 32%</td></tr>
+          <tr><td>فهد العتيبي</td><td>18</td><td class="td-num">SAR 110,200</td><td class="td-num">SAR 2,600</td><td class="td-num" style="color:var(--success)">SAR 107,600</td><td><div class="progress-bar" style="width:120px;display:inline-block"><div class="progress-fill" style="width:25%;background:var(--success)"></div></div> 25%</td></tr>
+        </tbody></table>
+      </div>
+    </div>
+
+    <!-- ══════════════ PROFIT REPORT ══════════════ -->
+    <div class="section-content" id="sec-reports-profit">
+      <div class="page-hd"><div class="page-hd-left"><h1>تقرير الأرباح والخسائر</h1><p>P&L Statement</p></div><div class="page-hd-actions"><button class="btn btn-ghost btn-sm">📄 Excel</button><button class="btn btn-ghost btn-sm">🖨️ طباعة</button></div></div>
+      <div class="report-hd">
+        <select class="select" style="width:160px"><option>ديسمبر 2024</option><option>نوفمبر 2024</option></select>
+        <select class="select" style="width:140px"><option>مقارنة: الشهر السابق</option><option>مقارنة: السنة الماضية</option></select>
+        <button class="btn btn-primary btn-sm">تطبيق</button>
+      </div>
+      <div class="grid-2">
+        <div class="table-wrap">
+          <div class="table-toolbar"><span class="table-title">قائمة الدخل</span></div>
+          <table><thead><tr><th>البند</th><th>الشهر الحالي</th><th>الشهر السابق</th><th>الفرق</th></tr></thead>
+          <tbody>
+            <tr style="font-weight:600;color:var(--success)"><td>إجمالي الإيرادات</td><td class="td-num">428,600</td><td class="td-num">382,400</td><td class="td-num" style="color:var(--success)">+12.1%</td></tr>
+            <tr><td style="padding-right:24px">مبيعات البضاعة</td><td class="td-num">420,000</td><td class="td-num">375,000</td><td class="td-num" style="color:var(--success)">+12%</td></tr>
+            <tr><td style="padding-right:24px">خدمات أخرى</td><td class="td-num">8,600</td><td class="td-num">7,400</td><td class="td-num" style="color:var(--success)">+16%</td></tr>
+            <tr style="font-weight:600;color:var(--danger)"><td>تكلفة البضاعة المباعة</td><td class="td-num">(213,850)</td><td class="td-num">(195,000)</td><td class="td-num" style="color:var(--danger)">+9.7%</td></tr>
+            <tr style="font-weight:700;color:var(--accent)"><td>إجمالي الربح</td><td class="td-num">214,750</td><td class="td-num">187,400</td><td class="td-num" style="color:var(--success)">+14.6%</td></tr>
+            <tr><td>هامش الربح الإجمالي</td><td class="td-num" style="color:var(--success)">50.1%</td><td class="td-num">49.0%</td><td class="td-num" style="color:var(--success)">+1.1%</td></tr>
+            <tr style="font-weight:600;color:var(--warning)"><td>المصروفات التشغيلية</td><td class="td-num">(98,250)</td><td class="td-num">(101,200)</td><td class="td-num" style="color:var(--success)">-2.9%</td></tr>
+            <tr style="font-weight:700;font-size:14px;color:var(--success)"><td>صافي الربح</td><td class="td-num">116,500</td><td class="td-num">86,200</td><td class="td-num" style="color:var(--success)">+35.1%</td></tr>
+            <tr><td>هامش الصافي</td><td class="td-num" style="color:var(--success)">27.2%</td><td class="td-num">22.5%</td><td class="td-num" style="color:var(--success)">+4.7%</td></tr>
+          </tbody></table>
+        </div>
+        <div class="chart-wrap">
+          <div class="card-hd"><span class="card-title">مؤشرات الأداء</span></div>
+          <div style="display:flex;flex-direction:column;gap:14px;margin-top:8px">
+            <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span>هامش الربح الإجمالي</span><strong style="color:var(--success)">50.1%</strong></div><div class="progress-bar"><div class="progress-fill" style="width:50%;background:var(--success)"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span>هامش الربح الصافي</span><strong style="color:var(--accent)">27.2%</strong></div><div class="progress-bar"><div class="progress-fill" style="width:27%;background:var(--accent)"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span>نسبة المصروفات</span><strong style="color:var(--warning)">22.9%</strong></div><div class="progress-bar"><div class="progress-fill" style="width:23%;background:var(--warning)"></div></div></div>
+          </div>
+          <div class="bar-chart" style="height:100px;margin-top:20px">
+            <div class="bar-item"><div class="bar-fill" style="height:88%;background:var(--success)"></div><div class="bar-lbl">إيرادات</div></div>
+            <div class="bar-item"><div class="bar-fill" style="height:50%;background:var(--danger)"></div><div class="bar-lbl">تكلفة</div></div>
+            <div class="bar-item"><div class="bar-fill" style="height:44%;background:var(--accent)"></div><div class="bar-lbl">ربح إجمالي</div></div>
+            <div class="bar-item"><div class="bar-fill" style="height:20%;background:var(--warning)"></div><div class="bar-lbl">مصروفات</div></div>
+            <div class="bar-item"><div class="bar-fill" style="height:24%;background:var(--success)"></div><div class="bar-lbl">ربح صافي</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════ USERS & ROLES ══════════════ -->
+    <div class="section-content" id="sec-users">
+      <div class="page-hd"><div class="page-hd-left"><h1>المستخدمون والأدوار</h1><p>إدارة الصلاحيات والوصول</p></div><div class="page-hd-actions"><button class="btn btn-primary btn-sm">+ إضافة مستخدم</button></div></div>
+      <div class="tabs" id="users-tabs">
+        <div class="tab-item active" onclick="switchUsersTab('users-list',this)">المستخدمون</div>
+        <div class="tab-item" onclick="switchUsersTab('roles-matrix',this)">الأدوار والصلاحيات</div>
+        <div class="tab-item" onclick="switchUsersTab('security-tab',this)">إعدادات الأمان</div>
+      </div>
+      <div id="users-list" class="tab-content active">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>الاسم</th><th>البريد الإلكتروني</th><th>الدور</th><th>آخر دخول</th><th>الحالة</th><th></th></tr></thead>
+            <tbody>
+              <tr><td><div style="display:flex;align-items:center;gap:8px"><div class="avatar" style="width:28px;height:28px;font-size:11px">أح</div><span>أحمد الشريف</span></div></td><td class="td-secondary">a.sharif@company.com</td><td><span class="badge badge-info">مدير عام</span></td><td class="td-secondary">منذ 5 دقائق</td><td><span class="badge badge-success">نشط</span></td><td><div class="td-actions"><button class="tbl-btn">✏️</button><button class="tbl-btn">⋮</button></div></td></tr>
+              <tr><td><div style="display:flex;align-items:center;gap:8px"><div class="avatar" style="width:28px;height:28px;font-size:11px;background:linear-gradient(135deg,var(--success),var(--info))">سا</div><span>سارة محمد</span></div></td><td class="td-secondary">s.mohammed@company.com</td><td><span class="badge badge-accent">موظف مبيعات</span></td><td class="td-secondary">منذ 2 ساعة</td><td><span class="badge badge-success">نشط</span></td><td><div class="td-actions"><button class="tbl-btn">✏️</button><button class="tbl-btn">⋮</button></div></td></tr>
+              <tr><td><div style="display:flex;align-items:center;gap:8px"><div class="avatar" style="width:28px;height:28px;font-size:11px;background:linear-gradient(135deg,var(--warning),var(--danger))">فه</div><span>فهد العتيبي</span></div></td><td class="td-secondary">f.otaibi@company.com</td><td><span class="badge badge-warning">مدير مخزون</span></td><td class="td-secondary">أمس 4:30 م</td><td><span class="badge badge-success">نشط</span></td><td><div class="td-actions"><button class="tbl-btn">✏️</button><button class="tbl-btn">⋮</button></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div id="roles-matrix" class="tab-content">
+        <div class="alert alert-info"><span>ℹ️</span><div class="alert-body">عدّل الصلاحيات مباشرةً من الجدول. التغييرات تُطبَّق فور الحفظ.</div></div>
+        <div class="table-wrap" style="overflow-x:auto">
+          <table class="perm-table">
+            <thead><tr><th>الوحدة / العملية</th><th style="text-align:center">مدير عام</th><th style="text-align:center">مدير مالي</th><th style="text-align:center">مدير مبيعات</th><th style="text-align:center">موظف مبيعات</th><th style="text-align:center">مدير مخزون</th><th style="text-align:center">محاسب</th></tr></thead>
+            <tbody>
+              <tr><td style="font-weight:600;color:var(--text-secondary)">المبيعات</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td style="padding-right:24px">العملاء — عرض</td><td style="text-align:center"><input type="checkbox" class="perm-check" checked></td><td style="text-align:center"><input type="checkbox" class="perm-check" checked></td><td style="text-align:center"><input type="checkbox" class="perm-check" checked></td><td style="text-align:center"><input type="checkbox" class="perm-check" checked></td><td style="text-align:center"><input type="checkbox" class="perm-check"></td><td style="text-align:center"><input type="checkbox" class="perm-check" checked></td></tr>
+              <tr><td style="padding-right:24px">العملاء — إضافة/تعديل</td><td style="text-align:center"><input type="checkbox" class="perm-check" checked></td><td style="text-align:center"><input type="checkbox" class="perm-check"></td><td style="text-align:center"><input type="checkbox" class="perm-check" checked></td><td style="text-align:center"><input type="checkbox" class="perm-check" checked></td><td style="text-align:center"><input type="checkbox" class="perm-check"></td><td style="text-align:center"><input type="checkbox" class="perm-check"></td></tr>
+              <tr><td style="padding-right:24px">الفواتير — إصدار</td><td style="text-align:center"><input type="checkbox" class="perm-check" checked></td><td style="text-align:center"><input type="checkbox" class="perm-check" checked></td><td style="text-align:center"><input type="checkbox" class="perm-check" checked></td><td style="text-align:center"><input type="checkbox" class="perm-check"></td><td style="text-align:center"><input type="checkbox" class="perm-check"></td><td style="text-align:center"><input type="checkbox" class="perm-check"></td></tr>
+              <tr><td style="font-weight:600;color:var(--text-secondary)">المالية</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td style="padding-right:24px">الخزائن</td><td style="text-align:center"><input type="checkbox" class="perm-check" checked></td><td style="text-align:center"><input type="checkbox" class="perm-check" checked></td><td style="text-align:center"><input type="checkbox" class="perm-check"></td><td style="text-align:center"><input type="checkbox" class="perm-check"></td><td style="text-align:center"><input type="checkbox" class="perm-check"></td><td style="text-align:center"><input type="checkbox" class="perm-check" checked></td></tr>
+              <tr><td style="padding-right:24px">التقارير المالية</td><td style="text-align:center"><input type="checkbox" class="perm-check" checked></td><td style="text-align:center"><input type="checkbox" class="perm-check" checked></td><td style="text-align:center"><input type="checkbox" class="perm-check"></td><td style="text-align:center"><input type="checkbox" class="perm-check"></td><td style="text-align:center"><input type="checkbox" class="perm-check"></td><td style="text-align:center"><input type="checkbox" class="perm-check" checked></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="form-footer"><button class="btn btn-primary">حفظ الصلاحيات</button></div>
+      </div>
+      <div id="security-tab" class="tab-content">
+        <div class="card">
+          <div class="card-hd"><span class="card-title">سياسة كلمة المرور</span></div>
+          <div class="form-grid" style="margin-bottom:16px">
+            <div class="field"><label>الحد الأدنى للطول</label><input class="input" type="number" value="8"></div>
+            <div class="field"><label>مدة الصلاحية (يوم)</label><input class="input" type="number" value="90"></div>
+            <div class="field"><label>عدد المحاولات قبل القفل</label><input class="input" type="number" value="5"></div>
+            <div class="field"><label>مدة قفل الحساب (دقيقة)</label><input class="input" type="number" value="15"></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px">
+            <label style="display:flex;align-items:center;gap:8px;font-size:12.5px;cursor:pointer"><input type="checkbox" class="perm-check" checked> يجب أن تحتوي على أحرف كبيرة وصغيرة</label>
+            <label style="display:flex;align-items:center;gap:8px;font-size:12.5px;cursor:pointer"><input type="checkbox" class="perm-check" checked> يجب أن تحتوي على أرقام</label>
+            <label style="display:flex;align-items:center;gap:8px;font-size:12.5px;cursor:pointer"><input type="checkbox" class="perm-check"> يجب أن تحتوي على رموز خاصة</label>
+          </div>
+        </div>
+        <div class="card" style="margin-top:12px">
+          <div class="card-hd"><span class="card-title">إعدادات الجلسة</span></div>
+          <div class="form-grid">
+            <div class="field"><label>انتهاء الجلسة بعد (دقيقة)</label><input class="input" type="number" value="60"></div>
+            <div class="field"><label>تحذير الانتهاء قبل (دقيقة)</label><input class="input" type="number" value="5"></div>
+          </div>
+        </div>
+        <div class="form-footer"><button class="btn btn-primary">حفظ إعدادات الأمان</button></div>
+      </div>
+    </div>
+
+    <!-- ══════════════ AUDIT LOG ══════════════ -->
+    <div class="section-content" id="sec-audit-log">
+      <div class="page-hd"><div class="page-hd-left"><h1>سجل العمليات</h1><p>Audit Trail — تتبع كل العمليات</p></div><div class="page-hd-actions"><button class="btn btn-ghost btn-sm">تصدير</button></div></div>
+      <div class="filter-bar">
+        <div class="search-field" style="width:220px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input placeholder="بحث في السجل..."></div>
+        <select class="select" style="width:140px;height:28px;font-size:11.5px"><option>كل المستخدمين</option><option>أحمد الشريف</option><option>سارة محمد</option></select>
+        <select class="select" style="width:140px;height:28px;font-size:11.5px"><option>كل العمليات</option><option>إنشاء</option><option>تعديل</option><option>حذف</option><option>تسجيل دخول</option></select>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>الوقت</th><th>المستخدم</th><th>العملية</th><th>السجل</th><th>القيمة القديمة</th><th>القيمة الجديدة</th><th>IP</th></tr></thead>
+          <tbody>
+            <tr><td class="td-secondary">12/12 11:30</td><td>أحمد الشريف</td><td><span class="badge badge-warning">تعديل</span></td><td><span class="td-link">العميل #C001</span></td><td class="td-secondary"><del>30,000</del></td><td style="color:var(--success)">50,000</td><td class="td-secondary">192.168.1.1</td></tr>
+            <tr><td class="td-secondary">12/12 10:15</td><td>سارة محمد</td><td><span class="badge badge-success">إنشاء</span></td><td><span class="td-link">فاتورة #INV-091</span></td><td class="td-secondary">—</td><td style="color:var(--success)">SAR 4,200</td><td class="td-secondary">192.168.1.5</td></tr>
+            <tr><td class="td-secondary">12/12 09:42</td><td>فهد العتيبي</td><td><span class="badge badge-info">تسجيل دخول</span></td><td class="td-secondary">النظام</td><td class="td-secondary">—</td><td class="td-secondary">—</td><td class="td-secondary">10.0.0.23</td></tr>
+            <tr><td class="td-secondary">11/12 16:20</td><td>أحمد الشريف</td><td><span class="badge badge-danger">إلغاء</span></td><td><span class="td-link">طلب #ORD-031</span></td><td class="td-secondary">مؤكد</td><td style="color:var(--danger)">ملغي</td><td class="td-secondary">192.168.1.1</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div><!-- /page -->
+</div><!-- /main -->
+
+<!-- ████████ MODALS ████████ -->
+
+<!-- Add Customer Modal -->
+<div class="overlay" id="modal-add-customer">
+  <div class="modal modal-lg">
+    <div class="modal-hd"><span class="modal-title">إضافة عميل جديد</span><button class="modal-close" onclick="closeModal('modal-add-customer')">✕</button></div>
+    <div class="modal-body">
+      <div class="tabs" style="margin-bottom:16px">
+        <div class="tab-item active">البيانات الأساسية</div>
+        <div class="tab-item">البيانات المالية</div>
+        <div class="tab-item">المرفقات</div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">بيانات العميل</div>
+        <div class="form-grid">
+          <div class="field"><label>رقم العميل <span class="req">*</span></label><input class="input" value="C-143" placeholder="تلقائي"></div>
+          <div class="field"><label>اسم العميل <span class="req">*</span></label><input class="input" placeholder="الاسم الكامل"></div>
+          <div class="field"><label>رقم الهاتف <span class="req">*</span></label><input class="input" placeholder="+966 5X XXX XXXX" type="tel"></div>
+          <div class="field"><label>البريد الإلكتروني</label><input class="input" placeholder="email@example.com" type="email"></div>
+          <div class="field form-full"><label>العنوان</label><textarea class="textarea" placeholder="العنوان التفصيلي..."></textarea></div>
+          <div class="field"><label>الرقم الضريبي</label><input class="input" placeholder="3XXXXXXXXX00003"></div>
+          <div class="field"><label>موظف المبيعات</label><select class="select"><option>أحمد الشريف</option><option>سارة محمد</option></select></div>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">البيانات المالية</div>
+        <div class="form-grid">
+          <div class="field"><label>العملة الافتراضية <span class="req">*</span></label><select class="select"><option>SAR — ريال سعودي</option><option>USD — دولار أمريكي</option></select></div>
+          <div class="field"><label>حد الائتمان</label><input class="input" type="number" placeholder="0" value="30000"></div>
+          <div class="field"><label>شروط الدفع</label><select class="select"><option>30 يوم</option><option>فوري</option><option>15 يوم</option><option>60 يوم</option></select></div>
+          <div class="field"><label>الرصيد الافتتاحي</label><input class="input" type="number" placeholder="0" value="0"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('modal-add-customer')">إلغاء</button>
+      <button class="btn btn-secondary">حفظ وإضافة آخر</button>
+      <button class="btn btn-primary" onclick="showToast('success','تم إضافة العميل بنجاح','سيتم الانتقال لصفحة التفاصيل');closeModal('modal-add-customer')">حفظ العميل</button>
+    </div>
+  </div>
+</div>
+
+<!-- Payment Modal -->
+<div class="overlay" id="modal-payment">
+  <div class="modal">
+    <div class="modal-hd"><span class="modal-title">تسجيل دفعة</span><button class="modal-close" onclick="closeModal('modal-payment')">✕</button></div>
+    <div class="modal-body">
+      <div class="credit-meter" style="margin-bottom:16px">
+        <div class="credit-row"><span style="font-weight:600">شركة الأمل للتجارة</span><span class="badge badge-danger">متأخرة</span></div>
+        <div class="credit-row" style="margin-top:8px"><span>إجمالي المستحق</span><strong style="color:var(--danger)">SAR 12,500</strong></div>
+      </div>
+      <div class="alert alert-warning" style="margin-bottom:14px"><span>ℹ️</span><div class="alert-body"><strong>[QUERY BUSINESS]:</strong> عند وجود عدة فواتير — التوزيع تلقائي (FIFO) أم يدوي؟</div></div>
+      <div class="form-section">
+        <div class="form-grid">
+          <div class="field form-full"><label>الفاتورة <span class="req">*</span></label><select class="select"><option>#INV-2024-089 — SAR 12,500 (متأخرة)</option><option>#INV-2024-086 — SAR 8,200</option></select></div>
+          <div class="field"><label>طريقة الدفع <span class="req">*</span></label><select class="select"><option>تحويل بنكي</option><option>نقدي</option><option>شيك</option><option>بطاقة</option></select></div>
+          <div class="field"><label>الخزينة <span class="req">*</span></label><select class="select"><option>البنك الأهلي (SAR 38,600)</option><option>الخزينة الرئيسية</option></select></div>
+          <div class="field"><label>المبلغ <span class="req">*</span></label><input class="input" type="number" placeholder="0.00"></div>
+          <div class="field"><label>التاريخ <span class="req">*</span></label><input class="input" type="date" value="2024-12-12"></div>
+          <div class="field"><label>الرقم المرجعي</label><input class="input" placeholder="رقم التحويل أو الشيك"></div>
+          <div class="field form-full"><label>ملاحظات</label><input class="input" placeholder="ملاحظات إضافية..."></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('modal-payment')">إلغاء</button>
+      <button class="btn btn-primary" onclick="showToast('success','تم تسجيل الدفعة بنجاح','تم تحديث رصيد العميل والخزينة');closeModal('modal-payment')">تأكيد الدفعة</button>
+    </div>
+  </div>
+</div>
+
+<!-- Create Order Modal -->
+<div class="overlay" id="modal-create-order">
+  <div class="modal modal-lg">
+    <div class="modal-hd"><span class="modal-title">إنشاء طلب مبيعات جديد</span><button class="modal-close" onclick="closeModal('modal-create-order')">✕</button></div>
+    <div class="modal-body">
+      <div class="form-grid" style="margin-bottom:16px">
+        <div class="field"><label>العميل <span class="req">*</span></label><select class="select"><option>اختر عميلًا</option><option>محمد أحمد العلي</option><option>شركة الأمل</option><option>عبدالله سالم</option></select></div>
+        <div class="field"><label>تاريخ الطلب <span class="req">*</span></label><input class="input" type="date" value="2024-12-12"></div>
+        <div class="field"><label>العملة <span class="req">*</span></label><select class="select"><option>SAR — ريال سعودي</option><option>USD</option></select></div>
+        <div class="field"><label>المخزن <span class="req">*</span></label><select class="select"><option>مستودع الرياض</option><option>مستودع جدة</option></select></div>
+        <div class="field"><label>شروط الدفع</label><select class="select"><option>30 يوم</option><option>فوري</option></select></div>
+        <div class="field"><label>موظف المبيعات</label><select class="select"><option>أحمد الشريف</option><option>سارة محمد</option></select></div>
+      </div>
+      <div class="credit-meter" style="margin-bottom:14px">
+        <div class="credit-row"><span>حد الائتمان</span><strong>SAR 50,000</strong></div>
+        <div class="credit-row"><span>الرصيد الحالي</span><strong style="color:var(--warning)">SAR 4,200</strong></div>
+        <div class="credit-bar"><div class="credit-fill" style="width:8%;background:var(--success)"></div></div>
+        <div style="font-size:11px;color:var(--text-secondary)">بعد هذا الطلب سيكون الرصيد المحجوز: يُحسب بعد إضافة الأصناف</div>
+      </div>
+      <div class="table-wrap" style="margin-bottom:12px">
+        <div class="table-toolbar"><span class="table-title">أصناف الطلب</span><div class="table-toolbar-right"><button class="btn btn-ghost btn-sm">+ إضافة صنف</button></div></div>
+        <table><thead><tr><th>المنتج</th><th>متاح</th><th>الكمية</th><th>السعر</th><th>الخصم</th><th>الإجمالي</th><th></th></tr></thead>
+        <tbody>
+          <tr><td><select class="select" style="width:160px"><option>برشام A200</option></select></td><td class="td-num" style="color:var(--success)">292</td><td><input type="number" class="input" value="20" style="width:70px;text-align:left"></td><td><input type="number" class="input" value="150" style="width:90px;text-align:left"></td><td><input type="number" class="input" value="0" style="width:60px;text-align:left"></td><td class="td-num">SAR 3,000</td><td><button class="tbl-btn">🗑</button></td></tr>
+        </tbody></table>
+      </div>
+      <div class="credit-meter">
+        <div class="credit-row"><span>إجمالي الطلب</span><strong>SAR 3,000</strong></div>
+        <div class="credit-row"><span>ضريبة 15%</span><strong>SAR 450</strong></div>
+        <div class="credit-row" style="margin-top:4px;padding-top:4px;border-top:1px solid var(--border)"><span style="font-weight:700">الإجمالي النهائي</span><strong style="font-size:16px;color:var(--accent)">SAR 3,450</strong></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('modal-create-order')">إلغاء</button>
+      <button class="btn btn-secondary">حفظ كمسودة</button>
+      <button class="btn btn-primary" onclick="openModal('modal-confirm');closeModal('modal-create-order')">تأكيد الطلب</button>
+    </div>
+  </div>
+</div>
+
+<!-- Expense Modal -->
+<div class="overlay" id="modal-expense">
+  <div class="modal">
+    <div class="modal-hd"><span class="modal-title">تسجيل مصروف جديد</span><button class="modal-close" onclick="closeModal('modal-expense')">✕</button></div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="field"><label>بند المصروف <span class="req">*</span></label><select class="select"><option>شحن ولوجستيات</option><option>إيجارات</option><option>رواتب</option><option>مصاريف إدارية</option><option>صيانة</option><option>أخرى</option></select></div>
+        <div class="field"><label>المبلغ <span class="req">*</span></label><input class="input" type="number" placeholder="0.00"></div>
+        <div class="field"><label>الخزينة <span class="req">*</span></label><select class="select"><option>الخزينة الرئيسية</option><option>البنك الأهلي</option></select></div>
+        <div class="field"><label>التاريخ <span class="req">*</span></label><input class="input" type="date" value="2024-12-12"></div>
+        <div class="field form-full"><label>الوصف</label><input class="input" placeholder="وصف المصروف..."></div>
+        <div class="field form-full"><label>مرفق الإيصال</label><div style="border:1px dashed var(--border);border-radius:var(--radius);padding:20px;text-align:center;color:var(--text-dim);font-size:12px;cursor:pointer">📎 اسحب وأفلت الملف هنا أو اضغط للاختيار<br><span style="font-size:11px">PDF, JPG, PNG — حد أقصى 10MB</span></div></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('modal-expense')">إلغاء</button>
+      <button class="btn btn-primary" onclick="showToast('success','تم تسجيل المصروف','تم خصم المبلغ من الخزينة المحددة');closeModal('modal-expense')">تسجيل المصروف</button>
+    </div>
+  </div>
+</div>
+
+<!-- Confirm Dialog -->
+<div class="overlay" id="modal-confirm">
+  <div class="modal" style="max-width:420px">
+    <div class="modal-hd"><span class="modal-title">⚠️ تأكيد الإجراء</span><button class="modal-close" onclick="closeModal('modal-confirm')">✕</button></div>
+    <div class="modal-body">
+      <p style="font-size:13px;line-height:1.7;color:var(--text-secondary)">هذا الإجراء لا يمكن التراجع عنه. هل أنت متأكد من المتابعة؟</p>
+      <div class="field" style="margin-top:14px"><label>سبب الإجراء (إن وجد)</label><textarea class="textarea" placeholder="اختياري — أضف سببًا أو ملاحظة للسجل..."></textarea></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('modal-confirm')">إلغاء</button>
+      <button class="btn btn-danger" onclick="showToast('success','تم تنفيذ الإجراء بنجاح','تم تسجيله في سجل العمليات');closeModal('modal-confirm')">تأكيد التنفيذ</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast Area -->
+<div class="toast-area" id="toast-area"></div>
+
+<script>
+// ── SECTION NAVIGATION ──────────────────────
+function showSection(id) {
+  document.querySelectorAll('.section-content').forEach(s => s.classList.remove('active'));
+  const sec = document.getElementById('sec-' + id);
+  if (sec) sec.classList.add('active');
+
+  // Update breadcrumb
+  const names = {
+    dashboard: 'لوحة التحكم', customers: 'العملاء', orders: 'الطلبات',
+    invoices: 'الفواتير', 'invoice-print': 'معاينة الفاتورة',
+    collections: 'التحصيل', reservations: 'حجوزات المخزون',
+    deliveries: 'التسليمات', returns: 'المرتجعات',
+    products: 'المنتجات', 'inventory-summary': 'ملخص المخزون',
+    movements: 'حركات المخزون', adjustments: 'تسويات المخزون',
+    containers: 'الحاويات', 'container-receive': 'استلام حاوية',
+    'landed-cost': 'التكلفة الفعلية',
+    coa: 'دليل الحسابات', cashiers: 'الخزائن', transfers: 'التحويلات',
+    expenses: 'المصروفات', 'customer-accounts': 'حسابات العملاء',
+    reports: 'مركز التقارير', 'reports-sales': 'تقارير المبيعات',
+    'reports-profit': 'تقارير الأرباح', users: 'المستخدمون والأدوار',
+    'audit-log': 'سجل العمليات',
+  };
+  const name = names[id] || id;
+  document.getElementById('breadcrumb').innerHTML = `
+    <span>الرئيسية</span>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">${name}</span>`;
+
+  // Update nav active state
+  document.querySelectorAll('.nav-sub-item').forEach(n => n.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+}
+
+// ── SUB NAV TOGGLE ───────────────────────────
+function toggleSub(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.toggle('open');
+}
+
+// ── MODAL ────────────────────────────────────
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+}
+document.querySelectorAll('.overlay').forEach(o => {
+  o.addEventListener('click', e => { if (e.target === o) o.classList.remove('open'); });
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.querySelectorAll('.overlay.open').forEach(o => o.classList.remove('open'));
+});
+
+// ── NOTIFICATIONS ─────────────────────────────
+function toggleNotif() {
+  const p = document.getElementById('notif-panel');
+  const sd = document.getElementById('search-dropdown');
+  sd.classList.remove('open');
+  p.classList.toggle('open');
+}
+
+// ── SEARCH ───────────────────────────────────
+function toggleSearch() {
+  const sd = document.getElementById('search-dropdown');
+  const np = document.getElementById('notif-panel');
+  const sw = document.getElementById('search-wrap');
+  np.classList.remove('open');
+  sd.classList.toggle('open');
+  sw.classList.toggle('active');
+  if (sd.classList.contains('open')) setTimeout(() => sd.querySelector('input').focus(), 50);
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('#search-wrap') && !e.target.closest('#search-dropdown'))
+    document.getElementById('search-dropdown').classList.remove('open'),
+    document.getElementById('search-wrap').classList.remove('active');
+  if (!e.target.closest('#notif-panel') && !e.target.closest('.icon-btn'))
+    document.getElementById('notif-panel').classList.remove('open');
+});
+document.addEventListener('keydown', e => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); toggleSearch(); }
+});
+
+// ── TOAST ─────────────────────────────────────
+function showToast(type, title, desc = '') {
+  const area = document.getElementById('toast-area');
+  const t = document.createElement('div');
+  t.className = `toast toast-${type}`;
+  t.innerHTML = `<span class="toast-icon">${type === 'success' ? '✅' : '❌'}</span><div class="toast-body"><div class="toast-title">${title}</div>${desc ? `<div class="toast-desc">${desc}</div>` : ''}</div>`;
+  area.appendChild(t);
+  setTimeout(() => t.style.opacity = '0', 3500);
+  setTimeout(() => t.remove(), 4000);
+}
+
+// ── CUSTOMER DETAIL PANEL ─────────────────────
+function showCustomerDetail() {
+  document.querySelector('.split-panel').style.gridTemplateColumns = '1fr 380px';
+  document.getElementById('customer-detail-panel').style.display = 'flex';
+}
+function closeCustomerDetail() {
+  document.getElementById('customer-detail-panel').style.display = 'none';
+}
+
+// ── CUSTOMER TABS ─────────────────────────────
+function switchCustTab(id, el) {
+  document.querySelectorAll('#customer-detail-panel .tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('#customer-detail-panel .tab-item').forEach(t => t.classList.remove('active'));
+  document.getElementById('cust-' + id).classList.add('active');
+  el.classList.add('active');
+}
+
+// ── USERS TABS ────────────────────────────────
+function switchUsersTab(id, el) {
+  document.querySelectorAll('#sec-users .tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('#users-tabs .tab-item').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+}
+
+// ── COA TOGGLE ────────────────────────────────
+function toggleCOA(el) {
+  const toggle = el.querySelector('.coa-toggle');
+  const next = el.nextElementSibling;
+  if (!next) return;
+  if (toggle.textContent === '▼') { toggle.textContent = '►'; next.style.display = 'none'; }
+  else { toggle.textContent = '▼'; next.style.display = ''; }
+}
+
+// ── CHART TOGGLE (demo) ──────────────────────
+function toggleChart() {
+  const empty = document.getElementById('chart-empty-state');
+  const chart = document.getElementById('chart-with-data');
+  if (!empty || !chart) return;
+  const showing = chart.style.display !== 'none';
+  empty.style.display = showing ? 'flex' : 'none';
+  chart.style.display = showing ? 'none' : 'block';
+}
+
+// Init: show customer detail tip
+setTimeout(() => {
+  showToast('success', 'مرحبًا بك في Precision Slate ERP', 'اضغط على أي عميل لعرض لوحة التفاصيل الكاملة');
+}, 800);
+</script>
+</body>
+</html>
