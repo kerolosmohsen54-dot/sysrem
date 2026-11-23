@@ -1,0 +1,16 @@
+{
+  "id": "/",
+  "name": "MASTER — نظام إدارة الأعمال",
+  "short_name": "MASTER",
+  "description": "نظام عربي لإدارة موارد المنشأة والأعمال",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/dashboard",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#111415",
+  "theme_color": "#111415",
+  "icons": [
+    { "src": "/master-icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
