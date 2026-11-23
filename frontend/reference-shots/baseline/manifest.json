@@ -1,0 +1,982 @@
+{
+  "reference": "reference\\precision-slate-erp-v43__3_ (1).html",
+  "capturedAt": "2026-10-11T10:23:12.108Z",
+  "viewports": [
+    {
+      "name": "1440",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "name": "768",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "name": "390",
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "screens": [
+    {
+      "id": "dashboard",
+      "title": "لوحة التحكم",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\dashboard-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "customers",
+      "title": "العملاء",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\customers-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "orders",
+      "title": "الطلبات",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\orders-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "order-create",
+      "title": "إنشاء طلب مبيعات جديد",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\order-create-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "order-detail",
+      "title": "طلب مؤكد ومعتمد",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\order-detail-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "invoices",
+      "title": "الفواتير",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\invoices-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "invoice-create",
+      "title": "إنشاء فاتورة مبيعات جديدة",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\invoice-create-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "invoice-print",
+      "title": "معاينة الطباعة",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\invoice-print-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "collections",
+      "title": "لوحة التحصيل",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\collections-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "deliveries",
+      "title": "أذونات صرف المواد والتسليم",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\deliveries-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "delivery-create",
+      "title": "إنشاء إذن صرف وتوصيل جديد",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\delivery-create-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "returns",
+      "title": "مرتجعات المبيعات",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\returns-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "return-create",
+      "title": "إنشاء مرتجع مبيعات جديد",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\return-create-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "products",
+      "title": "المنتجات والأصناف",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\products-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "inventory-summary",
+      "title": "ملخص المخزون",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\inventory-summary-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "movements",
+      "title": "حركات المخزون",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\movements-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "adjustments",
+      "title": "تسويات المخزون",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\adjustments-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "finance",
+      "title": "المالية",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\finance-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "containers",
+      "title": "متابعة الحاويات",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\containers-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "container-receive",
+      "title": "استلام حاوية",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\container-receive-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "landed-cost",
+      "title": "التكلفة الفعلية",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\landed-cost-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports",
+      "title": "مركز التقارير والذكاء التجاري",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\reports-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-sales",
+      "title": "تقرير المبيعات",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\reports-sales-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-profit",
+      "title": "تقرير الأرباح والخسائر",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\reports-profit-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "users",
+      "title": "المستخدم والصلاحيات",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\users-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "warehouses",
+      "title": "المخازن",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\warehouses-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-inventory",
+      "title": "تقرير المخزون",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\reports-inventory-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-financial",
+      "title": "التقارير المالية",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\reports-financial-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "settings",
+      "title": "الإعدادات العامة",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\screens\\settings-1440.png",
+      "sectionFound": true
+    },
+    {
+      "id": "dashboard",
+      "title": "لوحة التحكم",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\dashboard-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "customers",
+      "title": "العملاء",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\customers-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "orders",
+      "title": "الطلبات",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\orders-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "order-create",
+      "title": "إنشاء طلب مبيعات جديد",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\order-create-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "order-detail",
+      "title": "طلب مؤكد ومعتمد",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\order-detail-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "invoices",
+      "title": "الفواتير",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\invoices-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "invoice-create",
+      "title": "إنشاء فاتورة مبيعات جديدة",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\invoice-create-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "invoice-print",
+      "title": "معاينة الطباعة",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\invoice-print-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "collections",
+      "title": "لوحة التحصيل",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\collections-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "deliveries",
+      "title": "أذونات صرف المواد والتسليم",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\deliveries-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "delivery-create",
+      "title": "إنشاء إذن صرف وتوصيل جديد",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\delivery-create-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "returns",
+      "title": "مرتجعات المبيعات",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\returns-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "return-create",
+      "title": "إنشاء مرتجع مبيعات جديد",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\return-create-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "products",
+      "title": "المنتجات والأصناف",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\products-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "inventory-summary",
+      "title": "ملخص المخزون",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\inventory-summary-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "movements",
+      "title": "حركات المخزون",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\movements-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "adjustments",
+      "title": "تسويات المخزون",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\adjustments-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "finance",
+      "title": "المالية",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\finance-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "containers",
+      "title": "متابعة الحاويات",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\containers-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "container-receive",
+      "title": "استلام حاوية",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\container-receive-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "landed-cost",
+      "title": "التكلفة الفعلية",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\landed-cost-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports",
+      "title": "مركز التقارير والذكاء التجاري",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\reports-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-sales",
+      "title": "تقرير المبيعات",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\reports-sales-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-profit",
+      "title": "تقرير الأرباح والخسائر",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\reports-profit-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "users",
+      "title": "المستخدم والصلاحيات",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\users-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "warehouses",
+      "title": "المخازن",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\warehouses-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-inventory",
+      "title": "تقرير المخزون",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\reports-inventory-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-financial",
+      "title": "التقارير المالية",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\reports-financial-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "settings",
+      "title": "الإعدادات العامة",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\screens\\settings-768.png",
+      "sectionFound": true
+    },
+    {
+      "id": "dashboard",
+      "title": "لوحة التحكم",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\dashboard-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "customers",
+      "title": "العملاء",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\customers-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "orders",
+      "title": "الطلبات",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\orders-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "order-create",
+      "title": "إنشاء طلب مبيعات جديد",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\order-create-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "order-detail",
+      "title": "طلب مؤكد ومعتمد",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\order-detail-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "invoices",
+      "title": "الفواتير",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\invoices-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "invoice-create",
+      "title": "إنشاء فاتورة مبيعات جديدة",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\invoice-create-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "invoice-print",
+      "title": "معاينة الطباعة",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\invoice-print-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "collections",
+      "title": "لوحة التحصيل",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\collections-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "deliveries",
+      "title": "أذونات صرف المواد والتسليم",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\deliveries-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "delivery-create",
+      "title": "إنشاء إذن صرف وتوصيل جديد",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\delivery-create-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "returns",
+      "title": "مرتجعات المبيعات",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\returns-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "return-create",
+      "title": "إنشاء مرتجع مبيعات جديد",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\return-create-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "products",
+      "title": "المنتجات والأصناف",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\products-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "inventory-summary",
+      "title": "ملخص المخزون",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\inventory-summary-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "movements",
+      "title": "حركات المخزون",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\movements-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "adjustments",
+      "title": "تسويات المخزون",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\adjustments-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "finance",
+      "title": "المالية",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\finance-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "containers",
+      "title": "متابعة الحاويات",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\containers-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "container-receive",
+      "title": "استلام حاوية",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\container-receive-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "landed-cost",
+      "title": "التكلفة الفعلية",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\landed-cost-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports",
+      "title": "مركز التقارير والذكاء التجاري",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\reports-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-sales",
+      "title": "تقرير المبيعات",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\reports-sales-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-profit",
+      "title": "تقرير الأرباح والخسائر",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\reports-profit-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "users",
+      "title": "المستخدم والصلاحيات",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\users-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "warehouses",
+      "title": "المخازن",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\warehouses-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-inventory",
+      "title": "تقرير المخزون",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\reports-inventory-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "reports-financial",
+      "title": "التقارير المالية",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\reports-financial-390.png",
+      "sectionFound": true
+    },
+    {
+      "id": "settings",
+      "title": "الإعدادات العامة",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\screens\\settings-390.png",
+      "sectionFound": true
+    }
+  ],
+  "states": [
+    {
+      "screen": "customers",
+      "name": "customer-modal",
+      "modal": "modal-add-customer",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\states\\customers-customer-modal-1440.png",
+      "result": "captured"
+    },
+    {
+      "screen": "customers",
+      "name": "customer-financial-tab",
+      "tab": "البيانات المالية",
+      "tabRoot": "#cust-modal-tabs",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\states\\customers-customer-financial-tab-1440.png",
+      "result": "captured"
+    },
+    {
+      "screen": "customers",
+      "name": "customer-attachments-tab",
+      "tab": "المرفقات",
+      "tabRoot": "#cust-modal-tabs",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\states\\customers-customer-attachments-tab-1440.png",
+      "result": "captured"
+    },
+    {
+      "screen": "collections",
+      "name": "collection-modal",
+      "modal": "modal-payment",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\states\\collections-collection-modal-1440.png",
+      "result": "captured"
+    },
+    {
+      "screen": "finance",
+      "name": "expense-modal",
+      "modal": "modal-expense",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\states\\finance-expense-modal-1440.png",
+      "result": "captured"
+    },
+    {
+      "screen": "products",
+      "name": "product-modal",
+      "modal": "modal-add-product",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\states\\products-product-modal-1440.png",
+      "result": "captured"
+    },
+    {
+      "screen": "users",
+      "name": "security-tab",
+      "tab": "إعدادات الأمان",
+      "tabRoot": "#users-tabs",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\states\\users-security-tab-1440.png",
+      "result": "captured"
+    },
+    {
+      "screen": "settings",
+      "name": "billing-tab",
+      "tab": "الفوترة والترقيم",
+      "tabRoot": "#settings-tabs",
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\states\\settings-billing-tab-1440.png",
+      "result": "captured"
+    },
+    {
+      "screen": "order-create",
+      "name": "order-filled-form",
+      "fill": true,
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\states\\order-create-order-filled-form-1440.png",
+      "result": "captured"
+    },
+    {
+      "screen": "invoice-create",
+      "name": "invoice-filled-form",
+      "fill": true,
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\states\\invoice-create-invoice-filled-form-1440.png",
+      "result": "captured"
+    },
+    {
+      "screen": "delivery-create",
+      "name": "delivery-filled-form",
+      "fill": true,
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\states\\delivery-create-delivery-filled-form-1440.png",
+      "result": "captured"
+    },
+    {
+      "screen": "return-create",
+      "name": "return-filled-form",
+      "fill": true,
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\states\\return-create-return-filled-form-1440.png",
+      "result": "captured"
+    },
+    {
+      "screen": "adjustments",
+      "name": "adjustment-filled-form",
+      "fill": true,
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\states\\adjustments-adjustment-filled-form-1440.png",
+      "result": "captured"
+    },
+    {
+      "screen": "dashboard",
+      "name": "global-search",
+      "search": true,
+      "viewport": "1440",
+      "file": "reference-shots\\baseline\\states\\dashboard-global-search-1440.png",
+      "result": "captured"
+    },
+    {
+      "screen": "customers",
+      "name": "customer-modal",
+      "modal": "modal-add-customer",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\states\\customers-customer-modal-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "customers",
+      "name": "customer-financial-tab",
+      "tab": "البيانات المالية",
+      "tabRoot": "#cust-modal-tabs",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\states\\customers-customer-financial-tab-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "customers",
+      "name": "customer-attachments-tab",
+      "tab": "المرفقات",
+      "tabRoot": "#cust-modal-tabs",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\states\\customers-customer-attachments-tab-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "collections",
+      "name": "collection-modal",
+      "modal": "modal-payment",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\states\\collections-collection-modal-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "finance",
+      "name": "expense-modal",
+      "modal": "modal-expense",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\states\\finance-expense-modal-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "products",
+      "name": "product-modal",
+      "modal": "modal-add-product",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\states\\products-product-modal-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "users",
+      "name": "security-tab",
+      "tab": "إعدادات الأمان",
+      "tabRoot": "#users-tabs",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\states\\users-security-tab-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "settings",
+      "name": "billing-tab",
+      "tab": "الفوترة والترقيم",
+      "tabRoot": "#settings-tabs",
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\states\\settings-billing-tab-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "order-create",
+      "name": "order-filled-form",
+      "fill": true,
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\states\\order-create-order-filled-form-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "invoice-create",
+      "name": "invoice-filled-form",
+      "fill": true,
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\states\\invoice-create-invoice-filled-form-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "delivery-create",
+      "name": "delivery-filled-form",
+      "fill": true,
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\states\\delivery-create-delivery-filled-form-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "return-create",
+      "name": "return-filled-form",
+      "fill": true,
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\states\\return-create-return-filled-form-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "adjustments",
+      "name": "adjustment-filled-form",
+      "fill": true,
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\states\\adjustments-adjustment-filled-form-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "dashboard",
+      "name": "global-search",
+      "search": true,
+      "viewport": "768",
+      "file": "reference-shots\\baseline\\states\\dashboard-global-search-768.png",
+      "result": "captured"
+    },
+    {
+      "screen": "customers",
+      "name": "customer-modal",
+      "modal": "modal-add-customer",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\states\\customers-customer-modal-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "customers",
+      "name": "customer-financial-tab",
+      "tab": "البيانات المالية",
+      "tabRoot": "#cust-modal-tabs",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\states\\customers-customer-financial-tab-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "customers",
+      "name": "customer-attachments-tab",
+      "tab": "المرفقات",
+      "tabRoot": "#cust-modal-tabs",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\states\\customers-customer-attachments-tab-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "collections",
+      "name": "collection-modal",
+      "modal": "modal-payment",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\states\\collections-collection-modal-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "finance",
+      "name": "expense-modal",
+      "modal": "modal-expense",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\states\\finance-expense-modal-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "products",
+      "name": "product-modal",
+      "modal": "modal-add-product",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\states\\products-product-modal-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "users",
+      "name": "security-tab",
+      "tab": "إعدادات الأمان",
+      "tabRoot": "#users-tabs",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\states\\users-security-tab-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "settings",
+      "name": "billing-tab",
+      "tab": "الفوترة والترقيم",
+      "tabRoot": "#settings-tabs",
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\states\\settings-billing-tab-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "order-create",
+      "name": "order-filled-form",
+      "fill": true,
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\states\\order-create-order-filled-form-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "invoice-create",
+      "name": "invoice-filled-form",
+      "fill": true,
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\states\\invoice-create-invoice-filled-form-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "delivery-create",
+      "name": "delivery-filled-form",
+      "fill": true,
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\states\\delivery-create-delivery-filled-form-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "return-create",
+      "name": "return-filled-form",
+      "fill": true,
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\states\\return-create-return-filled-form-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "adjustments",
+      "name": "adjustment-filled-form",
+      "fill": true,
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\states\\adjustments-adjustment-filled-form-390.png",
+      "result": "captured"
+    },
+    {
+      "screen": "dashboard",
+      "name": "global-search",
+      "search": true,
+      "viewport": "390",
+      "file": "reference-shots\\baseline\\states\\dashboard-global-search-390.png",
+      "result": "captured"
+    }
+  ]
+}
