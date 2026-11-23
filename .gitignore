@@ -1,0 +1,64 @@
+.venv/
+node_modules/
+vendor/
+dist/
+**/dist/
+coverage/
+**/coverage/
+.vite/
+**/.vite/
+**/build/
+.gradle/
+**/.gradle/
+.expo/
+**/.expo/
+.idea/
+**/.idea/
+Pods/
+**/Pods/
+.env
+.env.*
+!.env.example
+*.log
+.phpunit.cache/
+.phpunit.result.cache
+
+# Local database backups and SQL dumps; checked-in schema references are exceptions.
+/data/backups/
+/backend/storage/app/backups/
+*.sql
+!backend/database/**/*.sql
+!database/**/*.sql
+*.sql.gz
+*.dump
+*.bak
+*.backup
+
+# Local scratch output and backend runtime files.
+/scratch/
+/.scratch/
+**/.scratch/
+*.scratch
+*.tmp
+*.temp
+/backend/storage/logs/*
+!/backend/storage/logs/.gitignore
+/backend/bootstrap/cache/*.php
+/reports/
+/.b/
+/frontend/parity-report/
+
+# Local recovery copies contain database and environment data.
+/backups/
+/mobile-app/.avd-e2e-home/
+
+# Archived historical copies and local scratch output.
+/docs/archive/
+/scratch/
+
+# Vendored dependency source copies; dependencies are declared by package manifests.
+/a/
+/g/
+/k/
+/n/
+/s/
