@@ -1,0 +1,63 @@
+{
+  "description": "Unmodified unique ERP reference files copied after full source/hash checks.",
+  "copied": [
+    {
+      "source": "D:\\precision-slate-erp-v26.html",
+      "destination": "design\\precision-slate-erp-v26.html",
+      "size": 693957,
+      "sha256": "2f73f13141026aa6eb4ba1c72c8b32fefd3a293fb43957c758bcaed0cba5320b"
+    },
+    {
+      "source": "D:\\precision-slate-erp-v29.html",
+      "destination": "design\\precision-slate-erp-v29.html",
+      "size": 712805,
+      "sha256": "d425a7a4e3475527ee383f4ffdd6ec58b2b070bd8aaadcb835bdc7ebf07e83d8"
+    },
+    {
+      "source": "D:\\course of programing\\New folder (2)\\precision-slate-erp-final__5_ (1).html",
+      "destination": "course-of-programing-New-folder-2\\precision-slate-erp-final__5_ (1).html",
+      "size": 408980,
+      "sha256": "714df203e22f9bac8091a821e9a220e01d5f0c83ac0b74c21117cdca23256ddf"
+    },
+    {
+      "source": "D:\\course of programing\\New folder (2)\\README.md",
+      "destination": "course-of-programing-New-folder-2\\README.md",
+      "size": 9336,
+      "sha256": "32a00a7a68cd82d56eab869253928db87fc2b596bfc2e882555733bd0aaf6ee0"
+    },
+    {
+      "source": "D:\\course of programing\\New folder (2)\\start-demo.bat",
+      "destination": "course-of-programing-New-folder-2\\start-demo.bat",
+      "size": 489,
+      "sha256": "0ef99ca9f737662219b15911af6dd8e5e6695b86d10c66b10cd7f9dab884499a"
+    },
+    {
+      "source": "D:\\stitch_erp_project_bundle.txt",
+      "destination": "design\\stitch_erp_project_bundle.txt",
+      "size": 833429,
+      "sha256": "d8161d361754e295a646a6ad585fea81c5c47d6ebfd1f8910652528fa9abc0b4"
+    },
+    {
+      "source": "D:\\erp-frontend-fix-prompt.md",
+      "destination": "prompts\\erp-frontend-fix-prompt.md",
+      "size": 58848,
+      "sha256": "e1a14c6a611a837358d6112463732688f883d709a33208ba14541ab593bfb586"
+    },
+    {
+      "source": "D:\\erp-frontend-fix-prompt-part3.md",
+      "destination": "prompts\\erp-frontend-fix-prompt-part3.md",
+      "size": 22828,
+      "sha256": "d68b1f131d7c0ecf45348e8eaba8ddf249ad4fe40fbfceff950d39f3d1643c02"
+    }
+  ],
+  "exact_duplicate_alternates_not_copied": [
+    {
+      "path": "D:\\precision-slate-erp-v26 (1).html",
+      "same_sha256_as": "D:\\precision-slate-erp-v26.html"
+    },
+    {
+      "path": "D:\\erp-frontend-fix-prompt-part3 (1).md",
+      "same_sha256_as": "D:\\erp-frontend-fix-prompt-part3.md"
+    }
+  ]
+}
