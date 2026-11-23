@@ -1,0 +1,9 @@
+﻿Backend final run: PHP 8.3.33; Composer 2.10.2. MySQL `mysql_test` -> `erp_test`: 188 tests / 2,641 assertions passed, zero failures/errors/skips. MariaDB `mariadb_test` -> `erp_test`: 188 tests / 2,641 assertions passed, zero failures/errors/skips. Migration status: all migrations Ran on mysql_test/erp_test, mariadb_test/erp_test, and mysql/erp_scratch; no Pending rows. OpenAPI route parity: Laravel route list 176 rows / 180 API operations; OpenAPI 180 operations; matched 180, missing 0, orphan 0. Symfony YAML parser: OpenAPI v1 129 paths / 180 operations / 78 schemas; v2 110 paths / 151 operations / 41 schemas; both parsed. Frontend: typecheck, lint, Vitest 43 files / 173 tests, production build, API contract 103 unique calls / 0 missing, axe 51 views / 0 violations using Edge 155.0.4283.45. Android: JDK 17.0.20.1, emulator/API 37, NDK 27.1.12297006; assembleDebug passed and APK installed on emulator; permission grant and channels create/pause/resume passed. Full detailed reports: `../integration/FINISH_PROGRESS.md`, `../mobile/E2E_ANDROID_REPORT.md`, `../integration/LIVE_WEB_VERIFICATION.md`.
+Mobile API status-only checks (credentials/tokens omitted): owner login 201; logout 200. Read-only login 201; POST /api/v1/mobile/channels test write 403; logout 200.
+
+TARGET DB = erp_scratch (read-only query after emulator channel create)
+[{'id':2,'name':'E2E-TEST-Android-Channel','paused':0}]
+TARGET DB = erp_scratch (read-only query after emulator pause)
+[{'id':2,'name':'E2E-TEST-Android-Channel','paused':1}]
+TARGET DB = erp_scratch (read-only query after emulator resume)
+[{'id':2,'name':'E2E-TEST-Android-Channel','paused':0}]

@@ -1,0 +1,14 @@
+ M docs/frontend/MANUAL_TEST_REPORT.md
+ M docs/mobile/MOBILE_COMPLETE_REPORT.md
+ M docs/mobile/RN_BUILD_PROGRESS.md
+?? "Untitled (3).pdf"
+?? backend/test-results-erp-scratch.xml
+?? docs/integration/DECISIONS.md
+?? docs/integration/FINISH_PROGRESS.md
+?? docs/evidence/integration/
+?? docs/mobile/ANDROID_BUILD_EVIDENCE.md
+?? docs/mobile/MOBILE_STATUS_REPORT.md
+?? docs/evidence/mobile/android-login-20261014.png
+?? docs/evidence/mobile/android-login-20261014.xml
+?? docs/evidence/mobile/android-login-screen.png
+?? frontend-clean/

@@ -1,0 +1,59 @@
+## master
+ M backend/database/seeders/RolePermissionMatrixSeeder.php
+ M backend/docs/openapi.yaml
+ M backend/routes/api_v1.php
+ M docs/frontend/MANUAL_TEST_REPORT.md
+ M docs/integration/DECISIONS.md
+ M docs/integration/ROLE_MATRIX.md
+ M docs/integration/ROUTE_PERMISSION_AUDIT.md
+ M frontend/scripts/check-accessibility.mjs
+ M frontend/src/app/App.tsx
+ M frontend/src/features/finance/CurrenciesPage.tsx
+ M frontend/src/features/finance/FinancePage.tsx
+ M frontend/src/mocks/handlers.ts
+ M frontend/tests/integration/admin-parked.test.tsx
+?? "Untitled (3).pdf"
+?? backend/app/Http/Controllers/CurrencyReferenceController.php
+?? backend/database/migrations/2026_10_14_000003_create_currency_reference_catalog.php
+?? backend/test-results-erp-scratch.xml
+?? backend/tests/Feature/CurrencyReferenceCatalogTest.php
+?? docs/evidence/acceptance-login-form.png
+?? docs/evidence/acceptance-manual_owner-admin-drivers.png
+?? docs/evidence/acceptance-manual_owner-admin-governorates.png
+?? docs/evidence/acceptance-manual_owner-admin-trash.png
+?? docs/evidence/acceptance-manual_owner-container-funds.png
+?? docs/evidence/acceptance-manual_owner-container-transfers.png
+?? docs/evidence/acceptance-manual_owner-core-pages.json
+?? docs/evidence/acceptance-manual_owner-customers-2-liquidation.png
+?? docs/evidence/acceptance-manual_owner-dashboard.png
+?? docs/evidence/acceptance-manual_owner-finance-inbox.png
+?? docs/evidence/acceptance-manual_owner-finance-movements.png
+?? docs/evidence/acceptance-manual_owner-finance-withdrawals.png
+?? docs/evidence/acceptance-manual_owner-inventory-counts.png
+?? docs/evidence/acceptance-manual_owner-inventory-damaged.png
+?? docs/evidence/acceptance-manual_owner-inventory-minimum-stock.png
+?? docs/evidence/acceptance-manual_owner-operational-pages.json
+?? docs/evidence/acceptance-manual_owner-partner-payments.png
+?? docs/evidence/acceptance-manual_owner-partners.png
+?? docs/evidence/acceptance-manual_owner-warehouse-returns.png
+?? docs/evidence/acceptance-manual_ownerdashboard.png
+?? docs/evidence/mobile-acceptance-after-metro.png
+?? docs/evidence/mobile-acceptance-after-network-permission.png
+?? docs/evidence/mobile-acceptance-channel-created.png
+?? docs/evidence/mobile-acceptance-channel-filled.png
+?? docs/evidence/mobile-acceptance-channel-form.png
+?? docs/evidence/mobile-acceptance-channel-paused.png
+?? docs/evidence/mobile-acceptance-channel-resumed.png
+?? docs/evidence/mobile-acceptance-channel-save-result.png
+?? docs/evidence/mobile-acceptance-current.png
+?? docs/evidence/mobile-acceptance-owner-home.png
+?? docs/evidence/mobile-acceptance-owner-login.png
+?? docs/evidence/mobile-acceptance-owner-result.png
+?? docs/evidence/mobile-acceptance-sms-enable.png
+?? docs/evidence/mobile-acceptance-sms-permission.png
+?? docs/mobile/MOBILE_STATUS_REPORT.md
+?? frontend-clean/
+?? frontend/scripts/acceptance-browser.mjs
+?? frontend/src/features/finance/currenciesApi.ts
+?? frontend/tests/integration/currencies.test.tsx
+?? mobile-app/android/gradle/gradle-daemon-jvm.properties

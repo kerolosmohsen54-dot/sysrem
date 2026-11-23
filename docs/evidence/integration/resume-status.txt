@@ -1,0 +1,29 @@
+ M docs/frontend/MANUAL_TEST_REPORT.md
+ M frontend/src/features/auth/LoginPage.tsx
+ M frontend/src/features/containers/ContainerDetailPage.tsx
+ M frontend/src/features/finance/CurrenciesPage.tsx
+ M frontend/src/features/finance/FinancePage.tsx
+ M frontend/src/shared/auth/AuthProvider.tsx
+ M frontend/tests/integration/admin-parked.test.tsx
+ M frontend/tests/integration/mobile-linkage.test.tsx
+ M mobile-app/__tests__/channels.test.tsx
+ M mobile-app/__tests__/filterEngine.test.ts
+ M mobile-app/__tests__/messages.test.tsx
+ M mobile-app/android/app/build.gradle
+ M mobile-app/android/app/src/main/AndroidManifest.xml
+ M mobile-app/android/app/src/main/java/com/erp/companion/MainApplication.kt
+ M mobile-app/metro.config.js
+ M mobile-app/src/api/channels.ts
+ M mobile-app/src/api/messages.ts
+ M mobile-app/src/capture/filterEngine.ts
+ M mobile-app/src/capture/nativeCapture.ts
+ M mobile-app/src/screens/ChannelHomeScreen.tsx
+?? "Untitled (3).pdf"
+?? backend/test-results-erp-scratch.xml
+?? docs/integration/FINISH_PROGRESS.md
+?? docs/evidence/integration/
+?? docs/mobile/MOBILE_STATUS_REPORT.md
+?? docs/evidence/mobile/android-login-screen.png
+?? frontend-clean/
+?? frontend/src/shared/auth/normalizeSessionUser.ts
+?? frontend/tests/integration/auth-contract.test.tsx

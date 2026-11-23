@@ -1,0 +1,28 @@
+﻿ M backend/database/seeders/RolePermissionMatrixSeeder.php
+ M backend/docs/openapi.yaml
+ M backend/routes/api_v1.php
+ M docs/frontend/MANUAL_TEST_REPORT.md
+ M docs/integration/DECISIONS.md
+ M docs/integration/ROLE_MATRIX.md
+ M docs/integration/ROUTE_PERMISSION_AUDIT.md
+ M docs/mobile/MOBILE_COMPLETE_REPORT.md
+ M frontend/scripts/check-accessibility.mjs
+ M frontend/src/app/App.tsx
+ M frontend/src/features/finance/CurrenciesPage.tsx
+ M frontend/src/features/finance/FinancePage.tsx
+ M frontend/src/mocks/handlers.ts
+ M frontend/tests/integration/admin-parked.test.tsx
+?? "Untitled (3).pdf"
+?? backend/app/Http/Controllers/CurrencyReferenceController.php
+?? backend/database/migrations/2026_10_14_000003_create_currency_reference_catalog.php
+?? backend/test-results-erp-scratch.xml
+?? backend/tests/Feature/CurrencyReferenceCatalogTest.php
+?? docs/integration/FINAL_SYSTEM_REPORT.md
+?? docs/mobile/E2E_ANDROID_REPORT.md
+?? docs/mobile/MOBILE_STATUS_REPORT.md
+?? docs/mobile/android-e2e/
+?? docs/mobile/android-login-screen.png
+?? frontend-clean/
+?? frontend/src/features/finance/currenciesApi.ts
+?? frontend/tests/integration/currencies.test.tsx
+?? mobile-app/android/gradle/gradle-daemon-jvm.properties

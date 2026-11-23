@@ -1,0 +1,7 @@
+﻿Command: GET http://127.0.0.1:8016/api/v1/health
+Backend: php artisan serve --no-reload --host=127.0.0.1 --port=8016
+PHP: 8.3.33; test database target: erp_acceptance_tests; MariaDB endpoint: 127.0.0.1:3307
+HTTP status: 503 Service Unavailable
+Response: {"error":{"code":"SERVICE_UNAVAILABLE","message":"الخدمة غير متاحة مؤقتًا."},"meta":{"request_id":"79cfe289-df6a-44b9-a07c-4f55b894e7f0"}}
+Underlying DB driver error observed in PHPUnit and Laravel probe: SQLSTATE[HY000] [2054] The server requested authentication method unknown to the client [auth_gssapi_client].
+No application workflow or seed was recorded as successful in this closeout run. No production database was used.

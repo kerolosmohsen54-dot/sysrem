@@ -1,0 +1,254 @@
+﻿ D .env.example
+ M .gitignore
+ D .vscode/settings.json
+ D API_CONTRACT.md
+ D AUDIT.md
+ D BASELINE.md
+ D CHANGELOG.md
+ D CLEANUP_LOG.md
+ D DATABASE_CHANGES.md
+ D DECISIONS.md
+ D E2E_TEST_REPORT.md
+ D FRONTEND_REPORT.md
+ D FULL_SYSTEM_GAP_REPORT.md
+ D MOBILE_REPORT.md
+ D OUTSIDE_PROJECT_REVIEW.md
+ M README.md
+ D READY_FOR_TESTING.md
+ M backend/database/seeders/RolePermissionMatrixSeeder.php
+ M backend/docs/openapi.yaml
+ M backend/routes/api_v1.php
+ D data/README.md
+ D data/schema/changes/.gitkeep
+ D data/schema/docs/.gitkeep
+ D "data/schema/docs/reference/database archert.pdf"
+ D data/schema/fixtures/.gitkeep
+ D data/schema/migrations/.gitkeep
+ D data/schema/proposals/proposed-mysql-review-v2/SCHEMA_V2_CHANGE_LOG.md
+ D data/schema/proposals/proposed-mysql-review-v2/SCHEMA_V2_OPEN_DECISIONS.md
+ D data/schema/proposals/proposed-mysql-review-v2/precision_slate_proposed_mysql_design_v2.md
+ D data/schema/proposals/proposed-mysql-review-v2/precision_slate_proposed_mysql_erd_v2.md
+ D data/schema/proposals/proposed-mysql-review-v2/precision_slate_proposed_mysql_v2.sql
+ D data/schema/proposals/proposed-mysql-review-v3/SCHEMA_V3_CHANGE_LOG.md
+ D data/schema/proposals/proposed-mysql-review-v3/SCHEMA_V3_OPEN_DECISIONS.md
+ D data/schema/proposals/proposed-mysql-review-v3/precision_slate_proposed_mysql_design_v3.md
+ D data/schema/proposals/proposed-mysql-review-v3/precision_slate_proposed_mysql_erd_v3.md
+ D data/schema/proposals/proposed-mysql-review-v3/precision_slate_proposed_mysql_v3.sql
+ D data/schema/proposals/proposed-mysql-review-v4.1/PHASE1_CONSTRAINT_TESTS.sql
+ D data/schema/proposals/proposed-mysql-review-v4.1/SCHEMA_V4_1_CHANGE_LOG.md
+ D data/schema/proposals/proposed-mysql-review-v4.1/precision_slate_proposed_mysql_v4_1.sql
+ D data/schema/proposals/proposed-mysql-review-v4.2/PHASE1_CONSTRAINT_TESTS.sql
+ D data/schema/proposals/proposed-mysql-review-v4.2/SCHEMA_V4_2_CHANGE_LOG.md
+ D data/schema/proposals/proposed-mysql-review-v4.2/precision_slate_proposed_mysql_v4_2.sql
+ D data/schema/proposals/proposed-mysql-review-v4/PROPOSED_ROLE_PERMISSION_MATRIX.md
+ D data/schema/proposals/proposed-mysql-review-v4/SCHEMA_V4_CHANGE_LOG.md
+ D data/schema/proposals/proposed-mysql-review-v4/SCHEMA_V4_OPEN_DECISIONS.md
+ D data/schema/proposals/proposed-mysql-review-v4/precision_slate_proposed_mysql_design_v4.md
+ D data/schema/proposals/proposed-mysql-review-v4/precision_slate_proposed_mysql_erd_v4.md
+ D data/schema/proposals/proposed-mysql-review-v4/precision_slate_proposed_mysql_v4.sql
+ D data/schema/proposals/proposed-mysql-review/database_schema_correction_plan.md
+ D data/schema/proposals/proposed-mysql-review/precision_slate_proposed_mysql.sql
+ D data/schema/proposals/proposed-mysql-review/precision_slate_proposed_mysql_design.md
+ D data/schema/proposals/proposed-mysql-review/precision_slate_proposed_mysql_erd.md
+ D data/schema/proposals/proposed-mysql-review/precision_slate_ui_database_traceability_audit.md
+ D data/schema/schema/.gitkeep
+ D data/schema/seeders/.gitkeep
+ D data/schema/tests/.gitkeep
+ D data/schema/views/.gitkeep
+ D docs/FINAL_HANDOVER_REPORT.md
+ D docs/FULL_PROJECT_STATE_REPORT.md
+ D docs/REORG_PLAN.md
+ D docs/RUNBOOK.md
+ D docs/_to_review/backend-design-snapshot/API_CONTRACTS.md
+ D docs/_to_review/backend-design-snapshot/API_ENDPOINT_CATALOG.md
+ D docs/_to_review/backend-design-snapshot/AUTHENTICATION_AND_AUTHORIZATION.md
+ D docs/_to_review/backend-design-snapshot/BACKEND_ARCHITECTURE.md
+ D docs/_to_review/backend-design-snapshot/BACKEND_DECISIONS_AND_GAPS.md
+ D docs/_to_review/backend-design-snapshot/BACKEND_FOLDER_STRUCTURE.md
+ D docs/_to_review/backend-design-snapshot/BACKEND_IMPLEMENTATION_PLAN.md
+ D docs/_to_review/backend-design-snapshot/BACKEND_TEST_STRATEGY.md
+ D docs/_to_review/backend-design-snapshot/BUSINESS_LOGIC_AND_TRANSACTIONS.md
+ D docs/_to_review/backend-design-snapshot/DATABASE_SCHEMA_MAPPING.md
+ D docs/_to_review/backend-design-snapshot/HOSTINGER_VPS_DEPLOYMENT.md
+ D docs/_to_review/backend-design-snapshot/SECURITY_REQUIREMENTS.md
+ D docs/architecture/.gitkeep
+ D docs/architecture/backend-integration/API_CLIENT_SPEC.md
+ D docs/architecture/backend-integration/FRONTEND_BACKEND_INTEGRATION.md
+ D docs/architecture/backend-integration/INTEGRATION_FLOWS.md
+ D docs/architecture/backend-integration/LOCALSTORAGE_REPLACEMENT_AND_MIGRATION.md
+ D docs/architecture/backend-integration/SCREEN_TO_ENDPOINT_MAP.md
+ D docs/architecture/backend-integration/contracts/.gitkeep
+ M docs/backend/BACKEND_COMPLETE.md
+ M docs/backend/MOBILE_API_NOTES.md
+ M docs/backend/MOBILE_SPEC_GAP_REPORT.md
+ M docs/backend/architecture/backend-design/BACKEND_IMPLEMENTATION_PLAN.md
+ M docs/backend/architecture/backend-design/INVENTORY_COSTING.md
+ M docs/backend/architecture/backend-design/LARAVEL_13_SKELETON_PLAN.md
+ M docs/backend/architecture/backend-design/PROPOSED_ROLE_PERMISSION_MATRIX_V2.md
+ M docs/backend/architecture/backend-design/PROPOSED_ROLE_PERMISSION_MATRIX_V3.md
+ D docs/backend/operations/ACCOUNTANT_OPEN_QUESTIONS.md
+ D docs/backend/operations/BACKUP_AND_RESTORE.md
+ D docs/backend/operations/CSV_IMPORTS.md
+ D docs/backend/operations/PRODUCTION_CHECKLIST.md
+ D docs/deployment/.gitkeep
+ D docs/development/.gitkeep
+ D docs/development/BACKEND_PROGRESS_LOG.md
+ M docs/evidence/git-status-before-acceptance-20261015.txt
+ M docs/frontend/CONTRACT_DIFF.md
+ M docs/frontend/DESIGN_TOKENS.md
+ M docs/frontend/FIGMA_PARITY_REPORT.md
+ M docs/frontend/FIGMA_PROGRESS.md
+ M docs/frontend/FIGMA_TOKENS.md
+ M docs/frontend/FRONTEND_API_REQUESTS.md
+ D docs/frontend/FRONTEND_FINAL_REPORT.md
+ M docs/frontend/FRONTEND_HANDOFF_REPORT.md
+ M docs/frontend/FRONTEND_PROGRESS_LOG.md
+ M docs/frontend/LIVE_INTEGRATION.md
+ D docs/frontend/LIVE_STATUS.md
+ D docs/frontend/LOCKED_ITEMS_AUDIT.md
+ M docs/frontend/MANUAL_TEST_REPORT.md
+ M docs/frontend/PARITY_PROGRESS.md
+ M docs/frontend/SALES_INVOICES_RETURNS_STATUS_2026-10-13.md
+ M docs/frontend/TEST_FLAKY_ROOT_CAUSE.md
+ M docs/frontend/TEST_REGRESSION_NOTE.md
+ M docs/frontend/UI_PARITY_REPORT.md
+ D docs/handoff/HANDOFF_FOR_NEW_MODEL.md
+ D docs/handoff/PROJECT_STATUS_HANDOFF.md
+ M docs/integration/DECISIONS.md
+ M docs/integration/FINAL_SYSTEM_REPORT.md
+ M docs/integration/FINAL_WEB_STATUS.md
+ M docs/integration/FINISH_PROGRESS.md
+ M docs/integration/GAP_REPORT.md
+ M docs/integration/LIVE_WEB_VERIFICATION.md
+ M docs/integration/ROLE_MATRIX.md
+ M docs/integration/ROUTE_OPENAPI_DIFF.md
+ M docs/integration/ROUTE_PERMISSION_AUDIT.md
+ D docs/integration/evidence/backend-mariadb-erp-test-2026-10-14.xml
+ D docs/integration/evidence/backend-mysql-erp-test-2026-10-14.xml
+ D docs/integration/evidence/baseline-2026-10-14.txt
+ D docs/integration/evidence/final-log-2026-10-14.txt
+ D docs/integration/evidence/final-status-2026-10-14.txt
+ D docs/integration/evidence/live-collection-2026-10-15.png
+ D docs/integration/evidence/live-customer-2026-10-15.png
+ D docs/integration/evidence/live-customer-statement-2026-10-15.png
+ D docs/integration/evidence/live-invoice-draft-2026-10-15.png
+ D docs/integration/evidence/live-invoice-issued-2026-10-15.png
+ D docs/integration/evidence/live-linked-return-blocked-2026-10-15.png
+ D docs/integration/evidence/live-login-dashboard-2026-10-15.png
+ D docs/integration/evidence/live-opening-stock-2026-10-15.png
+ D docs/integration/evidence/live-product-2026-10-15.png
+ D docs/integration/evidence/live-readonly-customer-2026-10-15.png
+ D docs/integration/evidence/live-readonly-pages-2026-10-15.png
+ D docs/integration/evidence/live-warehouse-2026-10-15.png
+ D docs/integration/evidence/resume-log.txt
+ D docs/integration/evidence/resume-status.txt
+ M docs/mobile/ANDROID_BUILD_EVIDENCE.md
+ M docs/mobile/API_MAP.md
+ M docs/mobile/E2E_ANDROID_REPORT.md
+ M docs/mobile/E2E_RN_REPORT.md
+ M docs/mobile/MOBILE_SEARCH_REPORT.md
+ M docs/mobile/RN_BUILD_PROGRESS.md
+ M docs/mobile/RN_FINAL_REPORT.md
+ M docs/mobile/SPEC_CHECKLIST.md
+ D docs/mobile/android-e2e/permission-prompt.png
+ D docs/mobile/android-e2e/permission-prompt.xml
+ D docs/mobile/android-login-20261014.png
+ D docs/mobile/android-login-20261014.xml
+ D docs/mobile/android-login-screen.png
+ D docs/project/ERP_PROJECT_READINESS_AUDIT.md
+ D docs/security/.gitkeep
+ D frontend-architecture/ARCHITECTURE.md
+ D frontend-reports/FRONTEND_REPORT.md
+ M frontend/scripts/check-accessibility.mjs
+ M frontend/src/app/App.tsx
+ M frontend/src/features/finance/CurrenciesPage.tsx
+ M frontend/src/features/finance/FinancePage.tsx
+ M frontend/src/mocks/handlers.ts
+ M frontend/tests/integration/admin-parked.test.tsx
+ D frontend2.md
+ D mobile-application/.gitignore
+ D mobile-application/README.md
+ D mobile-application/app/build.gradle.kts
+ D mobile-application/app/src/main/AndroidManifest.xml
+ D mobile-application/app/src/main/java/com/precisionslate/mobile/MainActivity.kt
+ D mobile-application/app/src/main/java/com/precisionslate/mobile/data/AuthorizationHeader.kt
+ D mobile-application/app/src/main/java/com/precisionslate/mobile/data/DevicePreferences.kt
+ D mobile-application/app/src/main/java/com/precisionslate/mobile/data/LocalStore.kt
+ D mobile-application/app/src/main/java/com/precisionslate/mobile/data/MobileApi.kt
+ D mobile-application/app/src/main/java/com/precisionslate/mobile/data/MobileRepository.kt
+ D mobile-application/app/src/main/java/com/precisionslate/mobile/data/OutboxReplay.kt
+ D mobile-application/app/src/main/java/com/precisionslate/mobile/data/SenderMatcher.kt
+ D mobile-application/app/src/test/java/com/precisionslate/mobile/data/AuthorizationHeaderTest.kt
+ D mobile-application/app/src/test/java/com/precisionslate/mobile/data/OutboxReplayTest.kt
+ D mobile-application/app/src/test/java/com/precisionslate/mobile/data/SenderMatcherTest.kt
+ D mobile-application/build.gradle.kts
+ D mobile-application/docs/DESIGN.md
+ D mobile-application/gradle.properties
+ D mobile-application/settings.gradle.kts
+ D "\330\266\330\250\330\267 \331\210\330\247\330\254\331\207\330\251.md"
+?? backend/app/Http/Controllers/CurrencyReferenceController.php
+?? backend/database/migrations/2026_10_14_000003_create_currency_reference_catalog.php
+?? backend/tests/Feature/CurrencyReferenceCatalogTest.php
+?? database/
+?? docs/PROJECT_OVERVIEW_REPORT.md
+?? docs/archive/
+?? docs/backend/BACKEND_REPORT.md
+?? docs/backend/development/
+?? docs/backend/security/
+?? docs/database/
+?? docs/evidence/acceptance-login-form.png
+?? docs/evidence/acceptance-manual_owner-admin-drivers.png
+?? docs/evidence/acceptance-manual_owner-admin-governorates.png
+?? docs/evidence/acceptance-manual_owner-admin-trash.png
+?? docs/evidence/acceptance-manual_owner-container-funds.png
+?? docs/evidence/acceptance-manual_owner-container-transfers.png
+?? docs/evidence/acceptance-manual_owner-core-pages.json
+?? docs/evidence/acceptance-manual_owner-customers-2-liquidation.png
+?? docs/evidence/acceptance-manual_owner-dashboard.png
+?? docs/evidence/acceptance-manual_owner-finance-inbox.png
+?? docs/evidence/acceptance-manual_owner-finance-movements.png
+?? docs/evidence/acceptance-manual_owner-finance-withdrawals.png
+?? docs/evidence/acceptance-manual_owner-inventory-counts.png
+?? docs/evidence/acceptance-manual_owner-inventory-damaged.png
+?? docs/evidence/acceptance-manual_owner-inventory-minimum-stock.png
+?? docs/evidence/acceptance-manual_owner-operational-pages.json
+?? docs/evidence/acceptance-manual_owner-partner-payments.png
+?? docs/evidence/acceptance-manual_owner-partners.png
+?? docs/evidence/acceptance-manual_owner-warehouse-returns.png
+?? docs/evidence/acceptance-manual_ownerdashboard.png
+?? docs/evidence/backend/
+?? docs/evidence/cleanup-before.txt
+?? docs/evidence/finish-current-results.txt
+?? docs/evidence/finish-frontend-checks.txt
+?? docs/evidence/finish-start-log.txt
+?? docs/evidence/finish-start-status.txt
+?? docs/evidence/integration/
+?? docs/evidence/mobile-acceptance-after-metro.png
+?? docs/evidence/mobile-acceptance-after-network-permission.png
+?? docs/evidence/mobile-acceptance-channel-created.png
+?? docs/evidence/mobile-acceptance-channel-filled.png
+?? docs/evidence/mobile-acceptance-channel-form.png
+?? docs/evidence/mobile-acceptance-channel-paused.png
+?? docs/evidence/mobile-acceptance-channel-resumed.png
+?? docs/evidence/mobile-acceptance-channel-save-result.png
+?? docs/evidence/mobile-acceptance-current.png
+?? docs/evidence/mobile-acceptance-owner-home.png
+?? docs/evidence/mobile-acceptance-owner-login.png
+?? docs/evidence/mobile-acceptance-owner-result.png
+?? docs/evidence/mobile-acceptance-sms-enable.png
+?? docs/evidence/mobile-acceptance-sms-permission.png
+?? docs/evidence/mobile-android-e2e/
+?? docs/evidence/mobile/
+?? docs/frontend/FRONTEND_REPORT.md
+?? docs/integration/API_CONTRACT.md
+?? docs/integration/E2E_TEST_REPORT.md
+?? docs/integration/INTEGRATION_REPORT.md
+?? docs/integration/architecture/
+?? docs/mobile/MOBILE_REPORT.md
+?? docs/mobile/MOBILE_STATUS_REPORT.md
+?? docs/runbook/
+?? frontend/scripts/acceptance-browser.mjs
+?? frontend/src/features/finance/currenciesApi.ts
+?? frontend/tests/integration/currencies.test.tsx
+?? mobile-app/android/gradle/gradle-daemon-jvm.properties
+?? review/

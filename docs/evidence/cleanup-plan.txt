@@ -1,0 +1,85 @@
+E2E/test-prefixed rows in erp_scratch (read-only inventory)
+Generated 2026-10-15 local time
+audit_logs | count=145 | ids=[17,18,21,22,23,24,27,28,35,37,39,42,43,67,72,74,78,79,86,88,93,104,105,106,107,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,131,132,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,340,347,349,350,351,352,353,354,356,357,360,363,364,372,373,374,375,376,380,381,389,390,391,394,402,403,404,408,409,415,416,417,418,419,420,425,426,427,428,429,431,432,437,440]
+container_cost_type_settings | count=1 | ids=["E2E-TEST Freight"]
+container_costs | count=1 | ids=[1]
+container_fund_movements | count=1 | ids=[1]
+container_lines | count=10 | ids=[1,2,3,4,5,6,7,8,9,10]
+container_location_transfers | count=1 | ids=[1]
+container_status_history | count=1 | ids=[3]
+containers | count=2 | ids=[1,2]
+customers | count=51 | ids=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51]
+expense_categories | count=2 | ids=[4,5]
+expenses | count=3 | ids=[1,2,3]
+financial_outbox_events | count=3 | ids=[56,63,64]
+governorates | count=2 | ids=[28,29]
+idempotency_records | count=54 | ids=[1,2,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,62,64]
+inventory_counts | count=1 | ids=[1]
+inventory_movement_lines | count=1 | ids=[5]
+inventory_movements | count=4 | ids=[1,2,5,6]
+locations | count=2 | ids=[1,2]
+mobile_captured_messages | count=15 | ids=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+mobile_devices | count=13 | ids=[4,7,9,10,13,15,16,17,23,24,25,26,27]
+mobile_idempotency_records | count=38 | ids=[4,5,6,9,11,12,14,15,16,17,18,19,23,24,25,26,27,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,52,55]
+mobile_payment_channels | count=8 | ids=[2,3,4,5,6,7,8,9]
+partner_payments | count=1 | ids=[1]
+partners | count=1 | ids=[1]
+products | count=11 | ids=[1,2,3,4,5,6,7,8,9,10,11]
+sales_document_lines | count=52 | ids=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52]
+sales_documents | count=1 | ids=[2]
+sales_receipts | count=2 | ids=[10,12]
+shipping_drivers | count=1 | ids=[1]
+trash_items | count=1 | ids=[1]
+treasury_accounts | count=8 | ids=[3,4,5,6,7,8,9,10]
+treasury_entries | count=8 | ids=[3,4,10,11,12,15,16,18]
+warehouse_returns | count=1 | ids=[1]
+TOTAL | tables=33 | rows=446
+
+## After application cleanup - 2026-10-16
+
+All mutations below used supported application/API actions; no database rows were deleted or edited directly. The pre-clean inventory above remains unchanged as the recorded baseline (33 tables / 446 rows). The post-clean scan examined every textual column in erp_scratch for `%E2E-TEST%`, `e2e%`, and `test%`; its broader matching includes audit/trash/idempotency references and is therefore not a like-for-like subtraction from the original ID inventory.
+
+| Table | Before | After |
+|---|---:|---:|
+| audit_logs | 145 | 598 |
+| container_cost_type_settings | 1 | 1 |
+| container_costs | 1 | 1 |
+| container_fund_movements | 1 | 1 |
+| container_lines | 10 | 10 |
+| container_location_transfers | 1 | 1 |
+| container_status_history | 1 | 1 |
+| containers | 2 | 2 |
+| customers | 51 | 51 |
+| expense_categories | 2 | 2 |
+| expenses | 3 | 3 |
+| financial_outbox_events | 3 | 3 |
+| governorates | 2 | 2 |
+| idempotency_records | 54 | 104 |
+| inventory_counts | 1 | 1 |
+| inventory_movement_lines | 1 | 1 |
+| inventory_movements | 4 | 4 |
+| locations | 2 | 2 |
+| mobile_captured_messages | 15 | 15 |
+| mobile_devices | 13 | 13 |
+| mobile_idempotency_records | 38 | 44 |
+| mobile_payment_channels | 8 | 8 |
+| partner_payments | 1 | 1 |
+| partners | 1 | 1 |
+| products | 11 | 11 |
+| sales_document_lines | 52 | 52 |
+| sales_documents | 1 | 51 |
+| sales_receipts | 2 | 2 |
+| shipping_drivers | 1 | 1 |
+| trash_items | 1 | 65 |
+| treasury_accounts | 8 | 8 |
+| treasury_entries | 8 | 8 |
+| warehouse_returns | 1 | 1 |
+| sales_receipt_allocation_reversals | 0 | 5 |
+| users | 0 | 2 |
+| **Total** | **446** | **1076** |
+
+Post-clean state checks: 51/51 E2E customers inactive; 2/2 governorates inactive; 1/1 driver inactive; 2/2 expense categories inactive; 1/1 partner inactive; 10/11 products inactive/trashed, with product 1 still active and 19 units on hand; 1/2 containers cancelled and the other left in `receiving` after its posted receipt was reversed; all 8 E2E mobile channels paused; all 8 E2E treasury accounts deactivated through PATCH; 50 invoices cancelled and one posted invoice retained because it has a posted return; 3 expenses, 2 receipts, and 8 treasury entries remain posted; 15 captured messages remain (10 NEW, 1 NEEDS_REVIEW, 4 RECORDED). The two E2E login users remain active for future testing.
+
+Retained by design: posted invoice and linked posted return; 19 units of stock on the product tied to that return (the product delete/deactivate path rejects products with stock); reversed container receipt and its container history (no transition from `receiving` to `cancelled`); posted expenses, receipt rows and treasury ledger rows (no whole-document reversal endpoint); captured-message history (no current ignore/archive endpoint for `mobile_captured_messages`); account balances and associated audit, idempotency, outbox, movement, and trash history. E2E treasury accounts were disabled, but their ledger balances were preserved.
+
+Every SQL statement in the post-clean inventory printed `TARGET DB = erp_scratch` immediately before execution. Credentials and access tokens were not included.

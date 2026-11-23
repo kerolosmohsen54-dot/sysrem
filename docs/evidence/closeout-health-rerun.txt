@@ -1,0 +1,46 @@
+# Runtime rerun evidence — 2026-10-30
+
+Target is the local test database only: `erp_acceptance_tests` on MariaDB at `127.0.0.1:3307`. No production database was selected.
+
+## Start command
+
+```powershell
+$env:APP_ENV='local'
+$env:DB_CONNECTION='mariadb_test'
+$env:DB_MARIADB_TEST_DATABASE='erp_acceptance_tests'
+php artisan serve --no-reload --host=127.0.0.1 --port=8016
+```
+
+## API and browser checks
+
+- `GET http://127.0.0.1:8016/api/v1/health` returned HTTP 200: `{"data":{"status":"ok"},"meta":{"request_id":"2c3c82e4-bc3a-41ef-ace9-66defd797a17"}}`.
+- `GET /api/v1/auth/login-options` included `sales-workflow-e2e-owner`.
+- Test login and logout through the real API succeeded: `POST /auth/login` → `GET /auth/me` returned `sales-workflow-e2e-owner` → `POST /auth/logout` succeeded.
+- `GET http://127.0.0.1:5173/` returned HTTP 200. Vite was configured with `VITE_API_TARGET=http://127.0.0.1:8016`; MSW was not enabled in this dev run.
+
+## Database proof
+
+The database probe ran against `erp_acceptance_tests` and returned:
+
+```text
+erp_acceptance_tests  13.0.2-MariaDB
+sales-workflow-e2e-owner  active=1
+active probe_[a-f0-9]{8} users  0
+revoked sessions for sales-workflow-e2e-owner  2
+```
+
+Query shape: `SELECT DATABASE(), VERSION();` plus an exact username lookup in `users`, a count of active generated `probe_` test accounts, and a count of revoked `auth_sessions` for the test owner. No password hash, session token, or production row was read.
+
+## Corrected configuration and test data
+
+The initial 503 came from starting `mysql_test` with the empty `DB_PASSWORD`; the local MariaDB credentials are configured under `DB_MARIADB_*`. Runtime now uses `mariadb_test`. For PHPUnit/Playwright, which explicitly select `mysql_test`, `DB_PASSWORD` was supplied from the local `DB_MARIADB_PASSWORD` setting without printing it.
+
+Five already-pending additive migrations were applied only to `erp_acceptance_tests`: `000010` through `000014`. The first acceptance seed attempt exposed the missing `000010` column and stopped; after migrations, Playwright's global setup completed its seeders.
+
+The acceptance database contained 207 generated `probe_[a-f0-9]{8}` accounts left by API tests, which filled the login-options 200-row cap. They were marked inactive (not deleted) with an exact username-pattern predicate guarded by `DATABASE()='erp_acceptance_tests'`. This made the seeded E2E users visible in the test login list.
+
+## Rerun results
+
+- PHPUnit: 229 tests, 203 passed, 17 failed, 1 risky; see `closeout-phpunit-rerun.log`.
+- Playwright: 8 tests, 0 passed, 8 failed; see `closeout-playwright-final.log`. The live server and DB were reachable, but UI assertions/options prevented all eight flows from completing.
+- Vitest: 211 tests, 179 passed, 32 failed; see `closeout-vitest-rerun.log`.

@@ -1,0 +1,37 @@
+# Final verification evidence - 2026-10-16
+
+## Live services and sign-in
+
+- Backend `GET http://127.0.0.1:8000/api/v1/health`: HTTP 200; response status `ok`.
+- Frontend `GET http://127.0.0.1:5173`: HTTP 200.
+- Web `e2e_owner` login: HTTP 200; `/auth/me`: HTTP 200; required reauthentication: HTTP 200. No credential or token values recorded.
+- Emulator: `emulator-5554` online; `com.erp.companion` installed; `com.erp.companion/.MainActivity` top-resumed after relaunch. Screenshot: `mobile-rebuilt-screen-2026-10-16.png`.
+
+## Live web linkage
+
+- `/finance/inbox`: treasury entries HTTP 200, mobile messages HTTP 200, 3 source cells labeled as phone; screenshot `erp-web-inbox-2026-10-16.png`; axe 0 violations.
+- `/finance/withdrawals`: treasury entries HTTP 200, 1 source cell labeled as phone; screenshot `erp-web-withdrawals-2026-10-16.png`; axe 0 violations.
+- `/customers/2/statement`: page loaded with 1 source cell labeled as phone; screenshot `erp-web-customer-statement-2026-10-16.png`; axe 0 violations.
+
+## Automated checks
+
+- Backend PHPUnit on MySQL `mysql_test` / `erp_test`: 188 tests, 2,644 assertions, 0 failures/errors/skips.
+- Backend PHPUnit on MariaDB `mariadb_test` / `erp_test`: 188 tests; 9 passed, 179 errored, 52 assertions. Exact blocker: SQLSTATE 2054, PHP client cannot load/recognize server authentication plugin `auth_gssapi_client` on 127.0.0.1:3307. No credentials or server auth settings were changed.
+- Frontend typecheck: PASS. Lint: PASS. Vitest: 95 suites / 177 tests PASS. Production build: PASS (191 modules, 83 output files). API contract check: 103 unique calls / 0 missing. Existing full-app axe run: 51 views / 0 violations; the three live screens above were also scanned with 0 violations each.
+- Mobile TypeScript: PASS. Jest: 12 suites / 94 tests PASS. Lint: 0 errors / 143 warnings. Android `assembleDebug`: PASS (362 tasks, 9m08s); rebuilt APK installed and launched.
+
+## Mobile failed outbox records
+
+The debug diagnostic emitted six `POST mobile_messages` rows in status FAILED with attempts 0. Rows 1-2 contain `channel_id` validation details for sender/channel mismatch; rows 3-6 say the selected channel is missing or disabled. No matching server `mobile_idempotency_records` exist, so none is proven applied. They are stale local test artifacts and were left in the device outbox. Sanitized detail evidence is in `mobile-outbox-diagnostics-2026-10-15.txt` and `mobile-outbox-failed-sanitized-2026-10-15.txt`.
+
+## Database cleanup readback
+
+- Every read-only SQL query printed `TARGET DB = erp_scratch` immediately before execution.
+- Before snapshot: 33 tables / 446 E2E/test-related rows, with IDs in `cleanup-plan.txt`.
+- After scan: 35 tables / 1,076 text-matched E2E/test-related rows. The after scan also matches audit, trash, idempotency, and history text; the documented before and after scans are not a like-for-like subtraction.
+- E2E treasury accounts IDs 3-10 were deactivated through application PATCH (all HTTP 200). Their balances and ledger rows remain unchanged.
+
+## Security note
+
+During an earlier initial server-start attempt in this workstream, Laravel fell back to `backend/.env` once before the alternate empty environment file was created. No secret value was displayed or written. All later backend and database commands used process-only settings and did not read that file.
+Post-clean live rerun: web owner reauthentication HTTP 200; inbox treasury entries HTTP 200 and mobile messages HTTP 200 with 3 phone-source cells and 0 axe violations; withdrawals showed 1 phone-source cell with 0 axe violations; customer statement showed 1 phone-source cell with 0 axe violations. The browser transcript contains only status codes and counts, not row text.

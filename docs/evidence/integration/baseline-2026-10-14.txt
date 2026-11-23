@@ -1,0 +1,8 @@
+2026-10-14 verification evidence
+
+Frontend: typecheck exit 0; lint exit 0; production build exit 0, checked 84 production files; Vitest 40 files / 166 tests passed.
+Mobile: typecheck exit 0; lint exit 0 errors / 142 warnings; Jest 11 suites / 84 tests passed with --runInBand --testTimeout=15000.
+Backend erp_test: MySQL 182 tests / 182 passed / 2,567 assertions; MariaDB 182 / 182 / 2,567; zero errors, failures, skips.
+Focused mobile grant seeder regression: MySQL 1/1 and MariaDB 1/1; one assertion each.
+Scratch proof: RolePermissionMatrixSeeder completed on erp_scratch; query returned mobile.channels.view, mobile.messages.capture, mobile.messages.record.
+Route comparison: 177 routes, 177 OpenAPI operations, 177 matched.

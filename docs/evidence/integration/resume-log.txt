@@ -1,0 +1,15 @@
+c155fee docs: report mobile app verification blockers
+ab4d8e5 feat: link mobile capture screens in web
+167d0fb docs: record Android toolchain and lint verification
+693a14e fix: clear React Native lint errors
+5da67e0 docs: finalize React Native companion status
+1bb127d docs: record blocked React Native E2E validation
+399d45c feat: add mobile settings lock and capture service
+b1ef733 fix: persist sync state and queue account owner
+0d4fd29 fix: queue captured messages for offline sync
+de2d72c feat: add mobile offline outbox and sync
+9327cad feat: add mobile withdrawal flows
+0a97813 feat: add mobile deposit flows
+ad41645 feat: add mobile message inbox
+d3f4cc9 feat: add mobile message filter and dedupe
+9b2f691 feat: add Android message capture listeners

@@ -1,0 +1,10 @@
+﻿e96ce36 fix: unwrap treasury balance response
+0616212 fix: adapt raw paginator responses for operational pages
+a0de5b8 fix: allow read-only mobile viewing without writes
+3c9602f test: create isolated acceptance accounts safely
+e881b69 docs: record acceptance evidence and blockers
+0851af6 fix: express dynamic invoice endpoint for contract check
+1262214 Tidy final status report
+0dae423 Document live web verification
+c673e4e Name invoice print links accessibly
+8f352bb Normalize expense response fields
