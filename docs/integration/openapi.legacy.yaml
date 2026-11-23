@@ -1,0 +1,3944 @@
+openapi: 3.1.0
+info:
+  title: Precision Slate ERP API
+  version: 1.2.0
+  description: |
+    Implemented Laravel API routes. Base path is /api/v1 and the browser UI
+    uses same-site HttpOnly session cookies plus CSRF protection. All routes
+    deny by default; owner grants are described by the permission matrix.
+    Money is returned as decimal strings in EGP. Quantities are integers.
+    This contract documents the registered non-HEAD API operations. Paths
+    are relative to the /api/v1 server URL; implicit HEAD aliases are not
+    documented as separate operations.
+    Idempotency-Key is required for replayable mobile business-data writes.
+    Authentication lifecycle routes and browser-only owner device
+    administration are control-plane actions, not offline queue operations.
+servers:
+  - url: https://{host}/api/v1
+    variables:
+      host:
+        default: example.invalid
+tags:
+  - name: Auth
+  - name: Users
+  - name: Audit
+  - name: Customers
+  - name: Sales
+  - name: Orders and deliveries
+  - name: Catalog
+  - name: Inventory
+  - name: Containers
+  - name: Finance
+  - name: Reports
+  - name: Mobile
+security:
+  - sessionCookie: []
+paths:
+  /mobile/auth/login:
+    post:
+      tags: [Mobile]
+      operationId: mobileLogin
+      summary: Issue a mobile-only bearer token and register a device
+      security: []
+      description: Password login is rate limited to five requests per minute. The driver and users without mobile.use are denied.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [username, password, device_name]
+              properties:
+                username: { type: string, maxLength: 100 }
+                password: { type: string, format: password, maxLength: 1024 }
+                device_name: { type: string, maxLength: 160 }
+                device_model: { type: [string, 'null'], maxLength: 160 }
+      responses:
+        '201':
+          description: Device bearer token issued once; token is scoped to mobile endpoints. Store it in secure device storage and never log it.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/MobileLoginResponse' }
+              examples:
+                issued:
+                  value:
+                    data:
+                      access_token: example-only-token-not-valid
+                      token_type: Bearer
+                      expires_at: '2026-11-11 12:00:00'
+                      device: { id: 3, name: 'Office phone', model: 'Example device model' }
+                    meta: { request_id: example-request-id }
+        '401': { description: Invalid username or password. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { description: Active device limit reached. }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '429': { $ref: '#/components/responses/RateLimited' }
+  /mobile/auth/me:
+    get:
+      tags: [Mobile]
+      operationId: mobileCurrentUser
+      summary: Return mobile user, device and effective permissions
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.use
+      responses:
+        '200':
+          description: Current user, device and complete active-role permission list.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/MobileCurrentUserResponse' }
+              examples:
+                currentUser:
+                  value:
+                    data:
+                      user:
+                        id: 8
+                        username: example-owner
+                        display_name: 'Example Owner'
+                        permissions: [mobile.use, mobile.balances.view, mobile.messages.view]
+                      device: { id: 3, name: 'Office phone', model: 'Example device model' }
+                    meta: { request_id: example-request-id }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+  /mobile/auth/confirm-password:
+    post:
+      tags: [Mobile]
+      operationId: confirmMobilePassword
+      summary: Start the ten-minute high-risk action window
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.use
+      description: Rate limited to five attempts per minute. Confirmation is device-specific.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [password]
+              properties: { password: { type: string, format: password, maxLength: 1024 } }
+      responses:
+        '200': { description: Password confirmed for ten minutes on this device. }
+        '401': { $ref: '#/components/responses/ReauthenticationFailed' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '429': { $ref: '#/components/responses/RateLimited' }
+  /mobile/auth/logout:
+    post:
+      tags: [Mobile]
+      operationId: mobileLogout
+      summary: Revoke the current mobile device token
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.use
+      responses:
+        '200': { description: Device token revoked. }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+  /mobile/devices:
+    get:
+      tags: [Mobile]
+      operationId: mobileListDevices
+      summary: List mobile devices and their sources
+      security: [{ sessionCookie: [] }]
+      x-permission: mobile.devices.manage
+      x-step-up: 10 minutes
+      description: Browser-session operation. Device tokens and token hashes are never returned. Sources are limited to each listed device and exclude soft-deleted definitions.
+      parameters:
+        - { name: page, in: query, schema: { type: integer, minimum: 1, default: 1 } }
+        - { name: per_page, in: query, schema: { type: integer, minimum: 1, maximum: 100, default: 50 } }
+        - { name: search, in: query, schema: { type: string, minLength: 1, maxLength: 160 }, description: Substring search across device name/model and username/display name. }
+        - { name: status, in: query, schema: { type: string, enum: [active, revoked] }, description: Active excludes revoked and expired devices; revoked includes revoked devices. }
+        - { name: sort_by, in: query, schema: { type: string, enum: [id, name, username], default: id } }
+        - { name: sort_direction, in: query, schema: { type: string, enum: [asc, desc], default: desc } }
+      responses:
+        '200':
+          description: Paginated owner device list; token values and hashes are never returned.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data, meta]
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/MobileDeviceAdminItem' } }
+                  meta: { $ref: '#/components/schemas/MobilePageMetadata' }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /mobile/devices/{deviceId}:
+    patch:
+      tags: [Mobile]
+      operationId: mobileRenameDevice
+      summary: Rename a mobile device
+      security: [{ sessionCookie: [] }]
+      x-permission: mobile.devices.manage
+      x-step-up: 10 minutes
+      x-csrf-required: true
+      parameters:
+        - { name: deviceId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name]
+              properties: { name: { type: string, maxLength: 160 } }
+      responses:
+        '200':
+          description: Device renamed and change audited.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data]
+                properties:
+                  data: { $ref: '#/components/schemas/MobileDeviceAdminRecord' }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /mobile/devices/{deviceId}/revoke:
+    post:
+      tags: [Mobile]
+      operationId: mobileRevokeDevice
+      summary: Revoke a mobile device immediately
+      security: [{ sessionCookie: [] }]
+      x-permission: mobile.devices.manage
+      x-step-up: 10 minutes
+      x-csrf-required: true
+      parameters:
+        - { name: deviceId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+      responses:
+        '200':
+          description: Device token revoked; future requests fail authentication.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data]
+                properties:
+                  data:
+                    type: object
+                    required: [id, status]
+                    properties:
+                      id: { type: integer }
+                      status: { type: string, const: revoked }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /mobile/channels:
+    get:
+      tags: [Mobile]
+      operationId: mobileListChannels
+      summary: List active and paused payment channels
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.use
+      description: Paginated; balance_egp is returned only to users with mobile.balances.view.
+      parameters:
+        - { name: page, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: per_page, in: query, schema: { type: integer, minimum: 1, maximum: 100, default: 50 } }
+        - { name: search, in: query, schema: { type: string } }
+        - { name: channel_type, in: query, schema: { type: string, enum: [bank, instapay, wallet, post_office, other] } }
+        - { name: status, in: query, schema: { type: string, enum: [active, paused] } }
+      responses:
+        '200':
+          description: Paginated channels; balances are server-computed decimal EGP strings and omitted without mobile.balances.view.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data, meta]
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/MobileChannel' } }
+                  meta: { $ref: '#/components/schemas/MobilePageMetadata' }
+              examples:
+                channelPage:
+                  value:
+                    data: [{ id: 4, treasury_account_id: 9, name: 'فودافون كاش 1', channel_type: wallet, identifier: '01000000000', status: active, balance_egp: '250.75' }]
+                    meta: { current_page: 1, last_page: 1, per_page: 50, total: 1 }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+    post:
+      tags: [Mobile]
+      operationId: mobileCreateChannel
+      summary: Create a treasury-backed mobile payment channel
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.channels.manage
+      x-step-up: mobile password confirmation, ten minutes
+      x-idempotency-required: true
+      parameters: [{ $ref: '#/components/parameters/IdempotencyKey' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name, channel_type]
+              properties:
+                name: { type: string, maxLength: 160 }
+                channel_type: { type: string, enum: [bank, instapay, wallet, post_office, other] }
+                identifier: { type: [string, 'null'], maxLength: 160 }
+                opening_balance_egp: { type: string, pattern: '^(0|[1-9][0-9]{0,14})(\\.[0-9]{1,2})?$' }
+                opening_date: { type: string, format: date }
+      responses:
+        '201':
+          description: Channel and treasury account created; optional opening amount is posted as a dated opening treasury entry.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data]
+                properties: { data: { $ref: '#/components/schemas/MobileChannel' } }
+              examples:
+                created:
+                  value:
+                    data: { id: 4, treasury_account_id: 9, name: 'فودافون كاش 1', channel_type: wallet, identifier: '01000000000', status: active }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { description: Mobile password confirmation required. }
+  /mobile/channels/{channelId}:
+    patch:
+      tags: [Mobile]
+      operationId: mobileUpdateChannel
+      summary: Rename, reclassify, identify, pause or resume a channel
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.channels.manage
+      x-idempotency-required: true
+      parameters:
+        - { name: channelId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              minProperties: 1
+              properties:
+                name: { type: string, maxLength: 160 }
+                channel_type: { type: string, enum: [bank, instapay, wallet, post_office, other] }
+                identifier: { type: [string, 'null'], maxLength: 160 }
+                status: { type: string, enum: [active, paused] }
+      responses:
+        '200':
+          description: Channel updated and audited; its balance remains treasury-ledger-derived.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data]
+                properties: { data: { $ref: '#/components/schemas/MobileChannel' } }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { description: Channel not found or archived. }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+    delete:
+      tags: [Mobile]
+      operationId: mobileArchiveChannel
+      summary: Archive a channel and its unregistered messages
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.channels.manage
+      x-step-up: mobile password confirmation, ten minutes
+      x-idempotency-required: true
+      parameters:
+        - { name: channelId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      responses:
+        '200': { description: Channel and its sources archived; new or needs_review messages become archived. }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { description: Channel not found or already archived. }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '428': { description: Mobile password confirmation required. }
+  /mobile/sources:
+    get:
+      tags: [Mobile]
+      operationId: mobileListSources
+      summary: List shared source definitions and this device's capture settings
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.channels.manage
+      parameters:
+        - { name: page, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: per_page, in: query, schema: { type: integer, minimum: 1, maximum: 100, default: 50 } }
+      responses:
+        '200':
+          description: Shared source definitions with this device's local enabled state and direction switches; JSON parser/keyword fields are JSON values.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data, meta]
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/MobileSource' } }
+                  meta: { $ref: '#/components/schemas/MobilePageMetadata' }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+    post:
+      tags: [Mobile]
+      operationId: mobileCreateSource
+      summary: Create a shared source definition and enable it on this device
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.channels.manage
+      x-idempotency-required: true
+      parameters: [{ $ref: '#/components/parameters/IdempotencyKey' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [channel_id, source_kind, read_deposits, read_withdrawals]
+              properties:
+                channel_id: { type: integer, minimum: 1 }
+                source_kind: { type: string, enum: [sms, notification] }
+                sender_identifier: { type: [string, 'null'], maxLength: 200 }
+                notification_package_names: { type: array, maxItems: 20, items: { type: string, maxLength: 255 } }
+                read_deposits: { type: boolean }
+                read_withdrawals: { type: boolean }
+                is_enabled: { type: boolean, default: true, description: Enabled state on the authenticated device only. }
+                default_read_deposits: { type: boolean, description: Shared default for this device's deposit switch when configuring the source. }
+                default_read_withdrawals: { type: boolean, description: Shared default for this device's withdrawal switch when configuring the source. }
+                deposit_keywords: { type: array, maxItems: 50, items: { type: string, maxLength: 160 } }
+                withdrawal_keywords: { type: array, maxItems: 50, items: { type: string, maxLength: 160 } }
+                parser_rule_version: { type: [integer, 'null'], minimum: 1, maximum: 65535 }
+                parser_rule: { type: [object, 'null'], additionalProperties: true }
+                redacted_sample_message: { type: [string, 'null'], maxLength: 4000 }
+      responses:
+        '201':
+          description: Shared source definition created, with capture settings attached to the authenticated device.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data]
+                properties: { data: { $ref: '#/components/schemas/MobileSource' } }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+  /mobile/sources/{sourceId}:
+    patch:
+      tags: [Mobile]
+      operationId: mobileUpdateSource
+      summary: Update a shared source definition or this device's capture settings
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.channels.manage
+      x-idempotency-required: true
+      parameters:
+        - { name: sourceId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              minProperties: 1
+              properties:
+                channel_id: { type: integer, minimum: 1 }
+                source_kind: { type: string, enum: [sms, notification] }
+                sender_identifier: { type: [string, 'null'], maxLength: 200 }
+                notification_package_names: { type: array, maxItems: 20, items: { type: string, maxLength: 255 } }
+                read_deposits: { type: boolean }
+                read_withdrawals: { type: boolean }
+                is_enabled: { type: boolean, description: Enabled state on the authenticated device only. }
+                default_read_deposits: { type: boolean, description: Shared default for this device's deposit switch when configuring the source. }
+                default_read_withdrawals: { type: boolean, description: Shared default for this device's withdrawal switch when configuring the source. }
+                deposit_keywords: { type: [array, 'null'], maxItems: 50, items: { type: string, maxLength: 160 } }
+                withdrawal_keywords: { type: [array, 'null'], maxItems: 50, items: { type: string, maxLength: 160 } }
+                parser_rule_version: { type: [integer, 'null'], minimum: 1, maximum: 65535 }
+                parser_rule: { type: [object, 'null'], additionalProperties: true }
+                redacted_sample_message: { type: [string, 'null'], maxLength: 4000 }
+                status: { type: string, enum: [active, paused] }
+      responses:
+        '200':
+          description: Source updated and audited.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data]
+                properties: { data: { $ref: '#/components/schemas/MobileSource' } }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { description: Source or active channel not found. }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+    delete:
+      tags: [Mobile]
+      operationId: mobileArchiveSource
+      summary: Archive a shared source and its unregistered messages
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.channels.manage
+      x-idempotency-required: true
+      parameters:
+        - { name: sourceId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      responses:
+        '200': { description: Source archived; new or needs_review messages become archived. }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { description: Source not found or already archived. }
+        '409': { $ref: '#/components/responses/Conflict' }
+  /mobile/categories:
+    get:
+      tags: [Mobile]
+      operationId: mobileListCategories
+      summary: List active withdrawal categories
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.withdrawals.register or mobile.categories.manage
+      parameters:
+        - { name: page, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: per_page, in: query, schema: { type: integer, minimum: 1, maximum: 100, default: 100 } }
+        - { name: category_kind, in: query, schema: { type: string, enum: [expense, transfer] } }
+        - { name: search, in: query, schema: { type: string } }
+      responses:
+        '200':
+          description: Active categories; transfer categories include their target account. Boolean fields are JSON booleans.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data, meta]
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/MobileCategory' } }
+                  meta: { $ref: '#/components/schemas/MobilePageMetadata' }
+              examples:
+                seededCategories:
+                  value:
+                    data:
+                      - { id: 1, name: الدرج, category_kind: transfer, expense_category_id: null, target_treasury_account_id: 2, requires_notes: false, is_system: true, is_active: true, expense_category_name: null, target_account_name: الخزنة }
+                      - { id: 2, name: الرواتب, category_kind: expense, expense_category_id: 1, target_treasury_account_id: null, requires_notes: false, is_system: true, is_active: true, expense_category_name: الرواتب, target_account_name: null }
+                    meta: { current_page: 1, last_page: 1, per_page: 100, total: 4 }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+    post:
+      tags: [Mobile]
+      operationId: mobileCreateCategory
+      summary: Create an expense or treasury transfer category
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.categories.manage
+      x-step-up: mobile password confirmation, ten minutes
+      x-idempotency-required: true
+      parameters: [{ $ref: '#/components/parameters/IdempotencyKey' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name, category_kind]
+              properties:
+                name: { type: string, maxLength: 160 }
+                category_kind: { type: string, enum: [expense, transfer] }
+                target_treasury_account_id: { type: integer, minimum: 1, description: Required only for transfer. }
+                requires_notes: { type: boolean, default: false }
+      responses:
+        '201':
+          description: Category created and audited; expense categories reuse the existing expense category table.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data]
+                properties: { data: { $ref: '#/components/schemas/MobileCategory' } }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { description: Mobile password confirmation required. }
+  /mobile/categories/{categoryId}:
+    patch:
+      tags: [Mobile]
+      operationId: mobileUpdateCategory
+      summary: Rename, configure notes, change transfer target or activate a category
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.categories.manage
+      x-idempotency-required: true
+      parameters:
+        - { name: categoryId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              minProperties: 1
+              properties:
+                name: { type: string, maxLength: 160 }
+                target_treasury_account_id: { type: integer, minimum: 1 }
+                requires_notes: { type: boolean }
+                is_active: { type: boolean }
+      responses:
+        '200':
+          description: Category updated and audited.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data]
+                properties: { data: { $ref: '#/components/schemas/MobileCategory' } }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { description: Category not found. }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+    delete:
+      tags: [Mobile]
+      operationId: mobileArchiveCategory
+      summary: Deactivate a category without deleting financial history
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.categories.manage
+      x-idempotency-required: true
+      parameters:
+        - { name: categoryId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      responses:
+        '200': { description: Category deactivated; recorded documents remain unchanged. }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { description: Category not found. }
+        '409': { $ref: '#/components/responses/Conflict' }
+  /mobile/messages/batch:
+    post:
+      tags: [Mobile]
+      operationId: mobileIngestMessageBatch
+      summary: Ingest messages and classify directions from source keywords
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.use
+      x-idempotency-required: true
+      description: |
+        Accepts 1–100 messages (raw_text at most 5000 characters each).
+        Every source definition is shared, but must be enabled for the
+        authenticated device and have an active channel. The API normalizes
+        phone-number senders (including +20, 0020, and leading-0 forms) and
+        compares non-numeric sender names case-insensitively. The API, not the
+        submitted type, decides direction from the source's deposit and
+        withdrawal keywords and this device's direction switches. A message
+        matching both keyword sets is stored as ambiguous with needs_review;
+        a message matching neither set rejects the entire request and is not
+        stored. Verification-code messages also reject the request. Missing
+        or unclear amounts are stored as needs_review. Duplicate identity is
+        normalized sender + EGP amount + device-reported received time +
+        SHA-256 of the original text, globally across devices and users.
+        Original text is never included in audit records or application logs.
+      parameters:
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [messages]
+              properties:
+                messages:
+                  type: array
+                  minItems: 1
+                  maxItems: 100
+                  items:
+                    type: object
+                    required: [source_id, sender, received_at, raw_text]
+                    properties:
+                      source_id: { type: integer, minimum: 1 }
+                      type: { type: string, enum: [deposit, withdrawal], description: Optional client consistency hint; the API classifies the direction from configured keywords. }
+                      amount: { type: [string, 'null'], pattern: '^(0|[1-9][0-9]{0,14})(\\.[0-9]{1,2})?$', description: EGP decimal string to exact piastres; omit or null when unclear. }
+                      sender: { type: string, maxLength: 200, description: Exact SMS sender identifier or notification app package name. }
+                      received_at: { type: string, format: date-time, description: Device-reported time, normalized to UTC by the API. }
+                      raw_text: { type: string, maxLength: 5000, writeOnly: true }
+            examples:
+              walletDeposit:
+                summary: Synthetic wallet deposit; never use a real customer message as an OpenAPI example
+                value:
+                  messages:
+                    - source_id: 7
+                      type: deposit
+                      amount: '125.50'
+                      sender: WalletSender
+                      received_at: '2026-10-13T12:30:00Z'
+                      raw_text: 'Deposit received EGP 125.50'
+      responses:
+        '201':
+          description: Per-input result with created or duplicate status and accepted/duplicate counts.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/MobileMessageBatchResponse' }
+              examples:
+                accepted:
+                  value:
+                    data:
+                      results: [{ index: 0, message_id: 314, status: new }]
+                      accepted_count: 1
+                      duplicate_count: 0
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { description: Invalid, inactive, unmatched, direction-disabled, keyword-unmatched, or OTP/verification message; nothing from this batch is stored. }
+  /mobile/customers:
+    post:
+      tags: [Mobile, Customers]
+      operationId: mobileCreateCustomer
+      summary: Create a customer for a mobile deposit picker
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.customers.create
+      x-idempotency-required: true
+      description: Uses the same customer validation, unique-phone rule, audit log, and creation service as the web endpoint. The required Idempotency-Key makes retries return the original customer without creating another row.
+      parameters:
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+                - { $ref: '#/components/schemas/CustomerInput' }
+                - { type: object, required: [name] }
+            examples:
+              basicCustomer:
+                value: { name: 'Example customer', phone: '01000000000', email: null, payment_terms: 'Cash' }
+      responses:
+        '201':
+          description: The created customer; replay with the same key returns the original response.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data]
+                properties: { data: { $ref: '#/components/schemas/MobileCustomer' } }
+              examples:
+                created:
+                  value:
+                    data:
+                      id: 41
+                      name: 'Example customer'
+                      phone: '01000000000'
+                      email: null
+                      address: null
+                      salesperson: null
+                      tax_number: null
+                      payment_terms: Cash
+                      governorate: null
+                      credit_limit: '0.0000'
+                      notes: null
+                      is_active: true
+                      created_at: '2026-10-13 12:30:00'
+                      updated_at: '2026-10-13 12:30:00'
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+  /mobile/sync:
+    get:
+      tags: [Mobile]
+      operationId: mobileSync
+      summary: Get a cursor-based delta of mobile master data and statuses
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.use
+      description: |
+        Cursor zero (or a cursor ahead of the current high-water mark) returns
+        an initial snapshot of active channels, categories, and shared active
+        source definitions with this device's local settings. Later calls
+        return changed customer/channel/category/source definitions, this-
+        device source settings, and this-user message-status records. A page is
+        capped at 500 sync events; when has_more is true, send the returned
+        cursor again to continue. Channel balances are present only with
+        mobile.balances.view. Raw message text is never included.
+      parameters:
+        - { name: cursor, in: query, schema: { type: integer, minimum: 0, default: 0 } }
+        - { name: limit, in: query, schema: { type: integer, minimum: 1, maximum: 500, default: 200 } }
+      responses:
+        '200':
+          description: Delta arrays for customers, channels, categories, sources, and message statuses, with the next cursor, has_more, and server_time. Raw message text is never returned.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/MobileSyncResponse' }
+              examples:
+                initialSnapshot:
+                  value:
+                    data:
+                      cursor: 220
+                      has_more: false
+                      customers: []
+                      channels:
+                        - id: 4
+                          treasury_account_id: 9
+                          name: 'فودافون كاش 1'
+                          channel_type: wallet
+                          identifier: '01000000000'
+                          status: active
+                          balance_egp: '250.75'
+                      categories: []
+                      sources:
+                        - id: 7
+                          device_id: 3
+                          channel_id: 4
+                          source_kind: sms
+                          sender_identifier: WalletSender
+                          notification_package_names: null
+                          read_deposits: true
+                          read_withdrawals: false
+                          is_enabled: true
+                          default_read_deposits: true
+                          default_read_withdrawals: false
+                          deposit_keywords: ['Deposit received']
+                          withdrawal_keywords: []
+                          parser_rule_version: 1
+                          parser_rule: { amountPattern: '[0-9]+\\.[0-9]{2}' }
+                          redacted_sample_message: null
+                          status: active
+                          created_at: '2026-10-12 12:00:00'
+                          updated_at: '2026-10-12 12:00:00'
+                      messages: []
+                      server_time: '2026-10-13T12:30:00+00:00'
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+  /mobile/ping:
+    get:
+      tags: [Mobile]
+      operationId: mobilePing
+      summary: Return the current sync high-water cursor
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.use
+      description: Cheap polling endpoint returning only the latest cursor and server time; it does not return entity data.
+      responses:
+        '200':
+          description: Current cursor and server_time.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/MobilePingResponse' }
+              examples:
+                current:
+                  value: { data: { cursor: 220, server_time: '2026-10-13T12:30:00+00:00' } }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+  /mobile/messages:
+    get:
+      tags: [Mobile]
+      operationId: mobileListMessages
+      summary: List this user's messages with filters and pagination
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.use
+      description: raw_text is included only when the caller also has mobile.messages.view. Amounts are decimal EGP strings; this endpoint does not expose any other user's devices.
+      parameters:
+        - { name: page, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: per_page, in: query, schema: { type: integer, minimum: 1, maximum: 100, default: 50 } }
+        - { name: type, in: query, schema: { type: string, enum: [deposit, withdrawal, ambiguous] } }
+        - { name: status, in: query, schema: { type: string, enum: [new, registered, ignored, needs_review, archived] } }
+        - { name: channel_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: date_from, in: query, schema: { type: string, format: date } }
+        - { name: date_to, in: query, schema: { type: string, format: date } }
+        - { name: search, in: query, schema: { type: string, maxLength: 160 } }
+        - { name: sort_by, in: query, schema: { type: string, enum: [received_at, server_received_at, amount, type, status, id] } }
+        - { name: sort_direction, in: query, schema: { type: string, enum: [asc, desc] } }
+      responses:
+        '200':
+          description: Paginated message items with EGP amounts and status. raw_text is included only with mobile.messages.view.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data, meta]
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/MobileMessageItem' } }
+                  meta: { $ref: '#/components/schemas/MobilePageMetadata' }
+              examples:
+                messagePage:
+                  value:
+                    data:
+                      - { id: 314, source_id: 7, channel_id: 4, channel_name: 'فودافون كاش 1', type: deposit, amount_egp: '125.50', sender_identifier: WalletSender, received_at: '2026-10-13 12:30:00', server_received_at: '2026-10-13 12:30:01', status: new, registered_source: null, registered_document_type: null, registered_document_id: null, reviewed_at: null, archived_at: null, raw_text: 'Deposit received EGP 125.50' }
+                    meta: { current_page: 1, last_page: 1, per_page: 50, total: 1 }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+  /mobile/messages/{messageId}/amount:
+    patch:
+      tags: [Mobile]
+      operationId: mobileReviewMessageAmount
+      summary: Enter or correct an amount on a message requiring review
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.use
+      x-idempotency-required: true
+      parameters:
+        - { name: messageId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [amount_egp]
+              properties:
+                amount_egp: { type: string, pattern: '^(0|[1-9][0-9]{0,14})(\\.[0-9]{1,2})?$', description: Positive EGP decimal string to exact piastres. }
+      responses:
+        '200':
+          description: Amount review audited; needs_review becomes new, while archived remains archived and cannot be registered automatically.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data]
+                properties:
+                  data:
+                    type: object
+                    required: [id, amount_egp, status, reviewed_at]
+                    properties:
+                      id: { type: integer }
+                      amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+                      status: { type: string, enum: [new, archived] }
+                      reviewed_at: { type: string }
+              examples:
+                reviewed:
+                  value: { data: { id: 314, amount_egp: '125.50', status: new, reviewed_at: '2026-10-13 12:30:00' } }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { description: Message is not owned by the authenticated user. }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { description: Amount is invalid or the message is not in needs_review or archived status. }
+  /mobile/messages/{messageId}/ignore:
+    post:
+      tags: [Mobile]
+      operationId: mobileIgnoreMessage
+      summary: Ignore an unregistered message
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.use
+      x-idempotency-required: true
+      description: Marks a new or needs_review message ignored. Archived and registered messages cannot be ignored. Raw message text is not written to the audit log.
+      parameters:
+        - { name: messageId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      responses:
+        '200':
+          description: Message is ignored; repeating the same idempotency key returns the original response.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data]
+                properties:
+                  data:
+                    type: object
+                    required: [id, status]
+                    properties:
+                      id: { type: integer }
+                      status: { type: string, enum: [ignored] }
+              examples:
+                ignored:
+                  value: { data: { id: 42, status: ignored } }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { description: Message is not owned by the authenticated user's devices. }
+        '409': { description: Message is registered or archived and cannot be ignored. }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+  /mobile/messages/{messageId}/register-deposit:
+    post:
+      tags: [Mobile]
+      operationId: mobileRegisterDeposit
+      summary: Register a message deposit as an unapplied customer collection
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.deposits.register
+      x-idempotency-required: true
+      description: |
+        Posts the full message amount as an unapplied collection and credits
+        the message channel treasury account in one transaction. Message
+        deposits are marked is_unverified_payment=true because message text
+        is not proof of payment. Explicitly reviewed archived messages can
+        be registered; unreviewed archived messages cannot.
+      parameters:
+        - { name: messageId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [customer_id]
+              properties:
+                customer_id: { type: integer, minimum: 1 }
+                notes: { type: [string, 'null'], maxLength: 1000 }
+      responses:
+        '201':
+          description: Unapplied collection, its treasury entry, and updated message reference; recording_source is sms or notification and is_unverified_payment is true.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/MobileDepositResult' }
+              examples:
+                messageDeposit:
+                  value:
+                    data:
+                      id: 802
+                      message_id: 314
+                      customer_id: 41
+                      channel_id: 4
+                      amount_egp: '125.50'
+                      recording_source: sms
+                      is_unverified_payment: true
+                      receipt: { id: 802, receipt_date: '2026-10-13', amount: '125.50', unapplied_amount: '125.50' }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { description: Message is not owned by this user's devices. }
+        '409': { description: Message is already registered, has an incompatible state, or has lost its source/channel. }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+  /mobile/deposits/manual:
+    post:
+      tags: [Mobile]
+      operationId: mobileRegisterManualDeposit
+      summary: Record a manual post-office deposit
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.deposits.register
+      x-idempotency-required: true
+      description: Requires an active post_office payment channel. Posts the entire amount as unapplied and credits its treasury account. Manual deposits are not marked as message-unverified.
+      parameters:
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [channel_id, customer_id, amount_egp, receipt_date]
+              properties:
+                channel_id: { type: integer, minimum: 1 }
+                customer_id: { type: integer, minimum: 1 }
+                amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+                receipt_date: { type: string, format: date }
+                notes: { type: [string, 'null'], maxLength: 1000 }
+      responses:
+        '201':
+          description: Unapplied collection and linked treasury entry; recording_source is manual and is_unverified_payment is false.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/MobileDepositResult' }
+              examples:
+                manualDeposit:
+                  value:
+                    data:
+                      id: 803
+                      customer_id: 41
+                      channel_id: 5
+                      amount_egp: '125.50'
+                      recording_source: manual
+                      is_unverified_payment: false
+                      receipt: { id: 803, receipt_date: '2026-10-13', amount: '125.50', unapplied_amount: '125.50' }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { description: The channel is not an active post-office channel. }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+  /mobile/messages/{messageId}/register-withdrawal:
+    post:
+      tags: [Mobile]
+      operationId: mobileRegisterWithdrawal
+      summary: Register a message withdrawal as an expense or treasury transfer
+      security: [{ mobileBearer: [] }]
+      x-permission: mobile.withdrawals.register
+      x-idempotency-required: true
+      description: Posts through the existing expense or treasury transfer service, then marks the message registered in the same transaction. Categories with requires_notes=true reject blank notes. The category is an expense or transfer kind; transfer categories use their configured target treasury account.
+      parameters:
+        - { name: messageId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [category_id]
+              properties:
+                category_id: { type: integer, minimum: 1 }
+                notes: { type: [string, 'null'], maxLength: 1000 }
+      responses:
+        '201':
+          description: Posted expense or transfer and updated registered message reference.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/MobileWithdrawalResult' }
+              examples:
+                withdrawal:
+                  value:
+                    data:
+                      id: 944
+                      message_id: 315
+                      channel_id: 4
+                      category_id: 2
+                      amount_egp: '50.00'
+                      recording_source: notification
+                      document_type: expense
+                      notes: 'Warehouse supplies'
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { description: Message is not owned by this user's devices. }
+        '409': { description: Message is already registered or has an incompatible state. }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+  /health:
+    get:
+      tags: [Auth]
+      operationId: health
+      summary: Public API health check
+      security: []
+      responses:
+        '200':
+          description: API is responding.
+  /auth/login:
+    post:
+      tags: [Auth]
+      operationId: login
+      summary: Start a same-site session
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [username, password]
+              properties:
+                username: { type: string, maxLength: 100 }
+                password: { type: string, format: password }
+      responses:
+        '200':
+          description: Authenticated; sets HttpOnly session and readable CSRF cookies.
+          headers:
+            Set-Cookie: { schema: { type: string } }
+        '401': { $ref: '#/components/responses/AuthenticationFailed' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '429': { $ref: '#/components/responses/RateLimited' }
+  /auth/me:
+    get:
+      tags: [Auth]
+      operationId: currentUser
+      summary: Return the current user
+      x-permission: users.view_self
+      responses:
+        '200':
+          description: Authenticated user and every effective permission granted by active roles.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data]
+                properties:
+                  data:
+                    type: object
+                    required: [user]
+                    properties:
+                      user:
+                        type: object
+                        required: [id, username, display_name, permissions]
+                        properties:
+                          id: { type: integer }
+                          username: { type: string }
+                          display_name: { type: string }
+                          permissions: { type: array, items: { type: string } }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+  /auth/reauth:
+    post:
+      tags: [Auth]
+      operationId: reauthenticate
+      summary: Verify password for a 10-minute financial step-up window
+      x-permission: users.view_self
+      x-csrf-required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [password]
+              properties: { password: { type: string, format: password } }
+      responses:
+        '200': { description: Step-up window started. }
+        '401': { $ref: '#/components/responses/ReauthenticationFailed' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '429': { $ref: '#/components/responses/RateLimited' }
+  /auth/logout:
+    post:
+      tags: [Auth]
+      operationId: logout
+      summary: Revoke the current session
+      x-permission: sessions.revoke_self
+      x-csrf-required: true
+      responses:
+        '200': { description: Session revoked and cookies cleared. }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+  /users/{userId}/password:
+    post:
+      tags: [Users]
+      operationId: resetUserPassword
+      summary: Manually set another user's password
+      description: Owner-only; no email reset flow exists. Password is entered by the target user through an authorized owner workflow.
+      x-permission: users.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/UserId' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [new_password, new_password_confirmation]
+              properties:
+                new_password: { type: string, format: password, minLength: 12 }
+                new_password_confirmation: { type: string, format: password, minLength: 12 }
+      responses:
+        '200': { description: Password changed. }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+  /users:
+    get:
+      tags: [Users]
+      operationId: listUsers
+      x-permission: users.manage
+      x-step-up: 10 minutes
+      parameters:
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+      responses:
+        '200': { description: Paginated users with active roles and effective permission codes; password hashes are never returned. }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+    post:
+      tags: [Users]
+      operationId: createUser
+      x-permission: users.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [username, display_name, password, password_confirmation, role_codes]
+              properties:
+                username: { type: string, maxLength: 100 }
+                display_name: { type: string, maxLength: 160 }
+                phone: { type: [string, 'null'], maxLength: 32 }
+                email: { type: [string, 'null'], format: email }
+                password: { type: string, format: password, minLength: 12 }
+                password_confirmation: { type: string, format: password, minLength: 12 }
+                role_codes: { type: array, minItems: 1, uniqueItems: true, items: { type: string } }
+      responses:
+        '201': { description: User created and assigned roles. Password/hash are excluded from the response. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /users/{userId}:
+    put:
+      tags: [Users]
+      operationId: updateUser
+      x-permission: users.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/UserId' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              minProperties: 1
+              properties:
+                username: { type: string, maxLength: 100 }
+                display_name: { type: string, maxLength: 160 }
+                phone: { type: [string, 'null'], maxLength: 32 }
+                email: { type: [string, 'null'], format: email }
+                is_active: { type: boolean }
+      responses:
+        '200': { description: User updated; disabling a user revokes active sessions and cannot disable the last active owner. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /users/{userId}/roles:
+    put:
+      tags: [Users]
+      operationId: assignUserRoles
+      x-permission: users.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/UserId' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [role_codes]
+              properties:
+                role_codes: { type: array, minItems: 1, uniqueItems: true, items: { type: string } }
+      responses:
+        '200': { description: Active roles assigned and audit-logged. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /audit-logs:
+    get:
+      tags: [Audit]
+      operationId: listAuditLogs
+      summary: Read sensitive audit history
+      description: Owner-only. Returns sensitive before/after values; filters can be combined. Results are ordered newest first with id as a stable tie-breaker.
+      x-permission: audit_logs.view
+      x-step-up: 10 minutes
+      parameters:
+        - { name: document_id, in: query, required: false, schema: { type: integer, minimum: 1 } }
+        - { name: user_id, in: query, required: false, schema: { type: integer, minimum: 1 } }
+        - { name: from, in: query, required: false, schema: { type: string, format: date } }
+        - { name: to, in: query, required: false, schema: { type: string, format: date } }
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+      responses:
+        '200': { description: Top-level data array and meta pagination object; sensitive audit values are visible only to owners. }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /customers:
+    get:
+      tags: [Customers]
+      operationId: listCustomers
+      security:
+        - sessionCookie: []
+        - mobileBearer: []
+      x-permission: customers.view (browser session) or mobile.use (mobile device token)
+      x-step-up: 10 minutes for browser sessions; mobile tokens are trusted device-scoped credentials
+      description: The picker path is shared intentionally. Mobile credentials cannot access any other browser-only endpoint. Customer balances are omitted for mobile roles without mobile.balances.view.
+      parameters:
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+      responses:
+        '200': { description: Paginated customers and computed balances. }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+    post:
+      tags: [Customers]
+      operationId: createCustomer
+      x-permission: customers.create
+      x-csrf-required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name]
+              properties:
+                name: { type: string, maxLength: 200 }
+                phone: { type: [string, 'null'], maxLength: 32 }
+                email: { type: [string, 'null'], format: email }
+                address: { type: [string, 'null'] }
+                salesperson: { type: [string, 'null'], maxLength: 160 }
+                tax_number: { type: [string, 'null'], maxLength: 64 }
+                payment_terms: { type: [string, 'null'], maxLength: 160 }
+                governorate: { type: [string, 'null'] }
+                credit_limit: { $ref: '#/components/schemas/EgpAmount' }
+                notes: { type: [string, 'null'] }
+      responses:
+        '201': { description: Customer created. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+  /customers/{customerId}:
+    get:
+      tags: [Customers]
+      operationId: showCustomer
+      x-permission: customers.view
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/CustomerId' }]
+      responses:
+        '200': { description: Customer information and computed balance. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+    put:
+      tags: [Customers]
+      operationId: updateCustomerPut
+      x-permission: customers.manage
+      x-csrf-required: true
+      parameters: [{ $ref: '#/components/parameters/CustomerId' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/CustomerInput' }
+      responses:
+        '200': { description: Customer updated. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+    patch:
+      tags: [Customers]
+      operationId: updateCustomerPatch
+      x-permission: customers.manage
+      x-csrf-required: true
+      parameters: [{ $ref: '#/components/parameters/CustomerId' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/CustomerInput' }
+      responses:
+        '200': { description: Customer updated. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+  /customers/{customerId}/opening-balance:
+    post:
+      tags: [Customers]
+      operationId: postCustomerOpeningBalance
+      summary: Post a dated opening-balance document
+      x-permission: customers.opening_balance
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/CustomerId' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [direction, amount_egp, issue_date]
+              properties:
+                direction: { type: string, enum: [debit, credit] }
+                amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+                issue_date: { type: string, format: date }
+                notes: { type: [string, 'null'] }
+      responses:
+        '201': { description: Opening balance posted. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /invoices:
+    get:
+      tags: [Sales]
+      operationId: listInvoices
+      x-permission: invoices.view
+      x-step-up: 10 minutes
+      parameters:
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+        - { name: customer_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: from_date, in: query, schema: { type: string, format: date } }
+        - { name: to_date, in: query, schema: { type: string, format: date } }
+      responses:
+        '200': { description: Paginated invoices. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+    post:
+      tags: [Sales]
+      operationId: createInvoiceDraft
+      x-permission: invoices.create
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      x-idempotency-key: required
+      parameters: [{ $ref: '#/components/parameters/IdempotencyKey' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/InvoiceInput' }
+      responses:
+        '201': { description: Draft invoice created with issue-time tax snapshots. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /invoices/preview:
+    post:
+      tags: [Sales]
+      operationId: previewInvoice
+      summary: Calculate invoice totals without writing a draft or consuming a document number
+      x-permission: invoices.create
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/InvoiceInput' }
+      responses:
+        '200':
+          description: Per-line piastre-rounded totals, discount, configured tax, grand total, and non-blocking credit/stock warnings. No database writes occur.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data]
+                properties:
+                  data: { $ref: '#/components/schemas/InvoicePreview' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /invoices/{documentId}:
+    get:
+      tags: [Sales]
+      operationId: showInvoice
+      x-permission: invoices.view
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/DocumentId' }]
+      responses:
+        '200': { description: Invoice and lines; cost fields require costs.view and step-up. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+    put:
+      tags: [Sales]
+      operationId: reviseInvoice
+      summary: Reverse and record an invoice revision, preserving history
+      x-permission: documents.edit
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      x-idempotency-key: required
+      parameters:
+        - { $ref: '#/components/parameters/DocumentId' }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/InvoiceInput'
+                - type: object
+                  required: [reason]
+                  properties: { reason: { type: string, maxLength: 1000 } }
+      responses:
+        '200': { description: New posted revision; old and new field history retained. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /invoices/{documentId}/history:
+    get:
+      tags: [Sales]
+      operationId: invoiceChangeHistory
+      summary: Read invoice field-change history
+      description: Owner-only history for one invoice revision; old and new values are decoded from the stored JSON audit values. Ordered newest first with id as a stable tie-breaker.
+      x-permission: audit_logs.view
+      x-step-up: 10 minutes
+      parameters:
+        - { $ref: '#/components/parameters/DocumentId' }
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+      responses:
+        '200': { description: Top-level data array and meta pagination object for invoice field changes including field path, old/new values, reason, actor and time. }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /invoices/{documentId}/issue:
+    post:
+      tags: [Sales]
+      operationId: postInvoice
+      x-permission: invoices.create
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      x-idempotency-key: required
+      parameters:
+        - { $ref: '#/components/parameters/DocumentId' }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      responses:
+        '200': { description: Invoice posted and inventory issued once. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /invoices/{documentId}/cancel:
+    post:
+      tags: [Sales]
+      operationId: cancelInvoice
+      x-permission: documents.cancel
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      x-idempotency-key: required
+      parameters:
+        - { $ref: '#/components/parameters/DocumentId' }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [reason]
+              properties: { reason: { type: string, maxLength: 1000 } }
+      responses:
+        '200': { description: Invoice effects reversed and cancellation audited. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /returns:
+    get:
+      tags: [Sales]
+      operationId: listReturns
+      x-permission: returns.view
+      x-step-up: 10 minutes
+      parameters:
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+        - { name: customer_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: from_date, in: query, schema: { type: string, format: date } }
+        - { name: to_date, in: query, schema: { type: string, format: date } }
+      responses:
+        '200': { description: Paginated return documents. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+    post:
+      tags: [Sales]
+      operationId: createReturn
+      x-permission: returns.create
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      x-idempotency-key: required
+      parameters: [{ $ref: '#/components/parameters/IdempotencyKey' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [customer_id, issue_date, lines]
+              properties:
+                customer_id: { type: integer, minimum: 1 }
+                issue_date: { type: string, format: date }
+                original_document_id: { type: [integer, 'null'] }
+                notes: { type: [string, 'null'] }
+                lines:
+                  type: array
+                  minItems: 1
+                  items:
+                    type: object
+                    required: [warehouse_id, quantity]
+                    properties:
+                      warehouse_id: { type: integer, minimum: 1 }
+                      quantity: { type: integer, minimum: 1 }
+                      original_document_line_id: { type: [integer, 'null'] }
+                      unit_cost_egp: { $ref: '#/components/schemas/EgpAmount' }
+      responses:
+        '201': { description: Return recorded and stock/cost effects posted. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /returns/preview:
+    post:
+      tags: [Sales]
+      operationId: previewReturn
+      summary: Calculate linked or free-form return amounts without creating a credit note
+      x-permission: returns.create
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [customer_id, issue_date, lines]
+              properties:
+                customer_id: { type: integer, minimum: 1 }
+                issue_date: { type: string, format: date }
+                original_document_id: { type: [integer, 'null'], minimum: 1 }
+                notes: { type: [string, 'null'] }
+                lines:
+                  type: array
+                  minItems: 1
+                  items:
+                    type: object
+                    required: [warehouse_id, quantity]
+                    properties:
+                      warehouse_id: { type: integer, minimum: 1 }
+                      quantity: { type: integer, minimum: 1 }
+                      original_document_line_id: { type: integer, minimum: 1 }
+                      product_id: { type: integer, minimum: 1 }
+                      unit_price_egp: { $ref: '#/components/schemas/EgpAmount' }
+                      discount_amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+                      unit_cost_egp: { $ref: '#/components/schemas/EgpAmount', description: Used only by create-return when no warehouse cost history exists; never returned by preview. }
+                      description: { type: [string, 'null'], maxLength: 500 }
+      responses:
+        '200':
+          description: Per-line and document totals using source snapshots for linked returns or current tax settings for free returns; no writes occur.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data]
+                properties:
+                  data: { $ref: '#/components/schemas/ReturnPreview' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /collections:
+    get:
+      tags: [Sales]
+      operationId: listCollections
+      x-permission: collections.view
+      x-step-up: 10 minutes
+      parameters:
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+        - { name: customer_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: from_date, in: query, schema: { type: string, format: date } }
+        - { name: to_date, in: query, schema: { type: string, format: date } }
+      responses:
+        '200': { description: Paginated collection receipts including recording_source and is_unverified_payment provenance fields. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+    post:
+      tags: [Sales]
+      operationId: createCollection
+      x-permission: collections.create
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      x-idempotency-key: required
+      parameters: [{ $ref: '#/components/parameters/IdempotencyKey' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [customer_id, treasury_account_id, receipt_date, amount_egp]
+              properties:
+                customer_id: { type: integer, minimum: 1 }
+                treasury_account_id: { type: integer, minimum: 1 }
+                receipt_date: { type: string, format: date }
+                amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+                allocations: { type: array, items: { $ref: '#/components/schemas/CollectionAllocation' } }
+      responses:
+        '201': { description: Receipt and allocations posted; unapplied remainder tracked separately. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /collections/{receiptId}:
+    get:
+      tags: [Sales]
+      operationId: showCollection
+      x-permission: collections.view
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/ReceiptId' }]
+      responses:
+        '200': { description: Collection and allocation detail. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /collections/{receiptId}/allocations:
+    post:
+      tags: [Sales]
+      operationId: allocateCollection
+      x-permission: collections.create
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/ReceiptId' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [allocations]
+              properties:
+                allocations: { type: array, minItems: 1, items: { $ref: '#/components/schemas/CollectionAllocation' } }
+      responses:
+        '200': { description: Allocation applied; unapplied receipt remainder updated. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+  /collections/{receiptId}/allocations/{allocationId}/reverse:
+    post:
+      tags: [Sales]
+      operationId: reverseCollectionAllocation
+      x-permission: documents.reverse
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters:
+        - { $ref: '#/components/parameters/ReceiptId' }
+        - { $ref: '#/components/parameters/AllocationId' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [amount_egp, reason]
+              properties:
+                amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+                reason: { type: string, maxLength: 1000 }
+      responses:
+        '200': { description: Allocation reversed and audited. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /settings/sales-tax:
+    get:
+      tags: [Sales]
+      operationId: getSalesTaxSettings
+      x-permission: sales_tax.manage
+      x-step-up: 10 minutes
+      responses:
+        '200': { description: Tax enabled flag, rate, and inclusive/exclusive method. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+    put:
+      tags: [Sales]
+      operationId: updateSalesTaxSettings
+      x-permission: sales_tax.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [enabled, rate, calculation_method]
+              properties:
+                enabled: { type: boolean }
+                rate: { type: [string, 'null'], pattern: '^[0-9]+(\.[0-9]{1,6})?$' }
+                calculation_method: { type: [string, 'null'], enum: [inclusive, exclusive, null] }
+      responses:
+        '200': { description: Tax setting updated. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /settings/general:
+    get:
+      tags: [Users]
+      operationId: showGeneralSettings
+      x-permission: users.manage
+      x-step-up: 10 minutes
+      responses:
+        '200': { description: Company identity and document numbering-prefix settings. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+    put:
+      tags: [Users]
+      operationId: updateGeneralSettings
+      x-permission: users.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              minProperties: 1
+              properties:
+                company_name: { type: [string, 'null'], maxLength: 200 }
+                company_address: { type: [string, 'null'], maxLength: 500 }
+                company_phone: { type: [string, 'null'], maxLength: 32 }
+                company_email: { type: [string, 'null'], format: email }
+                company_tax_number: { type: [string, 'null'], maxLength: 100 }
+                invoice_number_prefix: { type: [string, 'null'], maxLength: 32 }
+                order_number_prefix: { type: [string, 'null'], maxLength: 32 }
+                container_number_prefix: { type: [string, 'null'], maxLength: 32 }
+      responses:
+        '200':
+          description: Settings updated and audit-logged.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data]
+                properties:
+                  data: { $ref: '#/components/schemas/GeneralSettings' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /orders:
+    get:
+      tags: [Orders and deliveries]
+      operationId: listOrders
+      x-permission: orders.view
+      x-step-up: 10 minutes
+      parameters:
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+        - { name: customer_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: status, in: query, schema: { type: string, enum: [draft, confirmed, fulfilled, cancelled] } }
+        - { name: from_date, in: query, schema: { type: string, format: date } }
+        - { name: to_date, in: query, schema: { type: string, format: date } }
+      responses:
+        '200': { description: Paginated sales orders. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+    post:
+      tags: [Orders and deliveries]
+      operationId: createOrder
+      x-permission: orders.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [customer_id, order_date, lines]
+              properties:
+                customer_id: { type: integer, minimum: 1 }
+                order_date: { type: string, format: date }
+                requested_delivery_date: { type: [string, 'null'], format: date }
+                notes: { type: [string, 'null'] }
+                lines:
+                  type: array
+                  minItems: 1
+                  items:
+                    type: object
+                    required: [product_id, quantity, unit_price_egp]
+                    properties:
+                      product_id: { type: integer, minimum: 1 }
+                      quantity: { type: integer, minimum: 1 }
+                      unit_price_egp: { $ref: '#/components/schemas/EgpAmount' }
+                      notes: { type: [string, 'null'] }
+      responses:
+        '201': { description: Draft order created. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /orders/preview:
+    post:
+      tags: [Orders and deliveries]
+      operationId: previewOrder
+      summary: Calculate draft-order value without creating an order
+      x-permission: orders.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [customer_id, order_date, lines]
+              properties:
+                customer_id: { type: integer, minimum: 1 }
+                order_date: { type: string, format: date }
+                requested_delivery_date: { type: [string, 'null'], format: date }
+                notes: { type: [string, 'null'] }
+                lines:
+                  type: array
+                  minItems: 1
+                  items:
+                    type: object
+                    required: [product_id, quantity, unit_price_egp]
+                    properties:
+                      product_id: { type: integer, minimum: 1 }
+                      quantity: { type: integer, minimum: 1 }
+                      unit_price_egp: { $ref: '#/components/schemas/EgpAmount' }
+                      notes: { type: [string, 'null'] }
+      responses:
+        '200':
+          description: Exact line and grand totals with stock and credit-limit warnings; no writes occur. Orders do not reserve stock and do not apply sales tax.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data]
+                properties:
+                  data: { $ref: '#/components/schemas/OrderPreview' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /orders/{orderId}:
+    get:
+      tags: [Orders and deliveries]
+      operationId: showOrder
+      x-permission: orders.view
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/OrderId' }]
+      responses:
+        '200': { description: Order, lines, and invoice allocations. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /orders/{orderId}/cancel:
+    post:
+      tags: [Orders and deliveries]
+      operationId: cancelOrder
+      x-permission: orders.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/OrderId' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [reason]
+              properties: { reason: { type: string, minLength: 1, maxLength: 1000 } }
+      responses:
+        '200': { description: Draft or confirmed order cancelled and audit-logged. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /orders/{orderId}/confirm:
+    post:
+      tags: [Orders and deliveries]
+      operationId: confirmOrder
+      description: Confirms without reserving stock; insufficient availability is a warning, not a blocker.
+      x-permission: orders.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/OrderId' }]
+      responses:
+        '200': { description: Confirmed order and stock warnings. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /orders/{orderId}/invoice:
+    post:
+      tags: [Orders and deliveries]
+      operationId: invoiceOrder
+      summary: Invoice and post the entire order exactly once
+      x-permission: [orders.manage, invoices.create]
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      x-idempotency-key: required
+      parameters:
+        - { $ref: '#/components/parameters/OrderId' }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [lines]
+              properties:
+                lines:
+                  type: array
+                  minItems: 1
+                  items:
+                    type: object
+                    required: [order_line_id, warehouse_id]
+                    properties:
+                      order_line_id: { type: integer, minimum: 1 }
+                      warehouse_id: { type: integer, minimum: 1 }
+      responses:
+        '200': { description: Posted invoice and fulfilled order. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /deliveries:
+    get:
+      tags: [Orders and deliveries]
+      operationId: listDeliveries
+      x-permission: deliveries.view
+      x-step-up: 10 minutes
+      parameters:
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+        - { name: status, in: query, schema: { type: string, enum: [draft, preparing, in_transit, delivered, cancelled] } }
+        - { name: from_date, in: query, schema: { type: string, format: date } }
+        - { name: to_date, in: query, schema: { type: string, format: date } }
+      responses:
+        '200': { description: Paginated delivery documents. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+    post:
+      tags: [Orders and deliveries]
+      operationId: createDelivery
+      x-permission: deliveries.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              oneOf:
+                - required: [sales_order_id]
+                - required: [sales_document_id]
+              properties:
+                sales_order_id: { type: integer, minimum: 1 }
+                sales_document_id: { type: integer, minimum: 1 }
+                driver_user_id: { type: [integer, 'null'] }
+                driver_name_snapshot: { type: [string, 'null'], maxLength: 160 }
+                vehicle_plate: { type: [string, 'null'], maxLength: 40 }
+                delivery_address: { type: [string, 'null'], maxLength: 500 }
+                notes: { type: [string, 'null'] }
+      responses:
+        '201': { description: Full delivery created from a posted source without a second stock issue. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /deliveries/{deliveryId}:
+    get:
+      tags: [Orders and deliveries]
+      operationId: showDelivery
+      x-permission: deliveries.view
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/DeliveryId' }]
+      responses:
+        '200': { description: Delivery header and lines. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /deliveries/{deliveryId}/status:
+    patch:
+      tags: [Orders and deliveries]
+      operationId: updateDeliveryStatus
+      x-permission: deliveries.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/DeliveryId' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [status]
+              properties: { status: { type: string, enum: [preparing, in_transit, delivered, cancelled] } }
+      responses:
+        '200': { description: Delivery status changed and audit logged. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /categories:
+    get:
+      tags: [Catalog]
+      operationId: listCategories
+      x-permission: products.view
+      parameters:
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+      responses:
+        '200': { description: Product categories. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+    post:
+      tags: [Catalog]
+      operationId: createCategory
+      x-permission: products.manage
+      x-csrf-required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name]
+              properties:
+                parent_category_id: { type: [integer, 'null'] }
+                code: { type: [string, 'null'], maxLength: 80 }
+                name: { type: string, maxLength: 160 }
+                is_active: { type: boolean }
+      responses:
+        '201': { description: Category created. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+  /categories/{categoryId}:
+    put:
+      tags: [Catalog]
+      operationId: updateCategoryPut
+      x-permission: products.manage
+      x-csrf-required: true
+      parameters: [{ $ref: '#/components/parameters/CategoryId' }]
+      responses:
+        '200': { description: Category updated. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+    patch:
+      tags: [Catalog]
+      operationId: updateCategoryPatch
+      x-permission: products.manage
+      x-csrf-required: true
+      parameters: [{ $ref: '#/components/parameters/CategoryId' }]
+      responses:
+        '200': { description: Category updated. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+    delete:
+      tags: [Catalog]
+      operationId: deactivateCategory
+      x-permission: products.manage
+      x-csrf-required: true
+      parameters: [{ $ref: '#/components/parameters/CategoryId' }]
+      responses:
+        '200': { description: Category deactivated; historical records remain. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+  /products:
+    get:
+      tags: [Catalog]
+      operationId: listProducts
+      x-permission: products.view
+      x-step-up: 10 minutes when costs.view is granted
+      parameters:
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+      responses:
+        '200': { description: Products; cost fields are omitted without costs.view. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+    post:
+      tags: [Catalog]
+      operationId: createProduct
+      x-permission: products.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [sku, name, unit_code]
+              properties:
+                sku: { type: string, maxLength: 100 }
+                barcode: { type: [string, 'null'], maxLength: 100 }
+                name: { type: string, maxLength: 200 }
+                category_id: { type: [integer, 'null'] }
+                unit_code: { type: string, maxLength: 32 }
+                company_price: { $ref: '#/components/schemas/EgpAmount' }
+                default_location_id: { type: [integer, 'null'] }
+                minimum_stock: { type: [integer, 'null'], minimum: 0 }
+                description: { type: [string, 'null'] }
+                default_tax_rate: { type: [string, 'null'], pattern: '^(0|[1-9][0-9]{0,2})(\.[0-9]{1,6})?$' }
+                last_purchase_price_reference: { $ref: '#/components/schemas/EgpAmount', description: Reference only; never used in calculations and returned only with costs.view. }
+                is_active: { type: boolean }
+      responses:
+        '201': { description: Product created. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /products/{productId}:
+    get:
+      tags: [Catalog]
+      operationId: showProduct
+      x-permission: products.view
+      x-step-up: 10 minutes when costs.view is granted
+      parameters: [{ $ref: '#/components/parameters/ProductId' }]
+      responses:
+        '200': { description: Product; cost fields omitted without costs.view. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    put:
+      tags: [Catalog]
+      operationId: updateProductPut
+      x-permission: products.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/ProductId' }]
+      responses:
+        '200': { description: Product updated. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+    patch:
+      tags: [Catalog]
+      operationId: updateProductPatch
+      x-permission: products.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/ProductId' }]
+      responses:
+        '200': { description: Product updated. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+    delete:
+      tags: [Catalog]
+      operationId: deactivateProduct
+      x-permission: products.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/ProductId' }]
+      responses:
+        '200': { description: Product deactivated only if it has no stock. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+  /warehouses:
+    get:
+      tags: [Catalog]
+      operationId: listWarehouses
+      x-permission: products.view
+      parameters:
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+      responses:
+        '200': { description: All active and inactive locations; no configured count limit. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+    post:
+      tags: [Catalog]
+      operationId: createWarehouse
+      x-permission: warehouses.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [code, name, location_type]
+              properties:
+                parent_location_id: { type: [integer, 'null'] }
+                code: { type: string, maxLength: 80 }
+                name: { type: string, maxLength: 160 }
+                location_type: { type: string, enum: [main, sub, vehicle, damaged, other] }
+                salesperson: { type: [string, 'null'], maxLength: 160 }
+                tax_number: { type: [string, 'null'], maxLength: 64 }
+                payment_terms: { type: [string, 'null'], maxLength: 160 }
+                is_active: { type: boolean }
+                notes: { type: [string, 'null'] }
+      responses:
+        '201': { description: Warehouse created. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+  /warehouses/{warehouseId}:
+    put:
+      tags: [Catalog]
+      operationId: updateWarehousePut
+      x-permission: warehouses.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/WarehouseId' }]
+      responses:
+        '200': { description: Warehouse updated. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+    patch:
+      tags: [Catalog]
+      operationId: updateWarehousePatch
+      x-permission: warehouses.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/WarehouseId' }]
+      responses:
+        '200': { description: Warehouse updated. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+    delete:
+      tags: [Catalog]
+      operationId: deactivateWarehouse
+      x-permission: warehouses.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/WarehouseId' }]
+      responses:
+        '200': { description: Warehouse deactivated only if it has no stock. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+  /inventory/balances:
+    get:
+      tags: [Inventory]
+      operationId: inventoryBalances
+      x-permission: inventory.view
+      x-step-up: 10 minutes when costs.view is granted
+      parameters:
+        - { name: product_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: warehouse_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+      responses:
+        '200': { description: Paginated top-level data array and meta object of backend-computed stock balances; cost fields require costs.view. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /inventory/movements:
+    get:
+      tags: [Inventory]
+      operationId: inventoryMovements
+      x-permission: inventory.view
+      x-step-up: 10 minutes when costs.view is granted
+      parameters:
+        - { name: product_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: warehouse_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: movement_type, in: query, schema: { type: string, enum: [opening, receipt, sale, return, transfer, adjustment, damage, container_receipt, reversal] } }
+        - { name: from_date, in: query, schema: { type: string, format: date } }
+        - { name: to_date, in: query, schema: { type: string, format: date } }
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+      responses:
+        '200': { description: Paginated ledger history; cost snapshots require costs.view. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /inventory/adjustments:
+    get:
+      tags: [Inventory]
+      operationId: listInventoryAdjustments
+      x-permission: inventory.view
+      x-step-up: 10 minutes when costs.view is granted
+      parameters:
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+        - { name: product_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: warehouse_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: from_date, in: query, schema: { type: string, format: date } }
+        - { name: to_date, in: query, schema: { type: string, format: date } }
+      responses:
+        '200': { description: Paginated inventory adjustment movements; cost fields are omitted without costs.view. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+    post:
+      tags: [Inventory]
+      operationId: adjustInventory
+      x-permission: inventory.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      x-idempotency-key: required
+      parameters: [{ $ref: '#/components/parameters/IdempotencyKey' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [product_id, warehouse_id, quantity, reason]
+              properties:
+                product_id: { type: integer, minimum: 1 }
+                warehouse_id: { type: integer, minimum: 1 }
+                quantity: { type: integer, not: { const: 0 } }
+                unit_cost_egp: { $ref: '#/components/schemas/EgpAmount' }
+                movement_date: { type: string, format: date }
+                reason: { type: string, maxLength: 1000 }
+      responses:
+        '201': { description: Adjustment movement posted atomically. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /inventory/opening-stock:
+    post:
+      tags: [Inventory]
+      operationId: createOpeningStock
+      x-permission: inventory.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      x-idempotency-key: required
+      parameters: [{ $ref: '#/components/parameters/IdempotencyKey' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [product_id, warehouse_id, quantity, unit_cost_egp, movement_date, reason]
+              properties:
+                product_id: { type: integer, minimum: 1 }
+                warehouse_id: { type: integer, minimum: 1 }
+                quantity: { type: integer, minimum: 1 }
+                unit_cost_egp: { $ref: '#/components/schemas/EgpAmount' }
+                movement_date: { type: string, format: date }
+                reason: { type: string, maxLength: 1000 }
+      responses:
+        '201': { description: Dated opening-stock movement posted. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /inventory/transfers:
+    post:
+      tags: [Inventory]
+      operationId: transferInventory
+      x-permission: inventory.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      x-idempotency-key: required
+      parameters: [{ $ref: '#/components/parameters/IdempotencyKey' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [product_id, source_warehouse_id, destination_warehouse_id, quantity, reason]
+              properties:
+                product_id: { type: integer, minimum: 1 }
+                source_warehouse_id: { type: integer, minimum: 1 }
+                destination_warehouse_id: { type: integer, minimum: 1 }
+                quantity: { type: integer, minimum: 1 }
+                movement_date: { type: string, format: date }
+                reason: { type: string, maxLength: 1000 }
+      responses:
+        '201': { description: Atomic source issue and destination receive at source average cost. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /containers:
+    get:
+      tags: [Containers]
+      operationId: listContainers
+      x-permission: containers.view
+      parameters:
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+        - { name: status, in: query, schema: { type: string, enum: [draft, in_transit, at_port, receiving, received, cancelled] } }
+        - { name: supplier_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: from_date, in: query, schema: { type: string, format: date } }
+        - { name: to_date, in: query, schema: { type: string, format: date } }
+      responses:
+        '200': { description: Paginated containers. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+    post:
+      tags: [Containers]
+      operationId: createContainer
+      x-permission: containers.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [container_number]
+              properties:
+                container_number: { type: string, maxLength: 100 }
+                supplier_id: { type: [integer, 'null'] }
+                origin: { type: [string, 'null'] }
+                destination: { type: [string, 'null'] }
+                notes: { type: [string, 'null'] }
+                estimated_departure: { type: [string, 'null'], format: date }
+                estimated_arrival: { type: [string, 'null'], format: date }
+      responses:
+        '201': { description: Draft container created. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+  /containers/{containerId}:
+    get:
+      tags: [Containers]
+      operationId: showContainer
+      x-permission: containers.view
+      x-step-up: 10 minutes when costs.view is granted
+      parameters: [{ $ref: '#/components/parameters/ContainerId' }]
+      responses:
+        '200': { description: Container, lines, costs, receipts, allocations, payments, and status history; financial details require costs.view. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /products/{productId}/cost-history:
+    get:
+      tags: [Catalog]
+      operationId: productCostHistory
+      x-permission: costs.view
+      x-step-up: 10 minutes
+      parameters:
+        - { $ref: '#/components/parameters/ProductId' }
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+        - { name: warehouse_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: from_date, in: query, schema: { type: string, format: date } }
+        - { name: to_date, in: query, schema: { type: string, format: date } }
+      responses:
+        '200': { description: Paginated inventory movement cost snapshots for the product. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /containers/{containerId}/lines:
+    post:
+      tags: [Containers]
+      operationId: addContainerLine
+      x-permission: containers.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/ContainerId' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [product_id, expected_quantity, purchase_value_egp]
+              properties:
+                product_id: { type: integer, minimum: 1 }
+                expected_quantity: { type: integer, minimum: 1 }
+                purchase_value_egp: { $ref: '#/components/schemas/EgpAmount' }
+                notes: { type: [string, 'null'] }
+      responses:
+        '201': { description: Container line created. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+  /containers/{containerId}/allocation-basis:
+    put:
+      tags: [Containers]
+      operationId: setContainerAllocationBasis
+      x-permission: containers.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/ContainerId' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [allocation_basis]
+              properties: { allocation_basis: { type: string, enum: [value, quantity, manual] } }
+      responses:
+        '200': { description: Allocation basis selected. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+  /containers/{containerId}/status:
+    patch:
+      tags: [Containers]
+      operationId: updateContainerStatus
+      x-permission: containers.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/ContainerId' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [status, reason]
+              properties:
+                status: { type: string, enum: [in_transit, at_port, cancelled] }
+                reason: { type: string, minLength: 1, maxLength: 1000 }
+      responses:
+        '200': { description: Status changed and history recorded. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+  /containers/{containerId}/costs:
+    post:
+      tags: [Containers]
+      operationId: addContainerCost
+      x-permission: costs.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/ContainerId' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [cost_type, amount_egp]
+              properties:
+                supplier_id: { type: [integer, 'null'] }
+                cost_type: { type: string, maxLength: 80 }
+                amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+                description: { type: [string, 'null'], maxLength: 500 }
+                cost_date: { type: [string, 'null'], format: date }
+                include_in_inventory_cost: { type: boolean }
+                original_amount_reference: { type: [string, 'null'] }
+                exchange_rate_reference: { type: [string, 'null'] }
+                original_currency_code_reference: { type: [string, 'null'] }
+      responses:
+        '201': { description: Cost recorded; costs added after receipt do not recost received stock. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+  /container-cost-types/{costType}:
+    put:
+      tags: [Containers]
+      operationId: configureContainerCostType
+      x-permission: costs.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters:
+        - name: costType
+          in: path
+          required: true
+          schema: { type: string, maxLength: 80 }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [include_in_inventory_cost]
+              properties: { include_in_inventory_cost: { type: boolean } }
+      responses:
+        '200': { description: Cost-type inclusion default updated. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+  /containers/{containerId}/receipts:
+    get:
+      tags: [Containers]
+      operationId: listContainerReceipts
+      x-permission: containers.view
+      x-step-up: 10 minutes
+      parameters:
+        - { $ref: '#/components/parameters/ContainerId' }
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+      responses:
+        '200': { description: Paginated container receipts and lines; cost snapshots require costs.view and step-up. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+    post:
+      tags: [Containers]
+      operationId: receiveContainerLines
+      x-permission: containers.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      x-idempotency-key: required
+      parameters:
+        - { $ref: '#/components/parameters/ContainerId' }
+        - { $ref: '#/components/parameters/IdempotencyKey' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [warehouse_id, lines]
+              properties:
+                warehouse_id: { type: integer, minimum: 1 }
+                received_at: { type: string, format: date-time }
+                movement_date: { type: string, format: date }
+                reason: { type: [string, 'null'], maxLength: 1000 }
+                lines:
+                  type: array
+                  minItems: 1
+                  items:
+                    type: object
+                    required: [container_line_id, expected_quantity, received_quantity]
+                    properties:
+                      container_line_id: { type: integer, minimum: 1 }
+                      expected_quantity: { type: integer, minimum: 1 }
+                      received_quantity: { type: integer, minimum: 1 }
+                      discrepancy_reason: { type: [string, 'null'], maxLength: 1000 }
+                manual_allocations:
+                  type: object
+                  additionalProperties:
+                    type: object
+                    additionalProperties: { $ref: '#/components/schemas/EgpAmount' }
+      responses:
+        '201': { description: Receipt batch recorded with deterministic landed-cost rounding residuals. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+  /containers/{containerId}/receipts/{receiptId}:
+    get:
+      tags: [Containers]
+      operationId: showContainerReceipt
+      x-permission: containers.view
+      x-step-up: 10 minutes
+      parameters:
+        - { $ref: '#/components/parameters/ContainerId' }
+        - { $ref: '#/components/parameters/ReceiptId' }
+      responses:
+        '200': { description: Receipt and lines; cost snapshots are omitted unless the user has costs.view. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /containers/{containerId}/landed-cost/preview:
+    post:
+      tags: [Containers]
+      operationId: previewLandedCostAllocation
+      summary: Preview a receipt batch's exact purchase and landed cost allocation without posting
+      x-permission: [containers.manage, costs.view]
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters: [{ $ref: '#/components/parameters/ContainerId' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [warehouse_id, lines]
+              properties:
+                warehouse_id: { type: integer, minimum: 1 }
+                received_at: { type: string, format: date-time }
+                movement_date: { type: string, format: date }
+                lines:
+                  type: array
+                  minItems: 1
+                  items:
+                    type: object
+                    required: [container_line_id, expected_quantity, received_quantity]
+                    properties:
+                      container_line_id: { type: integer, minimum: 1 }
+                      expected_quantity: { type: integer, minimum: 1 }
+                      received_quantity: { type: integer, minimum: 1 }
+                manual_allocations:
+                  type: object
+                  additionalProperties:
+                    type: object
+                    additionalProperties: { $ref: '#/components/schemas/EgpAmount' }
+      responses:
+        '200':
+          description: Exact per-line purchase value, allocated landed cost, and unit cost preview; no writes occur.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data]
+                properties:
+                  data: { $ref: '#/components/schemas/ContainerReceiptPreview' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /containers/{containerId}/receipts/{receiptId}/reverse:
+    post:
+      tags: [Containers]
+      operationId: reverseContainerReceipt
+      x-permission: inventory.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters:
+        - { $ref: '#/components/parameters/ContainerId' }
+        - { $ref: '#/components/parameters/ReceiptId' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [reason]
+              properties: { reason: { type: string, minLength: 1, maxLength: 1000 } }
+      responses:
+        '200': { description: Receipt and stock effect reversed atomically. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+  /container-costs/{costId}/payments:
+    post:
+      tags: [Containers]
+      operationId: linkContainerCostPayment
+      x-permission: costs.pay
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters:
+        - name: costId
+          in: path
+          required: true
+          schema: { type: integer, minimum: 1 }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [treasury_entry_id, amount_egp]
+              properties:
+                treasury_entry_id: { type: integer, minimum: 1 }
+                amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+                paid_at: { type: string, format: date-time }
+      responses:
+        '201': { description: Treasury payment linked to the container cost. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /treasury/accounts:
+    get:
+      tags: [Finance]
+      operationId: listTreasuryAccounts
+      x-permission: treasury.view
+      x-step-up: 10 minutes
+      parameters:
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+      responses:
+        '200': { description: Paginated treasury accounts; balances are available through the account balance endpoint. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+    post:
+      tags: [Finance]
+      operationId: createTreasuryAccount
+      x-permission: treasury.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [code, name, account_type]
+              properties:
+                code: { type: string, maxLength: 80 }
+                name: { type: string, maxLength: 160 }
+                account_type: { type: string, enum: [cash, bank, other] }
+                notes: { type: [string, 'null'], maxLength: 500 }
+      responses:
+        '201': { description: Treasury account created and audited. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /treasury/accounts/{accountId}:
+    patch:
+      tags: [Finance]
+      operationId: updateTreasuryAccount
+      x-permission: treasury.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters:
+        - { name: accountId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code: { type: string, maxLength: 80 }
+                name: { type: string, maxLength: 160 }
+                account_type: { type: string, enum: [cash, bank, other] }
+                notes: { type: [string, 'null'], maxLength: 500 }
+                is_active: { type: boolean }
+      responses:
+        '200': { description: Treasury account updated and audited. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /treasury/accounts/{accountId}/balance:
+    get:
+      tags: [Finance]
+      operationId: getTreasuryAccountBalance
+      x-permission: treasury.view
+      x-step-up: 10 minutes
+      parameters:
+        - { name: accountId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+      responses:
+        '200': { description: Server-computed EGP balance derived from treasury entries. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /treasury/entries:
+    get:
+      tags: [Finance]
+      operationId: listTreasuryEntries
+      x-permission: treasury.view
+      x-step-up: 10 minutes
+      parameters:
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+        - { name: direction, in: query, schema: { type: string, enum: [in, out] } }
+        - { name: treasury_account_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: date_from, in: query, schema: { type: string, format: date } }
+        - { name: date_to, in: query, schema: { type: string, format: date } }
+      responses:
+        '200': { description: Paginated posted treasury entries. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+    post:
+      tags: [Finance]
+      operationId: postTreasuryCashEntry
+      x-permission: treasury.post
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [treasury_account_id, direction, entry_date, amount_egp, description]
+              properties:
+                treasury_account_id: { type: integer, minimum: 1 }
+                direction: { type: string, enum: [in, out] }
+                entry_date: { type: string, format: date }
+                amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+                description: { type: string, maxLength: 500 }
+      responses:
+        '201': { description: Cash movement posted atomically with audit and durable financial outbox event. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /treasury/transfers:
+    get:
+      tags: [Finance]
+      operationId: listTreasuryTransfers
+      x-permission: treasury.view
+      x-step-up: 10 minutes
+      parameters:
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+        - { name: date_from, in: query, schema: { type: string, format: date } }
+        - { name: date_to, in: query, schema: { type: string, format: date } }
+      responses:
+        '200': { description: Paginated posted account transfers. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+    post:
+      tags: [Finance]
+      operationId: postTreasuryTransfer
+      x-permission: treasury.post
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [transfer_date, from_treasury_account_id, to_treasury_account_id, amount_egp]
+              properties:
+                transfer_date: { type: string, format: date }
+                from_treasury_account_id: { type: integer, minimum: 1 }
+                to_treasury_account_id: { type: integer, minimum: 1 }
+                amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+                notes: { type: [string, 'null'], maxLength: 1000 }
+      responses:
+        '201': { description: Transfer and both treasury legs posted atomically with audit and outbox event. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /expense-categories:
+    get:
+      tags: [Finance]
+      operationId: listExpenseCategories
+      x-permission: expenses.view
+      x-step-up: 10 minutes
+      parameters:
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+        - { name: is_active, in: query, schema: { type: boolean } }
+      responses:
+        '200': { description: Paginated informational expense categories. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+    post:
+      tags: [Finance]
+      operationId: createExpenseCategory
+      x-permission: expense_categories.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name]
+              properties: { name: { type: string, maxLength: 160 } }
+      responses:
+        '201': { description: Expense category created and audited. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /expense-categories/{categoryId}:
+    patch:
+      tags: [Finance]
+      operationId: updateExpenseCategory
+      x-permission: expense_categories.manage
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      parameters:
+        - { name: categoryId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name: { type: string, maxLength: 160 }
+                is_active: { type: boolean }
+      responses:
+        '200': { description: Expense category updated and audited. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /expenses:
+    get:
+      tags: [Finance]
+      operationId: listExpenses
+      x-permission: expenses.view
+      x-step-up: 10 minutes
+      parameters:
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+        - { name: treasury_account_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: expense_category_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: date_from, in: query, schema: { type: string, format: date } }
+        - { name: date_to, in: query, schema: { type: string, format: date } }
+      responses:
+        '200': { description: Paginated EGP expenses with reference-only original amount and exchange rate when supplied. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+    post:
+      tags: [Finance]
+      operationId: postExpense
+      x-permission: expenses.post
+      x-csrf-required: true
+      x-step-up: 10 minutes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [expense_date, treasury_account_id, expense_category_id, amount_egp, description]
+              properties:
+                expense_date: { type: string, format: date }
+                treasury_account_id: { type: integer, minimum: 1 }
+                expense_category_id: { type: integer, minimum: 1 }
+                amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+                description: { type: string, maxLength: 500 }
+                reference: { type: [string, 'null'], maxLength: 160 }
+                original_amount: { type: [string, 'null'], pattern: '^(0|[1-9][0-9]{0,14})(\.[0-9]{1,4})?$' }
+                exchange_rate: { type: [string, 'null'], pattern: '^(0|[1-9][0-9]{0,13})(\.[0-9]{1,10})?$' }
+      responses:
+        '201': { description: EGP expense and treasury outflow posted atomically with audit and durable outbox event; reference values do not affect the posting. }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '419': { $ref: '#/components/responses/CsrfMismatch' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /reports/customer-balances:
+    get:
+      tags: [Reports]
+      operationId: reportCustomerBalances
+      summary: Paginated customer balances and unapplied collections
+      x-permission: reports.customer_balances.view
+      x-step-up: 10 minutes
+      parameters:
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+      responses:
+        '200': { description: Customer rows include the backend-computed signed receivable balance and current unapplied collection amount; includes pagination metadata. }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /reports/customers/{customerId}/statement:
+    get:
+      tags: [Reports]
+      operationId: reportCustomerStatement
+      summary: Dated customer statement
+      x-permission: reports.customer_statement.view
+      x-step-up: 10 minutes
+      parameters:
+        - { $ref: '#/components/parameters/CustomerId' }
+        - { name: from_date, in: query, schema: { type: string, format: date } }
+        - { name: to_date, in: query, schema: { type: string, format: date } }
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+      responses:
+        '200': { description: Paginated posted invoices, credit notes, dated opening-balance documents, and collection receipts with current applied/unapplied amounts. Collection rows include recording_source and is_unverified_payment; summary contains current balance and total unapplied collections. }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /reports/stock:
+    get:
+      tags: [Reports]
+      operationId: reportStock
+      summary: Stock by product and warehouse
+      x-permission: inventory.view
+      x-step-up: 10 minutes
+      parameters:
+        - { name: product_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: warehouse_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+      responses:
+        '200': { description: Paginated product/warehouse stock quantities. Cost and inventory-value fields are returned only to callers with costs.view; driver responses omit them. }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /reports/stock-movements:
+    get:
+      tags: [Reports]
+      operationId: reportStockMovements
+      summary: Paginated stock movement history
+      x-permission: inventory.view
+      x-step-up: 10 minutes
+      parameters:
+        - { name: product_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: warehouse_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: movement_type, in: query, schema: { type: string, enum: [opening, receipt, sale, return, transfer, adjustment, damage, container_receipt, reversal] } }
+        - { name: from_date, in: query, schema: { type: string, format: date } }
+        - { name: to_date, in: query, schema: { type: string, format: date } }
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+      responses:
+        '200': { description: Filterable paginated movements; per-unit and extended movement costs are returned only when the caller has costs.view. }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /reports/sales:
+    get:
+      tags: [Reports]
+      operationId: reportSales
+      summary: Filterable sales-document list
+      x-permission: invoices.view
+      x-step-up: 10 minutes
+      parameters:
+        - { name: customer_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: status, in: query, schema: { type: string, enum: [draft, posted, reversed, cancelled] } }
+        - { name: document_number, in: query, schema: { type: string, maxLength: 80 } }
+        - { name: from_date, in: query, schema: { type: string, format: date } }
+        - { name: to_date, in: query, schema: { type: string, format: date } }
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+      responses:
+        '200': { description: Paginated invoices and credit notes with stored document totals. }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /reports/container-costs:
+    get:
+      tags: [Reports]
+      operationId: reportContainerCosts
+      summary: Container cost, payment, and inventory-allocation summary
+      x-permission: reports.container_costs.view
+      x-step-up: 10 minutes
+      parameters:
+        - { name: container_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: status, in: query, schema: { type: string, enum: [estimated, incurred, paid, cancelled] } }
+        - { name: from_date, in: query, schema: { type: string, format: date } }
+        - { name: to_date, in: query, schema: { type: string, format: date } }
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+      responses:
+        '200': { description: Paginated container summaries with exact EGP totals for recorded costs, payments, unpaid amounts, and landed-cost allocations. Cancelled costs are excluded by default. }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /reports/invoice-profit:
+    get:
+      tags: [Reports]
+      operationId: reportInvoiceProfit
+      summary: Provisional invoice profit and markup
+      description: Formula is explicitly provisional pending accountant confirmation. It uses issue-time line cost snapshots and excludes tax from invoice revenue.
+      x-permission: [profit.view, markup.view]
+      x-step-up: 10 minutes
+      parameters:
+        - { name: customer_id, in: query, schema: { type: integer, minimum: 1 } }
+        - { name: from_date, in: query, schema: { type: string, format: date } }
+        - { name: to_date, in: query, schema: { type: string, format: date } }
+        - { $ref: '#/components/parameters/ListPage' }
+        - { $ref: '#/components/parameters/ListPerPage' }
+        - { $ref: '#/components/parameters/ListSearch' }
+        - { $ref: '#/components/parameters/ListSortBy' }
+        - { $ref: '#/components/parameters/ListSortDirection' }
+      responses:
+        '200': { description: Paginated posted invoices with revenue excluding tax, snapshot cost, provisional profit and markup. Missing snapshots yield null profitability values; zero cost yields null markup. Formula and PROVISIONAL status are included in metadata and each row. }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '422': { $ref: '#/components/responses/ValidationFailed' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+  /reports/dashboard:
+    get:
+      tags: [Reports]
+      operationId: reportDashboard
+      summary: Permission-filtered dashboard summary
+      description: "Each optional summary field is calculated and returned only when the caller has the corresponding permission: invoices.view, inventory.view, reports.customer_balances.view, or treasury.view."
+      x-permission: reports.dashboard.view
+      x-step-up: 10 minutes
+      responses:
+        '200': { description: Posted invoice totals issued today (including tax), aggregate on-hand units across warehouses, positive net customer receivables, and/or per-account treasury balances, with unauthorized sections omitted. }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '428': { $ref: '#/components/responses/StepUpRequired' }
+components:
+  securitySchemes:
+    sessionCookie:
+      type: apiKey
+      in: cookie
+      name: precision_slate_session
+    mobileBearer:
+      type: http
+      scheme: bearer
+      bearerFormat: opaque device token
+  parameters:
+    ListPage: { name: page, in: query, required: false, description: One-based page number., schema: { type: integer, minimum: 1, default: 1 } }
+    ListPerPage: { name: per_page, in: query, required: false, description: Maximum 100 items; endpoint defaults may differ., schema: { type: integer, minimum: 1, maximum: 100 } }
+    ListSearch: { name: search, in: query, required: false, description: Substring search across the endpoint's documented searchable fields., schema: { type: string, minLength: 1, maxLength: 160 } }
+    ListSortBy: { name: sort_by, in: query, required: false, description: Endpoint-specific allowlisted sort field; unsupported values return 422., schema: { type: string } }
+    ListSortDirection: { name: sort_direction, in: query, required: false, description: Sort direction; defaults to the endpoint's configured order., schema: { type: string, enum: [asc, desc] } }
+    CustomerId: { name: customerId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+    IdempotencyKey: { name: Idempotency-Key, in: header, required: true, schema: { type: string, minLength: 1, maxLength: 200 } }
+    DocumentId: { name: documentId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+    ReceiptId: { name: receiptId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+    AllocationId: { name: allocationId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+    UserId: { name: userId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+    OrderId: { name: orderId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+    DeliveryId: { name: deliveryId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+    CategoryId: { name: categoryId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+    ProductId: { name: productId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+    WarehouseId: { name: warehouseId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+    ContainerId: { name: containerId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+  schemas:
+    EgpAmount:
+      type: string
+      pattern: '^(0|[1-9][0-9]{0,14})(\.[0-9]{1,4})?$'
+      description: Decimal string amount in EGP; never a JSON floating-point number.
+      examples: ['125.50']
+    MobilePageMetadata:
+      type: object
+      required: [current_page, last_page, per_page, total]
+      properties:
+        current_page: { type: integer, minimum: 1 }
+        last_page: { type: integer, minimum: 1 }
+        per_page: { type: integer, minimum: 1 }
+        total: { type: integer, minimum: 0 }
+    MobileDeviceAdminRecord:
+      type: object
+      required: [id, user_id, name, model, last_seen_at, token_expires_at, revoked_at, created_at]
+      properties:
+        id: { type: integer }
+        user_id: { type: integer }
+        name: { type: string }
+        model: { type: [string, 'null'] }
+        last_seen_at: { type: [string, 'null'] }
+        token_expires_at: { type: [string, 'null'] }
+        revoked_at: { type: [string, 'null'] }
+        created_at: { type: string }
+    MobileDeviceAdminSource:
+      type: object
+      required: [id, kind, sender_identifier, notification_package_names, read_deposits, read_withdrawals, status, channel]
+      properties:
+        id: { type: integer }
+        kind: { type: string, enum: [sms, notification] }
+        sender_identifier: { type: [string, 'null'] }
+        notification_package_names:
+          type: [array, 'null']
+          items: { type: string }
+        read_deposits: { type: boolean }
+        read_withdrawals: { type: boolean }
+        status: { type: string, enum: [active, paused, archived] }
+        channel:
+          type: object
+          required: [id, name, type, status]
+          properties:
+            id: { type: integer }
+            name: { type: string }
+            type: { type: string, enum: [bank, instapay, wallet, post_office, other] }
+            status: { type: string, enum: [active, paused, archived] }
+    MobileDeviceAdminItem:
+      allOf:
+        - $ref: '#/components/schemas/MobileDeviceAdminRecord'
+        - type: object
+          required: [username, display_name, sources]
+          properties:
+            username: { type: string }
+            display_name: { type: string }
+            sources:
+              type: array
+              items: { $ref: '#/components/schemas/MobileDeviceAdminSource' }
+    MobileChannel:
+      type: object
+      required: [id, treasury_account_id, name, channel_type, status]
+      properties:
+        id: { type: integer }
+        treasury_account_id: { type: integer }
+        name: { type: string }
+        channel_type: { type: string, enum: [bank, instapay, wallet, post_office, other] }
+        identifier: { type: [string, 'null'] }
+        status: { type: string, enum: [active, paused] }
+        balance_egp: { $ref: '#/components/schemas/EgpAmount' }
+    MobileSource:
+      type: object
+      required: [id, channel_id, source_kind, is_enabled, read_deposits, read_withdrawals, status]
+      properties:
+        id: { type: integer }
+        device_id: { type: integer }
+        channel_id: { type: integer }
+        channel_name: { type: string }
+        channel_status: { type: string, enum: [active, paused] }
+        source_kind: { type: string, enum: [sms, notification] }
+        sender_identifier: { type: [string, 'null'] }
+        notification_package_names: { type: [array, 'null'], items: { type: string } }
+        is_enabled: { type: boolean, description: Capture enabled on the requesting device. }
+        read_deposits: { type: boolean }
+        read_withdrawals: { type: boolean }
+        default_read_deposits: { type: boolean, description: Shared default for configuring the device's deposit switch. }
+        default_read_withdrawals: { type: boolean, description: Shared default for configuring the device's withdrawal switch. }
+        deposit_keywords: { type: [array, 'null'], items: { type: string } }
+        withdrawal_keywords: { type: [array, 'null'], items: { type: string } }
+        parser_rule_version: { type: [integer, 'null'] }
+        parser_rule: { type: [object, array, 'null'], additionalProperties: true }
+        redacted_sample_message: { type: [string, 'null'] }
+        status: { type: string, enum: [active, paused] }
+        created_at: { type: [string, 'null'] }
+        updated_at: { type: [string, 'null'] }
+    MobileCategory:
+      type: object
+      required: [id, name, category_kind, requires_notes, is_system, is_active]
+      properties:
+        id: { type: integer }
+        name: { type: string }
+        category_kind: { type: string, enum: [expense, transfer] }
+        expense_category_id: { type: [integer, 'null'] }
+        target_treasury_account_id: { type: [integer, 'null'] }
+        requires_notes: { type: boolean }
+        is_system: { type: boolean }
+        is_active: { type: boolean }
+        expense_category_name: { type: [string, 'null'] }
+        target_account_name: { type: [string, 'null'] }
+    MobileCustomer:
+      type: object
+      required: [id, name, is_active]
+      properties:
+        id: { type: integer }
+        name: { type: string }
+        phone: { type: [string, 'null'] }
+        email: { type: [string, 'null'] }
+        address: { type: [string, 'null'] }
+        salesperson: { type: [string, 'null'] }
+        tax_number: { type: [string, 'null'] }
+        payment_terms: { type: [string, 'null'] }
+        governorate: { type: [string, 'null'] }
+        credit_limit: { $ref: '#/components/schemas/EgpAmount' }
+        notes: { type: [string, 'null'] }
+        is_active: { type: boolean }
+        created_at: { type: [string, 'null'] }
+        updated_at: { type: [string, 'null'] }
+    MobileLoginResponse:
+      type: object
+      required: [data, meta]
+      properties:
+        data:
+          type: object
+          required: [access_token, token_type, expires_at, device]
+          properties:
+            access_token: { type: string, description: Opaque bearer token; shown once and store only in device secure storage. }
+            token_type: { type: string, enum: [Bearer] }
+            expires_at: { type: string }
+            device:
+              type: object
+              required: [id, name, model]
+              properties:
+                id: { type: integer }
+                name: { type: string }
+                model: { type: [string, 'null'] }
+        meta:
+          type: object
+          properties:
+            request_id: { type: [string, 'null'] }
+    MobileCurrentUserResponse:
+      type: object
+      required: [data, meta]
+      properties:
+        data:
+          type: object
+          required: [user, device]
+          properties:
+            user:
+              type: object
+              required: [id, username, display_name, permissions]
+              properties:
+                id: { type: integer }
+                username: { type: string }
+                display_name: { type: string }
+                permissions: { type: array, items: { type: string } }
+            device:
+              type: object
+              required: [id, name, model]
+              properties:
+                id: { type: integer }
+                name: { type: string }
+                model: { type: [string, 'null'] }
+        meta:
+          type: object
+          properties:
+            request_id: { type: [string, 'null'] }
+    MobileMessageItem:
+      type: object
+      required: [id, source_id, channel_id, type, amount_egp, received_at, server_received_at, status]
+      properties:
+        id: { type: integer }
+        source_id: { type: integer }
+        channel_id: { type: integer }
+        channel_name: { type: string }
+        type: { type: string, enum: [deposit, withdrawal, ambiguous] }
+        amount_egp: { type: [string, 'null'], pattern: '^(0|[1-9][0-9]{0,14})(\\.[0-9]{1,2})?$' }
+        sender_identifier: { type: string }
+        received_at: { type: string }
+        server_received_at: { type: string }
+        status: { type: string, enum: [new, registered, ignored, needs_review, archived] }
+        registered_source: { type: [string, 'null'], enum: [sms, notification, manual, null] }
+        registered_document_type: { type: [string, 'null'] }
+        registered_document_id: { type: [integer, 'null'] }
+        reviewed_at: { type: [string, 'null'] }
+        archived_at: { type: [string, 'null'] }
+        raw_text: { type: string, description: Present only with mobile.messages.view; never write to application logs. }
+    MobileDepositResult:
+      type: object
+      required: [data]
+      properties:
+        data:
+          type: object
+          required: [id, customer_id, channel_id, amount_egp, recording_source, is_unverified_payment, receipt]
+          properties:
+            id: { type: integer, description: Sales receipt ID. }
+            message_id: { type: integer }
+            customer_id: { type: integer }
+            channel_id: { type: integer }
+            amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+            recording_source: { type: string, enum: [sms, notification, manual] }
+            is_unverified_payment: { type: boolean, description: True for message-originated deposits because message text is not proof of payment. }
+            receipt: { type: object, additionalProperties: true }
+    MobileWithdrawalResult:
+      type: object
+      required: [data]
+      properties:
+        data:
+          type: object
+          required: [id, message_id, channel_id, category_id, amount_egp, recording_source, document_type, notes]
+          properties:
+            id: { type: integer, description: Expense or transfer document ID. }
+            message_id: { type: integer }
+            channel_id: { type: integer }
+            category_id: { type: integer }
+            amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+            recording_source: { type: string, enum: [sms, notification] }
+            document_type: { type: string, enum: [expense, treasury_transfer] }
+            notes: { type: [string, 'null'] }
+    MobileMessageBatchResponse:
+      type: object
+      required: [data]
+      properties:
+        data:
+          type: object
+          required: [results, accepted_count, duplicate_count]
+          properties:
+            results:
+              type: array
+              items:
+                type: object
+                required: [index, status]
+                properties:
+                  index: { type: integer, minimum: 0 }
+                  status: { type: string, enum: [new, needs_review, duplicate] }
+                  type: { type: string, enum: [deposit, withdrawal, ambiguous] }
+                  message_id: { type: integer }
+                  existing_message_id: { type: integer }
+            accepted_count: { type: integer, minimum: 0 }
+            duplicate_count: { type: integer, minimum: 0 }
+    MobileSyncResponse:
+      type: object
+      required: [data]
+      properties:
+        data:
+          type: object
+          required: [cursor, has_more, customers, channels, categories, sources, messages, server_time]
+          properties:
+            cursor: { type: integer, minimum: 0 }
+            has_more: { type: boolean }
+            customers: { type: array, items: { type: object, additionalProperties: true } }
+            channels:
+              type: array
+              items:
+                type: object
+                required: [id, treasury_account_id, name, channel_type, status]
+                properties:
+                  id: { type: integer }
+                  treasury_account_id: { type: integer }
+                  name: { type: string }
+                  channel_type: { type: string, enum: [bank, instapay, wallet, post_office, other] }
+                  identifier: { type: [string, 'null'] }
+                  status: { type: string, enum: [active, paused] }
+                  deleted_at: { type: [string, 'null'] }
+                  balance_egp: { $ref: '#/components/schemas/EgpAmount' }
+            categories: { type: array, items: { type: object, additionalProperties: true } }
+            sources:
+              type: array
+              items:
+                type: object
+                required: [id, channel_id, source_kind, is_enabled, read_deposits, read_withdrawals, status]
+                properties:
+                  id: { type: integer }
+                  device_id: { type: integer, description: Device that created the shared definition. }
+                  channel_id: { type: integer }
+                  source_kind: { type: string, enum: [sms, notification] }
+                  sender_identifier: { type: [string, 'null'] }
+                  notification_package_names: { type: [array, 'null'], items: { type: string } }
+                  is_enabled: { type: boolean }
+                  read_deposits: { type: boolean }
+                  read_withdrawals: { type: boolean }
+                  default_read_deposits: { type: boolean }
+                  default_read_withdrawals: { type: boolean }
+                  deposit_keywords: { type: [array, 'null'], items: { type: string } }
+                  withdrawal_keywords: { type: [array, 'null'], items: { type: string } }
+                  parser_rule_version: { type: [integer, 'null'] }
+                  parser_rule: { type: [object, array, 'null'], additionalProperties: true }
+                  redacted_sample_message: { type: [string, 'null'] }
+                  status: { type: string, enum: [active, paused] }
+                  created_at: { type: [string, 'null'] }
+                  updated_at: { type: [string, 'null'] }
+            messages:
+              type: array
+              items:
+                type: object
+                required: [id, message_type, channel_id, amount_egp, received_at, status]
+                properties:
+                  id: { type: integer }
+                  message_type: { type: string, enum: [deposit, withdrawal, ambiguous] }
+                  channel_id: { type: integer }
+                  amount_egp: { type: [string, 'null'], pattern: '^(0|[1-9][0-9]{0,14})(\\.[0-9]{1,2})?$' }
+                  received_at: { type: string }
+                  status: { type: string, enum: [new, registered, ignored, needs_review, archived] }
+                  registered_source: { type: [string, 'null'], enum: [sms, notification, manual, null] }
+                  registered_document_type: { type: [string, 'null'] }
+                  registered_document_id: { type: [integer, 'null'] }
+            server_time: { type: string, format: date-time }
+    MobilePingResponse:
+      type: object
+      required: [data]
+      properties:
+        data:
+          type: object
+          required: [cursor, server_time]
+          properties:
+            cursor: { type: integer, minimum: 0 }
+            server_time: { type: string, format: date-time }
+    CustomerInput:
+      type: object
+      properties:
+        name: { type: string, maxLength: 200 }
+        phone: { type: [string, 'null'], maxLength: 32 }
+        email: { type: [string, 'null'], format: email }
+        address: { type: [string, 'null'], maxLength: 500 }
+        salesperson: { type: [string, 'null'], maxLength: 160 }
+        tax_number: { type: [string, 'null'], maxLength: 64 }
+        payment_terms: { type: [string, 'null'], maxLength: 160 }
+        governorate: { type: [string, 'null'], maxLength: 120 }
+        credit_limit: { $ref: '#/components/schemas/EgpAmount' }
+        notes: { type: [string, 'null'] }
+        is_active: { type: boolean }
+    InvoiceInput:
+      type: object
+      required: [customer_id, issue_date, lines]
+      properties:
+        customer_id: { type: integer, minimum: 1 }
+        issue_date: { type: string, format: date }
+        due_date: { type: [string, 'null'], format: date }
+        notes: { type: [string, 'null'] }
+        lines:
+          type: array
+          minItems: 1
+          maxItems: 500
+          items:
+            type: object
+            required: [product_id, warehouse_id, quantity, unit_price_egp]
+            properties:
+              product_id: { type: integer, minimum: 1 }
+              warehouse_id: { type: integer, minimum: 1 }
+              quantity: { type: integer, minimum: 1 }
+              unit_price_egp: { $ref: '#/components/schemas/EgpAmount' }
+              discount_amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+              description: { type: [string, 'null'], maxLength: 500 }
+    InvoicePreview:
+      type: object
+      required: [lines, subtotal_egp, discount_amount_egp, tax_enabled, tax_rate, tax_calculation_method, tax_amount_egp, grand_total_egp, warnings]
+      properties:
+        lines:
+          type: array
+          items:
+            type: object
+            required: [line_number, product_id, sku, product_name, warehouse_id, quantity, unit_price_egp, discount_amount_egp, tax_amount_egp, line_total_egp]
+            properties:
+              line_number: { type: integer }
+              product_id: { type: integer }
+              sku: { type: string }
+              product_name: { type: string }
+              warehouse_id: { type: integer }
+              quantity: { type: integer }
+              unit_price_egp: { $ref: '#/components/schemas/EgpAmount' }
+              discount_amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+              tax_amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+              line_total_egp: { $ref: '#/components/schemas/EgpAmount' }
+        subtotal_egp: { $ref: '#/components/schemas/EgpAmount' }
+        discount_amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+        tax_enabled: { type: boolean }
+        tax_rate: { type: string }
+        tax_calculation_method: { type: [string, 'null'], enum: [inclusive, exclusive, null] }
+        tax_amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+        grand_total_egp: { $ref: '#/components/schemas/EgpAmount' }
+        warnings: { type: array, items: { $ref: '#/components/schemas/PreviewWarning' } }
+    OrderPreview:
+      type: object
+      required: [lines, subtotal_egp, discount_amount_egp, tax_amount_egp, tax_applied, grand_total_egp, warnings]
+      properties:
+        lines:
+          type: array
+          items:
+            type: object
+            required: [line_number, product_id, sku, product_name, quantity, unit_price_egp, line_total_egp]
+            properties:
+              line_number: { type: integer }
+              product_id: { type: integer }
+              sku: { type: string }
+              product_name: { type: string }
+              quantity: { type: integer }
+              unit_price_egp: { $ref: '#/components/schemas/EgpAmount' }
+              line_total_egp: { $ref: '#/components/schemas/EgpAmount' }
+        subtotal_egp: { $ref: '#/components/schemas/EgpAmount' }
+        discount_amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+        tax_amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+        tax_applied: { type: boolean, const: false }
+        grand_total_egp: { $ref: '#/components/schemas/EgpAmount' }
+        warnings: { type: array, items: { $ref: '#/components/schemas/PreviewWarning' } }
+    ReturnPreview:
+      type: object
+      required: [lines, subtotal_egp, discount_amount_egp, tax_amount_egp, grand_total_egp, warnings]
+      properties:
+        lines:
+          type: array
+          items:
+            type: object
+            required: [line_number, product_id, sku, description, warehouse_id, quantity, unit_price_egp, discount_amount_egp, tax_amount_egp, line_total_egp]
+            properties:
+              line_number: { type: integer }
+              product_id: { type: integer }
+              sku: { type: [string, 'null'] }
+              description: { type: [string, 'null'] }
+              warehouse_id: { type: integer }
+              quantity: { type: integer }
+              unit_price_egp: { $ref: '#/components/schemas/EgpAmount' }
+              discount_amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+              tax_amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+              line_total_egp: { $ref: '#/components/schemas/EgpAmount' }
+        subtotal_egp: { $ref: '#/components/schemas/EgpAmount' }
+        discount_amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+        tax_amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+        grand_total_egp: { $ref: '#/components/schemas/EgpAmount' }
+        warnings: { type: array, items: { $ref: '#/components/schemas/PreviewWarning' } }
+    ContainerReceiptPreview:
+      type: object
+      required: [allocation_basis, lines, total_landed_cost_allocated_egp]
+      properties:
+        allocation_basis: { type: string, enum: [value, quantity, manual] }
+        lines:
+          type: array
+          items:
+            type: object
+            required: [container_line_id, product_id, warehouse_id, quantity]
+            properties:
+              container_line_id: { type: integer }
+              product_id: { type: integer }
+              warehouse_id: { type: integer }
+              quantity: { type: integer }
+              purchase_cost_egp: { $ref: '#/components/schemas/EgpAmount' }
+              allocated_landed_cost_egp: { $ref: '#/components/schemas/EgpAmount' }
+              line_cost_egp: { $ref: '#/components/schemas/EgpAmount' }
+              unit_cost_egp: { $ref: '#/components/schemas/EgpAmount' }
+        total_landed_cost_allocated_egp: { type: [string, 'null'], pattern: '^(0|[1-9][0-9]{0,14})(\\.[0-9]{1,2})?$' }
+    PreviewWarning:
+      type: object
+      required: [code]
+      properties:
+        code: { type: string, enum: [insufficient_stock, credit_limit_exceeded] }
+        product_id: { type: integer }
+        product_name: { type: string }
+        warehouse_id: { type: integer }
+        requested_quantity: { type: integer }
+        available_quantity: { type: integer }
+        credit_limit_egp: { $ref: '#/components/schemas/EgpAmount' }
+        current_balance_egp: { $ref: '#/components/schemas/EgpAmount' }
+    GeneralSettings:
+      type: object
+      properties:
+        company_name: { type: [string, 'null'] }
+        company_address: { type: [string, 'null'] }
+        company_phone: { type: [string, 'null'] }
+        company_email: { type: [string, 'null'], format: email }
+        company_tax_number: { type: [string, 'null'] }
+        invoice_number_prefix: { type: [string, 'null'] }
+        order_number_prefix: { type: [string, 'null'] }
+        container_number_prefix: { type: [string, 'null'] }
+    CollectionAllocation:
+      type: object
+      required: [document_id, amount_egp]
+      properties:
+        document_id: { type: integer, minimum: 1 }
+        amount_egp: { $ref: '#/components/schemas/EgpAmount' }
+    Error:
+      type: object
+      required: [error, meta]
+      properties:
+        error:
+          type: object
+          required: [code, message]
+          properties:
+            code:
+              type: string
+              enum: [UNAUTHENTICATED, AUTHENTICATION_FAILED, REAUTHENTICATION_FAILED, FORBIDDEN, CSRF_TOKEN_MISMATCH, VALIDATION_FAILED, STEP_UP_REQUIRED, HTTP_ERROR, INTERNAL_SERVER_ERROR]
+            message: { type: string }
+            details: { type: object, additionalProperties: true }
+        meta:
+          type: object
+          properties:
+            request_id: { type: [string, 'null'] }
+  responses:
+    AuthenticationFailed:
+      description: Invalid username or password (AUTHENTICATION_FAILED).
+      content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } }
+    ReauthenticationFailed:
+      description: Password re-verification failed (REAUTHENTICATION_FAILED).
+      content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } }
+    Unauthenticated:
+      description: Missing/expired session (UNAUTHENTICATED).
+      content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } }
+    Forbidden:
+      description: Permission is absent or denied by default (FORBIDDEN).
+      content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } }
+    CsrfMismatch:
+      description: X-CSRF-Token is missing or invalid (CSRF_TOKEN_MISMATCH).
+      content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } }
+    ValidationFailed:
+      description: Request validation failed (VALIDATION_FAILED; field errors are in error.details).
+      content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } }
+    StepUpRequired:
+      description: Reauthenticate to establish the 10-minute window (STEP_UP_REQUIRED).
+      content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } }
+    Conflict:
+      description: State/business-rule conflict (HTTP_ERROR, status 409).
+      content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } }
+    NotFound:
+      description: Resource does not exist (HTTP_ERROR, status 404).
+      content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } }
+    RateLimited:
+      description: Request throttled by the API.
+      content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } }
