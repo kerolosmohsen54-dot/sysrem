@@ -1,0 +1,19 @@
+<?php
+namespace Tests\Feature;
+use Illuminate\Support\Facades\DB; use PHPUnit\Framework\Attributes\Test; use Tests\Concerns\AuthenticatesApi; use Tests\TestCase;
+final class WarehouseReturnTest extends TestCase {
+ use AuthenticatesApi;
+ private function request(array $a,string $m,string $u,array $b=[],bool $csrf=true){return $this->withCredentials()->withUnencryptedCookie($this->apiCookieName(),$a['token'])->json($m,$u,$b,$csrf?[$this->apiCsrfHeader()=>$a['csrf']]:[]);}
+ private function fixtures():array{$w=DB::table('locations')->insertGetId(['code'=>'WR'.bin2hex(random_bytes(3)),'name'=>'Return warehouse','location_type'=>'main','is_active'=>true,'created_at'=>now(),'updated_at'=>now()]);$p=DB::table('products')->insertGetId(['sku'=>'WR'.bin2hex(random_bytes(3)),'name'=>'Return product','unit_code'=>'piece','is_active'=>true,'created_at'=>now(),'updated_at'=>now()]);return[$w,$p];}
+ private function payload(int $w,int $p):array{return['warehouse_id'=>$w,'return_date'=>'2026-10-13','reason'=>'damaged','idempotency_key'=>'wr-'.bin2hex(random_bytes(8)),'lines'=>[['product_id'=>$p,'quantity'=>2,'unit_cost_egp'=>'3.1250']]];}
+ #[Test] public function owner_can_list_create_idempotently_and_show():void{[$w,$p]=$this->fixtures();$a=$this->actingAsApiUser('owner',true);$x=$this->payload($w,$p);$this->request($a,'GET','/api/v1/warehouse-returns')->assertOk();$r=$this->request($a,'POST','/api/v1/warehouse-returns',$x)->assertCreated();$id=$r->json('data.return.id');$this->assertSame('6.2500',DB::table('warehouse_return_lines')->where('warehouse_return_id',$id)->value('line_total_egp'));$this->request($a,'POST','/api/v1/warehouse-returns',$x)->assertOk()->assertJsonPath('data.return.id',$id);$this->assertSame(1,DB::table('warehouse_returns')->where('idempotency_key',$x['idempotency_key'])->count());$this->request($a,'GET',"/api/v1/warehouse-returns/$id")->assertOk()->assertJsonPath('data.return.id',$id);$this->request($a,'GET','/api/v1/warehouse-returns/999999')->assertStatus(404);}
+ #[Test] public function read_only_is_forbidden_on_list_and_create():void{$a=$this->actingAsApiUser('read_only',true);$this->request($a,'GET','/api/v1/warehouse-returns')->assertStatus(403);$this->request($a,'POST','/api/v1/warehouse-returns',[])->assertStatus(403);}
+ #[Test] public function create_without_csrf_returns_419():void{[$w,$p]=$this->fixtures();$a=$this->actingAsApiUser('owner',true);$this->request($a,'POST','/api/v1/warehouse-returns',$this->payload($w,$p),false)->assertStatus(419);}
+ #[Test] public function create_does_not_require_finance_step_up():void{[$w,$p]=$this->fixtures();$a=$this->actingAsApiUser('owner',false);$this->request($a,'POST','/api/v1/warehouse-returns',$this->payload($w,$p))->assertCreated();}
+ #[Test] public function validation_errors_use_error_details():void{
+  [$w,$p]=$this->fixtures();$a=$this->actingAsApiUser('owner',true);
+  $x=$this->payload($w,$p);unset($x['warehouse_id']);$r=$this->request($a,'POST','/api/v1/warehouse-returns',$x);$r->assertStatus(422);$this->assertArrayHasKey('warehouse_id',$r->json('error.details'));
+  $x=$this->payload($w,$p);$x['lines'][0]['quantity']=0;$r=$this->request($a,'POST','/api/v1/warehouse-returns',$x);$r->assertStatus(422);$this->assertArrayHasKey('lines.0.quantity',$r->json('error.details'));
+  $x=$this->payload($w,$p);$x['lines'][0]['unit_cost_egp']='bad';$r=$this->request($a,'POST','/api/v1/warehouse-returns',$x);$r->assertStatus(422);$this->assertArrayHasKey('lines.0.unit_cost_egp',$r->json('error.details'));
+ } #[Test] public function read_only_cannot_show_a_return():void{[$w,$p]=$this->fixtures();$owner=$this->actingAsApiUser('owner',true);$r=$this->request($owner,'POST','/api/v1/warehouse-returns',$this->payload($w,$p))->assertCreated();$id=$r->json('data.return.id');$read=$this->actingAsApiUser('read_only',true);$this->request($read,'GET',"/api/v1/warehouse-returns/$id")->assertStatus(403);}
+}

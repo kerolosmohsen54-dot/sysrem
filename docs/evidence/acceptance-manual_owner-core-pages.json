@@ -1,0 +1,54 @@
+[
+  {
+    "route": "/dashboard",
+    "url": "http://127.0.0.1:5173/dashboard",
+    "text": "لوحة التحكم\n\nتقارير تشغيلية مبنية على القيم التي يعيدها الخادم.\n\nمبيعات اليوم\n0.00 ج.م\nوحدات المخزون\n0\nمستحقات العملاء\n0.00 ج.م\nAcceptanceWallet (MPC-TU0SMZNJNTCA9KXGEENN)\n0.00 ج.م\nالدرج (MOBILE-CASH-DRAWER)\n0.00 ج.م\nهيكل السيولة والمخزون\nاستجابة لوحة التحكم لا تحتوي مخططًا موثقًا؛ لا تُعرض أرقام غير معتمدة.\nمسار المبيعات وصافي الأرباح\n\nمقارنة المبيعات وصافي الربح خلال الفترة المحددة.\n\nالمبيعات — صافي الربح\nاستجابة لوحة التحكم لا تحتوي مخططًا موثقًا؛ لا تُعرض أرقام غير معتمدة.\nآخر المعاملات\nالنوع\tالمرجع\tالطرف\tالمبلغ\tالحالة\nاستجابة لوحة التحكم لا تحتوي مخططًا موثقًا؛ لا تُعرض أرقام غير معتمدة.",
+    "tail": "ion Slate\n/\nلوحة التحكم\nبحث سريع\nCtrl K\nإجراءات سريعة\nالمظهر\n◐\nتسجيل الخروج\nسجل العمليات\nلوحة التحكم\nلوحة التحكم\n\nتقارير تشغيلية مبنية على القيم التي يعيدها الخادم.\n\nمبيعات اليوم\n0.00 ج.م\nوحدات المخزون\n0\nمستحقات العملاء\n0.00 ج.م\nAcceptanceWallet (MPC-TU0SMZNJNTCA9KXGEENN)\n0.00 ج.م\nالدرج (MOBILE-CASH-DRAWER)\n0.00 ج.م\nهيكل السيولة والمخزون\nاستجابة لوحة التحكم لا تحتوي مخططًا موثقًا؛ لا تُعرض أرقام غير معتمدة.\nمسار المبيعات وصافي الأرباح\n\nمقارنة المبيعات وصافي الربح خلال الفترة المحددة.\n\nالمبيعات — صافي الربح\nاستجابة لوحة التحكم لا تحتوي مخططًا موثقًا؛ لا تُعرض أرقام غير معتمدة.\nآخر المعاملات\nالنوع\tالمرجع\tالطرف\tالمبلغ\tالحالة\nاستجابة لوحة التحكم لا تحتوي مخططًا موثقًا؛ لا تُعرض أرقام غير معتمدة.",
+    "buttons": [],
+    "inputs": [],
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 401
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/auth/login",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/reports/dashboard",
+        "status": 428
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/auth/reauth",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/reports/dashboard",
+        "status": 200
+      }
+    ],
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 428 (Precondition Required)"
+    ],
+    "screenshot": "acceptance-manual_owner-dashboard.png"
+  }
+]

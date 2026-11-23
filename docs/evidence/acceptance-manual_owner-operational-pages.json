@@ -1,0 +1,918 @@
+[
+  {
+    "route": "/admin/governorates",
+    "url": "http://127.0.0.1:5173/admin/governorates",
+    "text": "المحافظات\n\nإدارة قائمة المحافظات المستخدمة في ملفات العملاء.\n\nبحث\nعرض غير النشطة\nالمحافظة\tعدد العملاء\tالحالة\tالإجراءات\nالقاهرة\t0\tنشط\tتعطيل\nالجيزة\t0\tنشط\tتعطيل\nالإسكندرية\t0\tنشط\tتعطيل\nالقليوبية\t0\tنشط\tتعطيل\nالشرقية\t0\tنشط\tتعطيل\nالدقهلية\t0\tنشط\tتعطيل\nالبحيرة\t0\tنشط\tتعطيل\nالغربية\t0\tنشط\tتعطيل\nالمنوفية\t0\tنشط\tتعطيل\nكفر الشيخ\t0\tنشط\tتعطيل\nدمياط\t0\tنشط\tتعطيل\nبورسعيد\t0\tنشط\tتعطيل\nالإسماعيلية\t0\tنشط\tتعطيل\nالسويس\t0\tنشط\tتعطيل\nالفيوم\t0\tنشط\tتعطيل\nبني سويف\t0\tنشط\tتعطيل\nالمنيا\t0\tنشط\tتعطيل\nأسيوط\t0\tنشط\tتعطيل\nسوهاج\t0\tنشط\tتعطيل\nقنا\t0\tنشط\tتعطيل\nالأقصر\t0\tنشط\tتعطيل\nأسوان\t0\tنشط\tتعطيل\nالبحر الأحمر\t0\tنشط\tتعطيل\nمطروح\t0\tنشط\tتعطيل\nشمال سيناء\t0\tنشط\tتعطيل\nجنوب سيناء\t0\tنشط\tتعطيل\nالوادي الجديد\t0\tنشط\tتعطيل\nإضافة محافظة\nاسم المحافظة\nإضافة",
+    "tail": "محافظات\n\nإدارة قائمة المحافظات المستخدمة في ملفات العملاء.\n\nبحث\nعرض غير النشطة\nالمحافظة\tعدد العملاء\tالحالة\tالإجراءات\nالقاهرة\t0\tنشط\tتعطيل\nالجيزة\t0\tنشط\tتعطيل\nالإسكندرية\t0\tنشط\tتعطيل\nالقليوبية\t0\tنشط\tتعطيل\nالشرقية\t0\tنشط\tتعطيل\nالدقهلية\t0\tنشط\tتعطيل\nالبحيرة\t0\tنشط\tتعطيل\nالغربية\t0\tنشط\tتعطيل\nالمنوفية\t0\tنشط\tتعطيل\nكفر الشيخ\t0\tنشط\tتعطيل\nدمياط\t0\tنشط\tتعطيل\nبورسعيد\t0\tنشط\tتعطيل\nالإسماعيلية\t0\tنشط\tتعطيل\nالسويس\t0\tنشط\tتعطيل\nالفيوم\t0\tنشط\tتعطيل\nبني سويف\t0\tنشط\tتعطيل\nالمنيا\t0\tنشط\tتعطيل\nأسيوط\t0\tنشط\tتعطيل\nسوهاج\t0\tنشط\tتعطيل\nقنا\t0\tنشط\tتعطيل\nالأقصر\t0\tنشط\tتعطيل\nأسوان\t0\tنشط\tتعطيل\nالبحر الأحمر\t0\tنشط\tتعطيل\nمطروح\t0\tنشط\tتعطيل\nشمال سيناء\t0\tنشط\tتعطيل\nجنوب سيناء\t0\tنشط\tتعطيل\nالوادي الجديد\t0\tنشط\tتعطيل\nإضافة محافظة\nاسم المحافظة\nإضافة",
+    "buttons": [
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "تعطيل",
+      "إضافة"
+    ],
+    "inputs": [
+      {
+        "name": "",
+        "type": "search",
+        "placeholder": ""
+      },
+      {
+        "name": "",
+        "type": "checkbox",
+        "placeholder": ""
+      },
+      {
+        "name": "name",
+        "type": "text",
+        "placeholder": ""
+      }
+    ],
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 401
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/auth/login",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/reference/governorates",
+        "status": 200
+      }
+    ],
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    ],
+    "screenshot": "acceptance-manual_owner-admin-governorates.png"
+  },
+  {
+    "route": "/admin/drivers",
+    "url": "http://127.0.0.1:5173/admin/drivers",
+    "text": "سائقو شركة الشحن\n\nإدارة السائقين وشركات الشحن المرتبطة بهم.\n\nعرض غير النشطين\n\nلا توجد بيانات مطابقة.\n\nإضافة سائق\nالاسم\nشركة الشحن\nإضافة",
+    "tail": "\nسلة المحذوفات\nالمستخدمون والصلاحيات\nسجل العمليات\nالإعدادات\nالرئيسية\nلوحة التحكم\nالإعدادات والحسابات\n↗\nالتعديلات المالية\nغير منفذ\n↗\nالعملات\nالـ API غير متاح\n↗\nدليل الحسابات\nغير منفذ\nمالية متقدمة\n↗\nميزانية المصروفات\nغير منفذ\n↗\nمصروفات متكررة\nغير منفذ\n↗\nمقارنة شهر بشهر\nغير منفذ\n↗\nتوقع السيولة\nغير منفذ\nمخزون وحاويات متقدم\n↗\nتتبع الحاويات\n↗\nسجل تكلفة المنتج\nالبيانات\nتثبيت كتطبيق\n↗\nاستيراد من Excel\nغير منفذ\n↗\nالملخص اليومي\nغير منفذ\nm\nmanual_owner\nunknown\nPrecision Slate\n/\nسائق شركة الشحن\nبحث سريع\nCtrl K\nإجراءات سريعة\nالمظهر\n◐\nتسجيل الخروج\nسجل العمليات\nلوحة التحكم\nسائقو شركة الشحن\n\nإدارة السائقين وشركات الشحن المرتبطة بهم.\n\nعرض غير النشطين\n\nلا توجد بيانات مطابقة.\n\nإضافة سائق\nالاسم\nشركة الشحن\nإضافة",
+    "buttons": [
+      "إضافة"
+    ],
+    "inputs": [
+      {
+        "name": "",
+        "type": "checkbox",
+        "placeholder": ""
+      },
+      {
+        "name": "name",
+        "type": "text",
+        "placeholder": ""
+      },
+      {
+        "name": "shipping_company",
+        "type": "text",
+        "placeholder": ""
+      }
+    ],
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/drivers",
+        "status": 200
+      }
+    ],
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    ],
+    "screenshot": "acceptance-manual_owner-admin-drivers.png"
+  },
+  {
+    "route": "/admin/trash",
+    "url": "http://127.0.0.1:5173/admin/trash",
+    "text": "سلة المحذوفات\n\nاستعادة السجلات المؤرشفة. الحذف النهائي غير متاح.\n\nلا توجد بيانات مطابقة.\n\nالصفحة 1 من 1",
+    "tail": "\nالإدارة\nالمحافظات\nسائق شركة الشحن\nسلة المحذوفات\nالمستخدمون والصلاحيات\nسجل العمليات\nالإعدادات\nالرئيسية\nلوحة التحكم\nالإعدادات والحسابات\n↗\nالتعديلات المالية\nغير منفذ\n↗\nالعملات\nالـ API غير متاح\n↗\nدليل الحسابات\nغير منفذ\nمالية متقدمة\n↗\nميزانية المصروفات\nغير منفذ\n↗\nمصروفات متكررة\nغير منفذ\n↗\nمقارنة شهر بشهر\nغير منفذ\n↗\nتوقع السيولة\nغير منفذ\nمخزون وحاويات متقدم\n↗\nتتبع الحاويات\n↗\nسجل تكلفة المنتج\nالبيانات\nتثبيت كتطبيق\n↗\nاستيراد من Excel\nغير منفذ\n↗\nالملخص اليومي\nغير منفذ\nm\nmanual_owner\nunknown\nPrecision Slate\n/\nسلة المحذوفات\nبحث سريع\nCtrl K\nإجراءات سريعة\nالمظهر\n◐\nتسجيل الخروج\nسجل العمليات\nلوحة التحكم\nسلة المحذوفات\n\nاستعادة السجلات المؤرشفة. الحذف النهائي غير متاح.\n\nلا توجد بيانات مطابقة.\n\nالصفحة 1 من 1",
+    "buttons": [],
+    "inputs": [],
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/admin/trash",
+        "status": 428
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/auth/reauth",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/admin/trash",
+        "status": 200
+      }
+    ],
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 428 (Precondition Required)"
+    ],
+    "screenshot": "acceptance-manual_owner-admin-trash.png"
+  },
+  {
+    "route": "/warehouse-returns",
+    "url": "http://127.0.0.1:5173/warehouse-returns",
+    "text": "",
+    "tail": "",
+    "buttons": [],
+    "inputs": [],
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/warehouse-returns",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/warehouses",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/products",
+        "status": 200
+      }
+    ],
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 428 (Precondition Required)",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <WarehouseReturnsPage> component:\n\n    at WarehouseReturnsPage (http://127.0.0.1:5173/src/features/inventory/WarehouseReturnsPage.tsx:30:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')"
+    ],
+    "screenshot": "acceptance-manual_owner-warehouse-returns.png"
+  },
+  {
+    "route": "/inventory/damaged",
+    "url": "http://127.0.0.1:5173/inventory/damaged",
+    "text": "",
+    "tail": "",
+    "buttons": [],
+    "inputs": [],
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/approved-damaged-stock",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/warehouses",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/products",
+        "status": 200
+      }
+    ],
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 428 (Precondition Required)",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <WarehouseReturnsPage> component:\n\n    at WarehouseReturnsPage (http://127.0.0.1:5173/src/features/inventory/WarehouseReturnsPage.tsx:30:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <ApprovedDamagedStockPage> component:\n\n    at ApprovedDamagedStockPage (http://127.0.0.1:5173/src/features/inventory/ApprovedDamagedStockPage.tsx:29:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')"
+    ],
+    "screenshot": "acceptance-manual_owner-inventory-damaged.png"
+  },
+  {
+    "route": "/container-transfers",
+    "url": "http://127.0.0.1:5173/container-transfers",
+    "text": "نقل الحاويات بين المواقع\n\nتسجيل ومراجعة نقل المنتجات بين مواقع التخزين.\n\nلا توجد بيانات مطابقة.\n\nتسجيل نقل\nاختر المنتج\nاختر\nمن اختر المخزن\nاختر\nإلى اختر المخزن\nاختر\nالكمية\nالتاريخ\nالسبب\nحفظ",
+    "tail": "ئيسية\nلوحة التحكم\nالإعدادات والحسابات\n↗\nالتعديلات المالية\nغير منفذ\n↗\nالعملات\nالـ API غير متاح\n↗\nدليل الحسابات\nغير منفذ\nمالية متقدمة\n↗\nميزانية المصروفات\nغير منفذ\n↗\nمصروفات متكررة\nغير منفذ\n↗\nمقارنة شهر بشهر\nغير منفذ\n↗\nتوقع السيولة\nغير منفذ\nمخزون وحاويات متقدم\n↗\nتتبع الحاويات\n↗\nسجل تكلفة المنتج\nالبيانات\nتثبيت كتطبيق\n↗\nاستيراد من Excel\nغير منفذ\n↗\nالملخص اليومي\nغير منفذ\nm\nmanual_owner\nunknown\nPrecision Slate\n/\nنقل الحاويات بين المواقع\nبحث سريع\nCtrl K\nإجراءات سريعة\nالمظهر\n◐\nتسجيل الخروج\nسجل العمليات\nلوحة التحكم\nنقل الحاويات بين المواقع\n\nتسجيل ومراجعة نقل المنتجات بين مواقع التخزين.\n\nلا توجد بيانات مطابقة.\n\nتسجيل نقل\nاختر المنتج\nاختر\nمن اختر المخزن\nاختر\nإلى اختر المخزن\nاختر\nالكمية\nالتاريخ\nالسبب\nحفظ",
+    "buttons": [
+      "حفظ"
+    ],
+    "inputs": [
+      {
+        "name": "quantity",
+        "type": "number",
+        "placeholder": ""
+      },
+      {
+        "name": "transfer_date",
+        "type": "date",
+        "placeholder": ""
+      },
+      {
+        "name": "reason",
+        "type": "text",
+        "placeholder": ""
+      }
+    ],
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/container-transfers",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/products",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/warehouses",
+        "status": 200
+      }
+    ],
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 428 (Precondition Required)",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <WarehouseReturnsPage> component:\n\n    at WarehouseReturnsPage (http://127.0.0.1:5173/src/features/inventory/WarehouseReturnsPage.tsx:30:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <ApprovedDamagedStockPage> component:\n\n    at ApprovedDamagedStockPage (http://127.0.0.1:5173/src/features/inventory/ApprovedDamagedStockPage.tsx:29:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')"
+    ],
+    "screenshot": "acceptance-manual_owner-container-transfers.png"
+  },
+  {
+    "route": "/container-funds",
+    "url": "http://127.0.0.1:5173/container-funds",
+    "text": "أموال الحاويات\n\nمتابعة الإضافات والسحوبات ورصيد كل حاوية.\n\nرقم الحاوية\nاختر",
+    "tail": "ير المخزون\n↗\nالتقرير المالي\nالإدارة\nالمحافظات\nسائق شركة الشحن\nسلة المحذوفات\nالمستخدمون والصلاحيات\nسجل العمليات\nالإعدادات\nالرئيسية\nلوحة التحكم\nالإعدادات والحسابات\n↗\nالتعديلات المالية\nغير منفذ\n↗\nالعملات\nالـ API غير متاح\n↗\nدليل الحسابات\nغير منفذ\nمالية متقدمة\n↗\nميزانية المصروفات\nغير منفذ\n↗\nمصروفات متكررة\nغير منفذ\n↗\nمقارنة شهر بشهر\nغير منفذ\n↗\nتوقع السيولة\nغير منفذ\nمخزون وحاويات متقدم\n↗\nتتبع الحاويات\n↗\nسجل تكلفة المنتج\nالبيانات\nتثبيت كتطبيق\n↗\nاستيراد من Excel\nغير منفذ\n↗\nالملخص اليومي\nغير منفذ\nm\nmanual_owner\nunknown\nPrecision Slate\n/\nأموال الحاويات\nبحث سريع\nCtrl K\nإجراءات سريعة\nالمظهر\n◐\nتسجيل الخروج\nسجل العمليات\nلوحة التحكم\nأموال الحاويات\n\nمتابعة الإضافات والسحوبات ورصيد كل حاوية.\n\nرقم الحاوية\nاختر",
+    "buttons": [],
+    "inputs": [],
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/containers",
+        "status": 200
+      }
+    ],
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 428 (Precondition Required)",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <WarehouseReturnsPage> component:\n\n    at WarehouseReturnsPage (http://127.0.0.1:5173/src/features/inventory/WarehouseReturnsPage.tsx:30:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <ApprovedDamagedStockPage> component:\n\n    at ApprovedDamagedStockPage (http://127.0.0.1:5173/src/features/inventory/ApprovedDamagedStockPage.tsx:29:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')"
+    ],
+    "screenshot": "acceptance-manual_owner-container-funds.png"
+  },
+  {
+    "route": "/inventory/minimum-stock",
+    "url": "http://127.0.0.1:5173/inventory/minimum-stock",
+    "text": "الحد الأدنى للمخزون\n\nمراقبة الحدود المحددة لكل منتج ومخزن.\n\nعرض ما دون الحد فقط\n\nلا توجد بيانات مطابقة.\n\nتحديد حد أدنى\nاختر المنتج\nاختر\nاختر المخزن\nاختر\nالحد الأدنى\nحفظ",
+    "tail": "ات\nسجل العمليات\nالإعدادات\nالرئيسية\nلوحة التحكم\nالإعدادات والحسابات\n↗\nالتعديلات المالية\nغير منفذ\n↗\nالعملات\nالـ API غير متاح\n↗\nدليل الحسابات\nغير منفذ\nمالية متقدمة\n↗\nميزانية المصروفات\nغير منفذ\n↗\nمصروفات متكررة\nغير منفذ\n↗\nمقارنة شهر بشهر\nغير منفذ\n↗\nتوقع السيولة\nغير منفذ\nمخزون وحاويات متقدم\n↗\nتتبع الحاويات\n↗\nسجل تكلفة المنتج\nالبيانات\nتثبيت كتطبيق\n↗\nاستيراد من Excel\nغير منفذ\n↗\nالملخص اليومي\nغير منفذ\nm\nmanual_owner\nunknown\nPrecision Slate\n/\nالمخزون والمخازن\nبحث سريع\nCtrl K\nإجراءات سريعة\nالمظهر\n◐\nتسجيل الخروج\nسجل العمليات\nلوحة التحكم\nالحد الأدنى للمخزون\n\nمراقبة الحدود المحددة لكل منتج ومخزن.\n\nعرض ما دون الحد فقط\n\nلا توجد بيانات مطابقة.\n\nتحديد حد أدنى\nاختر المنتج\nاختر\nاختر المخزن\nاختر\nالحد الأدنى\nحفظ",
+    "buttons": [
+      "حفظ"
+    ],
+    "inputs": [
+      {
+        "name": "",
+        "type": "checkbox",
+        "placeholder": ""
+      },
+      {
+        "name": "minimum_quantity",
+        "type": "number",
+        "placeholder": ""
+      }
+    ],
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/inventory/minimum-stock",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/products",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/warehouses",
+        "status": 200
+      }
+    ],
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 428 (Precondition Required)",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <WarehouseReturnsPage> component:\n\n    at WarehouseReturnsPage (http://127.0.0.1:5173/src/features/inventory/WarehouseReturnsPage.tsx:30:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <ApprovedDamagedStockPage> component:\n\n    at ApprovedDamagedStockPage (http://127.0.0.1:5173/src/features/inventory/ApprovedDamagedStockPage.tsx:29:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')"
+    ],
+    "screenshot": "acceptance-manual_owner-inventory-minimum-stock.png"
+  },
+  {
+    "route": "/inventory/counts",
+    "url": "http://127.0.0.1:5173/inventory/counts",
+    "text": "الجرد الدوري\n\nإنشاء جلسات جرد ومتابعة اعتماد الفروقات.\n\nلا توجد بيانات مطابقة.\n\nإنشاء جلسة جرد\nاختر المخزن\nاختر\nاختر المنتج\nاختر\nالكمية المعدودة\nالتاريخ\nالسبب\nحفظ",
+    "tail": "لصلاحيات\nسجل العمليات\nالإعدادات\nالرئيسية\nلوحة التحكم\nالإعدادات والحسابات\n↗\nالتعديلات المالية\nغير منفذ\n↗\nالعملات\nالـ API غير متاح\n↗\nدليل الحسابات\nغير منفذ\nمالية متقدمة\n↗\nميزانية المصروفات\nغير منفذ\n↗\nمصروفات متكررة\nغير منفذ\n↗\nمقارنة شهر بشهر\nغير منفذ\n↗\nتوقع السيولة\nغير منفذ\nمخزون وحاويات متقدم\n↗\nتتبع الحاويات\n↗\nسجل تكلفة المنتج\nالبيانات\nتثبيت كتطبيق\n↗\nاستيراد من Excel\nغير منفذ\n↗\nالملخص اليومي\nغير منفذ\nm\nmanual_owner\nunknown\nPrecision Slate\n/\nالمخزون والمخازن\nبحث سريع\nCtrl K\nإجراءات سريعة\nالمظهر\n◐\nتسجيل الخروج\nسجل العمليات\nلوحة التحكم\nالجرد الدوري\n\nإنشاء جلسات جرد ومتابعة اعتماد الفروقات.\n\nلا توجد بيانات مطابقة.\n\nإنشاء جلسة جرد\nاختر المخزن\nاختر\nاختر المنتج\nاختر\nالكمية المعدودة\nالتاريخ\nالسبب\nحفظ",
+    "buttons": [
+      "حفظ"
+    ],
+    "inputs": [
+      {
+        "name": "counted_quantity",
+        "type": "number",
+        "placeholder": ""
+      },
+      {
+        "name": "count_date",
+        "type": "date",
+        "placeholder": ""
+      },
+      {
+        "name": "reason",
+        "type": "text",
+        "placeholder": ""
+      }
+    ],
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/inventory/counts",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/products",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/warehouses",
+        "status": 200
+      }
+    ],
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 428 (Precondition Required)",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <WarehouseReturnsPage> component:\n\n    at WarehouseReturnsPage (http://127.0.0.1:5173/src/features/inventory/WarehouseReturnsPage.tsx:30:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <ApprovedDamagedStockPage> component:\n\n    at ApprovedDamagedStockPage (http://127.0.0.1:5173/src/features/inventory/ApprovedDamagedStockPage.tsx:29:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')"
+    ],
+    "screenshot": "acceptance-manual_owner-inventory-counts.png"
+  },
+  {
+    "route": "/partners",
+    "url": "http://127.0.0.1:5173/partners",
+    "text": "",
+    "tail": "",
+    "buttons": [],
+    "inputs": [],
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/partners",
+        "status": 200
+      }
+    ],
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 428 (Precondition Required)",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <WarehouseReturnsPage> component:\n\n    at WarehouseReturnsPage (http://127.0.0.1:5173/src/features/inventory/WarehouseReturnsPage.tsx:30:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <ApprovedDamagedStockPage> component:\n\n    at ApprovedDamagedStockPage (http://127.0.0.1:5173/src/features/inventory/ApprovedDamagedStockPage.tsx:29:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "The above error occurred in the <PartnersPage> component:\n\n    at PartnersPage (http://127.0.0.1:5173/src/features/finance/PartnersPage.tsx:44:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'last_page')"
+    ],
+    "screenshot": "acceptance-manual_owner-partners.png"
+  },
+  {
+    "route": "/partner-payments",
+    "url": "http://127.0.0.1:5173/partner-payments",
+    "text": "",
+    "tail": "",
+    "buttons": [],
+    "inputs": [],
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/partner-payments",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/partners",
+        "status": 200
+      }
+    ],
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 428 (Precondition Required)",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <WarehouseReturnsPage> component:\n\n    at WarehouseReturnsPage (http://127.0.0.1:5173/src/features/inventory/WarehouseReturnsPage.tsx:30:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <ApprovedDamagedStockPage> component:\n\n    at ApprovedDamagedStockPage (http://127.0.0.1:5173/src/features/inventory/ApprovedDamagedStockPage.tsx:29:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "The above error occurred in the <PartnersPage> component:\n\n    at PartnersPage (http://127.0.0.1:5173/src/features/finance/PartnersPage.tsx:44:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "The above error occurred in the <PartnerPaymentsPage> component:\n\n    at PartnerPaymentsPage (http://127.0.0.1:5173/src/features/finance/PartnerPaymentsPage.tsx:42:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'last_page')"
+    ],
+    "screenshot": "acceptance-manual_owner-partner-payments.png"
+  },
+  {
+    "route": "/customers/2/liquidation",
+    "url": "http://127.0.0.1:5173/customers/2/liquidation",
+    "text": "تعذر إكمال الطلب. حاول مرة أخرى.\n\nتعذر إكمال الطلب. حاول مرة أخرى.\n\nإعادة المحاولة",
+    "tail": "\nالمحافظات\nسائق شركة الشحن\nسلة المحذوفات\nالمستخدمون والصلاحيات\nسجل العمليات\nالإعدادات\nالرئيسية\nلوحة التحكم\nالإعدادات والحسابات\n↗\nالتعديلات المالية\nغير منفذ\n↗\nالعملات\nالـ API غير متاح\n↗\nدليل الحسابات\nغير منفذ\nمالية متقدمة\n↗\nميزانية المصروفات\nغير منفذ\n↗\nمصروفات متكررة\nغير منفذ\n↗\nمقارنة شهر بشهر\nغير منفذ\n↗\nتوقع السيولة\nغير منفذ\nمخزون وحاويات متقدم\n↗\nتتبع الحاويات\n↗\nسجل تكلفة المنتج\nالبيانات\nتثبيت كتطبيق\n↗\nاستيراد من Excel\nغير منفذ\n↗\nالملخص اليومي\nغير منفذ\nm\nmanual_owner\nunknown\nPrecision Slate\n/\nالعملاء\nبحث سريع\nCtrl K\nإجراءات سريعة\nالمظهر\n◐\nتسجيل الخروج\nسجل العمليات\nلوحة التحكم\nتعذر إكمال الطلب. حاول مرة أخرى.\n\nتعذر إكمال الطلب. حاول مرة أخرى.\n\nإعادة المحاولة\nتعذر إكمال الطلب. حاول مرة أخرى.\n×",
+    "buttons": [
+      "إعادة المحاولة"
+    ],
+    "inputs": [],
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/customers/2/liquidation",
+        "status": 404
+      }
+    ],
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 428 (Precondition Required)",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <WarehouseReturnsPage> component:\n\n    at WarehouseReturnsPage (http://127.0.0.1:5173/src/features/inventory/WarehouseReturnsPage.tsx:30:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <ApprovedDamagedStockPage> component:\n\n    at ApprovedDamagedStockPage (http://127.0.0.1:5173/src/features/inventory/ApprovedDamagedStockPage.tsx:29:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "The above error occurred in the <PartnersPage> component:\n\n    at PartnersPage (http://127.0.0.1:5173/src/features/finance/PartnersPage.tsx:44:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "The above error occurred in the <PartnerPaymentsPage> component:\n\n    at PartnerPaymentsPage (http://127.0.0.1:5173/src/features/finance/PartnerPaymentsPage.tsx:42:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ],
+    "screenshot": "acceptance-manual_owner-customers-2-liquidation.png"
+  },
+  {
+    "route": "/finance/inbox",
+    "url": "http://127.0.0.1:5173/finance/inbox",
+    "text": "",
+    "tail": "",
+    "buttons": [],
+    "inputs": [],
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/treasury/accounts",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/treasury/entries",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/treasury/accounts/1/balance",
+        "status": 200
+      }
+    ],
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 428 (Precondition Required)",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <WarehouseReturnsPage> component:\n\n    at WarehouseReturnsPage (http://127.0.0.1:5173/src/features/inventory/WarehouseReturnsPage.tsx:30:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <ApprovedDamagedStockPage> component:\n\n    at ApprovedDamagedStockPage (http://127.0.0.1:5173/src/features/inventory/ApprovedDamagedStockPage.tsx:29:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "The above error occurred in the <PartnersPage> component:\n\n    at PartnersPage (http://127.0.0.1:5173/src/features/finance/PartnersPage.tsx:44:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "The above error occurred in the <PartnerPaymentsPage> component:\n\n    at PartnerPaymentsPage (http://127.0.0.1:5173/src/features/finance/PartnerPaymentsPage.tsx:42:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Expected a decimal value encoded as a string.",
+      "Expected a decimal value encoded as a string.",
+      "Expected a decimal value encoded as a string.",
+      "Expected a decimal value encoded as a string.",
+      "The above error occurred in the <AccountBalance> component:\n\n    at AccountBalance (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:42:27)\n    at td\n    at tr\n    at tbody\n    at table\n    at div\n    at DataTable (http://127.0.0.1:5173/src/shared/components/DataTable.tsx:18:3)\n    at section\n    at section\n    at TreasuryPage (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:70:32)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "The above error occurred in the <AccountBalance> component:\n\n    at AccountBalance (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:42:27)\n    at span\n    at div\n    at article\n    at div\n    at DataTable (http://127.0.0.1:5173/src/shared/components/DataTable.tsx:18:3)\n    at section\n    at section\n    at TreasuryPage (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:70:32)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Expected a decimal value encoded as a string."
+    ],
+    "screenshot": "acceptance-manual_owner-finance-inbox.png"
+  },
+  {
+    "route": "/finance/withdrawals",
+    "url": "http://127.0.0.1:5173/finance/withdrawals",
+    "text": "",
+    "tail": "",
+    "buttons": [],
+    "inputs": [],
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/treasury/accounts",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/treasury/entries",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/treasury/accounts/1/balance",
+        "status": 200
+      }
+    ],
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 428 (Precondition Required)",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <WarehouseReturnsPage> component:\n\n    at WarehouseReturnsPage (http://127.0.0.1:5173/src/features/inventory/WarehouseReturnsPage.tsx:30:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <ApprovedDamagedStockPage> component:\n\n    at ApprovedDamagedStockPage (http://127.0.0.1:5173/src/features/inventory/ApprovedDamagedStockPage.tsx:29:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "The above error occurred in the <PartnersPage> component:\n\n    at PartnersPage (http://127.0.0.1:5173/src/features/finance/PartnersPage.tsx:44:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "The above error occurred in the <PartnerPaymentsPage> component:\n\n    at PartnerPaymentsPage (http://127.0.0.1:5173/src/features/finance/PartnerPaymentsPage.tsx:42:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Expected a decimal value encoded as a string.",
+      "Expected a decimal value encoded as a string.",
+      "Expected a decimal value encoded as a string.",
+      "Expected a decimal value encoded as a string.",
+      "The above error occurred in the <AccountBalance> component:\n\n    at AccountBalance (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:42:27)\n    at td\n    at tr\n    at tbody\n    at table\n    at div\n    at DataTable (http://127.0.0.1:5173/src/shared/components/DataTable.tsx:18:3)\n    at section\n    at section\n    at TreasuryPage (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:70:32)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "The above error occurred in the <AccountBalance> component:\n\n    at AccountBalance (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:42:27)\n    at span\n    at div\n    at article\n    at div\n    at DataTable (http://127.0.0.1:5173/src/shared/components/DataTable.tsx:18:3)\n    at section\n    at section\n    at TreasuryPage (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:70:32)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Expected a decimal value encoded as a string.",
+      "Expected a decimal value encoded as a string.",
+      "Expected a decimal value encoded as a string.",
+      "Expected a decimal value encoded as a string.",
+      "Expected a decimal value encoded as a string.",
+      "The above error occurred in the <AccountBalance> component:\n\n    at AccountBalance (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:42:27)\n    at td\n    at tr\n    at tbody\n    at table\n    at div\n    at DataTable (http://127.0.0.1:5173/src/shared/components/DataTable.tsx:18:3)\n    at section\n    at section\n    at TreasuryPage (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:70:32)\n    at MobileApiAccess (http://127.0.0.1:5173/src/features/mobile/MobileApiAccess.tsx:26:35)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "The above error occurred in the <AccountBalance> component:\n\n    at AccountBalance (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:42:27)\n    at span\n    at div\n    at article\n    at div\n    at DataTable (http://127.0.0.1:5173/src/shared/components/DataTable.tsx:18:3)\n    at section\n    at section\n    at TreasuryPage (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:70:32)\n    at MobileApiAccess (http://127.0.0.1:5173/src/features/mobile/MobileApiAccess.tsx:26:35)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Expected a decimal value encoded as a string."
+    ],
+    "screenshot": "acceptance-manual_owner-finance-withdrawals.png"
+  },
+  {
+    "route": "/finance/movements",
+    "url": "http://127.0.0.1:5173/finance/movements",
+    "text": "",
+    "tail": "",
+    "buttons": [],
+    "inputs": [],
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/treasury/accounts",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/treasury/entries",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/treasury/accounts/1/balance",
+        "status": 200
+      }
+    ],
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 428 (Precondition Required)",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <WarehouseReturnsPage> component:\n\n    at WarehouseReturnsPage (http://127.0.0.1:5173/src/features/inventory/WarehouseReturnsPage.tsx:30:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "The above error occurred in the <ApprovedDamagedStockPage> component:\n\n    at ApprovedDamagedStockPage (http://127.0.0.1:5173/src/features/inventory/ApprovedDamagedStockPage.tsx:29:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'current_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "The above error occurred in the <PartnersPage> component:\n\n    at PartnersPage (http://127.0.0.1:5173/src/features/finance/PartnersPage.tsx:44:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "The above error occurred in the <PartnerPaymentsPage> component:\n\n    at PartnerPaymentsPage (http://127.0.0.1:5173/src/features/finance/PartnerPaymentsPage.tsx:42:20)\n    at ScreenRoute (http://127.0.0.1:5173/src/app/App.tsx:411:24)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Cannot read properties of undefined (reading 'last_page')",
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Expected a decimal value encoded as a string.",
+      "Expected a decimal value encoded as a string.",
+      "Expected a decimal value encoded as a string.",
+      "Expected a decimal value encoded as a string.",
+      "The above error occurred in the <AccountBalance> component:\n\n    at AccountBalance (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:42:27)\n    at td\n    at tr\n    at tbody\n    at table\n    at div\n    at DataTable (http://127.0.0.1:5173/src/shared/components/DataTable.tsx:18:3)\n    at section\n    at section\n    at TreasuryPage (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:70:32)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "The above error occurred in the <AccountBalance> component:\n\n    at AccountBalance (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:42:27)\n    at span\n    at div\n    at article\n    at div\n    at DataTable (http://127.0.0.1:5173/src/shared/components/DataTable.tsx:18:3)\n    at section\n    at section\n    at TreasuryPage (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:70:32)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Expected a decimal value encoded as a string.",
+      "Expected a decimal value encoded as a string.",
+      "Expected a decimal value encoded as a string.",
+      "Expected a decimal value encoded as a string.",
+      "Expected a decimal value encoded as a string.",
+      "The above error occurred in the <AccountBalance> component:\n\n    at AccountBalance (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:42:27)\n    at td\n    at tr\n    at tbody\n    at table\n    at div\n    at DataTable (http://127.0.0.1:5173/src/shared/components/DataTable.tsx:18:3)\n    at section\n    at section\n    at TreasuryPage (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:70:32)\n    at MobileApiAccess (http://127.0.0.1:5173/src/features/mobile/MobileApiAccess.tsx:26:35)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "The above error occurred in the <AccountBalance> component:\n\n    at AccountBalance (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:42:27)\n    at span\n    at div\n    at article\n    at div\n    at DataTable (http://127.0.0.1:5173/src/shared/components/DataTable.tsx:18:3)\n    at section\n    at section\n    at TreasuryPage (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:70:32)\n    at MobileApiAccess (http://127.0.0.1:5173/src/features/mobile/MobileApiAccess.tsx:26:35)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Expected a decimal value encoded as a string.",
+      "Expected a decimal value encoded as a string.",
+      "Expected a decimal value encoded as a string.",
+      "Expected a decimal value encoded as a string.",
+      "Expected a decimal value encoded as a string.",
+      "The above error occurred in the <AccountBalance> component:\n\n    at AccountBalance (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:42:27)\n    at td\n    at tr\n    at tbody\n    at table\n    at div\n    at DataTable (http://127.0.0.1:5173/src/shared/components/DataTable.tsx:18:3)\n    at section\n    at section\n    at TreasuryPage (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:70:32)\n    at MobileApiAccess (http://127.0.0.1:5173/src/features/mobile/MobileApiAccess.tsx:26:35)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "The above error occurred in the <AccountBalance> component:\n\n    at AccountBalance (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:42:27)\n    at span\n    at div\n    at article\n    at div\n    at DataTable (http://127.0.0.1:5173/src/shared/components/DataTable.tsx:18:3)\n    at section\n    at section\n    at TreasuryPage (http://127.0.0.1:5173/src/features/finance/TreasuryPage.tsx:70:32)\n    at MobileApiAccess (http://127.0.0.1:5173/src/features/mobile/MobileApiAccess.tsx:26:35)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7630:26)\n    at main\n    at div\n    at div\n    at AppShell (http://127.0.0.1:5173/src/app/layouts/AppShell.tsx:95:29)\n    at PermissionGate (http://127.0.0.1:5173/src/shared/auth/PermissionGate.tsx:21:34)\n    at ProtectedShell\n    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:6758:26)\n    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7700:3)\n    at Suspense\n    at App\n    at IdleSessionMonitor (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:225:3)\n    at AuthProvider (http://127.0.0.1:5173/src/shared/auth/AuthProvider.tsx:35:32)\n    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=51607985:26:30)\n    at AppProviders (http://127.0.0.1:5173/src/app/providers.tsx:72:32)\n    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:7639:13)\n    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=51607985:10958:3)\n    at AppRouter\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.",
+      "Expected a decimal value encoded as a string."
+    ],
+    "screenshot": "acceptance-manual_owner-finance-movements.png"
+  }
+]

@@ -1,0 +1,5 @@
+<?php
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+return new class extends Migration { public function up(): void { Schema::create('warehouse_returns', function(Blueprint $t){$t->id();$t->foreignId('warehouse_id')->constrained('locations');$t->date('return_date');$t->string('status',32)->default('draft');$t->string('reason',500);$t->foreignId('created_by_user_id')->nullable()->constrained('users')->nullOnDelete();$t->string('idempotency_key',200)->unique();$t->timestamps();}); Schema::create('warehouse_return_lines',function(Blueprint $t){$t->id();$t->foreignId('warehouse_return_id')->constrained()->cascadeOnDelete();$t->foreignId('product_id')->constrained();$t->unsignedInteger('quantity');$t->decimal('unit_cost_egp',19,4);$t->decimal('line_total_egp',19,4);$t->unsignedInteger('line_number');$t->timestamps();$t->unique(['warehouse_return_id','line_number']);}); } public function down(): void {Schema::dropIfExists('warehouse_return_lines');Schema::dropIfExists('warehouse_returns');} };
