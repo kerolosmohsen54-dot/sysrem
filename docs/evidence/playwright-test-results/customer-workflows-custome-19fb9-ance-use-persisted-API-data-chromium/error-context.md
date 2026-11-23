@@ -1,0 +1,141 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e7]:
+      - strong [ref=e8]: MASTER
+      - generic [ref=e9]: نظام إدارة الأعمال
+    - navigation "MASTER" [ref=e10]:
+      - link "لوحة التحكم" [ref=e11] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e12] [cursor=pointer]
+        - generic [ref=e14] [cursor=pointer]: لوحة التحكم
+      - group [ref=e15]:
+        - generic "المبيعات" [ref=e16] [cursor=pointer]:
+          - generic [ref=e17] [cursor=pointer]: المبيعات
+          - generic [ref=e18] [cursor=pointer]: ⌄
+      - group [ref=e19]:
+        - generic "العملاء" [ref=e20] [cursor=pointer]:
+          - generic [ref=e21] [cursor=pointer]: العملاء
+          - generic [ref=e22] [cursor=pointer]: ⌄
+        - link "العملاء" [ref=e23] [cursor=pointer]:
+          - /url: /customers
+          - img [ref=e24] [cursor=pointer]
+          - generic [ref=e26] [cursor=pointer]: العملاء
+        - link "إضافة عميل" [ref=e27] [cursor=pointer]:
+          - /url: /customers
+          - generic [ref=e28] [cursor=pointer]: ↗
+          - generic [ref=e29] [cursor=pointer]: إضافة عميل
+        - link "حساب العميل" [ref=e30] [cursor=pointer]:
+          - /url: /reports/customer-balances
+          - generic [ref=e31] [cursor=pointer]: ↗
+          - generic [ref=e32] [cursor=pointer]: حساب العميل
+      - group [ref=e33]:
+        - generic "المنتجات والمخزون" [ref=e34] [cursor=pointer]:
+          - generic [ref=e35] [cursor=pointer]: المنتجات والمخزون
+          - generic [ref=e36] [cursor=pointer]: ⌄
+      - group [ref=e37]:
+        - generic "الحاويات" [ref=e38] [cursor=pointer]:
+          - generic [ref=e39] [cursor=pointer]: الحاويات
+          - generic [ref=e40] [cursor=pointer]: ⌄
+      - group [ref=e41]:
+        - generic "المالية" [ref=e42] [cursor=pointer]:
+          - generic [ref=e43] [cursor=pointer]: المالية
+          - generic [ref=e44] [cursor=pointer]: ⌄
+      - group [ref=e45]:
+        - generic "التقارير" [ref=e46] [cursor=pointer]:
+          - generic [ref=e47] [cursor=pointer]: التقارير
+          - generic [ref=e48] [cursor=pointer]: ⌄
+      - group [ref=e49]:
+        - generic "إدارة النظام" [ref=e50] [cursor=pointer]:
+          - generic [ref=e51] [cursor=pointer]: إدارة النظام
+          - generic [ref=e52] [cursor=pointer]: ⌄
+      - group [ref=e53]:
+        - generic "أدوات إضافية" [ref=e54] [cursor=pointer]:
+          - generic [ref=e55] [cursor=pointer]: أدوات إضافية
+          - generic [ref=e56] [cursor=pointer]: ⌄
+    - generic [ref=e57]:
+      - generic [ref=e58]: م
+      - generic [ref=e59]:
+        - strong [ref=e60]: مالك اختبار تدفقات المبيعات
+        - generic [ref=e61]: المالك
+      - button "تسجيل الخروج" [ref=e62] [cursor=pointer]:
+        - img [ref=e63] [cursor=pointer]
+  - generic [ref=e65]:
+    - banner [ref=e66]:
+      - navigation "مسار الصفحة" [ref=e67]:
+        - link "لوحة التحكم" [ref=e68] [cursor=pointer]:
+          - /url: /dashboard
+        - generic [ref=e69]: /
+        - link "العملاء" [ref=e70] [cursor=pointer]:
+          - /url: /customers
+        - generic [ref=e71]: /
+        - strong [ref=e72]: تفاصيل العميل
+      - button "بحث سريع" [ref=e73] [cursor=pointer]:
+        - img [ref=e74] [cursor=pointer]
+        - generic [ref=e76] [cursor=pointer]: بحث سريع
+        - generic [ref=e77] [cursor=pointer]: تحكم + K
+      - group [ref=e78]:
+        - generic "ابدأ إجراء" [ref=e79] [cursor=pointer]:
+          - generic [ref=e80] [cursor=pointer]: ＋
+          - generic [ref=e81] [cursor=pointer]: ابدأ إجراء
+      - generic [ref=e82]:
+        - generic [ref=e83]: المظهر
+        - checkbox "التبديل إلى المظهر الفاتح" [ref=e84]
+        - generic [ref=e85]: ◐
+      - generic [ref=e86]:
+        - button "الإشعارات (10)" [ref=e88] [cursor=pointer]:
+          - img [ref=e89] [cursor=pointer]
+        - button "تسجيل الخروج" [ref=e91] [cursor=pointer]
+    - navigation "اختصارات التنقل" [ref=e92]:
+      - link "سجل العمليات" [ref=e93] [cursor=pointer]:
+        - /url: /admin/audit
+      - link "لوحة التحكم" [ref=e94] [cursor=pointer]:
+        - /url: /dashboard
+    - main [ref=e95]:
+      - generic [ref=e96]:
+        - generic [ref=e97]:
+          - generic [ref=e98]:
+            - heading "عميل اختبار المبيعات D1EACF90" [level=1] [ref=e99]
+            - paragraph [ref=e100]: تفاصيل العميل والأرصدة المحسوبة من بيانات الخادم.
+          - generic [ref=e101]:
+            - link "عرض الكشف" [ref=e102] [cursor=pointer]:
+              - /url: /customers/253/statement
+            - link "تصفية العميل" [ref=e103] [cursor=pointer]:
+              - /url: /customers/253/liquidation
+            - link "رجوع" [ref=e104] [cursor=pointer]:
+              - /url: /customers
+        - tablist "سجل العميل" [ref=e105]:
+          - tab "البيانات" [ref=e106] [cursor=pointer]
+          - tab "الطلبات" [ref=e107] [cursor=pointer]
+          - tab "الفواتير" [active] [selected] [ref=e108] [cursor=pointer]
+          - tab "المدفوعات" [ref=e109] [cursor=pointer]
+          - tab "كشف الحساب" [ref=e110] [cursor=pointer]
+          - tab "المرفقات" [ref=e111] [cursor=pointer]
+        - tabpanel "الفواتير" [ref=e112]:
+          - table [ref=e114]:
+            - rowgroup [ref=e115]:
+              - row "رقم الفاتورة التاريخ الإجمالي المتبقي" [ref=e116]:
+                - columnheader "رقم الفاتورة" [ref=e117]
+                - columnheader "التاريخ" [ref=e118]
+                - columnheader "الإجمالي" [ref=e119]
+                - columnheader "المتبقي" [ref=e120]
+            - rowgroup [ref=e121]:
+              - row "INV-2026-242 ٣٠ أكتوبر ٢٠٢٦ 50.0000 ج.م 50.00 ج.م" [ref=e122]:
+                - cell "INV-2026-242" [ref=e123]:
+                  - link "INV-2026-242" [ref=e124] [cursor=pointer]:
+                    - /url: /invoices/143
+                    - generic [ref=e125] [cursor=pointer]: INV-2026-242
+                - cell "٣٠ أكتوبر ٢٠٢٦" [ref=e126]
+                - cell "50.0000 ج.م" [ref=e127]
+                - cell "50.00 ج.م" [ref=e128]
+              - row "INV-2026-241 ٣٠ أكتوبر ٢٠٢٦ 50.0000 ج.م 50.00 ج.م" [ref=e129]:
+                - cell "INV-2026-241" [ref=e130]:
+                  - link "INV-2026-241" [ref=e131] [cursor=pointer]:
+                    - /url: /invoices/142
+                    - generic [ref=e132] [cursor=pointer]: INV-2026-241
+                - cell "٣٠ أكتوبر ٢٠٢٦" [ref=e133]
+                - cell "50.0000 ج.م" [ref=e134]
+                - cell "50.00 ج.م" [ref=e135]
+```

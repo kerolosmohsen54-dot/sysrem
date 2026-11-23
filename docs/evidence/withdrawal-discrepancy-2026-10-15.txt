@@ -1,0 +1,15 @@
+﻿Item 2 evidence — read-only query against erp_scratch.
+TARGET DB = erp_scratch
+channel3 {"id":3,"name":"E2E-TEST Vodafone","treasury_account_id":4,"paused":0}
+TARGET DB = erp_scratch
+categories {"id":1,"name":"الدرج","category_kind":"transfer","target_treasury_account_id":1,"expense_category_id":null}
+categories {"id":4,"name":"مصاريف أخرى","category_kind":"expense","target_treasury_account_id":null,"expense_category_id":3}
+TARGET DB = erp_scratch
+balances {"treasury_account_id":5,"inflow":"80.4000","outflow":"6.5000"}
+TARGET DB = erp_scratch
+message5 {"id":5,"channel_id":4,"direction":"WITHDRAWAL","amount":"6.5000","status":"RECORDED","recorded_as":"EXPENSE","recorded_ref_id":3}
+TARGET DB = erp_scratch
+expense3 {"id":3,"status":"posted","expense_category_id":3,"treasury_account_id":5,"amount":"6.5000","description":"E2E-TEST-mobile-withdrawal-verification","reference":"mobile-captured:5","treasury_entry_id":15}
+TARGET DB = erp_scratch
+entry15 {"id":15,"treasury_account_id":5,"direction":"out","amount":"6.5000","source_type":"expense","source_id":3,"reversal_of_entry_id":null}
+Conclusion: category id=4 is an expense (expense_category_id=3), not a drawer transfer. Existing 6.50 EGP record is message 5 on channel 4, posted as expense id 3 from account 5 through treasury entry 15; drawer account 1 has no matching transfer leg. Channel id 3 is linked to account 4 with no balance, so the requested new withdrawal could not be reproduced without funding it and writing permanent test transactions.

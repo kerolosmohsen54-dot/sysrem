@@ -1,0 +1,767 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e7]:
+      - strong [ref=e8]: MASTER
+      - generic [ref=e9]: نظام إدارة الأعمال
+    - navigation "MASTER" [ref=e10]:
+      - link "لوحة التحكم" [ref=e11] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e12] [cursor=pointer]
+        - generic [ref=e14] [cursor=pointer]: لوحة التحكم
+      - group [ref=e15]:
+        - generic "المبيعات" [ref=e16] [cursor=pointer]:
+          - generic [ref=e17] [cursor=pointer]: المبيعات
+          - generic [ref=e18] [cursor=pointer]: ⌄
+      - group [ref=e19]:
+        - generic "العملاء" [ref=e20] [cursor=pointer]:
+          - generic [ref=e21] [cursor=pointer]: العملاء
+          - generic [ref=e22] [cursor=pointer]: ⌄
+      - group [ref=e23]:
+        - generic "المنتجات والمخزون" [ref=e24] [cursor=pointer]:
+          - generic [ref=e25] [cursor=pointer]: المنتجات والمخزون
+          - generic [ref=e26] [cursor=pointer]: ⌄
+      - group [ref=e27]:
+        - generic "الحاويات" [ref=e28] [cursor=pointer]:
+          - generic [ref=e29] [cursor=pointer]: الحاويات
+          - generic [ref=e30] [cursor=pointer]: ⌄
+      - group [ref=e31]:
+        - generic "المالية" [ref=e32] [cursor=pointer]:
+          - generic [ref=e33] [cursor=pointer]: المالية
+          - generic [ref=e34] [cursor=pointer]: ⌄
+        - link "المالية" [ref=e35] [cursor=pointer]:
+          - /url: /finance
+          - img [ref=e36] [cursor=pointer]
+          - generic [ref=e38] [cursor=pointer]: المالية
+        - link "الصندوق الوارد" [ref=e39] [cursor=pointer]:
+          - /url: /finance/inbox
+          - img [ref=e40] [cursor=pointer]
+          - generic [ref=e42] [cursor=pointer]: الصندوق الوارد
+        - link "الوارد من تطبيق الهاتف" [ref=e43] [cursor=pointer]:
+          - /url: /finance/mobile-inbox
+          - img [ref=e44] [cursor=pointer]
+          - generic [ref=e46] [cursor=pointer]: الوارد من تطبيق الهاتف
+        - link "سحوبات الخزينة" [ref=e47] [cursor=pointer]:
+          - /url: /finance/withdrawals
+          - img [ref=e48] [cursor=pointer]
+          - generic [ref=e50] [cursor=pointer]: سحوبات الخزينة
+        - link "حركات الخزينة" [ref=e51] [cursor=pointer]:
+          - /url: /finance/movements
+          - img [ref=e52] [cursor=pointer]
+          - generic [ref=e54] [cursor=pointer]: حركات الخزينة
+        - link "قنوات الدفع عبر الهاتف" [ref=e55] [cursor=pointer]:
+          - /url: /finance/mobile-channels
+          - img [ref=e56] [cursor=pointer]
+          - generic [ref=e58] [cursor=pointer]: قنوات الدفع عبر الهاتف
+        - link "الشركاء" [ref=e59] [cursor=pointer]:
+          - /url: /partners
+          - img [ref=e60] [cursor=pointer]
+          - generic [ref=e62] [cursor=pointer]: الشركاء
+        - link "دفعات الشركاء" [ref=e63] [cursor=pointer]:
+          - /url: /partner-payments
+          - img [ref=e64] [cursor=pointer]
+          - generic [ref=e66] [cursor=pointer]: دفعات الشركاء
+        - link "فواتير الشراء" [ref=e67] [cursor=pointer]:
+          - /url: /purchase-invoices
+          - img [ref=e68] [cursor=pointer]
+          - generic [ref=e70] [cursor=pointer]: فواتير الشراء
+        - link "أموال الحاويات" [ref=e71] [cursor=pointer]:
+          - /url: /container-funds
+          - img [ref=e72] [cursor=pointer]
+          - generic [ref=e74] [cursor=pointer]: أموال الحاويات
+      - group [ref=e75]:
+        - generic "التقارير" [ref=e76] [cursor=pointer]:
+          - generic [ref=e77] [cursor=pointer]: التقارير
+          - generic [ref=e78] [cursor=pointer]: ⌄
+      - group [ref=e79]:
+        - generic "إدارة النظام" [ref=e80] [cursor=pointer]:
+          - generic [ref=e81] [cursor=pointer]: إدارة النظام
+          - generic [ref=e82] [cursor=pointer]: ⌄
+      - group [ref=e83]:
+        - generic "أدوات إضافية" [ref=e84] [cursor=pointer]:
+          - generic [ref=e85] [cursor=pointer]: أدوات إضافية
+          - generic [ref=e86] [cursor=pointer]: ⌄
+    - generic [ref=e87]:
+      - generic [ref=e88]: م
+      - generic [ref=e89]:
+        - strong [ref=e90]: مالك اختبار تدفقات المبيعات
+        - generic [ref=e91]: المالك
+      - button "تسجيل الخروج" [ref=e92] [cursor=pointer]:
+        - img [ref=e93] [cursor=pointer]
+  - generic [ref=e95]:
+    - banner [ref=e96]:
+      - navigation "مسار الصفحة" [ref=e97]:
+        - link "لوحة التحكم" [ref=e98] [cursor=pointer]:
+          - /url: /dashboard
+        - generic [ref=e99]: /
+        - link "المالية" [ref=e100] [cursor=pointer]:
+          - /url: /finance
+      - button "بحث سريع" [ref=e101] [cursor=pointer]:
+        - img [ref=e102] [cursor=pointer]
+        - generic [ref=e104] [cursor=pointer]: بحث سريع
+        - generic [ref=e105] [cursor=pointer]: تحكم + K
+      - group [ref=e106]:
+        - generic "ابدأ إجراء" [ref=e107] [cursor=pointer]:
+          - generic [ref=e108] [cursor=pointer]: ＋
+          - generic [ref=e109] [cursor=pointer]: ابدأ إجراء
+      - generic [ref=e110]:
+        - generic [ref=e111]: المظهر
+        - checkbox "التبديل إلى المظهر الفاتح" [ref=e112]
+        - generic [ref=e113]: ◐
+      - generic [ref=e114]:
+        - button "الإشعارات (10)" [ref=e116] [cursor=pointer]:
+          - img [ref=e117] [cursor=pointer]
+        - button "تسجيل الخروج" [ref=e119] [cursor=pointer]
+    - navigation "اختصارات التنقل" [ref=e120]:
+      - link "سجل العمليات" [ref=e121] [cursor=pointer]:
+        - /url: /admin/audit
+      - link "لوحة التحكم" [ref=e122] [cursor=pointer]:
+        - /url: /dashboard
+    - main [ref=e123]:
+      - generic [ref=e124]:
+        - generic [ref=e125]:
+          - generic [ref=e126]:
+            - generic [ref=e127]: إدارة الأموال والحسابات
+            - heading "المالية" [level=1] [ref=e128]
+            - paragraph [ref=e129]: كل أقسام المالية في مكان واحد. الأرقام المعروضة هنا مصدرها النظام، والعملة هي الجنيه المصري.
+          - generic [ref=e130]: "آخر تحديث: ٣٠ أكتوبر ٢٠٢٦"
+        - navigation "إجراءات مالية سريعة" [ref=e131]:
+          - link "تسجيل مصروف" [ref=e132] [cursor=pointer]:
+            - /url: /finance/expenses#new-expense
+          - link "تسجيل دفعة شريك" [ref=e133] [cursor=pointer]:
+            - /url: /partner-payments
+          - link "إنشاء فاتورة شراء" [ref=e134] [cursor=pointer]:
+            - /url: /purchase-invoices/new
+          - link "تسجيل حركة خزينة" [ref=e135] [cursor=pointer]:
+            - /url: /finance/treasury
+        - region "ملخص مالي من الخادم" [ref=e136]:
+          - article [ref=e137]:
+            - generic [ref=e138]: مبيعات اليوم
+            - strong [ref=e139]: 5,075.00 ج.م
+          - article [ref=e140]:
+            - generic [ref=e141]: مستحقات العملاء
+            - strong [ref=e142]: 4,785.00 ج.م
+        - region "أرصدة الحسابات" [ref=e143]:
+          - generic [ref=e144]:
+            - generic [ref=e145]:
+              - heading "أرصدة الحسابات" [level=2] [ref=e146]
+              - paragraph [ref=e147]: الرصيد المسجل لكل حساب كما أعاده الخادم.
+            - link "عرض حسابات الخزينة" [ref=e148] [cursor=pointer]:
+              - /url: /finance/treasury
+          - generic [ref=e149]:
+            - article [ref=e150]:
+              - generic [ref=e151]: Accounting acceptance cash 0B502A1D
+              - generic [ref=e152]: AE-0B502A1D-CASH
+              - strong [ref=e153]: 0.00 ج.م
+            - article [ref=e154]:
+              - generic [ref=e155]: Accounting acceptance cash 0BB87271
+              - generic [ref=e156]: AE-0BB87271-CASH
+              - strong [ref=e157]: 190.00 ج.م
+            - article [ref=e158]:
+              - generic [ref=e159]: Accounting acceptance cash 152123D5
+              - generic [ref=e160]: AE-152123D5-CASH
+              - strong [ref=e161]: 0.00 ج.م
+            - article [ref=e162]:
+              - generic [ref=e163]: Accounting acceptance cash 15229A69
+              - generic [ref=e164]: AE-15229A69-CASH
+              - strong [ref=e165]: 0.00 ج.م
+            - article [ref=e166]:
+              - generic [ref=e167]: Accounting acceptance cash 15FDE0BB
+              - generic [ref=e168]: AE-15FDE0BB-CASH
+              - strong [ref=e169]: 0.00 ج.م
+            - article [ref=e170]:
+              - generic [ref=e171]: Accounting acceptance cash 1BB0E266
+              - generic [ref=e172]: AE-1BB0E266-CASH
+              - strong [ref=e173]: 0.00 ج.م
+            - article [ref=e174]:
+              - generic [ref=e175]: Accounting acceptance cash 1D5940D3
+              - generic [ref=e176]: AE-1D5940D3-CASH
+              - strong [ref=e177]: 0.00 ج.م
+            - article [ref=e178]:
+              - generic [ref=e179]: Accounting acceptance cash 22D1E2D9
+              - generic [ref=e180]: AE-22D1E2D9-CASH
+              - strong [ref=e181]: 0.00 ج.م
+            - article [ref=e182]:
+              - generic [ref=e183]: Accounting acceptance cash 2384F222
+              - generic [ref=e184]: AE-2384F222-CASH
+              - strong [ref=e185]: 0.00 ج.م
+            - article [ref=e186]:
+              - generic [ref=e187]: Accounting acceptance cash 2FD188BD
+              - generic [ref=e188]: AE-2FD188BD-CASH
+              - strong [ref=e189]: 0.00 ج.م
+            - article [ref=e190]:
+              - generic [ref=e191]: Accounting acceptance cash 3209FB65
+              - generic [ref=e192]: AE-3209FB65-CASH
+              - strong [ref=e193]: 0.00 ج.م
+            - article [ref=e194]:
+              - generic [ref=e195]: Accounting acceptance cash 33E4C96C
+              - generic [ref=e196]: AE-33E4C96C-CASH
+              - strong [ref=e197]: 0.00 ج.م
+            - article [ref=e198]:
+              - generic [ref=e199]: Accounting acceptance cash 3AFED7DA
+              - generic [ref=e200]: AE-3AFED7DA-CASH
+              - strong [ref=e201]: 0.00 ج.م
+            - article [ref=e202]:
+              - generic [ref=e203]: Accounting acceptance cash 3FEC2200
+              - generic [ref=e204]: AE-3FEC2200-CASH
+              - strong [ref=e205]: 0.00 ج.م
+            - article [ref=e206]:
+              - generic [ref=e207]: Accounting acceptance cash 46F26119
+              - generic [ref=e208]: AE-46F26119-CASH
+              - strong [ref=e209]: 0.00 ج.م
+            - article [ref=e210]:
+              - generic [ref=e211]: Accounting acceptance cash 4AD31865
+              - generic [ref=e212]: AE-4AD31865-CASH
+              - strong [ref=e213]: 0.00 ج.م
+            - article [ref=e214]:
+              - generic [ref=e215]: Accounting acceptance cash 4B89467A
+              - generic [ref=e216]: AE-4B89467A-CASH
+              - strong [ref=e217]: 0.00 ج.م
+            - article [ref=e218]:
+              - generic [ref=e219]: Accounting acceptance cash 4D151A90
+              - generic [ref=e220]: AE-4D151A90-CASH
+              - strong [ref=e221]: 75.00 ج.م
+            - article [ref=e222]:
+              - generic [ref=e223]: Accounting acceptance cash 4DDE4079
+              - generic [ref=e224]: AE-4DDE4079-CASH
+              - strong [ref=e225]: 0.00 ج.م
+            - article [ref=e226]:
+              - generic [ref=e227]: Accounting acceptance cash 4FB8353D
+              - generic [ref=e228]: AE-4FB8353D-CASH
+              - strong [ref=e229]: 0.00 ج.م
+            - article [ref=e230]:
+              - generic [ref=e231]: Accounting acceptance cash 520A5380
+              - generic [ref=e232]: AE-520A5380-CASH
+              - strong [ref=e233]: 0.00 ج.م
+            - article [ref=e234]:
+              - generic [ref=e235]: Accounting acceptance cash 5301D155
+              - generic [ref=e236]: AE-5301D155-CASH
+              - strong [ref=e237]: 190.00 ج.م
+            - article [ref=e238]:
+              - generic [ref=e239]: Accounting acceptance cash 5B200C0C
+              - generic [ref=e240]: AE-5B200C0C-CASH
+              - strong [ref=e241]: 0.00 ج.م
+            - article [ref=e242]:
+              - generic [ref=e243]: Accounting acceptance cash 601E4E94
+              - generic [ref=e244]: AE-601E4E94-CASH
+              - strong [ref=e245]: 0.00 ج.م
+            - article [ref=e246]:
+              - generic [ref=e247]: Accounting acceptance cash 7015E916
+              - generic [ref=e248]: AE-7015E916-CASH
+              - strong [ref=e249]: 0.00 ج.م
+            - article [ref=e250]:
+              - generic [ref=e251]: Accounting acceptance cash 71112CD1
+              - generic [ref=e252]: AE-71112CD1-CASH
+              - strong [ref=e253]: 0.00 ج.م
+            - article [ref=e254]:
+              - generic [ref=e255]: Accounting acceptance cash 72B59397
+              - generic [ref=e256]: AE-72B59397-CASH
+              - strong [ref=e257]: 0.00 ج.م
+            - article [ref=e258]:
+              - generic [ref=e259]: Accounting acceptance cash 733D16FD
+              - generic [ref=e260]: AE-733D16FD-CASH
+              - strong [ref=e261]: 0.00 ج.م
+            - article [ref=e262]:
+              - generic [ref=e263]: Accounting acceptance cash 7A33EA76
+              - generic [ref=e264]: AE-7A33EA76-CASH
+              - strong [ref=e265]: 0.00 ج.م
+            - article [ref=e266]:
+              - generic [ref=e267]: Accounting acceptance cash 7CC089A6
+              - generic [ref=e268]: AE-7CC089A6-CASH
+              - strong [ref=e269]: 0.00 ج.م
+            - article [ref=e270]:
+              - generic [ref=e271]: Accounting acceptance cash 82DF0835
+              - generic [ref=e272]: AE-82DF0835-CASH
+              - strong [ref=e273]: 0.00 ج.م
+            - article [ref=e274]:
+              - generic [ref=e275]: Accounting acceptance cash 8E68E530
+              - generic [ref=e276]: AE-8E68E530-CASH
+              - strong [ref=e277]: 0.00 ج.م
+            - article [ref=e278]:
+              - generic [ref=e279]: Accounting acceptance cash AB507EDC
+              - generic [ref=e280]: AE-AB507EDC-CASH
+              - strong [ref=e281]: 0.00 ج.م
+            - article [ref=e282]:
+              - generic [ref=e283]: Accounting acceptance cash B2CB92BE
+              - generic [ref=e284]: AE-B2CB92BE-CASH
+              - strong [ref=e285]: 0.00 ج.م
+            - article [ref=e286]:
+              - generic [ref=e287]: Accounting acceptance cash B3C470C6
+              - generic [ref=e288]: AE-B3C470C6-CASH
+              - strong [ref=e289]: 0.00 ج.م
+            - article [ref=e290]:
+              - generic [ref=e291]: Accounting acceptance cash B5D47ECE
+              - generic [ref=e292]: AE-B5D47ECE-CASH
+              - strong [ref=e293]: 0.00 ج.م
+            - article [ref=e294]:
+              - generic [ref=e295]: Accounting acceptance cash B720B620
+              - generic [ref=e296]: AE-B720B620-CASH
+              - strong [ref=e297]: 0.00 ج.م
+            - article [ref=e298]:
+              - generic [ref=e299]: Accounting acceptance cash BE5AF1A5
+              - generic [ref=e300]: AE-BE5AF1A5-CASH
+              - strong [ref=e301]: 0.00 ج.م
+            - article [ref=e302]:
+              - generic [ref=e303]: Accounting acceptance cash C2B88AB5
+              - generic [ref=e304]: AE-C2B88AB5-CASH
+              - strong [ref=e305]: 0.00 ج.م
+            - article [ref=e306]:
+              - generic [ref=e307]: Accounting acceptance cash DB7C6BA0
+              - generic [ref=e308]: AE-DB7C6BA0-CASH
+              - strong [ref=e309]: 0.00 ج.م
+            - article [ref=e310]:
+              - generic [ref=e311]: Accounting acceptance cash DF8F0309
+              - generic [ref=e312]: AE-DF8F0309-CASH
+              - strong [ref=e313]: 225.00 ج.م
+            - article [ref=e314]:
+              - generic [ref=e315]: Accounting acceptance cash E1B5C6A5
+              - generic [ref=e316]: AE-E1B5C6A5-CASH
+              - strong [ref=e317]: 0.00 ج.م
+            - article [ref=e318]:
+              - generic [ref=e319]: Accounting acceptance cash E4BE6DA9
+              - generic [ref=e320]: AE-E4BE6DA9-CASH
+              - strong [ref=e321]: 0.00 ج.م
+            - article [ref=e322]:
+              - generic [ref=e323]: Accounting acceptance cash E76BD3D2
+              - generic [ref=e324]: AE-E76BD3D2-CASH
+              - strong [ref=e325]: 0.00 ج.م
+            - article [ref=e326]:
+              - generic [ref=e327]: Accounting acceptance cash EA5852CD
+              - generic [ref=e328]: AE-EA5852CD-CASH
+              - strong [ref=e329]: 0.00 ج.م
+            - article [ref=e330]:
+              - generic [ref=e331]: Accounting acceptance cash EDD40064
+              - generic [ref=e332]: AE-EDD40064-CASH
+              - strong [ref=e333]: 0.00 ج.م
+            - article [ref=e334]:
+              - generic [ref=e335]: Accounting acceptance cash F3BE27B1
+              - generic [ref=e336]: AE-F3BE27B1-CASH
+              - strong [ref=e337]: 0.00 ج.م
+            - article [ref=e338]:
+              - generic [ref=e339]: Accounting acceptance cash F45D68E9
+              - generic [ref=e340]: AE-F45D68E9-CASH
+              - strong [ref=e341]: 0.00 ج.م
+            - article [ref=e342]:
+              - generic [ref=e343]: Accounting acceptance cash F4B1DDDD
+              - generic [ref=e344]: AE-F4B1DDDD-CASH
+              - strong [ref=e345]: 0.00 ج.م
+            - article [ref=e346]:
+              - generic [ref=e347]: Accounting acceptance cash F4D3ADE3
+              - generic [ref=e348]: AE-F4D3ADE3-CASH
+              - strong [ref=e349]: 0.00 ج.م
+            - article [ref=e350]:
+              - generic [ref=e351]: Accounting acceptance cash F4E62FF0
+              - generic [ref=e352]: AE-F4E62FF0-CASH
+              - strong [ref=e353]: 0.00 ج.م
+            - article [ref=e354]:
+              - generic [ref=e355]: Accounting acceptance cash F52F7865
+              - generic [ref=e356]: AE-F52F7865-CASH
+              - strong [ref=e357]: 0.00 ج.م
+            - article [ref=e358]:
+              - generic [ref=e359]: Accounting acceptance cash F6630D03
+              - generic [ref=e360]: AE-F6630D03-CASH
+              - strong [ref=e361]: 0.00 ج.م
+            - article [ref=e362]:
+              - generic [ref=e363]: Accounting acceptance cash F9D7EB29
+              - generic [ref=e364]: AE-F9D7EB29-CASH
+              - strong [ref=e365]: 0.00 ج.م
+            - article [ref=e366]:
+              - generic [ref=e367]: Accounting acceptance cash FC950F18
+              - generic [ref=e368]: AE-FC950F18-CASH
+              - strong [ref=e369]: 190.00 ج.م
+            - article [ref=e370]:
+              - generic [ref=e371]: Accounting acceptance cash FE965E4C
+              - generic [ref=e372]: AE-FE965E4C-CASH
+              - strong [ref=e373]: 0.00 ج.م
+            - article [ref=e374]:
+              - generic [ref=e375]: Finance acceptance treasury 01062947
+              - generic [ref=e376]: FAE-01062947
+              - strong [ref=e377]: 100,000.00 ج.م
+            - article [ref=e378]:
+              - generic [ref=e379]: Finance acceptance treasury 07136CF0
+              - generic [ref=e380]: FAE-07136CF0
+              - strong [ref=e381]: 100,070.00 ج.م
+            - article [ref=e382]:
+              - generic [ref=e383]: Finance acceptance treasury 074B7C6F
+              - generic [ref=e384]: FAE-074B7C6F
+              - strong [ref=e385]: 100,030.00 ج.م
+            - article [ref=e386]:
+              - generic [ref=e387]: Finance acceptance treasury 108E7C19
+              - generic [ref=e388]: FAE-108E7C19
+              - strong [ref=e389]: 100,030.00 ج.م
+            - article [ref=e390]:
+              - generic [ref=e391]: Finance acceptance treasury 13E7AE70
+              - generic [ref=e392]: FAE-13E7AE70
+              - strong [ref=e393]: 100,000.00 ج.م
+            - article [ref=e394]:
+              - generic [ref=e395]: Finance acceptance treasury 193C15FD
+              - generic [ref=e396]: FAE-193C15FD
+              - strong [ref=e397]: 100,000.00 ج.م
+            - article [ref=e398]:
+              - generic [ref=e399]: Finance acceptance treasury 20371EF0
+              - generic [ref=e400]: FAE-20371EF0
+              - strong [ref=e401]: 100,030.00 ج.م
+            - article [ref=e402]:
+              - generic [ref=e403]: Finance acceptance treasury 2567419D
+              - generic [ref=e404]: FAE-2567419D
+              - strong [ref=e405]: 100,000.00 ج.م
+            - article [ref=e406]:
+              - generic [ref=e407]: Finance acceptance treasury 2E6CAA5C
+              - generic [ref=e408]: FAE-2E6CAA5C
+              - strong [ref=e409]: 100,070.00 ج.م
+            - article [ref=e410]:
+              - generic [ref=e411]: Finance acceptance treasury 32442F52
+              - generic [ref=e412]: FAE-32442F52
+              - strong [ref=e413]: 100,000.00 ج.م
+            - article [ref=e414]:
+              - generic [ref=e415]: Finance acceptance treasury 33BFD0C1
+              - generic [ref=e416]: FAE-33BFD0C1
+              - strong [ref=e417]: 100,070.00 ج.م
+            - article [ref=e418]:
+              - generic [ref=e419]: Finance acceptance treasury 34BA7BB3
+              - generic [ref=e420]: FAE-34BA7BB3
+              - strong [ref=e421]: 100,030.00 ج.م
+            - article [ref=e422]:
+              - generic [ref=e423]: Finance acceptance treasury 36C6B0BE
+              - generic [ref=e424]: FAE-36C6B0BE
+              - strong [ref=e425]: 100,000.00 ج.م
+            - article [ref=e426]:
+              - generic [ref=e427]: Finance acceptance treasury 4911E19A
+              - generic [ref=e428]: FAE-4911E19A
+              - strong [ref=e429]: 100,070.00 ج.م
+            - article [ref=e430]:
+              - generic [ref=e431]: Finance acceptance treasury 4C4A64D5
+              - generic [ref=e432]: FAE-4C4A64D5
+              - strong [ref=e433]: 100,000.00 ج.م
+            - article [ref=e434]:
+              - generic [ref=e435]: Finance acceptance treasury 56EA1EE5
+              - generic [ref=e436]: FAE-56EA1EE5
+              - strong [ref=e437]: 100,000.00 ج.م
+            - article [ref=e438]:
+              - generic [ref=e439]: Finance acceptance treasury 58324134
+              - generic [ref=e440]: FAE-58324134
+              - strong [ref=e441]: 100,070.00 ج.م
+            - article [ref=e442]:
+              - generic [ref=e443]: Finance acceptance treasury 5A205F51
+              - generic [ref=e444]: FAE-5A205F51
+              - strong [ref=e445]: 100,030.00 ج.م
+            - article [ref=e446]:
+              - generic [ref=e447]: Finance acceptance treasury 6735C00E
+              - generic [ref=e448]: FAE-6735C00E
+              - strong [ref=e449]: 100,000.00 ج.م
+            - article [ref=e450]:
+              - generic [ref=e451]: Finance acceptance treasury 675E41FB
+              - generic [ref=e452]: FAE-675E41FB
+              - strong [ref=e453]: 100,000.00 ج.م
+            - article [ref=e454]:
+              - generic [ref=e455]: Finance acceptance treasury 6BECE0D3
+              - generic [ref=e456]: FAE-6BECE0D3
+              - strong [ref=e457]: 100,000.00 ج.م
+            - article [ref=e458]:
+              - generic [ref=e459]: Finance acceptance treasury 748F38C6
+              - generic [ref=e460]: FAE-748F38C6
+              - strong [ref=e461]: 100,030.00 ج.م
+            - article [ref=e462]:
+              - generic [ref=e463]: Finance acceptance treasury 75F4B98A
+              - generic [ref=e464]: FAE-75F4B98A
+              - strong [ref=e465]: 100,000.00 ج.م
+            - article [ref=e466]:
+              - generic [ref=e467]: Finance acceptance treasury 7F27B597
+              - generic [ref=e468]: FAE-7F27B597
+              - strong [ref=e469]: 100,030.00 ج.م
+            - article [ref=e470]:
+              - generic [ref=e471]: Finance acceptance treasury 820E11E7
+              - generic [ref=e472]: FAE-820E11E7
+              - strong [ref=e473]: 100,030.00 ج.م
+            - article [ref=e474]:
+              - generic [ref=e475]: Finance acceptance treasury 8A7D3229
+              - generic [ref=e476]: FAE-8A7D3229
+              - strong [ref=e477]: 100,030.00 ج.م
+            - article [ref=e478]:
+              - generic [ref=e479]: Finance acceptance treasury 9A702575
+              - generic [ref=e480]: FAE-9A702575
+              - strong [ref=e481]: 100,000.00 ج.م
+            - article [ref=e482]:
+              - generic [ref=e483]: Finance acceptance treasury A53A7106
+              - generic [ref=e484]: FAE-A53A7106
+              - strong [ref=e485]: 100,000.00 ج.م
+            - article [ref=e486]:
+              - generic [ref=e487]: Finance acceptance treasury BCAFE1CF
+              - generic [ref=e488]: FAE-BCAFE1CF
+              - strong [ref=e489]: 100,030.00 ج.م
+            - article [ref=e490]:
+              - generic [ref=e491]: Finance acceptance treasury BD957E63
+              - generic [ref=e492]: FAE-BD957E63
+              - strong [ref=e493]: 100,000.00 ج.م
+            - article [ref=e494]:
+              - generic [ref=e495]: Finance acceptance treasury BF175BE5
+              - generic [ref=e496]: FAE-BF175BE5
+              - strong [ref=e497]: 100,000.00 ج.م
+            - article [ref=e498]:
+              - generic [ref=e499]: Finance acceptance treasury C77EFC49
+              - generic [ref=e500]: FAE-C77EFC49
+              - strong [ref=e501]: 100,000.00 ج.م
+            - article [ref=e502]:
+              - generic [ref=e503]: Finance acceptance treasury C8335841
+              - generic [ref=e504]: FAE-C8335841
+              - strong [ref=e505]: 100,030.00 ج.م
+            - article [ref=e506]:
+              - generic [ref=e507]: Finance acceptance treasury CAA60EB1
+              - generic [ref=e508]: FAE-CAA60EB1
+              - strong [ref=e509]: 100,020.00 ج.م
+            - article [ref=e510]:
+              - generic [ref=e511]: Finance acceptance treasury CB9EA7A6
+              - generic [ref=e512]: FAE-CB9EA7A6
+              - strong [ref=e513]: 100,000.00 ج.م
+            - article [ref=e514]:
+              - generic [ref=e515]: Finance acceptance treasury CD124596
+              - generic [ref=e516]: FAE-CD124596
+              - strong [ref=e517]: 100,000.00 ج.م
+            - article [ref=e518]:
+              - generic [ref=e519]: Finance acceptance treasury CD69C071
+              - generic [ref=e520]: FAE-CD69C071
+              - strong [ref=e521]: 100,000.00 ج.م
+            - article [ref=e522]:
+              - generic [ref=e523]: Finance acceptance treasury CE311DF7
+              - generic [ref=e524]: FAE-CE311DF7
+              - strong [ref=e525]: 100,000.00 ج.م
+            - article [ref=e526]:
+              - generic [ref=e527]: Finance acceptance treasury CE592821
+              - generic [ref=e528]: FAE-CE592821
+              - strong [ref=e529]: 100,030.00 ج.م
+            - article [ref=e530]:
+              - generic [ref=e531]: Finance acceptance treasury D23D1590
+              - generic [ref=e532]: FAE-D23D1590
+              - strong [ref=e533]: 100,030.00 ج.م
+            - article [ref=e534]:
+              - generic [ref=e535]: Finance acceptance treasury DC705B33
+              - generic [ref=e536]: FAE-DC705B33
+              - strong [ref=e537]: 100,000.00 ج.م
+            - article [ref=e538]:
+              - generic [ref=e539]: Finance acceptance treasury E0631616
+              - generic [ref=e540]: FAE-E0631616
+              - strong [ref=e541]: 100,030.00 ج.م
+            - article [ref=e542]:
+              - generic [ref=e543]: Finance acceptance treasury E127DB93
+              - generic [ref=e544]: FAE-E127DB93
+              - strong [ref=e545]: 100,000.00 ج.م
+            - article [ref=e546]:
+              - generic [ref=e547]: Finance acceptance treasury ED2B771C
+              - generic [ref=e548]: FAE-ED2B771C
+              - strong [ref=e549]: 100,000.00 ج.م
+            - article [ref=e550]:
+              - generic [ref=e551]: Finance acceptance treasury F3E0AEFD
+              - generic [ref=e552]: FAE-F3E0AEFD
+              - strong [ref=e553]: 100,070.00 ج.م
+            - article [ref=e554]:
+              - generic [ref=e555]: Finance acceptance treasury F8C8C3CB
+              - generic [ref=e556]: FAE-F8C8C3CB
+              - strong [ref=e557]: 100,000.00 ج.م
+            - article [ref=e558]:
+              - generic [ref=e559]: Finance acceptance treasury F9068158
+              - generic [ref=e560]: FAE-F9068158
+              - strong [ref=e561]: 100,070.00 ج.م
+            - article [ref=e562]:
+              - generic [ref=e563]: Liquidation fixture cash
+              - generic [ref=e564]: LQ-BEDB411E
+              - strong [ref=e565]: 0.00 ج.م
+            - article [ref=e566]:
+              - generic [ref=e567]: Partner payout test account
+              - generic [ref=e568]: PARTNER-EF5551D372
+              - strong [ref=e569]: 989.75 ج.م
+            - article [ref=e570]:
+              - generic [ref=e571]: Partner payout test account
+              - generic [ref=e572]: PARTNER-ACE92BCA9D
+              - strong [ref=e573]: 1,000.00 ج.م
+            - article [ref=e574]:
+              - generic [ref=e575]: Partner payout test account
+              - generic [ref=e576]: PARTNER-04EC3E6030
+              - strong [ref=e577]: 1,000.00 ج.م
+            - article [ref=e578]:
+              - generic [ref=e579]: Partner payout test account
+              - generic [ref=e580]: PARTNER-97DE8F89CA
+              - strong [ref=e581]: 1,000.00 ج.م
+            - article [ref=e582]:
+              - generic [ref=e583]: Partner payout test account
+              - generic [ref=e584]: PARTNER-11F4D2269F
+              - strong [ref=e585]: 1,000.00 ج.م
+        - generic [ref=e586]:
+          - region "ترتيب دورة الحسابات" [ref=e587]:
+            - heading "ترتيب دورة الحسابات" [level=2] [ref=e589]
+            - generic [ref=e590]:
+              - link "حسابات العملاء أرصدة العملاء وحركات التحصيل المستحقة." [ref=e591] [cursor=pointer]:
+                - /url: /reports/customer-balances
+                - strong [ref=e592] [cursor=pointer]: حسابات العملاء
+                - generic [ref=e593] [cursor=pointer]: أرصدة العملاء وحركات التحصيل المستحقة.
+                - generic [ref=e594] [cursor=pointer]: ←
+              - link "الصناديق والخزائن أرصدة النقد والبنوك وحركاتها." [ref=e595] [cursor=pointer]:
+                - /url: /finance/treasury
+                - strong [ref=e596] [cursor=pointer]: الصناديق والخزائن
+                - generic [ref=e597] [cursor=pointer]: أرصدة النقد والبنوك وحركاتها.
+                - generic [ref=e598] [cursor=pointer]: ←
+              - link "المصروفات تسجيل المصروفات ومراجعة مرحلها." [ref=e599] [cursor=pointer]:
+                - /url: /finance/expenses
+                - strong [ref=e600] [cursor=pointer]: المصروفات
+                - generic [ref=e601] [cursor=pointer]: تسجيل المصروفات ومراجعة مرحلها.
+                - generic [ref=e602] [cursor=pointer]: ←
+              - link "التحويلات بين الحسابات نقل مسجل بين حسابات الخزينة." [ref=e603] [cursor=pointer]:
+                - /url: /finance/transfers
+                - strong [ref=e604] [cursor=pointer]: التحويلات بين الحسابات
+                - generic [ref=e605] [cursor=pointer]: نقل مسجل بين حسابات الخزينة.
+                - generic [ref=e606] [cursor=pointer]: ←
+              - link "التسويات المالية التسويات المالية مع أثرها المحاسبي." [ref=e607] [cursor=pointer]:
+                - /url: /finance/adjustments
+                - strong [ref=e608] [cursor=pointer]: التسويات المالية
+                - generic [ref=e609] [cursor=pointer]: التسويات المالية مع أثرها المحاسبي.
+                - generic [ref=e610] [cursor=pointer]: ←
+              - link "العملات قائمة العملات المرجعية." [ref=e611] [cursor=pointer]:
+                - /url: /finance/currencies
+                - strong [ref=e612] [cursor=pointer]: العملات
+                - generic [ref=e613] [cursor=pointer]: قائمة العملات المرجعية.
+                - generic [ref=e614] [cursor=pointer]: ←
+              - link "دليل الحسابات دليل الحسابات والأرصدة المرحلة." [ref=e615] [cursor=pointer]:
+                - /url: /finance/chart-of-accounts
+                - strong [ref=e616] [cursor=pointer]: دليل الحسابات
+                - generic [ref=e617] [cursor=pointer]: دليل الحسابات والأرصدة المرحلة.
+                - generic [ref=e618] [cursor=pointer]: ←
+          - region "الصندوق والحسابات" [ref=e619]:
+            - heading "الصندوق والحسابات" [level=2] [ref=e621]
+            - generic [ref=e622]:
+              - link "الصندوق الوارد تسجيل ومراجعة المبالغ الواردة." [ref=e623] [cursor=pointer]:
+                - /url: /finance/inbox
+                - strong [ref=e624] [cursor=pointer]: الصندوق الوارد
+                - generic [ref=e625] [cursor=pointer]: تسجيل ومراجعة المبالغ الواردة.
+                - generic [ref=e626] [cursor=pointer]: ←
+              - link "السحب تسجيل المبالغ الخارجة من الحسابات." [ref=e627] [cursor=pointer]:
+                - /url: /finance/withdrawals
+                - strong [ref=e628] [cursor=pointer]: السحب
+                - generic [ref=e629] [cursor=pointer]: تسجيل المبالغ الخارجة من الحسابات.
+                - generic [ref=e630] [cursor=pointer]: ←
+              - link "كل الحركات مراجعة الوارد والصادر المسجل." [ref=e631] [cursor=pointer]:
+                - /url: /finance/movements
+                - strong [ref=e632] [cursor=pointer]: كل الحركات
+                - generic [ref=e633] [cursor=pointer]: مراجعة الوارد والصادر المسجل.
+                - generic [ref=e634] [cursor=pointer]: ←
+              - link "رسائل تطبيق الهاتف مراجعة الرسائل المستوردة من تطبيق الهاتف." [ref=e635] [cursor=pointer]:
+                - /url: /finance/mobile-inbox
+                - strong [ref=e636] [cursor=pointer]: رسائل تطبيق الهاتف
+                - generic [ref=e637] [cursor=pointer]: مراجعة الرسائل المستوردة من تطبيق الهاتف.
+                - generic [ref=e638] [cursor=pointer]: ←
+              - link "قنوات الدفع عبر الهاتف إدارة قنوات استقبال الرسائل المالية." [ref=e639] [cursor=pointer]:
+                - /url: /finance/mobile-channels
+                - strong [ref=e640] [cursor=pointer]: قنوات الدفع عبر الهاتف
+                - generic [ref=e641] [cursor=pointer]: إدارة قنوات استقبال الرسائل المالية.
+                - generic [ref=e642] [cursor=pointer]: ←
+          - region "الشركاء والمشتريات" [ref=e643]:
+            - heading "الشركاء والمشتريات" [level=2] [ref=e645]
+            - generic [ref=e646]:
+              - link "الشركاء حسابات الشركاء وسجل الأرباح والدفعات." [ref=e647] [cursor=pointer]:
+                - /url: /partners
+                - strong [ref=e648] [cursor=pointer]: الشركاء
+                - generic [ref=e649] [cursor=pointer]: حسابات الشركاء وسجل الأرباح والدفعات.
+                - generic [ref=e650] [cursor=pointer]: ←
+              - link "دفعات الشركاء تسجيل الدفعات ومتابعة اعتمادها." [ref=e651] [cursor=pointer]:
+                - /url: /partner-payments
+                - strong [ref=e652] [cursor=pointer]: دفعات الشركاء
+                - generic [ref=e653] [cursor=pointer]: تسجيل الدفعات ومتابعة اعتمادها.
+                - generic [ref=e654] [cursor=pointer]: ←
+              - link "فواتير الشراء فواتير الموردين المسجلة والمشتريات." [ref=e655] [cursor=pointer]:
+                - /url: /purchase-invoices
+                - strong [ref=e656] [cursor=pointer]: فواتير الشراء
+                - generic [ref=e657] [cursor=pointer]: فواتير الموردين المسجلة والمشتريات.
+                - generic [ref=e658] [cursor=pointer]: ←
+          - region "أموال الحاويات والمرتجعات" [ref=e659]:
+            - heading "أموال الحاويات والمرتجعات" [level=2] [ref=e661]
+            - generic [ref=e662]:
+              - link "أموال الحاويات متابعة الحركات المالية المرتبطة بالحاويات." [ref=e663] [cursor=pointer]:
+                - /url: /container-funds
+                - strong [ref=e664] [cursor=pointer]: أموال الحاويات
+                - generic [ref=e665] [cursor=pointer]: متابعة الحركات المالية المرتبطة بالحاويات.
+                - generic [ref=e666] [cursor=pointer]: ←
+              - link "الحاويات والتكاليف تفاصيل الحاويات والتكاليف المسجلة عليها." [ref=e667] [cursor=pointer]:
+                - /url: /containers
+                - strong [ref=e668] [cursor=pointer]: الحاويات والتكاليف
+                - generic [ref=e669] [cursor=pointer]: تفاصيل الحاويات والتكاليف المسجلة عليها.
+                - generic [ref=e670] [cursor=pointer]: ←
+              - link "مرتجعات المخازن متابعة المرتجعات المسجلة للمخازن." [ref=e671] [cursor=pointer]:
+                - /url: /warehouse-returns
+                - strong [ref=e672] [cursor=pointer]: مرتجعات المخازن
+                - generic [ref=e673] [cursor=pointer]: متابعة المرتجعات المسجلة للمخازن.
+                - generic [ref=e674] [cursor=pointer]: ←
+              - link "تقرير تكلفة الحاويات مراجعة التكلفة المسجلة والمدفوعة والمتبقية." [ref=e675] [cursor=pointer]:
+                - /url: /reports/container-costs
+                - strong [ref=e676] [cursor=pointer]: تقرير تكلفة الحاويات
+                - generic [ref=e677] [cursor=pointer]: مراجعة التكلفة المسجلة والمدفوعة والمتبقية.
+                - generic [ref=e678] [cursor=pointer]: ←
+          - region "التقارير المالية" [ref=e679]:
+            - heading "التقارير المالية" [level=2] [ref=e681]
+            - generic [ref=e682]:
+              - link "التقرير المالي القوائم المالية من القيود المرحلة للفترة المحددة." [ref=e683] [cursor=pointer]:
+                - /url: /reports/financial
+                - strong [ref=e684] [cursor=pointer]: التقرير المالي
+                - generic [ref=e685] [cursor=pointer]: القوائم المالية من القيود المرحلة للفترة المحددة.
+                - generic [ref=e686] [cursor=pointer]: ←
+              - link "تحصيلات العملاء مراجعة عمليات التحصيل المسجلة." [ref=e687] [cursor=pointer]:
+                - /url: /collections
+                - strong [ref=e688] [cursor=pointer]: تحصيلات العملاء
+                - generic [ref=e689] [cursor=pointer]: مراجعة عمليات التحصيل المسجلة.
+                - generic [ref=e690] [cursor=pointer]: ←
+              - link "مرتجعات العملاء مراجعة المرتجعات المسجلة على فواتير البيع." [ref=e691] [cursor=pointer]:
+                - /url: /returns
+                - strong [ref=e692] [cursor=pointer]: مرتجعات العملاء
+                - generic [ref=e693] [cursor=pointer]: مراجعة المرتجعات المسجلة على فواتير البيع.
+                - generic [ref=e694] [cursor=pointer]: ←
+          - region "التخطيط المالي والسيولة" [ref=e695]:
+            - heading "التخطيط المالي والسيولة" [level=2] [ref=e697]
+            - generic [ref=e698]:
+              - link "الأموال المنتظرة توقعات التحصيل ومصادرها ومواعيدها، منفصلة عن النقد الفعلي." [ref=e699] [cursor=pointer]:
+                - /url: /finance/pending-funds
+                - strong [ref=e700] [cursor=pointer]: الأموال المنتظرة
+                - generic [ref=e701] [cursor=pointer]: توقعات التحصيل ومصادرها ومواعيدها، منفصلة عن النقد الفعلي.
+                - generic [ref=e702] [cursor=pointer]: ←
+              - link "أقساط الشركاء خطط التحصيل ومواعيد الأقساط والمدفوعات الفعلية." [ref=e703] [cursor=pointer]:
+                - /url: /finance/partner-installments
+                - strong [ref=e704] [cursor=pointer]: أقساط الشركاء
+                - generic [ref=e705] [cursor=pointer]: خطط التحصيل ومواعيد الأقساط والمدفوعات الفعلية.
+                - generic [ref=e706] [cursor=pointer]: ←
+              - link "ميزانية المصروفات مقارنة الميزانية الشهرية لكل تصنيف بما تم ترحيله فعلياً." [ref=e707] [cursor=pointer]:
+                - /url: /finance/expense-budgets
+                - strong [ref=e708] [cursor=pointer]: ميزانية المصروفات
+                - generic [ref=e709] [cursor=pointer]: مقارنة الميزانية الشهرية لكل تصنيف بما تم ترحيله فعلياً.
+                - generic [ref=e710] [cursor=pointer]: ←
+              - link "المصروفات المتكررة قوالب دورية واستحقاق واحد لكل دورة." [ref=e711] [cursor=pointer]:
+                - /url: /finance/recurring-expenses
+                - strong [ref=e712] [cursor=pointer]: المصروفات المتكررة
+                - generic [ref=e713] [cursor=pointer]: قوالب دورية واستحقاق واحد لكل دورة.
+                - generic [ref=e714] [cursor=pointer]: ←
+              - link "مقارنة شهر بشهر مقارنة المبيعات والمصروفات والربح بين فترتين." [ref=e715] [cursor=pointer]:
+                - /url: /finance/monthly-comparison
+                - strong [ref=e716] [cursor=pointer]: مقارنة شهر بشهر
+                - generic [ref=e717] [cursor=pointer]: مقارنة المبيعات والمصروفات والربح بين فترتين.
+                - generic [ref=e718] [cursor=pointer]: ←
+              - link "توقع السيولة التدفقات الفعلية والمستحقة والرصيد المتوقع لكل أسبوع." [ref=e719] [cursor=pointer]:
+                - /url: /finance/cash-forecast
+                - strong [ref=e720] [cursor=pointer]: توقع السيولة
+                - generic [ref=e721] [cursor=pointer]: التدفقات الفعلية والمستحقة والرصيد المتوقع لكل أسبوع.
+                - generic [ref=e722] [cursor=pointer]: ←
+          - region "المحاسبة" [ref=e723]:
+            - heading "المحاسبة" [level=2] [ref=e725]
+            - generic [ref=e726]:
+              - link "قيود اليومية إنشاء القيود المتوازنة وترحيلها وعكسها." [ref=e727] [cursor=pointer]:
+                - /url: /finance/journals
+                - strong [ref=e728] [cursor=pointer]: قيود اليومية
+                - generic [ref=e729] [cursor=pointer]: إنشاء القيود المتوازنة وترحيلها وعكسها.
+                - generic [ref=e730] [cursor=pointer]: ←
+              - link "دفتر الأستاذ حركة حساب ورصيده في الفترة المحددة." [ref=e731] [cursor=pointer]:
+                - /url: /finance/ledger
+                - strong [ref=e732] [cursor=pointer]: دفتر الأستاذ
+                - generic [ref=e733] [cursor=pointer]: حركة حساب ورصيده في الفترة المحددة.
+                - generic [ref=e734] [cursor=pointer]: ←
+              - link "ميزان المراجعة أرصدة الحسابات والتحقق من توازنها." [ref=e735] [cursor=pointer]:
+                - /url: /finance/trial-balance
+                - strong [ref=e736] [cursor=pointer]: ميزان المراجعة
+                - generic [ref=e737] [cursor=pointer]: أرصدة الحسابات والتحقق من توازنها.
+                - generic [ref=e738] [cursor=pointer]: ←
+```

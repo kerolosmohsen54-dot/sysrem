@@ -1,0 +1,175 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e7]:
+      - strong [ref=e8]: MASTER
+      - generic [ref=e9]: نظام إدارة الأعمال
+    - navigation "MASTER" [ref=e10]:
+      - group [ref=e11]:
+        - generic "المبيعات" [ref=e12] [cursor=pointer]:
+          - generic [ref=e13] [cursor=pointer]: المبيعات
+          - generic [ref=e14] [cursor=pointer]: ⌄
+        - link "الطلبات" [ref=e15] [cursor=pointer]:
+          - /url: /orders
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: الطلبات
+        - link "فواتير البيع" [ref=e19] [cursor=pointer]:
+          - /url: /invoices
+          - img [ref=e20] [cursor=pointer]
+          - generic [ref=e22] [cursor=pointer]: فواتير البيع
+        - link "إنشاء فاتورة بيع" [ref=e23] [cursor=pointer]:
+          - /url: /invoices/new
+          - generic [ref=e24] [cursor=pointer]: ↗
+          - generic [ref=e25] [cursor=pointer]: إنشاء فاتورة بيع
+      - group [ref=e26]:
+        - generic "المنتجات والمخزون" [ref=e27] [cursor=pointer]:
+          - generic [ref=e28] [cursor=pointer]: المنتجات والمخزون
+          - generic [ref=e29] [cursor=pointer]: ⌄
+      - group [ref=e30]:
+        - generic "الحاويات" [ref=e31] [cursor=pointer]:
+          - generic [ref=e32] [cursor=pointer]: الحاويات
+          - generic [ref=e33] [cursor=pointer]: ⌄
+      - group [ref=e34]:
+        - generic "التقارير" [ref=e35] [cursor=pointer]:
+          - generic [ref=e36] [cursor=pointer]: التقارير
+          - generic [ref=e37] [cursor=pointer]: ⌄
+      - group [ref=e38]:
+        - generic "إدارة النظام" [ref=e39] [cursor=pointer]:
+          - generic [ref=e40] [cursor=pointer]: إدارة النظام
+          - generic [ref=e41] [cursor=pointer]: ⌄
+    - generic [ref=e42]:
+      - generic [ref=e43]: م
+      - generic [ref=e44]:
+        - strong [ref=e45]: مالك اختبار حجز المخزون
+        - generic [ref=e46]: دور غير معروف
+      - button "تسجيل الخروج" [ref=e47] [cursor=pointer]:
+        - img [ref=e48] [cursor=pointer]
+  - generic [ref=e50]:
+    - banner [ref=e51]:
+      - navigation "مسار الصفحة" [ref=e52]:
+        - link "لوحة التحكم" [ref=e53] [cursor=pointer]:
+          - /url: /dashboard
+        - generic [ref=e54]: /
+        - link "المبيعات" [ref=e55] [cursor=pointer]:
+          - /url: /orders
+        - generic [ref=e56]: /
+        - strong [ref=e57]: تفاصيل الطلب
+      - button "بحث سريع" [ref=e58] [cursor=pointer]:
+        - img [ref=e59] [cursor=pointer]
+        - generic [ref=e61] [cursor=pointer]: بحث سريع
+        - generic [ref=e62] [cursor=pointer]: تحكم + K
+      - group [ref=e63]:
+        - generic "ابدأ إجراء" [ref=e64] [cursor=pointer]:
+          - generic [ref=e65] [cursor=pointer]: ＋
+          - generic [ref=e66] [cursor=pointer]: ابدأ إجراء
+      - generic [ref=e67]:
+        - generic [ref=e68]: المظهر
+        - checkbox "التبديل إلى المظهر الفاتح" [ref=e69]
+        - generic [ref=e70]: ◐
+      - generic [ref=e71]:
+        - button "الإشعارات" [ref=e73] [cursor=pointer]:
+          - img [ref=e74] [cursor=pointer]
+        - button "تسجيل الخروج" [ref=e76] [cursor=pointer]
+    - navigation "اختصارات التنقل" [ref=e77]
+    - main [ref=e78]:
+      - generic [ref=e79]:
+        - generic [ref=e80]:
+          - generic [ref=e81]:
+            - 'heading "تفاصيل الطلب: RSV-E2E-invoice-C472347C" [level=1] [ref=e82]'
+            - paragraph [ref=e83]: "العميل: عميل اختبار حجز C472347C · مؤكد"
+          - generic [ref=e84]:
+            - link "رجوع" [ref=e85] [cursor=pointer]:
+              - /url: /orders
+            - link "طباعة الطلب" [ref=e86] [cursor=pointer]:
+              - /url: /orders/208/print
+        - status [ref=e87]: تم إرسال الطلب بنجاح.
+        - group "تفاصيل الطلب" [ref=e88]:
+          - button "بيانات الطلب" [active] [pressed] [ref=e89] [cursor=pointer]
+          - button "الأصناف والأسعار" [ref=e90] [cursor=pointer]
+          - button "الحجوزات" [ref=e91] [cursor=pointer]
+          - button "أذونات التسليم" [ref=e92] [cursor=pointer]
+          - button "الفواتير" [ref=e93] [cursor=pointer]
+        - generic [ref=e94]:
+          - generic [ref=e95]:
+            - term [ref=e96]: رقم الطلب
+            - definition [ref=e97]: RSV-E2E-invoice-C472347C
+          - generic [ref=e98]:
+            - term [ref=e99]: العميل
+            - definition [ref=e100]: عميل اختبار حجز C472347C
+          - generic [ref=e101]:
+            - term [ref=e102]: تاريخ الطلب
+            - definition [ref=e103]: ٣٠ أكتوبر ٢٠٢٦
+          - generic [ref=e104]:
+            - term [ref=e105]: تاريخ التسليم المطلوب
+            - definition [ref=e106]: —
+          - generic [ref=e107]:
+            - term [ref=e108]: المندوب
+            - definition [ref=e109]: —
+          - generic [ref=e110]:
+            - term [ref=e111]: المخزن
+            - definition [ref=e112]: —
+          - generic [ref=e113]:
+            - term [ref=e114]: طريقة الدفع
+            - definition [ref=e115]: —
+          - generic [ref=e116]:
+            - term [ref=e117]: شروط الدفع
+            - definition [ref=e118]: —
+          - generic [ref=e119]:
+            - term [ref=e120]: العملة
+            - definition [ref=e121]:
+              - generic [ref=e122]: EGP
+          - generic [ref=e123]:
+            - term [ref=e124]: حالة الطلب
+            - definition [ref=e125]: مؤكد
+          - generic [ref=e126]:
+            - term [ref=e127]: الإجمالي
+            - definition [ref=e128]: 0.0000 ج.م
+          - generic [ref=e129]:
+            - term [ref=e130]: الإجمالي قبل الخصم
+            - definition [ref=e131]: 0.0000 ج.م
+          - generic [ref=e132]:
+            - term [ref=e133]: الخصم
+            - definition [ref=e134]: 0.0000 ج.م
+          - generic [ref=e135]:
+            - term [ref=e136]: الضريبة
+            - definition [ref=e137]: 0.0000 ج.م
+        - paragraph [ref=e138]: "ملاحظات الطلب: Acceptance fixture C472347C"
+        - region "أصناف الطلب" [ref=e139]:
+          - heading "أصناف الطلب" [level=2] [ref=e140]
+          - table [ref=e142]:
+            - rowgroup [ref=e143]:
+              - row "المنتج رمز الصنف الكمية سعر الوحدة (ج.م) الخصم % الإجمالي" [ref=e144]:
+                - columnheader "المنتج" [ref=e145]
+                - columnheader "رمز الصنف" [ref=e146]
+                - columnheader "الكمية" [ref=e147]
+                - columnheader "سعر الوحدة (ج.م)" [ref=e148]
+                - columnheader "الخصم %" [ref=e149]
+                - columnheader "الإجمالي" [ref=e150]
+            - rowgroup [ref=e151]:
+              - row "صنف اختبار الحجز C472347C RSV-E2E-C472347C 3 25.0000 ج.م 0.00% 0.0000 ج.م" [ref=e152]:
+                - cell "صنف اختبار الحجز C472347C" [ref=e153]
+                - cell "RSV-E2E-C472347C" [ref=e154]
+                - cell "3" [ref=e155]
+                - cell "25.0000 ج.م" [ref=e156]
+                - cell "0.00%" [ref=e157]:
+                  - generic [ref=e158]: 0.00%
+                - cell "0.0000 ج.م" [ref=e159]
+        - generic [ref=e160]:
+          - generic [ref=e161]:
+            - generic [ref=e162]:
+              - text: سبب الإلغاء
+              - generic [ref=e163]: "*"
+            - textbox "سبب الإلغاء" [ref=e164]
+          - button "إلغاء الطلب" [ref=e165] [cursor=pointer]
+        - region "الإجراءات" [ref=e166]:
+          - heading "الإجراءات" [level=2] [ref=e167]
+          - generic [ref=e168]:
+            - heading "إصدار فاتورة للطلب بالكامل" [level=3] [ref=e169]
+            - paragraph [ref=e170]: اختر المخزن لكل صنف لإصدار الفاتورة.
+            - generic [ref=e171]:
+              - generic [ref=e172]: صنف اختبار الحجز C472347C — المخزن
+              - combobox "صنف اختبار الحجز C472347C — المخزن" [ref=e173]
+            - button "إصدار فاتورة للطلب بالكامل" [ref=e174] [cursor=pointer]
+```

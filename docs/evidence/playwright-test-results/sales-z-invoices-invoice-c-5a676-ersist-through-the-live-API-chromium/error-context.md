@@ -1,0 +1,662 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - complementary [ref=e4]:
+      - generic [ref=e7]:
+        - strong [ref=e8]: MASTER
+        - generic [ref=e9]: نظام إدارة الأعمال
+      - navigation "MASTER" [ref=e10]:
+        - link "لوحة التحكم" [ref=e11] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e12] [cursor=pointer]
+          - generic [ref=e14] [cursor=pointer]: لوحة التحكم
+        - group [ref=e15]:
+          - generic "المبيعات" [ref=e16] [cursor=pointer]:
+            - generic [ref=e17] [cursor=pointer]: المبيعات
+            - generic [ref=e18] [cursor=pointer]: ⌄
+          - link "الطلبات" [ref=e19] [cursor=pointer]:
+            - /url: /orders
+            - img [ref=e20] [cursor=pointer]
+            - generic [ref=e22] [cursor=pointer]: الطلبات
+          - link "أذونات التسليم" [ref=e23] [cursor=pointer]:
+            - /url: /deliveries
+            - img [ref=e24] [cursor=pointer]
+            - generic [ref=e26] [cursor=pointer]: أذونات التسليم
+          - link "فواتير البيع" [ref=e27] [cursor=pointer]:
+            - /url: /invoices
+            - img [ref=e28] [cursor=pointer]
+            - generic [ref=e30] [cursor=pointer]: فواتير البيع
+          - link "التحصيلات" [ref=e31] [cursor=pointer]:
+            - /url: /collections
+            - img [ref=e32] [cursor=pointer]
+            - generic [ref=e34] [cursor=pointer]: التحصيلات
+          - link "مرتجعات المبيعات" [ref=e35] [cursor=pointer]:
+            - /url: /returns
+            - img [ref=e36] [cursor=pointer]
+            - generic [ref=e38] [cursor=pointer]: مرتجعات المبيعات
+          - link "إنشاء فاتورة بيع" [ref=e39] [cursor=pointer]:
+            - /url: /invoices/new
+            - generic [ref=e40] [cursor=pointer]: ↗
+            - generic [ref=e41] [cursor=pointer]: إنشاء فاتورة بيع
+          - link "إنشاء مرتجع" [ref=e42] [cursor=pointer]:
+            - /url: /returns/new
+            - generic [ref=e43] [cursor=pointer]: ↗
+            - generic [ref=e44] [cursor=pointer]: إنشاء مرتجع
+        - group [ref=e45]:
+          - generic "العملاء" [ref=e46] [cursor=pointer]:
+            - generic [ref=e47] [cursor=pointer]: العملاء
+            - generic [ref=e48] [cursor=pointer]: ⌄
+        - group [ref=e49]:
+          - generic "المنتجات والمخزون" [ref=e50] [cursor=pointer]:
+            - generic [ref=e51] [cursor=pointer]: المنتجات والمخزون
+            - generic [ref=e52] [cursor=pointer]: ⌄
+        - group [ref=e53]:
+          - generic "الحاويات" [ref=e54] [cursor=pointer]:
+            - generic [ref=e55] [cursor=pointer]: الحاويات
+            - generic [ref=e56] [cursor=pointer]: ⌄
+        - group [ref=e57]:
+          - generic "المالية" [ref=e58] [cursor=pointer]:
+            - generic [ref=e59] [cursor=pointer]: المالية
+            - generic [ref=e60] [cursor=pointer]: ⌄
+        - group [ref=e61]:
+          - generic "التقارير" [ref=e62] [cursor=pointer]:
+            - generic [ref=e63] [cursor=pointer]: التقارير
+            - generic [ref=e64] [cursor=pointer]: ⌄
+        - group [ref=e65]:
+          - generic "إدارة النظام" [ref=e66] [cursor=pointer]:
+            - generic [ref=e67] [cursor=pointer]: إدارة النظام
+            - generic [ref=e68] [cursor=pointer]: ⌄
+        - group [ref=e69]:
+          - generic "أدوات إضافية" [ref=e70] [cursor=pointer]:
+            - generic [ref=e71] [cursor=pointer]: أدوات إضافية
+            - generic [ref=e72] [cursor=pointer]: ⌄
+      - generic [ref=e73]:
+        - generic [ref=e74]: م
+        - generic [ref=e75]:
+          - strong [ref=e76]: مالك اختبار تدفقات المبيعات
+          - generic [ref=e77]: المالك
+        - button "تسجيل الخروج" [ref=e78] [cursor=pointer]:
+          - img [ref=e79] [cursor=pointer]
+    - generic [ref=e81]:
+      - banner [ref=e82]:
+        - navigation "مسار الصفحة" [ref=e83]:
+          - link "لوحة التحكم" [ref=e84] [cursor=pointer]:
+            - /url: /dashboard
+          - generic [ref=e85]: /
+          - link "المبيعات" [ref=e86] [cursor=pointer]:
+            - /url: /invoices
+          - generic [ref=e87]: /
+          - strong [ref=e88]: إنشاء فاتورة بيع
+        - button "بحث سريع" [ref=e89] [cursor=pointer]:
+          - img [ref=e90] [cursor=pointer]
+          - generic [ref=e92] [cursor=pointer]: بحث سريع
+          - generic [ref=e93] [cursor=pointer]: تحكم + K
+        - group [ref=e94]:
+          - generic "ابدأ إجراء" [ref=e95] [cursor=pointer]:
+            - generic [ref=e96] [cursor=pointer]: ＋
+            - generic [ref=e97] [cursor=pointer]: ابدأ إجراء
+        - generic [ref=e98]:
+          - generic [ref=e99]: المظهر
+          - checkbox "التبديل إلى المظهر الفاتح" [ref=e100]
+          - generic [ref=e101]: ◐
+        - generic [ref=e102]:
+          - button "الإشعارات (10)" [ref=e104] [cursor=pointer]:
+            - img [ref=e105] [cursor=pointer]
+          - button "تسجيل الخروج" [ref=e107] [cursor=pointer]
+      - navigation "اختصارات التنقل" [ref=e108]:
+        - link "سجل العمليات" [ref=e109] [cursor=pointer]:
+          - /url: /admin/audit
+        - link "لوحة التحكم" [ref=e110] [cursor=pointer]:
+          - /url: /dashboard
+      - main [ref=e111]:
+        - generic [ref=e112]:
+          - generic [ref=e113]:
+            - generic [ref=e114]:
+              - heading "إنشاء فاتورة مبيعات جديدة" [level=1] [ref=e115]
+              - paragraph [ref=e116]: إدارة المبيعات › إنشاء فاتورة
+            - generic [ref=e117]:
+              - link "إلغاء" [ref=e118] [cursor=pointer]:
+                - /url: /invoices
+              - button "👁 معاينة الفاتورة" [ref=e119] [cursor=pointer]
+              - button "↩ إنشاء مرتجع" [ref=e120] [cursor=pointer]
+              - button "حفظ كمسودة" [ref=e121] [cursor=pointer]
+              - button "إصدار الفاتورة Ctrl+↵" [ref=e122] [cursor=pointer]:
+                - text: إصدار الفاتورة
+                - generic [ref=e123] [cursor=pointer]: Ctrl+↵
+          - generic [ref=e124]:
+            - generic [ref=e125]:
+              - region "نوع العملية" [ref=e126]:
+                - heading "نوع العملية" [level=2] [ref=e128]
+                - generic [ref=e129]:
+                  - group "هل الفاتورة مرتجع؟" [ref=e130]:
+                    - generic [ref=e131]: هل الفاتورة مرتجع؟
+                    - generic [ref=e132]:
+                      - button "فاتورة بيع" [pressed] [ref=e133] [cursor=pointer]
+                      - button "مرتجع" [ref=e134] [cursor=pointer]
+                  - group "هل سيتم التحصيل الآن؟" [ref=e135]:
+                    - generic [ref=e136]: هل سيتم التحصيل الآن؟
+                    - generic [ref=e137]:
+                      - button "نعم — تحصيل فوري" [ref=e138] [cursor=pointer]
+                      - button "لا — بدون تحصيل الآن" [pressed] [ref=e139] [cursor=pointer]
+              - region "مين اللي طلّع الفاتورة *" [ref=e140]:
+                - generic [ref=e141]:
+                  - heading "مين اللي طلّع الفاتورة *" [level=2] [ref=e142]:
+                    - text: مين اللي طلّع الفاتورة
+                    - generic [ref=e143]: "*"
+                  - generic [ref=e144]: إجباري
+                - group "مين اللي طلّع الفاتورة" [ref=e145]:
+                  - button "الشركة" [ref=e146]
+                  - button "شريك" [ref=e147]
+                  - button "سائق" [ref=e148]
+              - region "العميل" [ref=e149]:
+                - heading "العميل" [level=2] [ref=e151]
+                - generic [ref=e152]:
+                  - generic [ref=e153]: العميل *
+                  - combobox "العميل" [ref=e154]:
+                    - option "— اختر العميل —" [selected]
+                    - option "Attachment fixture 45f4b983 — ATT3f7dbdc877"
+                    - option "Attachment fixture 475fd662 — ATTd18cd4f676"
+                    - option "Attachment fixture 48271753 — ATTcae3536bb7"
+                    - option "Attachment fixture 5c87f37a — ATTb8a952926b"
+                    - option "Attachment fixture 62f6e3aa — ATTf62e5a5144"
+                    - option "Attachment fixture 6899bd65 — ATT4d4145c694"
+                    - option "Attachment fixture 6c7bb2e6 — ATTec1fcaf24c"
+                    - option "Attachment fixture 7eb4dfe9 — ATTdf42eaf636"
+                    - option "Attachment fixture 8a5d8f4c — ATTc842988095"
+                    - option "Attachment fixture 9323b4f9 — ATT5d8136c599"
+                    - option "Attachment fixture 9660ef05 — ATTcf053fa8da"
+                    - option "Attachment fixture 97cb9607 — ATT840bfcb5e1"
+                    - option "Attachment fixture a06272d7 — ATT6d61832c05"
+                    - option "Attachment fixture a09258a6 — ATT4d323009b1"
+                    - option "Attachment fixture afd9f0ec — ATTfadfdeeda7"
+                    - option "Attachment fixture bd9dac17 — ATTd5ab6f5a30"
+                    - option "Attachment fixture d056ffc1 — ATT4ce6c89cf2"
+                    - option "Attachment fixture dc87db9e — ATT1ce5b5568d"
+                    - option "Attachment fixture fbbcdb07 — ATT6e0eed16fc"
+                    - option "Blocked customer 91c44620 — BLK91c44620"
+                    - option "Governorate test customer 99de20 — GOV702f93e0f1"
+                    - option "Governorate test customer 9cd2b3 — GOV47d4a6654e"
+                    - option "Governorate test customer ab496d — GOVafbe25c5cc"
+                    - option "Governorate test customer b32c65 — GOVaa18fea824"
+                    - option "Governorate test customer cba7fe — GOV632dcb2d79"
+                    - option "Governorate test customer d7f703 — GOVb9d8955469"
+                    - option "Governorate test customer ee25c8 — GOVbb6c6572eb"
+                    - option "Liquidation fixture e18f3e6b — LQ0ad3f468e4"
+                    - option "عميل اختبار المبيعات 015E725F — 0100000015E"
+                    - option "عميل اختبار المبيعات 0399868F — 01000000399"
+                    - option "عميل اختبار المبيعات 03D41047 — 010000003D4"
+                    - option "عميل اختبار المبيعات 045AFF7B — 0100000045A"
+                    - option "عميل اختبار المبيعات 072564F4 — 01000000725"
+                    - option "عميل اختبار المبيعات 0E98EB31 — 01000000E98"
+                    - option "عميل اختبار المبيعات 10AB28B2 — 010000010AB"
+                    - option "عميل اختبار المبيعات 15235211 — 01000001523"
+                    - option "عميل اختبار المبيعات 15E7B757 — 010000015E7"
+                    - option "عميل اختبار المبيعات 160A13DC — 0100000160A"
+                    - option "عميل اختبار المبيعات 1D26F008 — 01000001D26"
+                    - option "عميل اختبار المبيعات 23045C3D — 01000002304"
+                    - option "عميل اختبار المبيعات 246E21FE — 0100000246E"
+                    - option "عميل اختبار المبيعات 25F67D7A — 010000025F6"
+                    - option "عميل اختبار المبيعات 26CC666C — 010000026CC"
+                    - option "عميل اختبار المبيعات 287971F8 — 01000002879"
+                    - option "عميل اختبار المبيعات 29164B21 — 01000002916"
+                    - option "عميل اختبار المبيعات 2DA9CF30 — 01000002DA9"
+                    - option "عميل اختبار المبيعات 331808FA — 01000003318"
+                    - option "عميل اختبار المبيعات 3430883C — 01000003430"
+                    - option "عميل اختبار المبيعات 353C766D — 0100000353C"
+                    - option "عميل اختبار المبيعات 355B21C0 — 0100000355B"
+                    - option "عميل اختبار المبيعات 3CDBB8A9 — 01000003CDB"
+                    - option "عميل اختبار المبيعات 3EFB336D — 01000003EFB"
+                    - option "عميل اختبار المبيعات 455E002C — 0100000455E"
+                    - option "عميل اختبار المبيعات 4C62B6BE — 01000004C62"
+                    - option "عميل اختبار المبيعات 4EC9F306 — 01000004EC9"
+                    - option "عميل اختبار المبيعات 4FD0DF86 — 01000004FD0"
+                    - option "عميل اختبار المبيعات 51D28194 — 010000051D2"
+                    - option "عميل اختبار المبيعات 58FB0297 — 010000058FB"
+                    - option "عميل اختبار المبيعات 5AFB225E — 01000005AFB"
+                    - option "عميل اختبار المبيعات 5BB6B42D — 01000005BB6"
+                    - option "عميل اختبار المبيعات 5E8E574D — 01000005E8E"
+                    - option "عميل اختبار المبيعات 5EAA60BD — 01000005EAA"
+                    - option "عميل اختبار المبيعات 61B20884 — 010000061B2"
+                    - option "عميل اختبار المبيعات 6632E559 — 01000006632"
+                    - option "عميل اختبار المبيعات 6C85B028 — 01000006C85"
+                    - option "عميل اختبار المبيعات 6EBCEC8C — 01000006EBC"
+                    - option "عميل اختبار المبيعات 6F733FC1 — 01000006F73"
+                    - option "عميل اختبار المبيعات 703708B8 — 01000007037"
+                    - option "عميل اختبار المبيعات 71873C61 — 01000007187"
+                    - option "عميل اختبار المبيعات 7405D5BC — 01000007405"
+                    - option "عميل اختبار المبيعات 776D95E7 — 0100000776D"
+                    - option "عميل اختبار المبيعات 7973FE8D — 01000007973"
+                    - option "عميل اختبار المبيعات 7B12B20E — 01000007B12"
+                    - option "عميل اختبار المبيعات 7D4D2441 — 01000007D4D"
+                    - option "عميل اختبار المبيعات 7FAE90AF — 01000007FAE"
+                    - option "عميل اختبار المبيعات 81C8AD2D — 010000081C8"
+                    - option "عميل اختبار المبيعات 879EFF06 — 0100000879E"
+                    - option "عميل اختبار المبيعات 89445E66 — 01000008944"
+                    - option "عميل اختبار المبيعات 8C4C4819 — 01000008C4C"
+                    - option "عميل اختبار المبيعات 91E419D9 — 010000091E4"
+                    - option "عميل اختبار المبيعات 920F11FB — 0100000920F"
+                    - option "عميل اختبار المبيعات 9425C4D2 — 01000009425"
+                    - option "عميل اختبار المبيعات 974CCBFB — 0100000974C"
+                    - option "عميل اختبار المبيعات A4360876 — 0100000A436"
+                    - option "عميل اختبار المبيعات A570AE7C — 0100000A570"
+                    - option "عميل اختبار المبيعات A698CBE2 — 0100000A698"
+                    - option "عميل اختبار المبيعات A6CAB5AF — 0100000A6CA"
+                    - option "عميل اختبار المبيعات AD938A6E — 0100000AD93"
+                    - option "عميل اختبار المبيعات AF6F2926 — 0100000AF6F"
+                    - option "عميل اختبار المبيعات B4FD569B — 0100000B4FD"
+                    - option "عميل اختبار المبيعات B676C7BF — 0100000B676"
+                    - option "عميل اختبار المبيعات B6CF56D7 — 0100000B6CF"
+                    - option "عميل اختبار المبيعات BDB9347C — 0100000BDB9"
+                    - option "عميل اختبار المبيعات BEDF3E40 — 0100000BEDF"
+                    - option "عميل اختبار المبيعات C31429F7 — 0100000C314"
+                    - option "عميل اختبار المبيعات C4FBE7D1 — 0100000C4FB"
+                    - option "عميل اختبار المبيعات C4FE03E9 — 0100000C4FE"
+                    - option "عميل اختبار المبيعات C83BF6BF — 0100000C83B"
+                    - option "عميل اختبار المبيعات CB0655A1 — 0100000CB06"
+                    - option "عميل اختبار المبيعات CF433601 — 0100000CF43"
+                  - link "+ إضافة عميل جديد" [ref=e155] [cursor=pointer]:
+                    - /url: /customers
+                - button "عميل اختبار المبيعات 10AB28B2" [ref=e157]
+                - generic [ref=e158]:
+                  - generic [ref=e159]:
+                    - generic [ref=e160]: رقم الهاتف
+                    - textbox "رقم الهاتف" [disabled] [ref=e161]: —
+                  - generic [ref=e162]:
+                    - generic [ref=e163]: الرصيد المستحق الحالي
+                    - textbox "الرصيد المستحق الحالي" [disabled] [ref=e164]: —
+                  - generic [ref=e165]:
+                    - generic [ref=e166]: حد الائتمان
+                    - textbox "حد الائتمان" [disabled] [ref=e167]: —
+              - region "بيانات الفاتورة" [ref=e168]:
+                - heading "بيانات الفاتورة" [level=2] [ref=e170]
+                - generic [ref=e171]:
+                  - generic [ref=e172]:
+                    - generic [ref=e173]: التاريخ
+                    - textbox "التاريخ" [disabled] [ref=e174]: 2026-10-30
+                  - generic [ref=e175]:
+                    - generic [ref=e176]: الوقت
+                    - textbox "الوقت" [disabled] [ref=e177]: ٠٨:٣٧ م
+                  - generic [ref=e178]:
+                    - generic [ref=e179]: رقم الفاتورة
+                    - textbox "رقم الفاتورة" [disabled] [ref=e180]: يُنشأ تلقائيًا عند الحفظ
+                  - generic [ref=e181]:
+                    - generic [ref=e182]: شروط الدفع
+                    - combobox "شروط الدفع" [ref=e183]:
+                      - option "فوري"
+                      - option "آجل" [selected]
+                  - generic [ref=e184]:
+                    - generic [ref=e185]: تاريخ الاستحقاق
+                    - textbox "تاريخ الاستحقاق" [ref=e186]: 2026-11-29
+                - group [ref=e187]:
+                  - option "بدون سائق محدد" [selected]
+                  - option "Driver 13499aa2"
+                  - option "Driver 4166b3ed"
+                  - option "Driver 55d90ef1"
+                  - option "Driver 5fc7438a"
+                  - option "Driver 7df84746"
+                  - option "Driver 93c7cc90"
+                  - option "Driver ec83a83e"
+                  - option "No step driver"
+                  - option "No step driver 6763d6de"
+                  - option "No step driver 7e5c9aeb"
+                  - option "No step driver 89291a09"
+                  - option "No step driver 8c70463a"
+                  - option "No step driver ee9e9fab"
+                  - option "ماستر" [selected]
+                  - option "اختر المحافظة" [selected]
+                  - option "القاهرة"
+                  - option "الجيزة"
+                  - option "الإسكندرية"
+                  - option "القليوبية"
+                  - option "الشرقية"
+                  - option "الدقهلية"
+                  - option "البحيرة"
+                  - option "الغربية"
+                  - option "المنوفية"
+                  - option "كفر الشيخ"
+                  - option "دمياط"
+                  - option "بورسعيد"
+                  - option "الإسماعيلية"
+                  - option "السويس"
+                  - option "الفيوم"
+                  - option "بني سويف"
+                  - option "المنيا"
+                  - option "أسيوط"
+                  - option "سوهاج"
+                  - option "قنا"
+                  - option "الأقصر"
+                  - option "أسوان"
+                  - option "البحر الأحمر"
+                  - option "مطروح"
+                  - option "شمال سيناء"
+                  - option "جنوب سيناء"
+                  - option "الوادي الجديد"
+                  - option "محافظة معدلة aeee80"
+                  - option "No step"
+                  - option "محافظة معدلة 22e226"
+                  - option "محافظة معدلة 2d69b8"
+                  - option "No step ee9e9fab"
+                  - option "محافظة معدلة 65a96f"
+                  - option "No step 8c70463a"
+                  - option "محافظة معدلة 955707"
+                  - option "No step 7e5c9aeb"
+                  - option "محافظة اختبار 1793363952647"
+                  - option "محافظة اختبار 1793364018689 معدلة"
+                  - option "محافظة اختبار 1793364085016 معدلة"
+                  - option "محافظة معدلة ccaaac"
+                  - option "No step 6763d6de"
+                  - option "محافظة معدلة 4b3240"
+                  - option "محافظة أرشفة 58d53e"
+                  - option "No step 89291a09"
+                  - option "اختر المستودع" [selected]
+                  - option "Damaged warehouse"
+                  - option "Damaged warehouse"
+                  - option "Damaged warehouse"
+                  - option "Damaged warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Reference warehouse"
+                  - option "Reference warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "مخزن اختبار التدفق 015E725F"
+                  - option "مخزن اختبار التدفق 0399868F"
+                  - option "مخزن اختبار التدفق 03D41047"
+                  - option "مخزن اختبار التدفق 045AFF7B"
+                  - option "مخزن اختبار التدفق 072564F4"
+                  - option "مخزن اختبار التدفق 0E98EB31"
+                  - option "مخزن اختبار التدفق 10AB28B2"
+                  - option "مخزن اختبار التدفق 15235211"
+                  - option "مخزن اختبار التدفق 15E7B757"
+                  - option "مخزن اختبار التدفق 160A13DC"
+                  - option "مخزن اختبار التدفق 1D26F008"
+                  - option "مخزن اختبار التدفق 23045C3D"
+                  - option "مخزن اختبار التدفق 246E21FE"
+                  - option "مخزن اختبار التدفق 25F67D7A"
+                  - option "مخزن اختبار التدفق 26CC666C"
+                  - option "مخزن اختبار التدفق 287971F8"
+                  - option "مخزن اختبار التدفق 29164B21"
+                  - option "مخزن اختبار التدفق 2DA9CF30"
+                  - option "مخزن اختبار التدفق 331808FA"
+                  - option "مخزن اختبار التدفق 3430883C"
+                  - option "مخزن اختبار التدفق 353C766D"
+                  - option "مخزن اختبار التدفق 355B21C0"
+                  - option "مخزن اختبار التدفق 3CDBB8A9"
+                  - option "مخزن اختبار التدفق 3EFB336D"
+                  - option "مخزن اختبار التدفق 455E002C"
+                  - option "مخزن اختبار التدفق 4C62B6BE"
+                  - option "مخزن اختبار التدفق 4EC9F306"
+                  - option "مخزن اختبار التدفق 4FD0DF86"
+              - region "الأصناف" [ref=e189]:
+                - generic [ref=e190]:
+                  - heading "الأصناف" [level=2] [ref=e191]
+                  - generic [ref=e192]:
+                    - button "📋 نسخ من فاتورة سابقة لنفس العميل" [disabled] [ref=e193]
+                    - button "+ إضافة صنف" [ref=e194] [cursor=pointer]
+                - group "# 1" [ref=e196]:
+                  - generic [ref=e197]: "# 1"
+                  - generic [ref=e198]:
+                    - generic [ref=e199]: اسم الصنف — ابحث بالاسم أو الكود أو الباركود
+                    - combobox "المنتج" [ref=e200]
+                    - generic [ref=e201]: اختر صنفًا لعرض الكمية المتاحة
+                  - generic [ref=e202]:
+                    - generic [ref=e203]: الفئة
+                    - textbox "الفئة" [disabled] [ref=e204]: —
+                  - generic [ref=e205]:
+                    - generic [ref=e206]: المخزن
+                    - combobox "المخزن" [ref=e207]:
+                      - option "اختر المخزن" [disabled] [selected]
+                      - option "Damaged warehouse"
+                      - option "Damaged warehouse"
+                      - option "Damaged warehouse"
+                      - option "Damaged warehouse"
+                      - option "Fixture Warehouse"
+                      - option "Fixture Warehouse"
+                      - option "Fixture Warehouse"
+                      - option "Fixture Warehouse"
+                      - option "Fixture Warehouse"
+                      - option "Fixture Warehouse"
+                      - option "Opening warehouse"
+                      - option "Opening warehouse"
+                      - option "Opening warehouse"
+                      - option "Opening warehouse"
+                      - option "Opening warehouse"
+                      - option "Opening warehouse"
+                      - option "Reference warehouse"
+                      - option "Reference warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "Return warehouse"
+                      - option "مخزن اختبار التدفق 015E725F"
+                      - option "مخزن اختبار التدفق 0399868F"
+                      - option "مخزن اختبار التدفق 03D41047"
+                      - option "مخزن اختبار التدفق 045AFF7B"
+                      - option "مخزن اختبار التدفق 072564F4"
+                      - option "مخزن اختبار التدفق 0E98EB31"
+                      - option "مخزن اختبار التدفق 10AB28B2"
+                      - option "مخزن اختبار التدفق 15235211"
+                      - option "مخزن اختبار التدفق 15E7B757"
+                      - option "مخزن اختبار التدفق 160A13DC"
+                      - option "مخزن اختبار التدفق 1D26F008"
+                      - option "مخزن اختبار التدفق 23045C3D"
+                      - option "مخزن اختبار التدفق 246E21FE"
+                      - option "مخزن اختبار التدفق 25F67D7A"
+                      - option "مخزن اختبار التدفق 26CC666C"
+                      - option "مخزن اختبار التدفق 287971F8"
+                      - option "مخزن اختبار التدفق 29164B21"
+                      - option "مخزن اختبار التدفق 2DA9CF30"
+                      - option "مخزن اختبار التدفق 331808FA"
+                      - option "مخزن اختبار التدفق 3430883C"
+                      - option "مخزن اختبار التدفق 353C766D"
+                      - option "مخزن اختبار التدفق 355B21C0"
+                      - option "مخزن اختبار التدفق 3CDBB8A9"
+                      - option "مخزن اختبار التدفق 3EFB336D"
+                      - option "مخزن اختبار التدفق 455E002C"
+                      - option "مخزن اختبار التدفق 4C62B6BE"
+                      - option "مخزن اختبار التدفق 4EC9F306"
+                      - option "مخزن اختبار التدفق 4FD0DF86"
+                  - generic [ref=e208]:
+                    - generic [ref=e209]:
+                      - text: الكمية
+                      - generic [ref=e210]: "*"
+                    - textbox "الكمية" [ref=e211]: "1"
+                  - generic [ref=e212]:
+                    - generic [ref=e213]: سعر الوحدة (ج.م)
+                    - textbox "سعر الوحدة (ج.م) 1" [ref=e214]
+                    - generic [ref=e215]: السعر يُملأ تلقائيًا ويمكن تعديله حسب الاتفاق.
+                  - button "0 ج.م" [ref=e216]
+                  - generic [ref=e217]:
+                    - generic [ref=e218]: قيمة الخصم (ج.م)
+                    - textbox "قيمة الخصم (ج.م)" [ref=e219]
+                  - button "حذف الصنف 1" [ref=e220] [cursor=pointer]: 🗑
+              - generic [ref=e221]:
+                - region "الحساب" [ref=e222]:
+                  - heading "الحساب" [level=2] [ref=e224]
+                  - generic [ref=e225]:
+                    - generic [ref=e226]:
+                      - generic [ref=e227]: نوع الخصم على الفاتورة
+                      - combobox "نوع الخصم على الفاتورة" [ref=e228]:
+                        - option "مبلغ ثابت" [selected]
+                        - option "نسبة مئوية"
+                    - generic [ref=e229]:
+                      - generic [ref=e230]: قيمة الخصم (ج.م)
+                      - textbox "قيمة الخصم (ج.م)" [ref=e231]: "0"
+                  - generic [ref=e233]:
+                    - term [ref=e234]: الدفع
+                    - definition [ref=e235]:
+                      - textbox "الدفع" [ref=e236]
+                  - paragraph [ref=e237]: يُوزَّع خصم الفاتورة على البنود عند الحفظ، ويُرفض الخصم إذا تجاوز الإجمالي الفرعي.
+                - region "ملاحظات" [ref=e238]:
+                  - heading "ملاحظات" [level=2] [ref=e240]
+                  - generic [ref=e241]:
+                    - generic [ref=e242]: ملاحظات
+                    - textbox "ملاحظات" [ref=e243]
+              - region "المرتجعات — هل لفاتورة مرتجع؟" [ref=e244]:
+                - heading "المرتجعات — هل لفاتورة مرتجع؟" [level=2] [ref=e246]
+                - generic [ref=e247]:
+                  - textbox "رقم الفاتورة للبحث عن مرتجعاتها" [ref=e248]
+                  - button "بحث" [disabled] [ref=e249]
+                  - link "كل المرتجعات" [ref=e250] [cursor=pointer]:
+                    - /url: /returns
+                - heading "آخر المرتجعات" [level=3] [ref=e251]
+                - list [ref=e252]:
+                  - listitem [ref=e253]:
+                    - link "RET-2026-030 — عميل اختبار المبيعات 776D95E7 — 25.0000 ج.م — على —" [ref=e254] [cursor=pointer]:
+                      - /url: /returns/29/print
+                  - listitem [ref=e255]:
+                    - link "RET-2026-029 — عميل اختبار المبيعات 776D95E7 — 50.0000 ج.م — على INV-2026-131" [ref=e256] [cursor=pointer]:
+                      - /url: /returns/28/print
+                  - listitem [ref=e257]:
+                    - link "RET-2026-028 — عميل اختبار المبيعات 287971F8 — 50.0000 ج.م — على INV-2026-130" [ref=e258] [cursor=pointer]:
+                      - /url: /returns/26/print
+                  - listitem [ref=e259]:
+                    - link "LQ-RET-97709A44 — Liquidation fixture e18f3e6b — 20.0000 ج.م — على LQ-INV-AAFAD499" [ref=e260] [cursor=pointer]:
+                      - /url: /returns/136/print
+              - generic [ref=e261]:
+                - button "حفظ كمسودة" [ref=e262] [cursor=pointer]
+                - button "حفظ وإصدار" [ref=e263] [cursor=pointer]
+            - complementary "ملخص الفاتورة" [ref=e264]:
+              - heading "ملخص الفاتورة" [level=2] [ref=e265]
+              - paragraph [ref=e266]: تُعرض الأسعار والخصومات والضريبة كما يحسبها الخادم.
+              - generic [ref=e267]:
+                - generic [ref=e268]:
+                  - term [ref=e269]: الإجمالي الفرعي (ج.م)
+                  - definition [ref=e270]: 0.00 ج.م
+                - generic [ref=e271]:
+                  - term [ref=e272]: الخصم (ج.م)
+                  - definition [ref=e273]: 0.00 ج.م
+                - generic [ref=e274]:
+                  - term [ref=e275]: الإجمالي النهائي (ج.م)
+                  - definition [ref=e276]: 0.00 ج.م
+  - dialog "إعادة تأكيد كلمة المرور" [ref=e278]:
+    - group [ref=e279]:
+      - heading "إعادة تأكيد كلمة المرور" [level=2] [ref=e280]
+      - button "إغلاق" [active] [ref=e281] [cursor=pointer]:
+        - generic [ref=e282] [cursor=pointer]: ×
+    - generic [ref=e283]:
+      - paragraph [ref=e284]: تتطلب هذه المنطقة المالية إعادة التحقق من كلمة المرور.
+      - generic [ref=e285]:
+        - generic [ref=e286]:
+          - generic [ref=e287]:
+            - text: كلمة المرور
+            - generic [ref=e288]: "*"
+          - textbox "كلمة المرور" [ref=e289]
+        - generic [ref=e290]:
+          - button "إلغاء" [ref=e291] [cursor=pointer]
+          - button "تأكيد ومتابعة" [disabled] [ref=e292]
+```

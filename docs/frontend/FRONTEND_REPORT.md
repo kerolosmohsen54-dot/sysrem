@@ -1,0 +1,23 @@
+# Frontend report
+
+## Project and routes
+
+The active web app is `frontend/` (React 18, TypeScript, Vite, React Router). Route and screen definitions are in `frontend/src/app/App.tsx`; feature modules live under `frontend/src/features/`. The route map has 39 shared navigation entries in `frontend/src/shared/constants/routes.ts` plus detail/create/print and finance/report routes in `frontend/src/app/App.tsx` (login, index redirect, and not-found route are also explicit). Static source inspection VERIFIED. Route families are: `/login`; `/dashboard`; `/customers`, `/customers/:customerId`, `/customers/:customerId/statement`, `/customers/:customerId/liquidation`; `/orders`, `/orders/new`, `/orders/:orderId`; `/deliveries`, `/deliveries/new`, `/deliveries/:deliveryId`; `/invoices`, `/invoices/new`, `/invoices/:documentId`, `/invoices/:documentId/edit`, `/invoices/:documentId/print`; `/returns`, `/returns/new`, `/returns/:documentId/print`; `/collections`; `/purchase-invoices`, `/purchase-invoices/new`, `/purchase-invoices/:invoiceId`; `/products`, `/products/:productId/cost-history`, `/categories`, `/warehouses`; `/inventory`, `/inventory/movements`, `/inventory/adjustments`, `/inventory/opening-stock`, `/inventory/transfers`, `/inventory/damaged`, `/inventory/minimum-stock`, `/inventory/counts`; `/warehouse-returns`; `/containers`, `/containers/:containerId`, `/containers/:containerId/receive`, `/containers/:containerId/receipts/:receiptId`, `/containers/:containerId/landed-cost`; `/container-transfers`, `/container-funds`; `/finance`, `/finance/treasury`, `/finance/inbox`, `/finance/mobile-inbox`, `/finance/withdrawals`, `/finance/movements`, `/finance/mobile-channels`, `/finance/transfers`, `/finance/expenses`, `/finance/currencies`, `/finance/chart-of-accounts`, `/finance/adjustments`; `/reports`, `/reports/sales`, `/reports/invoice-profit`, `/reports/stock`, `/reports/stock-movements`, `/reports/container-costs`, `/reports/customer-balances`, `/reports/financial`; `/partners`, `/partner-payments`; `/admin/users`, `/admin/settings`, `/admin/audit`, `/admin/governorates`, `/admin/drivers`, `/admin/trash`, `/admin/install`. Dynamic paths are shown as patterns. Runtime navigation and every route are NOT VERIFIED in this cleanup.
+
+LIVE means the screen uses the current API adapter; it does not mean end-to-end acceptance. LIVE areas include authentication, customers, sales, purchasing, inventory, containers, orders/deliveries, treasury, reports, reference administration, mobile inbox/channels, and currencies. The current `CurrenciesPage.tsx` uses `currenciesApi.ts` and the `/currencies` API; older `LIVE_STATUS.md` and `LOCKED_ITEMS_AUDIT.md` say EGP-only/static and are superseded for currencies by current source. The older report also mislabels the financial dashboard as locked; current `App.tsx` and finance/report feature API modules must be used as the live baseline.
+
+LOCKED or partial items documented in current UI/source include chart of accounts, financial adjustments, expense budgets, recurring expenses, cash forecast, daily summary, and Excel import. Invoice revision submission and sales-return submission are limited/disabled per archived evidence in `docs/archive/frontend/FRONTEND_FINAL_REPORT.md`. MOCK data is used by MSW only in tests/test mode (`VITE_MOCK_API=true`); production mode is configured for API calls. Source/config inspection VERIFIED, live browser flows NOT VERIFIED.
+
+## Verification
+
+| Check | Cleanup result |
+|---|---|
+| `npm run typecheck` from `frontend/` | PASS, exit 0 |
+| `npm run lint` | FAIL, 1 error: untracked `scripts/acceptance-browser.mjs:22` reports `URL` is not defined. This file existed before cleanup. |
+| `npm test -- --reporter=dot` | NOT COMPLETED: Vitest could not start esbuild (`spawn EPERM`) while loading `vitest.config.ts`. |
+| `npm run build` | NOT COMPLETED: Vite could not start esbuild (`spawn EPERM`). |
+| `npm run a11y` | NOT COMPLETED: pinned Playwright Chromium was absent; retry with installed Edge failed `spawn EPERM`. |
+| Prior axe evidence | `docs/integration/WEB_E2E_REPORT.md` records 50 views, 0 axe violations, run with installed Edge. Current scan is NOT VERIFIED. |
+| Prior frontend tests/build | `docs/integration/FINAL_SYSTEM_REPORT.md` records 43 files / 173 tests and successful build; it is earlier evidence and does not override the current blocked Vitest/build run. |
+
+Current test counts after cleanup: frontend Vitest NOT VERIFIED (runner did not start). Live browser CRUD is NOT VERIFIED. Open items include the lint error, unavailable browser launch under this execution environment, and feature areas kept locked or partial as above.

@@ -1,0 +1,661 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e7]:
+      - strong [ref=e8]: MASTER
+      - generic [ref=e9]: نظام إدارة الأعمال
+    - navigation "MASTER" [ref=e10]:
+      - link "لوحة التحكم" [ref=e11] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e12] [cursor=pointer]
+        - generic [ref=e14] [cursor=pointer]: لوحة التحكم
+      - group [ref=e15]:
+        - generic "المبيعات" [ref=e16] [cursor=pointer]:
+          - generic [ref=e17] [cursor=pointer]: المبيعات
+          - generic [ref=e18] [cursor=pointer]: ⌄
+        - link "الطلبات" [ref=e19] [cursor=pointer]:
+          - /url: /orders
+          - img [ref=e20] [cursor=pointer]
+          - generic [ref=e22] [cursor=pointer]: الطلبات
+        - link "أذونات التسليم" [ref=e23] [cursor=pointer]:
+          - /url: /deliveries
+          - img [ref=e24] [cursor=pointer]
+          - generic [ref=e26] [cursor=pointer]: أذونات التسليم
+        - link "فواتير البيع" [ref=e27] [cursor=pointer]:
+          - /url: /invoices
+          - img [ref=e28] [cursor=pointer]
+          - generic [ref=e30] [cursor=pointer]: فواتير البيع
+        - link "التحصيلات" [ref=e31] [cursor=pointer]:
+          - /url: /collections
+          - img [ref=e32] [cursor=pointer]
+          - generic [ref=e34] [cursor=pointer]: التحصيلات
+        - link "مرتجعات المبيعات" [ref=e35] [cursor=pointer]:
+          - /url: /returns
+          - img [ref=e36] [cursor=pointer]
+          - generic [ref=e38] [cursor=pointer]: مرتجعات المبيعات
+        - link "إنشاء فاتورة بيع" [ref=e39] [cursor=pointer]:
+          - /url: /invoices/new
+          - generic [ref=e40] [cursor=pointer]: ↗
+          - generic [ref=e41] [cursor=pointer]: إنشاء فاتورة بيع
+        - link "إنشاء مرتجع" [ref=e42] [cursor=pointer]:
+          - /url: /returns/new
+          - generic [ref=e43] [cursor=pointer]: ↗
+          - generic [ref=e44] [cursor=pointer]: إنشاء مرتجع
+      - group [ref=e45]:
+        - generic "العملاء" [ref=e46] [cursor=pointer]:
+          - generic [ref=e47] [cursor=pointer]: العملاء
+          - generic [ref=e48] [cursor=pointer]: ⌄
+      - group [ref=e49]:
+        - generic "المنتجات والمخزون" [ref=e50] [cursor=pointer]:
+          - generic [ref=e51] [cursor=pointer]: المنتجات والمخزون
+          - generic [ref=e52] [cursor=pointer]: ⌄
+      - group [ref=e53]:
+        - generic "الحاويات" [ref=e54] [cursor=pointer]:
+          - generic [ref=e55] [cursor=pointer]: الحاويات
+          - generic [ref=e56] [cursor=pointer]: ⌄
+      - group [ref=e57]:
+        - generic "المالية" [ref=e58] [cursor=pointer]:
+          - generic [ref=e59] [cursor=pointer]: المالية
+          - generic [ref=e60] [cursor=pointer]: ⌄
+      - group [ref=e61]:
+        - generic "التقارير" [ref=e62] [cursor=pointer]:
+          - generic [ref=e63] [cursor=pointer]: التقارير
+          - generic [ref=e64] [cursor=pointer]: ⌄
+      - group [ref=e65]:
+        - generic "إدارة النظام" [ref=e66] [cursor=pointer]:
+          - generic [ref=e67] [cursor=pointer]: إدارة النظام
+          - generic [ref=e68] [cursor=pointer]: ⌄
+      - group [ref=e69]:
+        - generic "أدوات إضافية" [ref=e70] [cursor=pointer]:
+          - generic [ref=e71] [cursor=pointer]: أدوات إضافية
+          - generic [ref=e72] [cursor=pointer]: ⌄
+    - generic [ref=e73]:
+      - generic [ref=e74]: م
+      - generic [ref=e75]:
+        - strong [ref=e76]: مالك اختبار تدفقات المبيعات
+        - generic [ref=e77]: المالك
+      - button "تسجيل الخروج" [ref=e78] [cursor=pointer]:
+        - img [ref=e79] [cursor=pointer]
+  - generic [ref=e81]:
+    - banner [ref=e82]:
+      - navigation "مسار الصفحة" [ref=e83]:
+        - link "لوحة التحكم" [ref=e84] [cursor=pointer]:
+          - /url: /dashboard
+        - generic [ref=e85]: /
+        - link "المبيعات" [ref=e86] [cursor=pointer]:
+          - /url: /orders
+        - generic [ref=e87]: /
+        - strong [ref=e88]: إنشاء طلب مبيعات جديد
+      - button "بحث سريع" [ref=e89] [cursor=pointer]:
+        - img [ref=e90] [cursor=pointer]
+        - generic [ref=e92] [cursor=pointer]: بحث سريع
+        - generic [ref=e93] [cursor=pointer]: تحكم + K
+      - group [ref=e94]:
+        - generic "ابدأ إجراء" [ref=e95] [cursor=pointer]:
+          - generic [ref=e96] [cursor=pointer]: ＋
+          - generic [ref=e97] [cursor=pointer]: ابدأ إجراء
+      - generic [ref=e98]:
+        - generic [ref=e99]: المظهر
+        - checkbox "التبديل إلى المظهر الفاتح" [ref=e100]
+        - generic [ref=e101]: ◐
+      - generic [ref=e102]:
+        - button "الإشعارات (10)" [ref=e104] [cursor=pointer]:
+          - img [ref=e105] [cursor=pointer]
+        - button "تسجيل الخروج" [ref=e107] [cursor=pointer]
+    - navigation "اختصارات التنقل" [ref=e108]:
+      - link "سجل العمليات" [ref=e109] [cursor=pointer]:
+        - /url: /admin/audit
+      - link "لوحة التحكم" [ref=e110] [cursor=pointer]:
+        - /url: /dashboard
+    - main [ref=e111]:
+      - generic [ref=e112]:
+        - generic [ref=e113]:
+          - generic [ref=e114]:
+            - heading "إنشاء طلب مبيعات جديد" [level=1] [ref=e115]
+            - paragraph [ref=e116]: معاينة الإجمالي تنتظر واجهة الخادم؛ لن يحسب المتصفح أي مبالغ.
+          - link "إلغاء" [ref=e117] [cursor=pointer]:
+            - /url: /orders
+        - generic [ref=e118]:
+          - region "إنشاء طلب مبيعات جديد" [ref=e119]:
+            - paragraph [ref=e120]:
+              - text: "رقم الطلب:"
+              - generic [ref=e121]: يُنشأ تلقائياً عند الحفظ
+            - generic [ref=e122]:
+              - generic [ref=e123]: العميل
+              - combobox "العميل" [ref=e124]:
+                - option "اختر" [selected]
+                - option "Attachment fixture 45f4b983"
+                - option "Attachment fixture 475fd662"
+                - option "Attachment fixture 48271753"
+                - option "Attachment fixture 5c87f37a"
+                - option "Attachment fixture 62f6e3aa"
+                - option "Attachment fixture 6899bd65"
+                - option "Attachment fixture 6c7bb2e6"
+                - option "Attachment fixture 7eb4dfe9"
+                - option "Attachment fixture 8a5d8f4c"
+                - option "Attachment fixture 9323b4f9"
+                - option "Attachment fixture 9660ef05"
+                - option "Attachment fixture 97cb9607"
+                - option "Attachment fixture a06272d7"
+                - option "Attachment fixture a09258a6"
+                - option "Attachment fixture afd9f0ec"
+                - option "Attachment fixture bd9dac17"
+                - option "Attachment fixture d056ffc1"
+                - option "Attachment fixture dc87db9e"
+                - option "Attachment fixture fbbcdb07"
+                - option "Blocked customer 91c44620"
+                - option "Governorate test customer 99de20"
+                - option "Governorate test customer 9cd2b3"
+                - option "Governorate test customer ab496d"
+                - option "Governorate test customer b32c65"
+                - option "Governorate test customer cba7fe"
+                - option "Governorate test customer d7f703"
+                - option "Governorate test customer ee25c8"
+                - option "Liquidation fixture e18f3e6b"
+                - option "عميل اختبار المبيعات 015E725F"
+                - option "عميل اختبار المبيعات 0399868F"
+                - option "عميل اختبار المبيعات 03D41047"
+                - option "عميل اختبار المبيعات 045AFF7B"
+                - option "عميل اختبار المبيعات 072564F4"
+                - option "عميل اختبار المبيعات 0E98EB31"
+                - option "عميل اختبار المبيعات 10AB28B2"
+                - option "عميل اختبار المبيعات 15235211"
+                - option "عميل اختبار المبيعات 15E7B757"
+                - option "عميل اختبار المبيعات 160A13DC"
+                - option "عميل اختبار المبيعات 1D26F008"
+                - option "عميل اختبار المبيعات 23045C3D"
+                - option "عميل اختبار المبيعات 246E21FE"
+                - option "عميل اختبار المبيعات 25F67D7A"
+                - option "عميل اختبار المبيعات 26CC666C"
+                - option "عميل اختبار المبيعات 287971F8"
+                - option "عميل اختبار المبيعات 29164B21"
+                - option "عميل اختبار المبيعات 2DA9CF30"
+                - option "عميل اختبار المبيعات 331808FA"
+                - option "عميل اختبار المبيعات 3430883C"
+                - option "عميل اختبار المبيعات 353C766D"
+                - option "عميل اختبار المبيعات 355B21C0"
+                - option "عميل اختبار المبيعات 3CDBB8A9"
+                - option "عميل اختبار المبيعات 3EFB336D"
+                - option "عميل اختبار المبيعات 455E002C"
+                - option "عميل اختبار المبيعات 4C62B6BE"
+                - option "عميل اختبار المبيعات 4EC9F306"
+                - option "عميل اختبار المبيعات 4FD0DF86"
+                - option "عميل اختبار المبيعات 51D28194"
+                - option "عميل اختبار المبيعات 58FB0297"
+                - option "عميل اختبار المبيعات 5AFB225E"
+                - option "عميل اختبار المبيعات 5BB6B42D"
+                - option "عميل اختبار المبيعات 5E8E574D"
+                - option "عميل اختبار المبيعات 5EAA60BD"
+                - option "عميل اختبار المبيعات 61B20884"
+                - option "عميل اختبار المبيعات 6632E559"
+                - option "عميل اختبار المبيعات 6C85B028"
+                - option "عميل اختبار المبيعات 6EBCEC8C"
+                - option "عميل اختبار المبيعات 6F733FC1"
+                - option "عميل اختبار المبيعات 703708B8"
+                - option "عميل اختبار المبيعات 71873C61"
+                - option "عميل اختبار المبيعات 7405D5BC"
+                - option "عميل اختبار المبيعات 776D95E7"
+                - option "عميل اختبار المبيعات 7973FE8D"
+                - option "عميل اختبار المبيعات 7B12B20E"
+                - option "عميل اختبار المبيعات 7D4D2441"
+                - option "عميل اختبار المبيعات 7FAE90AF"
+                - option "عميل اختبار المبيعات 81C8AD2D"
+                - option "عميل اختبار المبيعات 879EFF06"
+                - option "عميل اختبار المبيعات 89445E66"
+                - option "عميل اختبار المبيعات 8C4C4819"
+                - option "عميل اختبار المبيعات 91E419D9"
+                - option "عميل اختبار المبيعات 920F11FB"
+                - option "عميل اختبار المبيعات 9425C4D2"
+                - option "عميل اختبار المبيعات 974CCBFB"
+                - option "عميل اختبار المبيعات A4360876"
+                - option "عميل اختبار المبيعات A570AE7C"
+                - option "عميل اختبار المبيعات A698CBE2"
+                - option "عميل اختبار المبيعات A6CAB5AF"
+                - option "عميل اختبار المبيعات AD938A6E"
+                - option "عميل اختبار المبيعات AF6F2926"
+                - option "عميل اختبار المبيعات B4FD569B"
+                - option "عميل اختبار المبيعات B676C7BF"
+                - option "عميل اختبار المبيعات B6CF56D7"
+                - option "عميل اختبار المبيعات BDB9347C"
+                - option "عميل اختبار المبيعات BEDF3E40"
+                - option "عميل اختبار المبيعات C31429F7"
+                - option "عميل اختبار المبيعات C4FBE7D1"
+                - option "عميل اختبار المبيعات C4FE03E9"
+                - option "عميل اختبار المبيعات C83BF6BF"
+                - option "عميل اختبار المبيعات CB0655A1"
+                - option "عميل اختبار المبيعات CF433601"
+            - generic [ref=e125]:
+              - generic [ref=e126]:
+                - generic [ref=e127]:
+                  - text: تاريخ الطلب
+                  - generic [ref=e128]: "*"
+                - textbox "تاريخ الطلب" [ref=e129]: 2026-10-30
+              - generic [ref=e130]:
+                - generic [ref=e131]: تاريخ التسليم المطلوب
+                - textbox "تاريخ التسليم المطلوب" [ref=e132]
+            - generic [ref=e133]:
+              - generic [ref=e134]:
+                - generic [ref=e135]: المندوب
+                - combobox "المندوب" [ref=e136]:
+                  - option "بدون مندوب" [selected]
+                  - option "مالك اختبار تدفقات المبيعات"
+                  - option "مالك اختبار حجز المخزون"
+              - generic [ref=e137]:
+                - generic [ref=e138]: طريقة الدفع
+                - combobox "طريقة الدفع" [ref=e139]:
+                  - option "نقدي" [selected]
+                  - option "تحويل بنكي"
+                  - option "آجل"
+              - generic [ref=e140]:
+                - generic [ref=e141]: المخزن
+                - combobox "المخزن" [ref=e142]:
+                  - option "اختر" [selected]
+                  - option "Damaged warehouse (DS216cf6)"
+                  - option "Damaged warehouse (DS1e9e22)"
+                  - option "Damaged warehouse (DSb4394d)"
+                  - option "Damaged warehouse (DS43a5f0)"
+                  - option "Fixture Warehouse (FIX223b8e989c91203a)"
+                  - option "Fixture Warehouse (FIXbfe34b5e6fa27df5)"
+                  - option "Fixture Warehouse (FIX76c8747c088f2c91)"
+                  - option "Fixture Warehouse (FIX494cf9a32eeb678b)"
+                  - option "Fixture Warehouse (FIX777361a416f7b4a2)"
+                  - option "Fixture Warehouse (FIXfa69f0678457ec8a)"
+                  - option "Opening warehouse (OPN31a59434)"
+                  - option "Opening warehouse (OPN1cd46f3b)"
+                  - option "Opening warehouse (OPNdf67046e)"
+                  - option "Opening warehouse (OPN3e29ceb9)"
+                  - option "Opening warehouse (OPN2e31cccb)"
+                  - option "Opening warehouse (OPN6bd81799)"
+                  - option "Reference warehouse (WREF-0b3a440a)"
+                  - option "Reference warehouse (WREF-ad38d6e1)"
+                  - option "Return warehouse (WRTe9148989)"
+                  - option "Return warehouse (WR2d5721)"
+                  - option "Return warehouse (WR043637)"
+                  - option "Return warehouse (WR7c5ba2)"
+                  - option "Return warehouse (WR9ac08d)"
+                  - option "Return warehouse (WRd6bd4a)"
+                  - option "Return warehouse (WRT08d90bf2)"
+                  - option "Return warehouse (WR3f71d2)"
+                  - option "Return warehouse (WR010242)"
+                  - option "Return warehouse (WR6dc3a2)"
+                  - option "Return warehouse (WR5366ad)"
+                  - option "Return warehouse (WRa970fc)"
+                  - option "Return warehouse (WRT19118309)"
+                  - option "Return warehouse (WRT5d3cef6e)"
+                  - option "Return warehouse (WRc05170)"
+                  - option "Return warehouse (WR4960c2)"
+                  - option "Return warehouse (WR27fb5c)"
+                  - option "Return warehouse (WR2ff2ce)"
+                  - option "Return warehouse (WR7f8f52)"
+                  - option "Return warehouse (WRf5ea42)"
+                  - option "Return warehouse (WR087d41)"
+                  - option "Return warehouse (WR5f6c9d)"
+                  - option "Return warehouse (WR66c00b)"
+                  - option "Return warehouse (WR645e5a)"
+                  - option "Return warehouse (WRT8d84972b)"
+                  - option "Return warehouse (WR3ebd2e)"
+                  - option "Return warehouse (WRd057ca)"
+                  - option "Return warehouse (WRc9294d)"
+                  - option "Return warehouse (WR0bae39)"
+                  - option "Return warehouse (WR68cea1)"
+                  - option "Return warehouse (WRT6d20327e)"
+                  - option "Return warehouse (WRc1e5a9)"
+                  - option "Return warehouse (WR69ebd5)"
+                  - option "Return warehouse (WRf26a9d)"
+                  - option "Return warehouse (WR00e966)"
+                  - option "Return warehouse (WRd3edaa)"
+                  - option "Return warehouse (WRTfd435380)"
+                  - option "Return warehouse (WRa695ec)"
+                  - option "Return warehouse (WRf673c6)"
+                  - option "Return warehouse (WR1c5c6a)"
+                  - option "Return warehouse (WR4d2251)"
+                  - option "Return warehouse (WR3dbb64)"
+                  - option "Return warehouse (WRT0bd5afdd)"
+                  - option "Return warehouse (WR6107ba)"
+                  - option "Return warehouse (WR5cabe4)"
+                  - option "Return warehouse (WR96a7b3)"
+                  - option "Return warehouse (WR716489)"
+                  - option "Return warehouse (WR100885)"
+                  - option "Return warehouse (WRT52505ffa)"
+                  - option "Return warehouse (WR181457)"
+                  - option "Return warehouse (WR35ae12)"
+                  - option "Return warehouse (WR4c7bff)"
+                  - option "Return warehouse (WR83961a)"
+                  - option "Return warehouse (WRb3e2d4)"
+                  - option "مخزن اختبار التدفق 015E725F (SWE2E-015E725F)"
+                  - option "مخزن اختبار التدفق 0399868F (SWE2E-0399868F)"
+                  - option "مخزن اختبار التدفق 03D41047 (SWE2E-03D41047)"
+                  - option "مخزن اختبار التدفق 045AFF7B (SWE2E-045AFF7B)"
+                  - option "مخزن اختبار التدفق 072564F4 (SWE2E-072564F4)"
+                  - option "مخزن اختبار التدفق 0E98EB31 (SWE2E-0E98EB31)"
+                  - option "مخزن اختبار التدفق 10AB28B2 (SWE2E-10AB28B2)"
+                  - option "مخزن اختبار التدفق 15235211 (SWE2E-15235211)"
+                  - option "مخزن اختبار التدفق 15E7B757 (SWE2E-15E7B757)"
+                  - option "مخزن اختبار التدفق 160A13DC (SWE2E-160A13DC)"
+                  - option "مخزن اختبار التدفق 1D26F008 (SWE2E-1D26F008)"
+                  - option "مخزن اختبار التدفق 23045C3D (SWE2E-23045C3D)"
+                  - option "مخزن اختبار التدفق 246E21FE (SWE2E-246E21FE)"
+                  - option "مخزن اختبار التدفق 25F67D7A (SWE2E-25F67D7A)"
+                  - option "مخزن اختبار التدفق 26CC666C (SWE2E-26CC666C)"
+                  - option "مخزن اختبار التدفق 287971F8 (SWE2E-287971F8)"
+                  - option "مخزن اختبار التدفق 29164B21 (SWE2E-29164B21)"
+                  - option "مخزن اختبار التدفق 2DA9CF30 (SWE2E-2DA9CF30)"
+                  - option "مخزن اختبار التدفق 331808FA (SWE2E-331808FA)"
+                  - option "مخزن اختبار التدفق 3430883C (SWE2E-3430883C)"
+                  - option "مخزن اختبار التدفق 353C766D (SWE2E-353C766D)"
+                  - option "مخزن اختبار التدفق 355B21C0 (SWE2E-355B21C0)"
+                  - option "مخزن اختبار التدفق 3CDBB8A9 (SWE2E-3CDBB8A9)"
+                  - option "مخزن اختبار التدفق 3EFB336D (SWE2E-3EFB336D)"
+                  - option "مخزن اختبار التدفق 455E002C (SWE2E-455E002C)"
+                  - option "مخزن اختبار التدفق 4C62B6BE (SWE2E-4C62B6BE)"
+                  - option "مخزن اختبار التدفق 4EC9F306 (SWE2E-4EC9F306)"
+                  - option "مخزن اختبار التدفق 4FD0DF86 (SWE2E-4FD0DF86)"
+                  - option "مخزن اختبار التدفق 51D28194 (SWE2E-51D28194)"
+                  - option "مخزن اختبار التدفق 58FB0297 (SWE2E-58FB0297)"
+                  - option "مخزن اختبار التدفق 5AFB225E (SWE2E-5AFB225E)"
+                  - option "مخزن اختبار التدفق 5BB6B42D (SWE2E-5BB6B42D)"
+                  - option "مخزن اختبار التدفق 5E8E574D (SWE2E-5E8E574D)"
+                  - option "مخزن اختبار التدفق 5EAA60BD (SWE2E-5EAA60BD)"
+                  - option "مخزن اختبار التدفق 61B20884 (SWE2E-61B20884)"
+                  - option "مخزن اختبار التدفق 6632E559 (SWE2E-6632E559)"
+                  - option "مخزن اختبار التدفق 6C85B028 (SWE2E-6C85B028)"
+                  - option "مخزن اختبار التدفق 6EBCEC8C (SWE2E-6EBCEC8C)"
+                  - option "مخزن اختبار التدفق 6F733FC1 (SWE2E-6F733FC1)"
+                  - option "مخزن اختبار التدفق 703708B8 (SWE2E-703708B8)"
+                  - option "مخزن اختبار التدفق 71873C61 (SWE2E-71873C61)"
+                  - option "مخزن اختبار التدفق 7405D5BC (SWE2E-7405D5BC)"
+                  - option "مخزن اختبار التدفق 776D95E7 (SWE2E-776D95E7)"
+                  - option "مخزن اختبار التدفق 7973FE8D (SWE2E-7973FE8D)"
+                  - option "مخزن اختبار التدفق 7B12B20E (SWE2E-7B12B20E)"
+                  - option "مخزن اختبار التدفق 7D4D2441 (SWE2E-7D4D2441)"
+                  - option "مخزن اختبار التدفق 7FAE90AF (SWE2E-7FAE90AF)"
+                  - option "مخزن اختبار التدفق 81C8AD2D (SWE2E-81C8AD2D)"
+                  - option "مخزن اختبار التدفق 879EFF06 (SWE2E-879EFF06)"
+                  - option "مخزن اختبار التدفق 89445E66 (SWE2E-89445E66)"
+                  - option "مخزن اختبار التدفق 8C4C4819 (SWE2E-8C4C4819)"
+                  - option "مخزن اختبار التدفق 91E419D9 (SWE2E-91E419D9)"
+                  - option "مخزن اختبار التدفق 920F11FB (SWE2E-920F11FB)"
+                  - option "مخزن اختبار التدفق 9425C4D2 (SWE2E-9425C4D2)"
+                  - option "مخزن اختبار التدفق 974CCBFB (SWE2E-974CCBFB)"
+                  - option "مخزن اختبار التدفق A4360876 (SWE2E-A4360876)"
+                  - option "مخزن اختبار التدفق A570AE7C (SWE2E-A570AE7C)"
+                  - option "مخزن اختبار التدفق A698CBE2 (SWE2E-A698CBE2)"
+                  - option "مخزن اختبار التدفق A6CAB5AF (SWE2E-A6CAB5AF)"
+                  - option "مخزن اختبار التدفق AD938A6E (SWE2E-AD938A6E)"
+                  - option "مخزن اختبار التدفق AF6F2926 (SWE2E-AF6F2926)"
+                  - option "مخزن اختبار التدفق B4FD569B (SWE2E-B4FD569B)"
+                  - option "مخزن اختبار التدفق B676C7BF (SWE2E-B676C7BF)"
+                  - option "مخزن اختبار التدفق B6CF56D7 (SWE2E-B6CF56D7)"
+                  - option "مخزن اختبار التدفق BDB9347C (SWE2E-BDB9347C)"
+                  - option "مخزن اختبار التدفق BEDF3E40 (SWE2E-BEDF3E40)"
+                  - option "مخزن اختبار التدفق C31429F7 (SWE2E-C31429F7)"
+                  - option "مخزن اختبار التدفق C4FBE7D1 (SWE2E-C4FBE7D1)"
+                  - option "مخزن اختبار التدفق C4FE03E9 (SWE2E-C4FE03E9)"
+                  - option "مخزن اختبار التدفق C83BF6BF (SWE2E-C83BF6BF)"
+                  - option "مخزن اختبار التدفق CB0655A1 (SWE2E-CB0655A1)"
+                  - option "مخزن اختبار التدفق CF433601 (SWE2E-CF433601)"
+                  - option "مخزن اختبار التدفق D1D6A7FB (SWE2E-D1D6A7FB)"
+                  - option "مخزن اختبار التدفق D1EACF90 (SWE2E-D1EACF90)"
+                  - option "مخزن اختبار التدفق D3B7ABD6 (SWE2E-D3B7ABD6)"
+                  - option "مخزن اختبار التدفق D6EC09E8 (SWE2E-D6EC09E8)"
+                  - option "مخزن اختبار التدفق D758C0BD (SWE2E-D758C0BD)"
+                  - option "مخزن اختبار التدفق DB69950D (SWE2E-DB69950D)"
+                  - option "مخزن اختبار التدفق E696934B (SWE2E-E696934B)"
+                  - option "مخزن اختبار التدفق E8BE508E (SWE2E-E8BE508E)"
+                  - option "مخزن اختبار التدفق EB491F96 (SWE2E-EB491F96)"
+                  - option "مخزن اختبار التدفق EBCC5163 (SWE2E-EBCC5163)"
+                  - option "مخزن اختبار التدفق F19150D9 (SWE2E-F19150D9)"
+                  - option "مخزن اختبار التدفق F2A23C24 (SWE2E-F2A23C24)"
+                  - option "مخزن اختبار التدفق F3967B28 (SWE2E-F3967B28)"
+                  - option "مخزن اختبار التدفق F4A57D63 (SWE2E-F4A57D63)"
+                  - option "مخزن اختبار التدفق F6A0406A (SWE2E-F6A0406A)"
+                  - option "مخزن اختبار التدفق F9DAECA6 (SWE2E-F9DAECA6)"
+                  - option "مخزن اختبار الحجز 022206AE (RSV-E2E-022206AE)"
+                  - option "مخزن اختبار الحجز 0646D35F (RSV-E2E-0646D35F)"
+                  - option "مخزن اختبار الحجز 09EB069F (RSV-E2E-09EB069F)"
+                  - option "مخزن اختبار الحجز 0BE172D5 (RSV-E2E-0BE172D5)"
+                  - option "مخزن اختبار الحجز 0D89A43E (RSV-E2E-0D89A43E)"
+                  - option "مخزن اختبار الحجز 1145C044 (RSV-E2E-1145C044)"
+                  - option "مخزن اختبار الحجز 169B5EE8 (RSV-E2E-169B5EE8)"
+                  - option "مخزن اختبار الحجز 17F2FC89 (RSV-E2E-17F2FC89)"
+                  - option "مخزن اختبار الحجز 1C5914DB (RSV-E2E-1C5914DB)"
+                  - option "مخزن اختبار الحجز 23BC4ECE (RSV-E2E-23BC4ECE)"
+                  - option "مخزن اختبار الحجز 2985F03F (RSV-E2E-2985F03F)"
+                  - option "مخزن اختبار الحجز 298AEC76 (RSV-E2E-298AEC76)"
+                  - option "مخزن اختبار الحجز 29FF95FC (RSV-E2E-29FF95FC)"
+                  - option "مخزن اختبار الحجز 2AFF79C9 (RSV-E2E-2AFF79C9)"
+                  - option "مخزن اختبار الحجز 2E4E09D5 (RSV-E2E-2E4E09D5)"
+                  - option "مخزن اختبار الحجز 2FEC64FF (RSV-E2E-2FEC64FF)"
+                  - option "مخزن اختبار الحجز 30CDCF67 (RSV-E2E-30CDCF67)"
+                  - option "مخزن اختبار الحجز 3259C527 (RSV-E2E-3259C527)"
+                  - option "مخزن اختبار الحجز 34B74228 (RSV-E2E-34B74228)"
+                  - option "مخزن اختبار الحجز 384F8C9E (RSV-E2E-384F8C9E)"
+                  - option "مخزن اختبار الحجز 3ADF7E68 (RSV-E2E-3ADF7E68)"
+                  - option "مخزن اختبار الحجز 3F420AC9 (RSV-E2E-3F420AC9)"
+                  - option "مخزن اختبار الحجز 48E9F335 (RSV-E2E-48E9F335)"
+                  - option "مخزن اختبار الحجز 4A42B6BE (RSV-E2E-4A42B6BE)"
+                  - option "مخزن اختبار الحجز 506F4486 (RSV-E2E-506F4486)"
+                  - option "مخزن اختبار الحجز 52221DE2 (RSV-E2E-52221DE2)"
+                  - option "مخزن اختبار الحجز 52AC583A (RSV-E2E-52AC583A)"
+                  - option "مخزن اختبار الحجز 53887B2E (RSV-E2E-53887B2E)"
+                  - option "مخزن اختبار الحجز 55026641 (RSV-E2E-55026641)"
+                  - option "مخزن اختبار الحجز 576FBF2B (RSV-E2E-576FBF2B)"
+                  - option "مخزن اختبار الحجز 583494D4 (RSV-E2E-583494D4)"
+                  - option "مخزن اختبار الحجز 58579BFB (RSV-E2E-58579BFB)"
+                  - option "مخزن اختبار الحجز 587246D2 (RSV-E2E-587246D2)"
+                  - option "مخزن اختبار الحجز 58881D21 (RSV-E2E-58881D21)"
+                  - option "مخزن اختبار الحجز 5B5DF456 (RSV-E2E-5B5DF456)"
+                  - option "مخزن اختبار الحجز 5B9A98E3 (RSV-E2E-5B9A98E3)"
+                  - option "مخزن اختبار الحجز 5C45BFE3 (RSV-E2E-5C45BFE3)"
+                  - option "مخزن اختبار الحجز 6168C7F3 (RSV-E2E-6168C7F3)"
+                  - option "مخزن اختبار الحجز 648F9CD9 (RSV-E2E-648F9CD9)"
+                  - option "مخزن اختبار الحجز 66FFB949 (RSV-E2E-66FFB949)"
+                  - option "مخزن اختبار الحجز 6C133A7C (RSV-E2E-6C133A7C)"
+                  - option "مخزن اختبار الحجز 6D34962A (RSV-E2E-6D34962A)"
+                  - option "مخزن اختبار الحجز 6F34E3BC (RSV-E2E-6F34E3BC)"
+                  - option "مخزن اختبار الحجز 6FCFC43A (RSV-E2E-6FCFC43A)"
+                  - option "مخزن اختبار الحجز 73CC7AFA (RSV-E2E-73CC7AFA)"
+                  - option "مخزن اختبار الحجز 759F2AA0 (RSV-E2E-759F2AA0)"
+                  - option "مخزن اختبار الحجز 76EA89CF (RSV-E2E-76EA89CF)"
+                  - option "مخزن اختبار الحجز 775E1E35 (RSV-E2E-775E1E35)"
+                  - option "مخزن اختبار الحجز 796F5CE1 (RSV-E2E-796F5CE1)"
+                  - option "مخزن اختبار الحجز 8939A4DA (RSV-E2E-8939A4DA)"
+                  - option "مخزن اختبار الحجز 9C536E46 (RSV-E2E-9C536E46)"
+                  - option "مخزن اختبار الحجز 9D4A421A (RSV-E2E-9D4A421A)"
+                  - option "مخزن اختبار الحجز 9DD902F5 (RSV-E2E-9DD902F5)"
+                  - option "مخزن اختبار الحجز 9E35EA33 (RSV-E2E-9E35EA33)"
+                  - option "مخزن اختبار الحجز 9ED2F0E7 (RSV-E2E-9ED2F0E7)"
+                  - option "مخزن اختبار الحجز A1226B9B (RSV-E2E-A1226B9B)"
+                  - option "مخزن اختبار الحجز A1B0EFF1 (RSV-E2E-A1B0EFF1)"
+                  - option "مخزن اختبار الحجز A3C8D3B6 (RSV-E2E-A3C8D3B6)"
+                  - option "مخزن اختبار الحجز A3EDB827 (RSV-E2E-A3EDB827)"
+                  - option "مخزن اختبار الحجز A7F1F57F (RSV-E2E-A7F1F57F)"
+                  - option "مخزن اختبار الحجز A9A504D5 (RSV-E2E-A9A504D5)"
+                  - option "مخزن اختبار الحجز A9C74B90 (RSV-E2E-A9C74B90)"
+                  - option "مخزن اختبار الحجز AAF40B29 (RSV-E2E-AAF40B29)"
+                  - option "مخزن اختبار الحجز AFA65D88 (RSV-E2E-AFA65D88)"
+                  - option "مخزن اختبار الحجز B206DD26 (RSV-E2E-B206DD26)"
+                  - option "مخزن اختبار الحجز B30D3172 (RSV-E2E-B30D3172)"
+                  - option "مخزن اختبار الحجز B3AA8FCF (RSV-E2E-B3AA8FCF)"
+                  - option "مخزن اختبار الحجز B70E2BE6 (RSV-E2E-B70E2BE6)"
+                  - option "مخزن اختبار الحجز BCB241BD (RSV-E2E-BCB241BD)"
+                  - option "مخزن اختبار الحجز C1E5B19F (RSV-E2E-C1E5B19F)"
+                  - option "مخزن اختبار الحجز C420644B (RSV-E2E-C420644B)"
+                  - option "مخزن اختبار الحجز C472347C (RSV-E2E-C472347C)"
+                  - option "مخزن اختبار الحجز C8AB9C01 (RSV-E2E-C8AB9C01)"
+                  - option "مخزن اختبار الحجز CA03907B (RSV-E2E-CA03907B)"
+                  - option "مخزن اختبار الحجز CB29680C (RSV-E2E-CB29680C)"
+                  - option "مخزن اختبار الحجز D612A3EC (RSV-E2E-D612A3EC)"
+                  - option "مخزن اختبار الحجز DE16BEF3 (RSV-E2E-DE16BEF3)"
+                  - option "مخزن اختبار الحجز DFCD86CD (RSV-E2E-DFCD86CD)"
+                  - option "مخزن اختبار الحجز E3272B36 (RSV-E2E-E3272B36)"
+                  - option "مخزن اختبار الحجز E34C972E (RSV-E2E-E34C972E)"
+                  - option "مخزن اختبار الحجز E5D84147 (RSV-E2E-E5D84147)"
+                  - option "مخزن اختبار الحجز E82D702D (RSV-E2E-E82D702D)"
+                  - option "مخزن اختبار الحجز EDBA51E3 (RSV-E2E-EDBA51E3)"
+                  - option "مخزن اختبار الحجز F5B6B6A4 (RSV-E2E-F5B6B6A4)"
+                  - option "مخزن اختبار الحجز F6BFFA92 (RSV-E2E-F6BFFA92)"
+                  - option "مخزن اختبار الحجز F7764F95 (RSV-E2E-F7764F95)"
+                  - option "مخزن اختبار الحجز FE881DEB (RSV-E2E-FE881DEB)"
+                  - option "مخزن اختبار الحجز FEADAA22 (RSV-E2E-FEADAA22)"
+                  - option "مخزن اختبار المخزون 0A5DFFF3 (IWE2E-0A5DFFF3)"
+                  - option "مخزن اختبار المخزون 50F518A1 (IWE2E-50F518A1)"
+                  - option "مخزن اختبار المخزون 5920083C (IWE2E-5920083C)"
+                  - option "مخزن اختبار المخزون 5C8DD68C (IWE2E-5C8DD68C)"
+                  - option "مخزن اختبار المخزون 7AD0E8C8 (IWE2E-7AD0E8C8)"
+                  - option "مخزن اختبار المخزون 9C8BE844 (IWE2E-9C8BE844)"
+              - generic [ref=e143]:
+                - generic [ref=e144]: العملة
+                - combobox "العملة" [ref=e145]:
+                  - option "الجنيه المصري (EGP)" [selected]
+              - generic [ref=e146]:
+                - generic [ref=e147]: شروط الدفع
+                - textbox "شروط الدفع" [ref=e148]
+              - generic [ref=e149]:
+                - generic [ref=e150]: نوع خصم الطلب
+                - combobox "نوع خصم الطلب" [ref=e151]:
+                  - option "مبلغ ثابت" [selected]
+                  - option "نسبة مئوية"
+              - generic [ref=e152]:
+                - generic [ref=e153]: قيمة خصم الطلب
+                - textbox "قيمة خصم الطلب" [ref=e154]: "0"
+              - generic [ref=e155]:
+                - generic [ref=e156]: الشحن
+                - textbox "الشحن" [ref=e157]: "0"
+            - generic [ref=e158]:
+              - generic [ref=e159]: ملاحظات الطلب
+              - textbox "ملاحظات الطلب" [ref=e160]
+          - region "أصناف الطلب" [ref=e161]:
+            - heading "أصناف الطلب" [level=2] [ref=e162]
+            - group "أصناف الطلب 1" [ref=e163]:
+              - generic [ref=e164]: أصناف الطلب 1
+              - generic [ref=e165]:
+                - generic [ref=e166]: المنتج
+                - combobox "المنتج" [ref=e167]:
+                  - option "اختر المنتج" [selected]
+                  - option "Container inline product updated — CIP-ebef4a5c52e0"
+                  - option "Damaged product — DSba6357"
+                  - option "Damaged product — DSaef000"
+                  - option "Damaged product — DS2fb365"
+                  - option "Damaged product — DSd5e624"
+                  - option "Fixture Product — FIX25fd01260b876860"
+                  - option "Fixture Product — FIXf91bf981a11bc175"
+                  - option "Fixture Product — FIX1f00c83e322b7d3d"
+                  - option "Fixture Product — FIX399ce59e167c0ea3"
+                  - option "Fixture Product — FIXd9457a8a6cab9449"
+                  - option "Fixture Product — FIXe330daf012581826"
+                  - option "Opening product — OPN23d36f2b"
+                  - option "Opening product — OPN2fefafcb"
+                  - option "Opening product — OPNea42df5b"
+                  - option "Opening product — OPNab8771d2"
+                  - option "Opening product — OPNd93b3f23"
+                  - option "Opening product — OPNed41c136"
+                  - option "Reference product — WREF-8dd776d0"
+                  - option "Reference product — WREF-7fce0086"
+                  - option "Return product — WR223b76"
+                  - option "Return product — WR1803c1"
+                  - option "Return product — WR26c27b"
+                  - option "Return product — WR7af528"
+                  - option "Return product — WR6710f1"
+                  - option "Return product — WRT9efbab7e"
+                  - option "Return product — WR00c650"
+                  - option "Return product — WRd9f439"
+                  - option "Return product — WR369a10"
+                  - option "Return product — WR6977ce"
+                  - option "Return product — WR727fcb"
+                  - option "Return product — WRTd721e662"
+                  - option "Return product — WR1993ec"
+                  - option "Return product — WR169583"
+                  - option "Return product — WR5884e7"
+                  - option "Return product — WR703161"
+                  - option "Return product — WR4021b9"
+                  - option "Return product — WRT38c3b028"
+                  - option "Return product — WR650d39"
+                  - option "Return product — WR9a6333"
+                  - option "Return product — WRff7b15"
+                  - option "Return product — WR2dfdcc"
+                  - option "Return product — WRe879a3"
+                  - option "Return product — WRTb673191f"
+                  - option "Return product — WR7722fb"
+                  - option "Return product — WR405ac6"
+                  - option "Return product — WR97d753"
+                  - option "Return product — WRc962da"
+                  - option "Return product — WRe4bfae"
+                  - option "Return product — WRT4cd7756a"
+                  - option "Return product — WRf2e6eb"
+                  - option "Return product — WR79971a"
+                  - option "Return product — WR058983"
+                  - option "Return product — WR64d9fe"
+                  - option "Return product — WRa27f18"
+                  - option "Return product — WRTbdb5b29e"
+                  - option "Return product — WRa63afa"
+                  - option "Return product — WRc423b5"
+                  - option "Return product — WRf15b66"
+                  - option "Return product — WR98af0a"
+                  - option "Return product — WRdd3471"
+                  - option "Return product — WRT85284b91"
+                  - option "Return product — WR48d828"
+                  - option "Return product — WRb025fe"
+                  - option "Return product — WR87b00d"
+                  - option "Return product — WR8a4e69"
+                  - option "Return product — WRa20803"
+                  - option "Return product — WRT37061730"
+                  - option "Return product — WRTc291e62c"
+                  - option "Return product — WR8d3ddb"
+                  - option "Return product — WR0040ff"
+                  - option "Return product — WR55a4ce"
+                  - option "Return product — WRf181df"
+                  - option "Return product — WRe1a66b"
+                  - option "صنف اختبار الحجز 022206AE — RSV-E2E-022206AE"
+                  - option "صنف اختبار الحجز 0646D35F — RSV-E2E-0646D35F"
+                  - option "صنف اختبار الحجز 09EB069F — RSV-E2E-09EB069F"
+                  - option "صنف اختبار الحجز 0BE172D5 — RSV-E2E-0BE172D5"
+                  - option "صنف اختبار الحجز 0D89A43E — RSV-E2E-0D89A43E"
+                  - option "صنف اختبار الحجز 1145C044 — RSV-E2E-1145C044"
+                  - option "صنف اختبار الحجز 169B5EE8 — RSV-E2E-169B5EE8"
+                  - option "صنف اختبار الحجز 17F2FC89 — RSV-E2E-17F2FC89"
+                  - option "صنف اختبار الحجز 1C5914DB — RSV-E2E-1C5914DB"
+                  - option "صنف اختبار الحجز 23BC4ECE — RSV-E2E-23BC4ECE"
+                  - option "صنف اختبار الحجز 2985F03F — RSV-E2E-2985F03F"
+                  - option "صنف اختبار الحجز 298AEC76 — RSV-E2E-298AEC76"
+                  - option "صنف اختبار الحجز 29FF95FC — RSV-E2E-29FF95FC"
+                  - option "صنف اختبار الحجز 2AFF79C9 — RSV-E2E-2AFF79C9"
+                  - option "صنف اختبار الحجز 2E4E09D5 — RSV-E2E-2E4E09D5"
+                  - option "صنف اختبار الحجز 2FEC64FF — RSV-E2E-2FEC64FF"
+                  - option "صنف اختبار الحجز 30CDCF67 — RSV-E2E-30CDCF67"
+                  - option "صنف اختبار الحجز 3259C527 — RSV-E2E-3259C527"
+                  - option "صنف اختبار الحجز 34B74228 — RSV-E2E-34B74228"
+                  - option "صنف اختبار الحجز 384F8C9E — RSV-E2E-384F8C9E"
+                  - option "صنف اختبار الحجز 3ADF7E68 — RSV-E2E-3ADF7E68"
+                  - option "صنف اختبار الحجز 3F420AC9 — RSV-E2E-3F420AC9"
+                  - option "صنف اختبار الحجز 48E9F335 — RSV-E2E-48E9F335"
+                  - option "صنف اختبار الحجز 4A42B6BE — RSV-E2E-4A42B6BE"
+                  - option "صنف اختبار الحجز 506F4486 — RSV-E2E-506F4486"
+                  - option "صنف اختبار الحجز 52221DE2 — RSV-E2E-52221DE2"
+                  - option "صنف اختبار الحجز 52AC583A — RSV-E2E-52AC583A"
+              - generic [ref=e168]:
+                - generic [ref=e169]:
+                  - text: الكمية
+                  - generic [ref=e170]: "*"
+                - textbox "الكمية" [ref=e171]
+              - generic [ref=e172]:
+                - generic [ref=e173]:
+                  - text: سعر الوحدة (ج.م)
+                  - generic [ref=e174]: "*"
+                - textbox "سعر الوحدة (ج.م)" [ref=e175]
+              - generic [ref=e176]:
+                - generic [ref=e177]: ملاحظات
+                - textbox "ملاحظات" [ref=e178]
+              - generic [ref=e179]:
+                - generic [ref=e180]: الخصم %
+                - textbox "الخصم %" [ref=e181]: "0"
+            - button "إضافة صنف" [ref=e182] [cursor=pointer]
+          - region "معاينة الإجمالي من الخادم" [ref=e183]:
+            - heading "معاينة الإجمالي من الخادم" [level=2] [ref=e184]
+            - paragraph [ref=e185]: لا توجد حجوزات مخزون مسجلة لهذا الطلب.
+          - generic [ref=e186]:
+            - button "حفظ كمسودة" [ref=e187] [cursor=pointer]
+            - button "تأكيد الطلب" [ref=e188] [cursor=pointer]
+```

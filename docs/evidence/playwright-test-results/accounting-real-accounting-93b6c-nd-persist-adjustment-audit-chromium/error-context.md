@@ -1,0 +1,981 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e7]:
+      - strong [ref=e8]: MASTER
+      - generic [ref=e9]: نظام إدارة الأعمال
+    - navigation "MASTER" [ref=e10]:
+      - link "لوحة التحكم" [ref=e11] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e12] [cursor=pointer]
+        - generic [ref=e14] [cursor=pointer]: لوحة التحكم
+      - group [ref=e15]:
+        - generic "المبيعات" [ref=e16] [cursor=pointer]:
+          - generic [ref=e17] [cursor=pointer]: المبيعات
+          - generic [ref=e18] [cursor=pointer]: ⌄
+      - group [ref=e19]:
+        - generic "العملاء" [ref=e20] [cursor=pointer]:
+          - generic [ref=e21] [cursor=pointer]: العملاء
+          - generic [ref=e22] [cursor=pointer]: ⌄
+      - group [ref=e23]:
+        - generic "المنتجات والمخزون" [ref=e24] [cursor=pointer]:
+          - generic [ref=e25] [cursor=pointer]: المنتجات والمخزون
+          - generic [ref=e26] [cursor=pointer]: ⌄
+      - group [ref=e27]:
+        - generic "الحاويات" [ref=e28] [cursor=pointer]:
+          - generic [ref=e29] [cursor=pointer]: الحاويات
+          - generic [ref=e30] [cursor=pointer]: ⌄
+      - group [ref=e31]:
+        - generic "المالية" [ref=e32] [cursor=pointer]:
+          - generic [ref=e33] [cursor=pointer]: المالية
+          - generic [ref=e34] [cursor=pointer]: ⌄
+        - link "المالية" [ref=e35] [cursor=pointer]:
+          - /url: /finance
+          - img [ref=e36] [cursor=pointer]
+          - generic [ref=e38] [cursor=pointer]: المالية
+        - link "الصندوق الوارد" [ref=e39] [cursor=pointer]:
+          - /url: /finance/inbox
+          - img [ref=e40] [cursor=pointer]
+          - generic [ref=e42] [cursor=pointer]: الصندوق الوارد
+        - link "الوارد من تطبيق الهاتف" [ref=e43] [cursor=pointer]:
+          - /url: /finance/mobile-inbox
+          - img [ref=e44] [cursor=pointer]
+          - generic [ref=e46] [cursor=pointer]: الوارد من تطبيق الهاتف
+        - link "سحوبات الخزينة" [ref=e47] [cursor=pointer]:
+          - /url: /finance/withdrawals
+          - img [ref=e48] [cursor=pointer]
+          - generic [ref=e50] [cursor=pointer]: سحوبات الخزينة
+        - link "حركات الخزينة" [ref=e51] [cursor=pointer]:
+          - /url: /finance/movements
+          - img [ref=e52] [cursor=pointer]
+          - generic [ref=e54] [cursor=pointer]: حركات الخزينة
+        - link "قنوات الدفع عبر الهاتف" [ref=e55] [cursor=pointer]:
+          - /url: /finance/mobile-channels
+          - img [ref=e56] [cursor=pointer]
+          - generic [ref=e58] [cursor=pointer]: قنوات الدفع عبر الهاتف
+        - link "الشركاء" [ref=e59] [cursor=pointer]:
+          - /url: /partners
+          - img [ref=e60] [cursor=pointer]
+          - generic [ref=e62] [cursor=pointer]: الشركاء
+        - link "دفعات الشركاء" [ref=e63] [cursor=pointer]:
+          - /url: /partner-payments
+          - img [ref=e64] [cursor=pointer]
+          - generic [ref=e66] [cursor=pointer]: دفعات الشركاء
+        - link "فواتير الشراء" [ref=e67] [cursor=pointer]:
+          - /url: /purchase-invoices
+          - img [ref=e68] [cursor=pointer]
+          - generic [ref=e70] [cursor=pointer]: فواتير الشراء
+        - link "أموال الحاويات" [ref=e71] [cursor=pointer]:
+          - /url: /container-funds
+          - img [ref=e72] [cursor=pointer]
+          - generic [ref=e74] [cursor=pointer]: أموال الحاويات
+      - group [ref=e75]:
+        - generic "التقارير" [ref=e76] [cursor=pointer]:
+          - generic [ref=e77] [cursor=pointer]: التقارير
+          - generic [ref=e78] [cursor=pointer]: ⌄
+        - link "التقارير" [ref=e79] [cursor=pointer]:
+          - /url: /reports
+          - img [ref=e80] [cursor=pointer]
+          - generic [ref=e82] [cursor=pointer]: التقارير
+        - link "تقرير المبيعات" [ref=e83] [cursor=pointer]:
+          - /url: /reports/sales
+          - generic [ref=e84] [cursor=pointer]: ↗
+          - generic [ref=e85] [cursor=pointer]: تقرير المبيعات
+        - link "ربحية الفواتير" [ref=e86] [cursor=pointer]:
+          - /url: /reports/invoice-profit
+          - generic [ref=e87] [cursor=pointer]: ↗
+          - generic [ref=e88] [cursor=pointer]: ربحية الفواتير
+        - link "توزيع الأرباح والمطابقة" [ref=e89] [cursor=pointer]:
+          - /url: /reports/profit-distribution
+          - generic [ref=e90] [cursor=pointer]: ↗
+          - generic [ref=e91] [cursor=pointer]: توزيع الأرباح والمطابقة
+        - link "تقرير المخزون" [ref=e92] [cursor=pointer]:
+          - /url: /reports/stock
+          - generic [ref=e93] [cursor=pointer]: ↗
+          - generic [ref=e94] [cursor=pointer]: تقرير المخزون
+        - link "التقرير المالي" [ref=e95] [cursor=pointer]:
+          - /url: /reports/financial
+          - generic [ref=e96] [cursor=pointer]: ↗
+          - generic [ref=e97] [cursor=pointer]: التقرير المالي
+      - group [ref=e98]:
+        - generic "إدارة النظام" [ref=e99] [cursor=pointer]:
+          - generic [ref=e100] [cursor=pointer]: إدارة النظام
+          - generic [ref=e101] [cursor=pointer]: ⌄
+      - group [ref=e102]:
+        - generic "أدوات إضافية" [ref=e103] [cursor=pointer]:
+          - generic [ref=e104] [cursor=pointer]: أدوات إضافية
+          - generic [ref=e105] [cursor=pointer]: ⌄
+    - generic [ref=e106]:
+      - generic [ref=e107]: م
+      - generic [ref=e108]:
+        - strong [ref=e109]: مالك اختبار تدفقات المبيعات
+        - generic [ref=e110]: المالك
+      - button "تسجيل الخروج" [ref=e111] [cursor=pointer]:
+        - img [ref=e112] [cursor=pointer]
+  - generic [ref=e114]:
+    - banner [ref=e115]:
+      - navigation "مسار الصفحة" [ref=e116]:
+        - link "لوحة التحكم" [ref=e117] [cursor=pointer]:
+          - /url: /dashboard
+        - generic [ref=e118]: /
+        - link "المالية" [ref=e119] [cursor=pointer]:
+          - /url: /finance
+        - generic [ref=e120]: /
+        - strong [ref=e121]: التسويات المالية
+      - button "بحث سريع" [ref=e122] [cursor=pointer]:
+        - img [ref=e123] [cursor=pointer]
+        - generic [ref=e125] [cursor=pointer]: بحث سريع
+        - generic [ref=e126] [cursor=pointer]: تحكم + K
+      - group [ref=e127]:
+        - generic "ابدأ إجراء" [ref=e128] [cursor=pointer]:
+          - generic [ref=e129] [cursor=pointer]: ＋
+          - generic [ref=e130] [cursor=pointer]: ابدأ إجراء
+      - generic [ref=e131]:
+        - generic [ref=e132]: المظهر
+        - checkbox "التبديل إلى المظهر الفاتح" [ref=e133]
+        - generic [ref=e134]: ◐
+      - generic [ref=e135]:
+        - button "الإشعارات (10)" [ref=e137] [cursor=pointer]:
+          - img [ref=e138] [cursor=pointer]
+        - button "تسجيل الخروج" [ref=e140] [cursor=pointer]
+    - navigation "اختصارات التنقل" [ref=e141]:
+      - link "سجل العمليات" [ref=e142] [cursor=pointer]:
+        - /url: /admin/audit
+      - link "لوحة التحكم" [ref=e143] [cursor=pointer]:
+        - /url: /dashboard
+    - main [ref=e144]:
+      - generic [ref=e145]:
+        - generic [ref=e147]:
+          - heading "التسويات المالية" [level=1] [ref=e148]
+          - paragraph [ref=e149]: كل تسوية تحفظ قيداً مزدوجاً مرحّلاً، مع مرجع وسجل تدقيق.
+        - generic [ref=e150]:
+          - heading "تسوية جديدة" [level=2] [ref=e151]
+          - generic [ref=e152]:
+            - generic [ref=e153]:
+              - generic [ref=e154]:
+                - text: رقم المرجع
+                - generic [ref=e155]: "*"
+              - textbox "رقم المرجع" [ref=e156]: ACCEPTANCE-ADJ-1
+            - generic [ref=e157]:
+              - generic [ref=e158]: نوع التسوية
+              - combobox "نوع التسوية" [ref=e159]:
+                - option "إضافة"
+                - option "خصم"
+                - option "مصروف" [selected]
+                - option "إيراد"
+                - option "تسوية"
+                - option "تصحيح"
+            - generic [ref=e160]:
+              - generic [ref=e161]:
+                - text: التاريخ
+                - generic [ref=e162]: "*"
+              - textbox "التاريخ" [ref=e163]: 2026-10-30
+            - generic [ref=e164]:
+              - generic [ref=e165]:
+                - text: المبلغ
+                - generic [ref=e166]: "*"
+              - textbox "المبلغ" [ref=e167]: "10.00"
+            - combobox "الحساب المدين" [ref=e168]:
+              - option "اختر الحساب المدين"
+              - option "AE-0B502A1D-cash — Accounting acceptance cash 0B502A1D"
+              - option "AE-0B502A1D-equity — Accounting acceptance equity 0B502A1D"
+              - option "AE-0B502A1D-expense — Accounting acceptance expense 0B502A1D"
+              - option "AE-0B502A1D-revenue — Accounting acceptance revenue 0B502A1D"
+              - option "AE-0BB87271-cash — Accounting acceptance cash 0BB87271"
+              - option "AE-0BB87271-equity — Accounting acceptance equity 0BB87271"
+              - option "AE-0BB87271-expense — Accounting acceptance expense 0BB87271"
+              - option "AE-0BB87271-revenue — Accounting acceptance revenue 0BB87271"
+              - option "AE-152123D5-cash — Accounting acceptance cash 152123D5"
+              - option "AE-152123D5-equity — Accounting acceptance equity 152123D5"
+              - option "AE-152123D5-expense — Accounting acceptance expense 152123D5"
+              - option "AE-152123D5-revenue — Accounting acceptance revenue 152123D5"
+              - option "AE-15229A69-cash — Accounting acceptance cash 15229A69"
+              - option "AE-15229A69-equity — Accounting acceptance equity 15229A69"
+              - option "AE-15229A69-expense — Accounting acceptance expense 15229A69"
+              - option "AE-15229A69-revenue — Accounting acceptance revenue 15229A69"
+              - option "AE-15FDE0BB-cash — Accounting acceptance cash 15FDE0BB"
+              - option "AE-15FDE0BB-equity — Accounting acceptance equity 15FDE0BB"
+              - option "AE-15FDE0BB-expense — Accounting acceptance expense 15FDE0BB"
+              - option "AE-15FDE0BB-revenue — Accounting acceptance revenue 15FDE0BB"
+              - option "AE-1BB0E266-cash — Accounting acceptance cash 1BB0E266"
+              - option "AE-1BB0E266-equity — Accounting acceptance equity 1BB0E266"
+              - option "AE-1BB0E266-expense — Accounting acceptance expense 1BB0E266"
+              - option "AE-1BB0E266-revenue — Accounting acceptance revenue 1BB0E266"
+              - option "AE-1D5940D3-cash — Accounting acceptance cash 1D5940D3"
+              - option "AE-1D5940D3-equity — Accounting acceptance equity 1D5940D3"
+              - option "AE-1D5940D3-expense — Accounting acceptance expense 1D5940D3"
+              - option "AE-1D5940D3-revenue — Accounting acceptance revenue 1D5940D3"
+              - option "AE-22D1E2D9-cash — Accounting acceptance cash 22D1E2D9"
+              - option "AE-22D1E2D9-equity — Accounting acceptance equity 22D1E2D9"
+              - option "AE-22D1E2D9-expense — Accounting acceptance expense 22D1E2D9"
+              - option "AE-22D1E2D9-revenue — Accounting acceptance revenue 22D1E2D9"
+              - option "AE-2384F222-cash — Accounting acceptance cash 2384F222"
+              - option "AE-2384F222-equity — Accounting acceptance equity 2384F222"
+              - option "AE-2384F222-expense — Accounting acceptance expense 2384F222"
+              - option "AE-2384F222-revenue — Accounting acceptance revenue 2384F222"
+              - option "AE-2FD188BD-cash — Accounting acceptance cash 2FD188BD"
+              - option "AE-2FD188BD-equity — Accounting acceptance equity 2FD188BD"
+              - option "AE-2FD188BD-expense — Accounting acceptance expense 2FD188BD"
+              - option "AE-2FD188BD-revenue — Accounting acceptance revenue 2FD188BD"
+              - option "AE-3209FB65-cash — Accounting acceptance cash 3209FB65"
+              - option "AE-3209FB65-equity — Accounting acceptance equity 3209FB65"
+              - option "AE-3209FB65-expense — Accounting acceptance expense 3209FB65"
+              - option "AE-3209FB65-revenue — Accounting acceptance revenue 3209FB65"
+              - option "AE-33E4C96C-cash — Accounting acceptance cash 33E4C96C"
+              - option "AE-33E4C96C-equity — Accounting acceptance equity 33E4C96C"
+              - option "AE-33E4C96C-expense — Accounting acceptance expense 33E4C96C"
+              - option "AE-33E4C96C-revenue — Accounting acceptance revenue 33E4C96C"
+              - option "AE-3AFED7DA-cash — Accounting acceptance cash 3AFED7DA"
+              - option "AE-3AFED7DA-equity — Accounting acceptance equity 3AFED7DA"
+              - option "AE-3AFED7DA-expense — Accounting acceptance expense 3AFED7DA"
+              - option "AE-3AFED7DA-revenue — Accounting acceptance revenue 3AFED7DA"
+              - option "AE-3FEC2200-cash — Accounting acceptance cash 3FEC2200"
+              - option "AE-3FEC2200-equity — Accounting acceptance equity 3FEC2200"
+              - option "AE-3FEC2200-expense — Accounting acceptance expense 3FEC2200"
+              - option "AE-3FEC2200-revenue — Accounting acceptance revenue 3FEC2200"
+              - option "AE-46F26119-cash — Accounting acceptance cash 46F26119"
+              - option "AE-46F26119-equity — Accounting acceptance equity 46F26119"
+              - option "AE-46F26119-expense — Accounting acceptance expense 46F26119"
+              - option "AE-46F26119-revenue — Accounting acceptance revenue 46F26119"
+              - option "AE-4AD31865-cash — Accounting acceptance cash 4AD31865"
+              - option "AE-4AD31865-equity — Accounting acceptance equity 4AD31865"
+              - option "AE-4AD31865-expense — Accounting acceptance expense 4AD31865"
+              - option "AE-4AD31865-revenue — Accounting acceptance revenue 4AD31865"
+              - option "AE-4B89467A-cash — Accounting acceptance cash 4B89467A"
+              - option "AE-4B89467A-equity — Accounting acceptance equity 4B89467A"
+              - option "AE-4B89467A-expense — Accounting acceptance expense 4B89467A"
+              - option "AE-4B89467A-revenue — Accounting acceptance revenue 4B89467A"
+              - option "AE-4D151A90-cash — Accounting acceptance cash 4D151A90"
+              - option "AE-4D151A90-equity — Accounting acceptance equity 4D151A90"
+              - option "AE-4D151A90-expense — Accounting acceptance expense 4D151A90"
+              - option "AE-4D151A90-revenue — Accounting acceptance revenue 4D151A90"
+              - option "AE-4DDE4079-cash — Accounting acceptance cash 4DDE4079"
+              - option "AE-4DDE4079-equity — Accounting acceptance equity 4DDE4079"
+              - option "AE-4DDE4079-expense — Accounting acceptance expense 4DDE4079"
+              - option "AE-4DDE4079-revenue — Accounting acceptance revenue 4DDE4079"
+              - option "AE-4FB8353D-cash — Accounting acceptance cash 4FB8353D"
+              - option "AE-4FB8353D-equity — Accounting acceptance equity 4FB8353D"
+              - option "AE-4FB8353D-expense — Accounting acceptance expense 4FB8353D"
+              - option "AE-4FB8353D-revenue — Accounting acceptance revenue 4FB8353D"
+              - option "AE-520A5380-cash — Accounting acceptance cash 520A5380"
+              - option "AE-520A5380-equity — Accounting acceptance equity 520A5380"
+              - option "AE-520A5380-expense — Accounting acceptance expense 520A5380"
+              - option "AE-520A5380-revenue — Accounting acceptance revenue 520A5380"
+              - option "AE-5301D155-cash — Accounting acceptance cash 5301D155"
+              - option "AE-5301D155-equity — Accounting acceptance equity 5301D155"
+              - option "AE-5301D155-expense — Accounting acceptance expense 5301D155"
+              - option "AE-5301D155-revenue — Accounting acceptance revenue 5301D155"
+              - option "AE-5B200C0C-cash — Accounting acceptance cash 5B200C0C"
+              - option "AE-5B200C0C-equity — Accounting acceptance equity 5B200C0C"
+              - option "AE-5B200C0C-expense — Accounting acceptance expense 5B200C0C"
+              - option "AE-5B200C0C-revenue — Accounting acceptance revenue 5B200C0C"
+              - option "AE-601E4E94-cash — Accounting acceptance cash 601E4E94"
+              - option "AE-601E4E94-equity — Accounting acceptance equity 601E4E94"
+              - option "AE-601E4E94-expense — Accounting acceptance expense 601E4E94"
+              - option "AE-601E4E94-revenue — Accounting acceptance revenue 601E4E94"
+              - option "AE-7015E916-cash — Accounting acceptance cash 7015E916"
+              - option "AE-7015E916-equity — Accounting acceptance equity 7015E916"
+              - option "AE-7015E916-expense — Accounting acceptance expense 7015E916"
+              - option "AE-7015E916-revenue — Accounting acceptance revenue 7015E916"
+              - option "AE-71112CD1-cash — Accounting acceptance cash 71112CD1"
+              - option "AE-71112CD1-equity — Accounting acceptance equity 71112CD1"
+              - option "AE-71112CD1-expense — Accounting acceptance expense 71112CD1"
+              - option "AE-71112CD1-revenue — Accounting acceptance revenue 71112CD1"
+              - option "AE-72B59397-cash — Accounting acceptance cash 72B59397"
+              - option "AE-72B59397-equity — Accounting acceptance equity 72B59397"
+              - option "AE-72B59397-expense — Accounting acceptance expense 72B59397"
+              - option "AE-72B59397-revenue — Accounting acceptance revenue 72B59397"
+              - option "AE-733D16FD-cash — Accounting acceptance cash 733D16FD"
+              - option "AE-733D16FD-equity — Accounting acceptance equity 733D16FD"
+              - option "AE-733D16FD-expense — Accounting acceptance expense 733D16FD"
+              - option "AE-733D16FD-revenue — Accounting acceptance revenue 733D16FD"
+              - option "AE-7A33EA76-cash — Accounting acceptance cash 7A33EA76"
+              - option "AE-7A33EA76-equity — Accounting acceptance equity 7A33EA76"
+              - option "AE-7A33EA76-expense — Accounting acceptance expense 7A33EA76"
+              - option "AE-7A33EA76-revenue — Accounting acceptance revenue 7A33EA76"
+              - option "AE-7CC089A6-cash — Accounting acceptance cash 7CC089A6"
+              - option "AE-7CC089A6-equity — Accounting acceptance equity 7CC089A6"
+              - option "AE-7CC089A6-expense — Accounting acceptance expense 7CC089A6"
+              - option "AE-7CC089A6-revenue — Accounting acceptance revenue 7CC089A6"
+              - option "AE-82DF0835-cash — Accounting acceptance cash 82DF0835"
+              - option "AE-82DF0835-equity — Accounting acceptance equity 82DF0835"
+              - option "AE-82DF0835-expense — Accounting acceptance expense 82DF0835"
+              - option "AE-82DF0835-revenue — Accounting acceptance revenue 82DF0835"
+              - option "AE-8E68E530-cash — Accounting acceptance cash 8E68E530"
+              - option "AE-8E68E530-equity — Accounting acceptance equity 8E68E530"
+              - option "AE-8E68E530-expense — Accounting acceptance expense 8E68E530"
+              - option "AE-8E68E530-revenue — Accounting acceptance revenue 8E68E530"
+              - option "AE-AB507EDC-cash — Accounting acceptance cash AB507EDC"
+              - option "AE-AB507EDC-equity — Accounting acceptance equity AB507EDC"
+              - option "AE-AB507EDC-expense — Accounting acceptance expense AB507EDC"
+              - option "AE-AB507EDC-revenue — Accounting acceptance revenue AB507EDC"
+              - option "AE-B2CB92BE-cash — Accounting acceptance cash B2CB92BE"
+              - option "AE-B2CB92BE-equity — Accounting acceptance equity B2CB92BE"
+              - option "AE-B2CB92BE-expense — Accounting acceptance expense B2CB92BE"
+              - option "AE-B2CB92BE-revenue — Accounting acceptance revenue B2CB92BE"
+              - option "AE-B3C470C6-cash — Accounting acceptance cash B3C470C6"
+              - option "AE-B3C470C6-equity — Accounting acceptance equity B3C470C6"
+              - option "AE-B3C470C6-expense — Accounting acceptance expense B3C470C6"
+              - option "AE-B3C470C6-revenue — Accounting acceptance revenue B3C470C6"
+              - option "AE-B5D47ECE-cash — Accounting acceptance cash B5D47ECE"
+              - option "AE-B5D47ECE-equity — Accounting acceptance equity B5D47ECE"
+              - option "AE-B5D47ECE-expense — Accounting acceptance expense B5D47ECE"
+              - option "AE-B5D47ECE-revenue — Accounting acceptance revenue B5D47ECE"
+              - option "AE-B720B620-cash — Accounting acceptance cash B720B620"
+              - option "AE-B720B620-equity — Accounting acceptance equity B720B620"
+              - option "AE-B720B620-expense — Accounting acceptance expense B720B620"
+              - option "AE-B720B620-revenue — Accounting acceptance revenue B720B620"
+              - option "AE-BE5AF1A5-cash — Accounting acceptance cash BE5AF1A5"
+              - option "AE-BE5AF1A5-equity — Accounting acceptance equity BE5AF1A5"
+              - option "AE-BE5AF1A5-expense — Accounting acceptance expense BE5AF1A5"
+              - option "AE-BE5AF1A5-revenue — Accounting acceptance revenue BE5AF1A5"
+              - option "AE-C2B88AB5-cash — Accounting acceptance cash C2B88AB5"
+              - option "AE-C2B88AB5-equity — Accounting acceptance equity C2B88AB5"
+              - option "AE-C2B88AB5-expense — Accounting acceptance expense C2B88AB5"
+              - option "AE-C2B88AB5-revenue — Accounting acceptance revenue C2B88AB5"
+              - option "AE-DB7C6BA0-cash — Accounting acceptance cash DB7C6BA0"
+              - option "AE-DB7C6BA0-equity — Accounting acceptance equity DB7C6BA0"
+              - option "AE-DB7C6BA0-expense — Accounting acceptance expense DB7C6BA0"
+              - option "AE-DB7C6BA0-revenue — Accounting acceptance revenue DB7C6BA0"
+              - option "AE-DF8F0309-cash — Accounting acceptance cash DF8F0309"
+              - option "AE-DF8F0309-equity — Accounting acceptance equity DF8F0309"
+              - option "AE-DF8F0309-expense — Accounting acceptance expense DF8F0309"
+              - option "AE-DF8F0309-revenue — Accounting acceptance revenue DF8F0309"
+              - option "AE-E1B5C6A5-cash — Accounting acceptance cash E1B5C6A5"
+              - option "AE-E1B5C6A5-equity — Accounting acceptance equity E1B5C6A5"
+              - option "AE-E1B5C6A5-expense — Accounting acceptance expense E1B5C6A5"
+              - option "AE-E1B5C6A5-revenue — Accounting acceptance revenue E1B5C6A5"
+              - option "AE-E4BE6DA9-cash — Accounting acceptance cash E4BE6DA9"
+              - option "AE-E4BE6DA9-equity — Accounting acceptance equity E4BE6DA9"
+              - option "AE-E4BE6DA9-expense — Accounting acceptance expense E4BE6DA9"
+              - option "AE-E4BE6DA9-revenue — Accounting acceptance revenue E4BE6DA9"
+              - option "AE-E76BD3D2-cash — Accounting acceptance cash E76BD3D2"
+              - option "AE-E76BD3D2-equity — Accounting acceptance equity E76BD3D2"
+              - option "AE-E76BD3D2-expense — Accounting acceptance expense E76BD3D2"
+              - option "AE-E76BD3D2-revenue — Accounting acceptance revenue E76BD3D2"
+              - option "AE-EA5852CD-cash — Accounting acceptance cash EA5852CD"
+              - option "AE-EA5852CD-equity — Accounting acceptance equity EA5852CD"
+              - option "AE-EA5852CD-expense — Accounting acceptance expense EA5852CD"
+              - option "AE-EA5852CD-revenue — Accounting acceptance revenue EA5852CD"
+              - option "AE-EDD40064-cash — Accounting acceptance cash EDD40064"
+              - option "AE-EDD40064-equity — Accounting acceptance equity EDD40064"
+              - option "AE-EDD40064-expense — Accounting acceptance expense EDD40064"
+              - option "AE-EDD40064-revenue — Accounting acceptance revenue EDD40064"
+              - option "AE-F3BE27B1-cash — Accounting acceptance cash F3BE27B1"
+              - option "AE-F3BE27B1-equity — Accounting acceptance equity F3BE27B1"
+              - option "AE-F3BE27B1-expense — Accounting acceptance expense F3BE27B1"
+              - option "AE-F3BE27B1-revenue — Accounting acceptance revenue F3BE27B1"
+              - option "AE-F45D68E9-cash — Accounting acceptance cash F45D68E9"
+              - option "AE-F45D68E9-equity — Accounting acceptance equity F45D68E9"
+              - option "AE-F45D68E9-expense — Accounting acceptance expense F45D68E9"
+              - option "AE-F45D68E9-revenue — Accounting acceptance revenue F45D68E9"
+              - option "AE-F4B1DDDD-cash — Accounting acceptance cash F4B1DDDD"
+              - option "AE-F4B1DDDD-equity — Accounting acceptance equity F4B1DDDD"
+              - option "AE-F4B1DDDD-expense — Accounting acceptance expense F4B1DDDD"
+              - option "AE-F4B1DDDD-revenue — Accounting acceptance revenue F4B1DDDD"
+              - option "AE-F4D3ADE3-cash — Accounting acceptance cash F4D3ADE3"
+              - option "AE-F4D3ADE3-equity — Accounting acceptance equity F4D3ADE3"
+              - option "AE-F4D3ADE3-expense — Accounting acceptance expense F4D3ADE3"
+              - option "AE-F4D3ADE3-revenue — Accounting acceptance revenue F4D3ADE3"
+              - option "AE-F4E62FF0-cash — Accounting acceptance cash F4E62FF0"
+              - option "AE-F4E62FF0-equity — Accounting acceptance equity F4E62FF0"
+              - option "AE-F4E62FF0-expense — Accounting acceptance expense F4E62FF0"
+              - option "AE-F4E62FF0-revenue — Accounting acceptance revenue F4E62FF0"
+              - option "AE-F52F7865-cash — Accounting acceptance cash F52F7865"
+              - option "AE-F52F7865-equity — Accounting acceptance equity F52F7865"
+              - option "AE-F52F7865-expense — Accounting acceptance expense F52F7865"
+              - option "AE-F52F7865-revenue — Accounting acceptance revenue F52F7865"
+              - option "AE-F6630D03-cash — Accounting acceptance cash F6630D03"
+              - option "AE-F6630D03-equity — Accounting acceptance equity F6630D03"
+              - option "AE-F6630D03-expense — Accounting acceptance expense F6630D03"
+              - option "AE-F6630D03-revenue — Accounting acceptance revenue F6630D03"
+              - option "AE-F9D7EB29-cash — Accounting acceptance cash F9D7EB29"
+              - option "AE-F9D7EB29-equity — Accounting acceptance equity F9D7EB29"
+              - option "AE-F9D7EB29-expense — Accounting acceptance expense F9D7EB29"
+              - option "AE-F9D7EB29-revenue — Accounting acceptance revenue F9D7EB29"
+              - option "AE-FC950F18-cash — Accounting acceptance cash FC950F18"
+              - option "AE-FC950F18-equity — Accounting acceptance equity FC950F18"
+              - option "AE-FC950F18-expense — Accounting acceptance expense FC950F18" [selected]
+              - option "AE-FC950F18-revenue — Accounting acceptance revenue FC950F18"
+              - option "AE-FE965E4C-cash — Accounting acceptance cash FE965E4C"
+              - option "AE-FE965E4C-equity — Accounting acceptance equity FE965E4C"
+              - option "AE-FE965E4C-expense — Accounting acceptance expense FE965E4C"
+              - option "AE-FE965E4C-revenue — Accounting acceptance revenue FE965E4C"
+              - option "AE-UI-1793329883785 — Acceptance updated chart account"
+              - option "AE-UI-1793330088139 — Acceptance updated chart account"
+              - option "AE-UI-1793330155362 — Acceptance updated chart account AE-UI-1793330155362"
+              - option "AE-UI-1793330273217 — Acceptance updated chart account AE-UI-1793330273217"
+              - option "AE-UI-1793330432528 — Acceptance updated chart account AE-UI-1793330432528"
+              - option "AE-UI-1793330555769 — Acceptance updated chart account AE-UI-1793330555769"
+              - option "AE-UI-1793330943160 — Acceptance updated chart account AE-UI-1793330943160"
+              - option "AE-UI-1793384741427 — Acceptance updated chart account AE-UI-1793384741427"
+            - combobox "خزينة الجانب المدين" [ref=e169]:
+              - option "بدون خزينة" [selected]
+              - option "Accounting acceptance cash 0B502A1D"
+              - option "Accounting acceptance cash 0BB87271"
+              - option "Accounting acceptance cash 152123D5"
+              - option "Accounting acceptance cash 15229A69"
+              - option "Accounting acceptance cash 15FDE0BB"
+              - option "Accounting acceptance cash 1BB0E266"
+              - option "Accounting acceptance cash 1D5940D3"
+              - option "Accounting acceptance cash 22D1E2D9"
+              - option "Accounting acceptance cash 2384F222"
+              - option "Accounting acceptance cash 2FD188BD"
+              - option "Accounting acceptance cash 3209FB65"
+              - option "Accounting acceptance cash 33E4C96C"
+              - option "Accounting acceptance cash 3AFED7DA"
+              - option "Accounting acceptance cash 3FEC2200"
+              - option "Accounting acceptance cash 46F26119"
+              - option "Accounting acceptance cash 4AD31865"
+              - option "Accounting acceptance cash 4B89467A"
+              - option "Accounting acceptance cash 4D151A90"
+              - option "Accounting acceptance cash 4DDE4079"
+              - option "Accounting acceptance cash 4FB8353D"
+              - option "Accounting acceptance cash 520A5380"
+              - option "Accounting acceptance cash 5301D155"
+              - option "Accounting acceptance cash 5B200C0C"
+              - option "Accounting acceptance cash 601E4E94"
+              - option "Accounting acceptance cash 7015E916"
+              - option "Accounting acceptance cash 71112CD1"
+              - option "Accounting acceptance cash 72B59397"
+              - option "Accounting acceptance cash 733D16FD"
+              - option "Accounting acceptance cash 7A33EA76"
+              - option "Accounting acceptance cash 7CC089A6"
+              - option "Accounting acceptance cash 82DF0835"
+              - option "Accounting acceptance cash 8E68E530"
+              - option "Accounting acceptance cash AB507EDC"
+              - option "Accounting acceptance cash B2CB92BE"
+              - option "Accounting acceptance cash B3C470C6"
+              - option "Accounting acceptance cash B5D47ECE"
+              - option "Accounting acceptance cash B720B620"
+              - option "Accounting acceptance cash BE5AF1A5"
+              - option "Accounting acceptance cash C2B88AB5"
+              - option "Accounting acceptance cash DB7C6BA0"
+              - option "Accounting acceptance cash DF8F0309"
+              - option "Accounting acceptance cash E1B5C6A5"
+              - option "Accounting acceptance cash E4BE6DA9"
+              - option "Accounting acceptance cash E76BD3D2"
+              - option "Accounting acceptance cash EA5852CD"
+              - option "Accounting acceptance cash EDD40064"
+              - option "Accounting acceptance cash F3BE27B1"
+              - option "Accounting acceptance cash F45D68E9"
+              - option "Accounting acceptance cash F4B1DDDD"
+              - option "Accounting acceptance cash F4D3ADE3"
+              - option "Accounting acceptance cash F4E62FF0"
+              - option "Accounting acceptance cash F52F7865"
+              - option "Accounting acceptance cash F6630D03"
+              - option "Accounting acceptance cash F9D7EB29"
+              - option "Accounting acceptance cash FC950F18"
+              - option "Accounting acceptance cash FE965E4C"
+              - option "Finance acceptance treasury 01062947"
+              - option "Finance acceptance treasury 07136CF0"
+              - option "Finance acceptance treasury 074B7C6F"
+              - option "Finance acceptance treasury 108E7C19"
+              - option "Finance acceptance treasury 13E7AE70"
+              - option "Finance acceptance treasury 193C15FD"
+              - option "Finance acceptance treasury 20371EF0"
+              - option "Finance acceptance treasury 2567419D"
+              - option "Finance acceptance treasury 2E6CAA5C"
+              - option "Finance acceptance treasury 32442F52"
+              - option "Finance acceptance treasury 33BFD0C1"
+              - option "Finance acceptance treasury 34BA7BB3"
+              - option "Finance acceptance treasury 36C6B0BE"
+              - option "Finance acceptance treasury 4911E19A"
+              - option "Finance acceptance treasury 4C4A64D5"
+              - option "Finance acceptance treasury 56EA1EE5"
+              - option "Finance acceptance treasury 58324134"
+              - option "Finance acceptance treasury 5A205F51"
+              - option "Finance acceptance treasury 6735C00E"
+              - option "Finance acceptance treasury 675E41FB"
+              - option "Finance acceptance treasury 6BECE0D3"
+              - option "Finance acceptance treasury 748F38C6"
+              - option "Finance acceptance treasury 75F4B98A"
+              - option "Finance acceptance treasury 7F27B597"
+              - option "Finance acceptance treasury 820E11E7"
+              - option "Finance acceptance treasury 8A7D3229"
+              - option "Finance acceptance treasury 9A702575"
+              - option "Finance acceptance treasury A53A7106"
+              - option "Finance acceptance treasury BCAFE1CF"
+              - option "Finance acceptance treasury BD957E63"
+              - option "Finance acceptance treasury BF175BE5"
+              - option "Finance acceptance treasury C77EFC49"
+              - option "Finance acceptance treasury C8335841"
+              - option "Finance acceptance treasury CAA60EB1"
+              - option "Finance acceptance treasury CB9EA7A6"
+              - option "Finance acceptance treasury CD124596"
+              - option "Finance acceptance treasury CD69C071"
+              - option "Finance acceptance treasury CE311DF7"
+              - option "Finance acceptance treasury CE592821"
+              - option "Finance acceptance treasury D23D1590"
+              - option "Finance acceptance treasury DC705B33"
+              - option "Finance acceptance treasury E0631616"
+              - option "Finance acceptance treasury E127DB93"
+              - option "Finance acceptance treasury ED2B771C"
+            - combobox "الحساب الدائن" [ref=e170]:
+              - option "اختر الحساب الدائن"
+              - option "AE-0B502A1D-cash — Accounting acceptance cash 0B502A1D"
+              - option "AE-0B502A1D-equity — Accounting acceptance equity 0B502A1D"
+              - option "AE-0B502A1D-expense — Accounting acceptance expense 0B502A1D"
+              - option "AE-0B502A1D-revenue — Accounting acceptance revenue 0B502A1D"
+              - option "AE-0BB87271-cash — Accounting acceptance cash 0BB87271"
+              - option "AE-0BB87271-equity — Accounting acceptance equity 0BB87271"
+              - option "AE-0BB87271-expense — Accounting acceptance expense 0BB87271"
+              - option "AE-0BB87271-revenue — Accounting acceptance revenue 0BB87271"
+              - option "AE-152123D5-cash — Accounting acceptance cash 152123D5"
+              - option "AE-152123D5-equity — Accounting acceptance equity 152123D5"
+              - option "AE-152123D5-expense — Accounting acceptance expense 152123D5"
+              - option "AE-152123D5-revenue — Accounting acceptance revenue 152123D5"
+              - option "AE-15229A69-cash — Accounting acceptance cash 15229A69"
+              - option "AE-15229A69-equity — Accounting acceptance equity 15229A69"
+              - option "AE-15229A69-expense — Accounting acceptance expense 15229A69"
+              - option "AE-15229A69-revenue — Accounting acceptance revenue 15229A69"
+              - option "AE-15FDE0BB-cash — Accounting acceptance cash 15FDE0BB"
+              - option "AE-15FDE0BB-equity — Accounting acceptance equity 15FDE0BB"
+              - option "AE-15FDE0BB-expense — Accounting acceptance expense 15FDE0BB"
+              - option "AE-15FDE0BB-revenue — Accounting acceptance revenue 15FDE0BB"
+              - option "AE-1BB0E266-cash — Accounting acceptance cash 1BB0E266"
+              - option "AE-1BB0E266-equity — Accounting acceptance equity 1BB0E266"
+              - option "AE-1BB0E266-expense — Accounting acceptance expense 1BB0E266"
+              - option "AE-1BB0E266-revenue — Accounting acceptance revenue 1BB0E266"
+              - option "AE-1D5940D3-cash — Accounting acceptance cash 1D5940D3"
+              - option "AE-1D5940D3-equity — Accounting acceptance equity 1D5940D3"
+              - option "AE-1D5940D3-expense — Accounting acceptance expense 1D5940D3"
+              - option "AE-1D5940D3-revenue — Accounting acceptance revenue 1D5940D3"
+              - option "AE-22D1E2D9-cash — Accounting acceptance cash 22D1E2D9"
+              - option "AE-22D1E2D9-equity — Accounting acceptance equity 22D1E2D9"
+              - option "AE-22D1E2D9-expense — Accounting acceptance expense 22D1E2D9"
+              - option "AE-22D1E2D9-revenue — Accounting acceptance revenue 22D1E2D9"
+              - option "AE-2384F222-cash — Accounting acceptance cash 2384F222"
+              - option "AE-2384F222-equity — Accounting acceptance equity 2384F222"
+              - option "AE-2384F222-expense — Accounting acceptance expense 2384F222"
+              - option "AE-2384F222-revenue — Accounting acceptance revenue 2384F222"
+              - option "AE-2FD188BD-cash — Accounting acceptance cash 2FD188BD"
+              - option "AE-2FD188BD-equity — Accounting acceptance equity 2FD188BD"
+              - option "AE-2FD188BD-expense — Accounting acceptance expense 2FD188BD"
+              - option "AE-2FD188BD-revenue — Accounting acceptance revenue 2FD188BD"
+              - option "AE-3209FB65-cash — Accounting acceptance cash 3209FB65"
+              - option "AE-3209FB65-equity — Accounting acceptance equity 3209FB65"
+              - option "AE-3209FB65-expense — Accounting acceptance expense 3209FB65"
+              - option "AE-3209FB65-revenue — Accounting acceptance revenue 3209FB65"
+              - option "AE-33E4C96C-cash — Accounting acceptance cash 33E4C96C"
+              - option "AE-33E4C96C-equity — Accounting acceptance equity 33E4C96C"
+              - option "AE-33E4C96C-expense — Accounting acceptance expense 33E4C96C"
+              - option "AE-33E4C96C-revenue — Accounting acceptance revenue 33E4C96C"
+              - option "AE-3AFED7DA-cash — Accounting acceptance cash 3AFED7DA"
+              - option "AE-3AFED7DA-equity — Accounting acceptance equity 3AFED7DA"
+              - option "AE-3AFED7DA-expense — Accounting acceptance expense 3AFED7DA"
+              - option "AE-3AFED7DA-revenue — Accounting acceptance revenue 3AFED7DA"
+              - option "AE-3FEC2200-cash — Accounting acceptance cash 3FEC2200"
+              - option "AE-3FEC2200-equity — Accounting acceptance equity 3FEC2200"
+              - option "AE-3FEC2200-expense — Accounting acceptance expense 3FEC2200"
+              - option "AE-3FEC2200-revenue — Accounting acceptance revenue 3FEC2200"
+              - option "AE-46F26119-cash — Accounting acceptance cash 46F26119"
+              - option "AE-46F26119-equity — Accounting acceptance equity 46F26119"
+              - option "AE-46F26119-expense — Accounting acceptance expense 46F26119"
+              - option "AE-46F26119-revenue — Accounting acceptance revenue 46F26119"
+              - option "AE-4AD31865-cash — Accounting acceptance cash 4AD31865"
+              - option "AE-4AD31865-equity — Accounting acceptance equity 4AD31865"
+              - option "AE-4AD31865-expense — Accounting acceptance expense 4AD31865"
+              - option "AE-4AD31865-revenue — Accounting acceptance revenue 4AD31865"
+              - option "AE-4B89467A-cash — Accounting acceptance cash 4B89467A"
+              - option "AE-4B89467A-equity — Accounting acceptance equity 4B89467A"
+              - option "AE-4B89467A-expense — Accounting acceptance expense 4B89467A"
+              - option "AE-4B89467A-revenue — Accounting acceptance revenue 4B89467A"
+              - option "AE-4D151A90-cash — Accounting acceptance cash 4D151A90"
+              - option "AE-4D151A90-equity — Accounting acceptance equity 4D151A90"
+              - option "AE-4D151A90-expense — Accounting acceptance expense 4D151A90"
+              - option "AE-4D151A90-revenue — Accounting acceptance revenue 4D151A90"
+              - option "AE-4DDE4079-cash — Accounting acceptance cash 4DDE4079"
+              - option "AE-4DDE4079-equity — Accounting acceptance equity 4DDE4079"
+              - option "AE-4DDE4079-expense — Accounting acceptance expense 4DDE4079"
+              - option "AE-4DDE4079-revenue — Accounting acceptance revenue 4DDE4079"
+              - option "AE-4FB8353D-cash — Accounting acceptance cash 4FB8353D"
+              - option "AE-4FB8353D-equity — Accounting acceptance equity 4FB8353D"
+              - option "AE-4FB8353D-expense — Accounting acceptance expense 4FB8353D"
+              - option "AE-4FB8353D-revenue — Accounting acceptance revenue 4FB8353D"
+              - option "AE-520A5380-cash — Accounting acceptance cash 520A5380"
+              - option "AE-520A5380-equity — Accounting acceptance equity 520A5380"
+              - option "AE-520A5380-expense — Accounting acceptance expense 520A5380"
+              - option "AE-520A5380-revenue — Accounting acceptance revenue 520A5380"
+              - option "AE-5301D155-cash — Accounting acceptance cash 5301D155"
+              - option "AE-5301D155-equity — Accounting acceptance equity 5301D155"
+              - option "AE-5301D155-expense — Accounting acceptance expense 5301D155"
+              - option "AE-5301D155-revenue — Accounting acceptance revenue 5301D155"
+              - option "AE-5B200C0C-cash — Accounting acceptance cash 5B200C0C"
+              - option "AE-5B200C0C-equity — Accounting acceptance equity 5B200C0C"
+              - option "AE-5B200C0C-expense — Accounting acceptance expense 5B200C0C"
+              - option "AE-5B200C0C-revenue — Accounting acceptance revenue 5B200C0C"
+              - option "AE-601E4E94-cash — Accounting acceptance cash 601E4E94"
+              - option "AE-601E4E94-equity — Accounting acceptance equity 601E4E94"
+              - option "AE-601E4E94-expense — Accounting acceptance expense 601E4E94"
+              - option "AE-601E4E94-revenue — Accounting acceptance revenue 601E4E94"
+              - option "AE-7015E916-cash — Accounting acceptance cash 7015E916"
+              - option "AE-7015E916-equity — Accounting acceptance equity 7015E916"
+              - option "AE-7015E916-expense — Accounting acceptance expense 7015E916"
+              - option "AE-7015E916-revenue — Accounting acceptance revenue 7015E916"
+              - option "AE-71112CD1-cash — Accounting acceptance cash 71112CD1"
+              - option "AE-71112CD1-equity — Accounting acceptance equity 71112CD1"
+              - option "AE-71112CD1-expense — Accounting acceptance expense 71112CD1"
+              - option "AE-71112CD1-revenue — Accounting acceptance revenue 71112CD1"
+              - option "AE-72B59397-cash — Accounting acceptance cash 72B59397"
+              - option "AE-72B59397-equity — Accounting acceptance equity 72B59397"
+              - option "AE-72B59397-expense — Accounting acceptance expense 72B59397"
+              - option "AE-72B59397-revenue — Accounting acceptance revenue 72B59397"
+              - option "AE-733D16FD-cash — Accounting acceptance cash 733D16FD"
+              - option "AE-733D16FD-equity — Accounting acceptance equity 733D16FD"
+              - option "AE-733D16FD-expense — Accounting acceptance expense 733D16FD"
+              - option "AE-733D16FD-revenue — Accounting acceptance revenue 733D16FD"
+              - option "AE-7A33EA76-cash — Accounting acceptance cash 7A33EA76"
+              - option "AE-7A33EA76-equity — Accounting acceptance equity 7A33EA76"
+              - option "AE-7A33EA76-expense — Accounting acceptance expense 7A33EA76"
+              - option "AE-7A33EA76-revenue — Accounting acceptance revenue 7A33EA76"
+              - option "AE-7CC089A6-cash — Accounting acceptance cash 7CC089A6"
+              - option "AE-7CC089A6-equity — Accounting acceptance equity 7CC089A6"
+              - option "AE-7CC089A6-expense — Accounting acceptance expense 7CC089A6"
+              - option "AE-7CC089A6-revenue — Accounting acceptance revenue 7CC089A6"
+              - option "AE-82DF0835-cash — Accounting acceptance cash 82DF0835"
+              - option "AE-82DF0835-equity — Accounting acceptance equity 82DF0835"
+              - option "AE-82DF0835-expense — Accounting acceptance expense 82DF0835"
+              - option "AE-82DF0835-revenue — Accounting acceptance revenue 82DF0835"
+              - option "AE-8E68E530-cash — Accounting acceptance cash 8E68E530"
+              - option "AE-8E68E530-equity — Accounting acceptance equity 8E68E530"
+              - option "AE-8E68E530-expense — Accounting acceptance expense 8E68E530"
+              - option "AE-8E68E530-revenue — Accounting acceptance revenue 8E68E530"
+              - option "AE-AB507EDC-cash — Accounting acceptance cash AB507EDC"
+              - option "AE-AB507EDC-equity — Accounting acceptance equity AB507EDC"
+              - option "AE-AB507EDC-expense — Accounting acceptance expense AB507EDC"
+              - option "AE-AB507EDC-revenue — Accounting acceptance revenue AB507EDC"
+              - option "AE-B2CB92BE-cash — Accounting acceptance cash B2CB92BE"
+              - option "AE-B2CB92BE-equity — Accounting acceptance equity B2CB92BE"
+              - option "AE-B2CB92BE-expense — Accounting acceptance expense B2CB92BE"
+              - option "AE-B2CB92BE-revenue — Accounting acceptance revenue B2CB92BE"
+              - option "AE-B3C470C6-cash — Accounting acceptance cash B3C470C6"
+              - option "AE-B3C470C6-equity — Accounting acceptance equity B3C470C6"
+              - option "AE-B3C470C6-expense — Accounting acceptance expense B3C470C6"
+              - option "AE-B3C470C6-revenue — Accounting acceptance revenue B3C470C6"
+              - option "AE-B5D47ECE-cash — Accounting acceptance cash B5D47ECE"
+              - option "AE-B5D47ECE-equity — Accounting acceptance equity B5D47ECE"
+              - option "AE-B5D47ECE-expense — Accounting acceptance expense B5D47ECE"
+              - option "AE-B5D47ECE-revenue — Accounting acceptance revenue B5D47ECE"
+              - option "AE-B720B620-cash — Accounting acceptance cash B720B620"
+              - option "AE-B720B620-equity — Accounting acceptance equity B720B620"
+              - option "AE-B720B620-expense — Accounting acceptance expense B720B620"
+              - option "AE-B720B620-revenue — Accounting acceptance revenue B720B620"
+              - option "AE-BE5AF1A5-cash — Accounting acceptance cash BE5AF1A5"
+              - option "AE-BE5AF1A5-equity — Accounting acceptance equity BE5AF1A5"
+              - option "AE-BE5AF1A5-expense — Accounting acceptance expense BE5AF1A5"
+              - option "AE-BE5AF1A5-revenue — Accounting acceptance revenue BE5AF1A5"
+              - option "AE-C2B88AB5-cash — Accounting acceptance cash C2B88AB5"
+              - option "AE-C2B88AB5-equity — Accounting acceptance equity C2B88AB5"
+              - option "AE-C2B88AB5-expense — Accounting acceptance expense C2B88AB5"
+              - option "AE-C2B88AB5-revenue — Accounting acceptance revenue C2B88AB5"
+              - option "AE-DB7C6BA0-cash — Accounting acceptance cash DB7C6BA0"
+              - option "AE-DB7C6BA0-equity — Accounting acceptance equity DB7C6BA0"
+              - option "AE-DB7C6BA0-expense — Accounting acceptance expense DB7C6BA0"
+              - option "AE-DB7C6BA0-revenue — Accounting acceptance revenue DB7C6BA0"
+              - option "AE-DF8F0309-cash — Accounting acceptance cash DF8F0309"
+              - option "AE-DF8F0309-equity — Accounting acceptance equity DF8F0309"
+              - option "AE-DF8F0309-expense — Accounting acceptance expense DF8F0309"
+              - option "AE-DF8F0309-revenue — Accounting acceptance revenue DF8F0309"
+              - option "AE-E1B5C6A5-cash — Accounting acceptance cash E1B5C6A5"
+              - option "AE-E1B5C6A5-equity — Accounting acceptance equity E1B5C6A5"
+              - option "AE-E1B5C6A5-expense — Accounting acceptance expense E1B5C6A5"
+              - option "AE-E1B5C6A5-revenue — Accounting acceptance revenue E1B5C6A5"
+              - option "AE-E4BE6DA9-cash — Accounting acceptance cash E4BE6DA9"
+              - option "AE-E4BE6DA9-equity — Accounting acceptance equity E4BE6DA9"
+              - option "AE-E4BE6DA9-expense — Accounting acceptance expense E4BE6DA9"
+              - option "AE-E4BE6DA9-revenue — Accounting acceptance revenue E4BE6DA9"
+              - option "AE-E76BD3D2-cash — Accounting acceptance cash E76BD3D2"
+              - option "AE-E76BD3D2-equity — Accounting acceptance equity E76BD3D2"
+              - option "AE-E76BD3D2-expense — Accounting acceptance expense E76BD3D2"
+              - option "AE-E76BD3D2-revenue — Accounting acceptance revenue E76BD3D2"
+              - option "AE-EA5852CD-cash — Accounting acceptance cash EA5852CD"
+              - option "AE-EA5852CD-equity — Accounting acceptance equity EA5852CD"
+              - option "AE-EA5852CD-expense — Accounting acceptance expense EA5852CD"
+              - option "AE-EA5852CD-revenue — Accounting acceptance revenue EA5852CD"
+              - option "AE-EDD40064-cash — Accounting acceptance cash EDD40064"
+              - option "AE-EDD40064-equity — Accounting acceptance equity EDD40064"
+              - option "AE-EDD40064-expense — Accounting acceptance expense EDD40064"
+              - option "AE-EDD40064-revenue — Accounting acceptance revenue EDD40064"
+              - option "AE-F3BE27B1-cash — Accounting acceptance cash F3BE27B1"
+              - option "AE-F3BE27B1-equity — Accounting acceptance equity F3BE27B1"
+              - option "AE-F3BE27B1-expense — Accounting acceptance expense F3BE27B1"
+              - option "AE-F3BE27B1-revenue — Accounting acceptance revenue F3BE27B1"
+              - option "AE-F45D68E9-cash — Accounting acceptance cash F45D68E9"
+              - option "AE-F45D68E9-equity — Accounting acceptance equity F45D68E9"
+              - option "AE-F45D68E9-expense — Accounting acceptance expense F45D68E9"
+              - option "AE-F45D68E9-revenue — Accounting acceptance revenue F45D68E9"
+              - option "AE-F4B1DDDD-cash — Accounting acceptance cash F4B1DDDD"
+              - option "AE-F4B1DDDD-equity — Accounting acceptance equity F4B1DDDD"
+              - option "AE-F4B1DDDD-expense — Accounting acceptance expense F4B1DDDD"
+              - option "AE-F4B1DDDD-revenue — Accounting acceptance revenue F4B1DDDD"
+              - option "AE-F4D3ADE3-cash — Accounting acceptance cash F4D3ADE3"
+              - option "AE-F4D3ADE3-equity — Accounting acceptance equity F4D3ADE3"
+              - option "AE-F4D3ADE3-expense — Accounting acceptance expense F4D3ADE3"
+              - option "AE-F4D3ADE3-revenue — Accounting acceptance revenue F4D3ADE3"
+              - option "AE-F4E62FF0-cash — Accounting acceptance cash F4E62FF0"
+              - option "AE-F4E62FF0-equity — Accounting acceptance equity F4E62FF0"
+              - option "AE-F4E62FF0-expense — Accounting acceptance expense F4E62FF0"
+              - option "AE-F4E62FF0-revenue — Accounting acceptance revenue F4E62FF0"
+              - option "AE-F52F7865-cash — Accounting acceptance cash F52F7865"
+              - option "AE-F52F7865-equity — Accounting acceptance equity F52F7865"
+              - option "AE-F52F7865-expense — Accounting acceptance expense F52F7865"
+              - option "AE-F52F7865-revenue — Accounting acceptance revenue F52F7865"
+              - option "AE-F6630D03-cash — Accounting acceptance cash F6630D03"
+              - option "AE-F6630D03-equity — Accounting acceptance equity F6630D03"
+              - option "AE-F6630D03-expense — Accounting acceptance expense F6630D03"
+              - option "AE-F6630D03-revenue — Accounting acceptance revenue F6630D03"
+              - option "AE-F9D7EB29-cash — Accounting acceptance cash F9D7EB29"
+              - option "AE-F9D7EB29-equity — Accounting acceptance equity F9D7EB29"
+              - option "AE-F9D7EB29-expense — Accounting acceptance expense F9D7EB29"
+              - option "AE-F9D7EB29-revenue — Accounting acceptance revenue F9D7EB29"
+              - option "AE-FC950F18-cash — Accounting acceptance cash FC950F18" [selected]
+              - option "AE-FC950F18-equity — Accounting acceptance equity FC950F18"
+              - option "AE-FC950F18-expense — Accounting acceptance expense FC950F18"
+              - option "AE-FC950F18-revenue — Accounting acceptance revenue FC950F18"
+              - option "AE-FE965E4C-cash — Accounting acceptance cash FE965E4C"
+              - option "AE-FE965E4C-equity — Accounting acceptance equity FE965E4C"
+              - option "AE-FE965E4C-expense — Accounting acceptance expense FE965E4C"
+              - option "AE-FE965E4C-revenue — Accounting acceptance revenue FE965E4C"
+              - option "AE-UI-1793329883785 — Acceptance updated chart account"
+              - option "AE-UI-1793330088139 — Acceptance updated chart account"
+              - option "AE-UI-1793330155362 — Acceptance updated chart account AE-UI-1793330155362"
+              - option "AE-UI-1793330273217 — Acceptance updated chart account AE-UI-1793330273217"
+              - option "AE-UI-1793330432528 — Acceptance updated chart account AE-UI-1793330432528"
+              - option "AE-UI-1793330555769 — Acceptance updated chart account AE-UI-1793330555769"
+              - option "AE-UI-1793330943160 — Acceptance updated chart account AE-UI-1793330943160"
+              - option "AE-UI-1793384741427 — Acceptance updated chart account AE-UI-1793384741427"
+            - combobox "خزينة الجانب الدائن" [ref=e171]:
+              - option "بدون خزينة"
+              - option "Accounting acceptance cash 0B502A1D"
+              - option "Accounting acceptance cash 0BB87271"
+              - option "Accounting acceptance cash 152123D5"
+              - option "Accounting acceptance cash 15229A69"
+              - option "Accounting acceptance cash 15FDE0BB"
+              - option "Accounting acceptance cash 1BB0E266"
+              - option "Accounting acceptance cash 1D5940D3"
+              - option "Accounting acceptance cash 22D1E2D9"
+              - option "Accounting acceptance cash 2384F222"
+              - option "Accounting acceptance cash 2FD188BD"
+              - option "Accounting acceptance cash 3209FB65"
+              - option "Accounting acceptance cash 33E4C96C"
+              - option "Accounting acceptance cash 3AFED7DA"
+              - option "Accounting acceptance cash 3FEC2200"
+              - option "Accounting acceptance cash 46F26119"
+              - option "Accounting acceptance cash 4AD31865"
+              - option "Accounting acceptance cash 4B89467A"
+              - option "Accounting acceptance cash 4D151A90"
+              - option "Accounting acceptance cash 4DDE4079"
+              - option "Accounting acceptance cash 4FB8353D"
+              - option "Accounting acceptance cash 520A5380"
+              - option "Accounting acceptance cash 5301D155"
+              - option "Accounting acceptance cash 5B200C0C"
+              - option "Accounting acceptance cash 601E4E94"
+              - option "Accounting acceptance cash 7015E916"
+              - option "Accounting acceptance cash 71112CD1"
+              - option "Accounting acceptance cash 72B59397"
+              - option "Accounting acceptance cash 733D16FD"
+              - option "Accounting acceptance cash 7A33EA76"
+              - option "Accounting acceptance cash 7CC089A6"
+              - option "Accounting acceptance cash 82DF0835"
+              - option "Accounting acceptance cash 8E68E530"
+              - option "Accounting acceptance cash AB507EDC"
+              - option "Accounting acceptance cash B2CB92BE"
+              - option "Accounting acceptance cash B3C470C6"
+              - option "Accounting acceptance cash B5D47ECE"
+              - option "Accounting acceptance cash B720B620"
+              - option "Accounting acceptance cash BE5AF1A5"
+              - option "Accounting acceptance cash C2B88AB5"
+              - option "Accounting acceptance cash DB7C6BA0"
+              - option "Accounting acceptance cash DF8F0309"
+              - option "Accounting acceptance cash E1B5C6A5"
+              - option "Accounting acceptance cash E4BE6DA9"
+              - option "Accounting acceptance cash E76BD3D2"
+              - option "Accounting acceptance cash EA5852CD"
+              - option "Accounting acceptance cash EDD40064"
+              - option "Accounting acceptance cash F3BE27B1"
+              - option "Accounting acceptance cash F45D68E9"
+              - option "Accounting acceptance cash F4B1DDDD"
+              - option "Accounting acceptance cash F4D3ADE3"
+              - option "Accounting acceptance cash F4E62FF0"
+              - option "Accounting acceptance cash F52F7865"
+              - option "Accounting acceptance cash F6630D03"
+              - option "Accounting acceptance cash F9D7EB29"
+              - option "Accounting acceptance cash FC950F18" [selected]
+              - option "Accounting acceptance cash FE965E4C"
+              - option "Finance acceptance treasury 01062947"
+              - option "Finance acceptance treasury 07136CF0"
+              - option "Finance acceptance treasury 074B7C6F"
+              - option "Finance acceptance treasury 108E7C19"
+              - option "Finance acceptance treasury 13E7AE70"
+              - option "Finance acceptance treasury 193C15FD"
+              - option "Finance acceptance treasury 20371EF0"
+              - option "Finance acceptance treasury 2567419D"
+              - option "Finance acceptance treasury 2E6CAA5C"
+              - option "Finance acceptance treasury 32442F52"
+              - option "Finance acceptance treasury 33BFD0C1"
+              - option "Finance acceptance treasury 34BA7BB3"
+              - option "Finance acceptance treasury 36C6B0BE"
+              - option "Finance acceptance treasury 4911E19A"
+              - option "Finance acceptance treasury 4C4A64D5"
+              - option "Finance acceptance treasury 56EA1EE5"
+              - option "Finance acceptance treasury 58324134"
+              - option "Finance acceptance treasury 5A205F51"
+              - option "Finance acceptance treasury 6735C00E"
+              - option "Finance acceptance treasury 675E41FB"
+              - option "Finance acceptance treasury 6BECE0D3"
+              - option "Finance acceptance treasury 748F38C6"
+              - option "Finance acceptance treasury 75F4B98A"
+              - option "Finance acceptance treasury 7F27B597"
+              - option "Finance acceptance treasury 820E11E7"
+              - option "Finance acceptance treasury 8A7D3229"
+              - option "Finance acceptance treasury 9A702575"
+              - option "Finance acceptance treasury A53A7106"
+              - option "Finance acceptance treasury BCAFE1CF"
+              - option "Finance acceptance treasury BD957E63"
+              - option "Finance acceptance treasury BF175BE5"
+              - option "Finance acceptance treasury C77EFC49"
+              - option "Finance acceptance treasury C8335841"
+              - option "Finance acceptance treasury CAA60EB1"
+              - option "Finance acceptance treasury CB9EA7A6"
+              - option "Finance acceptance treasury CD124596"
+              - option "Finance acceptance treasury CD69C071"
+              - option "Finance acceptance treasury CE311DF7"
+              - option "Finance acceptance treasury CE592821"
+              - option "Finance acceptance treasury D23D1590"
+              - option "Finance acceptance treasury DC705B33"
+              - option "Finance acceptance treasury E0631616"
+              - option "Finance acceptance treasury E127DB93"
+              - option "Finance acceptance treasury ED2B771C"
+            - generic [ref=e172]:
+              - generic [ref=e173]:
+                - text: سبب التسوية
+                - generic [ref=e174]: "*"
+              - textbox "سبب التسوية" [ref=e175]: Acceptance expense adjustment
+            - generic [ref=e176]:
+              - generic [ref=e177]: ملاحظات
+              - textbox "ملاحظات" [ref=e178]
+          - button "تسجيل التسوية" [ref=e179] [cursor=pointer]
+        - generic [ref=e180]:
+          - heading "سجل التسويات" [level=2] [ref=e182]
+          - generic [ref=e183]:
+            - generic [ref=e184]:
+              - generic [ref=e185]: بحث بالرقم أو المرجع أو السبب
+              - textbox "بحث بالرقم أو المرجع أو السبب" [ref=e186]
+            - generic [ref=e187]:
+              - generic [ref=e188]: من تاريخ
+              - textbox "من تاريخ" [ref=e189]: 2026-10-01
+            - generic [ref=e190]:
+              - generic [ref=e191]: إلى تاريخ
+              - textbox "إلى تاريخ" [ref=e192]: 2026-10-30
+          - table [ref=e194]:
+            - rowgroup [ref=e195]:
+              - row "رقم التسوية المرجع التاريخ النوع مدين دائن السبب المبلغ القيد" [ref=e196]:
+                - columnheader "رقم التسوية" [ref=e197]
+                - columnheader "المرجع" [ref=e198]
+                - columnheader "التاريخ" [ref=e199]
+                - columnheader "النوع" [ref=e200]
+                - columnheader "مدين" [ref=e201]
+                - columnheader "دائن" [ref=e202]
+                - columnheader "السبب" [ref=e203]
+                - columnheader "المبلغ" [ref=e204]
+                - columnheader "القيد" [ref=e205]
+            - rowgroup [ref=e206]:
+              - row "ADJ-20261030-IGLQHIBTNVSJ ACCEPTANCE-ADJ-1 ٣٠ أكتوبر ٢٠٢٦ مصروف Accounting acceptance expense FC950F18 Accounting acceptance cash FC950F18 Acceptance expense adjustment 10.0000 ج.م JE-20261030-OIVEHF0PJWXI" [ref=e207]:
+                - cell "ADJ-20261030-IGLQHIBTNVSJ" [ref=e208]:
+                  - button "ADJ-20261030-IGLQHIBTNVSJ" [ref=e209] [cursor=pointer]
+                - cell "ACCEPTANCE-ADJ-1" [ref=e210]:
+                  - generic [ref=e211]: ACCEPTANCE-ADJ-1
+                - cell "٣٠ أكتوبر ٢٠٢٦" [ref=e212]:
+                  - generic [ref=e213]: ٣٠ أكتوبر ٢٠٢٦
+                - cell "مصروف" [ref=e214]
+                - cell "Accounting acceptance expense FC950F18" [ref=e215]
+                - cell "Accounting acceptance cash FC950F18" [ref=e216]
+                - cell "Acceptance expense adjustment" [ref=e217]
+                - cell "10.0000 ج.م" [ref=e218]:
+                  - generic [ref=e219]: 10.0000 ج.م
+                - cell "JE-20261030-OIVEHF0PJWXI" [ref=e220]:
+                  - link "JE-20261030-OIVEHF0PJWXI" [ref=e221] [cursor=pointer]:
+                    - /url: /finance/journals/38
+              - row "ADJ-20261030-6RFMJKNYYURM ACCEPTANCE-ADJ-1 ٣٠ أكتوبر ٢٠٢٦ مصروف Accounting acceptance expense 0BB87271 Accounting acceptance cash 0BB87271 Acceptance expense adjustment 10.0000 ج.م JE-20261030-VRQYSORSFQJG" [ref=e222]:
+                - cell "ADJ-20261030-6RFMJKNYYURM" [ref=e223]:
+                  - button "ADJ-20261030-6RFMJKNYYURM" [ref=e224] [cursor=pointer]
+                - cell "ACCEPTANCE-ADJ-1" [ref=e225]:
+                  - generic [ref=e226]: ACCEPTANCE-ADJ-1
+                - cell "٣٠ أكتوبر ٢٠٢٦" [ref=e227]:
+                  - generic [ref=e228]: ٣٠ أكتوبر ٢٠٢٦
+                - cell "مصروف" [ref=e229]
+                - cell "Accounting acceptance expense 0BB87271" [ref=e230]
+                - cell "Accounting acceptance cash 0BB87271" [ref=e231]
+                - cell "Acceptance expense adjustment" [ref=e232]
+                - cell "10.0000 ج.م" [ref=e233]:
+                  - generic [ref=e234]: 10.0000 ج.م
+                - cell "JE-20261030-VRQYSORSFQJG" [ref=e235]:
+                  - link "JE-20261030-VRQYSORSFQJG" [ref=e236] [cursor=pointer]:
+                    - /url: /finance/journals/18
+              - row "ADJ-20261030-FWHRAKQ8MT2L ACCEPTANCE-ADJ-1 ٣٠ أكتوبر ٢٠٢٦ مصروف Accounting acceptance expense 5301D155 Accounting acceptance cash 5301D155 Acceptance expense adjustment 10.0000 ج.م JE-20261030-Z2PHAK9XCHKK" [ref=e237]:
+                - cell "ADJ-20261030-FWHRAKQ8MT2L" [ref=e238]:
+                  - button "ADJ-20261030-FWHRAKQ8MT2L" [ref=e239] [cursor=pointer]
+                - cell "ACCEPTANCE-ADJ-1" [ref=e240]:
+                  - generic [ref=e241]: ACCEPTANCE-ADJ-1
+                - cell "٣٠ أكتوبر ٢٠٢٦" [ref=e242]:
+                  - generic [ref=e243]: ٣٠ أكتوبر ٢٠٢٦
+                - cell "مصروف" [ref=e244]
+                - cell "Accounting acceptance expense 5301D155" [ref=e245]
+                - cell "Accounting acceptance cash 5301D155" [ref=e246]
+                - cell "Acceptance expense adjustment" [ref=e247]
+                - cell "10.0000 ج.م" [ref=e248]:
+                  - generic [ref=e249]: 10.0000 ج.م
+                - cell "JE-20261030-Z2PHAK9XCHKK" [ref=e250]:
+                  - link "JE-20261030-Z2PHAK9XCHKK" [ref=e251] [cursor=pointer]:
+                    - /url: /finance/journals/6
+        - dialog "أثر التسوية وسجلها" [ref=e253]:
+          - group [ref=e254]:
+            - heading "أثر التسوية وسجلها" [level=2] [ref=e255]
+            - button "إغلاق" [active] [ref=e256] [cursor=pointer]:
+              - generic [ref=e257] [cursor=pointer]: ×
+          - generic [ref=e259]:
+            - heading "ADJ-20261030-IGLQHIBTNVSJ" [level=3] [ref=e260]
+            - paragraph [ref=e261]:
+              - text: "المرجع:"
+              - generic [ref=e262]: ACCEPTANCE-ADJ-1
+              - text: · Acceptance expense adjustment
+            - paragraph [ref=e263]:
+              - text: "المبلغ:"
+              - generic [ref=e264]: 10.0000 ج.م
+              - text: · تاريخ ٣٠ أكتوبر ٢٠٢٦
+            - paragraph [ref=e265]:
+              - text: "القيد المرحل:"
+              - link "JE-20261030-OIVEHF0PJWXI" [ref=e266] [cursor=pointer]:
+                - /url: /finance/journals/38
+            - table [ref=e268]:
+              - rowgroup [ref=e269]:
+                - row "الحساب مدين دائن الخزينة" [ref=e270]:
+                  - columnheader "الحساب" [ref=e271]
+                  - columnheader "مدين" [ref=e272]
+                  - columnheader "دائن" [ref=e273]
+                  - columnheader "الخزينة" [ref=e274]
+              - rowgroup [ref=e275]:
+                - row "AE-FC950F18-expense — Accounting acceptance expense FC950F18 10.0000 ج.م 0.0000 ج.م —" [ref=e276]:
+                  - cell "AE-FC950F18-expense — Accounting acceptance expense FC950F18" [ref=e277]:
+                    - generic [ref=e278]: AE-FC950F18-expense — Accounting acceptance expense FC950F18
+                  - cell "10.0000 ج.م" [ref=e279]:
+                    - generic [ref=e280]: 10.0000 ج.م
+                  - cell "0.0000 ج.م" [ref=e281]:
+                    - generic [ref=e282]: 0.0000 ج.م
+                  - cell "—" [ref=e283]
+                - row "AE-FC950F18-cash — Accounting acceptance cash FC950F18 0.0000 ج.م 10.0000 ج.م Accounting acceptance cash FC950F18" [ref=e284]:
+                  - cell "AE-FC950F18-cash — Accounting acceptance cash FC950F18" [ref=e285]:
+                    - generic [ref=e286]: AE-FC950F18-cash — Accounting acceptance cash FC950F18
+                  - cell "0.0000 ج.م" [ref=e287]:
+                    - generic [ref=e288]: 0.0000 ج.م
+                  - cell "10.0000 ج.م" [ref=e289]:
+                    - generic [ref=e290]: 10.0000 ج.م
+                  - cell "Accounting acceptance cash FC950F18" [ref=e291]
+            - heading "سجل التدقيق" [level=4] [ref=e292]
+            - paragraph [ref=e293]:
+              - text: مالك اختبار تدفقات المبيعات · financial_adjustment.posted ·
+              - time [ref=e294]: 2026-10-30 20:26:29
+```

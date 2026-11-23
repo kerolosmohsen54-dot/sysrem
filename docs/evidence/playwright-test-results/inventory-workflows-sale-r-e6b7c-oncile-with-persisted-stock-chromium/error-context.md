@@ -1,0 +1,3220 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e7]:
+      - strong [ref=e8]: MASTER
+      - generic [ref=e9]: نظام إدارة الأعمال
+    - navigation "MASTER" [ref=e10]:
+      - link "لوحة التحكم" [ref=e11] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e12] [cursor=pointer]
+        - generic [ref=e14] [cursor=pointer]: لوحة التحكم
+      - group [ref=e15]:
+        - generic "المبيعات" [ref=e16] [cursor=pointer]:
+          - generic [ref=e17] [cursor=pointer]: المبيعات
+          - generic [ref=e18] [cursor=pointer]: ⌄
+      - group [ref=e19]:
+        - generic "العملاء" [ref=e20] [cursor=pointer]:
+          - generic [ref=e21] [cursor=pointer]: العملاء
+          - generic [ref=e22] [cursor=pointer]: ⌄
+      - group [ref=e23]:
+        - generic "المنتجات والمخزون" [ref=e24] [cursor=pointer]:
+          - generic [ref=e25] [cursor=pointer]: المنتجات والمخزون
+          - generic [ref=e26] [cursor=pointer]: ⌄
+        - link "المنتجات" [ref=e27] [cursor=pointer]:
+          - /url: /products
+          - img [ref=e28] [cursor=pointer]
+          - generic [ref=e30] [cursor=pointer]: المنتجات
+        - link "التصنيفات" [ref=e31] [cursor=pointer]:
+          - /url: /categories
+          - img [ref=e32] [cursor=pointer]
+          - generic [ref=e34] [cursor=pointer]: التصنيفات
+        - link "المخازن" [ref=e35] [cursor=pointer]:
+          - /url: /warehouses
+          - img [ref=e36] [cursor=pointer]
+          - generic [ref=e38] [cursor=pointer]: المخازن
+        - link "المخزون والمخازن" [ref=e39] [cursor=pointer]:
+          - /url: /inventory
+          - img [ref=e40] [cursor=pointer]
+          - generic [ref=e42] [cursor=pointer]: المخزون والمخازن
+        - link "حركات المخزون" [ref=e43] [cursor=pointer]:
+          - /url: /inventory/movements
+          - img [ref=e44] [cursor=pointer]
+          - generic [ref=e46] [cursor=pointer]: حركات المخزون
+        - link "المخزون المرتجع" [ref=e47] [cursor=pointer]:
+          - /url: /inventory/returns
+          - img [ref=e48] [cursor=pointer]
+          - generic [ref=e50] [cursor=pointer]: المخزون المرتجع
+        - link "تسويات المخزون" [ref=e51] [cursor=pointer]:
+          - /url: /inventory/adjustments
+          - img [ref=e52] [cursor=pointer]
+          - generic [ref=e54] [cursor=pointer]: تسويات المخزون
+        - link "الرصيد الافتتاحي" [ref=e55] [cursor=pointer]:
+          - /url: /inventory/opening-stock
+          - img [ref=e56] [cursor=pointer]
+          - generic [ref=e58] [cursor=pointer]: الرصيد الافتتاحي
+        - link "تحويلات المخزون" [ref=e59] [cursor=pointer]:
+          - /url: /inventory/transfers
+          - img [ref=e60] [cursor=pointer]
+          - generic [ref=e62] [cursor=pointer]: تحويلات المخزون
+        - link "الحد الأدنى للمخزون" [ref=e63] [cursor=pointer]:
+          - /url: /inventory/minimum-stock
+          - img [ref=e64] [cursor=pointer]
+          - generic [ref=e66] [cursor=pointer]: الحد الأدنى للمخزون
+        - link "الجرد الدوري" [ref=e67] [cursor=pointer]:
+          - /url: /inventory/counts
+          - img [ref=e68] [cursor=pointer]
+          - generic [ref=e70] [cursor=pointer]: الجرد الدوري
+        - link "المخزون التالف" [ref=e71] [cursor=pointer]:
+          - /url: /inventory/damaged
+          - img [ref=e72] [cursor=pointer]
+          - generic [ref=e74] [cursor=pointer]: المخزون التالف
+        - link "مرتجعات المخازن" [ref=e75] [cursor=pointer]:
+          - /url: /warehouse-returns
+          - img [ref=e76] [cursor=pointer]
+          - generic [ref=e78] [cursor=pointer]: مرتجعات المخازن
+        - link "إضافة إلى المخزون" [ref=e79] [cursor=pointer]:
+          - /url: /inventory/opening-stock
+          - generic [ref=e80] [cursor=pointer]: ↗
+          - generic [ref=e81] [cursor=pointer]: إضافة إلى المخزون
+        - link "سجل تكلفة المنتج" [ref=e82] [cursor=pointer]:
+          - /url: /products
+          - generic [ref=e83] [cursor=pointer]: ↗
+          - generic [ref=e84] [cursor=pointer]: سجل تكلفة المنتج
+      - group [ref=e85]:
+        - generic "الحاويات" [ref=e86] [cursor=pointer]:
+          - generic [ref=e87] [cursor=pointer]: الحاويات
+          - generic [ref=e88] [cursor=pointer]: ⌄
+      - group [ref=e89]:
+        - generic "المالية" [ref=e90] [cursor=pointer]:
+          - generic [ref=e91] [cursor=pointer]: المالية
+          - generic [ref=e92] [cursor=pointer]: ⌄
+      - group [ref=e93]:
+        - generic "التقارير" [ref=e94] [cursor=pointer]:
+          - generic [ref=e95] [cursor=pointer]: التقارير
+          - generic [ref=e96] [cursor=pointer]: ⌄
+      - group [ref=e97]:
+        - generic "إدارة النظام" [ref=e98] [cursor=pointer]:
+          - generic [ref=e99] [cursor=pointer]: إدارة النظام
+          - generic [ref=e100] [cursor=pointer]: ⌄
+      - group [ref=e101]:
+        - generic "أدوات إضافية" [ref=e102] [cursor=pointer]:
+          - generic [ref=e103] [cursor=pointer]: أدوات إضافية
+          - generic [ref=e104] [cursor=pointer]: ⌄
+    - generic [ref=e105]:
+      - generic [ref=e106]: م
+      - generic [ref=e107]:
+        - strong [ref=e108]: مالك اختبار تدفقات المبيعات
+        - generic [ref=e109]: المالك
+      - button "تسجيل الخروج" [ref=e110] [cursor=pointer]:
+        - img [ref=e111] [cursor=pointer]
+  - generic [ref=e113]:
+    - banner [ref=e114]:
+      - navigation "مسار الصفحة" [ref=e115]:
+        - link "لوحة التحكم" [ref=e116] [cursor=pointer]:
+          - /url: /dashboard
+        - generic [ref=e117]: /
+        - link "المنتجات والمخزون" [ref=e118] [cursor=pointer]:
+          - /url: /warehouse-returns
+        - generic [ref=e119]: /
+        - strong [ref=e120]: مرتجعات المخازن
+      - button "بحث سريع" [ref=e121] [cursor=pointer]:
+        - img [ref=e122] [cursor=pointer]
+        - generic [ref=e124] [cursor=pointer]: بحث سريع
+        - generic [ref=e125] [cursor=pointer]: تحكم + K
+      - group [ref=e126]:
+        - generic "ابدأ إجراء" [ref=e127] [cursor=pointer]:
+          - generic [ref=e128] [cursor=pointer]: ＋
+          - generic [ref=e129] [cursor=pointer]: ابدأ إجراء
+      - generic [ref=e130]:
+        - generic [ref=e131]: المظهر
+        - checkbox "التبديل إلى المظهر الفاتح" [ref=e132]
+        - generic [ref=e133]: ◐
+      - generic [ref=e134]:
+        - button "الإشعارات (10)" [ref=e136] [cursor=pointer]:
+          - img [ref=e137] [cursor=pointer]
+        - button "تسجيل الخروج" [ref=e139] [cursor=pointer]
+    - navigation "اختصارات التنقل" [ref=e140]:
+      - link "سجل العمليات" [ref=e141] [cursor=pointer]:
+        - /url: /admin/audit
+      - link "لوحة التحكم" [ref=e142] [cursor=pointer]:
+        - /url: /dashboard
+    - main [ref=e143]:
+      - generic [ref=e144]:
+        - generic [ref=e146]:
+          - heading "مرتجعات المخازن" [level=1] [ref=e147]
+          - paragraph [ref=e148]: راجع تفاصيل المرتجع، ثم اعتمده لإضافة الكميات إلى رصيد المخزن وتسجيل حركة واردة.
+        - heading "حركات قابلة للإرجاع" [level=2] [ref=e149]
+        - generic [ref=e150]:
+          - generic [ref=e151]: بحث
+          - searchbox "بحث" [ref=e152]
+        - table [ref=e154]:
+          - rowgroup [ref=e155]:
+            - row "المنتج الكمية الصادرة مرتجع سابق المتاح للإرجاع المصدر المرجع التاريخ كمية المرتجع الحالة المخزن المستلم الإجراءات" [ref=e156]:
+              - columnheader "المنتج" [ref=e157]
+              - columnheader "الكمية الصادرة" [ref=e158]
+              - columnheader "مرتجع سابق" [ref=e159]
+              - columnheader "المتاح للإرجاع" [ref=e160]
+              - columnheader "المصدر" [ref=e161]
+              - columnheader "المرجع" [ref=e162]
+              - columnheader "التاريخ" [ref=e163]
+              - columnheader "كمية المرتجع" [ref=e164]
+              - columnheader "الحالة" [ref=e165]
+              - columnheader "المخزن المستلم" [ref=e166]
+              - columnheader "الإجراءات" [ref=e167]
+          - rowgroup [ref=e168]:
+            - row "صنف اختبار المخزون 5920083C IWE2E-5920083C 2 0 2 مخزن اختبار المخزون 5920083C INV-2026-242 2026-10-30 سليم اختر اعتماد المرتجع" [ref=e169]:
+              - cell "صنف اختبار المخزون 5920083C IWE2E-5920083C" [ref=e170]:
+                - text: صنف اختبار المخزون 5920083C
+                - generic [ref=e171]: IWE2E-5920083C
+              - cell "2" [ref=e172]
+              - cell "0" [ref=e173]
+              - cell "2" [ref=e174]
+              - cell "مخزن اختبار المخزون 5920083C" [ref=e175]
+              - cell "INV-2026-242" [ref=e176]:
+                - generic [ref=e177]: INV-2026-242
+              - cell "2026-10-30" [ref=e178]:
+                - generic [ref=e179]: 2026-10-30
+              - cell [ref=e180]:
+                - spinbutton "كمية مرتجع IWE2E-5920083C" [ref=e181]
+              - cell "سليم" [ref=e182]:
+                - combobox "حالة مرتجع IWE2E-5920083C" [ref=e183]:
+                  - option "سليم" [selected]
+                  - option "تالف"
+              - cell "اختر" [ref=e184]:
+                - combobox "المخزن المستلم IWE2E-5920083C" [ref=e185]:
+                  - option "اختر" [selected]
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Reference warehouse"
+                  - option "Reference warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "مخزن اختبار التدفق 015E725F"
+                  - option "مخزن اختبار التدفق 0399868F"
+                  - option "مخزن اختبار التدفق 03D41047"
+                  - option "مخزن اختبار التدفق 045AFF7B"
+                  - option "مخزن اختبار التدفق 072564F4"
+                  - option "مخزن اختبار التدفق 0E98EB31"
+                  - option "مخزن اختبار التدفق 10AB28B2"
+                  - option "مخزن اختبار التدفق 15235211"
+                  - option "مخزن اختبار التدفق 15E7B757"
+                  - option "مخزن اختبار التدفق 160A13DC"
+                  - option "مخزن اختبار التدفق 1D26F008"
+                  - option "مخزن اختبار التدفق 23045C3D"
+                  - option "مخزن اختبار التدفق 246E21FE"
+                  - option "مخزن اختبار التدفق 25F67D7A"
+                  - option "مخزن اختبار التدفق 26CC666C"
+                  - option "مخزن اختبار التدفق 287971F8"
+                  - option "مخزن اختبار التدفق 29164B21"
+                  - option "مخزن اختبار التدفق 2DA9CF30"
+                  - option "مخزن اختبار التدفق 331808FA"
+                  - option "مخزن اختبار التدفق 3430883C"
+                  - option "مخزن اختبار التدفق 353C766D"
+                  - option "مخزن اختبار التدفق 355B21C0"
+                  - option "مخزن اختبار التدفق 3CDBB8A9"
+                  - option "مخزن اختبار التدفق 3EFB336D"
+                  - option "مخزن اختبار التدفق 455E002C"
+                  - option "مخزن اختبار التدفق 4C62B6BE"
+                  - option "مخزن اختبار التدفق 4EC9F306"
+                  - option "مخزن اختبار التدفق 4FD0DF86"
+              - cell "اعتماد المرتجع" [ref=e186]:
+                - button "اعتماد المرتجع" [ref=e187] [cursor=pointer]
+            - row "صنف اختبار تدفق البيع D1EACF90 SWE2E-D1EACF90 2 0 2 مخزن اختبار التدفق D1EACF90 INV-2026-241 2026-10-30 سليم اختر اعتماد المرتجع" [ref=e188]:
+              - cell "صنف اختبار تدفق البيع D1EACF90 SWE2E-D1EACF90" [ref=e189]:
+                - text: صنف اختبار تدفق البيع D1EACF90
+                - generic [ref=e190]: SWE2E-D1EACF90
+              - cell "2" [ref=e191]
+              - cell "0" [ref=e192]
+              - cell "2" [ref=e193]
+              - cell "مخزن اختبار التدفق D1EACF90" [ref=e194]
+              - cell "INV-2026-241" [ref=e195]:
+                - generic [ref=e196]: INV-2026-241
+              - cell "2026-10-30" [ref=e197]:
+                - generic [ref=e198]: 2026-10-30
+              - cell [ref=e199]:
+                - spinbutton "كمية مرتجع SWE2E-D1EACF90" [ref=e200]
+              - cell "سليم" [ref=e201]:
+                - combobox "حالة مرتجع SWE2E-D1EACF90" [ref=e202]:
+                  - option "سليم" [selected]
+                  - option "تالف"
+              - cell "اختر" [ref=e203]:
+                - combobox "المخزن المستلم SWE2E-D1EACF90" [ref=e204]:
+                  - option "اختر" [selected]
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Reference warehouse"
+                  - option "Reference warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "مخزن اختبار التدفق 015E725F"
+                  - option "مخزن اختبار التدفق 0399868F"
+                  - option "مخزن اختبار التدفق 03D41047"
+                  - option "مخزن اختبار التدفق 045AFF7B"
+                  - option "مخزن اختبار التدفق 072564F4"
+                  - option "مخزن اختبار التدفق 0E98EB31"
+                  - option "مخزن اختبار التدفق 10AB28B2"
+                  - option "مخزن اختبار التدفق 15235211"
+                  - option "مخزن اختبار التدفق 15E7B757"
+                  - option "مخزن اختبار التدفق 160A13DC"
+                  - option "مخزن اختبار التدفق 1D26F008"
+                  - option "مخزن اختبار التدفق 23045C3D"
+                  - option "مخزن اختبار التدفق 246E21FE"
+                  - option "مخزن اختبار التدفق 25F67D7A"
+                  - option "مخزن اختبار التدفق 26CC666C"
+                  - option "مخزن اختبار التدفق 287971F8"
+                  - option "مخزن اختبار التدفق 29164B21"
+                  - option "مخزن اختبار التدفق 2DA9CF30"
+                  - option "مخزن اختبار التدفق 331808FA"
+                  - option "مخزن اختبار التدفق 3430883C"
+                  - option "مخزن اختبار التدفق 353C766D"
+                  - option "مخزن اختبار التدفق 355B21C0"
+                  - option "مخزن اختبار التدفق 3CDBB8A9"
+                  - option "مخزن اختبار التدفق 3EFB336D"
+                  - option "مخزن اختبار التدفق 455E002C"
+                  - option "مخزن اختبار التدفق 4C62B6BE"
+                  - option "مخزن اختبار التدفق 4EC9F306"
+                  - option "مخزن اختبار التدفق 4FD0DF86"
+              - cell "اعتماد المرتجع" [ref=e205]:
+                - button "اعتماد المرتجع" [ref=e206] [cursor=pointer]
+            - row "صنف اختبار المخزون 0A5DFFF3 IWE2E-0A5DFFF3 2 0 2 مخزن اختبار المخزون 0A5DFFF3 INV-2026-240 2026-10-30 سليم اختر اعتماد المرتجع" [ref=e207]:
+              - cell "صنف اختبار المخزون 0A5DFFF3 IWE2E-0A5DFFF3" [ref=e208]:
+                - text: صنف اختبار المخزون 0A5DFFF3
+                - generic [ref=e209]: IWE2E-0A5DFFF3
+              - cell "2" [ref=e210]
+              - cell "0" [ref=e211]
+              - cell "2" [ref=e212]
+              - cell "مخزن اختبار المخزون 0A5DFFF3" [ref=e213]
+              - cell "INV-2026-240" [ref=e214]:
+                - generic [ref=e215]: INV-2026-240
+              - cell "2026-10-30" [ref=e216]:
+                - generic [ref=e217]: 2026-10-30
+              - cell [ref=e218]:
+                - spinbutton "كمية مرتجع IWE2E-0A5DFFF3" [ref=e219]
+              - cell "سليم" [ref=e220]:
+                - combobox "حالة مرتجع IWE2E-0A5DFFF3" [ref=e221]:
+                  - option "سليم" [selected]
+                  - option "تالف"
+              - cell "اختر" [ref=e222]:
+                - combobox "المخزن المستلم IWE2E-0A5DFFF3" [ref=e223]:
+                  - option "اختر" [selected]
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Reference warehouse"
+                  - option "Reference warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "مخزن اختبار التدفق 015E725F"
+                  - option "مخزن اختبار التدفق 0399868F"
+                  - option "مخزن اختبار التدفق 03D41047"
+                  - option "مخزن اختبار التدفق 045AFF7B"
+                  - option "مخزن اختبار التدفق 072564F4"
+                  - option "مخزن اختبار التدفق 0E98EB31"
+                  - option "مخزن اختبار التدفق 10AB28B2"
+                  - option "مخزن اختبار التدفق 15235211"
+                  - option "مخزن اختبار التدفق 15E7B757"
+                  - option "مخزن اختبار التدفق 160A13DC"
+                  - option "مخزن اختبار التدفق 1D26F008"
+                  - option "مخزن اختبار التدفق 23045C3D"
+                  - option "مخزن اختبار التدفق 246E21FE"
+                  - option "مخزن اختبار التدفق 25F67D7A"
+                  - option "مخزن اختبار التدفق 26CC666C"
+                  - option "مخزن اختبار التدفق 287971F8"
+                  - option "مخزن اختبار التدفق 29164B21"
+                  - option "مخزن اختبار التدفق 2DA9CF30"
+                  - option "مخزن اختبار التدفق 331808FA"
+                  - option "مخزن اختبار التدفق 3430883C"
+                  - option "مخزن اختبار التدفق 353C766D"
+                  - option "مخزن اختبار التدفق 355B21C0"
+                  - option "مخزن اختبار التدفق 3CDBB8A9"
+                  - option "مخزن اختبار التدفق 3EFB336D"
+                  - option "مخزن اختبار التدفق 455E002C"
+                  - option "مخزن اختبار التدفق 4C62B6BE"
+                  - option "مخزن اختبار التدفق 4EC9F306"
+                  - option "مخزن اختبار التدفق 4FD0DF86"
+              - cell "اعتماد المرتجع" [ref=e224]:
+                - button "اعتماد المرتجع" [ref=e225] [cursor=pointer]
+            - row "صنف اختبار تدفق البيع F2A23C24 SWE2E-F2A23C24 2 0 2 مخزن اختبار التدفق F2A23C24 INV-2026-239 2026-10-30 سليم اختر اعتماد المرتجع" [ref=e226]:
+              - cell "صنف اختبار تدفق البيع F2A23C24 SWE2E-F2A23C24" [ref=e227]:
+                - text: صنف اختبار تدفق البيع F2A23C24
+                - generic [ref=e228]: SWE2E-F2A23C24
+              - cell "2" [ref=e229]
+              - cell "0" [ref=e230]
+              - cell "2" [ref=e231]
+              - cell "مخزن اختبار التدفق F2A23C24" [ref=e232]
+              - cell "INV-2026-239" [ref=e233]:
+                - generic [ref=e234]: INV-2026-239
+              - cell "2026-10-30" [ref=e235]:
+                - generic [ref=e236]: 2026-10-30
+              - cell [ref=e237]:
+                - spinbutton "كمية مرتجع SWE2E-F2A23C24" [ref=e238]
+              - cell "سليم" [ref=e239]:
+                - combobox "حالة مرتجع SWE2E-F2A23C24" [ref=e240]:
+                  - option "سليم" [selected]
+                  - option "تالف"
+              - cell "اختر" [ref=e241]:
+                - combobox "المخزن المستلم SWE2E-F2A23C24" [ref=e242]:
+                  - option "اختر" [selected]
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Reference warehouse"
+                  - option "Reference warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "مخزن اختبار التدفق 015E725F"
+                  - option "مخزن اختبار التدفق 0399868F"
+                  - option "مخزن اختبار التدفق 03D41047"
+                  - option "مخزن اختبار التدفق 045AFF7B"
+                  - option "مخزن اختبار التدفق 072564F4"
+                  - option "مخزن اختبار التدفق 0E98EB31"
+                  - option "مخزن اختبار التدفق 10AB28B2"
+                  - option "مخزن اختبار التدفق 15235211"
+                  - option "مخزن اختبار التدفق 15E7B757"
+                  - option "مخزن اختبار التدفق 160A13DC"
+                  - option "مخزن اختبار التدفق 1D26F008"
+                  - option "مخزن اختبار التدفق 23045C3D"
+                  - option "مخزن اختبار التدفق 246E21FE"
+                  - option "مخزن اختبار التدفق 25F67D7A"
+                  - option "مخزن اختبار التدفق 26CC666C"
+                  - option "مخزن اختبار التدفق 287971F8"
+                  - option "مخزن اختبار التدفق 29164B21"
+                  - option "مخزن اختبار التدفق 2DA9CF30"
+                  - option "مخزن اختبار التدفق 331808FA"
+                  - option "مخزن اختبار التدفق 3430883C"
+                  - option "مخزن اختبار التدفق 353C766D"
+                  - option "مخزن اختبار التدفق 355B21C0"
+                  - option "مخزن اختبار التدفق 3CDBB8A9"
+                  - option "مخزن اختبار التدفق 3EFB336D"
+                  - option "مخزن اختبار التدفق 455E002C"
+                  - option "مخزن اختبار التدفق 4C62B6BE"
+                  - option "مخزن اختبار التدفق 4EC9F306"
+                  - option "مخزن اختبار التدفق 4FD0DF86"
+              - cell "اعتماد المرتجع" [ref=e243]:
+                - button "اعتماد المرتجع" [ref=e244] [cursor=pointer]
+            - row "صنف اختبار المخزون 50F518A1 IWE2E-50F518A1 2 0 2 مخزن اختبار المخزون 50F518A1 INV-2026-210 2026-10-30 سليم اختر اعتماد المرتجع" [ref=e245]:
+              - cell "صنف اختبار المخزون 50F518A1 IWE2E-50F518A1" [ref=e246]:
+                - text: صنف اختبار المخزون 50F518A1
+                - generic [ref=e247]: IWE2E-50F518A1
+              - cell "2" [ref=e248]
+              - cell "0" [ref=e249]
+              - cell "2" [ref=e250]
+              - cell "مخزن اختبار المخزون 50F518A1" [ref=e251]
+              - cell "INV-2026-210" [ref=e252]:
+                - generic [ref=e253]: INV-2026-210
+              - cell "2026-10-30" [ref=e254]:
+                - generic [ref=e255]: 2026-10-30
+              - cell [ref=e256]:
+                - spinbutton "كمية مرتجع IWE2E-50F518A1" [ref=e257]
+              - cell "سليم" [ref=e258]:
+                - combobox "حالة مرتجع IWE2E-50F518A1" [ref=e259]:
+                  - option "سليم" [selected]
+                  - option "تالف"
+              - cell "اختر" [ref=e260]:
+                - combobox "المخزن المستلم IWE2E-50F518A1" [ref=e261]:
+                  - option "اختر" [selected]
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Reference warehouse"
+                  - option "Reference warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "مخزن اختبار التدفق 015E725F"
+                  - option "مخزن اختبار التدفق 0399868F"
+                  - option "مخزن اختبار التدفق 03D41047"
+                  - option "مخزن اختبار التدفق 045AFF7B"
+                  - option "مخزن اختبار التدفق 072564F4"
+                  - option "مخزن اختبار التدفق 0E98EB31"
+                  - option "مخزن اختبار التدفق 10AB28B2"
+                  - option "مخزن اختبار التدفق 15235211"
+                  - option "مخزن اختبار التدفق 15E7B757"
+                  - option "مخزن اختبار التدفق 160A13DC"
+                  - option "مخزن اختبار التدفق 1D26F008"
+                  - option "مخزن اختبار التدفق 23045C3D"
+                  - option "مخزن اختبار التدفق 246E21FE"
+                  - option "مخزن اختبار التدفق 25F67D7A"
+                  - option "مخزن اختبار التدفق 26CC666C"
+                  - option "مخزن اختبار التدفق 287971F8"
+                  - option "مخزن اختبار التدفق 29164B21"
+                  - option "مخزن اختبار التدفق 2DA9CF30"
+                  - option "مخزن اختبار التدفق 331808FA"
+                  - option "مخزن اختبار التدفق 3430883C"
+                  - option "مخزن اختبار التدفق 353C766D"
+                  - option "مخزن اختبار التدفق 355B21C0"
+                  - option "مخزن اختبار التدفق 3CDBB8A9"
+                  - option "مخزن اختبار التدفق 3EFB336D"
+                  - option "مخزن اختبار التدفق 455E002C"
+                  - option "مخزن اختبار التدفق 4C62B6BE"
+                  - option "مخزن اختبار التدفق 4EC9F306"
+                  - option "مخزن اختبار التدفق 4FD0DF86"
+              - cell "اعتماد المرتجع" [ref=e262]:
+                - button "اعتماد المرتجع" [ref=e263] [cursor=pointer]
+            - row "صنف اختبار تدفق البيع 10AB28B2 SWE2E-10AB28B2 2 0 2 مخزن اختبار التدفق 10AB28B2 INV-2026-209 2026-10-30 سليم مخزن اختبار التدفق 10AB28B2 اعتماد المرتجع" [ref=e264]:
+              - cell "صنف اختبار تدفق البيع 10AB28B2 SWE2E-10AB28B2" [ref=e265]:
+                - text: صنف اختبار تدفق البيع 10AB28B2
+                - generic [ref=e266]: SWE2E-10AB28B2
+              - cell "2" [ref=e267]
+              - cell "0" [ref=e268]
+              - cell "2" [ref=e269]
+              - cell "مخزن اختبار التدفق 10AB28B2" [ref=e270]
+              - cell "INV-2026-209" [ref=e271]:
+                - generic [ref=e272]: INV-2026-209
+              - cell "2026-10-30" [ref=e273]:
+                - generic [ref=e274]: 2026-10-30
+              - cell [ref=e275]:
+                - spinbutton "كمية مرتجع SWE2E-10AB28B2" [ref=e276]
+              - cell "سليم" [ref=e277]:
+                - combobox "حالة مرتجع SWE2E-10AB28B2" [ref=e278]:
+                  - option "سليم" [selected]
+                  - option "تالف"
+              - cell "مخزن اختبار التدفق 10AB28B2" [ref=e279]:
+                - combobox "المخزن المستلم SWE2E-10AB28B2" [ref=e280]:
+                  - option "اختر"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Reference warehouse"
+                  - option "Reference warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "مخزن اختبار التدفق 015E725F"
+                  - option "مخزن اختبار التدفق 0399868F"
+                  - option "مخزن اختبار التدفق 03D41047"
+                  - option "مخزن اختبار التدفق 045AFF7B"
+                  - option "مخزن اختبار التدفق 072564F4"
+                  - option "مخزن اختبار التدفق 0E98EB31"
+                  - option "مخزن اختبار التدفق 10AB28B2" [selected]
+                  - option "مخزن اختبار التدفق 15235211"
+                  - option "مخزن اختبار التدفق 15E7B757"
+                  - option "مخزن اختبار التدفق 160A13DC"
+                  - option "مخزن اختبار التدفق 1D26F008"
+                  - option "مخزن اختبار التدفق 23045C3D"
+                  - option "مخزن اختبار التدفق 246E21FE"
+                  - option "مخزن اختبار التدفق 25F67D7A"
+                  - option "مخزن اختبار التدفق 26CC666C"
+                  - option "مخزن اختبار التدفق 287971F8"
+                  - option "مخزن اختبار التدفق 29164B21"
+                  - option "مخزن اختبار التدفق 2DA9CF30"
+                  - option "مخزن اختبار التدفق 331808FA"
+                  - option "مخزن اختبار التدفق 3430883C"
+                  - option "مخزن اختبار التدفق 353C766D"
+                  - option "مخزن اختبار التدفق 355B21C0"
+                  - option "مخزن اختبار التدفق 3CDBB8A9"
+                  - option "مخزن اختبار التدفق 3EFB336D"
+                  - option "مخزن اختبار التدفق 455E002C"
+                  - option "مخزن اختبار التدفق 4C62B6BE"
+                  - option "مخزن اختبار التدفق 4EC9F306"
+                  - option "مخزن اختبار التدفق 4FD0DF86"
+              - cell "اعتماد المرتجع" [ref=e281]:
+                - button "اعتماد المرتجع" [ref=e282] [cursor=pointer]
+            - row "صنف اختبار المخزون 7AD0E8C8 IWE2E-7AD0E8C8 2 0 2 مخزن اختبار المخزون 7AD0E8C8 INV-2026-208 2026-10-30 سليم اختر اعتماد المرتجع" [ref=e283]:
+              - cell "صنف اختبار المخزون 7AD0E8C8 IWE2E-7AD0E8C8" [ref=e284]:
+                - text: صنف اختبار المخزون 7AD0E8C8
+                - generic [ref=e285]: IWE2E-7AD0E8C8
+              - cell "2" [ref=e286]
+              - cell "0" [ref=e287]
+              - cell "2" [ref=e288]
+              - cell "مخزن اختبار المخزون 7AD0E8C8" [ref=e289]
+              - cell "INV-2026-208" [ref=e290]:
+                - generic [ref=e291]: INV-2026-208
+              - cell "2026-10-30" [ref=e292]:
+                - generic [ref=e293]: 2026-10-30
+              - cell [ref=e294]:
+                - spinbutton "كمية مرتجع IWE2E-7AD0E8C8" [ref=e295]
+              - cell "سليم" [ref=e296]:
+                - combobox "حالة مرتجع IWE2E-7AD0E8C8" [ref=e297]:
+                  - option "سليم" [selected]
+                  - option "تالف"
+              - cell "اختر" [ref=e298]:
+                - combobox "المخزن المستلم IWE2E-7AD0E8C8" [ref=e299]:
+                  - option "اختر" [selected]
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Reference warehouse"
+                  - option "Reference warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "مخزن اختبار التدفق 015E725F"
+                  - option "مخزن اختبار التدفق 0399868F"
+                  - option "مخزن اختبار التدفق 03D41047"
+                  - option "مخزن اختبار التدفق 045AFF7B"
+                  - option "مخزن اختبار التدفق 072564F4"
+                  - option "مخزن اختبار التدفق 0E98EB31"
+                  - option "مخزن اختبار التدفق 10AB28B2"
+                  - option "مخزن اختبار التدفق 15235211"
+                  - option "مخزن اختبار التدفق 15E7B757"
+                  - option "مخزن اختبار التدفق 160A13DC"
+                  - option "مخزن اختبار التدفق 1D26F008"
+                  - option "مخزن اختبار التدفق 23045C3D"
+                  - option "مخزن اختبار التدفق 246E21FE"
+                  - option "مخزن اختبار التدفق 25F67D7A"
+                  - option "مخزن اختبار التدفق 26CC666C"
+                  - option "مخزن اختبار التدفق 287971F8"
+                  - option "مخزن اختبار التدفق 29164B21"
+                  - option "مخزن اختبار التدفق 2DA9CF30"
+                  - option "مخزن اختبار التدفق 331808FA"
+                  - option "مخزن اختبار التدفق 3430883C"
+                  - option "مخزن اختبار التدفق 353C766D"
+                  - option "مخزن اختبار التدفق 355B21C0"
+                  - option "مخزن اختبار التدفق 3CDBB8A9"
+                  - option "مخزن اختبار التدفق 3EFB336D"
+                  - option "مخزن اختبار التدفق 455E002C"
+                  - option "مخزن اختبار التدفق 4C62B6BE"
+                  - option "مخزن اختبار التدفق 4EC9F306"
+                  - option "مخزن اختبار التدفق 4FD0DF86"
+              - cell "اعتماد المرتجع" [ref=e300]:
+                - button "اعتماد المرتجع" [ref=e301] [cursor=pointer]
+            - row "صنف اختبار تدفق البيع 89445E66 SWE2E-89445E66 2 0 2 مخزن اختبار التدفق 89445E66 INV-2026-207 2026-10-30 سليم اختر اعتماد المرتجع" [ref=e302]:
+              - cell "صنف اختبار تدفق البيع 89445E66 SWE2E-89445E66" [ref=e303]:
+                - text: صنف اختبار تدفق البيع 89445E66
+                - generic [ref=e304]: SWE2E-89445E66
+              - cell "2" [ref=e305]
+              - cell "0" [ref=e306]
+              - cell "2" [ref=e307]
+              - cell "مخزن اختبار التدفق 89445E66" [ref=e308]
+              - cell "INV-2026-207" [ref=e309]:
+                - generic [ref=e310]: INV-2026-207
+              - cell "2026-10-30" [ref=e311]:
+                - generic [ref=e312]: 2026-10-30
+              - cell [ref=e313]:
+                - spinbutton "كمية مرتجع SWE2E-89445E66" [ref=e314]
+              - cell "سليم" [ref=e315]:
+                - combobox "حالة مرتجع SWE2E-89445E66" [ref=e316]:
+                  - option "سليم" [selected]
+                  - option "تالف"
+              - cell "اختر" [ref=e317]:
+                - combobox "المخزن المستلم SWE2E-89445E66" [ref=e318]:
+                  - option "اختر" [selected]
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Reference warehouse"
+                  - option "Reference warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "مخزن اختبار التدفق 015E725F"
+                  - option "مخزن اختبار التدفق 0399868F"
+                  - option "مخزن اختبار التدفق 03D41047"
+                  - option "مخزن اختبار التدفق 045AFF7B"
+                  - option "مخزن اختبار التدفق 072564F4"
+                  - option "مخزن اختبار التدفق 0E98EB31"
+                  - option "مخزن اختبار التدفق 10AB28B2"
+                  - option "مخزن اختبار التدفق 15235211"
+                  - option "مخزن اختبار التدفق 15E7B757"
+                  - option "مخزن اختبار التدفق 160A13DC"
+                  - option "مخزن اختبار التدفق 1D26F008"
+                  - option "مخزن اختبار التدفق 23045C3D"
+                  - option "مخزن اختبار التدفق 246E21FE"
+                  - option "مخزن اختبار التدفق 25F67D7A"
+                  - option "مخزن اختبار التدفق 26CC666C"
+                  - option "مخزن اختبار التدفق 287971F8"
+                  - option "مخزن اختبار التدفق 29164B21"
+                  - option "مخزن اختبار التدفق 2DA9CF30"
+                  - option "مخزن اختبار التدفق 331808FA"
+                  - option "مخزن اختبار التدفق 3430883C"
+                  - option "مخزن اختبار التدفق 353C766D"
+                  - option "مخزن اختبار التدفق 355B21C0"
+                  - option "مخزن اختبار التدفق 3CDBB8A9"
+                  - option "مخزن اختبار التدفق 3EFB336D"
+                  - option "مخزن اختبار التدفق 455E002C"
+                  - option "مخزن اختبار التدفق 4C62B6BE"
+                  - option "مخزن اختبار التدفق 4EC9F306"
+                  - option "مخزن اختبار التدفق 4FD0DF86"
+              - cell "اعتماد المرتجع" [ref=e319]:
+                - button "اعتماد المرتجع" [ref=e320] [cursor=pointer]
+            - row "صنف اختبار المخزون 9C8BE844 IWE2E-9C8BE844 2 0 2 مخزن اختبار المخزون 9C8BE844 INV-2026-206 2026-10-30 سليم اختر اعتماد المرتجع" [ref=e321]:
+              - cell "صنف اختبار المخزون 9C8BE844 IWE2E-9C8BE844" [ref=e322]:
+                - text: صنف اختبار المخزون 9C8BE844
+                - generic [ref=e323]: IWE2E-9C8BE844
+              - cell "2" [ref=e324]
+              - cell "0" [ref=e325]
+              - cell "2" [ref=e326]
+              - cell "مخزن اختبار المخزون 9C8BE844" [ref=e327]
+              - cell "INV-2026-206" [ref=e328]:
+                - generic [ref=e329]: INV-2026-206
+              - cell "2026-10-30" [ref=e330]:
+                - generic [ref=e331]: 2026-10-30
+              - cell [ref=e332]:
+                - spinbutton "كمية مرتجع IWE2E-9C8BE844" [ref=e333]
+              - cell "سليم" [ref=e334]:
+                - combobox "حالة مرتجع IWE2E-9C8BE844" [ref=e335]:
+                  - option "سليم" [selected]
+                  - option "تالف"
+              - cell "اختر" [ref=e336]:
+                - combobox "المخزن المستلم IWE2E-9C8BE844" [ref=e337]:
+                  - option "اختر" [selected]
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Reference warehouse"
+                  - option "Reference warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "مخزن اختبار التدفق 015E725F"
+                  - option "مخزن اختبار التدفق 0399868F"
+                  - option "مخزن اختبار التدفق 03D41047"
+                  - option "مخزن اختبار التدفق 045AFF7B"
+                  - option "مخزن اختبار التدفق 072564F4"
+                  - option "مخزن اختبار التدفق 0E98EB31"
+                  - option "مخزن اختبار التدفق 10AB28B2"
+                  - option "مخزن اختبار التدفق 15235211"
+                  - option "مخزن اختبار التدفق 15E7B757"
+                  - option "مخزن اختبار التدفق 160A13DC"
+                  - option "مخزن اختبار التدفق 1D26F008"
+                  - option "مخزن اختبار التدفق 23045C3D"
+                  - option "مخزن اختبار التدفق 246E21FE"
+                  - option "مخزن اختبار التدفق 25F67D7A"
+                  - option "مخزن اختبار التدفق 26CC666C"
+                  - option "مخزن اختبار التدفق 287971F8"
+                  - option "مخزن اختبار التدفق 29164B21"
+                  - option "مخزن اختبار التدفق 2DA9CF30"
+                  - option "مخزن اختبار التدفق 331808FA"
+                  - option "مخزن اختبار التدفق 3430883C"
+                  - option "مخزن اختبار التدفق 353C766D"
+                  - option "مخزن اختبار التدفق 355B21C0"
+                  - option "مخزن اختبار التدفق 3CDBB8A9"
+                  - option "مخزن اختبار التدفق 3EFB336D"
+                  - option "مخزن اختبار التدفق 455E002C"
+                  - option "مخزن اختبار التدفق 4C62B6BE"
+                  - option "مخزن اختبار التدفق 4EC9F306"
+                  - option "مخزن اختبار التدفق 4FD0DF86"
+              - cell "اعتماد المرتجع" [ref=e338]:
+                - button "اعتماد المرتجع" [ref=e339] [cursor=pointer]
+            - row "صنف اختبار تدفق البيع 3EFB336D SWE2E-3EFB336D 2 0 2 مخزن اختبار التدفق 3EFB336D INV-2026-205 2026-10-30 سليم مخزن اختبار التدفق 3EFB336D اعتماد المرتجع" [ref=e340]:
+              - cell "صنف اختبار تدفق البيع 3EFB336D SWE2E-3EFB336D" [ref=e341]:
+                - text: صنف اختبار تدفق البيع 3EFB336D
+                - generic [ref=e342]: SWE2E-3EFB336D
+              - cell "2" [ref=e343]
+              - cell "0" [ref=e344]
+              - cell "2" [ref=e345]
+              - cell "مخزن اختبار التدفق 3EFB336D" [ref=e346]
+              - cell "INV-2026-205" [ref=e347]:
+                - generic [ref=e348]: INV-2026-205
+              - cell "2026-10-30" [ref=e349]:
+                - generic [ref=e350]: 2026-10-30
+              - cell [ref=e351]:
+                - spinbutton "كمية مرتجع SWE2E-3EFB336D" [ref=e352]
+              - cell "سليم" [ref=e353]:
+                - combobox "حالة مرتجع SWE2E-3EFB336D" [ref=e354]:
+                  - option "سليم" [selected]
+                  - option "تالف"
+              - cell "مخزن اختبار التدفق 3EFB336D" [ref=e355]:
+                - combobox "المخزن المستلم SWE2E-3EFB336D" [ref=e356]:
+                  - option "اختر"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Reference warehouse"
+                  - option "Reference warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "مخزن اختبار التدفق 015E725F"
+                  - option "مخزن اختبار التدفق 0399868F"
+                  - option "مخزن اختبار التدفق 03D41047"
+                  - option "مخزن اختبار التدفق 045AFF7B"
+                  - option "مخزن اختبار التدفق 072564F4"
+                  - option "مخزن اختبار التدفق 0E98EB31"
+                  - option "مخزن اختبار التدفق 10AB28B2"
+                  - option "مخزن اختبار التدفق 15235211"
+                  - option "مخزن اختبار التدفق 15E7B757"
+                  - option "مخزن اختبار التدفق 160A13DC"
+                  - option "مخزن اختبار التدفق 1D26F008"
+                  - option "مخزن اختبار التدفق 23045C3D"
+                  - option "مخزن اختبار التدفق 246E21FE"
+                  - option "مخزن اختبار التدفق 25F67D7A"
+                  - option "مخزن اختبار التدفق 26CC666C"
+                  - option "مخزن اختبار التدفق 287971F8"
+                  - option "مخزن اختبار التدفق 29164B21"
+                  - option "مخزن اختبار التدفق 2DA9CF30"
+                  - option "مخزن اختبار التدفق 331808FA"
+                  - option "مخزن اختبار التدفق 3430883C"
+                  - option "مخزن اختبار التدفق 353C766D"
+                  - option "مخزن اختبار التدفق 355B21C0"
+                  - option "مخزن اختبار التدفق 3CDBB8A9"
+                  - option "مخزن اختبار التدفق 3EFB336D" [selected]
+                  - option "مخزن اختبار التدفق 455E002C"
+                  - option "مخزن اختبار التدفق 4C62B6BE"
+                  - option "مخزن اختبار التدفق 4EC9F306"
+                  - option "مخزن اختبار التدفق 4FD0DF86"
+              - cell "اعتماد المرتجع" [ref=e357]:
+                - button "اعتماد المرتجع" [ref=e358] [cursor=pointer]
+            - row "صنف اختبار تدفق البيع EB491F96 SWE2E-EB491F96 2 0 2 مخزن اختبار التدفق EB491F96 INV-2026-204 2026-10-30 سليم اختر اعتماد المرتجع" [ref=e359]:
+              - cell "صنف اختبار تدفق البيع EB491F96 SWE2E-EB491F96" [ref=e360]:
+                - text: صنف اختبار تدفق البيع EB491F96
+                - generic [ref=e361]: SWE2E-EB491F96
+              - cell "2" [ref=e362]
+              - cell "0" [ref=e363]
+              - cell "2" [ref=e364]
+              - cell "مخزن اختبار التدفق EB491F96" [ref=e365]
+              - cell "INV-2026-204" [ref=e366]:
+                - generic [ref=e367]: INV-2026-204
+              - cell "2026-10-30" [ref=e368]:
+                - generic [ref=e369]: 2026-10-30
+              - cell [ref=e370]:
+                - spinbutton "كمية مرتجع SWE2E-EB491F96" [ref=e371]
+              - cell "سليم" [ref=e372]:
+                - combobox "حالة مرتجع SWE2E-EB491F96" [ref=e373]:
+                  - option "سليم" [selected]
+                  - option "تالف"
+              - cell "اختر" [ref=e374]:
+                - combobox "المخزن المستلم SWE2E-EB491F96" [ref=e375]:
+                  - option "اختر" [selected]
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Reference warehouse"
+                  - option "Reference warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "مخزن اختبار التدفق 015E725F"
+                  - option "مخزن اختبار التدفق 0399868F"
+                  - option "مخزن اختبار التدفق 03D41047"
+                  - option "مخزن اختبار التدفق 045AFF7B"
+                  - option "مخزن اختبار التدفق 072564F4"
+                  - option "مخزن اختبار التدفق 0E98EB31"
+                  - option "مخزن اختبار التدفق 10AB28B2"
+                  - option "مخزن اختبار التدفق 15235211"
+                  - option "مخزن اختبار التدفق 15E7B757"
+                  - option "مخزن اختبار التدفق 160A13DC"
+                  - option "مخزن اختبار التدفق 1D26F008"
+                  - option "مخزن اختبار التدفق 23045C3D"
+                  - option "مخزن اختبار التدفق 246E21FE"
+                  - option "مخزن اختبار التدفق 25F67D7A"
+                  - option "مخزن اختبار التدفق 26CC666C"
+                  - option "مخزن اختبار التدفق 287971F8"
+                  - option "مخزن اختبار التدفق 29164B21"
+                  - option "مخزن اختبار التدفق 2DA9CF30"
+                  - option "مخزن اختبار التدفق 331808FA"
+                  - option "مخزن اختبار التدفق 3430883C"
+                  - option "مخزن اختبار التدفق 353C766D"
+                  - option "مخزن اختبار التدفق 355B21C0"
+                  - option "مخزن اختبار التدفق 3CDBB8A9"
+                  - option "مخزن اختبار التدفق 3EFB336D"
+                  - option "مخزن اختبار التدفق 455E002C"
+                  - option "مخزن اختبار التدفق 4C62B6BE"
+                  - option "مخزن اختبار التدفق 4EC9F306"
+                  - option "مخزن اختبار التدفق 4FD0DF86"
+              - cell "اعتماد المرتجع" [ref=e376]:
+                - button "اعتماد المرتجع" [ref=e377] [cursor=pointer]
+            - row "صنف اختبار تدفق البيع 0399868F SWE2E-0399868F 2 0 2 مخزن اختبار التدفق 0399868F INV-2026-203 2026-10-30 سليم مخزن اختبار التدفق 0399868F اعتماد المرتجع" [ref=e378]:
+              - cell "صنف اختبار تدفق البيع 0399868F SWE2E-0399868F" [ref=e379]:
+                - text: صنف اختبار تدفق البيع 0399868F
+                - generic [ref=e380]: SWE2E-0399868F
+              - cell "2" [ref=e381]
+              - cell "0" [ref=e382]
+              - cell "2" [ref=e383]
+              - cell "مخزن اختبار التدفق 0399868F" [ref=e384]
+              - cell "INV-2026-203" [ref=e385]:
+                - generic [ref=e386]: INV-2026-203
+              - cell "2026-10-30" [ref=e387]:
+                - generic [ref=e388]: 2026-10-30
+              - cell [ref=e389]:
+                - spinbutton "كمية مرتجع SWE2E-0399868F" [ref=e390]
+              - cell "سليم" [ref=e391]:
+                - combobox "حالة مرتجع SWE2E-0399868F" [ref=e392]:
+                  - option "سليم" [selected]
+                  - option "تالف"
+              - cell "مخزن اختبار التدفق 0399868F" [ref=e393]:
+                - combobox "المخزن المستلم SWE2E-0399868F" [ref=e394]:
+                  - option "اختر"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Reference warehouse"
+                  - option "Reference warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "مخزن اختبار التدفق 015E725F"
+                  - option "مخزن اختبار التدفق 0399868F" [selected]
+                  - option "مخزن اختبار التدفق 03D41047"
+                  - option "مخزن اختبار التدفق 045AFF7B"
+                  - option "مخزن اختبار التدفق 072564F4"
+                  - option "مخزن اختبار التدفق 0E98EB31"
+                  - option "مخزن اختبار التدفق 10AB28B2"
+                  - option "مخزن اختبار التدفق 15235211"
+                  - option "مخزن اختبار التدفق 15E7B757"
+                  - option "مخزن اختبار التدفق 160A13DC"
+                  - option "مخزن اختبار التدفق 1D26F008"
+                  - option "مخزن اختبار التدفق 23045C3D"
+                  - option "مخزن اختبار التدفق 246E21FE"
+                  - option "مخزن اختبار التدفق 25F67D7A"
+                  - option "مخزن اختبار التدفق 26CC666C"
+                  - option "مخزن اختبار التدفق 287971F8"
+                  - option "مخزن اختبار التدفق 29164B21"
+                  - option "مخزن اختبار التدفق 2DA9CF30"
+                  - option "مخزن اختبار التدفق 331808FA"
+                  - option "مخزن اختبار التدفق 3430883C"
+                  - option "مخزن اختبار التدفق 353C766D"
+                  - option "مخزن اختبار التدفق 355B21C0"
+                  - option "مخزن اختبار التدفق 3CDBB8A9"
+                  - option "مخزن اختبار التدفق 3EFB336D"
+                  - option "مخزن اختبار التدفق 455E002C"
+                  - option "مخزن اختبار التدفق 4C62B6BE"
+                  - option "مخزن اختبار التدفق 4EC9F306"
+                  - option "مخزن اختبار التدفق 4FD0DF86"
+              - cell "اعتماد المرتجع" [ref=e395]:
+                - button "اعتماد المرتجع" [ref=e396] [cursor=pointer]
+            - row "صنف اختبار تدفق البيع A6CAB5AF SWE2E-A6CAB5AF 2 0 2 مخزن اختبار التدفق A6CAB5AF INV-2026-202 2026-10-30 سليم اختر اعتماد المرتجع" [ref=e397]:
+              - cell "صنف اختبار تدفق البيع A6CAB5AF SWE2E-A6CAB5AF" [ref=e398]:
+                - text: صنف اختبار تدفق البيع A6CAB5AF
+                - generic [ref=e399]: SWE2E-A6CAB5AF
+              - cell "2" [ref=e400]
+              - cell "0" [ref=e401]
+              - cell "2" [ref=e402]
+              - cell "مخزن اختبار التدفق A6CAB5AF" [ref=e403]
+              - cell "INV-2026-202" [ref=e404]:
+                - generic [ref=e405]: INV-2026-202
+              - cell "2026-10-30" [ref=e406]:
+                - generic [ref=e407]: 2026-10-30
+              - cell [ref=e408]:
+                - spinbutton "كمية مرتجع SWE2E-A6CAB5AF" [ref=e409]
+              - cell "سليم" [ref=e410]:
+                - combobox "حالة مرتجع SWE2E-A6CAB5AF" [ref=e411]:
+                  - option "سليم" [selected]
+                  - option "تالف"
+              - cell "اختر" [ref=e412]:
+                - combobox "المخزن المستلم SWE2E-A6CAB5AF" [ref=e413]:
+                  - option "اختر" [selected]
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Reference warehouse"
+                  - option "Reference warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "مخزن اختبار التدفق 015E725F"
+                  - option "مخزن اختبار التدفق 0399868F"
+                  - option "مخزن اختبار التدفق 03D41047"
+                  - option "مخزن اختبار التدفق 045AFF7B"
+                  - option "مخزن اختبار التدفق 072564F4"
+                  - option "مخزن اختبار التدفق 0E98EB31"
+                  - option "مخزن اختبار التدفق 10AB28B2"
+                  - option "مخزن اختبار التدفق 15235211"
+                  - option "مخزن اختبار التدفق 15E7B757"
+                  - option "مخزن اختبار التدفق 160A13DC"
+                  - option "مخزن اختبار التدفق 1D26F008"
+                  - option "مخزن اختبار التدفق 23045C3D"
+                  - option "مخزن اختبار التدفق 246E21FE"
+                  - option "مخزن اختبار التدفق 25F67D7A"
+                  - option "مخزن اختبار التدفق 26CC666C"
+                  - option "مخزن اختبار التدفق 287971F8"
+                  - option "مخزن اختبار التدفق 29164B21"
+                  - option "مخزن اختبار التدفق 2DA9CF30"
+                  - option "مخزن اختبار التدفق 331808FA"
+                  - option "مخزن اختبار التدفق 3430883C"
+                  - option "مخزن اختبار التدفق 353C766D"
+                  - option "مخزن اختبار التدفق 355B21C0"
+                  - option "مخزن اختبار التدفق 3CDBB8A9"
+                  - option "مخزن اختبار التدفق 3EFB336D"
+                  - option "مخزن اختبار التدفق 455E002C"
+                  - option "مخزن اختبار التدفق 4C62B6BE"
+                  - option "مخزن اختبار التدفق 4EC9F306"
+                  - option "مخزن اختبار التدفق 4FD0DF86"
+              - cell "اعتماد المرتجع" [ref=e414]:
+                - button "اعتماد المرتجع" [ref=e415] [cursor=pointer]
+            - row "صنف اختبار تدفق البيع F6A0406A SWE2E-F6A0406A 2 0 2 مخزن اختبار التدفق F6A0406A INV-2026-201 2026-10-30 سليم اختر اعتماد المرتجع" [ref=e416]:
+              - cell "صنف اختبار تدفق البيع F6A0406A SWE2E-F6A0406A" [ref=e417]:
+                - text: صنف اختبار تدفق البيع F6A0406A
+                - generic [ref=e418]: SWE2E-F6A0406A
+              - cell "2" [ref=e419]
+              - cell "0" [ref=e420]
+              - cell "2" [ref=e421]
+              - cell "مخزن اختبار التدفق F6A0406A" [ref=e422]
+              - cell "INV-2026-201" [ref=e423]:
+                - generic [ref=e424]: INV-2026-201
+              - cell "2026-10-30" [ref=e425]:
+                - generic [ref=e426]: 2026-10-30
+              - cell [ref=e427]:
+                - spinbutton "كمية مرتجع SWE2E-F6A0406A" [ref=e428]
+              - cell "سليم" [ref=e429]:
+                - combobox "حالة مرتجع SWE2E-F6A0406A" [ref=e430]:
+                  - option "سليم" [selected]
+                  - option "تالف"
+              - cell "اختر" [ref=e431]:
+                - combobox "المخزن المستلم SWE2E-F6A0406A" [ref=e432]:
+                  - option "اختر" [selected]
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Reference warehouse"
+                  - option "Reference warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "مخزن اختبار التدفق 015E725F"
+                  - option "مخزن اختبار التدفق 0399868F"
+                  - option "مخزن اختبار التدفق 03D41047"
+                  - option "مخزن اختبار التدفق 045AFF7B"
+                  - option "مخزن اختبار التدفق 072564F4"
+                  - option "مخزن اختبار التدفق 0E98EB31"
+                  - option "مخزن اختبار التدفق 10AB28B2"
+                  - option "مخزن اختبار التدفق 15235211"
+                  - option "مخزن اختبار التدفق 15E7B757"
+                  - option "مخزن اختبار التدفق 160A13DC"
+                  - option "مخزن اختبار التدفق 1D26F008"
+                  - option "مخزن اختبار التدفق 23045C3D"
+                  - option "مخزن اختبار التدفق 246E21FE"
+                  - option "مخزن اختبار التدفق 25F67D7A"
+                  - option "مخزن اختبار التدفق 26CC666C"
+                  - option "مخزن اختبار التدفق 287971F8"
+                  - option "مخزن اختبار التدفق 29164B21"
+                  - option "مخزن اختبار التدفق 2DA9CF30"
+                  - option "مخزن اختبار التدفق 331808FA"
+                  - option "مخزن اختبار التدفق 3430883C"
+                  - option "مخزن اختبار التدفق 353C766D"
+                  - option "مخزن اختبار التدفق 355B21C0"
+                  - option "مخزن اختبار التدفق 3CDBB8A9"
+                  - option "مخزن اختبار التدفق 3EFB336D"
+                  - option "مخزن اختبار التدفق 455E002C"
+                  - option "مخزن اختبار التدفق 4C62B6BE"
+                  - option "مخزن اختبار التدفق 4EC9F306"
+                  - option "مخزن اختبار التدفق 4FD0DF86"
+              - cell "اعتماد المرتجع" [ref=e433]:
+                - button "اعتماد المرتجع" [ref=e434] [cursor=pointer]
+            - row "صنف اختبار تدفق البيع 3CDBB8A9 SWE2E-3CDBB8A9 2 0 2 مخزن اختبار التدفق 3CDBB8A9 INV-2026-200 2026-10-30 سليم مخزن اختبار التدفق 3CDBB8A9 اعتماد المرتجع" [ref=e435]:
+              - cell "صنف اختبار تدفق البيع 3CDBB8A9 SWE2E-3CDBB8A9" [ref=e436]:
+                - text: صنف اختبار تدفق البيع 3CDBB8A9
+                - generic [ref=e437]: SWE2E-3CDBB8A9
+              - cell "2" [ref=e438]
+              - cell "0" [ref=e439]
+              - cell "2" [ref=e440]
+              - cell "مخزن اختبار التدفق 3CDBB8A9" [ref=e441]
+              - cell "INV-2026-200" [ref=e442]:
+                - generic [ref=e443]: INV-2026-200
+              - cell "2026-10-30" [ref=e444]:
+                - generic [ref=e445]: 2026-10-30
+              - cell [ref=e446]:
+                - spinbutton "كمية مرتجع SWE2E-3CDBB8A9" [ref=e447]
+              - cell "سليم" [ref=e448]:
+                - combobox "حالة مرتجع SWE2E-3CDBB8A9" [ref=e449]:
+                  - option "سليم" [selected]
+                  - option "تالف"
+              - cell "مخزن اختبار التدفق 3CDBB8A9" [ref=e450]:
+                - combobox "المخزن المستلم SWE2E-3CDBB8A9" [ref=e451]:
+                  - option "اختر"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Reference warehouse"
+                  - option "Reference warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "مخزن اختبار التدفق 015E725F"
+                  - option "مخزن اختبار التدفق 0399868F"
+                  - option "مخزن اختبار التدفق 03D41047"
+                  - option "مخزن اختبار التدفق 045AFF7B"
+                  - option "مخزن اختبار التدفق 072564F4"
+                  - option "مخزن اختبار التدفق 0E98EB31"
+                  - option "مخزن اختبار التدفق 10AB28B2"
+                  - option "مخزن اختبار التدفق 15235211"
+                  - option "مخزن اختبار التدفق 15E7B757"
+                  - option "مخزن اختبار التدفق 160A13DC"
+                  - option "مخزن اختبار التدفق 1D26F008"
+                  - option "مخزن اختبار التدفق 23045C3D"
+                  - option "مخزن اختبار التدفق 246E21FE"
+                  - option "مخزن اختبار التدفق 25F67D7A"
+                  - option "مخزن اختبار التدفق 26CC666C"
+                  - option "مخزن اختبار التدفق 287971F8"
+                  - option "مخزن اختبار التدفق 29164B21"
+                  - option "مخزن اختبار التدفق 2DA9CF30"
+                  - option "مخزن اختبار التدفق 331808FA"
+                  - option "مخزن اختبار التدفق 3430883C"
+                  - option "مخزن اختبار التدفق 353C766D"
+                  - option "مخزن اختبار التدفق 355B21C0"
+                  - option "مخزن اختبار التدفق 3CDBB8A9" [selected]
+                  - option "مخزن اختبار التدفق 3EFB336D"
+                  - option "مخزن اختبار التدفق 455E002C"
+                  - option "مخزن اختبار التدفق 4C62B6BE"
+                  - option "مخزن اختبار التدفق 4EC9F306"
+                  - option "مخزن اختبار التدفق 4FD0DF86"
+              - cell "اعتماد المرتجع" [ref=e452]:
+                - button "اعتماد المرتجع" [ref=e453] [cursor=pointer]
+            - row "صنف اختبار تدفق البيع 2DA9CF30 SWE2E-2DA9CF30 2 0 2 مخزن اختبار التدفق 2DA9CF30 INV-2026-199 2026-10-30 سليم مخزن اختبار التدفق 2DA9CF30 اعتماد المرتجع" [ref=e454]:
+              - cell "صنف اختبار تدفق البيع 2DA9CF30 SWE2E-2DA9CF30" [ref=e455]:
+                - text: صنف اختبار تدفق البيع 2DA9CF30
+                - generic [ref=e456]: SWE2E-2DA9CF30
+              - cell "2" [ref=e457]
+              - cell "0" [ref=e458]
+              - cell "2" [ref=e459]
+              - cell "مخزن اختبار التدفق 2DA9CF30" [ref=e460]
+              - cell "INV-2026-199" [ref=e461]:
+                - generic [ref=e462]: INV-2026-199
+              - cell "2026-10-30" [ref=e463]:
+                - generic [ref=e464]: 2026-10-30
+              - cell [ref=e465]:
+                - spinbutton "كمية مرتجع SWE2E-2DA9CF30" [ref=e466]
+              - cell "سليم" [ref=e467]:
+                - combobox "حالة مرتجع SWE2E-2DA9CF30" [ref=e468]:
+                  - option "سليم" [selected]
+                  - option "تالف"
+              - cell "مخزن اختبار التدفق 2DA9CF30" [ref=e469]:
+                - combobox "المخزن المستلم SWE2E-2DA9CF30" [ref=e470]:
+                  - option "اختر"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Reference warehouse"
+                  - option "Reference warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "مخزن اختبار التدفق 015E725F"
+                  - option "مخزن اختبار التدفق 0399868F"
+                  - option "مخزن اختبار التدفق 03D41047"
+                  - option "مخزن اختبار التدفق 045AFF7B"
+                  - option "مخزن اختبار التدفق 072564F4"
+                  - option "مخزن اختبار التدفق 0E98EB31"
+                  - option "مخزن اختبار التدفق 10AB28B2"
+                  - option "مخزن اختبار التدفق 15235211"
+                  - option "مخزن اختبار التدفق 15E7B757"
+                  - option "مخزن اختبار التدفق 160A13DC"
+                  - option "مخزن اختبار التدفق 1D26F008"
+                  - option "مخزن اختبار التدفق 23045C3D"
+                  - option "مخزن اختبار التدفق 246E21FE"
+                  - option "مخزن اختبار التدفق 25F67D7A"
+                  - option "مخزن اختبار التدفق 26CC666C"
+                  - option "مخزن اختبار التدفق 287971F8"
+                  - option "مخزن اختبار التدفق 29164B21"
+                  - option "مخزن اختبار التدفق 2DA9CF30" [selected]
+                  - option "مخزن اختبار التدفق 331808FA"
+                  - option "مخزن اختبار التدفق 3430883C"
+                  - option "مخزن اختبار التدفق 353C766D"
+                  - option "مخزن اختبار التدفق 355B21C0"
+                  - option "مخزن اختبار التدفق 3CDBB8A9"
+                  - option "مخزن اختبار التدفق 3EFB336D"
+                  - option "مخزن اختبار التدفق 455E002C"
+                  - option "مخزن اختبار التدفق 4C62B6BE"
+                  - option "مخزن اختبار التدفق 4EC9F306"
+                  - option "مخزن اختبار التدفق 4FD0DF86"
+              - cell "اعتماد المرتجع" [ref=e471]:
+                - button "اعتماد المرتجع" [ref=e472] [cursor=pointer]
+            - row "صنف اختبار تدفق البيع 4EC9F306 SWE2E-4EC9F306 2 0 2 مخزن اختبار التدفق 4EC9F306 INV-2026-198 2026-10-30 سليم مخزن اختبار التدفق 4EC9F306 اعتماد المرتجع" [ref=e473]:
+              - cell "صنف اختبار تدفق البيع 4EC9F306 SWE2E-4EC9F306" [ref=e474]:
+                - text: صنف اختبار تدفق البيع 4EC9F306
+                - generic [ref=e475]: SWE2E-4EC9F306
+              - cell "2" [ref=e476]
+              - cell "0" [ref=e477]
+              - cell "2" [ref=e478]
+              - cell "مخزن اختبار التدفق 4EC9F306" [ref=e479]
+              - cell "INV-2026-198" [ref=e480]:
+                - generic [ref=e481]: INV-2026-198
+              - cell "2026-10-30" [ref=e482]:
+                - generic [ref=e483]: 2026-10-30
+              - cell [ref=e484]:
+                - spinbutton "كمية مرتجع SWE2E-4EC9F306" [ref=e485]
+              - cell "سليم" [ref=e486]:
+                - combobox "حالة مرتجع SWE2E-4EC9F306" [ref=e487]:
+                  - option "سليم" [selected]
+                  - option "تالف"
+              - cell "مخزن اختبار التدفق 4EC9F306" [ref=e488]:
+                - combobox "المخزن المستلم SWE2E-4EC9F306" [ref=e489]:
+                  - option "اختر"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Reference warehouse"
+                  - option "Reference warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "مخزن اختبار التدفق 015E725F"
+                  - option "مخزن اختبار التدفق 0399868F"
+                  - option "مخزن اختبار التدفق 03D41047"
+                  - option "مخزن اختبار التدفق 045AFF7B"
+                  - option "مخزن اختبار التدفق 072564F4"
+                  - option "مخزن اختبار التدفق 0E98EB31"
+                  - option "مخزن اختبار التدفق 10AB28B2"
+                  - option "مخزن اختبار التدفق 15235211"
+                  - option "مخزن اختبار التدفق 15E7B757"
+                  - option "مخزن اختبار التدفق 160A13DC"
+                  - option "مخزن اختبار التدفق 1D26F008"
+                  - option "مخزن اختبار التدفق 23045C3D"
+                  - option "مخزن اختبار التدفق 246E21FE"
+                  - option "مخزن اختبار التدفق 25F67D7A"
+                  - option "مخزن اختبار التدفق 26CC666C"
+                  - option "مخزن اختبار التدفق 287971F8"
+                  - option "مخزن اختبار التدفق 29164B21"
+                  - option "مخزن اختبار التدفق 2DA9CF30"
+                  - option "مخزن اختبار التدفق 331808FA"
+                  - option "مخزن اختبار التدفق 3430883C"
+                  - option "مخزن اختبار التدفق 353C766D"
+                  - option "مخزن اختبار التدفق 355B21C0"
+                  - option "مخزن اختبار التدفق 3CDBB8A9"
+                  - option "مخزن اختبار التدفق 3EFB336D"
+                  - option "مخزن اختبار التدفق 455E002C"
+                  - option "مخزن اختبار التدفق 4C62B6BE"
+                  - option "مخزن اختبار التدفق 4EC9F306" [selected]
+                  - option "مخزن اختبار التدفق 4FD0DF86"
+              - cell "اعتماد المرتجع" [ref=e490]:
+                - button "اعتماد المرتجع" [ref=e491] [cursor=pointer]
+            - row "صنف اختبار تدفق البيع 9425C4D2 SWE2E-9425C4D2 2 0 2 مخزن اختبار التدفق 9425C4D2 INV-2026-197 2026-10-30 سليم اختر اعتماد المرتجع" [ref=e492]:
+              - cell "صنف اختبار تدفق البيع 9425C4D2 SWE2E-9425C4D2" [ref=e493]:
+                - text: صنف اختبار تدفق البيع 9425C4D2
+                - generic [ref=e494]: SWE2E-9425C4D2
+              - cell "2" [ref=e495]
+              - cell "0" [ref=e496]
+              - cell "2" [ref=e497]
+              - cell "مخزن اختبار التدفق 9425C4D2" [ref=e498]
+              - cell "INV-2026-197" [ref=e499]:
+                - generic [ref=e500]: INV-2026-197
+              - cell "2026-10-30" [ref=e501]:
+                - generic [ref=e502]: 2026-10-30
+              - cell [ref=e503]:
+                - spinbutton "كمية مرتجع SWE2E-9425C4D2" [ref=e504]
+              - cell "سليم" [ref=e505]:
+                - combobox "حالة مرتجع SWE2E-9425C4D2" [ref=e506]:
+                  - option "سليم" [selected]
+                  - option "تالف"
+              - cell "اختر" [ref=e507]:
+                - combobox "المخزن المستلم SWE2E-9425C4D2" [ref=e508]:
+                  - option "اختر" [selected]
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Reference warehouse"
+                  - option "Reference warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "مخزن اختبار التدفق 015E725F"
+                  - option "مخزن اختبار التدفق 0399868F"
+                  - option "مخزن اختبار التدفق 03D41047"
+                  - option "مخزن اختبار التدفق 045AFF7B"
+                  - option "مخزن اختبار التدفق 072564F4"
+                  - option "مخزن اختبار التدفق 0E98EB31"
+                  - option "مخزن اختبار التدفق 10AB28B2"
+                  - option "مخزن اختبار التدفق 15235211"
+                  - option "مخزن اختبار التدفق 15E7B757"
+                  - option "مخزن اختبار التدفق 160A13DC"
+                  - option "مخزن اختبار التدفق 1D26F008"
+                  - option "مخزن اختبار التدفق 23045C3D"
+                  - option "مخزن اختبار التدفق 246E21FE"
+                  - option "مخزن اختبار التدفق 25F67D7A"
+                  - option "مخزن اختبار التدفق 26CC666C"
+                  - option "مخزن اختبار التدفق 287971F8"
+                  - option "مخزن اختبار التدفق 29164B21"
+                  - option "مخزن اختبار التدفق 2DA9CF30"
+                  - option "مخزن اختبار التدفق 331808FA"
+                  - option "مخزن اختبار التدفق 3430883C"
+                  - option "مخزن اختبار التدفق 353C766D"
+                  - option "مخزن اختبار التدفق 355B21C0"
+                  - option "مخزن اختبار التدفق 3CDBB8A9"
+                  - option "مخزن اختبار التدفق 3EFB336D"
+                  - option "مخزن اختبار التدفق 455E002C"
+                  - option "مخزن اختبار التدفق 4C62B6BE"
+                  - option "مخزن اختبار التدفق 4EC9F306"
+                  - option "مخزن اختبار التدفق 4FD0DF86"
+              - cell "اعتماد المرتجع" [ref=e509]:
+                - button "اعتماد المرتجع" [ref=e510] [cursor=pointer]
+            - row "صنف اختبار تدفق البيع 29164B21 SWE2E-29164B21 2 0 2 مخزن اختبار التدفق 29164B21 INV-2026-196 2026-10-30 سليم مخزن اختبار التدفق 29164B21 اعتماد المرتجع" [ref=e511]:
+              - cell "صنف اختبار تدفق البيع 29164B21 SWE2E-29164B21" [ref=e512]:
+                - text: صنف اختبار تدفق البيع 29164B21
+                - generic [ref=e513]: SWE2E-29164B21
+              - cell "2" [ref=e514]
+              - cell "0" [ref=e515]
+              - cell "2" [ref=e516]
+              - cell "مخزن اختبار التدفق 29164B21" [ref=e517]
+              - cell "INV-2026-196" [ref=e518]:
+                - generic [ref=e519]: INV-2026-196
+              - cell "2026-10-30" [ref=e520]:
+                - generic [ref=e521]: 2026-10-30
+              - cell [ref=e522]:
+                - spinbutton "كمية مرتجع SWE2E-29164B21" [ref=e523]
+              - cell "سليم" [ref=e524]:
+                - combobox "حالة مرتجع SWE2E-29164B21" [ref=e525]:
+                  - option "سليم" [selected]
+                  - option "تالف"
+              - cell "مخزن اختبار التدفق 29164B21" [ref=e526]:
+                - combobox "المخزن المستلم SWE2E-29164B21" [ref=e527]:
+                  - option "اختر"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Reference warehouse"
+                  - option "Reference warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "مخزن اختبار التدفق 015E725F"
+                  - option "مخزن اختبار التدفق 0399868F"
+                  - option "مخزن اختبار التدفق 03D41047"
+                  - option "مخزن اختبار التدفق 045AFF7B"
+                  - option "مخزن اختبار التدفق 072564F4"
+                  - option "مخزن اختبار التدفق 0E98EB31"
+                  - option "مخزن اختبار التدفق 10AB28B2"
+                  - option "مخزن اختبار التدفق 15235211"
+                  - option "مخزن اختبار التدفق 15E7B757"
+                  - option "مخزن اختبار التدفق 160A13DC"
+                  - option "مخزن اختبار التدفق 1D26F008"
+                  - option "مخزن اختبار التدفق 23045C3D"
+                  - option "مخزن اختبار التدفق 246E21FE"
+                  - option "مخزن اختبار التدفق 25F67D7A"
+                  - option "مخزن اختبار التدفق 26CC666C"
+                  - option "مخزن اختبار التدفق 287971F8"
+                  - option "مخزن اختبار التدفق 29164B21" [selected]
+                  - option "مخزن اختبار التدفق 2DA9CF30"
+                  - option "مخزن اختبار التدفق 331808FA"
+                  - option "مخزن اختبار التدفق 3430883C"
+                  - option "مخزن اختبار التدفق 353C766D"
+                  - option "مخزن اختبار التدفق 355B21C0"
+                  - option "مخزن اختبار التدفق 3CDBB8A9"
+                  - option "مخزن اختبار التدفق 3EFB336D"
+                  - option "مخزن اختبار التدفق 455E002C"
+                  - option "مخزن اختبار التدفق 4C62B6BE"
+                  - option "مخزن اختبار التدفق 4EC9F306"
+                  - option "مخزن اختبار التدفق 4FD0DF86"
+              - cell "اعتماد المرتجع" [ref=e528]:
+                - button "اعتماد المرتجع" [ref=e529] [cursor=pointer]
+            - row "صنف اختبار تدفق البيع BEDF3E40 SWE2E-BEDF3E40 2 0 2 مخزن اختبار التدفق BEDF3E40 INV-2026-195 2026-10-30 سليم اختر اعتماد المرتجع" [ref=e530]:
+              - cell "صنف اختبار تدفق البيع BEDF3E40 SWE2E-BEDF3E40" [ref=e531]:
+                - text: صنف اختبار تدفق البيع BEDF3E40
+                - generic [ref=e532]: SWE2E-BEDF3E40
+              - cell "2" [ref=e533]
+              - cell "0" [ref=e534]
+              - cell "2" [ref=e535]
+              - cell "مخزن اختبار التدفق BEDF3E40" [ref=e536]
+              - cell "INV-2026-195" [ref=e537]:
+                - generic [ref=e538]: INV-2026-195
+              - cell "2026-10-30" [ref=e539]:
+                - generic [ref=e540]: 2026-10-30
+              - cell [ref=e541]:
+                - spinbutton "كمية مرتجع SWE2E-BEDF3E40" [ref=e542]
+              - cell "سليم" [ref=e543]:
+                - combobox "حالة مرتجع SWE2E-BEDF3E40" [ref=e544]:
+                  - option "سليم" [selected]
+                  - option "تالف"
+              - cell "اختر" [ref=e545]:
+                - combobox "المخزن المستلم SWE2E-BEDF3E40" [ref=e546]:
+                  - option "اختر" [selected]
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Fixture Warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Opening warehouse"
+                  - option "Reference warehouse"
+                  - option "Reference warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "Return warehouse"
+                  - option "مخزن اختبار التدفق 015E725F"
+                  - option "مخزن اختبار التدفق 0399868F"
+                  - option "مخزن اختبار التدفق 03D41047"
+                  - option "مخزن اختبار التدفق 045AFF7B"
+                  - option "مخزن اختبار التدفق 072564F4"
+                  - option "مخزن اختبار التدفق 0E98EB31"
+                  - option "مخزن اختبار التدفق 10AB28B2"
+                  - option "مخزن اختبار التدفق 15235211"
+                  - option "مخزن اختبار التدفق 15E7B757"
+                  - option "مخزن اختبار التدفق 160A13DC"
+                  - option "مخزن اختبار التدفق 1D26F008"
+                  - option "مخزن اختبار التدفق 23045C3D"
+                  - option "مخزن اختبار التدفق 246E21FE"
+                  - option "مخزن اختبار التدفق 25F67D7A"
+                  - option "مخزن اختبار التدفق 26CC666C"
+                  - option "مخزن اختبار التدفق 287971F8"
+                  - option "مخزن اختبار التدفق 29164B21"
+                  - option "مخزن اختبار التدفق 2DA9CF30"
+                  - option "مخزن اختبار التدفق 331808FA"
+                  - option "مخزن اختبار التدفق 3430883C"
+                  - option "مخزن اختبار التدفق 353C766D"
+                  - option "مخزن اختبار التدفق 355B21C0"
+                  - option "مخزن اختبار التدفق 3CDBB8A9"
+                  - option "مخزن اختبار التدفق 3EFB336D"
+                  - option "مخزن اختبار التدفق 455E002C"
+                  - option "مخزن اختبار التدفق 4C62B6BE"
+                  - option "مخزن اختبار التدفق 4EC9F306"
+                  - option "مخزن اختبار التدفق 4FD0DF86"
+              - cell "اعتماد المرتجع" [ref=e547]:
+                - button "اعتماد المرتجع" [ref=e548] [cursor=pointer]
+        - navigation "صفحات الحركات القابلة للإرجاع" [ref=e549]:
+          - button "السابق" [disabled] [ref=e550]
+          - generic [ref=e551]: الصفحة 1 من 6
+          - button "التالي" [ref=e552] [cursor=pointer]
+        - heading "سجل مرتجعات المخازن" [level=2] [ref=e553]
+        - generic [ref=e554]:
+          - generic [ref=e555]:
+            - generic [ref=e556]: بحث
+            - searchbox "بحث" [ref=e557]
+          - generic [ref=e558]:
+            - generic [ref=e559]: المخزن
+            - combobox "المخزن" [ref=e560]:
+              - option "الكل" [selected]
+              - option "Damaged warehouse"
+              - option "Damaged warehouse"
+              - option "Damaged warehouse"
+              - option "Damaged warehouse"
+              - option "Fixture Warehouse"
+              - option "Fixture Warehouse"
+              - option "Fixture Warehouse"
+              - option "Fixture Warehouse"
+              - option "Fixture Warehouse"
+              - option "Fixture Warehouse"
+              - option "Opening warehouse"
+              - option "Opening warehouse"
+              - option "Opening warehouse"
+              - option "Opening warehouse"
+              - option "Opening warehouse"
+              - option "Opening warehouse"
+              - option "Reference warehouse"
+              - option "Reference warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "مخزن اختبار التدفق 015E725F"
+              - option "مخزن اختبار التدفق 0399868F"
+              - option "مخزن اختبار التدفق 03D41047"
+              - option "مخزن اختبار التدفق 045AFF7B"
+              - option "مخزن اختبار التدفق 072564F4"
+              - option "مخزن اختبار التدفق 0E98EB31"
+              - option "مخزن اختبار التدفق 10AB28B2"
+              - option "مخزن اختبار التدفق 15235211"
+              - option "مخزن اختبار التدفق 15E7B757"
+              - option "مخزن اختبار التدفق 160A13DC"
+              - option "مخزن اختبار التدفق 1D26F008"
+              - option "مخزن اختبار التدفق 23045C3D"
+              - option "مخزن اختبار التدفق 246E21FE"
+              - option "مخزن اختبار التدفق 25F67D7A"
+              - option "مخزن اختبار التدفق 26CC666C"
+              - option "مخزن اختبار التدفق 287971F8"
+              - option "مخزن اختبار التدفق 29164B21"
+              - option "مخزن اختبار التدفق 2DA9CF30"
+              - option "مخزن اختبار التدفق 331808FA"
+              - option "مخزن اختبار التدفق 3430883C"
+              - option "مخزن اختبار التدفق 353C766D"
+              - option "مخزن اختبار التدفق 355B21C0"
+              - option "مخزن اختبار التدفق 3CDBB8A9"
+              - option "مخزن اختبار التدفق 3EFB336D"
+              - option "مخزن اختبار التدفق 455E002C"
+              - option "مخزن اختبار التدفق 4C62B6BE"
+              - option "مخزن اختبار التدفق 4EC9F306"
+              - option "مخزن اختبار التدفق 4FD0DF86"
+          - generic [ref=e561]:
+            - generic [ref=e562]: الحالة
+            - combobox "الحالة" [ref=e563]:
+              - option "الكل" [selected]
+              - option "مسودة"
+              - option "معتمد"
+        - table [ref=e565]:
+          - rowgroup [ref=e566]:
+            - row "المرجع مرجع المصدر التاريخ المنتج المخزن الكمية الحالة الإجراءات" [ref=e567]:
+              - columnheader "المرجع" [ref=e568]
+              - columnheader "مرجع المصدر" [ref=e569]
+              - columnheader "التاريخ" [ref=e570]
+              - columnheader "المنتج" [ref=e571]
+              - columnheader "المخزن" [ref=e572]
+              - columnheader "الكمية" [ref=e573]
+              - columnheader "الحالة" [ref=e574]
+              - columnheader "الإجراءات" [ref=e575]
+          - rowgroup [ref=e576]:
+            - row "RET-39 — 2026-10-30 صنف اختبار المخزون 5920083C مخزن اختبار المخزون 5920083C 2 مسودة تأكيد" [ref=e577]:
+              - cell "RET-39" [ref=e578]:
+                - link "RET-39" [ref=e579] [cursor=pointer]:
+                  - /url: /warehouse-returns/39
+                  - generic [ref=e580] [cursor=pointer]: RET-39
+              - cell "—" [ref=e581]:
+                - generic [ref=e582]: —
+              - cell "2026-10-30" [ref=e583]:
+                - generic [ref=e584]: 2026-10-30
+              - cell "صنف اختبار المخزون 5920083C" [ref=e585]
+              - cell "مخزن اختبار المخزون 5920083C" [ref=e586]
+              - cell "2" [ref=e587]:
+                - generic [ref=e588]: "2"
+              - cell "مسودة" [ref=e589]
+              - cell "تأكيد" [ref=e590]:
+                - button "تأكيد" [ref=e591] [cursor=pointer]
+            - row "RET-35 — 2026-10-30 Return product Return warehouse 2 معتمدة" [ref=e592]:
+              - cell "RET-35" [ref=e593]:
+                - link "RET-35" [ref=e594] [cursor=pointer]:
+                  - /url: /warehouse-returns/35
+                  - generic [ref=e595] [cursor=pointer]: RET-35
+              - cell "—" [ref=e596]:
+                - generic [ref=e597]: —
+              - cell "2026-10-30" [ref=e598]:
+                - generic [ref=e599]: 2026-10-30
+              - cell "Return product" [ref=e600]
+              - cell "Return warehouse" [ref=e601]
+              - cell "2" [ref=e602]:
+                - generic [ref=e603]: "2"
+              - cell "معتمدة" [ref=e604]
+              - cell [ref=e605]
+            - row "RET-34 — 2026-10-30 Return product Return warehouse 2 معتمدة" [ref=e606]:
+              - cell "RET-34" [ref=e607]:
+                - link "RET-34" [ref=e608] [cursor=pointer]:
+                  - /url: /warehouse-returns/34
+                  - generic [ref=e609] [cursor=pointer]: RET-34
+              - cell "—" [ref=e610]:
+                - generic [ref=e611]: —
+              - cell "2026-10-30" [ref=e612]:
+                - generic [ref=e613]: 2026-10-30
+              - cell "Return product" [ref=e614]
+              - cell "Return warehouse" [ref=e615]
+              - cell "2" [ref=e616]:
+                - generic [ref=e617]: "2"
+              - cell "معتمدة" [ref=e618]
+              - cell [ref=e619]
+            - row "RET-30 — 2026-10-30 Return product Return warehouse 2 معتمدة" [ref=e620]:
+              - cell "RET-30" [ref=e621]:
+                - link "RET-30" [ref=e622] [cursor=pointer]:
+                  - /url: /warehouse-returns/30
+                  - generic [ref=e623] [cursor=pointer]: RET-30
+              - cell "—" [ref=e624]:
+                - generic [ref=e625]: —
+              - cell "2026-10-30" [ref=e626]:
+                - generic [ref=e627]: 2026-10-30
+              - cell "Return product" [ref=e628]
+              - cell "Return warehouse" [ref=e629]
+              - cell "2" [ref=e630]:
+                - generic [ref=e631]: "2"
+              - cell "معتمدة" [ref=e632]
+              - cell [ref=e633]
+            - row "RET-29 — 2026-10-30 صنف اختبار المخزون 50F518A1 مخزن اختبار المخزون 50F518A1 2 معتمدة" [ref=e634]:
+              - cell "RET-29" [ref=e635]:
+                - link "RET-29" [ref=e636] [cursor=pointer]:
+                  - /url: /warehouse-returns/29
+                  - generic [ref=e637] [cursor=pointer]: RET-29
+              - cell "—" [ref=e638]:
+                - generic [ref=e639]: —
+              - cell "2026-10-30" [ref=e640]:
+                - generic [ref=e641]: 2026-10-30
+              - cell "صنف اختبار المخزون 50F518A1" [ref=e642]
+              - cell "مخزن اختبار المخزون 50F518A1" [ref=e643]
+              - cell "2" [ref=e644]:
+                - generic [ref=e645]: "2"
+              - cell "معتمدة" [ref=e646]
+              - cell [ref=e647]
+            - row "RET-25 — 2026-10-30 Return product Return warehouse 2 معتمدة" [ref=e648]:
+              - cell "RET-25" [ref=e649]:
+                - link "RET-25" [ref=e650] [cursor=pointer]:
+                  - /url: /warehouse-returns/25
+                  - generic [ref=e651] [cursor=pointer]: RET-25
+              - cell "—" [ref=e652]:
+                - generic [ref=e653]: —
+              - cell "2026-10-30" [ref=e654]:
+                - generic [ref=e655]: 2026-10-30
+              - cell "Return product" [ref=e656]
+              - cell "Return warehouse" [ref=e657]
+              - cell "2" [ref=e658]:
+                - generic [ref=e659]: "2"
+              - cell "معتمدة" [ref=e660]
+              - cell [ref=e661]
+            - row "RET-21 — 2026-10-30 Return product Return warehouse 2 معتمدة" [ref=e662]:
+              - cell "RET-21" [ref=e663]:
+                - link "RET-21" [ref=e664] [cursor=pointer]:
+                  - /url: /warehouse-returns/21
+                  - generic [ref=e665] [cursor=pointer]: RET-21
+              - cell "—" [ref=e666]:
+                - generic [ref=e667]: —
+              - cell "2026-10-30" [ref=e668]:
+                - generic [ref=e669]: 2026-10-30
+              - cell "Return product" [ref=e670]
+              - cell "Return warehouse" [ref=e671]
+              - cell "2" [ref=e672]:
+                - generic [ref=e673]: "2"
+              - cell "معتمدة" [ref=e674]
+              - cell [ref=e675]
+            - row "RET-20 — 2026-10-30 صنف اختبار المخزون 7AD0E8C8 مخزن اختبار المخزون 7AD0E8C8 2 معتمدة" [ref=e676]:
+              - cell "RET-20" [ref=e677]:
+                - link "RET-20" [ref=e678] [cursor=pointer]:
+                  - /url: /warehouse-returns/20
+                  - generic [ref=e679] [cursor=pointer]: RET-20
+              - cell "—" [ref=e680]:
+                - generic [ref=e681]: —
+              - cell "2026-10-30" [ref=e682]:
+                - generic [ref=e683]: 2026-10-30
+              - cell "صنف اختبار المخزون 7AD0E8C8" [ref=e684]
+              - cell "مخزن اختبار المخزون 7AD0E8C8" [ref=e685]
+              - cell "2" [ref=e686]:
+                - generic [ref=e687]: "2"
+              - cell "معتمدة" [ref=e688]
+              - cell [ref=e689]
+            - row "RET-16 — 2026-10-30 Return product Return warehouse 2 معتمدة" [ref=e690]:
+              - cell "RET-16" [ref=e691]:
+                - link "RET-16" [ref=e692] [cursor=pointer]:
+                  - /url: /warehouse-returns/16
+                  - generic [ref=e693] [cursor=pointer]: RET-16
+              - cell "—" [ref=e694]:
+                - generic [ref=e695]: —
+              - cell "2026-10-30" [ref=e696]:
+                - generic [ref=e697]: 2026-10-30
+              - cell "Return product" [ref=e698]
+              - cell "Return warehouse" [ref=e699]
+              - cell "2" [ref=e700]:
+                - generic [ref=e701]: "2"
+              - cell "معتمدة" [ref=e702]
+              - cell [ref=e703]
+            - row "RET-12 — 2026-10-30 Return product Return warehouse 2 معتمدة" [ref=e704]:
+              - cell "RET-12" [ref=e705]:
+                - link "RET-12" [ref=e706] [cursor=pointer]:
+                  - /url: /warehouse-returns/12
+                  - generic [ref=e707] [cursor=pointer]: RET-12
+              - cell "—" [ref=e708]:
+                - generic [ref=e709]: —
+              - cell "2026-10-30" [ref=e710]:
+                - generic [ref=e711]: 2026-10-30
+              - cell "Return product" [ref=e712]
+              - cell "Return warehouse" [ref=e713]
+              - cell "2" [ref=e714]:
+                - generic [ref=e715]: "2"
+              - cell "معتمدة" [ref=e716]
+              - cell [ref=e717]
+            - row "RET-8 — 2026-10-30 Return product Return warehouse 2 معتمدة" [ref=e718]:
+              - cell "RET-8" [ref=e719]:
+                - link "RET-8" [ref=e720] [cursor=pointer]:
+                  - /url: /warehouse-returns/8
+                  - generic [ref=e721] [cursor=pointer]: RET-8
+              - cell "—" [ref=e722]:
+                - generic [ref=e723]: —
+              - cell "2026-10-30" [ref=e724]:
+                - generic [ref=e725]: 2026-10-30
+              - cell "Return product" [ref=e726]
+              - cell "Return warehouse" [ref=e727]
+              - cell "2" [ref=e728]:
+                - generic [ref=e729]: "2"
+              - cell "معتمدة" [ref=e730]
+              - cell [ref=e731]
+            - row "RET-4 — 2026-10-30 Return product Return warehouse 2 معتمدة" [ref=e732]:
+              - cell "RET-4" [ref=e733]:
+                - link "RET-4" [ref=e734] [cursor=pointer]:
+                  - /url: /warehouse-returns/4
+                  - generic [ref=e735] [cursor=pointer]: RET-4
+              - cell "—" [ref=e736]:
+                - generic [ref=e737]: —
+              - cell "2026-10-30" [ref=e738]:
+                - generic [ref=e739]: 2026-10-30
+              - cell "Return product" [ref=e740]
+              - cell "Return warehouse" [ref=e741]
+              - cell "2" [ref=e742]:
+                - generic [ref=e743]: "2"
+              - cell "معتمدة" [ref=e744]
+              - cell [ref=e745]
+            - row "RET-38 — 2026-10-13 Return product Return warehouse 2 مسودة تأكيد" [ref=e746]:
+              - cell "RET-38" [ref=e747]:
+                - link "RET-38" [ref=e748] [cursor=pointer]:
+                  - /url: /warehouse-returns/38
+                  - generic [ref=e749] [cursor=pointer]: RET-38
+              - cell "—" [ref=e750]:
+                - generic [ref=e751]: —
+              - cell "2026-10-13" [ref=e752]:
+                - generic [ref=e753]: 2026-10-13
+              - cell "Return product" [ref=e754]
+              - cell "Return warehouse" [ref=e755]
+              - cell "2" [ref=e756]:
+                - generic [ref=e757]: "2"
+              - cell "مسودة" [ref=e758]
+              - cell "تأكيد" [ref=e759]:
+                - button "تأكيد" [ref=e760] [cursor=pointer]
+            - row "RET-37 — 2026-10-13 Return product Return warehouse 2 مسودة تأكيد" [ref=e761]:
+              - cell "RET-37" [ref=e762]:
+                - link "RET-37" [ref=e763] [cursor=pointer]:
+                  - /url: /warehouse-returns/37
+                  - generic [ref=e764] [cursor=pointer]: RET-37
+              - cell "—" [ref=e765]:
+                - generic [ref=e766]: —
+              - cell "2026-10-13" [ref=e767]:
+                - generic [ref=e768]: 2026-10-13
+              - cell "Return product" [ref=e769]
+              - cell "Return warehouse" [ref=e770]
+              - cell "2" [ref=e771]:
+                - generic [ref=e772]: "2"
+              - cell "مسودة" [ref=e773]
+              - cell "تأكيد" [ref=e774]:
+                - button "تأكيد" [ref=e775] [cursor=pointer]
+            - row "RET-36 — 2026-10-13 Return product Return warehouse 2 مسودة تأكيد" [ref=e776]:
+              - cell "RET-36" [ref=e777]:
+                - link "RET-36" [ref=e778] [cursor=pointer]:
+                  - /url: /warehouse-returns/36
+                  - generic [ref=e779] [cursor=pointer]: RET-36
+              - cell "—" [ref=e780]:
+                - generic [ref=e781]: —
+              - cell "2026-10-13" [ref=e782]:
+                - generic [ref=e783]: 2026-10-13
+              - cell "Return product" [ref=e784]
+              - cell "Return warehouse" [ref=e785]
+              - cell "2" [ref=e786]:
+                - generic [ref=e787]: "2"
+              - cell "مسودة" [ref=e788]
+              - cell "تأكيد" [ref=e789]:
+                - button "تأكيد" [ref=e790] [cursor=pointer]
+            - row "RET-33 — 2026-10-13 Return product Return warehouse 2 مسودة تأكيد" [ref=e791]:
+              - cell "RET-33" [ref=e792]:
+                - link "RET-33" [ref=e793] [cursor=pointer]:
+                  - /url: /warehouse-returns/33
+                  - generic [ref=e794] [cursor=pointer]: RET-33
+              - cell "—" [ref=e795]:
+                - generic [ref=e796]: —
+              - cell "2026-10-13" [ref=e797]:
+                - generic [ref=e798]: 2026-10-13
+              - cell "Return product" [ref=e799]
+              - cell "Return warehouse" [ref=e800]
+              - cell "2" [ref=e801]:
+                - generic [ref=e802]: "2"
+              - cell "مسودة" [ref=e803]
+              - cell "تأكيد" [ref=e804]:
+                - button "تأكيد" [ref=e805] [cursor=pointer]
+            - row "RET-32 — 2026-10-13 Return product Return warehouse 2 مسودة تأكيد" [ref=e806]:
+              - cell "RET-32" [ref=e807]:
+                - link "RET-32" [ref=e808] [cursor=pointer]:
+                  - /url: /warehouse-returns/32
+                  - generic [ref=e809] [cursor=pointer]: RET-32
+              - cell "—" [ref=e810]:
+                - generic [ref=e811]: —
+              - cell "2026-10-13" [ref=e812]:
+                - generic [ref=e813]: 2026-10-13
+              - cell "Return product" [ref=e814]
+              - cell "Return warehouse" [ref=e815]
+              - cell "2" [ref=e816]:
+                - generic [ref=e817]: "2"
+              - cell "مسودة" [ref=e818]
+              - cell "تأكيد" [ref=e819]:
+                - button "تأكيد" [ref=e820] [cursor=pointer]
+            - row "RET-31 — 2026-10-13 Return product Return warehouse 2 مسودة تأكيد" [ref=e821]:
+              - cell "RET-31" [ref=e822]:
+                - link "RET-31" [ref=e823] [cursor=pointer]:
+                  - /url: /warehouse-returns/31
+                  - generic [ref=e824] [cursor=pointer]: RET-31
+              - cell "—" [ref=e825]:
+                - generic [ref=e826]: —
+              - cell "2026-10-13" [ref=e827]:
+                - generic [ref=e828]: 2026-10-13
+              - cell "Return product" [ref=e829]
+              - cell "Return warehouse" [ref=e830]
+              - cell "2" [ref=e831]:
+                - generic [ref=e832]: "2"
+              - cell "مسودة" [ref=e833]
+              - cell "تأكيد" [ref=e834]:
+                - button "تأكيد" [ref=e835] [cursor=pointer]
+            - row "RET-28 — 2026-10-13 Return product Return warehouse 2 مسودة تأكيد" [ref=e836]:
+              - cell "RET-28" [ref=e837]:
+                - link "RET-28" [ref=e838] [cursor=pointer]:
+                  - /url: /warehouse-returns/28
+                  - generic [ref=e839] [cursor=pointer]: RET-28
+              - cell "—" [ref=e840]:
+                - generic [ref=e841]: —
+              - cell "2026-10-13" [ref=e842]:
+                - generic [ref=e843]: 2026-10-13
+              - cell "Return product" [ref=e844]
+              - cell "Return warehouse" [ref=e845]
+              - cell "2" [ref=e846]:
+                - generic [ref=e847]: "2"
+              - cell "مسودة" [ref=e848]
+              - cell "تأكيد" [ref=e849]:
+                - button "تأكيد" [ref=e850] [cursor=pointer]
+            - row "RET-27 — 2026-10-13 Return product Return warehouse 2 مسودة تأكيد" [ref=e851]:
+              - cell "RET-27" [ref=e852]:
+                - link "RET-27" [ref=e853] [cursor=pointer]:
+                  - /url: /warehouse-returns/27
+                  - generic [ref=e854] [cursor=pointer]: RET-27
+              - cell "—" [ref=e855]:
+                - generic [ref=e856]: —
+              - cell "2026-10-13" [ref=e857]:
+                - generic [ref=e858]: 2026-10-13
+              - cell "Return product" [ref=e859]
+              - cell "Return warehouse" [ref=e860]
+              - cell "2" [ref=e861]:
+                - generic [ref=e862]: "2"
+              - cell "مسودة" [ref=e863]
+              - cell "تأكيد" [ref=e864]:
+                - button "تأكيد" [ref=e865] [cursor=pointer]
+        - navigation "ترقيم الصفحات" [ref=e866]:
+          - button "السابق" [disabled] [ref=e867]
+          - generic [ref=e868]: الصفحة 1 من 2
+          - button "التالي" [ref=e869] [cursor=pointer]
+        - generic [ref=e870]:
+          - heading "إنشاء مرتجع مخزني" [level=2] [ref=e871]
+          - generic [ref=e872]:
+            - generic [ref=e873]: اختر المخزن
+            - combobox "اختر المخزن" [ref=e874]:
+              - option "اختر" [selected]
+              - option "Damaged warehouse"
+              - option "Damaged warehouse"
+              - option "Damaged warehouse"
+              - option "Damaged warehouse"
+              - option "Fixture Warehouse"
+              - option "Fixture Warehouse"
+              - option "Fixture Warehouse"
+              - option "Fixture Warehouse"
+              - option "Fixture Warehouse"
+              - option "Fixture Warehouse"
+              - option "Opening warehouse"
+              - option "Opening warehouse"
+              - option "Opening warehouse"
+              - option "Opening warehouse"
+              - option "Opening warehouse"
+              - option "Opening warehouse"
+              - option "Reference warehouse"
+              - option "Reference warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "Return warehouse"
+              - option "مخزن اختبار التدفق 015E725F"
+              - option "مخزن اختبار التدفق 0399868F"
+              - option "مخزن اختبار التدفق 03D41047"
+              - option "مخزن اختبار التدفق 045AFF7B"
+              - option "مخزن اختبار التدفق 072564F4"
+              - option "مخزن اختبار التدفق 0E98EB31"
+              - option "مخزن اختبار التدفق 10AB28B2"
+              - option "مخزن اختبار التدفق 15235211"
+              - option "مخزن اختبار التدفق 15E7B757"
+              - option "مخزن اختبار التدفق 160A13DC"
+              - option "مخزن اختبار التدفق 1D26F008"
+              - option "مخزن اختبار التدفق 23045C3D"
+              - option "مخزن اختبار التدفق 246E21FE"
+              - option "مخزن اختبار التدفق 25F67D7A"
+              - option "مخزن اختبار التدفق 26CC666C"
+              - option "مخزن اختبار التدفق 287971F8"
+              - option "مخزن اختبار التدفق 29164B21"
+              - option "مخزن اختبار التدفق 2DA9CF30"
+              - option "مخزن اختبار التدفق 331808FA"
+              - option "مخزن اختبار التدفق 3430883C"
+              - option "مخزن اختبار التدفق 353C766D"
+              - option "مخزن اختبار التدفق 355B21C0"
+              - option "مخزن اختبار التدفق 3CDBB8A9"
+              - option "مخزن اختبار التدفق 3EFB336D"
+              - option "مخزن اختبار التدفق 455E002C"
+              - option "مخزن اختبار التدفق 4C62B6BE"
+              - option "مخزن اختبار التدفق 4EC9F306"
+              - option "مخزن اختبار التدفق 4FD0DF86"
+          - generic [ref=e875]:
+            - generic [ref=e876]: التاريخ
+            - textbox "التاريخ" [ref=e877]: 2026-10-30
+          - generic [ref=e878]:
+            - generic [ref=e879]:
+              - heading "الأصناف والكميات المرتجعة" [level=3] [ref=e880]
+              - button "إضافة صنف" [ref=e881] [cursor=pointer]
+            - generic [ref=e882]:
+              - generic [ref=e883]:
+                - generic [ref=e884]: المنتج 1
+                - combobox "المنتج 1" [ref=e885]:
+                  - option "اختر" [selected]
+                  - option "Container inline product updated — CIP-ebef4a5c52e0"
+                  - option "Damaged product — DSba6357"
+                  - option "Damaged product — DSaef000"
+                  - option "Damaged product — DS2fb365"
+                  - option "Damaged product — DSd5e624"
+                  - option "Fixture Product — FIX25fd01260b876860"
+                  - option "Fixture Product — FIXf91bf981a11bc175"
+                  - option "Fixture Product — FIX1f00c83e322b7d3d"
+                  - option "Fixture Product — FIX399ce59e167c0ea3"
+                  - option "Fixture Product — FIXd9457a8a6cab9449"
+                  - option "Fixture Product — FIXe330daf012581826"
+                  - option "Opening product — OPN23d36f2b"
+                  - option "Opening product — OPN2fefafcb"
+                  - option "Opening product — OPNea42df5b"
+                  - option "Opening product — OPNab8771d2"
+                  - option "Opening product — OPNd93b3f23"
+                  - option "Opening product — OPNed41c136"
+                  - option "Reference product — WREF-8dd776d0"
+                  - option "Reference product — WREF-7fce0086"
+                  - option "Return product — WR223b76"
+                  - option "Return product — WR1803c1"
+                  - option "Return product — WR26c27b"
+                  - option "Return product — WR7af528"
+                  - option "Return product — WR6710f1"
+                  - option "Return product — WRT9efbab7e"
+                  - option "Return product — WR00c650"
+                  - option "Return product — WRd9f439"
+                  - option "Return product — WR369a10"
+                  - option "Return product — WR6977ce"
+                  - option "Return product — WR727fcb"
+                  - option "Return product — WRTd721e662"
+                  - option "Return product — WR1993ec"
+                  - option "Return product — WR169583"
+                  - option "Return product — WR5884e7"
+                  - option "Return product — WR703161"
+                  - option "Return product — WR4021b9"
+                  - option "Return product — WRT38c3b028"
+                  - option "Return product — WR650d39"
+                  - option "Return product — WR9a6333"
+                  - option "Return product — WRff7b15"
+                  - option "Return product — WR2dfdcc"
+                  - option "Return product — WRe879a3"
+                  - option "Return product — WRTb673191f"
+                  - option "Return product — WR7722fb"
+                  - option "Return product — WR405ac6"
+                  - option "Return product — WR97d753"
+                  - option "Return product — WRc962da"
+                  - option "Return product — WRe4bfae"
+                  - option "Return product — WRT4cd7756a"
+                  - option "Return product — WRf2e6eb"
+                  - option "Return product — WR79971a"
+                  - option "Return product — WR058983"
+                  - option "Return product — WR64d9fe"
+                  - option "Return product — WRa27f18"
+                  - option "Return product — WRTbdb5b29e"
+                  - option "Return product — WRa63afa"
+                  - option "Return product — WRc423b5"
+                  - option "Return product — WRf15b66"
+                  - option "Return product — WR98af0a"
+                  - option "Return product — WRdd3471"
+                  - option "Return product — WRT85284b91"
+                  - option "Return product — WR48d828"
+                  - option "Return product — WRb025fe"
+                  - option "Return product — WR87b00d"
+                  - option "Return product — WR8a4e69"
+                  - option "Return product — WRa20803"
+                  - option "Return product — WRT37061730"
+                  - option "Return product — WRTc291e62c"
+                  - option "Return product — WR8d3ddb"
+                  - option "Return product — WR0040ff"
+                  - option "Return product — WR55a4ce"
+                  - option "Return product — WRf181df"
+                  - option "Return product — WRe1a66b"
+                  - option "صنف اختبار الحجز 022206AE — RSV-E2E-022206AE"
+                  - option "صنف اختبار الحجز 0646D35F — RSV-E2E-0646D35F"
+                  - option "صنف اختبار الحجز 09EB069F — RSV-E2E-09EB069F"
+                  - option "صنف اختبار الحجز 0BE172D5 — RSV-E2E-0BE172D5"
+                  - option "صنف اختبار الحجز 0D89A43E — RSV-E2E-0D89A43E"
+                  - option "صنف اختبار الحجز 1145C044 — RSV-E2E-1145C044"
+                  - option "صنف اختبار الحجز 169B5EE8 — RSV-E2E-169B5EE8"
+                  - option "صنف اختبار الحجز 17F2FC89 — RSV-E2E-17F2FC89"
+                  - option "صنف اختبار الحجز 1C5914DB — RSV-E2E-1C5914DB"
+                  - option "صنف اختبار الحجز 23BC4ECE — RSV-E2E-23BC4ECE"
+                  - option "صنف اختبار الحجز 2985F03F — RSV-E2E-2985F03F"
+                  - option "صنف اختبار الحجز 298AEC76 — RSV-E2E-298AEC76"
+                  - option "صنف اختبار الحجز 29FF95FC — RSV-E2E-29FF95FC"
+                  - option "صنف اختبار الحجز 2AFF79C9 — RSV-E2E-2AFF79C9"
+                  - option "صنف اختبار الحجز 2E4E09D5 — RSV-E2E-2E4E09D5"
+                  - option "صنف اختبار الحجز 2FEC64FF — RSV-E2E-2FEC64FF"
+                  - option "صنف اختبار الحجز 30CDCF67 — RSV-E2E-30CDCF67"
+                  - option "صنف اختبار الحجز 3259C527 — RSV-E2E-3259C527"
+                  - option "صنف اختبار الحجز 34B74228 — RSV-E2E-34B74228"
+                  - option "صنف اختبار الحجز 384F8C9E — RSV-E2E-384F8C9E"
+                  - option "صنف اختبار الحجز 3ADF7E68 — RSV-E2E-3ADF7E68"
+                  - option "صنف اختبار الحجز 3F420AC9 — RSV-E2E-3F420AC9"
+                  - option "صنف اختبار الحجز 48E9F335 — RSV-E2E-48E9F335"
+                  - option "صنف اختبار الحجز 4A42B6BE — RSV-E2E-4A42B6BE"
+                  - option "صنف اختبار الحجز 506F4486 — RSV-E2E-506F4486"
+                  - option "صنف اختبار الحجز 52221DE2 — RSV-E2E-52221DE2"
+                  - option "صنف اختبار الحجز 52AC583A — RSV-E2E-52AC583A"
+              - generic [ref=e886]:
+                - generic [ref=e887]: الكمية
+                - spinbutton "الكمية" [ref=e888]
+              - generic [ref=e889]:
+                - generic [ref=e890]: تكلفة الوحدة (ج.م)
+                - textbox "تكلفة الوحدة (ج.م)" [ref=e891]
+          - generic [ref=e892]:
+            - generic [ref=e893]: السبب
+            - textbox "السبب" [ref=e894]
+          - button "حفظ" [ref=e895] [cursor=pointer]
+```

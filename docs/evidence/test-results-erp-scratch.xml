@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="D:\system karas\system end\backend\phpunit.xml" tests="115" assertions="52" errors="20" failures="0" skipped="86" time="4.110200">
+    <testsuite name="Unit" tests="4" assertions="16" errors="0" failures="0" skipped="0" time="2.133649">
+      <testsuite name="Tests\Unit\ApprovedSchemaArtifactTest" file="D:\system karas\system end\backend\tests\Unit\ApprovedSchemaArtifactTest.php" tests="3" assertions="12" errors="0" failures="0" skipped="0" time="1.859839">
+        <testcase name="bundled_migration_sql_matches_the_approved_proposal" file="D:\system karas\system end\backend\tests\Unit\ApprovedSchemaArtifactTest.php" line="11" class="Tests\Unit\ApprovedSchemaArtifactTest" classname="Tests.Unit.ApprovedSchemaArtifactTest" assertions="3" time="1.302030"/>
+        <testcase name="bundled_migration_sql_contains_the_expected_schema_statements" file="D:\system karas\system end\backend\tests\Unit\ApprovedSchemaArtifactTest.php" line="22" class="Tests\Unit\ApprovedSchemaArtifactTest" classname="Tests.Unit.ApprovedSchemaArtifactTest" assertions="3" time="0.290090"/>
+        <testcase name="approved_v4_2_proposal_and_forward_migration_contain_the_email_verification_delta" file="D:\system karas\system end\backend\tests\Unit\ApprovedSchemaArtifactTest.php" line="32" class="Tests\Unit\ApprovedSchemaArtifactTest" classname="Tests.Unit.ApprovedSchemaArtifactTest" assertions="6" time="0.267719"/>
+      </testsuite>
+      <testsuite name="Tests\Unit\RequestContextProcessorTest" file="D:\system karas\system end\backend\tests\Unit\RequestContextProcessorTest.php" tests="1" assertions="4" errors="0" failures="0" skipped="0" time="0.273810">
+        <testcase name="it_adds_the_request_id_and_redacts_sensitive_context_recursively" file="D:\system karas\system end\backend\tests\Unit\RequestContextProcessorTest.php" line="16" class="Tests\Unit\RequestContextProcessorTest" classname="Tests.Unit.RequestContextProcessorTest" assertions="4" time="0.273810"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Feature" tests="111" assertions="36" errors="20" failures="0" skipped="86" time="1.976551">
+      <testsuite name="Tests\Feature\ApiAuthenticationTest" file="D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php" tests="20" assertions="0" errors="20" failures="0" skipped="0" time="0.000000">
+        <testcase name="login_issues_an_http_only_session_cookie_and_readable_csrf_cookie" file="D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php" line="132" class="Tests\Feature\ApiAuthenticationTest" classname="Tests.Feature.ApiAuthenticationTest" assertions="0" time="0.000000">
+          <error type="RuntimeException">Tests\Feature\ApiAuthenticationTest::login_issues_an_http_only_session_cookie_and_readable_csrf_cookie&#13;
+RuntimeException: Authentication integration tests require the erp_test database.
+&#13;
+D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php:30</error>
+        </testcase>
+        <testcase name="route_list_shows_only_health_and_login_as_public_and_protects_all_other_routes" file="D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php" line="162" class="Tests\Feature\ApiAuthenticationTest" classname="Tests.Feature.ApiAuthenticationTest" assertions="0" time="0.000000">
+          <error type="RuntimeException">Tests\Feature\ApiAuthenticationTest::route_list_shows_only_health_and_login_as_public_and_protects_all_other_routes&#13;
+RuntimeException: Authentication integration tests require the erp_test database.
+&#13;
+D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php:30</error>
+        </testcase>
+        <testcase name="login_is_limited_to_five_attempts_per_minute" file="D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php" line="220" class="Tests\Feature\ApiAuthenticationTest" classname="Tests.Feature.ApiAuthenticationTest" assertions="0" time="0.000000">
+          <error type="RuntimeException">Tests\Feature\ApiAuthenticationTest::login_is_limited_to_five_attempts_per_minute&#13;
+RuntimeException: Authentication integration tests require the erp_test database.
+&#13;
+D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php:30</error>
+        </testcase>
+        <testcase name="production_auth_cookies_are_secure_even_if_the_cookie_override_is_false" file="D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php" line="238" class="Tests\Feature\ApiAuthenticationTest" classname="Tests.Feature.ApiAuthenticationTest" assertions="0" time="0.000000">
+          <error type="RuntimeException">Tests\Feature\ApiAuthenticationTest::production_auth_cookies_are_secure_even_if_the_cookie_override_is_false&#13;
+RuntimeException: Authentication integration tests require the erp_test database.
+&#13;
+D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php:30</error>
+        </testcase>
+        <testcase name="owner_can_manually_reset_another_owners_password_and_revoke_their_sessions" file="D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php" line="264" class="Tests\Feature\ApiAuthenticationTest" classname="Tests.Feature.ApiAuthenticationTest" assertions="0" time="0.000000">
+          <error type="RuntimeException">Tests\Feature\ApiAuthenticationTest::owner_can_manually_reset_another_owners_password_and_revoke_their_sessions&#13;
+RuntimeException: Authentication integration tests require the erp_test database.
+&#13;
+D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php:30</error>
+        </testcase>
+        <testcase name="user_without_management_permission_cannot_reset_another_password" file="D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php" line="338" class="Tests\Feature\ApiAuthenticationTest" classname="Tests.Feature.ApiAuthenticationTest" assertions="0" time="0.000000">
+          <error type="RuntimeException">Tests\Feature\ApiAuthenticationTest::user_without_management_permission_cannot_reset_another_password&#13;
+RuntimeException: Authentication integration tests require the erp_test database.
+&#13;
+D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php:30</error>
+        </testcase>
+        <testcase name="users_create_owner_prompts_for_a_hidden_password_and_assigns_the_owner_role" file="D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php" line="361" class="Tests\Feature\ApiAuthenticationTest" classname="Tests.Feature.ApiAuthenticationTest" assertions="0" time="0.000000">
+          <error type="RuntimeException">Tests\Feature\ApiAuthenticationTest::users_create_owner_prompts_for_a_hidden_password_and_assigns_the_owner_role&#13;
+RuntimeException: Authentication integration tests require the erp_test database.
+&#13;
+D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php:30</error>
+        </testcase>
+        <testcase name="owner_password_creation_and_reset_reject_passwords_shorter_than_twelve_characters" file="D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php" line="387" class="Tests\Feature\ApiAuthenticationTest" classname="Tests.Feature.ApiAuthenticationTest" assertions="0" time="0.000000">
+          <error type="RuntimeException">Tests\Feature\ApiAuthenticationTest::owner_password_creation_and_reset_reject_passwords_shorter_than_twelve_characters&#13;
+RuntimeException: Authentication integration tests require the erp_test database.
+&#13;
+D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php:30</error>
+        </testcase>
+        <testcase name="user_administration_is_owner_only_step_up_protected_and_audited" file="D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php" line="422" class="Tests\Feature\ApiAuthenticationTest" classname="Tests.Feature.ApiAuthenticationTest" assertions="0" time="0.000000">
+          <error type="RuntimeException">Tests\Feature\ApiAuthenticationTest::user_administration_is_owner_only_step_up_protected_and_audited&#13;
+RuntimeException: Authentication integration tests require the erp_test database.
+&#13;
+D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php:30</error>
+        </testcase>
+        <testcase name="bad_password_and_unknown_username_have_the_same_authentication_error" file="D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php" line="474" class="Tests\Feature\ApiAuthenticationTest" classname="Tests.Feature.ApiAuthenticationTest" assertions="0" time="0.000000">
+          <error type="RuntimeException">Tests\Feature\ApiAuthenticationTest::bad_password_and_unknown_username_have_the_same_authentication_error&#13;
+RuntimeException: Authentication integration tests require the erp_test database.
+&#13;
+D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php:30</error>
+        </testcase>
+        <testcase name="inactive_accounts_receive_the_same_authentication_error_as_invalid_credentials" file="D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php" line="495" class="Tests\Feature\ApiAuthenticationTest" classname="Tests.Feature.ApiAuthenticationTest" assertions="0" time="0.000000">
+          <error type="RuntimeException">Tests\Feature\ApiAuthenticationTest::inactive_accounts_receive_the_same_authentication_error_as_invalid_credentials&#13;
+RuntimeException: Authentication integration tests require the erp_test database.
+&#13;
+D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php:30</error>
+        </testcase>
+        <testcase name="login_validation_uses_arabic_field_names_and_messages" file="D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php" line="511" class="Tests\Feature\ApiAuthenticationTest" classname="Tests.Feature.ApiAuthenticationTest" assertions="0" time="0.000000">
+          <error type="RuntimeException">Tests\Feature\ApiAuthenticationTest::login_validation_uses_arabic_field_names_and_messages&#13;
+RuntimeException: Authentication integration tests require the erp_test database.
+&#13;
+D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php:30</error>
+        </testcase>
+        <testcase name="current_user_requires_an_authenticated_session" file="D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php" line="522" class="Tests\Feature\ApiAuthenticationTest" classname="Tests.Feature.ApiAuthenticationTest" assertions="0" time="0.000000">
+          <error type="RuntimeException">Tests\Feature\ApiAuthenticationTest::current_user_requires_an_authenticated_session&#13;
+RuntimeException: Authentication integration tests require the erp_test database.
+&#13;
+D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php:30</error>
+        </testcase>
+        <testcase name="authenticated_session_can_read_the_current_user" file="D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php" line="530" class="Tests\Feature\ApiAuthenticationTest" classname="Tests.Feature.ApiAuthenticationTest" assertions="0" time="0.000000">
+          <error type="RuntimeException">Tests\Feature\ApiAuthenticationTest::authenticated_session_can_read_the_current_user&#13;
+RuntimeException: Authentication integration tests require the erp_test database.
+&#13;
+D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php:30</error>
+        </testcase>
+        <testcase name="user_model_uses_the_approved_schema_and_hides_password_hashes" file="D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php" line="546" class="Tests\Feature\ApiAuthenticationTest" classname="Tests.Feature.ApiAuthenticationTest" assertions="0" time="0.000000">
+          <error type="RuntimeException">Tests\Feature\ApiAuthenticationTest::user_model_uses_the_approved_schema_and_hides_password_hashes&#13;
+RuntimeException: Authentication integration tests require the erp_test database.
+&#13;
+D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php:30</error>
+        </testcase>
+        <testcase name="logout_requires_csrf_and_revokes_the_session_on_success" file="D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php" line="558" class="Tests\Feature\ApiAuthenticationTest" classname="Tests.Feature.ApiAuthenticationTest" assertions="0" time="0.000000">
+          <error type="RuntimeException">Tests\Feature\ApiAuthenticationTest::logout_requires_csrf_and_revokes_the_session_on_success&#13;
+RuntimeException: Authentication integration tests require the erp_test database.
+&#13;
+D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php:30</error>
+        </testcase>
+        <testcase name="idle_expired_sessions_are_revoked_and_rejected" file="D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php" line="595" class="Tests\Feature\ApiAuthenticationTest" classname="Tests.Feature.ApiAuthenticationTest" assertions="0" time="0.000000">
+          <error type="RuntimeException">Tests\Feature\ApiAuthenticationTest::idle_expired_sessions_are_revoked_and_rejected&#13;
+RuntimeException: Authentication integration tests require the erp_test database.
+&#13;
+D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php:30</error>
+        </testcase>
+        <testcase name="sessions_created_before_a_password_change_are_revoked" file="D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php" line="611" class="Tests\Feature\ApiAuthenticationTest" classname="Tests.Feature.ApiAuthenticationTest" assertions="0" time="0.000000">
+          <error type="RuntimeException">Tests\Feature\ApiAuthenticationTest::sessions_created_before_a_password_change_are_revoked&#13;
+RuntimeException: Authentication integration tests require the erp_test database.
+&#13;
+D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php:30</error>
+        </testcase>
+        <testcase name="login_rotates_an_existing_session_cookie" file="D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php" line="624" class="Tests\Feature\ApiAuthenticationTest" classname="Tests.Feature.ApiAuthenticationTest" assertions="0" time="0.000000">
+          <error type="RuntimeException">Tests\Feature\ApiAuthenticationTest::login_rotates_an_existing_session_cookie&#13;
+RuntimeException: Authentication integration tests require the erp_test database.
+&#13;
+D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php:30</error>
+        </testcase>
+        <testcase name="scheduled_pruner_applies_idle_expiry_and_ninety_day_retention" file="D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php" line="644" class="Tests\Feature\ApiAuthenticationTest" classname="Tests.Feature.ApiAuthenticationTest" assertions="0" time="0.000000">
+          <error type="RuntimeException">Tests\Feature\ApiAuthenticationTest::scheduled_pruner_applies_idle_expiry_and_ninety_day_retention&#13;
+RuntimeException: Authentication integration tests require the erp_test database.
+&#13;
+D:\system karas\system end\backend\tests\Feature\ApiAuthenticationTest.php:30</error>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\ApiFoundationTest" file="D:\system karas\system end\backend\tests\Feature\ApiFoundationTest.php" tests="5" assertions="36" errors="0" failures="0" skipped="0" time="1.976551">
+        <testcase name="health_endpoint_reports_service_status_and_propagates_a_valid_request_id" file="D:\system karas\system end\backend\tests\Feature\ApiFoundationTest.php" line="15" class="Tests\Feature\ApiFoundationTest" classname="Tests.Feature.ApiFoundationTest" assertions="6" time="0.920636"/>
+        <testcase name="health_endpoint_replaces_an_invalid_request_id" file="D:\system karas\system end\backend\tests\Feature\ApiFoundationTest.php" line="33" class="Tests\Feature\ApiFoundationTest" classname="Tests.Feature.ApiFoundationTest" assertions="4" time="0.313498"/>
+        <testcase name="api_http_errors_use_a_safe_json_envelope" file="D:\system karas\system end\backend\tests\Feature\ApiFoundationTest.php" line="51" class="Tests\Feature\ApiFoundationTest" classname="Tests.Feature.ApiFoundationTest" assertions="8" time="0.221747"/>
+        <testcase name="api_validation_errors_use_a_json_envelope_with_field_details" file="D:\system karas\system end\backend\tests\Feature\ApiFoundationTest.php" line="61" class="Tests\Feature\ApiFoundationTest" classname="Tests.Feature.ApiFoundationTest" assertions="10" time="0.276474"/>
+        <testcase name="api_unexpected_errors_hide_internal_exception_details" file="D:\system karas\system end\backend\tests\Feature\ApiFoundationTest.php" line="77" class="Tests\Feature\ApiFoundationTest" classname="Tests.Feature.ApiFoundationTest" assertions="8" time="0.244197"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\AuditHistoryEngineTest" file="D:\system karas\system end\backend\tests\Feature\AuditHistoryEngineTest.php" tests="3" assertions="0" errors="0" failures="0" skipped="3" time="0.000000">
+        <testcase name="audit_log_filters_and_pagination_use_inclusive_dates_and_stable_sorting" file="D:\system karas\system end\backend\tests\Feature\AuditHistoryEngineTest.php" line="50" class="Tests\Feature\AuditHistoryEngineTest" classname="Tests.Feature.AuditHistoryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="invoice_history_returns_decoded_field_change_values_and_actor_details" file="D:\system karas\system end\backend\tests\Feature\AuditHistoryEngineTest.php" line="146" class="Tests\Feature\AuditHistoryEngineTest" classname="Tests.Feature.AuditHistoryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="sensitive_audit_and_invoice_history_routes_are_owner_only_and_require_step_up" file="D:\system karas\system end\backend\tests\Feature\AuditHistoryEngineTest.php" line="220" class="Tests\Feature\AuditHistoryEngineTest" classname="Tests.Feature.AuditHistoryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\AuthenticationEngineTest" file="D:\system karas\system end\backend\tests\Feature\AuthenticationEngineTest.php" tests="11" assertions="0" errors="0" failures="0" skipped="11" time="0.000000">
+        <testcase name="login_session_lookup_and_csrf_logout_work_with_binary_hash_columns" file="D:\system karas\system end\backend\tests\Feature\AuthenticationEngineTest.php" line="130" class="Tests\Feature\AuthenticationEngineTest" classname="Tests.Feature.AuthenticationEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="sessions_have_a_twelve_hour_absolute_lifetime_that_activity_does_not_extend" file="D:\system karas\system end\backend\tests\Feature\AuthenticationEngineTest.php" line="169" class="Tests\Feature\AuthenticationEngineTest" classname="Tests.Feature.AuthenticationEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="sessions_are_valid_before_the_thirty_minute_idle_boundary_and_rejected_at_it" file="D:\system karas\system end\backend\tests\Feature\AuthenticationEngineTest.php" line="211" class="Tests\Feature\AuthenticationEngineTest" classname="Tests.Feature.AuthenticationEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="expired_absolute_lifetime_is_revoked_on_the_request" file="D:\system karas\system end\backend\tests\Feature\AuthenticationEngineTest.php" line="249" class="Tests\Feature\AuthenticationEngineTest" classname="Tests.Feature.AuthenticationEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="both_current_owners_can_access_every_permission_including_sensitive_financial_and_user_management" file="D:\system karas\system end\backend\tests\Feature\AuthenticationEngineTest.php" line="276" class="Tests\Feature\AuthenticationEngineTest" classname="Tests.Feature.AuthenticationEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="future_invoice_issuer_role_template_remains_restricted_and_has_no_current_owner_identity" file="D:\system karas\system end\backend\tests\Feature\AuthenticationEngineTest.php" line="291" class="Tests\Feature\AuthenticationEngineTest" classname="Tests.Feature.AuthenticationEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="future_read_only_role_template_cannot_mutate_or_view_sensitive_data" file="D:\system karas\system end\backend\tests\Feature\AuthenticationEngineTest.php" line="332" class="Tests\Feature\AuthenticationEngineTest" classname="Tests.Feature.AuthenticationEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="authorization_denies_unauthenticated_and_permissionless_requests_by_default" file="D:\system karas\system end\backend\tests\Feature\AuthenticationEngineTest.php" line="368" class="Tests\Feature\AuthenticationEngineTest" classname="Tests.Feature.AuthenticationEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="authenticated_user_without_any_role_is_denied_every_permission" file="D:\system karas\system end\backend\tests\Feature\AuthenticationEngineTest.php" line="391" class="Tests\Feature\AuthenticationEngineTest" classname="Tests.Feature.AuthenticationEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="driver_role_is_seeded_with_configurable_grants_and_no_current_assignment" file="D:\system karas\system end\backend\tests\Feature\AuthenticationEngineTest.php" line="401" class="Tests\Feature\AuthenticationEngineTest" classname="Tests.Feature.AuthenticationEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="treasury_access_requires_a_finance_permission_and_recent_step_up" file="D:\system karas\system end\backend\tests\Feature\AuthenticationEngineTest.php" line="481" class="Tests\Feature\AuthenticationEngineTest" classname="Tests.Feature.AuthenticationEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\BackendAcceptanceEngineTest" file="D:\system karas\system end\backend\tests\Feature\BackendAcceptanceEngineTest.php" tests="2" assertions="0" errors="0" failures="0" skipped="2" time="0.000000">
+        <testcase name="landed_cost_sales_returns_collection_transfer_and_treasury_payment_reconcile_end_to_end" file="D:\system karas\system end\backend\tests\Feature\BackendAcceptanceEngineTest.php" line="69" class="Tests\Feature\BackendAcceptanceEngineTest" classname="Tests.Feature.BackendAcceptanceEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="optional_master_data_fields_are_persisted_but_cost_references_remain_protected" file="D:\system karas\system end\backend\tests\Feature\BackendAcceptanceEngineTest.php" line="349" class="Tests\Feature\BackendAcceptanceEngineTest" classname="Tests.Feature.BackendAcceptanceEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\CsvImportEngineTest" file="D:\system karas\system end\backend\tests\Feature\CsvImportEngineTest.php" tests="4" assertions="0" errors="0" failures="0" skipped="4" time="0.000000">
+        <testcase name="product_import_is_dry_run_by_default_and_rejects_duplicate_skus" file="D:\system karas\system end\backend\tests\Feature\CsvImportEngineTest.php" line="77" class="Tests\Feature\CsvImportEngineTest" classname="Tests.Feature.CsvImportEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="customer_import_enforces_unique_phone_and_audits_the_owner" file="D:\system karas\system end\backend\tests\Feature\CsvImportEngineTest.php" line="111" class="Tests\Feature\CsvImportEngineTest" classname="Tests.Feature.CsvImportEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="opening_stock_import_posts_dated_movements_via_inventory_service" file="D:\system karas\system end\backend\tests\Feature\CsvImportEngineTest.php" line="142" class="Tests\Feature\CsvImportEngineTest" classname="Tests.Feature.CsvImportEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="customer_opening_balance_import_creates_a_dated_document_via_sales_service" file="D:\system karas\system end\backend\tests\Feature\CsvImportEngineTest.php" line="171" class="Tests\Feature\CsvImportEngineTest" classname="Tests.Feature.CsvImportEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\DeliverySourceConstraintEngineTest" file="D:\system karas\system end\backend\tests\Feature\DeliverySourceConstraintEngineTest.php" tests="1" assertions="0" errors="0" failures="0" skipped="1" time="0.000000">
+        <testcase name="delivery_header_requires_exactly_one_source_on_the_selected_engine" file="D:\system karas\system end\backend\tests\Feature\DeliverySourceConstraintEngineTest.php" line="43" class="Tests\Feature\DeliverySourceConstraintEngineTest" classname="Tests.Feature.DeliverySourceConstraintEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\InventoryConcurrencyEngineTest" file="D:\system karas\system end\backend\tests\Feature\InventoryConcurrencyEngineTest.php" tests="1" assertions="0" errors="0" failures="0" skipped="1" time="0.000000">
+        <testcase name="concurrent_receipts_serialize_on_the_product_location_balance" file="D:\system karas\system end\backend\tests\Feature\InventoryConcurrencyEngineTest.php" line="108" class="Tests\Feature\InventoryConcurrencyEngineTest" classname="Tests.Feature.InventoryConcurrencyEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\InventoryEngineTest" file="D:\system karas\system end\backend\tests\Feature\InventoryEngineTest.php" tests="14" assertions="0" errors="0" failures="0" skipped="14" time="0.000000">
+        <testcase name="receipt_costs_are_weighted_per_product_and_location_and_reconcile_to_the_ledger" file="D:\system karas\system end\backend\tests\Feature\InventoryEngineTest.php" line="94" class="Tests\Feature\InventoryEngineTest" classname="Tests.Feature.InventoryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="weighted_average_uses_half_up_piastre_rounding_without_losing_ledger_value" file="D:\system karas\system end\backend\tests\Feature\InventoryEngineTest.php" line="114" class="Tests\Feature\InventoryEngineTest" classname="Tests.Feature.InventoryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="issues_can_reduce_stock_to_zero_and_below_zero_issues_roll_back" file="D:\system karas\system end\backend\tests\Feature\InventoryEngineTest.php" line="127" class="Tests\Feature\InventoryEngineTest" classname="Tests.Feature.InventoryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="failed_audit_insert_rolls_back_movement_line_and_balance_changes" file="D:\system karas\system end\backend\tests\Feature\InventoryEngineTest.php" line="151" class="Tests\Feature\InventoryEngineTest" classname="Tests.Feature.InventoryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="twenty_five_warehouses_can_each_hold_stock_for_the_same_product" file="D:\system karas\system end\backend\tests\Feature\InventoryEngineTest.php" line="174" class="Tests\Feature\InventoryEngineTest" classname="Tests.Feature.InventoryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="transfer_preserves_source_cost_and_recomputes_destination_weighted_average" file="D:\system karas\system end\backend\tests\Feature\InventoryEngineTest.php" line="200" class="Tests\Feature\InventoryEngineTest" classname="Tests.Feature.InventoryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="transfer_rejects_negative_source_stock_and_rolls_back_audit_failures" file="D:\system karas\system end\backend\tests\Feature\InventoryEngineTest.php" line="235" class="Tests\Feature\InventoryEngineTest" classname="Tests.Feature.InventoryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="owner_can_manage_inventory_and_non_owner_routes_are_denied_or_hide_costs" file="D:\system karas\system end\backend\tests\Feature\InventoryEngineTest.php" line="278" class="Tests\Feature\InventoryEngineTest" classname="Tests.Feature.InventoryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="exact_money_handles_decimal_rounding_without_float_arithmetic" file="D:\system karas\system end\backend\tests\Feature\InventoryEngineTest.php" line="496" class="Tests\Feature\InventoryEngineTest" classname="Tests.Feature.InventoryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="container_partial_receipts_allocate_landed_cost_with_a_deterministic_final_remainder" file="D:\system karas\system end\backend\tests\Feature\InventoryEngineTest.php" line="505" class="Tests\Feature\InventoryEngineTest" classname="Tests.Feature.InventoryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="container_quantity_and_manual_allocations_reconcile_exactly_and_late_costs_do_not_revalue_stock" file="D:\system karas\system end\backend\tests\Feature\InventoryEngineTest.php" line="587" class="Tests\Feature\InventoryEngineTest" classname="Tests.Feature.InventoryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="container_cost_payments_link_only_matching_treasury_outflows" file="D:\system karas\system end\backend\tests\Feature\InventoryEngineTest.php" line="641" class="Tests\Feature\InventoryEngineTest" classname="Tests.Feature.InventoryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="container_manual_allocations_and_failed_audit_roll_back_receipt_stock" file="D:\system karas\system end\backend\tests\Feature\InventoryEngineTest.php" line="680" class="Tests\Feature\InventoryEngineTest" classname="Tests.Feature.InventoryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="container_routes_require_authentication_and_the_container_view_permission" file="D:\system karas\system end\backend\tests\Feature\InventoryEngineTest.php" line="754" class="Tests\Feature\InventoryEngineTest" classname="Tests.Feature.InventoryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\MobileAdministrationEngineTest" file="D:\system karas\system end\backend\tests\Feature\MobileAdministrationEngineTest.php" tests="4" assertions="0" errors="0" failures="0" skipped="4" time="0.000000">
+        <testcase name="channel_opening_balance_is_audited_and_idempotent_after_step_up" file="D:\system karas\system end\backend\tests\Feature\MobileAdministrationEngineTest.php" line="58" class="Tests\Feature\MobileAdministrationEngineTest" classname="Tests.Feature.MobileAdministrationEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="sixty_channels_are_listed_and_synced_without_per_channel_queries" file="D:\system karas\system end\backend\tests\Feature\MobileAdministrationEngineTest.php" line="117" class="Tests\Feature\MobileAdministrationEngineTest" classname="Tests.Feature.MobileAdministrationEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="source_definitions_are_shared_while_capture_settings_remain_device_local" file="D:\system karas\system end\backend\tests\Feature\MobileAdministrationEngineTest.php" line="154" class="Tests\Feature\MobileAdministrationEngineTest" classname="Tests.Feature.MobileAdministrationEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="canonical_categories_seed_and_category_crud_reuse_expense_category" file="D:\system karas\system end\backend\tests\Feature\MobileAdministrationEngineTest.php" line="259" class="Tests\Feature\MobileAdministrationEngineTest" classname="Tests.Feature.MobileAdministrationEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\MobileAuthenticationEngineTest" file="D:\system karas\system end\backend\tests\Feature\MobileAuthenticationEngineTest.php" tests="6" assertions="0" errors="0" failures="0" skipped="6" time="0.000000">
+        <testcase name="mobile_login_issues_a_separate_scoped_token_and_driver_login_is_denied" file="D:\system karas\system end\backend\tests\Feature\MobileAuthenticationEngineTest.php" line="57" class="Tests\Feature\MobileAuthenticationEngineTest" classname="Tests.Feature.MobileAuthenticationEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="one_owner_can_register_more_than_ten_devices" file="D:\system karas\system end\backend\tests\Feature\MobileAuthenticationEngineTest.php" line="96" class="Tests\Feature\MobileAuthenticationEngineTest" classname="Tests.Feature.MobileAuthenticationEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="password_confirmation_is_audited_for_ten_minutes_and_logout_revokes_the_token" file="D:\system karas\system end\backend\tests\Feature\MobileAuthenticationEngineTest.php" line="111" class="Tests\Feature\MobileAuthenticationEngineTest" classname="Tests.Feature.MobileAuthenticationEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="mobile_token_expires_and_is_invalidated_when_the_users_password_changes" file="D:\system karas\system end\backend\tests\Feature\MobileAuthenticationEngineTest.php" line="138" class="Tests\Feature\MobileAuthenticationEngineTest" classname="Tests.Feature.MobileAuthenticationEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="device_admin_routes_require_browser_session_step_up_and_revoke_mobile_tokens_immediately" file="D:\system karas\system end\backend\tests\Feature\MobileAuthenticationEngineTest.php" line="153" class="Tests\Feature\MobileAuthenticationEngineTest" classname="Tests.Feature.MobileAuthenticationEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="mobile_login_is_rate_limited" file="D:\system karas\system end\backend\tests\Feature\MobileAuthenticationEngineTest.php" line="200" class="Tests\Feature\MobileAuthenticationEngineTest" classname="Tests.Feature.MobileAuthenticationEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\MobileCustomerSyncEngineTest" file="D:\system karas\system end\backend\tests\Feature\MobileCustomerSyncEngineTest.php" tests="2" assertions="0" errors="0" failures="0" skipped="2" time="0.000000">
+        <testcase name="mobile_customer_creation_is_validated_audited_and_idempotent_and_picker_is_shared" file="D:\system karas\system end\backend\tests\Feature\MobileCustomerSyncEngineTest.php" line="57" class="Tests\Feature\MobileCustomerSyncEngineTest" classname="Tests.Feature.MobileCustomerSyncEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="sync_returns_initial_snapshot_then_entity_and_financial_deltas_without_raw_text" file="D:\system karas\system end\backend\tests\Feature\MobileCustomerSyncEngineTest.php" line="101" class="Tests\Feature\MobileCustomerSyncEngineTest" classname="Tests.Feature.MobileCustomerSyncEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\MobileFinanceEngineTest" file="D:\system karas\system end\backend\tests\Feature\MobileFinanceEngineTest.php" tests="3" assertions="0" errors="0" failures="0" skipped="3" time="0.000000">
+        <testcase name="message_and_manual_deposits_post_unapplied_collections_with_provenance_idempotently" file="D:\system karas\system end\backend\tests\Feature\MobileFinanceEngineTest.php" line="59" class="Tests\Feature\MobileFinanceEngineTest" classname="Tests.Feature.MobileFinanceEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="message_withdrawals_reuse_expense_and_transfer_services_and_require_fallback_notes" file="D:\system karas\system end\backend\tests\Feature\MobileFinanceEngineTest.php" line="126" class="Tests\Feature\MobileFinanceEngineTest" classname="Tests.Feature.MobileFinanceEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="end_to_end_mobile_flow_syncs_a_message_deposit_and_withdrawal" file="D:\system karas\system end\backend\tests\Feature\MobileFinanceEngineTest.php" line="177" class="Tests\Feature\MobileFinanceEngineTest" classname="Tests.Feature.MobileFinanceEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\MobileMessageEngineTest" file="D:\system karas\system end\backend\tests\Feature\MobileMessageEngineTest.php" tests="5" assertions="0" errors="0" failures="0" skipped="5" time="0.000000">
+        <testcase name="ingestion_is_source_checked_otp_blocked_duplicate_safe_and_hides_raw_text_without_permission" file="D:\system karas\system end\backend\tests\Feature\MobileMessageEngineTest.php" line="58" class="Tests\Feature\MobileMessageEngineTest" classname="Tests.Feature.MobileMessageEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="unclear_message_amount_requires_review_before_it_returns_to_the_new_list" file="D:\system karas\system end\backend\tests\Feature\MobileMessageEngineTest.php" line="131" class="Tests\Feature\MobileMessageEngineTest" classname="Tests.Feature.MobileMessageEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="ingestion_classifies_by_keywords_normalizes_senders_and_rejects_unmatched_messages" file="D:\system karas\system end\backend\tests\Feature\MobileMessageEngineTest.php" line="161" class="Tests\Feature\MobileMessageEngineTest" classname="Tests.Feature.MobileMessageEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="ten_owners_can_register_from_two_devices_and_duplicates_are_global" file="D:\system karas\system end\backend\tests\Feature\MobileMessageEngineTest.php" line="245" class="Tests\Feature\MobileMessageEngineTest" classname="Tests.Feature.MobileMessageEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="ignoring_a_message_is_audited_synchronized_and_idempotent" file="D:\system karas\system end\backend\tests\Feature\MobileMessageEngineTest.php" line="298" class="Tests\Feature\MobileMessageEngineTest" classname="Tests.Feature.MobileMessageEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\MobileSchemaEngineTest" file="D:\system karas\system end\backend\tests\Feature\MobileSchemaEngineTest.php" tests="1" assertions="0" errors="0" failures="0" skipped="1" time="0.000000">
+        <testcase name="mobile_schema_and_permission_grants_are_present_for_owners_and_absent_for_the_driver" file="D:\system karas\system end\backend\tests\Feature\MobileSchemaEngineTest.php" line="32" class="Tests\Feature\MobileSchemaEngineTest" classname="Tests.Feature.MobileSchemaEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\ReportsEngineTest" file="D:\system karas\system end\backend\tests\Feature\ReportsEngineTest.php" tests="7" assertions="0" errors="0" failures="0" skipped="7" time="0.000000">
+        <testcase name="reports_require_permissions_and_recent_step_up" file="D:\system karas\system end\backend\tests\Feature\ReportsEngineTest.php" line="92" class="Tests\Feature\ReportsEngineTest" classname="Tests.Feature.ReportsEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="customer_lists_search_sort_and_paginate_with_a_consistent_response_shape" file="D:\system karas\system end\backend\tests\Feature\ReportsEngineTest.php" line="112" class="Tests\Feature\ReportsEngineTest" classname="Tests.Feature.ReportsEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="stock_reports_filter_and_paginate_without_leaking_costs_to_drivers" file="D:\system karas\system end\backend\tests\Feature\ReportsEngineTest.php" line="154" class="Tests\Feature\ReportsEngineTest" classname="Tests.Feature.ReportsEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="customer_statement_includes_dated_openings_and_unapplied_collections" file="D:\system karas\system end\backend\tests\Feature\ReportsEngineTest.php" line="179" class="Tests\Feature\ReportsEngineTest" classname="Tests.Feature.ReportsEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="sales_filters_and_provisional_profit_use_invoice_cost_snapshots" file="D:\system karas\system end\backend\tests\Feature\ReportsEngineTest.php" line="229" class="Tests\Feature\ReportsEngineTest" classname="Tests.Feature.ReportsEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="container_cost_report_summarizes_payments_and_allocations_with_date_filters" file="D:\system karas\system end\backend\tests\Feature\ReportsEngineTest.php" line="271" class="Tests\Feature\ReportsEngineTest" classname="Tests.Feature.ReportsEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="dashboard_only_includes_sections_authorized_for_the_caller" file="D:\system karas\system end\backend\tests\Feature\ReportsEngineTest.php" line="303" class="Tests\Feature\ReportsEngineTest" classname="Tests.Feature.ReportsEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\SalesWorkflowEngineTest" file="D:\system karas\system end\backend\tests\Feature\SalesWorkflowEngineTest.php" tests="17" assertions="0" errors="0" failures="0" skipped="17" time="0.000000">
+        <testcase name="opening_balance_is_a_dated_document_and_credit_limit_only_warns" file="D:\system karas\system end\backend\tests\Feature\SalesWorkflowEngineTest.php" line="129" class="Tests\Feature\SalesWorkflowEngineTest" classname="Tests.Feature.SalesWorkflowEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="order_confirmation_warns_without_reserving_and_linked_invoice_issues_stock_once" file="D:\system karas\system end\backend\tests\Feature\SalesWorkflowEngineTest.php" line="150" class="Tests\Feature\SalesWorkflowEngineTest" classname="Tests.Feature.SalesWorkflowEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="order_invoice_requires_every_order_line_in_the_same_full_posting" file="D:\system karas\system end\backend\tests\Feature\SalesWorkflowEngineTest.php" line="189" class="Tests\Feature\SalesWorkflowEngineTest" classname="Tests.Feature.SalesWorkflowEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="order_delivery_reuses_posted_movement_and_audits_status_flow_without_second_stock_issue" file="D:\system karas\system end\backend\tests\Feature\SalesWorkflowEngineTest.php" line="209" class="Tests\Feature\SalesWorkflowEngineTest" classname="Tests.Feature.SalesWorkflowEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="linked_order_invoice_revision_updates_delivery_source_and_delivery_blocks_cancellation" file="D:\system karas\system end\backend\tests\Feature\SalesWorkflowEngineTest.php" line="237" class="Tests\Feature\SalesWorkflowEngineTest" classname="Tests.Feature.SalesWorkflowEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="cancelling_an_order_invoice_before_delivery_allows_a_fresh_full_invoice" file="D:\system karas\system end\backend\tests\Feature\SalesWorkflowEngineTest.php" line="289" class="Tests\Feature\SalesWorkflowEngineTest" classname="Tests.Feature.SalesWorkflowEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="invoice_preview_is_read_only_and_matches_posted_totals" file="D:\system karas\system end\backend\tests\Feature\SalesWorkflowEngineTest.php" line="321" class="Tests\Feature\SalesWorkflowEngineTest" classname="Tests.Feature.SalesWorkflowEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="order_preview_is_read_only_and_matches_created_order_total" file="D:\system karas\system end\backend\tests\Feature\SalesWorkflowEngineTest.php" line="370" class="Tests\Feature\SalesWorkflowEngineTest" classname="Tests.Feature.SalesWorkflowEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="return_preview_is_read_only_and_matches_posted_total" file="D:\system karas\system end\backend\tests\Feature\SalesWorkflowEngineTest.php" line="401" class="Tests\Feature\SalesWorkflowEngineTest" classname="Tests.Feature.SalesWorkflowEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="invoice_posting_is_idempotent_and_snapshots_cost_and_tax" file="D:\system karas\system end\backend\tests\Feature\SalesWorkflowEngineTest.php" line="433" class="Tests\Feature\SalesWorkflowEngineTest" classname="Tests.Feature.SalesWorkflowEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="inclusive_tax_is_included_in_the_line_total_and_rounded_per_line" file="D:\system karas\system end\backend\tests\Feature\SalesWorkflowEngineTest.php" line="457" class="Tests\Feature\SalesWorkflowEngineTest" classname="Tests.Feature.SalesWorkflowEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="insufficient_stock_rolls_back_the_issue_and_idempotency_claim" file="D:\system karas\system end\backend\tests\Feature\SalesWorkflowEngineTest.php" line="469" class="Tests\Feature\SalesWorkflowEngineTest" classname="Tests.Feature.SalesWorkflowEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="linked_returns_reconcile_quantities_and_restore_stock_at_the_sold_cost" file="D:\system karas\system end\backend\tests\Feature\SalesWorkflowEngineTest.php" line="484" class="Tests\Feature\SalesWorkflowEngineTest" classname="Tests.Feature.SalesWorkflowEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="free_return_uses_current_or_historical_average_and_requires_cost_without_history" file="D:\system karas\system end\backend\tests\Feature\SalesWorkflowEngineTest.php" line="516" class="Tests\Feature\SalesWorkflowEngineTest" classname="Tests.Feature.SalesWorkflowEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="collection_keeps_unapplied_amount_separate_and_allocation_reversal_restores_it" file="D:\system karas\system end\backend\tests\Feature\SalesWorkflowEngineTest.php" line="608" class="Tests\Feature\SalesWorkflowEngineTest" classname="Tests.Feature.SalesWorkflowEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="invoice_revision_reverses_and_reposts_stock_and_transfers_allocations_with_field_history" file="D:\system karas\system end\backend\tests\Feature\SalesWorkflowEngineTest.php" line="649" class="Tests\Feature\SalesWorkflowEngineTest" classname="Tests.Feature.SalesWorkflowEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="cancellation_reverses_stock_and_returns_allocations_to_unapplied_balance_once" file="D:\system karas\system end\backend\tests\Feature\SalesWorkflowEngineTest.php" line="698" class="Tests\Feature\SalesWorkflowEngineTest" classname="Tests.Feature.SalesWorkflowEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\TreasuryEngineTest" file="D:\system karas\system end\backend\tests\Feature\TreasuryEngineTest.php" tests="5" assertions="0" errors="0" failures="0" skipped="5" time="0.000000">
+        <testcase name="cash_entries_round_exactly_and_balances_are_computed_from_posted_entries" file="D:\system karas\system end\backend\tests\Feature\TreasuryEngineTest.php" line="61" class="Tests\Feature\TreasuryEngineTest" classname="Tests.Feature.TreasuryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="expenses_post_egp_only_and_reference_values_do_not_affect_the_treasury_amount" file="D:\system karas\system end\backend\tests\Feature\TreasuryEngineTest.php" line="120" class="Tests\Feature\TreasuryEngineTest" classname="Tests.Feature.TreasuryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="transfers_create_both_legs_and_update_both_computed_balances_atomically" file="D:\system karas\system end\backend\tests\Feature\TreasuryEngineTest.php" line="179" class="Tests\Feature\TreasuryEngineTest" classname="Tests.Feature.TreasuryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="a_failed_outbox_write_rolls_back_the_posting_and_its_audit_record" file="D:\system karas\system end\backend\tests\Feature\TreasuryEngineTest.php" line="201" class="Tests\Feature\TreasuryEngineTest" classname="Tests.Feature.TreasuryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+        <testcase name="a_failed_audit_write_rolls_back_the_posting_before_the_outbox_is_written" file="D:\system karas\system end\backend\tests\Feature\TreasuryEngineTest.php" line="223" class="Tests\Feature\TreasuryEngineTest" classname="Tests.Feature.TreasuryEngineTest" assertions="0" time="0.000000">
+          <skipped/>
+        </testcase>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
