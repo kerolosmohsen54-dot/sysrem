@@ -1,0 +1,13 @@
+html {
+  direction: rtl;
+}
+
+input,
+textarea,
+select {
+  text-align: right;
+}
+
+:dir(ltr) {
+  direction: ltr;
+}

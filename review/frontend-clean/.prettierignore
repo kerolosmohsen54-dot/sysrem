@@ -1,0 +1,7 @@
+src/shared/api/generated/**
+public/mockServiceWorker.js
+package-lock.json
+api-contract/openapi.snapshot.yaml
+reference/precision-slate-erp-v43__3_ (1).html
+dist/**
+parity-report/**

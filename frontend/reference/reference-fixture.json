@@ -1,0 +1,381 @@
+{
+  "localStorage": {
+    "ps-v32-wiped": "1",
+    "ps-theme": "dark",
+    "ps-erp-v4": {
+      "cust": {
+        "c101": {
+          "name": "شركة النور لاستيراد السيارات",
+          "phone": "01012345678",
+          "code": "C-101",
+          "cur": "ج.م",
+          "creditNum": 50000,
+          "balanceNum": 18500,
+          "province": "القاهرة"
+        },
+        "c102": {
+          "name": "مؤسسة الأمل للتجارة",
+          "phone": "01123456789",
+          "code": "C-102",
+          "cur": "ج.م",
+          "creditNum": 30000,
+          "balanceNum": 7200,
+          "province": "الجيزة"
+        },
+        "c103": {
+          "name": "معرض السلام للسيارات",
+          "phone": "01234567890",
+          "code": "C-103",
+          "cur": "ج.م",
+          "creditNum": 80000,
+          "balanceNum": 0,
+          "province": "الإسكندرية"
+        }
+      },
+      "prod": {
+        "فلتر زيت تويوتا": {
+          "sku": "TOY-OF-001",
+          "cat": "فلاتر",
+          "unit": "قطعة",
+          "cost": 420,
+          "stock": 48
+        },
+        "بطارية 70 أمبير": {
+          "sku": "BAT-70-002",
+          "cat": "بطاريات",
+          "unit": "قطعة",
+          "cost": 2850,
+          "stock": 17
+        },
+        "زيت محرك 5W-30": {
+          "sku": "OIL-530-003",
+          "cat": "زيوت",
+          "unit": "عبوة",
+          "cost": 610,
+          "stock": 96
+        }
+      },
+      "inv": {
+        "INV-2026-1041": {
+          "customerId": "c101",
+          "customer": "شركة النور لاستيراد السيارات",
+          "customerDetail": "01012345678",
+          "phone": "01012345678",
+          "province": "القاهرة",
+          "date": "10/10/2026",
+          "time": "10:15",
+          "iso": "2026-10-10",
+          "ts": 1791627300000,
+          "items": [["فلتر زيت تويوتا", "TOY-OF-001", 12, 650, 0]],
+          "subtotal": 7800,
+          "discount": 0,
+          "total": 7800,
+          "paid": 3000,
+          "notes": "تسليم إلى مخزن العميل",
+          "createdBy": "كراس",
+          "isReturn": false,
+          "warehouse": "المستودع الرئيسي - الرياض"
+        },
+        "INV-2026-1040": {
+          "customerId": "c102",
+          "customer": "مؤسسة الأمل للتجارة",
+          "customerDetail": "01123456789",
+          "phone": "01123456789",
+          "province": "الجيزة",
+          "date": "08/10/2026",
+          "time": "14:25",
+          "iso": "2026-10-08",
+          "ts": 1791469500000,
+          "items": [["بطارية 70 أمبير", "BAT-70-002", 4, 3450, 0]],
+          "subtotal": 13800,
+          "discount": 300,
+          "total": 13500,
+          "paid": 10000,
+          "notes": "فاتورة بيع",
+          "createdBy": "أبنوب",
+          "isReturn": false,
+          "warehouse": "المستودع الرئيسي - الرياض"
+        },
+        "INV-2026-1039": {
+          "customerId": "c103",
+          "customer": "معرض السلام للسيارات",
+          "customerDetail": "01234567890",
+          "phone": "01234567890",
+          "province": "الإسكندرية",
+          "date": "05/10/2026",
+          "time": "09:40",
+          "iso": "2026-10-05",
+          "ts": 1791183600000,
+          "items": [["زيت محرك 5W-30", "OIL-530-003", 20, 790, 0]],
+          "subtotal": 15800,
+          "discount": 800,
+          "total": 15000,
+          "paid": 15000,
+          "notes": "تم السداد بالكامل",
+          "createdBy": "كراس",
+          "isReturn": false,
+          "warehouse": "المستودع الرئيسي - الرياض"
+        }
+      },
+      "min": {
+        "فلتر زيت تويوتا": 12,
+        "بطارية 70 أمبير": 8,
+        "زيت محرك 5W-30": 24
+      },
+      "cash": {
+        "main": { "name": "الخزينة الرئيسية", "balance": 23500 },
+        "nbank": { "name": "البنك الأهلي", "balance": 64000 },
+        "rajhi": { "name": "بنك الراجحي", "balance": 18200 }
+      },
+      "moves": [
+        {
+          "ts": 1791627300000,
+          "kind": "out",
+          "product": "فلتر زيت تويوتا",
+          "warehouse": "المستودع الرئيسي - الرياض",
+          "qty": 12,
+          "ref": "INV-2026-1041",
+          "user": "كراس"
+        },
+        {
+          "ts": 1791469500000,
+          "kind": "out",
+          "product": "بطارية 70 أمبير",
+          "warehouse": "المستودع الرئيسي - الرياض",
+          "qty": 4,
+          "ref": "INV-2026-1040",
+          "user": "أبنوب"
+        },
+        {
+          "ts": 1791183600000,
+          "kind": "in",
+          "product": "زيت محرك 5W-30",
+          "warehouse": "المستودع الرئيسي - الرياض",
+          "qty": 40,
+          "ref": "CONT-2026-016",
+          "user": "كراس"
+        }
+      ],
+      "conts": [
+        {
+          "no": "CONT-2026-016",
+          "name": "شحنة قطع غيار أكتوبر",
+          "num": "TGHU-482913-6",
+          "origin": "شنغهاي، الصين",
+          "eta": "2026-10-18",
+          "status": "في الطريق",
+          "lines": [
+            { "name": "زيت محرك 5W-30", "qty": 40, "cost": 510 },
+            { "name": "فلتر زيت تويوتا", "qty": 60, "cost": 330 }
+          ],
+          "received": false,
+          "costs": {
+            "deposit": 12000,
+            "ext": 8000,
+            "bank": 1800,
+            "ship": 4200,
+            "clr": 1600,
+            "cus": 2400,
+            "peter": 0,
+            "seal": 350
+          }
+        }
+      ],
+      "cols": [
+        {
+          "no": "COL-2026-021",
+          "cid": "c101",
+          "amount": 3000,
+          "iso": "2026-10-10",
+          "ts": 1791627900000,
+          "inv": "INV-2026-1041",
+          "allocated": 3000
+        },
+        {
+          "no": "COL-2026-020",
+          "cid": "c102",
+          "amount": 1500,
+          "iso": "2026-10-08",
+          "ts": 1791469800000,
+          "inv": null,
+          "allocated": 0
+        }
+      ],
+      "recent": ["c101", "c102", "c103"],
+      "seq": {
+        "inv": 1041,
+        "ret": 0,
+        "cust": 103,
+        "sku": 3,
+        "cont": 16,
+        "col": 21,
+        "issuer": "كراس"
+      }
+    },
+    "ps-fin2": {
+      "exps": [
+        {
+          "kind": "expense",
+          "status": "posted",
+          "item": "شحن محلي",
+          "amount": 4200,
+          "date": "2026-10-10",
+          "note": "نقل قطع الغيار إلى المخزن"
+        },
+        {
+          "kind": "expense",
+          "status": "posted",
+          "item": "مصروفات جمركية",
+          "amount": 1600,
+          "date": "2026-10-08",
+          "note": "رسوم تخليص"
+        }
+      ],
+      "tx": [
+        {
+          "kind": "expense",
+          "status": "posted",
+          "item": "شحن محلي",
+          "amount": 4200,
+          "date": "2026-10-10"
+        },
+        {
+          "kind": "income",
+          "status": "posted",
+          "item": "تحصيل فاتورة",
+          "amount": 3000,
+          "date": "2026-10-10"
+        }
+      ],
+      "items": ["شحن محلي", "مصروفات جمركية", "رواتب", "إيجار"]
+    }
+  },
+  "api": {
+    "customers": [
+      {
+        "id": 101,
+        "name": "شركة النور لاستيراد السيارات",
+        "phone": "01012345678",
+        "governorate": "القاهرة",
+        "credit_limit": "50000.00",
+        "is_active": true
+      },
+      {
+        "id": 102,
+        "name": "مؤسسة الأمل للتجارة",
+        "phone": "01123456789",
+        "governorate": "الجيزة",
+        "credit_limit": "30000.00",
+        "is_active": true
+      },
+      {
+        "id": 103,
+        "name": "معرض السلام للسيارات",
+        "phone": "01234567890",
+        "governorate": "الإسكندرية",
+        "credit_limit": "80000.00",
+        "is_active": true
+      }
+    ],
+    "products": [
+      {
+        "id": 201,
+        "sku": "TOY-OF-001",
+        "name": "فلتر زيت تويوتا",
+        "category": "فلاتر",
+        "unit_code": "قطعة",
+        "stock": 48
+      },
+      {
+        "id": 202,
+        "sku": "BAT-70-002",
+        "name": "بطارية 70 أمبير",
+        "category": "بطاريات",
+        "unit_code": "قطعة",
+        "stock": 17
+      },
+      {
+        "id": 203,
+        "sku": "OIL-530-003",
+        "name": "زيت محرك 5W-30",
+        "category": "زيوت",
+        "unit_code": "عبوة",
+        "stock": 96
+      }
+    ],
+    "invoices": [
+      {
+        "number": "INV-2026-1041",
+        "customer_id": 101,
+        "issue_date": "2026-10-10",
+        "total_egp": "7800.00",
+        "paid_egp": "3000.00"
+      },
+      {
+        "number": "INV-2026-1040",
+        "customer_id": 102,
+        "issue_date": "2026-10-08",
+        "total_egp": "13500.00",
+        "paid_egp": "10000.00"
+      },
+      {
+        "number": "INV-2026-1039",
+        "customer_id": 103,
+        "issue_date": "2026-10-05",
+        "total_egp": "15000.00",
+        "paid_egp": "15000.00"
+      }
+    ],
+    "orders": [],
+    "collections": [
+      {
+        "number": "COL-2026-021",
+        "customer_id": 101,
+        "amount_egp": "3000.00",
+        "allocated_egp": "3000.00",
+        "unallocated_egp": "0.00",
+        "issue_date": "2026-10-10"
+      },
+      {
+        "number": "COL-2026-020",
+        "customer_id": 102,
+        "amount_egp": "1500.00",
+        "allocated_egp": "0.00",
+        "unallocated_egp": "1500.00",
+        "issue_date": "2026-10-08"
+      }
+    ],
+    "containers": [
+      {
+        "number": "CONT-2026-016",
+        "name": "شحنة قطع غيار أكتوبر",
+        "status": "in_transit",
+        "line_count": 2
+      }
+    ],
+    "inventoryMovements": [
+      {
+        "movement_type": "sale",
+        "product_name": "فلتر زيت تويوتا",
+        "quantity": 12,
+        "reference": "INV-2026-1041",
+        "movement_date": "2026-10-10"
+      },
+      {
+        "movement_type": "sale",
+        "product_name": "بطارية 70 أمبير",
+        "quantity": 4,
+        "reference": "INV-2026-1040",
+        "movement_date": "2026-10-08"
+      },
+      {
+        "movement_type": "container_receipt",
+        "product_name": "زيت محرك 5W-30",
+        "quantity": 40,
+        "reference": "CONT-2026-016",
+        "movement_date": "2026-10-05"
+      }
+    ],
+    "dashboard": null
+  }
+}
